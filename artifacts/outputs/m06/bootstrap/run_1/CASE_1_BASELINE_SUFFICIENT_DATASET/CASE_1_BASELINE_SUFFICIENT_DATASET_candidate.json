@@ -1,0 +1,344 @@
+{
+  "candidate_id": "m06-case-1",
+  "branch_or_model_tag": "M06_CASE_BASELINE_SUFFICIENT",
+  "change_type": "HAMILTONIAN_TERM",
+  "model_classification": "FORMAL_CORE",
+  "declared_family_class": "UNASSESSED",
+  "assigned_family_class": "UNASSESSED",
+  "family_class_mismatch": false,
+  "family_status": "PENDING_M05",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [],
+  "bath_classification_consistent_with_glossary": false,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {},
+  "relevant_nuisance_controls_list": [],
+  "exact_falsifier": "",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": true,
+    "L1_reduction_limit_verified": false,
+    "L2_convergence_plan_defined": false,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": false
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "signature_matches": [],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {},
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": false,
+  "fabrication_matched_for_geometry_claim": false,
+  "cross_device_validation": {
+    "status": "NOT_REQUIRED",
+    "devices_tested": [],
+    "fabrication_matched": false,
+    "notes": ""
+  },
+  "cross_device_status": "NOT_REQUIRED",
+  "instrument_capabilities": {},
+  "calibration_validity_score": null,
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [],
+  "gate_trace": [
+    {
+      "stage_id": "PRECHECK",
+      "stage_name": "GOVERNANCE_PRECHECK",
+      "inputs_checked": [
+        "system_status",
+        "governance_self_check.validation_harness_status",
+        "governance_self_check.reference_resolution_status",
+        "governance_self_check.system_status"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Mirror consistency enforced between top-level and governance self-check system_status."
+    },
+    {
+      "stage_id": "STAGE_5",
+      "stage_name": "BASELINE_PIPELINE_REPRODUCTION",
+      "inputs_checked": [
+        "baseline_model.status",
+        "baseline_model.pipeline_executed"
+      ],
+      "decision_or_cap_change": "SET validation_ladder.L0_baseline_pipeline_reproduced=true",
+      "key_evidence_ids": [
+        "M06_CASE1_S5"
+      ],
+      "status": "PASS",
+      "notes": "Baseline pipeline trigger satisfied by baseline_model.status or baseline_model.pipeline_executed."
+    },
+    {
+      "stage_id": "STAGE_6",
+      "stage_name": "BASELINE_SUFFICIENCY_GATE",
+      "inputs_checked": [
+        "validation_ladder.L0_baseline_pipeline_reproduced",
+        "residual_analysis.white_residuals",
+        "residual_analysis.stationary_residuals",
+        "residual_analysis.structured_residuals",
+        "residual_analysis.cross_observable_correlations_vanish",
+        "residual_analysis.drift_aware_fit_applied"
+      ],
+      "decision_or_cap_change": "TERMINATE scientific_decision=REJECTED_BY_BASELINE_SUFFICIENCY governance_outcome=REJECT cross_device_status=NOT_REQUIRED",
+      "key_evidence_ids": [
+        "M06_CASE1_S6"
+      ],
+      "status": "TERMINATED",
+      "notes": "Residuals were treated as white, stationary, structurally absent, and decorrelated after drift-aware fitting."
+    },
+    {
+      "stage_id": "STAGE_8",
+      "stage_name": "KNOWN_MECHANISM_COMPETITION",
+      "inputs_checked": [
+        "mechanism_tests.*.explains_data",
+        "mechanism_tests.parsimonious_combination_explains"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_9",
+      "stage_name": "ARTIFACT_EQUIVALENCE_AUDIT",
+      "inputs_checked": [
+        "artifact_tests.route_explains_data",
+        "artifact_tests.explains_data"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_10",
+      "stage_name": "CONVERGENCE_AND_REDUCTION_LIMIT_GATE",
+      "inputs_checked": [
+        "hamiltonian_test.convergence_plan_declared",
+        "hamiltonian_test.plan_declared_before_nonlinear_sweeps",
+        "reduction_limit",
+        "baseline_model.reduction_limit_verified",
+        "baseline_model.reduction_limit_test_passed"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_11",
+      "stage_name": "LINDBLAD_EQUIVALENCE_GATE",
+      "inputs_checked": [
+        "lindblad_equivalence.equivalent_within_resolution",
+        "lindblad_equivalence.best_equivalent_model"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_13",
+      "stage_name": "NUMERICAL_STABILITY_GATE",
+      "inputs_checked": [
+        "numerical_stability.stable",
+        "numerical_stability.failed_checks"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_14",
+      "stage_name": "PROVISIONAL_IDENTIFIABILITY_ASSIGNMENT",
+      "inputs_checked": [
+        "scientific_decision",
+        "validation_ladder.L0-L3"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_15",
+      "stage_name": "INSTRUMENT_FACING_L4_RULE",
+      "inputs_checked": [
+        "exact_falsifier",
+        "experiment_schedule.executable_falsifier_package_emitted",
+        "experiment_schedule.priority_experiments",
+        "instrument_capabilities.instrument_facing_requirement_satisfied"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_16",
+      "stage_name": "CROSS_DEVICE_GATE",
+      "inputs_checked": [
+        "multi_device_data_available",
+        "fabrication_matched_for_geometry_claim",
+        "scaling_analysis.geometry_claimed_discriminator",
+        "cross_device_validation.status",
+        "cross_device_validation.devices_tested"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_17",
+      "stage_name": "PROCEED_GATE",
+      "inputs_checked": [
+        "cross_device_status",
+        "validation_ladder.L0_baseline_pipeline_reproduced",
+        "validation_ladder.L1_reduction_limit_verified",
+        "validation_ladder.L2_convergence_plan_defined",
+        "validation_ladder.L3_numerical_stability_passed",
+        "validation_ladder.L4_instrument_facing_comparison_path_defined"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because baseline sufficiency trigger satisfied."
+    },
+    {
+      "stage_id": "FINAL_CLIP",
+      "stage_name": "FINAL_CLIPPING_RULE",
+      "inputs_checked": [
+        "governance_outcome",
+        "promotion_cap_governance",
+        "scientific_decision",
+        "promotion_cap_scientific"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "NO_CHANGE",
+      "notes": "Visible clipping rules were applied exactly as surfaced in the M05 implementation pack."
+    },
+    {
+      "stage_id": "FALLBACK",
+      "stage_name": "FALLBACK_COMPLETION_RULE",
+      "inputs_checked": [
+        "governance_outcome",
+        "scientific_decision"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "NO_CHANGE",
+      "notes": "Fallback completion was only applied when governance_outcome remained unset."
+    },
+    {
+      "stage_id": "SCHEMA",
+      "stage_name": "POST_RUN_SCHEMA_VALIDATION",
+      "inputs_checked": [
+        "config/schema/candidate_schema.json",
+        "tools/validators/candidate_validator.py final semantics"
+      ],
+      "decision_or_cap_change": "SET governance_self_check.schema_validation_status=PASSED",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Post-run final-mode schema validation passed."
+    }
+  ],
+  "system_status": "READY",
+  "governance_self_check": {
+    "validation_harness_status": "PASSED",
+    "schema_validation_status": "PASSED",
+    "reference_resolution_status": "PASSED",
+    "determinism_status": "PASSED",
+    "system_status": "READY"
+  },
+  "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+  "governance_outcome": "REJECT",
+  "terminated_at": "STAGE_6"
+}

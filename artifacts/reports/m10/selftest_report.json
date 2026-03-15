@@ -1,0 +1,468 @@
+{
+  "artifact_id": "QDP_V10_6_M10_SELFTEST_REPORT",
+  "module_id": "M10",
+  "timestamp_utc": "2026-03-15T20:19:15.177070+00:00",
+  "visible_source_only": true,
+  "cases_total": 7,
+  "cases_passed": 7,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M10_CONTROL_CHAIN_EXPLAINS",
+      "description": "Pulse-shape and attenuation-swap evidence should let the control-chain artifact route explain the data.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CONTROL_CHAIN_DISTORTION",
+          "strongest_artifact_route": "CONTROL_CHAIN_DISTORTION",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CONTROL_CHAIN_DISTORTION",
+          "strongest_artifact_route": "CONTROL_CHAIN_DISTORTION",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "SUPPORTING",
+            "explains_data": false
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_READOUT_ALIAS_EXPLAINS",
+      "description": "Readout relinearization and gain changes should surface a readout-alias explanation.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "READOUT_ALIAS",
+          "strongest_artifact_route": "READOUT_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "readout_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "READOUT_ALIAS",
+          "strongest_artifact_route": "READOUT_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_CALIBRATION_DRIFT_EXPLAINS",
+      "description": "Recalibration and drift-ledger replay should allow calibration drift to explain the artifact route.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CALIBRATION_DRIFT",
+          "strongest_artifact_route": "CALIBRATION_DRIFT",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "calibration_drift": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CALIBRATION_DRIFT",
+          "strongest_artifact_route": "CALIBRATION_DRIFT",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_REFRIGERATOR_SUPPORT_ONLY",
+      "description": "Pulse-tube language without synchronization evidence should remain supporting only.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "REFRIGERATOR_CYCLE_ALIAS",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "refrigerator_cycle_alias": {
+            "status": "SUPPORTING",
+            "explains_data": false
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "REFRIGERATOR_CYCLE_ALIAS",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "SUPPORTING",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_POWER_CALIBRATION_EXPLAINS",
+      "description": "In-situ power mismatch against generator settings should surface a power-calibration alias explanation.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "POWER_CALIBRATION_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "POWER_CALIBRATION_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_CONTROL_CHAIN_POWER_COMBINATION",
+      "description": "Control-chain distortion and power-calibration evidence together should surface a parsimonious artifact combination.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "CONTROL_CHAIN_POWER_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": true,
+          "parsimonious_combination_label": "CONTROL_CHAIN_POWER_ALIAS",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "CONTROL_CHAIN_POWER_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": true,
+          "parsimonious_combination_label": "CONTROL_CHAIN_POWER_ALIAS",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json"
+    },
+    {
+      "case_id": "CASE_M10_NO_ARTIFACT_ROUTE",
+      "description": "A candidate with no surfaced artifact cues should keep the artifact route inactive.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      },
+      "actual_summary": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "calibration_drift": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "refrigerator_cycle_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "power_calibration_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json"
+    }
+  ]
+}

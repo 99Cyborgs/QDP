@@ -1,0 +1,766 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/candidate_schema.json",
+  "title": "QDP Candidate Schema v10.6 M02 Patch",
+  "description": "Working M02 schema patch for QDP v10.6 candidate objects. Includes v10.6 self-check extension, explicit cross-device status field, and high-value structural validation. additionalProperties remains enabled at root pending retained v10.1 enum/body surfacing.",
+  "type": "object",
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "branch_or_model_tag": {
+      "type": "string"
+    },
+    "change_type": {
+      "type": "string"
+    },
+    "model_classification": {
+      "type": "string"
+    },
+    "declared_family_class": {
+      "type": "string"
+    },
+    "assigned_family_class": {
+      "type": "string"
+    },
+    "family_class_mismatch": {
+      "type": "boolean"
+    },
+    "family_status": {
+      "type": "string"
+    },
+    "candidate_H_mod_symbolic": {
+      "type": "string"
+    },
+    "candidate_H_mod_physical_interpretation": {
+      "type": "string"
+    },
+    "claimed_effect": {
+      "type": "string"
+    },
+    "declared_likely_bath_class": {
+      "type": "string"
+    },
+    "inferred_bath_rank_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bath_classification_consistent_with_glossary": {
+      "type": "boolean"
+    },
+    "primary_observable": {
+      "type": "string"
+    },
+    "secondary_observable": {
+      "type": "string"
+    },
+    "accessible_platform_or_device_class": {
+      "type": "string"
+    },
+    "minimal_discriminant_measurement": {
+      "type": "string"
+    },
+    "cross_scale_claim_present": {
+      "type": "boolean"
+    },
+    "effective_mapping_attached": {
+      "type": "boolean"
+    },
+    "invariant_preserved": {
+      "type": "string"
+    },
+    "reduction_limit": {
+      "type": "string"
+    },
+    "count_new_free_parameters": {
+      "type": "integer"
+    },
+    "new_free_parameters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parameter_constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "independent_constraint_source_per_parameter": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "relevant_nuisance_controls_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exact_falsifier": {
+      "type": "string"
+    },
+    "falsifiable_surface_area_delta": {
+      "type": "string"
+    },
+    "validation_ladder": {
+      "type": "object",
+      "properties": {
+        "L0_baseline_pipeline_reproduced": {
+          "type": "boolean"
+        },
+        "L1_reduction_limit_verified": {
+          "type": "boolean"
+        },
+        "L2_convergence_plan_defined": {
+          "type": "boolean"
+        },
+        "L3_numerical_stability_passed": {
+          "type": "boolean"
+        },
+        "L4_instrument_facing_comparison_path_defined": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "L0_baseline_pipeline_reproduced",
+        "L1_reduction_limit_verified",
+        "L2_convergence_plan_defined",
+        "L3_numerical_stability_passed",
+        "L4_instrument_facing_comparison_path_defined"
+      ],
+      "additionalProperties": false
+    },
+    "registry_duplicate_status": {
+      "type": "string"
+    },
+    "duplicate_reference": {
+      "type": "string"
+    },
+    "mechanism_priors": {
+      "type": "object",
+      "properties": {
+        "P_TLS": {
+          "type": "number"
+        },
+        "P_VORTEX": {
+          "type": "number"
+        },
+        "P_QUASIPARTICLE": {
+          "type": "number"
+        },
+        "P_PHONON": {
+          "type": "number"
+        },
+        "P_CONTROL_NOISE": {
+          "type": "number"
+        },
+        "P_EM_PURCELL": {
+          "type": "number"
+        },
+        "P_OTHER": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "P_TLS",
+        "P_VORTEX",
+        "P_QUASIPARTICLE",
+        "P_PHONON",
+        "P_CONTROL_NOISE",
+        "P_EM_PURCELL",
+        "P_OTHER"
+      ],
+      "additionalProperties": false
+    },
+    "mechanism_scores_after_signature": {
+      "type": "object",
+      "properties": {
+        "P_TLS": {
+          "type": "number"
+        },
+        "P_VORTEX": {
+          "type": "number"
+        },
+        "P_QUASIPARTICLE": {
+          "type": "number"
+        },
+        "P_PHONON": {
+          "type": "number"
+        },
+        "P_CONTROL_NOISE": {
+          "type": "number"
+        },
+        "P_EM_PURCELL": {
+          "type": "number"
+        },
+        "P_OTHER": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "P_TLS",
+        "P_VORTEX",
+        "P_QUASIPARTICLE",
+        "P_PHONON",
+        "P_CONTROL_NOISE",
+        "P_EM_PURCELL",
+        "P_OTHER"
+      ],
+      "additionalProperties": false
+    },
+    "signature_matches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strongest_competing_mechanism_initial": {
+      "type": "string"
+    },
+    "strongest_competing_mechanism": {
+      "type": "string"
+    },
+    "baseline_model": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "joint_fit_used": {
+          "type": "boolean"
+        },
+        "hierarchical_drift_model_used": {
+          "type": "boolean"
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "joint_fit_used",
+        "hierarchical_drift_model_used",
+        "parameters"
+      ],
+      "additionalProperties": true
+    },
+    "residual_analysis": {
+      "type": "object",
+      "properties": {
+        "structured_residuals": {
+          "type": "boolean"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "time_series_based": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "structured_residuals",
+        "features",
+        "time_series_based"
+      ],
+      "additionalProperties": true
+    },
+    "mechanism_tests": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "artifact_tests": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hamiltonian_test": {
+      "type": "object",
+      "properties": {
+        "executed": {
+          "type": "boolean"
+        },
+        "new_orthogonal_observables": {
+          "type": "array",
+          "items": {}
+        },
+        "survives_known_mechanisms": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "executed",
+        "new_orthogonal_observables",
+        "survives_known_mechanisms"
+      ],
+      "additionalProperties": true
+    },
+    "lindblad_equivalence": {
+      "type": "object",
+      "properties": {
+        "equivalent_within_resolution": {
+          "type": "boolean"
+        },
+        "best_equivalent_model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "equivalent_within_resolution",
+        "best_equivalent_model"
+      ],
+      "additionalProperties": true
+    },
+    "scaling_analysis": {
+      "type": "object",
+      "properties": {
+        "orthogonal_axes_count": {
+          "type": "integer"
+        },
+        "axes_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "strongest_competitor_separated": {
+          "type": "boolean"
+        },
+        "geometry_claim_fabrication_matched": {
+          "type": "boolean"
+        },
+        "experimentally_resolvable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "orthogonal_axes_count",
+        "axes_used",
+        "strongest_competitor_separated",
+        "geometry_claim_fabrication_matched",
+        "experimentally_resolvable"
+      ],
+      "additionalProperties": true
+    },
+    "numerical_stability": {
+      "type": "object",
+      "properties": {
+        "stable": {
+          "type": "boolean"
+        },
+        "failed_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "stable",
+        "failed_checks"
+      ],
+      "additionalProperties": true
+    },
+    "experiment_schedule": {
+      "type": "object",
+      "properties": {
+        "priority_experiments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "default_templates_triggered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "priority_experiments",
+        "default_templates_triggered"
+      ],
+      "additionalProperties": true
+    },
+    "candidate_target_devices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "multi_device_data_available": {
+      "type": "boolean"
+    },
+    "fabrication_matched_for_geometry_claim": {
+      "type": "boolean"
+    },
+    "cross_device_validation": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "",
+            "NOT_REQUIRED",
+            "SCHEDULED",
+            "CONFUNDED",
+            "DEVICE_SPECIFIC",
+            "INCONSISTENT",
+            "CONFIRMED"
+          ]
+        },
+        "devices_tested": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fabrication_matched": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "devices_tested",
+        "fabrication_matched",
+        "notes"
+      ],
+      "additionalProperties": true
+    },
+    "cross_device_status": {
+      "type": "string",
+      "enum": [
+        "",
+        "NOT_REQUIRED",
+        "SCHEDULED",
+        "CONFUNDED",
+        "DEVICE_SPECIFIC",
+        "INCONSISTENT",
+        "CONFIRMED"
+      ]
+    },
+    "instrument_capabilities": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "calibration_validity_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "requested_output_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "automatic_flags_triggered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promotion_cap_scientific": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "",
+            "SANDBOX_ONLY"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      ]
+    },
+    "promotion_cap_governance": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "",
+            "SANDBOX_ONLY",
+            "DEFER",
+            "REJECT",
+            "PROCEED"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      ]
+    },
+    "simulation_conditions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "tested_parameter_ranges": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "evaluation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failure_modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failure_mode_library_hits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_artifacts": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      }
+    },
+    "gate_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage_id": {
+            "type": "string"
+          },
+          "stage_name": {
+            "type": "string"
+          },
+          "inputs_checked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decision_or_cap_change": {
+            "type": "string"
+          },
+          "key_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "stage_id",
+          "stage_name",
+          "inputs_checked",
+          "decision_or_cap_change",
+          "key_evidence_ids",
+          "status",
+          "notes"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "system_status": {
+      "type": "string",
+      "enum": [
+        "",
+        "READY",
+        "HARNESS_REQUIRED",
+        "GOVERNANCE_LOGIC_FAILURE",
+        "SCHEMA_VALIDATION_FAILURE",
+        "REFERENCE_RESOLUTION_FAILURE"
+      ]
+    },
+    "governance_self_check": {
+      "type": "object",
+      "properties": {
+        "validation_harness_status": {
+          "type": "string",
+          "enum": [
+            "",
+            "PASSED",
+            "FAILED",
+            "UNKNOWN"
+          ]
+        },
+        "schema_validation_status": {
+          "type": "string",
+          "enum": [
+            "",
+            "PASSED",
+            "FAILED",
+            "UNKNOWN"
+          ]
+        },
+        "reference_resolution_status": {
+          "type": "string",
+          "enum": [
+            "",
+            "PASSED",
+            "FAILED",
+            "UNKNOWN"
+          ]
+        },
+        "determinism_status": {
+          "type": "string",
+          "enum": [
+            "",
+            "PASSED",
+            "FAILED",
+            "UNKNOWN"
+          ]
+        },
+        "system_status": {
+          "type": "string",
+          "enum": [
+            "",
+            "READY",
+            "HARNESS_REQUIRED",
+            "GOVERNANCE_LOGIC_FAILURE",
+            "SCHEMA_VALIDATION_FAILURE",
+            "REFERENCE_RESOLUTION_FAILURE"
+          ]
+        }
+      },
+      "required": [
+        "validation_harness_status",
+        "schema_validation_status",
+        "reference_resolution_status",
+        "determinism_status",
+        "system_status"
+      ],
+      "additionalProperties": false
+    },
+    "scientific_decision": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "",
+            "NOT_EVALUATED",
+            "NUMERICALLY_UNSTABLE",
+            "REJECTED_BY_BASELINE_SUFFICIENCY",
+            "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+            "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+            "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+            "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+            "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+            "SANDBOX_ONLY"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      ]
+    },
+    "governance_outcome": {
+      "type": "string",
+      "enum": [
+        "",
+        "PROCEED",
+        "SANDBOX_ONLY",
+        "DEFER",
+        "REJECT"
+      ]
+    }
+  },
+  "required": [
+    "candidate_id",
+    "branch_or_model_tag",
+    "change_type",
+    "model_classification",
+    "declared_family_class",
+    "assigned_family_class",
+    "family_class_mismatch",
+    "family_status",
+    "candidate_H_mod_symbolic",
+    "candidate_H_mod_physical_interpretation",
+    "claimed_effect",
+    "declared_likely_bath_class",
+    "inferred_bath_rank_order",
+    "bath_classification_consistent_with_glossary",
+    "primary_observable",
+    "secondary_observable",
+    "accessible_platform_or_device_class",
+    "minimal_discriminant_measurement",
+    "cross_scale_claim_present",
+    "effective_mapping_attached",
+    "invariant_preserved",
+    "reduction_limit",
+    "count_new_free_parameters",
+    "new_free_parameters",
+    "parameter_constraints",
+    "independent_constraint_source_per_parameter",
+    "relevant_nuisance_controls_list",
+    "exact_falsifier",
+    "falsifiable_surface_area_delta",
+    "validation_ladder",
+    "registry_duplicate_status",
+    "duplicate_reference",
+    "mechanism_priors",
+    "mechanism_scores_after_signature",
+    "signature_matches",
+    "strongest_competing_mechanism_initial",
+    "strongest_competing_mechanism",
+    "baseline_model",
+    "residual_analysis",
+    "mechanism_tests",
+    "artifact_tests",
+    "hamiltonian_test",
+    "lindblad_equivalence",
+    "scaling_analysis",
+    "numerical_stability",
+    "experiment_schedule",
+    "candidate_target_devices",
+    "multi_device_data_available",
+    "fabrication_matched_for_geometry_claim",
+    "cross_device_validation",
+    "cross_device_status",
+    "instrument_capabilities",
+    "calibration_validity_score",
+    "requested_output_artifacts",
+    "automatic_flags_triggered",
+    "promotion_cap_scientific",
+    "promotion_cap_governance",
+    "simulation_conditions",
+    "tested_parameter_ranges",
+    "evaluation_notes",
+    "failure_modes",
+    "failure_mode_library_hits",
+    "linked_artifacts",
+    "gate_trace",
+    "system_status",
+    "governance_self_check",
+    "scientific_decision",
+    "governance_outcome"
+  ],
+  "additionalProperties": true
+}

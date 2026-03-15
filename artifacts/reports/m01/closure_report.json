@@ -1,0 +1,22 @@
+{
+  "artifact_id": "QDP_V10_6_M01_CLOSURE_REPORT",
+  "module_id": "M01",
+  "timestamp_utc": "2026-03-15T20:19:15.367792+00:00",
+  "runtime_prompt_path": "C:\\Users\\Forre\\Documents\\QDP\\runtime\\current\\runtime_prompt.md",
+  "runtime_prompt_sha256": "43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997",
+  "retained_runtime_source_path": "C:\\Users\\Forre\\Documents\\QDP\\runtime\\retained\\operative_body_v10_1.md",
+  "retained_runtime_source_sha256": "8c8b2cf6bd23b4aba43fcd691402471cf4aff7c0f199ef7279e99b578848f9a4",
+  "retained_runtime_source_provenance": "reconstructed_surrogate",
+  "retained_runtime_source_authoritative": false,
+  "runtime_integrity_snapshot": {
+    "status": "PASSED",
+    "runtime_prompt_exists": true,
+    "retained_runtime_source_exists": true,
+    "forbidden_shorthand_detected": [],
+    "missing_mandatory_sections": []
+  },
+  "notes": [
+    "This report records the current runtime prompt hash used by the M01 closure predicate.",
+    "If retained_runtime_source_provenance is reconstructed_surrogate, this artifact does not certify independently recovered retained-source fidelity."
+  ]
+}

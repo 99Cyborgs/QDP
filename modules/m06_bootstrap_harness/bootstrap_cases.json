@@ -1,0 +1,293 @@
+{
+  "artifact_id": "QDP_V10_6_M06_BOOTSTRAP_CASES",
+  "module_id": "M06",
+  "repeat_runs_for_determinism": 2,
+  "cases": [
+    {
+      "case_id": "CASE_1_BASELINE_SUFFICIENT_DATASET",
+      "class": "baseline_sufficient_dataset",
+      "description": "Canonical harness control: the baseline is sufficient and must terminate at Stage 6 with explicit rejection.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-1",
+        "branch_or_model_tag": "M06_CASE_BASELINE_SUFFICIENT"
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE1_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": true,
+          "evidence_ids": ["M06_CASE1_S6"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "terminated_at": "STAGE_6",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_2_KNOWN_TLS_MECHANISM_DATASET",
+      "class": "known_tls_mechanism_dataset",
+      "description": "Canonical harness control: a known TLS explanation must reject at Stage 8 by classical-mechanism equivalence.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-2",
+        "branch_or_model_tag": "M06_CASE_KNOWN_TLS",
+        "declared_family_class": "TLS",
+        "assigned_family_class": "TLS",
+        "declared_likely_bath_class": "TLS",
+        "inferred_bath_rank_order": ["TLS", "MARKOVIAN_RESERVOIR"],
+        "signature_matches": ["Smooth power dependence consistent with saturation"],
+        "strongest_competing_mechanism_initial": "TLS",
+        "strongest_competing_mechanism": "TLS"
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE2_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE2_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": true,
+          "evidence_ids": ["M06_CASE2_S8"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "terminated_at": "STAGE_8",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_3_ARTIFACT_DOMINATED_DATASET",
+      "class": "artifact_dominated_dataset",
+      "description": "Canonical harness control: an artifact explanation must reject at Stage 9 by artifact equivalence.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-3",
+        "branch_or_model_tag": "M06_CASE_ARTIFACT_DOMINATED"
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE3_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE3_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": false,
+          "evidence_ids": ["M06_CASE3_S8"]
+        },
+        "stage9": {
+          "artifact_route_explains": true,
+          "evidence_ids": ["M06_CASE3_S9"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "terminated_at": "STAGE_9",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH",
+      "class": "over_parameterized_hamiltonian_branch",
+      "description": "Canonical harness control: an over-parameterized branch is forced to sandbox by promotion-cap clipping.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-4",
+        "branch_or_model_tag": "M06_CASE_OVER_PARAMETERIZED",
+        "count_new_free_parameters": 3,
+        "new_free_parameters": ["alpha", "beta", "gamma"],
+        "independent_constraint_source_per_parameter": {},
+        "automatic_flags_triggered": ["MORE_THAN_TWO_UNCONSTRAINED_NEW_PARAMETERS"],
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "SANDBOX_ONLY",
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "exact_falsifier": "A confirmed cross-device comparison must preserve the claimed discriminant ordering under matched fabrication.",
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "candidate_target_devices": ["DEV_A", "DEV_B"],
+        "cross_device_validation": {
+          "status": "",
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": ["time-domain", "cross-device", "power"],
+          "strongest_competitor_separated": true,
+          "geometry_claim_fabrication_matched": true,
+          "experimentally_resolvable": true
+        }
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE4_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE4_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": false,
+          "evidence_ids": ["M06_CASE4_S8"]
+        },
+        "stage9": {
+          "artifact_route_explains": false,
+          "evidence_ids": ["M06_CASE4_S9"]
+        },
+        "stage10": {
+          "convergence_plan_declared": true,
+          "reduction_limit_verified": true,
+          "evidence_ids": ["M06_CASE4_S10"]
+        },
+        "stage11": {
+          "equivalent_within_resolution": false,
+          "evidence_ids": ["M06_CASE4_S11"]
+        },
+        "stage13": {
+          "numerical_stability_passed": true,
+          "evidence_ids": ["M06_CASE4_S13"]
+        },
+        "stage15": {
+          "executable_falsifier_package_emitted": true,
+          "experiment_design_law_satisfied": true,
+          "evidence_ids": ["M06_CASE4_S15"]
+        },
+        "stage16": {
+          "geometry_claimed_discriminator": true,
+          "signal_consistency": "CONFIRMED",
+          "matched_protocols_satisfied": true,
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "evidence_ids": ["M06_CASE4_S16"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS",
+      "class": "valid_candidate_with_orthogonal_discriminants",
+      "description": "Canonical harness positive control: a valid candidate survives to provisional identifiability but remains sandboxed pending cross-device confirmation.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-5",
+        "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "exact_falsifier": "If the orthogonal discriminants are real, the scheduled cross-device sweep must preserve the observed ranking.",
+        "multi_device_data_available": false,
+        "fabrication_matched_for_geometry_claim": false,
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": ["time-domain", "power", "field-history"],
+          "strongest_competitor_separated": true,
+          "geometry_claim_fabrication_matched": false,
+          "experimentally_resolvable": true
+        }
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE5_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE5_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": false,
+          "evidence_ids": ["M06_CASE5_S8"]
+        },
+        "stage9": {
+          "artifact_route_explains": false,
+          "evidence_ids": ["M06_CASE5_S9"]
+        },
+        "stage10": {
+          "convergence_plan_declared": true,
+          "reduction_limit_verified": true,
+          "evidence_ids": ["M06_CASE5_S10"]
+        },
+        "stage11": {
+          "equivalent_within_resolution": false,
+          "evidence_ids": ["M06_CASE5_S11"]
+        },
+        "stage13": {
+          "numerical_stability_passed": true,
+          "evidence_ids": ["M06_CASE5_S13"]
+        },
+        "stage15": {
+          "executable_falsifier_package_emitted": true,
+          "experiment_design_law_satisfied": true,
+          "evidence_ids": ["M06_CASE5_S15"]
+        },
+        "stage16": {
+          "geometry_claimed_discriminator": false,
+          "signal_consistency": "",
+          "matched_protocols_satisfied": false,
+          "devices_tested": [],
+          "evidence_ids": ["M06_CASE5_S16"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "artifact_id": "QDP_V10_6_M06_CLOSURE_REPORT",
+  "module_id": "M06",
+  "timestamp_utc": "2026-03-15T20:19:15.383838+00:00",
+  "derived_status": "RECOVERY_INTERIM",
+  "predicate_results": [
+    {
+      "predicate_id": "M06_P1",
+      "description": "modules/m06_bootstrap_harness/runner.py exists",
+      "passed": true,
+      "detail": "artifact_exists=True path=runner.py"
+    },
+    {
+      "predicate_id": "M06_P2",
+      "description": "Bootstrap fixture pack exists with at least five canonical cases",
+      "passed": true,
+      "detail": "artifact_exists=True path=bootstrap_cases.json"
+    },
+    {
+      "predicate_id": "M06_P3",
+      "description": "Bootstrap report exists",
+      "passed": true,
+      "detail": "artifact_exists=True path=bootstrap_report.json"
+    },
+    {
+      "predicate_id": "M06_P4",
+      "description": "Harness executes reference resolution, schema validation, stage machine tests, governance self diagnostic, and runtime integrity checks",
+      "passed": true,
+      "detail": "check_keys=['artifact_equivalence_selftests', 'baseline_fit_selftests', 'family_triage_selftests', 'governance_self_diagnostic', 'mechanism_competition_selftests', 'mode_divergence', 'reference_resolution', 'rule_binding_summary', 'runtime_integrity', 'schema_validation', 'stage_machine_selftests']"
+    },
+    {
+      "predicate_id": "M06_P5",
+      "description": "Harness is deterministic across repeated fixture runs",
+      "passed": true,
+      "detail": "determinism_status=PASSED"
+    },
+    {
+      "predicate_id": "M06_P6",
+      "description": "Mode divergence report status is PASSED and shared-core overrides are absent",
+      "passed": true,
+      "detail": "mode_divergence_status=PASSED"
+    }
+  ],
+  "bootstrap_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+  "mode_divergence_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json",
+  "notes": [
+    "M06 closure is computed from config/contracts/module_closure_contracts.json.",
+    "Closure is downgraded to RECOVERY_INTERIM because retained dependencies currently resolve through regenerated local surrogate artifacts.",
+    "Resume-testing readiness still follows the module-registry policy and remains false until the required module sets close authoritatively."
+  ]
+}

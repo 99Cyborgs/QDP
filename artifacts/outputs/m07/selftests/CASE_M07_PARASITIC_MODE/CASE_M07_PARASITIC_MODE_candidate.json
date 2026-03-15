@@ -1,0 +1,153 @@
+{
+  "candidate_id": "m07-case-parasitic",
+  "branch_or_model_tag": "M07_CASE_PARASITIC",
+  "change_type": "",
+  "model_classification": "",
+  "declared_family_class": "",
+  "assigned_family_class": "COHERENT_PARASITIC_MODE",
+  "family_class_mismatch": false,
+  "family_status": "INFERRED_FROM_SIGNATURES",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [
+    "COHERENT_PARASITIC_MODE",
+    "STRUCTURED_EM_BATH",
+    "DEFECT_MODE"
+  ],
+  "bath_classification_consistent_with_glossary": true,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {},
+  "relevant_nuisance_controls_list": [],
+  "exact_falsifier": "",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": false,
+    "L1_reduction_limit_verified": false,
+    "L2_convergence_plan_defined": false,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": false
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.75,
+    "P_OTHER": 0.25
+  },
+  "signature_matches": [
+    "AVOIDED_CROSSING"
+  ],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {},
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": false,
+  "fabrication_matched_for_geometry_claim": false,
+  "cross_device_validation": {
+    "status": "NOT_REQUIRED",
+    "devices_tested": [],
+    "fabrication_matched": false,
+    "notes": ""
+  },
+  "cross_device_status": "NOT_REQUIRED",
+  "instrument_capabilities": {},
+  "calibration_validity_score": null,
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [
+    "M07_VISIBLE_SOURCE_TRIAGE_ONLY"
+  ],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [
+    "Spectroscopy shows an avoided crossing with clear mode tracking and a visible gap 2g.",
+    "M07 family triage used only surfaced specs/core/bath_glossary.md and specs/core/signature_to_bath_decision_chart.md mappings.",
+    "M07 matched signatures: AVOIDED_CROSSING."
+  ],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [
+    "specs/core/bath_glossary.md",
+    "specs/core/signature_to_bath_decision_chart.md"
+  ],
+  "gate_trace": [],
+  "system_status": "READY",
+  "governance_self_check": {
+    "validation_harness_status": "PASSED",
+    "schema_validation_status": "PASSED",
+    "reference_resolution_status": "PASSED",
+    "determinism_status": "PASSED",
+    "system_status": "READY"
+  },
+  "scientific_decision": "NOT_EVALUATED",
+  "governance_outcome": "DEFER"
+}

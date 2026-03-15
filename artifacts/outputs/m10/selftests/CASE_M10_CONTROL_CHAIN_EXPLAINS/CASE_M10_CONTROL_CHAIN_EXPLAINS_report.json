@@ -1,0 +1,44 @@
+{
+  "artifact_id": "QDP_V10_6_M10_ARTIFACT_AUDIT_REPORT",
+  "module_id": "M10",
+  "timestamp_utc": "2026-03-15T20:19:15.061820+00:00",
+  "visible_source_only": true,
+  "result_summary": {
+    "artifact_tests": {
+      "strongest_artifact_route_initial": "CONTROL_CHAIN_DISTORTION",
+      "strongest_artifact_route": "CONTROL_CHAIN_DISTORTION",
+      "route_explains_data": true,
+      "explains_data": true,
+      "parsimonious_combination_explains": false,
+      "parsimonious_combination_label": "",
+      "control_chain_distortion": {
+        "status": "EXPLAINS_DATA",
+        "explains_data": true
+      },
+      "readout_alias": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "calibration_drift": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "refrigerator_cycle_alias": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "power_calibration_alias": {
+        "status": "SUPPORTING",
+        "explains_data": false
+      }
+    }
+  },
+  "diagnostics": {
+    "evidence_text_sample": "pulse distortion metrology and line attenuation swap move the same amplitude dependence with the microwave chain. line filtering swap pulse-shape perturbation",
+    "missing_owner_artifacts": [],
+    "alias_summary": [
+      "CONTROL_CHAIN_DISTORTION",
+      "POWER_CALIBRATION_ALIAS"
+    ]
+  }
+}

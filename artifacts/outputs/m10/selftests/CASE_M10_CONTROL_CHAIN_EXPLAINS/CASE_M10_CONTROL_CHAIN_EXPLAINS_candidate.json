@@ -1,0 +1,228 @@
+{
+  "candidate_id": "m10-case-control-chain",
+  "branch_or_model_tag": "M10_CASE_CONTROL_CHAIN",
+  "change_type": "",
+  "model_classification": "",
+  "declared_family_class": "",
+  "assigned_family_class": "",
+  "family_class_mismatch": false,
+  "family_status": "",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [],
+  "bath_classification_consistent_with_glossary": false,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {},
+  "relevant_nuisance_controls_list": [
+    "line filtering swap",
+    "pulse-shape perturbation"
+  ],
+  "exact_falsifier": "",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": false,
+    "L1_reduction_limit_verified": false,
+    "L2_convergence_plan_defined": false,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": false
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "signature_matches": [],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {
+    "visible_source_partial_suite": true,
+    "surfaced_source_artifacts": [
+      "specs/research/deep_research_report.md",
+      "specs/intake/fork_intake_form_one_page.pdf",
+      "config/schema/candidate_template.json"
+    ],
+    "missing_owner_artifacts": [],
+    "control_chain_distortion": {
+      "status": "EXPLAINS_DATA",
+      "support_score": 16.0,
+      "explains_data": true,
+      "primary_term_hits": [
+        "pulse distortion",
+        "line attenuation",
+        "attenuation swap",
+        "line filtering",
+        "microwave chain"
+      ],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [
+        "attenuation_swap_changes_signal",
+        "pulse_shape_variation_changes_signal"
+      ],
+      "minimal_discriminant_measurement": "Swap line filtering and attenuation, vary pulse shapes, and verify whether the anomaly follows measured chain distortion at the device."
+    },
+    "readout_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Sweep readout power and gain, check digitizer linearity, and re-fit with a relinearized readout model to see whether the anomaly disappears."
+    },
+    "calibration_drift": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Repeat the measurement with interleaved calibrations and a drift ledger to see whether recalibration removes the apparent anomaly."
+    },
+    "refrigerator_cycle_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Phase-bin the data against the pulse-tube or cryocooler cycle and test hold-time dependence to see whether the signal is a refrigerator alias."
+    },
+    "power_calibration_alias": {
+      "status": "SUPPORTING",
+      "support_score": 1.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [
+        "amplitude dependence"
+      ],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Calibrate in-situ device power instead of generator settings and repeat the amplitude sweep across a checked attenuation map."
+    },
+    "strongest_artifact_route_initial": "CONTROL_CHAIN_DISTORTION",
+    "parsimonious_combination_explains": false,
+    "parsimonious_combination_label": "",
+    "route_explains_data": true,
+    "explains_data": true,
+    "strongest_artifact_route": "CONTROL_CHAIN_DISTORTION",
+    "alias_summary": [
+      "CONTROL_CHAIN_DISTORTION",
+      "POWER_CALIBRATION_ALIAS"
+    ]
+  },
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": false,
+  "fabrication_matched_for_geometry_claim": false,
+  "cross_device_validation": {
+    "status": "NOT_REQUIRED",
+    "devices_tested": [],
+    "fabrication_matched": false,
+    "notes": ""
+  },
+  "cross_device_status": "NOT_REQUIRED",
+  "instrument_capabilities": {},
+  "calibration_validity_score": null,
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [
+    "M10_VISIBLE_SOURCE_ARTIFACT_AUDIT",
+    "M10_ARTIFACT_ROUTE_SURFACED"
+  ],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [
+    "Pulse distortion metrology and line attenuation swap move the same amplitude dependence with the microwave chain.",
+    "M10 artifact-equivalence auditing used only surfaced visible-source artifact-elimination cues and candidate nuisance-control fields."
+  ],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [
+    "specs/research/deep_research_report.md",
+    "specs/intake/fork_intake_form_one_page.pdf"
+  ],
+  "gate_trace": [],
+  "system_status": "READY",
+  "governance_self_check": {
+    "validation_harness_status": "PASSED",
+    "schema_validation_status": "PASSED",
+    "reference_resolution_status": "PASSED",
+    "determinism_status": "PASSED",
+    "system_status": "READY"
+  },
+  "scientific_decision": "NOT_EVALUATED",
+  "governance_outcome": "DEFER",
+  "artifact_audit_inputs": {
+    "attenuation_swap_changes_signal": true,
+    "pulse_shape_variation_changes_signal": true
+  }
+}

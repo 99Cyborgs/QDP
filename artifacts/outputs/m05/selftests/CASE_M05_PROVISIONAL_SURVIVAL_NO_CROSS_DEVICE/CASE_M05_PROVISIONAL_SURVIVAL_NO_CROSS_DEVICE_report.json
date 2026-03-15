@@ -1,0 +1,32 @@
+{
+  "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-03-15T20:19:14.187819+00:00",
+  "candidate_id": "m05-case-provisional-no-cross-device",
+  "branch_or_model_tag": "M05_CASE_PROVISIONAL_NO_CROSS_DEVICE",
+  "terminated_at": "",
+  "final_state": {
+    "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+    "governance_outcome": "SANDBOX_ONLY",
+    "cross_device_status": "SCHEDULED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "promotion_cap_scientific": "",
+    "system_status": "READY",
+    "validation_ladder": {
+      "L0_baseline_pipeline_reproduced": true,
+      "L1_reduction_limit_verified": true,
+      "L2_convergence_plan_defined": true,
+      "L3_numerical_stability_passed": true,
+      "L4_instrument_facing_comparison_path_defined": true
+    }
+  },
+  "schema_validation": {
+    "valid": true,
+    "errors": [],
+    "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
+    "mode": "final"
+  },
+  "gate_trace_count": 15,
+  "stage_inputs_used": {}
+}

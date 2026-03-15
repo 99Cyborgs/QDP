@@ -1,0 +1,85 @@
+{
+  "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
+  "module_id": "M07",
+  "timestamp_utc": "2026-03-15T20:19:14.442048+00:00",
+  "visible_source_only": true,
+  "declared_family_class": "",
+  "declared_likely_bath_class": "",
+  "evidence_text_sample": "m07-case-global m07_case_global                        not_required  not_required   sudden t1 collapses occur together with correlated events across devices during simultaneous monitoring. a quasiparticle burst remains plausible. ready passed passed passed passed ready not_evaluated defer",
+  "rule_matches": [
+    {
+      "rule_index": 9,
+      "signature_id": "BURST_RELAXATION",
+      "signature_label": "SUDDEN_T1_COLLAPSES",
+      "matched_terms": [
+        "sudden t1 collapses",
+        "quasiparticle burst"
+      ],
+      "score": 2,
+      "priority": 0,
+      "assigned_family_class": "GLOBAL_BATH_EVENT",
+      "bath_rank_order": [
+        "QUASIPARTICLE_BATH",
+        "PHONON_BATH",
+        "GLOBAL_BATH_EVENT"
+      ],
+      "minimal_discriminant_measurement": "Run fast repeated T1 sampling, look for cross-device correlations, and vary shielding, biasing, and thermalization.",
+      "mechanism_weights": {
+        "P_QUASIPARTICLE": 0.7,
+        "P_PHONON": 0.2,
+        "P_OTHER": 0.1
+      }
+    },
+    {
+      "rule_index": 10,
+      "signature_id": "CORRELATED_EVENTS",
+      "signature_label": "CORRELATED_EVENTS_ACROSS_DEVICES",
+      "matched_terms": [
+        "correlated events across devices",
+        "simultaneous monitoring"
+      ],
+      "score": 2,
+      "priority": 0,
+      "assigned_family_class": "GLOBAL_BATH",
+      "bath_rank_order": [
+        "GLOBAL_BATH",
+        "QUASIPARTICLE_BATH",
+        "RADIATIVE_GLOBAL_BATH"
+      ],
+      "minimal_discriminant_measurement": "Run simultaneous monitoring, compute cross-device correlations, and modify shielding, absorbers, or packaging to test suppression.",
+      "mechanism_weights": {
+        "P_QUASIPARTICLE": 0.45,
+        "P_PHONON": 0.3,
+        "P_EM_PURCELL": 0.15,
+        "P_OTHER": 0.1
+      }
+    }
+  ],
+  "result_summary": {
+    "assigned_family_class": "GLOBAL_BATH_EVENT",
+    "family_class_mismatch": false,
+    "family_status": "INFERRED_FROM_SIGNATURES",
+    "inferred_bath_rank_order": [
+      "QUASIPARTICLE_BATH",
+      "PHONON_BATH",
+      "GLOBAL_BATH_EVENT",
+      "GLOBAL_BATH",
+      "RADIATIVE_GLOBAL_BATH"
+    ],
+    "signature_matches": [
+      "SUDDEN_T1_COLLAPSES",
+      "CORRELATED_EVENTS_ACROSS_DEVICES"
+    ],
+    "minimal_discriminant_measurement": "Run fast repeated T1 sampling, look for cross-device correlations, and vary shielding, biasing, and thermalization.",
+    "bath_classification_consistent_with_glossary": true,
+    "mechanism_scores_after_signature": {
+      "P_TLS": 0.0,
+      "P_VORTEX": 0.0,
+      "P_QUASIPARTICLE": 0.575,
+      "P_PHONON": 0.25,
+      "P_CONTROL_NOISE": 0.0,
+      "P_EM_PURCELL": 0.075,
+      "P_OTHER": 0.1
+    }
+  }
+}

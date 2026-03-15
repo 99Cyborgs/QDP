@@ -1,0 +1,58 @@
+{
+  "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
+  "module_id": "M07",
+  "timestamp_utc": "2026-03-15T20:19:14.439333+00:00",
+  "visible_source_only": true,
+  "declared_family_class": "",
+  "declared_likely_bath_class": "",
+  "evidence_text_sample": "m07-case-parasitic m07_case_parasitic                        not_required  not_required   spectroscopy shows an avoided crossing with clear mode tracking and a visible gap 2g. ready passed passed passed passed ready not_evaluated defer",
+  "rule_matches": [
+    {
+      "rule_index": 7,
+      "signature_id": "AVOIDED_CROSSING",
+      "signature_label": "AVOIDED_CROSSING",
+      "matched_terms": [
+        "avoided crossing",
+        "gap 2g",
+        "mode tracking"
+      ],
+      "score": 3,
+      "priority": 0,
+      "assigned_family_class": "COHERENT_PARASITIC_MODE",
+      "bath_rank_order": [
+        "COHERENT_PARASITIC_MODE",
+        "STRUCTURED_EM_BATH",
+        "DEFECT_MODE"
+      ],
+      "minimal_discriminant_measurement": "Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.",
+      "mechanism_weights": {
+        "P_EM_PURCELL": 0.75,
+        "P_OTHER": 0.25
+      }
+    }
+  ],
+  "result_summary": {
+    "assigned_family_class": "COHERENT_PARASITIC_MODE",
+    "family_class_mismatch": false,
+    "family_status": "INFERRED_FROM_SIGNATURES",
+    "inferred_bath_rank_order": [
+      "COHERENT_PARASITIC_MODE",
+      "STRUCTURED_EM_BATH",
+      "DEFECT_MODE"
+    ],
+    "signature_matches": [
+      "AVOIDED_CROSSING"
+    ],
+    "minimal_discriminant_measurement": "Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.",
+    "bath_classification_consistent_with_glossary": true,
+    "mechanism_scores_after_signature": {
+      "P_TLS": 0.0,
+      "P_VORTEX": 0.0,
+      "P_QUASIPARTICLE": 0.0,
+      "P_PHONON": 0.0,
+      "P_CONTROL_NOISE": 0.0,
+      "P_EM_PURCELL": 0.75,
+      "P_OTHER": 0.25
+    }
+  }
+}

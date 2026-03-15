@@ -1,0 +1,32 @@
+{
+  "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-03-15T20:19:14.180299+00:00",
+  "candidate_id": "m05-case-lindblad-equivalence",
+  "branch_or_model_tag": "M05_CASE_LINDBLAD_EQUIVALENCE",
+  "terminated_at": "STAGE_11",
+  "final_state": {
+    "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+    "governance_outcome": "REJECT",
+    "cross_device_status": "NOT_REQUIRED",
+    "promotion_cap_governance": "",
+    "promotion_cap_scientific": "",
+    "system_status": "READY",
+    "validation_ladder": {
+      "L0_baseline_pipeline_reproduced": true,
+      "L1_reduction_limit_verified": true,
+      "L2_convergence_plan_defined": true,
+      "L3_numerical_stability_passed": false,
+      "L4_instrument_facing_comparison_path_defined": false
+    }
+  },
+  "schema_validation": {
+    "valid": true,
+    "errors": [],
+    "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
+    "mode": "final"
+  },
+  "gate_trace_count": 15,
+  "stage_inputs_used": {}
+}

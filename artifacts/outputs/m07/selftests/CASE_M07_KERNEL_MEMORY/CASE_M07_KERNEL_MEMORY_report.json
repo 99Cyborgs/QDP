@@ -1,0 +1,84 @@
+{
+  "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
+  "module_id": "M07",
+  "timestamp_utc": "2026-03-15T20:19:14.436390+00:00",
+  "visible_source_only": true,
+  "declared_family_class": "",
+  "declared_likely_bath_class": "",
+  "evidence_text_sample": "m07-case-kernel m07_case_kernel                        not_required  not_required   the decay is non-exponential with partial recovery and revivals at late time. this looks like kernel memory from a structured bath. ready passed passed passed passed ready not_evaluated defer",
+  "rule_matches": [
+    {
+      "rule_index": 6,
+      "signature_id": "REVIVALS_BACKFLOW",
+      "signature_label": "REVIVALS_BACKFLOW",
+      "matched_terms": [
+        "revivals",
+        "partial recovery"
+      ],
+      "score": 2,
+      "priority": 1,
+      "assigned_family_class": "FINITE_SIZE_STRUCTURED_BATH",
+      "bath_rank_order": [
+        "FINITE_SIZE_STRUCTURED_BATH",
+        "STRUCTURED_PHONON_BATH",
+        "STRUCTURED_EM_BATH"
+      ],
+      "minimal_discriminant_measurement": "Run time-domain sequences that expose revivals and compare with and without phononic or packaging changes.",
+      "mechanism_weights": {
+        "P_PHONON": 0.6,
+        "P_EM_PURCELL": 0.25,
+        "P_OTHER": 0.15
+      }
+    },
+    {
+      "rule_index": 5,
+      "signature_id": "NON_EXPONENTIAL_DECAY",
+      "signature_label": "NON_EXPONENTIAL_DECAY",
+      "matched_terms": [
+        "non-exponential",
+        "kernel memory",
+        "structured bath"
+      ],
+      "score": 3,
+      "priority": 0,
+      "assigned_family_class": "KERNEL_MEMORY",
+      "bath_rank_order": [
+        "KERNEL_MEMORY",
+        "STRUCTURED_PHONON_BATH",
+        "STRUCTURED_EM_BATH"
+      ],
+      "minimal_discriminant_measurement": "Acquire high-SNR decay curves, compare exponential versus stretched or multi-exponential fits, then use filter-function sequences if needed.",
+      "mechanism_weights": {
+        "P_PHONON": 0.6,
+        "P_EM_PURCELL": 0.2,
+        "P_OTHER": 0.2
+      }
+    }
+  ],
+  "result_summary": {
+    "assigned_family_class": "FINITE_SIZE_STRUCTURED_BATH",
+    "family_class_mismatch": false,
+    "family_status": "INFERRED_FROM_SIGNATURES",
+    "inferred_bath_rank_order": [
+      "FINITE_SIZE_STRUCTURED_BATH",
+      "STRUCTURED_PHONON_BATH",
+      "STRUCTURED_EM_BATH",
+      "KERNEL_MEMORY"
+    ],
+    "signature_matches": [
+      "REVIVALS_BACKFLOW",
+      "NON_EXPONENTIAL_DECAY"
+    ],
+    "minimal_discriminant_measurement": "Run time-domain sequences that expose revivals and compare with and without phononic or packaging changes.",
+    "bath_classification_consistent_with_glossary": true,
+    "mechanism_scores_after_signature": {
+      "P_TLS": 0.0,
+      "P_VORTEX": 0.0,
+      "P_QUASIPARTICLE": 0.0,
+      "P_PHONON": 0.6,
+      "P_CONTROL_NOISE": 0.0,
+      "P_EM_PURCELL": 0.225,
+      "P_OTHER": 0.175
+    }
+  }
+}

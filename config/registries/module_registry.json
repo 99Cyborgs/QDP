@@ -1,0 +1,368 @@
+{
+  "artifact_id": "QDP_V10_6_MODULE_REGISTRY_V1",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "resume_policy": {
+    "ordinary_candidate_testing_requires": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15"
+    ],
+    "subsystem_testing_requires": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "S16",
+      "S17",
+      "S18",
+      "S19"
+    ]
+  },
+  "modules": [
+    {
+      "module_id": "M01",
+      "name": "Runtime assembly and freeze",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "MISSING: retained_v10_1_operative_body"
+      ],
+      "required_outputs": [
+        "QDP_v10_6_RUNTIME_PROMPT"
+      ],
+      "status": "RECOVERY_ARTIFACT_EMITTED_BLOCKED_BY_MISSING_RETAINED_SOURCE",
+      "derived_closure_status": "RECOVERY_INTERIM"
+    },
+    {
+      "module_id": "M02",
+      "name": "Schema extension and post-run validator",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "system_status",
+        "governance_self_check",
+        "enum_validation",
+        "cross_device_status_mapping"
+      ],
+      "status": "SCHEMA_DRIFT_PRESENT"
+    },
+    {
+      "module_id": "M03",
+      "name": "Reference-resolution and governance-registry module",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "specs/core/master_spec.md",
+        "specs/core/falsifier_registry.md",
+        "MISSING: retained_federated_registry_object"
+      ],
+      "required_outputs": [
+        "reference_resolution_status",
+        "automatic_flags_triggered",
+        "governance_registry_object"
+      ],
+      "status": "WORKING_PATCH_HARDENED_STRICT_FAILURE_REMAINS",
+      "derived_closure_status": "RECOVERY_INTERIM"
+    },
+    {
+      "module_id": "M04",
+      "name": "Fork intake and branch registration",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/intake/fork_intake_form_one_page.pdf",
+        "specs/intake/fork_questions.md",
+        "specs/core/master_spec.md"
+      ],
+      "required_outputs": [
+        "branch_registration",
+        "bath_classification",
+        "primary_observable",
+        "secondary_observable",
+        "exact_falsifier"
+      ],
+      "status": "DESIGN_PRESENT_IMPLEMENTATION_MISSING"
+    },
+    {
+      "module_id": "M05",
+      "name": "Gate-trace and validation-ladder state machine",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "specs/core/validation_gate.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "gate_trace",
+        "validation_ladder"
+      ],
+      "status": "WORKING_EXECUTABLE_SUBSET_NOT_AUTHORITATIVE",
+      "derived_closure_status": "RECOVERY_INTERIM"
+    },
+    {
+      "module_id": "M06",
+      "name": "Bootstrap harness runner and fixture loader",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md"
+      ],
+      "required_outputs": [
+        "validation_harness_status",
+        "determinism_status",
+        "system_status"
+      ],
+      "status": "RECOVERY_INTERIM",
+      "derived_closure_status": "RECOVERY_INTERIM"
+    },
+    {
+      "module_id": "M07",
+      "name": "Family-class triage and signature-to-bath scorer",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/bath_glossary.md",
+        "specs/core/signature_to_bath_decision_chart.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "assigned_family_class",
+        "inferred_bath_rank_order",
+        "signature_matches",
+        "minimal_discriminant_measurement"
+      ],
+      "status": "WORKING_PATCH",
+      "derived_closure_status": "WORKING_PATCH"
+    },
+    {
+      "module_id": "M08",
+      "name": "Baseline GKSL fit and drift-aware residual diagnostics",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/model_spec.md",
+        "specs/research/deep_research_report.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "baseline_model",
+        "residual_analysis"
+      ],
+      "status": "WORKING_PATCH",
+      "derived_closure_status": "WORKING_PATCH"
+    },
+    {
+      "module_id": "M09",
+      "name": "Known-mechanism competition suite",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/signature_to_bath_decision_chart.md",
+        "QDP_Vortex_Pinning_Microwave_Loss_Module.md",
+        "vortex_entry_barrier.md",
+        "vortex_entry_calculator.md",
+        "vortex_microwave_dissipation.md",
+        "residual_field_estimation_dilution_fridge.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "mechanism_tests",
+        "strongest_competing_mechanism"
+      ],
+      "status": "WORKING_PATCH",
+      "derived_closure_status": "WORKING_PATCH"
+    },
+    {
+      "module_id": "M10",
+      "name": "Artifact-equivalence audit",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/research/deep_research_report.md",
+        "specs/intake/fork_intake_form_one_page.pdf",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "artifact_tests"
+      ],
+      "status": "WORKING_PATCH",
+      "derived_closure_status": "WORKING_PATCH"
+    },
+    {
+      "module_id": "M11",
+      "name": "Lindblad-equivalence gate",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "lindblad_equivalence"
+      ],
+      "status": "MISSING"
+    },
+    {
+      "module_id": "M12",
+      "name": "Executable falsifier and experiment-design module",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/falsifier_registry.md",
+        "specs/intake/fork_intake_form_one_page.pdf",
+        "specs/core/validation_gate.md",
+        "specs/research/deep_research_report.md"
+      ],
+      "required_outputs": [
+        "exact_falsifier",
+        "hamiltonian_test",
+        "experiment_schedule"
+      ],
+      "status": "MISSING"
+    },
+    {
+      "module_id": "M13",
+      "name": "Cross-device evidence gate",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "config/schema/candidate_template.json",
+        "specs/research/deep_research_report.md"
+      ],
+      "required_outputs": [
+        "cross_device_status",
+        "cross_device_validation"
+      ],
+      "status": "SCHEMA_ALIAS_UNRESOLVED"
+    },
+    {
+      "module_id": "M14",
+      "name": "Promotion-cap clipping and fallback completion",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "config/schema/candidate_template.json"
+      ],
+      "required_outputs": [
+        "promotion_cap_governance",
+        "promotion_cap_scientific",
+        "governance_outcome"
+      ],
+      "status": "MISSING"
+    },
+    {
+      "module_id": "M15",
+      "name": "Calibration, drift, identifiability, and dataset-governance guardrails",
+      "blocker_class": "CORE_BLOCKER",
+      "owner_artifacts": [
+        "specs/core/build_spec.md",
+        "specs/research/deep_research_report.md",
+        "MISSING: retained_v10_1_governance_sections"
+      ],
+      "required_outputs": [
+        "calibration_integrity",
+        "drift_ledger",
+        "identifiability_status",
+        "dataset_governance_status"
+      ],
+      "status": "DECLARED_BUT_NOT_SURFACED"
+    },
+    {
+      "module_id": "S16",
+      "name": "GKSL subsystem audit core",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "MISSING: gksl_subsystem_audit_v1.md",
+        "specs/subsystem/gksl_subsystem_case_matrix.json"
+      ],
+      "required_outputs": [
+        "theorem_status",
+        "corollary_status",
+        "simulation_validation_status",
+        "null_audit_status",
+        "real_data_verdict"
+      ],
+      "status": "MISSING_CORE_PROMPT"
+    },
+    {
+      "module_id": "S17",
+      "name": "Subsystem stability / closure / finite-horizon control",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "MISSING: gksl_subsystem_decision_patch.md",
+        "specs/subsystem/gksl_subsystem_case_matrix.json"
+      ],
+      "required_outputs": [
+        "projector_stability_status",
+        "finite_horizon_control_status",
+        "observable_closure_status",
+        "symmetry_alias_status",
+        "artifact_alias_status",
+        "identifiability_status"
+      ],
+      "status": "MISSING"
+    },
+    {
+      "module_id": "S18",
+      "name": "Subsystem adversarial/null harness",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "specs/subsystem/gksl_subsystem_case_matrix.json",
+        "MISSING: gksl_subsystem_harness_spec.md"
+      ],
+      "required_outputs": [
+        "subsystem_harness_status",
+        "case_verdict_matrix"
+      ],
+      "status": "CASE_MATRIX_ONLY"
+    },
+    {
+      "module_id": "S19",
+      "name": "Subsystem intake and schema adapter",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "MISSING: gksl_subsystem_branch_intake.json",
+        "config/schema/candidate_template.json",
+        "specs/intake/fork_intake_form_one_page.pdf"
+      ],
+      "required_outputs": [
+        "subsystem_branch_registration",
+        "bath_ranking",
+        "closure_targets",
+        "publication_claim_cap"
+      ],
+      "status": "MISSING"
+    }
+  ],
+  "deferred_non_blockers": [
+    {
+      "module_id": "D20",
+      "name": "Subsystem publication gate",
+      "status": "DEFERRED"
+    },
+    {
+      "module_id": "D21",
+      "name": "Registry maintenance export",
+      "status": "DEFERRED"
+    }
+  ]
+}

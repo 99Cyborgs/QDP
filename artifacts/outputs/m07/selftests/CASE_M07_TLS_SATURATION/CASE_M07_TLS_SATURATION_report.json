@@ -1,0 +1,61 @@
+{
+  "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
+  "module_id": "M07",
+  "timestamp_utc": "2026-03-15T20:19:14.433280+00:00",
+  "visible_source_only": true,
+  "declared_family_class": "TLS_ENSEMBLE",
+  "declared_likely_bath_class": "DIELECTRIC_INTERFACE_LOSS",
+  "evidence_text_sample": "m07-case-tls m07_case_tls   tls_ensemble      dielectric_interface_loss smooth power dependence consistent with saturation.              not_required  not_required   qi vs readout power follows a tls saturation trend. ready passed passed passed passed ready not_evaluated defer",
+  "rule_matches": [
+    {
+      "rule_index": 3,
+      "signature_id": "TLS_SATURATION",
+      "signature_label": "POWER_DEPENDENT_SATURATION",
+      "matched_terms": [
+        "power dependence",
+        "saturation",
+        "tls saturation",
+        "qi vs readout power",
+        "smooth power dependence"
+      ],
+      "score": 5,
+      "priority": 0,
+      "assigned_family_class": "TLS_ENSEMBLE",
+      "bath_rank_order": [
+        "TLS_ENSEMBLE",
+        "DIELECTRIC_INTERFACE_LOSS",
+        "THERMAL_BATH"
+      ],
+      "minimal_discriminant_measurement": "Run a Qi versus readout power sweep, fit a TLS saturation form, and repeat at two to three temperatures.",
+      "mechanism_weights": {
+        "P_TLS": 0.8,
+        "P_CONTROL_NOISE": 0.05,
+        "P_OTHER": 0.15
+      }
+    }
+  ],
+  "result_summary": {
+    "assigned_family_class": "TLS_ENSEMBLE",
+    "family_class_mismatch": false,
+    "family_status": "DECLARED_FAMILY_CONFIRMED",
+    "inferred_bath_rank_order": [
+      "TLS_ENSEMBLE",
+      "DIELECTRIC_INTERFACE_LOSS",
+      "THERMAL_BATH"
+    ],
+    "signature_matches": [
+      "POWER_DEPENDENT_SATURATION"
+    ],
+    "minimal_discriminant_measurement": "Run a Qi versus readout power sweep, fit a TLS saturation form, and repeat at two to three temperatures.",
+    "bath_classification_consistent_with_glossary": true,
+    "mechanism_scores_after_signature": {
+      "P_TLS": 0.8,
+      "P_VORTEX": 0.0,
+      "P_QUASIPARTICLE": 0.0,
+      "P_PHONON": 0.0,
+      "P_CONTROL_NOISE": 0.05,
+      "P_EM_PURCELL": 0.0,
+      "P_OTHER": 0.15
+    }
+  }
+}

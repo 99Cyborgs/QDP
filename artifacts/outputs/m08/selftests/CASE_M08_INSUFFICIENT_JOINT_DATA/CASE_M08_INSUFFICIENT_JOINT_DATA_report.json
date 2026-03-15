@@ -1,0 +1,50 @@
+{
+  "artifact_id": "QDP_V10_6_M08_BASELINE_REPORT",
+  "module_id": "M08",
+  "timestamp_utc": "2026-03-15T20:19:14.680696+00:00",
+  "visible_source_only": true,
+  "result_summary": {
+    "baseline_model": {
+      "status": "INSUFFICIENT_JOINT_FIT_DATA",
+      "joint_fit_used": false,
+      "hierarchical_drift_model_used": false,
+      "pipeline_executed": false,
+      "reduction_limit_verified": false
+    },
+    "residual_analysis": {
+      "structured_residuals": true,
+      "white_residuals": false,
+      "stationary_residuals": true,
+      "cross_observable_correlations_vanish": true,
+      "drift_aware_fit_applied": false,
+      "features": [
+        "INSUFFICIENT_TIME_SERIES_DATA"
+      ],
+      "time_series_based": false
+    }
+  },
+  "diagnostics": {
+    "expected_parameter_keys": [
+      "T1",
+      "Tphi",
+      "measurement_noise_level"
+    ],
+    "observables_fit": [
+      "T1 decay"
+    ],
+    "parameter_count": 1,
+    "noise_model_declared": false,
+    "trace_preserving": true,
+    "complete_positive": true,
+    "textbook_limit_recovered": false,
+    "residual_feature_flags": {
+      "correlated": false,
+      "non_gaussian": false,
+      "drive_shift": false,
+      "ramsey_mismatch": false,
+      "cross_corr": false,
+      "nonstationary": false,
+      "insufficient_time_series": true
+    }
+  }
+}

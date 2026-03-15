@@ -1,0 +1,98 @@
+{
+  "artifact_id": "QDP_V10_6_MODE_DIVERGENCE_POLICY_V1",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "purpose": "Prevent silent drift between ordinary and subsystem execution paths by defining a shared immutable core and bounded mode specific deltas.",
+  "policy": {
+    "shared_core_is_immutable": true,
+    "mode_specific_override_of_shared_fields_forbidden": true,
+    "exceptions_require_registry_entry": true,
+    "divergence_report_required_each_run": true
+  },
+  "shared_core": {
+    "reference_sources": [
+      "specs/core/build_spec.md",
+      "config/manifests/reference_manifest.json",
+      "config/registries/governance_registry.json",
+      "config/schema/candidate_schema.json",
+      "modules/m05_stage_machine/runner.py"
+    ],
+    "immutable_fields": [
+      "critical retained references",
+      "rule IDs",
+      "required output field names",
+      "validation ladder ordering",
+      "gate trace field names",
+      "governance outcome enums",
+      "cross_device_status enums",
+      "typed self check status fields"
+    ],
+    "hash_inputs": [
+      "config/manifests/reference_manifest.json",
+      "config/registries/governance_registry.json",
+      "config/schema/candidate_schema.json",
+      "modules/m05_stage_machine/runner.py"
+    ]
+  },
+  "mode_deltas": {
+    "ordinary": {
+      "allowed_extensions": [
+        "ordinary only fixture sets",
+        "ordinary report naming",
+        "ordinary path explanatory notes"
+      ],
+      "forbidden_changes": [
+        "removing a shared critical reference",
+        "changing validation ladder order",
+        "changing gate termination semantics",
+        "changing schema required field names"
+      ]
+    },
+    "subsystem": {
+      "allowed_extensions": [
+        "subsystem specific reference entries declared in manifest",
+        "subsystem only fixture sets",
+        "subsystem specific analysis notes and report IDs"
+      ],
+      "forbidden_changes": [
+        "overriding shared core references",
+        "loosening strict reference resolution for shared core entries",
+        "renaming shared output fields",
+        "changing governance outcome semantics"
+      ]
+    }
+  },
+  "exception_registry_contract": {
+    "required_artifact": "QDP_v10_6_MODE_EXCEPTION_REGISTRY.json",
+    "required_fields": [
+      "exception_id",
+      "shared_field_name",
+      "requesting_mode",
+      "justification",
+      "approver",
+      "expiry_date",
+      "replacement_control"
+    ]
+  },
+  "required_run_output": {
+    "artifact_name": "artifacts/reports/system/mode_divergence_report.json",
+    "required_fields": [
+      "shared_core_hash",
+      "ordinary_delta_hash",
+      "subsystem_delta_hash",
+      "shared_field_override_detected",
+      "override_exception_ids",
+      "ordinary_report_id",
+      "subsystem_report_id",
+      "status"
+    ],
+    "failure_condition": "Any shared field override without a valid active exception forces status FAILED and blocks AUTHORITATIVE_CLOSURE for M03 and M06."
+  },
+  "current_assessment": {
+    "status": "POLICY_ENFORCED",
+    "observed_risk": "Ordinary/subsystem shared-core divergence is now checked by artifacts/reports/system/mode_divergence_report.json rather than inferred narratively.",
+    "last_report_path": "artifacts/reports/system/mode_divergence_report.json",
+    "last_report_status": "PASSED",
+    "next_enforcement_target": "Wire divergence failure into broader ordinary-testing resume automation once M07-M15 exist."
+  }
+}

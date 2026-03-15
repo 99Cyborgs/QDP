@@ -1,0 +1,428 @@
+{
+  "artifact_id": "QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT",
+  "contract_source": "C:\\Users\\Forre\\Documents\\QDP\\config\\contracts\\module_closure_contracts.json",
+  "timestamp_utc": "2026-03-15T20:19:15.376118+00:00",
+  "modules": [
+    {
+      "module_id": "M01",
+      "derived_status": "RECOVERY_INTERIM",
+      "passing_predicates": [
+        "M01_P1",
+        "M01_P2",
+        "M01_P3",
+        "M01_P4",
+        "M01_P5"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M01_P1",
+          "description": "runtime/retained/operative_body_v10_1.md exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=operative_body_v10_1.md"
+        },
+        {
+          "predicate_id": "M01_P2",
+          "description": "runtime/current/runtime_prompt.md exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runtime_prompt.md"
+        },
+        {
+          "predicate_id": "M01_P3",
+          "description": "Runtime prompt contains all mandatory retained operational sections",
+          "passed": true,
+          "detail": "missing_mandatory_sections=[]"
+        },
+        {
+          "predicate_id": "M01_P4",
+          "description": "Runtime prompt contains no forbidden shorthand references such as same as v10.1",
+          "passed": true,
+          "detail": "forbidden_shorthand_detected=[]"
+        },
+        {
+          "predicate_id": "M01_P5",
+          "description": "Closure report hash matches assembled runtime prompt hash",
+          "passed": true,
+          "detail": "expected=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997 actual=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997"
+        }
+      ],
+      "closure_limitations": [
+        "retained_v10_1_operative_body is a reconstructed_surrogate artifact"
+      ]
+    },
+    {
+      "module_id": "M03",
+      "derived_status": "RECOVERY_INTERIM",
+      "passing_predicates": [
+        "M03_P1",
+        "M03_P2",
+        "M03_P3",
+        "M03_P4",
+        "M03_P5",
+        "M03_P6",
+        "M03_P7"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M03_P1",
+          "description": "modules/m03_reference_resolution/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M03_P2",
+          "description": "Ordinary strict resolution report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=reference_resolution_ordinary.json"
+        },
+        {
+          "predicate_id": "M03_P3",
+          "description": "Subsystem strict resolution report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=reference_resolution_subsystem.json"
+        },
+        {
+          "predicate_id": "M03_P4",
+          "description": "Ordinary report has zero critical unresolved references",
+          "passed": true,
+          "detail": "critical_unresolved_count=0"
+        },
+        {
+          "predicate_id": "M03_P5",
+          "description": "Subsystem report has zero critical unresolved references",
+          "passed": true,
+          "detail": "critical_unresolved_count=0"
+        },
+        {
+          "predicate_id": "M03_P6",
+          "description": "Governance registry records the current report IDs and mode summaries coherently",
+          "passed": true,
+          "detail": "ordinary_report_id=m03-reference-report-20260315T201913Z; subsystem_report_id=m03-reference-report-20260315T201913Z"
+        },
+        {
+          "predicate_id": "M03_P7",
+          "description": "Mode divergence report status is PASSED for the shared core",
+          "passed": true,
+          "detail": "mode_divergence_status=PASSED"
+        }
+      ],
+      "closure_limitations": [
+        "retained_federated_governance_registry_object is a reconstructed_surrogate artifact"
+      ]
+    },
+    {
+      "module_id": "M05",
+      "derived_status": "RECOVERY_INTERIM",
+      "passing_predicates": [
+        "M05_P1",
+        "M05_P2",
+        "M05_P3",
+        "M05_P4",
+        "M05_P5",
+        "M05_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M05_P1",
+          "description": "modules/m05_stage_machine/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M05_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M05_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M05_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=6/6"
+        },
+        {
+          "predicate_id": "M05_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M05_P6",
+          "description": "Stage order and gate semantics are sourced from retained authoritative runtime rather than an interim subset",
+          "passed": true,
+          "detail": "retained_v10_1_operative_body_exists=True"
+        }
+      ],
+      "closure_limitations": [
+        "retained_v10_1_operative_body is a reconstructed_surrogate artifact"
+      ]
+    },
+    {
+      "module_id": "M06",
+      "derived_status": "RECOVERY_INTERIM",
+      "passing_predicates": [
+        "M06_P1",
+        "M06_P2",
+        "M06_P3",
+        "M06_P4",
+        "M06_P5",
+        "M06_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M06_P1",
+          "description": "modules/m06_bootstrap_harness/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M06_P2",
+          "description": "Bootstrap fixture pack exists with at least five canonical cases",
+          "passed": true,
+          "detail": "artifact_exists=True path=bootstrap_cases.json"
+        },
+        {
+          "predicate_id": "M06_P3",
+          "description": "Bootstrap report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=bootstrap_report.json"
+        },
+        {
+          "predicate_id": "M06_P4",
+          "description": "Harness executes reference resolution, schema validation, stage machine tests, governance self diagnostic, and runtime integrity checks",
+          "passed": true,
+          "detail": "check_keys=['artifact_equivalence_selftests', 'baseline_fit_selftests', 'family_triage_selftests', 'governance_self_diagnostic', 'mechanism_competition_selftests', 'mode_divergence', 'reference_resolution', 'rule_binding_summary', 'runtime_integrity', 'schema_validation', 'stage_machine_selftests']"
+        },
+        {
+          "predicate_id": "M06_P5",
+          "description": "Harness is deterministic across repeated fixture runs",
+          "passed": true,
+          "detail": "determinism_status=PASSED"
+        },
+        {
+          "predicate_id": "M06_P6",
+          "description": "Mode divergence report status is PASSED and shared-core overrides are absent",
+          "passed": true,
+          "detail": "mode_divergence_status=PASSED"
+        }
+      ],
+      "closure_limitations": [
+        "retained_v10_1_operative_body is a reconstructed_surrogate artifact",
+        "retained_federated_governance_registry_object is a reconstructed_surrogate artifact"
+      ]
+    },
+    {
+      "module_id": "M07",
+      "derived_status": "WORKING_PATCH",
+      "passing_predicates": [
+        "M07_P1",
+        "M07_P2",
+        "M07_P3",
+        "M07_P4",
+        "M07_P5",
+        "M07_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M07_P1",
+          "description": "modules/m07_family_triage/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M07_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M07_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M07_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=6/6"
+        },
+        {
+          "predicate_id": "M07_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M07_P6",
+          "description": "The scorer is sourced from surfaced family-triage documents and records visible-source-only limitations",
+          "passed": true,
+          "detail": "patch_notes_visible_source_only=True"
+        }
+      ]
+    },
+    {
+      "module_id": "M08",
+      "derived_status": "WORKING_PATCH",
+      "passing_predicates": [
+        "M08_P1",
+        "M08_P2",
+        "M08_P3",
+        "M08_P4",
+        "M08_P5",
+        "M08_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M08_P1",
+          "description": "modules/m08_baseline_fit/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M08_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M08_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M08_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=6/6"
+        },
+        {
+          "predicate_id": "M08_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M08_P6",
+          "description": "The runner is sourced from surfaced baseline-fit documents and records visible-source-only limitations",
+          "passed": true,
+          "detail": "patch_notes_visible_source_only=True"
+        }
+      ]
+    },
+    {
+      "module_id": "M09",
+      "derived_status": "WORKING_PATCH",
+      "passing_predicates": [
+        "M09_P1",
+        "M09_P2",
+        "M09_P3",
+        "M09_P4",
+        "M09_P5",
+        "M09_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M09_P1",
+          "description": "modules/m09_mechanism_competition/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M09_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M09_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M09_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=7/7"
+        },
+        {
+          "predicate_id": "M09_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M09_P6",
+          "description": "The runner records the partial visible-source mechanism-doc limitation explicitly",
+          "passed": true,
+          "detail": "patch_notes_visible_source_only=True"
+        }
+      ]
+    },
+    {
+      "module_id": "M10",
+      "derived_status": "WORKING_PATCH",
+      "passing_predicates": [
+        "M10_P1",
+        "M10_P2",
+        "M10_P3",
+        "M10_P4",
+        "M10_P5",
+        "M10_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M10_P1",
+          "description": "modules/m10_artifact_audit/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M10_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M10_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M10_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=7/7"
+        },
+        {
+          "predicate_id": "M10_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M10_P6",
+          "description": "The runner records the visible-source artifact-audit limitation explicitly",
+          "passed": true,
+          "detail": "patch_notes_visible_source_only=True"
+        }
+      ]
+    }
+  ]
+}

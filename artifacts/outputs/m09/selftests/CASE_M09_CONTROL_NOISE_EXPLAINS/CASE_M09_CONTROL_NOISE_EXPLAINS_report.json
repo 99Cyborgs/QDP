@@ -1,0 +1,52 @@
+{
+  "artifact_id": "QDP_V10_6_M09_MECHANISM_REPORT",
+  "module_id": "M09",
+  "timestamp_utc": "2026-03-15T20:19:14.912479+00:00",
+  "visible_source_only": true,
+  "result_summary": {
+    "strongest_competing_mechanism_initial": "CONTROL_NOISE",
+    "strongest_competing_mechanism": "CONTROL_NOISE",
+    "mechanism_tests": {
+      "explains_data": true,
+      "parsimonious_combination_explains": false,
+      "parsimonious_combination_label": "",
+      "tls": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "vortex": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "quasiparticle": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "phonon": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "control_noise": {
+        "status": "EXPLAINS_DATA",
+        "explains_data": true
+      },
+      "em_purcell": {
+        "status": "SUPPORTING",
+        "explains_data": false
+      }
+    }
+  },
+  "diagnostics": {
+    "evidence_text_sample": "filter-function noise spectroscopy found the same peak after pulse distortion and line attenuation changes in the control-line chain. narrowband_noise_psd",
+    "signature_matches": [
+      "NARROWBAND_NOISE_PSD"
+    ],
+    "missing_owner_artifacts": [
+      "QDP_Vortex_Pinning_Microwave_Loss_Module.md",
+      "vortex_entry_barrier.md",
+      "vortex_entry_calculator.md",
+      "vortex_microwave_dissipation.md",
+      "residual_field_estimation_dilution_fridge.md"
+    ]
+  }
+}

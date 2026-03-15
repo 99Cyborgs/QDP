@@ -1,0 +1,384 @@
+{
+  "artifact_id": "QDP_V10_6_M05_SELFTEST_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-03-15T20:19:14.198156+00:00",
+  "cases_total": 6,
+  "cases_passed": 6,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M05_BASELINE_SUFFICIENCY",
+      "description": "Baseline pipeline reproduced and drift-aware residual diagnostics support conservative baseline sufficiency rejection at Stage 6.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_6",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "promotion_cap_scientific": "",
+        "terminated_at": "STAGE_6",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_6",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json"
+    },
+    {
+      "case_id": "CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE",
+      "description": "A surfaced known-mechanism explanation rejects the branch at Stage 8.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_8",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "promotion_cap_scientific": "",
+        "terminated_at": "STAGE_8",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_8",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M05_ARTIFACT_EQUIVALENCE",
+      "description": "An artifact explanation rejects the branch at Stage 9 once baseline and mechanism gates have been survived conservatively.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_9",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "promotion_cap_scientific": "",
+        "terminated_at": "STAGE_9",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_9",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M05_LINDBLAD_EQUIVALENCE",
+      "description": "A branch that survives to Stage 11 but remains equivalent within measurement resolution is rejected.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_11",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "promotion_cap_scientific": "",
+        "terminated_at": "STAGE_11",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_11",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE",
+      "description": "A surviving branch reaches provisional identifiability, then is clipped to SANDBOX_ONLY because cross-device evidence is only scheduled.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS",
+      "description": "Convergence planning may set L2, but numerical-stability planning must not be conflated with a passed Stage 13 state.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "NUMERICALLY_UNSTABLE",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_13",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "actual_summary": {
+        "scientific_decision": "NUMERICALLY_UNSTABLE",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "",
+        "promotion_cap_scientific": "",
+        "terminated_at": "STAGE_13",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "system_status": "READY"
+      },
+      "result_summary": {
+        "scientific_decision": "NUMERICALLY_UNSTABLE",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_13",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json"
+    }
+  ]
+}

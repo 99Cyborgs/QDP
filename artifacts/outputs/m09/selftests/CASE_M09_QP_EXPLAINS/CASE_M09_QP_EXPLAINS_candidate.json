@@ -1,0 +1,237 @@
+{
+  "candidate_id": "m09-case-qp",
+  "branch_or_model_tag": "M09_CASE_QP",
+  "change_type": "",
+  "model_classification": "",
+  "declared_family_class": "",
+  "assigned_family_class": "GLOBAL_BATH_EVENT",
+  "family_class_mismatch": false,
+  "family_status": "",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [],
+  "bath_classification_consistent_with_glossary": false,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {},
+  "relevant_nuisance_controls_list": [],
+  "exact_falsifier": "",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": false,
+    "L1_reduction_limit_verified": false,
+    "L2_convergence_plan_defined": false,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": false
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.1,
+    "P_QUASIPARTICLE": 0.7,
+    "P_PHONON": 0.1,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.1
+  },
+  "signature_matches": [
+    "SUDDEN_T1_COLLAPSES"
+  ],
+  "strongest_competing_mechanism_initial": "QUASIPARTICLE",
+  "strongest_competing_mechanism": "QUASIPARTICLE",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {
+      "status": "SUPPORTING",
+      "support_score": 0.1,
+      "explains_data": false,
+      "primary_signature_hits": [],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "family_match": false,
+      "prior_score": 0.1,
+      "minimal_discriminant_measurement": "Repeat ZFC vs FC and cooldown-field sweeps, then test width/thickness dependence and delta fr over delta 1/Qi ratio consistency."
+    },
+    "quasiparticle": {
+      "status": "EXPLAINS_DATA",
+      "support_score": 8.7,
+      "explains_data": true,
+      "primary_signature_hits": [
+        "SUDDEN_T1_COLLAPSES"
+      ],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [
+        "parity switching",
+        "drive-induced qp"
+      ],
+      "supporting_term_hits": [],
+      "family_match": true,
+      "prior_score": 0.7,
+      "minimal_discriminant_measurement": "Measure parity-switch correlations or controlled QP injection/suppression, and compare with drive-induced pair-breaking signatures."
+    },
+    "tls": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_signature_hits": [],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "family_match": false,
+      "prior_score": 0.0,
+      "minimal_discriminant_measurement": "Run a calibrated power sweep plus geometry/participation scaling and verify the TLS saturation trend across temperatures."
+    },
+    "phonon": {
+      "status": "SUPPORTING",
+      "support_score": 0.1,
+      "explains_data": false,
+      "primary_signature_hits": [],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "family_match": false,
+      "prior_score": 0.1,
+      "minimal_discriminant_measurement": "Synchronize to the mechanical environment or vary phononic structures to test whether the residual signature tracks substrate-phonon control knobs."
+    },
+    "control_noise": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_signature_hits": [],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "family_match": false,
+      "prior_score": 0.0,
+      "minimal_discriminant_measurement": "Run filter-function noise spectroscopy and line-attenuation or pulse-shape perturbations to see whether the inferred noise peak follows the control chain."
+    },
+    "em_purcell": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_signature_hits": [],
+      "supporting_signature_hits": [],
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "family_match": false,
+      "prior_score": 0.0,
+      "minimal_discriminant_measurement": "Run high-resolution spectroscopy versus bias and verify anticrossing behavior or package-mode dependence."
+    },
+    "parsimonious_combination_explains": false,
+    "parsimonious_combination_label": "",
+    "explains_data": true,
+    "visible_source_partial_suite": true,
+    "surfaced_source_artifacts": [
+      "specs/core/signature_to_bath_decision_chart.md",
+      "specs/research/vortex_pinning_methods.md",
+      "specs/research/deep_research_report.md"
+    ],
+    "missing_owner_artifacts": [
+      "QDP_Vortex_Pinning_Microwave_Loss_Module.md",
+      "vortex_entry_barrier.md",
+      "vortex_entry_calculator.md",
+      "vortex_microwave_dissipation.md",
+      "residual_field_estimation_dilution_fridge.md"
+    ]
+  },
+  "artifact_tests": {},
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": false,
+  "fabrication_matched_for_geometry_claim": false,
+  "cross_device_validation": {
+    "status": "NOT_REQUIRED",
+    "devices_tested": [],
+    "fabrication_matched": false,
+    "notes": ""
+  },
+  "cross_device_status": "NOT_REQUIRED",
+  "instrument_capabilities": {},
+  "calibration_validity_score": null,
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [
+    "M09_VISIBLE_SOURCE_PARTIAL_DOC_SET",
+    "M09_KNOWN_MECHANISM_SURFACED"
+  ],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [
+    "Parity switching correlates with the sudden T1 collapses and strong drive-induced QP generation is visible.",
+    "M09 mechanism competition used only the surfaced subset of mechanism references available in this workspace."
+  ],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [
+    "specs/core/signature_to_bath_decision_chart.md",
+    "specs/research/vortex_pinning_methods.md",
+    "specs/research/deep_research_report.md"
+  ],
+  "gate_trace": [],
+  "system_status": "READY",
+  "governance_self_check": {
+    "validation_harness_status": "PASSED",
+    "schema_validation_status": "PASSED",
+    "reference_resolution_status": "PASSED",
+    "determinism_status": "PASSED",
+    "system_status": "READY"
+  },
+  "scientific_decision": "NOT_EVALUATED",
+  "governance_outcome": "DEFER"
+}

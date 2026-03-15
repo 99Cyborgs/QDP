@@ -1,0 +1,173 @@
+{
+  "artifact_id": "QDP_V10_6_M07_SELFTEST_CASES",
+  "module_id": "M07",
+  "cases": [
+    {
+      "case_id": "CASE_M07_HYSTERESIS_MEMORY",
+      "description": "Hysteresis evidence should rank metastable vortex-memory style baths first and recommend field-loop discrimination.",
+      "input_candidate": {
+        "candidate_id": "m07-case-hysteresis",
+        "branch_or_model_tag": "M07_CASE_HYSTERESIS",
+        "declared_family_class": "VORTEX_MEMORY",
+        "declared_likely_bath_class": "PINNED_VORTEX_OCCUPANCY",
+        "evaluation_notes": [
+          "Strong hysteresis in 1/Qi versus Bcool persists across cooldowns.",
+          "Repeat ZFC and FC loops show a reproducible hysteresis index."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+        "family_class_mismatch": false,
+        "family_status": "DECLARED_FAMILY_CONFIRMED",
+        "inferred_bath_rank_order": [
+          "METASTABLE_CONFIGURATION_MEMORY",
+          "PINNED_VORTEX_OCCUPANCY",
+          "SLOW_DEFECT_SECTOR"
+        ],
+        "signature_matches": [
+          "HYSTERESIS"
+        ],
+        "minimal_discriminant_measurement": "Repeat ZFC vs FC and up/down field loops; compute hysteresis index; replicate across cooldowns.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    },
+    {
+      "case_id": "CASE_M07_TLS_SATURATION",
+      "description": "Smooth power dependence with TLS saturation should classify as TLS ensemble.",
+      "input_candidate": {
+        "candidate_id": "m07-case-tls",
+        "branch_or_model_tag": "M07_CASE_TLS",
+        "declared_family_class": "TLS_ENSEMBLE",
+        "declared_likely_bath_class": "DIELECTRIC_INTERFACE_LOSS",
+        "primary_observable": "Smooth power dependence consistent with saturation.",
+        "evaluation_notes": [
+          "Qi vs readout power follows a TLS saturation trend."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "TLS_ENSEMBLE",
+        "family_class_mismatch": false,
+        "family_status": "DECLARED_FAMILY_CONFIRMED",
+        "inferred_bath_rank_order": [
+          "TLS_ENSEMBLE",
+          "DIELECTRIC_INTERFACE_LOSS",
+          "THERMAL_BATH"
+        ],
+        "signature_matches": [
+          "POWER_DEPENDENT_SATURATION"
+        ],
+        "minimal_discriminant_measurement": "Run a Qi versus readout power sweep, fit a TLS saturation form, and repeat at two to three temperatures.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    },
+    {
+      "case_id": "CASE_M07_KERNEL_MEMORY",
+      "description": "Non-exponential decay and revivals should map to a structured-memory family.",
+      "input_candidate": {
+        "candidate_id": "m07-case-kernel",
+        "branch_or_model_tag": "M07_CASE_KERNEL",
+        "evaluation_notes": [
+          "The decay is non-exponential with partial recovery and revivals at late time.",
+          "This looks like kernel memory from a structured bath."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "FINITE_SIZE_STRUCTURED_BATH",
+        "family_class_mismatch": false,
+        "family_status": "INFERRED_FROM_SIGNATURES",
+        "inferred_bath_rank_order": [
+          "FINITE_SIZE_STRUCTURED_BATH",
+          "STRUCTURED_PHONON_BATH",
+          "STRUCTURED_EM_BATH",
+          "KERNEL_MEMORY"
+        ],
+        "signature_matches": [
+          "REVIVALS_BACKFLOW",
+          "NON_EXPONENTIAL_DECAY"
+        ],
+        "minimal_discriminant_measurement": "Run time-domain sequences that expose revivals and compare with and without phononic or packaging changes.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    },
+    {
+      "case_id": "CASE_M07_PARASITIC_MODE",
+      "description": "Avoided crossings should prioritize a coherent parasitic mode path.",
+      "input_candidate": {
+        "candidate_id": "m07-case-parasitic",
+        "branch_or_model_tag": "M07_CASE_PARASITIC",
+        "evaluation_notes": [
+          "Spectroscopy shows an avoided crossing with clear mode tracking and a visible gap 2g."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "COHERENT_PARASITIC_MODE",
+        "family_class_mismatch": false,
+        "family_status": "INFERRED_FROM_SIGNATURES",
+        "inferred_bath_rank_order": [
+          "COHERENT_PARASITIC_MODE",
+          "STRUCTURED_EM_BATH",
+          "DEFECT_MODE"
+        ],
+        "signature_matches": [
+          "AVOIDED_CROSSING"
+        ],
+        "minimal_discriminant_measurement": "Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    },
+    {
+      "case_id": "CASE_M07_GLOBAL_BATH",
+      "description": "Cross-device correlated bursts should rank a global bath path ahead of local alternatives.",
+      "input_candidate": {
+        "candidate_id": "m07-case-global",
+        "branch_or_model_tag": "M07_CASE_GLOBAL",
+        "evaluation_notes": [
+          "Sudden T1 collapses occur together with correlated events across devices during simultaneous monitoring.",
+          "A quasiparticle burst remains plausible."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "GLOBAL_BATH_EVENT",
+        "family_class_mismatch": false,
+        "family_status": "INFERRED_FROM_SIGNATURES",
+        "inferred_bath_rank_order": [
+          "QUASIPARTICLE_BATH",
+          "PHONON_BATH",
+          "GLOBAL_BATH_EVENT",
+          "GLOBAL_BATH",
+          "RADIATIVE_GLOBAL_BATH"
+        ],
+        "signature_matches": [
+          "SUDDEN_T1_COLLAPSES",
+          "CORRELATED_EVENTS_ACROSS_DEVICES"
+        ],
+        "minimal_discriminant_measurement": "Run fast repeated T1 sampling, look for cross-device correlations, and vary shielding, biasing, and thermalization.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    },
+    {
+      "case_id": "CASE_M07_DECLARED_ONLY_FALLBACK",
+      "description": "Without a surfaced signature, the module should fall back to a declared family without inventing stronger evidence.",
+      "input_candidate": {
+        "candidate_id": "m07-case-declared-only",
+        "branch_or_model_tag": "M07_CASE_DECLARED_ONLY",
+        "declared_family_class": "TLS_ENSEMBLE",
+        "declared_likely_bath_class": "DIELECTRIC_INTERFACE_LOSS",
+        "evaluation_notes": [
+          "Fork registration completed before any discriminant measurement was run."
+        ]
+      },
+      "expected": {
+        "assigned_family_class": "TLS_ENSEMBLE",
+        "family_class_mismatch": false,
+        "family_status": "DECLARED_ONLY_PENDING_SIGNATURE_TRIAGE",
+        "inferred_bath_rank_order": [
+          "DIELECTRIC_INTERFACE_LOSS"
+        ],
+        "signature_matches": [],
+        "minimal_discriminant_measurement": "Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.",
+        "bath_classification_consistent_with_glossary": true
+      }
+    }
+  ]
+}

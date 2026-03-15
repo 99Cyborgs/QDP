@@ -1,0 +1,372 @@
+{
+  "artifact_id": "QDP_V10_6_M08_SELFTEST_REPORT",
+  "module_id": "M08",
+  "timestamp_utc": "2026-03-15T20:19:14.682992+00:00",
+  "visible_source_only": true,
+  "cases_total": 6,
+  "cases_passed": 6,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M08_BASELINE_SUFFICIENCY",
+      "description": "A joint GKSL baseline fit with drift-aware residual checks should reproduce the clean baseline-sufficiency signature M05 expects.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": true
+        },
+        "residual_analysis": {
+          "structured_residuals": false,
+          "white_residuals": true,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [],
+          "time_series_based": true
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": true
+        },
+        "residual_analysis": {
+          "structured_residuals": false,
+          "white_residuals": true,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [],
+          "time_series_based": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json"
+    },
+    {
+      "case_id": "CASE_M08_CORRELATED_RESIDUALS",
+      "description": "Correlated residuals should explicitly fail whiteness and mark structured residuals.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CORRELATED_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CORRELATED_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M08_DRIVE_AND_RAMSEY_MISMATCH",
+      "description": "Drive-conditional shifts and Ramsey-envelope mismatch should surface as structured residual features.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "DRIVE_CONDITIONAL_SHIFTS",
+            "RAMSEY_ENVELOPE_MISMATCH"
+          ],
+          "time_series_based": true
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "DRIVE_CONDITIONAL_SHIFTS",
+            "RAMSEY_ENVELOPE_MISMATCH"
+          ],
+          "time_series_based": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json"
+    },
+    {
+      "case_id": "CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED",
+      "description": "Nonstationary cross-observable residuals should fail stationarity and correlation checks together.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": false,
+          "cross_observable_correlations_vanish": false,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CROSS_OBSERVABLE_CORRELATIONS",
+            "NONSTATIONARY_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": false,
+          "cross_observable_correlations_vanish": false,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CROSS_OBSERVABLE_CORRELATIONS",
+            "NONSTATIONARY_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json"
+    },
+    {
+      "case_id": "CASE_M08_NON_GAUSSIAN_BURSTS",
+      "description": "Bursty heavy-tailed residuals should be flagged even when autocorrelation is not the main issue.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "NON_GAUSSIAN_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "NON_GAUSSIAN_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M08_INSUFFICIENT_JOINT_DATA",
+      "description": "A single observable without time-series support should fall back conservatively instead of pretending a joint baseline fit ran.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "baseline_model": {
+          "status": "INSUFFICIENT_JOINT_FIT_DATA",
+          "joint_fit_used": false,
+          "hierarchical_drift_model_used": false,
+          "pipeline_executed": false,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": false,
+          "features": [
+            "INSUFFICIENT_TIME_SERIES_DATA"
+          ],
+          "time_series_based": false
+        }
+      },
+      "actual_summary": {
+        "baseline_model": {
+          "status": "INSUFFICIENT_JOINT_FIT_DATA",
+          "joint_fit_used": false,
+          "hierarchical_drift_model_used": false,
+          "pipeline_executed": false,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": false,
+          "features": [
+            "INSUFFICIENT_TIME_SERIES_DATA"
+          ],
+          "time_series_based": false
+        }
+      },
+      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_report.json",
+      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json"
+    }
+  ]
+}

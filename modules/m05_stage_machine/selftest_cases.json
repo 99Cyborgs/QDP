@@ -1,0 +1,215 @@
+{
+  "artifact_id": "QDP_V10_6_M05_SELFTEST_CASES",
+  "module_id": "M05",
+  "cases": [
+    {
+      "case_id": "CASE_M05_BASELINE_SUFFICIENCY",
+      "description": "Baseline pipeline reproduced and drift-aware residual diagnostics support conservative baseline sufficiency rejection at Stage 6.",
+      "input_candidate": {
+        "candidate_id": "m05-case-baseline-sufficiency",
+        "branch_or_model_tag": "M05_CASE_BASELINE_SUFFICIENCY",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY"
+        },
+        "residual_analysis": {
+          "white_residuals": true,
+          "stationary_residuals": true,
+          "structured_residuals": false,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_6",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE",
+      "description": "A surfaced known-mechanism explanation rejects the branch at Stage 8.",
+      "input_candidate": {
+        "candidate_id": "m05-case-classical-mechanism",
+        "branch_or_model_tag": "M05_CASE_CLASSICAL_MECHANISM",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY"
+        },
+        "residual_analysis": {
+          "white_residuals": false,
+          "stationary_residuals": false,
+          "structured_residuals": true,
+          "cross_observable_correlations_vanish": false,
+          "drift_aware_fit_applied": true
+        },
+        "strongest_competing_mechanism": "TLS",
+        "mechanism_tests": {
+          "tls": {
+            "explains_data": true
+          }
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_8",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_ARTIFACT_EQUIVALENCE",
+      "description": "An artifact explanation rejects the branch at Stage 9 once baseline and mechanism gates have been survived conservatively.",
+      "input_candidate": {
+        "candidate_id": "m05-case-artifact-equivalence",
+        "branch_or_model_tag": "M05_CASE_ARTIFACT_EQUIVALENCE",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY"
+        },
+        "artifact_tests": {
+          "route_explains_data": true
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_9",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_LINDBLAD_EQUIVALENCE",
+      "description": "A branch that survives to Stage 11 but remains equivalent within measurement resolution is rejected.",
+      "input_candidate": {
+        "candidate_id": "m05-case-lindblad-equivalence",
+        "branch_or_model_tag": "M05_CASE_LINDBLAD_EQUIVALENCE",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_WITH_DRIFT"
+        }
+      },
+      "expected": {
+        "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_11",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE",
+      "description": "A surviving branch reaches provisional identifiability, then is clipped to SANDBOX_ONLY because cross-device evidence is only scheduled.",
+      "input_candidate": {
+        "candidate_id": "m05-case-provisional-no-cross-device",
+        "branch_or_model_tag": "M05_CASE_PROVISIONAL_NO_CROSS_DEVICE",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "numerical_stability": {
+          "stable": true,
+          "failed_checks": []
+        },
+        "exact_falsifier": "If the claimed effect is real, the cross-device discriminant sweep must preserve the inferred ordering.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Cross-device discriminant sweep"
+          ],
+          "executable_falsifier_package_emitted": true
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "multi_device_data_available": false
+      },
+      "expected": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS",
+      "description": "Convergence planning may set L2, but numerical-stability planning must not be conflated with a passed Stage 13 state.",
+      "input_candidate": {
+        "candidate_id": "m05-case-planning-not-pass",
+        "branch_or_model_tag": "M05_CASE_PLANNING_NOT_PASS",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "numerical_stability": {
+          "stable": false,
+          "failed_checks": [
+            "CONDITION_NUMBER_DIVERGENCE"
+          ],
+          "stability_plan_defined": true
+        }
+      },
+      "expected": {
+        "scientific_decision": "NUMERICALLY_UNSTABLE",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_13",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    }
+  ]
+}

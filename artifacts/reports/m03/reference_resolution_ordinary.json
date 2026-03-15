@@ -1,0 +1,110 @@
+{
+  "artifact_id": "QDP_V10_6_REFERENCE_RESOLUTION_REPORT_M03",
+  "report_id": "m03-reference-report-20260315T201913Z",
+  "module_id": "M03",
+  "mode": "ordinary",
+  "root": "C:\\Users\\Forre\\Documents\\QDP",
+  "timestamp_utc": "2026-03-15T20:19:13.534415+00:00",
+  "manifest_id": "QDP_V10_6_REFERENCE_MANIFEST_M03",
+  "registry_id": "QDP_V10_6_GOVERNANCE_REGISTRY_M03",
+  "resolved_count": 15,
+  "unresolved_count": 0,
+  "critical_unresolved_count": 0,
+  "reference_resolution_status": "PASSED",
+  "system_status": "HARNESS_REQUIRED",
+  "promotion_cap_governance": "",
+  "automatic_flags_triggered": [],
+  "resolved_references": [
+    {
+      "ref_id": "QDP_v10_6_BUILD_SPEC",
+      "relative_path": "specs/core/build_spec.md",
+      "sha256": "a2d74a8bf2369a786c2e083d366a389810ff2de86110948ccdb4fa2876f28fcd",
+      "bytes": 13340
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_TEMPLATE_V10_6_M02",
+      "relative_path": "config/schema/candidate_template.json",
+      "sha256": "9d271cb412e0ff7c2791a62deba15dbfc5b9648e0384e609ad6b8de3d5575ec0",
+      "bytes": 3917
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_SCHEMA_V10_6_M02",
+      "relative_path": "config/schema/candidate_schema.json",
+      "sha256": "b5876b94ccaf6cf154f62d83456d532d80c375805d783d83c18050fd1d31d0a7",
+      "bytes": 17637
+    },
+    {
+      "ref_id": "QDP_VALIDATE_CANDIDATE_M02",
+      "relative_path": "tools/validators/candidate_validator.py",
+      "sha256": "d5d87d274a48d3d8f28d4abde43a1e0d786396cf3d7c2fcaec0e5dbd2585b40b",
+      "bytes": 9565
+    },
+    {
+      "ref_id": "QDP_MASTER_SPEC",
+      "relative_path": "specs/core/master_spec.md",
+      "sha256": "135b3191f70ad97e0657f487396844643224ea703b16e8a144f9177257e10175",
+      "bytes": 1865
+    },
+    {
+      "ref_id": "QDP_VALIDATION_GATE",
+      "relative_path": "specs/core/validation_gate.md",
+      "sha256": "b149c5c25972739e344ad7a1b6db11cfc7c2db9cddc28af1a9c698676bbb3899",
+      "bytes": 536
+    },
+    {
+      "ref_id": "QDP_FORK_QUESTIONS",
+      "relative_path": "specs/intake/fork_questions.md",
+      "sha256": "330fa9974a1eeecb582fe86fe84c20358e06ea4bee924c4d7b8c7952e0980a1d",
+      "bytes": 1026
+    },
+    {
+      "ref_id": "QDP_FALSIFIER_REGISTRY",
+      "relative_path": "specs/core/falsifier_registry.md",
+      "sha256": "9197e97cdeed96588b56fe2c2f800dd03663d4059aea5b901a32cbefc7cc455b",
+      "bytes": 399
+    },
+    {
+      "ref_id": "QDP_BATH_GLOSSARY",
+      "relative_path": "specs/core/bath_glossary.md",
+      "sha256": "5df3b4b4a12df7bbf460606ea573adab562c3b91b372da1dd95ff261fa99a680",
+      "bytes": 4012
+    },
+    {
+      "ref_id": "QDP_SIGNATURE_TO_BATH_CHART",
+      "relative_path": "specs/core/signature_to_bath_decision_chart.md",
+      "sha256": "cfa12a2292755b236e09f2fa3a67d325f3131bcfbd41a1e2286715e02c4622bd",
+      "bytes": 3564
+    },
+    {
+      "ref_id": "QDP_MODEL_SPEC_BASELINE",
+      "relative_path": "specs/core/model_spec.md",
+      "sha256": "f4fb83e77b9bfe753db8f5d4d238d6266e06f9eddd9ab2bbe27e68bf83c0e8d7",
+      "bytes": 980
+    },
+    {
+      "ref_id": "QDP_FORK_INTAKE_FORM",
+      "relative_path": "specs/intake/fork_intake_form_one_page.pdf",
+      "sha256": "3a86e3137169dba080875a7e6f5037f457609cf8996ee3bd043283e91cc96666",
+      "bytes": 48062
+    },
+    {
+      "ref_id": "QDP_DEEP_RESEARCH_REPORT",
+      "relative_path": "specs/research/deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6",
+      "bytes": 32972
+    },
+    {
+      "ref_id": "RETAINED_V10_1_OPERATIVE_BODY",
+      "relative_path": "runtime/retained/operative_body_v10_1.md",
+      "sha256": "8c8b2cf6bd23b4aba43fcd691402471cf4aff7c0f199ef7279e99b578848f9a4",
+      "bytes": 1157
+    },
+    {
+      "ref_id": "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT",
+      "relative_path": "runtime/missing/federated_governance_registry_object.json",
+      "sha256": "8ae1c3979d934ee7d3cc4fee8904274ed1e6a07c215e46673f4af7f28f01e432",
+      "bytes": 1527
+    }
+  ],
+  "unresolved_references": []
+}

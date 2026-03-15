@@ -1,0 +1,61 @@
+{
+  "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
+  "module_id": "M07",
+  "timestamp_utc": "2026-03-15T20:19:14.331197+00:00",
+  "visible_source_only": true,
+  "declared_family_class": "VORTEX_MEMORY",
+  "declared_likely_bath_class": "PINNED_VORTEX_OCCUPANCY",
+  "evidence_text_sample": "m07-case-hysteresis m07_case_hysteresis   vortex_memory      pinned_vortex_occupancy               not_required  not_required   strong hysteresis in 1/qi versus bcool persists across cooldowns. repeat zfc and fc loops show a reproducible hysteresis index. ready passed passed passed passed ready not_evaluated defer",
+  "rule_matches": [
+    {
+      "rule_index": 0,
+      "signature_id": "HYSTERESIS_MEMORY",
+      "signature_label": "HYSTERESIS",
+      "matched_terms": [
+        "hysteresis",
+        "bcool",
+        "zfc",
+        "fc",
+        "hysteresis index"
+      ],
+      "score": 5,
+      "priority": 0,
+      "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+      "bath_rank_order": [
+        "METASTABLE_CONFIGURATION_MEMORY",
+        "PINNED_VORTEX_OCCUPANCY",
+        "SLOW_DEFECT_SECTOR"
+      ],
+      "minimal_discriminant_measurement": "Repeat ZFC vs FC and up/down field loops; compute hysteresis index; replicate across cooldowns.",
+      "mechanism_weights": {
+        "P_VORTEX": 0.8,
+        "P_CONTROL_NOISE": 0.05,
+        "P_OTHER": 0.15
+      }
+    }
+  ],
+  "result_summary": {
+    "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+    "family_class_mismatch": false,
+    "family_status": "DECLARED_FAMILY_CONFIRMED",
+    "inferred_bath_rank_order": [
+      "METASTABLE_CONFIGURATION_MEMORY",
+      "PINNED_VORTEX_OCCUPANCY",
+      "SLOW_DEFECT_SECTOR"
+    ],
+    "signature_matches": [
+      "HYSTERESIS"
+    ],
+    "minimal_discriminant_measurement": "Repeat ZFC vs FC and up/down field loops; compute hysteresis index; replicate across cooldowns.",
+    "bath_classification_consistent_with_glossary": true,
+    "mechanism_scores_after_signature": {
+      "P_TLS": 0.0,
+      "P_VORTEX": 0.8,
+      "P_QUASIPARTICLE": 0.0,
+      "P_PHONON": 0.0,
+      "P_CONTROL_NOISE": 0.05,
+      "P_EM_PURCELL": 0.0,
+      "P_OTHER": 0.15
+    }
+  }
+}

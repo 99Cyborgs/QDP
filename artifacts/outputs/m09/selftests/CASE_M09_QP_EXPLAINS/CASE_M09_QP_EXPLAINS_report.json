@@ -1,0 +1,52 @@
+{
+  "artifact_id": "QDP_V10_6_M09_MECHANISM_REPORT",
+  "module_id": "M09",
+  "timestamp_utc": "2026-03-15T20:19:14.909279+00:00",
+  "visible_source_only": true,
+  "result_summary": {
+    "strongest_competing_mechanism_initial": "QUASIPARTICLE",
+    "strongest_competing_mechanism": "QUASIPARTICLE",
+    "mechanism_tests": {
+      "explains_data": true,
+      "parsimonious_combination_explains": false,
+      "parsimonious_combination_label": "",
+      "tls": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "vortex": {
+        "status": "SUPPORTING",
+        "explains_data": false
+      },
+      "quasiparticle": {
+        "status": "EXPLAINS_DATA",
+        "explains_data": true
+      },
+      "phonon": {
+        "status": "SUPPORTING",
+        "explains_data": false
+      },
+      "control_noise": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      },
+      "em_purcell": {
+        "status": "NOT_SUPPORTED",
+        "explains_data": false
+      }
+    }
+  },
+  "diagnostics": {
+    "evidence_text_sample": "parity switching correlates with the sudden t1 collapses and strong drive-induced qp generation is visible. global_bath_event sudden_t1_collapses",
+    "signature_matches": [
+      "SUDDEN_T1_COLLAPSES"
+    ],
+    "missing_owner_artifacts": [
+      "QDP_Vortex_Pinning_Microwave_Loss_Module.md",
+      "vortex_entry_barrier.md",
+      "vortex_entry_calculator.md",
+      "vortex_microwave_dissipation.md",
+      "residual_field_estimation_dilution_fridge.md"
+    ]
+  }
+}
