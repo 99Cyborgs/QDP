@@ -1,0 +1,82 @@
+base_config: configs/deterministic_baseline.yaml
+metadata:
+  case_id: S02
+  phase: S
+  version: "0.1.0"
+  description: "Pinned strip with additive noise"
+  tags: ["stochastic", "rare-events", "baseline"]
+mesh:
+  nx: 512
+  ny: 128
+  lx: 32.0
+  ly: 8.0
+  periodic_x: false
+  periodic_y: false
+geometry:
+  family: strip
+  moats: []
+  holes: []
+  mask_file: null
+physics:
+  u: 5.79
+  sigma_n: 1.0
+  alpha_background: 1.0
+  initial_condition: meissner
+  restart_file: null
+  pinning:
+    model: random_field
+    seed: 33001
+    mu: 0.0
+    sigma: 0.18
+    lcorr: 1.0
+    defect_count: 0
+    defects: []
+forcing:
+  b_dc: 0.015
+  a_rf: 0.025
+  omega: 0.02
+  phase: 0.0
+  rf_profile: edge_crowding
+  rf_profile_file: null
+noise:
+  enabled: true
+  gamma_psi: 0.001
+  master_seed: 2026101
+time:
+  dt: 0.001
+  n_steps: 12000
+  obs_stride: 10
+  field_stride: 600
+  checkpoint_stride: 1500
+solver:
+  backend: petsc
+  scheme: imex_linearized
+  psi_linear_solver: gmres
+  phi_linear_solver: cg
+  rtol: 1.0e-8
+  atol: 1.0e-12
+  max_it: 1500
+observables:
+  track_vortices: true
+  compute_frequency_shift_proxy: true
+  compute_qinv_proxy: true
+  weight_profile_f: edge_crowding
+  weight_profile_q: edge_crowding
+  c_f: 1.0
+  c_q: 1.0
+  qinv_bg: 0.02
+inference:
+  enabled: false
+  mode: none
+  infer_parameters: []
+  dataset_path: null
+  summary_statistics: []
+output:
+  root_dir: runs
+  write_fields: true
+  write_observables: true
+  compression: gzip
+campaign:
+  ensemble_size: 64
+  matrix_row_id: null
+  promotion_rule: gate:G2

@@ -1,0 +1,538 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TDGLRFCaseConfig",
+  "type": "object",
+  "required": [
+    "metadata",
+    "mesh",
+    "geometry",
+    "physics",
+    "forcing",
+    "noise",
+    "time",
+    "solver",
+    "output"
+  ],
+  "properties": {
+    "base_config": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "phase",
+        "version"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "D",
+            "S",
+            "I",
+            "P",
+            "custom"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mesh": {
+      "type": "object",
+      "required": [
+        "nx",
+        "ny",
+        "lx",
+        "ly"
+      ],
+      "properties": {
+        "nx": {
+          "type": "integer",
+          "minimum": 8
+        },
+        "ny": {
+          "type": "integer",
+          "minimum": 8
+        },
+        "lx": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "ly": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "periodic_x": {
+          "type": "boolean"
+        },
+        "periodic_y": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "geometry": {
+      "type": "object",
+      "required": [
+        "family"
+      ],
+      "properties": {
+        "family": {
+          "type": "string",
+          "enum": [
+            "strip",
+            "strip_with_moat",
+            "strip_with_hole",
+            "custom_mask"
+          ]
+        },
+        "moats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "x0",
+              "y0",
+              "radius"
+            ],
+            "properties": {
+              "x0": {
+                "type": "number"
+              },
+              "y0": {
+                "type": "number"
+              },
+              "radius": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "holes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "x0",
+              "y0",
+              "radius"
+            ],
+            "properties": {
+              "x0": {
+                "type": "number"
+              },
+              "y0": {
+                "type": "number"
+              },
+              "radius": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "mask_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "physics": {
+      "type": "object",
+      "required": [
+        "u",
+        "sigma_n",
+        "alpha_background",
+        "pinning",
+        "initial_condition"
+      ],
+      "properties": {
+        "u": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sigma_n": {
+          "type": "number",
+          "minimum": 0
+        },
+        "alpha_background": {
+          "type": "number"
+        },
+        "initial_condition": {
+          "type": "string",
+          "enum": [
+            "meissner",
+            "seeded_vortices",
+            "restart"
+          ]
+        },
+        "restart_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pinning": {
+          "type": "object",
+          "required": [
+            "model"
+          ],
+          "properties": {
+            "model": {
+              "type": "string",
+              "enum": [
+                "none",
+                "gaussian_defects",
+                "random_field"
+              ]
+            },
+            "seed": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "mu": {
+              "type": "number"
+            },
+            "sigma": {
+              "type": "number",
+              "minimum": 0
+            },
+            "lcorr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "defect_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "defects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "x0",
+                  "y0",
+                  "amplitude",
+                  "width"
+                ],
+                "properties": {
+                  "x0": {
+                    "type": "number"
+                  },
+                  "y0": {
+                    "type": "number"
+                  },
+                  "amplitude": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "forcing": {
+      "type": "object",
+      "required": [
+        "b_dc",
+        "a_rf",
+        "omega",
+        "phase",
+        "rf_profile"
+      ],
+      "properties": {
+        "b_dc": {
+          "type": "number"
+        },
+        "a_rf": {
+          "type": "number",
+          "minimum": 0
+        },
+        "omega": {
+          "type": "number",
+          "minimum": 0
+        },
+        "phase": {
+          "type": "number"
+        },
+        "rf_profile": {
+          "type": "string",
+          "enum": [
+            "uniform_x",
+            "uniform_y",
+            "edge_crowding",
+            "from_file"
+          ]
+        },
+        "rf_profile_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "noise": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "gamma_psi",
+        "master_seed"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "gamma_psi": {
+          "type": "number",
+          "minimum": 0
+        },
+        "master_seed": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "time": {
+      "type": "object",
+      "required": [
+        "dt",
+        "n_steps",
+        "obs_stride",
+        "field_stride",
+        "checkpoint_stride"
+      ],
+      "properties": {
+        "dt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "n_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "obs_stride": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "field_stride": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "checkpoint_stride": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "solver": {
+      "type": "object",
+      "required": [
+        "backend",
+        "scheme",
+        "psi_linear_solver",
+        "phi_linear_solver",
+        "rtol",
+        "atol"
+      ],
+      "properties": {
+        "backend": {
+          "type": "string",
+          "enum": [
+            "scipy",
+            "petsc"
+          ]
+        },
+        "scheme": {
+          "type": "string",
+          "enum": [
+            "imex_linearized"
+          ]
+        },
+        "psi_linear_solver": {
+          "type": "string"
+        },
+        "phi_linear_solver": {
+          "type": "string"
+        },
+        "rtol": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "atol": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_it": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "observables": {
+      "type": "object",
+      "properties": {
+        "track_vortices": {
+          "type": "boolean"
+        },
+        "compute_frequency_shift_proxy": {
+          "type": "boolean"
+        },
+        "compute_qinv_proxy": {
+          "type": "boolean"
+        },
+        "weight_profile_f": {
+          "type": "string",
+          "enum": [
+            "uniform",
+            "edge_crowding",
+            "from_file"
+          ]
+        },
+        "weight_profile_q": {
+          "type": "string",
+          "enum": [
+            "uniform",
+            "edge_crowding",
+            "from_file"
+          ]
+        },
+        "c_f": {
+          "type": "number"
+        },
+        "c_q": {
+          "type": "number"
+        },
+        "qinv_bg": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "inference": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "synthetic_map",
+            "synthetic_laplace",
+            "synthetic_mcmc"
+          ]
+        },
+        "infer_parameters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dataset_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary_statistics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "root_dir",
+        "write_fields",
+        "write_observables",
+        "compression"
+      ],
+      "properties": {
+        "root_dir": {
+          "type": "string"
+        },
+        "write_fields": {
+          "type": "boolean"
+        },
+        "write_observables": {
+          "type": "boolean"
+        },
+        "compression": {
+          "type": "string",
+          "enum": [
+            "none",
+            "gzip"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "campaign": {
+      "type": "object",
+      "properties": {
+        "ensemble_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "matrix_row_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "promotion_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

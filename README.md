@@ -1,25 +1,36 @@
-# QDP
+# TDGL-RF
 
-QDP is an active quantum domain-program repository on the ALL-MIND incubate path.
+Phase-1 implementation of the constrained ORNL TDGL-RF artifact pack.
 
-It stays outside the core operating surface by default, but it is strategically near-core and already referenced by ALL-MIND as a governed downstream program.
+Implemented in this repository:
+- config-driven deterministic 2D thin-film TDGL forward solve,
+- structured Cartesian grid and geometry masks,
+- prescribed vector-potential forcing,
+- gauge-invariant link-variable operators,
+- scalar-potential solve with zero-mean gauge fixing,
+- IMEX time stepping,
+- run-directory creation, logging, provenance, HDF5 checkpoints, and CSV observables,
+- unit and integration tests for the phase-1 kernels and clean-strip benchmark.
 
-## Read order
+## Install
 
-1. `AGENTS.md`
-2. `SYSTEM_BOUNDARY.md`
-3. `STATUS.md`
-4. `REPO_MAP.md`
-5. `ARCHITECTURE_SUMMARY.md`
-6. `VALIDATION.md`
-7. `PROMOTION_NOTES.md`
+```bash
+python -m pip install -e .[dev]
+```
 
-## Current posture
+## Run
 
-- class: `incubate`
-- suggested promotion mode: `incubation link`
-- integration rule: ALL-MIND consumes compact status and interface artifacts only
+Validate a config:
 
-## Main repo concern
+```bash
+tdgl-rf validate-config configs/d01_smoke.yaml
+```
 
-The repo contains meaningful runtime and scientific content, but the source-versus-generated boundary is still too noisy for core promotion. Governance exists here to reduce that audit cost without absorbing the whole repo.
+Run a deterministic case:
+
+```bash
+tdgl-rf run-case configs/d01_smoke.yaml
+```
+
+The run directory is created under `runs/<case_id>/<timestamp>/`.
+

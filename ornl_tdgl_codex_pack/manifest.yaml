@@ -1,0 +1,73 @@
+pack_name: ornl_tdgl_codex_pack
+version: 0.1.0
+purpose: Implementation-grade artifact pack for building the experiment platform behind
+  a vortex-resolved stochastic TDGL + RF + Bayesian inference proposal.
+entry_points:
+- README.md
+- docs/01_program_charter.md
+- docs/10_codex_build_instructions.md
+- prompts/codex_bootstrap_prompt.md
+files:
+- path: README.md
+  priority: 1
+  purpose: Overview and pack usage
+- path: docs/01_program_charter.md
+  priority: 1
+  purpose: Scientific objective, scope, exclusions, success criteria
+- path: docs/02_physics_spec.md
+  priority: 1
+  purpose: Exact forward and observation models
+- path: docs/03_numerics_spec.md
+  priority: 1
+  purpose: Discretization and solver requirements
+- path: docs/04_software_architecture.md
+  priority: 1
+  purpose: Repo layout, APIs, CLI, outputs
+- path: docs/05_verification_validation.md
+  priority: 1
+  purpose: Acceptance tests and benchmarks
+- path: docs/06_bayesian_inference_spec.md
+  priority: 1
+  purpose: Inverse problem and UQ workflow
+- path: docs/07_experiment_matrix_guide.md
+  priority: 2
+  purpose: Campaign design and matrix semantics
+- path: docs/08_performance_scaling_plan.md
+  priority: 2
+  purpose: Performance ladder and scaling plan
+- path: docs/09_proposal_translation_brief.md
+  priority: 2
+  purpose: Map outputs to proposal sections
+- path: docs/10_codex_build_instructions.md
+  priority: 1
+  purpose: Hard implementation instructions for Codex
+- path: docs/11_one_page_aims.md
+  priority: 2
+  purpose: Condensed aims-page style prose
+- path: configs/tdgl_case.schema.json
+  priority: 1
+  purpose: Machine-readable config schema
+- path: configs/deterministic_baseline.yaml
+  priority: 1
+  purpose: Reference deterministic configuration
+- path: configs/stochastic_baseline.yaml
+  priority: 1
+  purpose: Reference stochastic configuration
+- path: configs/inference_baseline.yaml
+  priority: 1
+  purpose: Reference inference configuration
+- path: matrices/experiment_matrix.csv
+  priority: 1
+  purpose: Initial experiment campaign
+- path: prompts/codex_bootstrap_prompt.md
+  priority: 1
+  purpose: Prompt to initialize Codex
+- path: tasks/implementation_backlog.md
+  priority: 1
+  purpose: Milestones and task list
+- path: tasks/acceptance_checklist.md
+  priority: 1
+  purpose: Phase-gated acceptance checklist
+- path: docs/12_assumptions.md
+  priority: 2
+  purpose: Frozen v1 assumptions

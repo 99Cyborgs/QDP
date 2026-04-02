@@ -1,0 +1,23 @@
+base_config: deterministic_baseline.yaml
+metadata:
+  case_id: D01_smoke
+  description: "Short deterministic clean-strip smoke test"
+mesh:
+  nx: 24
+  ny: 12
+  lx: 12.0
+  ly: 6.0
+time:
+  dt: 0.002
+  n_steps: 8
+  obs_stride: 1
+  field_stride: 4
+  checkpoint_stride: 8
+solver:
+  psi_linear_solver: gmres
+  phi_linear_solver: cg
+output:
+  root_dir: runs
+  write_fields: true
+  write_observables: true
+  compression: gzip
