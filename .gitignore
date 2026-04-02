@@ -1,0 +1,6 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+runs/
+ornl_tdgl_codex_pack.zip
+src/tdgl_rf.egg-info/
