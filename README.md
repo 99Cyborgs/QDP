@@ -40,4 +40,15 @@ The run directory is created under `runs/<case_id>/<timestamp>/`.
 - `tdgl-rf refinement-sanity configs/phase1_refinement_sanity.yaml` runs the cheap mesh/dt sanity sweep and writes `comparison_table.csv` plus `comparison_table.json`.
 - `tdgl-rf run-matrix matrices/phase1_experiment_matrix_v1.csv` executes the small deterministic phase-1 matrix described in [docs/PHASE1_MATRIX_V1.md](docs/PHASE1_MATRIX_V1.md).
 - `tdgl-rf summarize-campaign <campaign_dir>` converts matrix outputs into `proposal_summary.csv` and `proposal_summary.md`.
+- `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml` runs the full deterministic validation tranche and writes `validation_summary.csv`, `validation_summary.json`, and `validation_report.md` under `runs/validation/...`.
+- `tdgl-rf reference-check validation/reference_manifest.yaml` regenerates the frozen canonical reference cases and checks their compact payload hashes.
+- `tdgl-rf reproducibility-check configs/validation/reference_rf_strip.yaml validation/thresholds.yaml` runs the same deterministic canonical case twice and checks exact same-stack reproducibility.
+
+## Validation Surface
+
+- Acceptance boundary: [docs/PHASE1_ACCEPTANCE.md](docs/PHASE1_ACCEPTANCE.md)
+- Validation campaign definition: [docs/PHASE1_VALIDATION_CAMPAIGN.md](docs/PHASE1_VALIDATION_CAMPAIGN.md)
+- Validation interpretation memo: [docs/PHASE1_VALIDATION_MEMO.md](docs/PHASE1_VALIDATION_MEMO.md)
+- Thresholds and frozen references: [validation/thresholds.yaml](validation/thresholds.yaml), [validation/reference_manifest.yaml](validation/reference_manifest.yaml)
+- Repo-level validation guidance: [VALIDATION.md](VALIDATION.md)
 

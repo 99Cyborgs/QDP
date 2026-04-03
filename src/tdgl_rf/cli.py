@@ -17,6 +17,7 @@ from tdgl_rf.workflows.run_case import run_simulation
 from tdgl_rf.workflows.run_ensemble import run_ensemble
 from tdgl_rf.workflows.run_inference import run_inference
 from tdgl_rf.workflows.run_matrix import run_experiment_matrix
+from tdgl_rf.workflows.validation import run_phase1_validation, run_reference_check, run_reproducibility_check
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -128,6 +129,64 @@ def summarize_campaign_cmd(campaign_dir: Path, output_dir: Path | None = typer.O
         _fail(exc)
         return
     typer.echo(json.dumps(asdict(summary), indent=2))
+
+
+@app.command("reference-check")
+def reference_check(manifest_path: Path, output_dir: Path | None = typer.Option(None, "--output-dir")) -> None:
+    """Regenerate and compare the frozen reference-output set."""
+
+    try:
+        summary = run_reference_check(manifest_path, output_dir=output_dir)
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
+    if summary.status != "success":
+        raise typer.Exit(code=1)
+
+
+@app.command("reproducibility-check")
+def reproducibility_check(
+    config_path: Path,
+    thresholds_path: Path,
+    output_dir: Path | None = typer.Option(None, "--output-dir"),
+) -> None:
+    """Run the cheap deterministic same-case-twice reproducibility check."""
+
+    try:
+        summary = run_reproducibility_check(config_path, tolerances_path=thresholds_path, output_dir=output_dir)
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
+    if summary.status != "success":
+        raise typer.Exit(code=1)
+
+
+@app.command("validate-phase1")
+def validate_phase1(
+    matrix_path: Path,
+    thresholds_path: Path,
+    reference_manifest_path: Path,
+    refinement_config_path: Path,
+    output_dir: Path | None = typer.Option(None, "--output-dir"),
+) -> None:
+    """Run the deterministic phase-1 validation tranche and write evidence artifacts."""
+
+    try:
+        summary = run_phase1_validation(
+            matrix_path,
+            thresholds_path=thresholds_path,
+            reference_manifest_path=reference_manifest_path,
+            refinement_config_path=refinement_config_path,
+            output_dir=output_dir,
+        )
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
+    if summary.status != "success":
+        raise typer.Exit(code=1)
 
 
 @app.command("summarize")
