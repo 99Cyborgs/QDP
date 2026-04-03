@@ -11,6 +11,7 @@ import typer
 from tdgl_rf.config.loaders import load_case_config
 from tdgl_rf.exceptions import TDGLRFError
 from tdgl_rf.workflows.convergence import run_convergence
+from tdgl_rf.workflows.evidence import build_evidence_bundle
 from tdgl_rf.workflows.postprocess import summarize_campaign
 from tdgl_rf.workflows.refinement import run_refinement_sanity
 from tdgl_rf.workflows.run_case import run_simulation
@@ -125,6 +126,18 @@ def summarize_campaign_cmd(campaign_dir: Path, output_dir: Path | None = typer.O
 
     try:
         summary = summarize_campaign(campaign_dir, output_dir=output_dir)
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
+
+
+@app.command("evidence-bundle")
+def evidence_bundle(validation_dir: Path, output_dir: Path | None = typer.Option(None, "--output-dir")) -> None:
+    """Package a completed phase-1 validation run into a compact evidence bundle."""
+
+    try:
+        summary = build_evidence_bundle(validation_dir, output_dir=output_dir)
     except Exception as exc:
         _fail(exc)
         return

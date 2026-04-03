@@ -41,6 +41,7 @@ The run directory is created under `runs/<case_id>/<timestamp>/`.
 - `tdgl-rf run-matrix matrices/phase1_experiment_matrix_v1.csv` executes the small deterministic phase-1 matrix described in [docs/PHASE1_MATRIX_V1.md](docs/PHASE1_MATRIX_V1.md).
 - `tdgl-rf summarize-campaign <campaign_dir>` converts matrix outputs into `proposal_summary.csv` and `proposal_summary.md`.
 - `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml` runs the full deterministic validation tranche and writes `validation_summary.csv`, `validation_summary.json`, and `validation_report.md` under `runs/validation/...`.
+- `tdgl-rf evidence-bundle <validation_dir>` packages one completed validation run into a compact reviewer-facing bundle under `runs/evidence/...`.
 - `tdgl-rf reference-check validation/reference_manifest.yaml` regenerates the frozen canonical reference cases and checks their compact payload hashes.
 - `tdgl-rf reproducibility-check configs/validation/reference_rf_strip.yaml validation/thresholds.yaml` runs the same deterministic canonical case twice and checks exact same-stack reproducibility.
 
@@ -50,5 +51,9 @@ The run directory is created under `runs/<case_id>/<timestamp>/`.
 - Validation campaign definition: [docs/PHASE1_VALIDATION_CAMPAIGN.md](docs/PHASE1_VALIDATION_CAMPAIGN.md)
 - Validation interpretation memo: [docs/PHASE1_VALIDATION_MEMO.md](docs/PHASE1_VALIDATION_MEMO.md)
 - Thresholds and frozen references: [validation/thresholds.yaml](validation/thresholds.yaml), [validation/reference_manifest.yaml](validation/reference_manifest.yaml)
+- Evidence bundle workflow: `tdgl-rf evidence-bundle <validation_dir>`
+- Phase-2 entry gate: [docs/PHASE2_ENTRY_CRITERIA.md](docs/PHASE2_ENTRY_CRITERIA.md)
+- Phase-2 option ranking: [docs/PHASE2_OPTIONS_MEMO.md](docs/PHASE2_OPTIONS_MEMO.md)
+- Current status and next decision point: [STATUS.md](STATUS.md)
 - Repo-level validation guidance: [VALIDATION.md](VALIDATION.md)
 
