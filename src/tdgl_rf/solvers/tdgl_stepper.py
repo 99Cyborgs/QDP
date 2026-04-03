@@ -61,12 +61,12 @@ class TDGLStepper:
             backend=self.backend,
         )
 
-    def _build_step_context(self, state: SimulationState) -> TDGLStepContext:
+    def _build_step_context(self, psi: np.ndarray, t: float) -> TDGLStepContext:
         """Assemble forcing, links, supercurrent, and scalar potential for one step."""
 
-        a, a_dot = evaluate_forcing(self.grid, self.config.forcing, state.t, config_dir=self.config_dir)
+        a, a_dot = evaluate_forcing(self.grid, self.config.forcing, t, config_dir=self.config_dir)
         links = build_link_variables(self.grid, a)
-        supercurrent = compute_supercurrent(self.grid, self.mask, state.psi, links)
+        supercurrent = compute_supercurrent(self.grid, self.mask, psi, links)
         phi, phi_stats = self.phi_solver.solve(
             supercurrent=supercurrent,
             a_dot=a_dot,
@@ -127,30 +127,32 @@ class TDGLStepper:
     def advance(self, state: SimulationState) -> SimulationState:
         """Advance the deterministic TDGL state by one IMEX step."""
 
-        context = self._build_step_context(state)
-        rhs = self._assemble_rhs(state, context.phi)
-        result = self._solve_psi(rhs, context.links)
+        next_t = state.t + self.config.time.dt
+        solve_context = self._build_step_context(state.psi, next_t)
+        rhs = self._assemble_rhs(state, solve_context.phi)
+        result = self._solve_psi(rhs, solve_context.links)
         psi_next = self.active_cells.scatter_active(result.solution, dtype=np.complex128)
         self._validate_field("psi", psi_next)
-        self._validate_field("phi", context.phi)
+        final_context = self._build_step_context(psi_next, next_t)
+        self._validate_field("phi", final_context.phi)
 
         diagnostics = {
             "step": state.step + 1,
             "psi_iterations": result.iterations,
             "psi_residual_norm": result.residual_norm,
             "psi_solver_method": result.method,
-            "phi_iterations": context.phi_iterations,
-            "phi_residual_norm": context.phi_residual_norm,
-            "phi_solver_method": context.phi_solver_method,
+            "phi_iterations": solve_context.phi_iterations + final_context.phi_iterations,
+            "phi_residual_norm": final_context.phi_residual_norm,
+            "phi_solver_method": final_context.phi_solver_method,
         }
         return SimulationState(
             grid=self.grid,
-            t=state.t + self.config.time.dt,
+            t=next_t,
             step=state.step + 1,
             psi=psi_next,
-            phi=context.phi,
-            A=context.A,
-            A_dot=context.A_dot,
+            phi=final_context.phi,
+            A=final_context.A,
+            A_dot=final_context.A_dot,
             diagnostics=diagnostics,
             rng_state=state.rng_state,
             checkpoint_id=state.checkpoint_id,

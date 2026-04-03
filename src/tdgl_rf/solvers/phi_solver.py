@@ -8,6 +8,7 @@ import numpy as np
 
 from tdgl_rf.fields.currents import CurrentField, divergence
 from tdgl_rf.fields.forcing import VectorPotential
+from tdgl_rf.exceptions import SolverDivergenceError
 from tdgl_rf.geometry.masks import GeometryMask, StructuredGrid2D
 from tdgl_rf.solvers.linear_ops import ActiveCellMap, build_active_scalar_laplacian_matrix
 from tdgl_rf.solvers.scipy_backend import LinearSolveResult, LinearSolverBackend
@@ -19,6 +20,37 @@ class PhiSolveStats:
     residual_norm: float
     mean_removed: float
     method: str
+
+
+def _count_connected_components(cell_active: np.ndarray) -> int:
+    active = np.asarray(cell_active, dtype=bool)
+    if not np.any(active):
+        return 0
+
+    visited = np.zeros_like(active, dtype=bool)
+    component_count = 0
+    starts = np.argwhere(active)
+    for start_i, start_j in starts:
+        if visited[start_i, start_j]:
+            continue
+        component_count += 1
+        stack = [(int(start_i), int(start_j))]
+        visited[start_i, start_j] = True
+        while stack:
+            i, j = stack.pop()
+            if i > 0 and active[i - 1, j] and not visited[i - 1, j]:
+                visited[i - 1, j] = True
+                stack.append((i - 1, j))
+            if i + 1 < active.shape[0] and active[i + 1, j] and not visited[i + 1, j]:
+                visited[i + 1, j] = True
+                stack.append((i + 1, j))
+            if j > 0 and active[i, j - 1] and not visited[i, j - 1]:
+                visited[i, j - 1] = True
+                stack.append((i, j - 1))
+            if j + 1 < active.shape[1] and active[i, j + 1] and not visited[i, j + 1]:
+                visited[i, j + 1] = True
+                stack.append((i, j + 1))
+    return component_count
 
 
 class ScalarPotentialSolver:
@@ -42,6 +74,11 @@ class ScalarPotentialSolver:
             self.laplacian_active = None
             self.reduced_matrix = None
             return
+        component_count = _count_connected_components(mask.cell_active)
+        if component_count > 1:
+            raise SolverDivergenceError(
+                f"scalar-potential solve requires a connected active mask; found {component_count} disconnected components"
+            )
         self.laplacian_active = (-sigma_n) * build_active_scalar_laplacian_matrix(grid, mask, self.active_cells)
         self.reduced_matrix = self._build_reference_reduced_matrix() if self.active_cells.count > 1 else None
 

@@ -39,9 +39,17 @@ class RunSummary:
     failure_reason: str | None = None
 
 
-def _build_observable_weights(config, grid):
-    weights_f = build_weight_profile(grid, config.observables.weight_profile_f) if config.observables.compute_frequency_shift_proxy else None
-    weights_q = build_weight_profile(grid, config.observables.weight_profile_q) if config.observables.compute_qinv_proxy else None
+def _build_observable_weights(config, grid, geometry):
+    weights_f = (
+        build_weight_profile(grid, config.observables.weight_profile_f, mask=geometry)
+        if config.observables.compute_frequency_shift_proxy
+        else None
+    )
+    weights_q = (
+        build_weight_profile(grid, config.observables.weight_profile_q, mask=geometry)
+        if config.observables.compute_qinv_proxy
+        else None
+    )
     return weights_f, weights_q
 
 
@@ -182,7 +190,7 @@ def run_simulation(config_path: str | Path) -> RunSummary:
         stepper = TDGLStepper(grid, geometry, alpha, config, config_path.parent)
         state = initialize_state(grid, geometry, config, config_path.parent)
 
-        weights_f, weights_q = _build_observable_weights(config, grid)
+        weights_f, weights_q = _build_observable_weights(config, grid, geometry)
 
         links, supercurrent, normal_current = stepper.compute_currents(state)
         timeseries.append(_sample_observables(config, state, geometry, links, supercurrent, normal_current, weights_f, weights_q))
@@ -230,11 +238,25 @@ def run_simulation(config_path: str | Path) -> RunSummary:
 
             wall_clock = elapsed()
 
-        write_csv(run_dir / "observables" / "timeseries.csv", timeseries)
-        write_csv(run_dir / "observables" / "events.csv", events)
+        if timeseries[-1]["step"] != state.step:
+            obs = _sample_observables(config, state, geometry, links, supercurrent, normal_current, weights_f, weights_q)
+            if config.observables.track_vortices and prev_vortex_map is not None:
+                curr_vortex_map = compute_vortex_map(state.psi, links, geometry)
+                events.extend(track_vortices(prev_vortex_map, curr_vortex_map, {"step": state.step, "t": state.t}))
+            timeseries.append(obs)
+
+        observable_file_paths: dict[str, str] = {}
+        if config.output.write_observables:
+            write_csv(run_dir / "observables" / "timeseries.csv", timeseries)
+            write_csv(run_dir / "observables" / "events.csv", events)
+            write_json(run_dir / "observables" / "summary.json", compute_summary_stats(timeseries, events))
+            observable_file_paths = {
+                "timeseries": str(run_dir / "observables" / "timeseries.csv"),
+                "events": str(run_dir / "observables" / "events.csv"),
+                "summary": str(run_dir / "observables" / "summary.json"),
+            }
         write_csv(run_dir / "diagnostics" / "solver_iterations.csv", solver_rows)
         summary_payload = compute_summary_stats(timeseries, events)
-        write_json(run_dir / "observables" / "summary.json", summary_payload)
         write_json(
             run_dir / "diagnostics" / "convergence_report.json",
             {
@@ -262,11 +284,7 @@ def run_simulation(config_path: str | Path) -> RunSummary:
                 "max_phi_iterations": max((row["phi_iterations"] for row in solver_rows), default=0),
             },
             convergence_status="phase1_smoke",
-            observable_file_paths={
-                "timeseries": str(run_dir / "observables" / "timeseries.csv"),
-                "events": str(run_dir / "observables" / "events.csv"),
-                "summary": str(run_dir / "observables" / "summary.json"),
-            },
+            observable_file_paths=observable_file_paths,
             checkpoint_file_paths=checkpoint_paths,
         )
         write_json(run_dir / "status.json", _status_payload(run_dir, summary))

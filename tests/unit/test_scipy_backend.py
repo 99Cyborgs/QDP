@@ -55,3 +55,14 @@ def test_scipy_backend_switches_cached_key_to_direct_after_first_iterative_fallb
     assert first.method == "cg+splu"
     assert second.method == "cg+splu_cached"
     np.testing.assert_allclose(first.solution, second.solution)
+
+
+def test_scipy_backend_rejects_large_residual_from_direct_solve(monkeypatch) -> None:
+    backend = SciPyLinearBackend()
+    matrix = np.eye(2)
+    rhs = np.array([1.0, -2.0])
+
+    monkeypatch.setattr(np.linalg, "solve", lambda _matrix, _rhs: np.zeros_like(_rhs))
+
+    with pytest.raises(SolverDivergenceError, match="direct solve residual"):
+        backend.solve(matrix, rhs, method="spsolve", rtol=1.0e-8, atol=1.0e-12, max_it=5)

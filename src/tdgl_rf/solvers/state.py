@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 
 from tdgl_rf.config.models import TDGLRFCaseConfig
-from tdgl_rf.fields.forcing import VectorPotential
+from tdgl_rf.fields.forcing import VectorPotential, evaluate_forcing
 from tdgl_rf.geometry.masks import GeometryMask, StructuredGrid2D
 from tdgl_rf.io.checkpoints import read_checkpoint
 
@@ -42,8 +42,8 @@ def initialize_state(
         psi = np.ones((grid.nx, grid.ny), dtype=np.complex128)
         psi[~mask.cell_active] = 0.0
         phi = np.zeros((grid.nx, grid.ny), dtype=float)
-        a = VectorPotential.zeros(grid)
-        return SimulationState(grid=grid, t=0.0, step=0, psi=psi, phi=phi, A=a, A_dot=a)
+        a, a_dot = evaluate_forcing(grid, config.forcing, 0.0, config_dir=config_dir)
+        return SimulationState(grid=grid, t=0.0, step=0, psi=psi, phi=phi, A=a, A_dot=a_dot)
 
     if config.physics.initial_condition == "restart":
         restart_path = (config_dir / str(config.physics.restart_file)).resolve()
@@ -60,4 +60,3 @@ def initialize_state(
         )
 
     raise ValueError(f"unsupported phase-1 initial condition: {config.physics.initial_condition}")
-

@@ -24,11 +24,11 @@ def compute_vortex_map(psi: np.ndarray, links: LinkVariables, mask: GeometryMask
     phase_x = np.angle(np.conj(psi[:-1, :]) * links.ux[1:-1, :] * psi[1:, :])
     phase_y = np.angle(np.conj(psi[:, :-1]) * links.uy[:, 1:-1] * psi[:, 1:])
 
-    bottom = phase_x[:, :-1]
-    right = phase_y[1:, :]
-    top = -phase_x[:, 1:]
-    left = -phase_y[:-1, :]
-    plaquette_phase = _wrap_phase(bottom + right + top + left)
+    bottom = _wrap_phase(phase_x[:, :-1])
+    right = _wrap_phase(phase_y[1:, :])
+    top = _wrap_phase(-phase_x[:, 1:])
+    left = _wrap_phase(-phase_y[:-1, :])
+    plaquette_phase = bottom + right + top + left
 
     active = (
         mask.cell_active[:-1, :-1]
@@ -53,4 +53,3 @@ def track_vortices(prev_map: np.ndarray, curr_map: np.ndarray, metadata: dict[st
     for coord in sorted(prev_nonzero - curr_nonzero):
         events.append({"event": "death", "x_idx": int(coord[0]), "y_idx": int(coord[1]), **metadata})
     return events
-

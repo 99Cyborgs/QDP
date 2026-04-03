@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import numpy as np
+import pytest
 
 from tdgl_rf.config.models import CircularFeatureConfig
+from tdgl_rf.exceptions import SolverDivergenceError
 from tdgl_rf.fields.currents import CurrentField
 from tdgl_rf.fields.forcing import VectorPotential
 from tdgl_rf.geometry.masks import GeometryMask, StructuredGrid2D
@@ -42,3 +44,15 @@ def test_scalar_potential_solver_keeps_sparse_reference_reduction_for_masked_geo
     assert solver.reduced_matrix is not None
     assert solver.reduced_matrix.shape == (solver.active_cells.count - 1, solver.active_cells.count - 1)
     assert solver.reduced_matrix.nnz < 10 * solver.active_cells.count
+
+
+def test_scalar_potential_solver_rejects_disconnected_masks() -> None:
+    grid = StructuredGrid2D(nx=8, ny=8, lx=8.0, ly=8.0)
+    cell_active = np.zeros((grid.nx, grid.ny), dtype=bool)
+    cell_active[1:3, 1:3] = True
+    cell_active[5:7, 5:7] = True
+    mask = GeometryMask(cell_active=cell_active)
+    backend = SciPyLinearBackend()
+
+    with pytest.raises(SolverDivergenceError, match="connected active mask"):
+        ScalarPotentialSolver(grid=grid, mask=mask, sigma_n=1.0, backend=backend)

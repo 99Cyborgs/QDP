@@ -13,7 +13,7 @@ from tdgl_rf.geometry.masks import GeometryMask, StructuredGrid2D
 from tdgl_rf.solvers.state import SimulationState
 
 
-def build_weight_profile(grid: StructuredGrid2D, profile: str) -> np.ndarray:
+def build_weight_profile(grid: StructuredGrid2D, profile: str, mask: GeometryMask | None = None) -> np.ndarray:
     """Build normalized cell-centered weights for reduced observables."""
 
     x, y = grid.cell_center_mesh
@@ -24,7 +24,12 @@ def build_weight_profile(grid: StructuredGrid2D, profile: str) -> np.ndarray:
         weights = 1.0 / np.maximum(distance, 0.5 * min(grid.hx, grid.hy))
     else:
         raise ValueError(f"unsupported phase-1 weight profile: {profile}")
-    weights /= np.sum(weights) * grid.cell_area
+    active = mask.cell_active if mask is not None else np.ones((grid.nx, grid.ny), dtype=bool)
+    weights = np.where(active, weights, 0.0)
+    normalization = float(np.sum(weights) * grid.cell_area)
+    if normalization <= 0.0 or not np.isfinite(normalization):
+        return np.zeros_like(weights)
+    weights /= normalization
     return weights
 
 

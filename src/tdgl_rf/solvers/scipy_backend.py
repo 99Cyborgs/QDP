@@ -94,7 +94,24 @@ class SciPyLinearBackend:
             method=method,
         )
 
-    def _solve_direct(self, matrix, rhs: np.ndarray, method: str, cache_key: str | int | None = None) -> LinearSolveResult:
+    @staticmethod
+    def _validate_direct_residual(method: str, residual, rhs: np.ndarray, rtol: float, atol: float) -> None:
+        residual_norm = float(np.linalg.norm(np.asarray(residual)))
+        tolerance = float(atol + rtol * np.linalg.norm(rhs))
+        if residual_norm > tolerance:
+            raise SolverDivergenceError(
+                f"direct solve residual {residual_norm:.3e} exceeds tolerance {tolerance:.3e} for {method}"
+            )
+
+    def _solve_direct(
+        self,
+        matrix,
+        rhs: np.ndarray,
+        method: str,
+        rtol: float,
+        atol: float,
+        cache_key: str | int | None = None,
+    ) -> LinearSolveResult:
         with warnings.catch_warnings():
             warnings.simplefilter("error", MatrixRankWarning)
             if sparse.issparse(matrix):
@@ -108,6 +125,7 @@ class SciPyLinearBackend:
             else:
                 solution = np.linalg.solve(matrix, rhs)
         residual = matrix @ solution - rhs
+        self._validate_direct_residual(method, residual, rhs, rtol=rtol, atol=atol)
         return self._build_result(solution, residual, iterations=1, method=method)
 
     def clear_cached_factor(self, cache_key: str | int) -> None:
@@ -130,9 +148,16 @@ class SciPyLinearBackend:
         rhs = self._normalize_rhs(rhs, matrix.shape[0])
         method_key = method.lower()
         if method_key == "spsolve":
-            return self._solve_direct(matrix, rhs, method_key, cache_key=cache_key)
+            return self._solve_direct(matrix, rhs, method_key, rtol=rtol, atol=atol, cache_key=cache_key)
         if cache_key is not None and cache_key in self._prefer_direct_cache_keys:
-            return self._solve_direct(matrix, rhs, f"{method_key}+splu_cached", cache_key=cache_key)
+            return self._solve_direct(
+                matrix,
+                rhs,
+                f"{method_key}+splu_cached",
+                rtol=rtol,
+                atol=atol,
+                cache_key=cache_key,
+            )
 
         if method_key not in self._ITERATIVE_SOLVERS:
             raise SolverDivergenceError(f"unsupported SciPy linear solver '{method}'")
@@ -156,6 +181,13 @@ class SciPyLinearBackend:
             if sparse.issparse(matrix):
                 if cache_key is not None:
                     self._prefer_direct_cache_keys.add(cache_key)
-                return self._solve_direct(matrix, rhs, f"{method_key}+splu", cache_key=cache_key)
+                return self._solve_direct(
+                    matrix,
+                    rhs,
+                    f"{method_key}+splu",
+                    rtol=rtol,
+                    atol=atol,
+                    cache_key=cache_key,
+                )
             raise SolverDivergenceError(f"{method_key} failed to converge; info={info}")
         return self._build_result(solution, residual, iterations=max(iterations, 1), method=method_key)
