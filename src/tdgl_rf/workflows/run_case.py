@@ -189,6 +189,8 @@ def run_simulation(config_path: str | Path) -> RunSummary:
         alpha = build_alpha_field(grid, geometry, config.physics)
         stepper = TDGLStepper(grid, geometry, alpha, config, config_path.parent)
         state = initialize_state(grid, geometry, config, config_path.parent)
+        if config.physics.initial_condition != "restart":
+            state = stepper.align_state(state)
 
         weights_f, weights_q = _build_observable_weights(config, grid, geometry)
 
@@ -245,18 +247,18 @@ def run_simulation(config_path: str | Path) -> RunSummary:
                 events.extend(track_vortices(prev_vortex_map, curr_vortex_map, {"step": state.step, "t": state.t}))
             timeseries.append(obs)
 
+        summary_payload = compute_summary_stats(timeseries, events)
         observable_file_paths: dict[str, str] = {}
         if config.output.write_observables:
             write_csv(run_dir / "observables" / "timeseries.csv", timeseries)
             write_csv(run_dir / "observables" / "events.csv", events)
-            write_json(run_dir / "observables" / "summary.json", compute_summary_stats(timeseries, events))
+            write_json(run_dir / "observables" / "summary.json", summary_payload)
             observable_file_paths = {
                 "timeseries": str(run_dir / "observables" / "timeseries.csv"),
                 "events": str(run_dir / "observables" / "events.csv"),
                 "summary": str(run_dir / "observables" / "summary.json"),
             }
         write_csv(run_dir / "diagnostics" / "solver_iterations.csv", solver_rows)
-        summary_payload = compute_summary_stats(timeseries, events)
         write_json(
             run_dir / "diagnostics" / "convergence_report.json",
             {

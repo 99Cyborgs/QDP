@@ -124,6 +124,32 @@ class TDGLStepper:
         if not np.isfinite(field).all():
             raise SolverDivergenceError(f"NaN or inf detected in {name}")
 
+    def align_state(self, state: SimulationState) -> SimulationState:
+        """Refresh phi, A, and A_dot so they match the state's psi and timestamp."""
+
+        context = self._build_step_context(state.psi, state.t)
+        self._validate_field("phi", context.phi)
+        diagnostics = dict(state.diagnostics)
+        diagnostics.update(
+            {
+                "phi_iterations": context.phi_iterations,
+                "phi_residual_norm": context.phi_residual_norm,
+                "phi_solver_method": context.phi_solver_method,
+            }
+        )
+        return SimulationState(
+            grid=self.grid,
+            t=state.t,
+            step=state.step,
+            psi=state.psi,
+            phi=context.phi,
+            A=context.A,
+            A_dot=context.A_dot,
+            diagnostics=diagnostics,
+            rng_state=state.rng_state,
+            checkpoint_id=state.checkpoint_id,
+        )
+
     def advance(self, state: SimulationState) -> SimulationState:
         """Advance the deterministic TDGL state by one IMEX step."""
 
