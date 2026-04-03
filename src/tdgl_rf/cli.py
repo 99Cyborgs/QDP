@@ -11,6 +11,8 @@ import typer
 from tdgl_rf.config.loaders import load_case_config
 from tdgl_rf.exceptions import TDGLRFError
 from tdgl_rf.workflows.convergence import run_convergence
+from tdgl_rf.workflows.postprocess import summarize_campaign
+from tdgl_rf.workflows.refinement import run_refinement_sanity
 from tdgl_rf.workflows.run_case import run_simulation
 from tdgl_rf.workflows.run_ensemble import run_ensemble
 from tdgl_rf.workflows.run_inference import run_inference
@@ -102,6 +104,30 @@ def convergence(config_path: Path) -> None:
         run_convergence(config_path)
     except Exception as exc:
         _fail(exc)
+
+
+@app.command("refinement-sanity")
+def refinement_sanity(config_path: Path, output_dir: Path | None = typer.Option(None, "--output-dir")) -> None:
+    """Run a cheap mesh/dt refinement sanity sweep for one deterministic case."""
+
+    try:
+        summary = run_refinement_sanity(config_path, output_dir=output_dir)
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
+
+
+@app.command("summarize-campaign")
+def summarize_campaign_cmd(campaign_dir: Path, output_dir: Path | None = typer.Option(None, "--output-dir")) -> None:
+    """Aggregate one matrix campaign into compact CSV and Markdown artifacts."""
+
+    try:
+        summary = summarize_campaign(campaign_dir, output_dir=output_dir)
+    except Exception as exc:
+        _fail(exc)
+        return
+    typer.echo(json.dumps(asdict(summary), indent=2))
 
 
 @app.command("summarize")

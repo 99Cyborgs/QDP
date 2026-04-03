@@ -2,9 +2,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
 import yaml
 
+from tdgl_rf.config.validators import validate_case_config
 from tdgl_rf.config.loaders import load_case_config
+from tdgl_rf.exceptions import ConfigError
 
 
 def test_config_base_inheritance(tmp_path: Path) -> None:
@@ -50,4 +53,63 @@ def test_config_base_inheritance(tmp_path: Path) -> None:
     assert config.mesh.nx == 24
     assert config.mesh.ny == 8
     assert config.output.write_fields is False
+
+
+def test_config_allows_zero_step_runs(tmp_path: Path) -> None:
+    config_path = tmp_path / "zero_step.yaml"
+    payload = {
+        "base_config": None,
+        "metadata": {"case_id": "zero_step", "phase": "D", "version": "0.1.0"},
+        "mesh": {"nx": 16, "ny": 8, "lx": 8.0, "ly": 4.0, "periodic_x": False, "periodic_y": False},
+        "geometry": {"family": "strip", "moats": [], "holes": [], "mask_file": None},
+        "physics": {
+            "u": 5.79,
+            "sigma_n": 1.0,
+            "alpha_background": 1.0,
+            "initial_condition": "meissner",
+            "restart_file": None,
+            "pinning": {"model": "none", "seed": None, "mu": 0.0, "sigma": 0.0, "lcorr": 0.0, "defect_count": 0, "defects": []},
+        },
+        "forcing": {"b_dc": 0.0, "a_rf": 0.0, "omega": 0.0, "phase": 0.0, "rf_profile": "uniform_y", "rf_profile_file": None},
+        "noise": {"enabled": False, "gamma_psi": 0.0, "master_seed": 1234},
+        "time": {"dt": 0.01, "n_steps": 0, "obs_stride": 1, "field_stride": 1, "checkpoint_stride": 1},
+        "solver": {"backend": "scipy", "scheme": "imex_linearized", "psi_linear_solver": "gmres", "phi_linear_solver": "cg", "rtol": 1e-8, "atol": 1e-12, "max_it": 500},
+        "observables": {"track_vortices": True, "compute_frequency_shift_proxy": True, "compute_qinv_proxy": True, "weight_profile_f": "uniform", "weight_profile_q": "uniform", "c_f": 1.0, "c_q": 1.0, "qinv_bg": 0.0},
+        "inference": {"enabled": False, "mode": "none", "infer_parameters": [], "dataset_path": None, "summary_statistics": []},
+        "output": {"root_dir": "runs", "write_fields": False, "write_observables": True, "compression": "none"},
+        "campaign": {"ensemble_size": 1, "matrix_row_id": None, "promotion_rule": None},
+    }
+    config_path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+
+    config = load_case_config(config_path)
+
+    assert config.time.n_steps == 0
+
+
+def test_config_rejects_negative_n_steps(tmp_path: Path) -> None:
+    payload = {
+        "base_config": None,
+        "metadata": {"case_id": "negative_steps", "phase": "D", "version": "0.1.0"},
+        "mesh": {"nx": 16, "ny": 8, "lx": 8.0, "ly": 4.0, "periodic_x": False, "periodic_y": False},
+        "geometry": {"family": "strip", "moats": [], "holes": [], "mask_file": None},
+        "physics": {
+            "u": 5.79,
+            "sigma_n": 1.0,
+            "alpha_background": 1.0,
+            "initial_condition": "meissner",
+            "restart_file": None,
+            "pinning": {"model": "none", "seed": None, "mu": 0.0, "sigma": 0.0, "lcorr": 0.0, "defect_count": 0, "defects": []},
+        },
+        "forcing": {"b_dc": 0.0, "a_rf": 0.0, "omega": 0.0, "phase": 0.0, "rf_profile": "uniform_y", "rf_profile_file": None},
+        "noise": {"enabled": False, "gamma_psi": 0.0, "master_seed": 1234},
+        "time": {"dt": 0.01, "n_steps": -1, "obs_stride": 1, "field_stride": 1, "checkpoint_stride": 1},
+        "solver": {"backend": "scipy", "scheme": "imex_linearized", "psi_linear_solver": "gmres", "phi_linear_solver": "cg", "rtol": 1e-8, "atol": 1e-12, "max_it": 500},
+        "observables": {"track_vortices": True, "compute_frequency_shift_proxy": True, "compute_qinv_proxy": True, "weight_profile_f": "uniform", "weight_profile_q": "uniform", "c_f": 1.0, "c_q": 1.0, "qinv_bg": 0.0},
+        "inference": {"enabled": False, "mode": "none", "infer_parameters": [], "dataset_path": None, "summary_statistics": []},
+        "output": {"root_dir": "runs", "write_fields": False, "write_observables": True, "compression": "none"},
+        "campaign": {"ensemble_size": 1, "matrix_row_id": None, "promotion_rule": None},
+    }
+
+    with pytest.raises(ConfigError, match="n_steps"):
+        validate_case_config(payload, Path("configs/tdgl_case.schema.json").resolve(), tmp_path)
 

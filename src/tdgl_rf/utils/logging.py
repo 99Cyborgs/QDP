@@ -23,3 +23,17 @@ def configure_logger(log_path: str | Path, append: bool = False) -> logging.Logg
     logger.addHandler(file_handler)
     logger.propagate = False
     return logger
+
+
+def close_logger(logger: logging.Logger | None) -> None:
+    """Flush and close handlers so temporary run directories can be cleaned up."""
+
+    if logger is None:
+        return
+    handlers = list(logger.handlers)
+    for handler in handlers:
+        try:
+            handler.flush()
+        finally:
+            handler.close()
+        logger.removeHandler(handler)

@@ -7,6 +7,7 @@ import yaml
 from typer.testing import CliRunner
 
 from tdgl_rf.cli import app
+from tdgl_rf.testing.case_configs import write_case_config
 
 
 def test_validate_config_cli() -> None:
@@ -113,3 +114,22 @@ def test_run_matrix_dry_run_cli(tmp_path: Path) -> None:
     assert result.exit_code == 0
     assert '"status": "dry_run"' in result.stdout
     assert '"selected_row_count": 1' in result.stdout
+
+
+def test_refinement_sanity_cli(tmp_path: Path) -> None:
+    config_path = write_case_config(
+        tmp_path,
+        "cli_refinement",
+        overrides={
+            "forcing": {"a_rf": 0.15, "omega": 4.0, "phase": 0.2},
+            "time": {"n_steps": 4},
+            "output": {"write_fields": False},
+        },
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["refinement-sanity", str(config_path), "--output-dir", str(tmp_path / "refinement_outputs")])
+
+    assert result.exit_code == 0
+    assert '"status": "success"' in result.stdout
+    assert '"case_count": 4' in result.stdout

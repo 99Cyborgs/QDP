@@ -160,11 +160,18 @@ class TimeConfig(StrictModel):
             raise ValueError("dt must be positive")
         return value
 
-    @field_validator("n_steps", "obs_stride", "field_stride", "checkpoint_stride")
+    @field_validator("obs_stride", "field_stride", "checkpoint_stride")
     @classmethod
     def _validate_positive_int(cls, value: int) -> int:
         if value < 1:
             raise ValueError("time counters and strides must be >= 1")
+        return value
+
+    @field_validator("n_steps")
+    @classmethod
+    def _validate_n_steps(cls, value: int) -> int:
+        if value < 0:
+            raise ValueError("n_steps must be >= 0")
         return value
 
 

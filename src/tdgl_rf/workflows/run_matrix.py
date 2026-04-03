@@ -611,14 +611,17 @@ def _gate_block_reason(row: CampaignRow, results: list[MatrixRowResult]) -> str 
 
 
 def _extract_run_artifacts(summary: Any) -> tuple[str | None, str | None]:
+    run_dir = getattr(summary, "run_dir", None)
+    diagnostic_paths = getattr(summary, "diagnostic_file_paths", None)
     observable_paths = getattr(summary, "observable_file_paths", None)
-    if not isinstance(observable_paths, dict):
-        return None, None
-    summary_path = observable_paths.get("summary")
-    if not summary_path:
-        return None, None
-    run_dir = str(Path(summary_path).resolve().parents[1])
-    return run_dir, str(summary_path)
+    summary_path = None
+    if isinstance(observable_paths, dict):
+        summary_path = observable_paths.get("summary")
+    if summary_path is None and isinstance(diagnostic_paths, dict):
+        summary_path = diagnostic_paths.get("run_summary") or diagnostic_paths.get("convergence_report")
+    if run_dir is None and summary_path:
+        run_dir = str(Path(summary_path).resolve().parents[1])
+    return (str(run_dir) if run_dir is not None else None), (str(summary_path) if summary_path is not None else None)
 
 
 def _run_row(

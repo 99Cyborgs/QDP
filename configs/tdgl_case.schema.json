@@ -345,7 +345,7 @@
         },
         "n_steps": {
           "type": "integer",
-          "minimum": 1
+          "minimum": 0
         },
         "obs_stride": {
           "type": "integer",
