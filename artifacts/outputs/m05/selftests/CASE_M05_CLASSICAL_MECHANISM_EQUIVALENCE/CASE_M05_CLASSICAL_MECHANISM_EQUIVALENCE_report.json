@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
   "module_id": "M05",
-  "timestamp_utc": "2026-03-15T20:19:14.165805+00:00",
+  "timestamp_utc": "2026-04-04T03:34:30.844753+00:00",
   "candidate_id": "m05-case-classical-mechanism",
   "branch_or_model_tag": "M05_CASE_CLASSICAL_MECHANISM",
   "terminated_at": "STAGE_8",
@@ -23,8 +23,8 @@
   "schema_validation": {
     "valid": true,
     "errors": [],
-    "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-    "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
+    "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py",
     "mode": "final"
   },
   "gate_trace_count": 15,
