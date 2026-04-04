@@ -21,6 +21,7 @@ def base_case_payload(case_id: str, output_root: Path) -> dict[str, Any]:
             "alpha_background": 1.0,
             "initial_condition": "meissner",
             "restart_file": None,
+            "vortex_seeds": [],
             "pinning": {
                 "model": "none",
                 "seed": None,
@@ -32,7 +33,7 @@ def base_case_payload(case_id: str, output_root: Path) -> dict[str, Any]:
             },
         },
         "forcing": {"b_dc": 0.0, "a_rf": 0.0, "omega": 0.0, "phase": 0.0, "rf_profile": "uniform_y", "rf_profile_file": None},
-        "noise": {"enabled": False, "gamma_psi": 0.0, "master_seed": 1234},
+        "noise": {"enabled": False, "strength": 0.0, "seed": 1234},
         "time": {"dt": 0.01, "n_steps": 4, "obs_stride": 1, "field_stride": 2, "checkpoint_stride": 2},
         "solver": {
             "backend": "scipy",

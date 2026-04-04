@@ -102,6 +102,8 @@ class GeometryMask:
 
 
 def _load_custom_mask(grid: StructuredGrid2D, mask_path: Path) -> np.ndarray:
+    """Load a persisted cell-activity mask and enforce grid-shape compatibility."""
+
     suffix = mask_path.suffix.lower()
     if suffix == ".npy":
         mask = np.load(mask_path)
@@ -132,7 +134,7 @@ def grid_from_config(mesh: MeshConfig) -> StructuredGrid2D:
 
 
 def build_geometry(grid: StructuredGrid2D, geometry: GeometryConfig, config_dir: Path) -> GeometryMask:
-    """Build the phase-1 cell mask for the requested geometry."""
+    """Build the phase-1 active-domain mask from the validated geometry contract."""
 
     if geometry.family == "strip":
         cell_active = build_strip_mask(grid)
@@ -145,6 +147,8 @@ def build_geometry(grid: StructuredGrid2D, geometry: GeometryConfig, config_dir:
     else:  # pragma: no cover - exhaustive by validator
         raise GeometryError(f"unsupported geometry family: {geometry.family}")
 
+    # Moats and holes both remove active cells; they remain separate in config because they
+    # carry different experimental intent even though the runtime mask effect is identical.
     cell_active = apply_circular_exclusions(cell_active, grid, geometry.moats)
     cell_active = apply_circular_exclusions(cell_active, grid, geometry.holes)
     if not np.any(cell_active):

@@ -8,17 +8,25 @@
 
 ## Summary
 
-QDP now has a validated deterministic phase-1 baseline with explicit thresholds, frozen references, same-stack reproducibility checks, and a compact evidence-bundle workflow for proposal and internal review use. The immediate next decision is a phase-2 gate decision, not broader phase-1 feature expansion.
+QDP now has a validated deterministic phase-1 baseline plus a bounded Phase-2.2 seeded-vortex experiment pack and a Phase-2.3 experiment harness. The seeded-vortex surface is explicit, mask-aware, deterministic, and split into `initialization_only`, `short_horizon`, and rejection-taxonomy validation cases with schema-validated provenance and Tier-2 outputs; the new harness only sweeps parameters, repeats same-stack runs, and aggregates committed Tier-2 observables without widening the validation claim boundary. Phase-2.4A v4 stochastic execution is now runtime-enabled as a sequential fail-fast ensemble path with staged promotion, strict full-member aggregation, normalized noise provenance, and replay-oriented member identity capture. That is an implementation/runtime statement only, not a scientific validation claim.
 
 ## Current risks
 
 - generated artifacts and source materials are still too interleaved,
-- short-horizon deterministic evidence could be overread as broader solver validity if the scope limits are not kept explicit,
-- phase-2 direction could be chosen before the deterministic control surface is extended or backend parity is clarified,
+- short-horizon deterministic evidence could be overread as broader solver validity if the suite claim boundary is not kept explicit,
+- seeded-vortex ansatz cases could be overread as relaxed or broadly validated vortex physics if the Phase-2.2 initialization-only versus short-horizon split is ignored,
+- aggregated Phase-2.3 observables could be overread as broader dynamics evidence if the experiment-harness interpretation boundary is not kept explicit,
+- Phase-2.4A stochastic execution now exists as a fail-closed runtime surface, but there are still no grounded scientific acceptance thresholds or parameter guardrails for `noise.strength` beyond the explicit config contract `noise.enabled=true`, `noise.seed`, and `noise.strength > 0`,
+- longer-horizon seeded-vortex behavior and backend parity are still unvalidated,
 - core/candidate boundary could blur if ALL-MIND starts loading QDP wholesale.
 
 ## Next Decision Point
 
-- Phase-2 gate definition: `docs/PHASE2_ENTRY_CRITERIA.md`
-- Phase-2 option ranking: `docs/PHASE2_OPTIONS_MEMO.md`
+- Seeded-vortex tranche definition and caveats: `docs/PHASE2_SEEDED_VORTICES.md`, `docs/PHASE2_2_SEEDED_EXPERIMENT_PACK.md`
+- Seeded-vortex experiment-pack validation: `tdgl-rf validate-seeded-vortices validation/seeded_vortex_phase2_2_manifest.yaml`
+- Seeded-vortex experiment harness: `tdgl-rf run-experiment validation/seeded_vortex_phase2_3_experiment_pack.yaml`
+- Phase-2.4A stochastic runtime hardening: targeted Phase-2.4A experiment-sweep / CLI tests plus `configs/tdgl_run_provenance.schema.json`
+- Seeded-run replay metadata contract: `configs/tdgl_run_provenance.schema.json`
+- Seeded Tier-2 and rejection contracts: `configs/seeded_vortex_tier2.schema.json`, `configs/seeded_vortex_rejection.schema.json`
+- Phase-2 follow-on options and residual gate logic: `docs/PHASE2_ENTRY_CRITERIA.md`, `docs/PHASE2_OPTIONS_MEMO.md`
 - Reviewer-facing evidence packaging: `tdgl-rf evidence-bundle <validation_dir>`

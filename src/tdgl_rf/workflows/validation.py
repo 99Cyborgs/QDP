@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 import csv
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 import hashlib
 import json
@@ -12,11 +12,29 @@ import math
 from pathlib import Path
 from typing import Any
 
+from jsonschema import Draft202012Validator
 import yaml
 
-from tdgl_rf.config.loaders import load_raw_config, repo_root, write_expanded_config
-from tdgl_rf.exceptions import ConfigError
+from tdgl_rf.config.loaders import load_case_config, load_raw_config, repo_root, write_expanded_config
+from tdgl_rf.diagnostics.seeded_vortex import (
+    SEEDED_CASE_CLASS_INITIALIZATION_ONLY,
+    SEEDED_CASE_CLASS_SHORT_HORIZON,
+    SEEDED_SAMPLING_POLICY_ALL_OBSERVABLE_SAMPLES,
+    SEEDED_SAMPLING_POLICY_INITIALIZATION_SURFACE,
+)
+from tdgl_rf.exceptions import (
+    ConfigError,
+    SEED_REJECTION_TAXONOMY_VERSION,
+    SeedRejectionError,
+)
+from tdgl_rf.geometry.masks import build_geometry, grid_from_config
 from tdgl_rf.io.reports import write_csv, write_json
+from tdgl_rf.solvers.seeded_vortices import (
+    SEED_RESOLUTION_POLICY,
+    configured_seed_payloads,
+    resolve_vortex_seeds,
+    resolved_seed_payloads,
+)
 from tdgl_rf.workflows.postprocess import summarize_campaign
 from tdgl_rf.workflows.refinement import run_refinement_sanity
 from tdgl_rf.workflows.run_case import run_simulation
@@ -35,6 +53,7 @@ class ReferenceRunSpec:
     expected_final_observables: dict[str, Any]
     expected_payload_sha256: str
     selected_result_case_id: str | None = None
+    expected_tier2_diagnostics: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -47,6 +66,67 @@ class ReferenceCheckSummary:
     reference_case_count: int
     passed_case_count: int
     failed_case_count: int
+
+
+@dataclass(frozen=True)
+class SeededVortexValidationSummary:
+    status: str
+    manifest_path: str
+    output_dir: str
+    results_json_path: str
+    results_markdown_path: str
+    case_table_csv_path: str
+    case_count: int
+    pass_count: int
+    reference_check_json_path: str | None = None
+    reference_check_markdown_path: str | None = None
+
+
+@dataclass(frozen=True)
+class SeededVortexHorizonContract:
+    n_steps: int
+    sampling_policy: str
+
+
+@dataclass(frozen=True)
+class SeededVortexCanonicalCaseSpec:
+    case_id: str
+    case_class: str
+    config_ref: str
+    config_path: str
+    expected_summary: dict[str, Any]
+    expected_final_observables: dict[str, Any]
+    expected_payload_sha256: str
+    expected_tier2: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class SeededVortexExerciseCaseSpec:
+    case_id: str
+    case_class: str
+    config_ref: str
+    config_path: str
+    expected_invariants: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class SeededVortexRejectionCaseSpec:
+    case_id: str
+    config_ref: str
+    config_path: str
+    expected_stage: str
+    expected_rejection: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class SeededVortexExperimentSuite:
+    schema_version: str
+    suite_id: str
+    claim_scope: str
+    horizon_contracts: dict[str, SeededVortexHorizonContract]
+    canonical_cases: list[SeededVortexCanonicalCaseSpec]
+    exercise_cases: list[SeededVortexExerciseCaseSpec]
+    rejection_cases: list[SeededVortexRejectionCaseSpec]
 
 
 @dataclass(frozen=True)
@@ -176,9 +256,156 @@ def _compare_expected_mapping(expected: dict[str, Any], observed: dict[str, Any]
             if mismatch is not None:
                 mismatches.append(mismatch)
             continue
+        if isinstance(expected_value, dict):
+            if not isinstance(observed_value, dict):
+                mismatches.append(f"{label}.{key} expected mapping observed {observed_value!r}")
+                continue
+            mismatches.extend(_compare_expected_mapping(expected_value, observed_value, label=f"{label}.{key}"))
+            continue
         if observed_value != expected_value:
             mismatches.append(f"{label}.{key} expected {expected_value!r} observed {observed_value!r}")
     return mismatches
+
+
+SEEDED_VORTEX_EXPERIMENT_MANIFEST_SCHEMA_VERSION = "tdgl_rf.seeded_vortex_experiment_pack.v1"
+SEEDED_VORTEX_VALIDATED_SURFACES = {
+    SEEDED_CASE_CLASS_INITIALIZATION_ONLY: "deterministic_seeded_initialization_same_stack",
+    SEEDED_CASE_CLASS_SHORT_HORIZON: "deterministic_seeded_short_horizon_same_stack",
+    "rejection_case": "seeded_input_rejection_taxonomy",
+}
+SEEDED_VORTEX_REQUIRED_NON_CLAIMS = {
+    "equilibrium_preparation": "not established by this suite",
+    "long_time_dynamics": "not established by this suite",
+    "stochastic_behavior": "not established by this suite",
+    "cross_stack_portability": "not established by this suite",
+}
+
+
+def _schema_error_location(parts: list[Any]) -> str:
+    return ".".join(str(part) for part in parts) or "<root>"
+
+
+def _validate_payload_against_schema(payload: dict[str, Any], schema_path: Path, *, label: str) -> None:
+    with schema_path.open("r", encoding="utf-8") as handle:
+        schema = json.load(handle)
+    validator = Draft202012Validator(schema)
+    errors = sorted(validator.iter_errors(payload), key=lambda err: list(err.absolute_path))
+    if errors:
+        first = errors[0]
+        raise ConfigError(f"{label} schema validation failed at {_schema_error_location(list(first.absolute_path))}: {first.message}")
+
+
+def _seeded_vortex_manifest_schema_path() -> Path:
+    return repo_root() / "configs" / "seeded_vortex_experiment_manifest.schema.json"
+
+
+def _seeded_vortex_tier2_schema_path() -> Path:
+    return repo_root() / "configs" / "seeded_vortex_tier2.schema.json"
+
+
+def _seeded_vortex_rejection_schema_path() -> Path:
+    return repo_root() / "configs" / "seeded_vortex_rejection.schema.json"
+
+
+def _seeded_vortex_provenance_schema_path() -> Path:
+    return repo_root() / "configs" / "tdgl_run_provenance.schema.json"
+
+
+def _build_seeded_horizon_contract(payload: dict[str, Any]) -> SeededVortexHorizonContract:
+    return SeededVortexHorizonContract(
+        n_steps=int(payload["n_steps"]),
+        sampling_policy=str(payload["sampling_policy"]),
+    )
+
+
+def _load_seeded_vortex_experiment_suite(manifest_path: str | Path) -> SeededVortexExperimentSuite:
+    path = Path(manifest_path).resolve()
+    payload = _read_yaml(path)
+    _validate_payload_against_schema(
+        payload,
+        _seeded_vortex_manifest_schema_path(),
+        label="seeded-vortex experiment manifest",
+    )
+
+    defaults_payload = payload["defaults"]["horizon_contracts"]
+    horizon_contracts = {
+        SEEDED_CASE_CLASS_INITIALIZATION_ONLY: _build_seeded_horizon_contract(defaults_payload[SEEDED_CASE_CLASS_INITIALIZATION_ONLY]),
+        SEEDED_CASE_CLASS_SHORT_HORIZON: _build_seeded_horizon_contract(defaults_payload[SEEDED_CASE_CLASS_SHORT_HORIZON]),
+    }
+
+    seen_case_ids: set[str] = set()
+
+    def _check_case_id(case_id: str) -> None:
+        if case_id in seen_case_ids:
+            raise ConfigError(f"seeded-vortex experiment suite contains duplicate case_id '{case_id}'")
+        seen_case_ids.add(case_id)
+
+    canonical_cases: list[SeededVortexCanonicalCaseSpec] = []
+    for item in payload.get("canonical_cases", []):
+        case_id = str(item["case_id"]).strip()
+        _check_case_id(case_id)
+        config_ref = str(item["config_path"]).strip()
+        config_path = _resolve_path(config_ref, source_dir=path.parent)
+        if not config_path.exists():
+            raise ConfigError(f"canonical case '{case_id}' config_path does not exist: {config_ref}")
+        canonical_cases.append(
+            SeededVortexCanonicalCaseSpec(
+                case_id=case_id,
+                case_class=str(item["case_class"]),
+                config_ref=config_ref,
+                config_path=str(config_path),
+                expected_summary=dict(item["expected_summary"]),
+                expected_final_observables=dict(item["expected_final_observables"]),
+                expected_payload_sha256=str(item["expected_payload_sha256"]),
+                expected_tier2=dict(item["expected_tier2"]),
+            )
+        )
+
+    exercise_cases: list[SeededVortexExerciseCaseSpec] = []
+    for item in payload.get("exercise_cases", []):
+        case_id = str(item["case_id"]).strip()
+        _check_case_id(case_id)
+        config_ref = str(item["config_path"]).strip()
+        config_path = _resolve_path(config_ref, source_dir=path.parent)
+        if not config_path.exists():
+            raise ConfigError(f"exercise case '{case_id}' config_path does not exist: {config_ref}")
+        exercise_cases.append(
+            SeededVortexExerciseCaseSpec(
+                case_id=case_id,
+                case_class=str(item["case_class"]),
+                config_ref=config_ref,
+                config_path=str(config_path),
+                expected_invariants=dict(item["expected_invariants"]),
+            )
+        )
+
+    rejection_cases: list[SeededVortexRejectionCaseSpec] = []
+    for item in payload.get("rejection_cases", []):
+        case_id = str(item["case_id"]).strip()
+        _check_case_id(case_id)
+        config_ref = str(item["config_path"]).strip()
+        config_path = _resolve_path(config_ref, source_dir=path.parent)
+        if not config_path.exists():
+            raise ConfigError(f"rejection case '{case_id}' config_path does not exist: {config_ref}")
+        rejection_cases.append(
+            SeededVortexRejectionCaseSpec(
+                case_id=case_id,
+                config_ref=config_ref,
+                config_path=str(config_path),
+                expected_stage=str(item["expected_stage"]),
+                expected_rejection=dict(item["expected_rejection"]),
+            )
+        )
+
+    return SeededVortexExperimentSuite(
+        schema_version=str(payload["schema_version"]),
+        suite_id=str(payload["suite_id"]),
+        claim_scope=str(payload["claim_scope"]),
+        horizon_contracts=horizon_contracts,
+        canonical_cases=canonical_cases,
+        exercise_cases=exercise_cases,
+        rejection_cases=rejection_cases,
+    )
 
 
 def _row_lookup(matrix_path: Path) -> dict[int, dict[str, Any]]:
@@ -234,7 +461,12 @@ def load_reference_manifest(manifest_path: str | Path) -> list[ReferenceRunSpec]
 
         expected_summary = item.get("expected_summary") or {}
         expected_final_observables = item.get("expected_final_observables") or {}
-        if not isinstance(expected_summary, dict) or not isinstance(expected_final_observables, dict):
+        expected_tier2_diagnostics = item.get("expected_tier2_diagnostics") or {}
+        if (
+            not isinstance(expected_summary, dict)
+            or not isinstance(expected_final_observables, dict)
+            or not isinstance(expected_tier2_diagnostics, dict)
+        ):
             raise ConfigError(f"reference '{reference_id}' expected summary payloads must be mappings")
 
         expected_payload_sha256 = str(item.get("expected_payload_sha256", "")).strip()
@@ -255,6 +487,7 @@ def load_reference_manifest(manifest_path: str | Path) -> list[ReferenceRunSpec]
                 expected_files=[str(entry) for entry in expected_files],
                 expected_summary=expected_summary,
                 expected_final_observables=expected_final_observables,
+                expected_tier2_diagnostics=expected_tier2_diagnostics,
                 expected_payload_sha256=expected_payload_sha256,
                 selected_result_case_id=selected_result_case_id,
             )
@@ -330,6 +563,16 @@ def _extract_refinement_payload(output_dir: Path, *, selected_case_id: str | Non
         "selected_result": observed_summary,
     }
     return observed_summary, {}, payload_for_hash
+
+
+def _extract_seeded_tier2_payload(run_dir: Path) -> dict[str, Any]:
+    path = run_dir / "diagnostics" / "seeded_vortex_tier2.json"
+    if not path.exists():
+        raise FileNotFoundError(f"missing seeded-vortex Tier-2 diagnostics: {path}")
+    payload = _read_json(path)
+    if not isinstance(payload, dict):
+        raise ConfigError(f"seeded-vortex Tier-2 payload must be a mapping: {path}")
+    return payload
 
 
 def _reference_markdown(records: list[dict[str, Any]], manifest_path: Path) -> str:
@@ -463,6 +706,196 @@ def run_reference_check(manifest_path: str | Path, *, output_dir: str | Path | N
         reference_case_count=len(records),
         passed_case_count=passed,
         failed_case_count=failed,
+    )
+
+
+def _configured_seeded_vortex_totals(config) -> dict[str, int]:
+    positive_winding = int(sum(max(int(seed.winding), 0) for seed in config.physics.vortex_seeds))
+    negative_winding = int(sum(max(-int(seed.winding), 0) for seed in config.physics.vortex_seeds))
+    total_abs = int(sum(abs(int(seed.winding)) for seed in config.physics.vortex_seeds))
+    return {
+        "configured_positive_winding": positive_winding,
+        "configured_negative_winding": negative_winding,
+        "configured_signed_winding": positive_winding - negative_winding,
+        "configured_abs_winding": total_abs,
+    }
+
+
+def _seeded_vortex_validation_markdown(records: list[dict[str, Any]], manifest_path: Path, reference_summary: ReferenceCheckSummary) -> str:
+    lines = [
+        "# Seeded-Vortex Validation Note",
+        "",
+        "This note records the narrow deterministic seeded-vortex initialization hook. It checks canonical ansatz cases for expected step-0 winding content, Tier-2 short-horizon diagnostics, and frozen short-run outputs.",
+        "",
+        f"- Manifest: `{manifest_path}`",
+        f"- Frozen reference check status: `{reference_summary.status}`",
+        f"- Passing canonical cases: `{sum(record['overall_pass'] for record in records)}/{len(records)}`",
+        "",
+        "| reference_id | case_id | configured abs/signed | observed abs/signed | Tier-2 | reference check | assessment | notes |",
+        "| --- | --- | ---: | ---: | --- | --- | --- | --- |",
+    ]
+    for record in records:
+        lines.append(
+            "| {reference_id} | {case_id} | {configured_abs}/{configured_signed} | {observed_abs}/{observed_signed} | {tier2_status} | {reference_status} | {assessment} | {notes} |".format(
+                reference_id=record["reference_id"],
+                case_id=record["case_id"],
+                configured_abs=record["configured_abs_winding"],
+                configured_signed=record["configured_signed_winding"],
+                observed_abs=record["observed_abs_winding"],
+                observed_signed=record["observed_signed_winding"],
+                tier2_status="pass" if record["tier2_overall_pass"] else "flagged",
+                reference_status=record["reference_check_status"],
+                assessment="pass" if record["overall_pass"] else "flagged",
+                notes=record["notes"].replace("\n", " "),
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "## Caveats",
+            "",
+            "- These seeded states are deterministic initialization ansatze, not relaxed equilibrium vortex solutions.",
+            "- The Tier-2 diagnostics are limited to local winding verification, core-amplitude detection, and short-horizon finite/stable behavior.",
+            "- This hook does not establish long-horizon dynamics, asymptotic convergence, PETSc parity, stochastic robustness, or broad physical validity.",
+            "- Supported placements are limited to seeds that lie strictly inside fully active plaquettes so the existing gauge-invariant vortex map remains interpretable at initialization.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def run_seeded_vortex_validation(
+    manifest_path: str | Path,
+    *,
+    output_dir: str | Path | None = None,
+) -> SeededVortexValidationSummary:
+    manifest = Path(manifest_path).resolve()
+    raw_manifest = _read_yaml(manifest)
+    if "reference_runs" not in raw_manifest:
+        from tdgl_rf.workflows.seeded_vortex_suite import run_seeded_vortex_validation_suite
+
+        suite_summary = run_seeded_vortex_validation_suite(manifest, output_dir=output_dir)
+        return SeededVortexValidationSummary(
+            status=str(suite_summary["status"]),
+            manifest_path=str(suite_summary["manifest_path"]),
+            output_dir=str(suite_summary["output_dir"]),
+            results_json_path=str(suite_summary["results_json_path"]),
+            results_markdown_path=str(suite_summary["results_markdown_path"]),
+            case_table_csv_path=str(suite_summary["case_table_csv_path"]),
+            case_count=int(suite_summary["case_count"]),
+            pass_count=int(suite_summary["pass_count"]),
+        )
+
+    specs = load_reference_manifest(manifest)
+    destination = (
+        Path(output_dir).resolve()
+        if output_dir is not None
+        else (repo_root() / "runs" / "seeded_vortex_validation" / manifest.stem / datetime.now().strftime("%Y%m%d-%H%M%S")).resolve()
+    )
+    destination.mkdir(parents=True, exist_ok=True)
+
+    reference_summary = run_reference_check(manifest, output_dir=destination / "reference_check")
+    reference_payload = _read_json(Path(reference_summary.results_json_path))
+    reference_records = {
+        str(record["reference_id"]): record
+        for record in reference_payload.get("records", [])
+        if isinstance(record, dict) and record.get("reference_id") is not None
+    }
+
+    records: list[dict[str, Any]] = []
+    for spec in specs:
+        notes: list[str] = []
+        config = load_case_config(spec.config_path)
+        if config.physics.initial_condition != "seeded_vortices":
+            raise ConfigError(
+                f"seeded-vortex validation manifest requires physics.initial_condition == 'seeded_vortices'; "
+                f"{spec.reference_id} used {config.physics.initial_condition!r}"
+            )
+
+        configured = _configured_seeded_vortex_totals(config)
+        reference_record = reference_records.get(spec.reference_id, {})
+        reference_status = str(reference_record.get("status", "missing"))
+        if reference_status != "success":
+            notes.append(f"reference check status was {reference_status}")
+        workflow_root = reference_record.get("workflow_root")
+        if not workflow_root:
+            notes.append("reference check record was missing workflow_root")
+            tier2_payload = {}
+        else:
+            try:
+                tier2_payload = _extract_seeded_tier2_payload(Path(str(workflow_root)))
+            except Exception as exc:
+                tier2_payload = {}
+                notes.append(str(exc))
+
+        host_series = tier2_payload.get("local_winding_verification", {}).get("host_winding_series", [])
+        observed = {
+            "observed_positive_winding": int(sum(max(int(value), 0) for value in host_series)),
+            "observed_negative_winding": int(sum(max(-int(value), 0) for value in host_series)),
+            "observed_signed_winding": int(tier2_payload.get("local_winding_verification", {}).get("initial_total_signed_winding", 0)),
+            "observed_abs_winding": int(tier2_payload.get("local_winding_verification", {}).get("initial_total_abs_winding", 0)),
+        }
+        if configured["configured_abs_winding"] != observed["observed_abs_winding"]:
+            notes.append(f"configured abs winding {configured['configured_abs_winding']} observed {observed['observed_abs_winding']}")
+        if configured["configured_signed_winding"] != observed["observed_signed_winding"]:
+            notes.append(f"configured signed winding {configured['configured_signed_winding']} observed {observed['observed_signed_winding']}")
+        tier2_mismatches = _compare_expected_mapping(spec.expected_tier2_diagnostics, tier2_payload, label="tier2")
+        notes.extend(tier2_mismatches)
+        tier2_overall_pass = bool(tier2_payload.get("tier2_overall_pass"))
+        if tier2_payload and not tier2_overall_pass:
+            notes.append("Tier-2 diagnostics reported tier2_overall_pass=false")
+
+        records.append(
+            {
+                "reference_id": spec.reference_id,
+                "case_id": config.metadata.case_id,
+                **configured,
+                **observed,
+                "reference_check_status": reference_status,
+                "reference_check_notes": str(reference_record.get("notes", "")),
+                "tier2_overall_pass": tier2_overall_pass,
+                "tier2_expected_defined": bool(spec.expected_tier2_diagnostics),
+                "tier2_diagnostics": tier2_payload,
+                "overall_pass": reference_status == "success" and tier2_overall_pass and not notes,
+                "notes": "; ".join(notes) if notes else "matched configured seeded winding, Tier-2 diagnostics, and frozen reference outputs",
+            }
+        )
+
+    results_json_path = destination / "seeded_vortex_validation.json"
+    results_markdown_path = destination / "seeded_vortex_validation.md"
+    case_table_csv_path = destination / "seeded_vortex_validation_cases.csv"
+    pass_count = sum(record["overall_pass"] for record in records)
+    write_csv(case_table_csv_path, records)
+    write_json(
+        results_json_path,
+        {
+            "manifest_path": str(manifest),
+            "reference_check": {
+                "status": reference_summary.status,
+                "results_json_path": reference_summary.results_json_path,
+                "results_markdown_path": reference_summary.results_markdown_path,
+            },
+            "case_count": len(records),
+            "pass_count": pass_count,
+            "records": records,
+            "overall_status": "success" if pass_count == len(records) and reference_summary.status == "success" else "failed",
+        },
+    )
+    results_markdown_path.write_text(
+        _seeded_vortex_validation_markdown(records, manifest, reference_summary),
+        encoding="utf-8",
+    )
+    return SeededVortexValidationSummary(
+        status="success" if pass_count == len(records) and reference_summary.status == "success" else "failed",
+        manifest_path=str(manifest),
+        output_dir=str(destination),
+        results_json_path=str(results_json_path),
+        results_markdown_path=str(results_markdown_path),
+        case_table_csv_path=str(case_table_csv_path),
+        reference_check_json_path=reference_summary.results_json_path,
+        reference_check_markdown_path=reference_summary.results_markdown_path,
+        case_count=len(records),
+        pass_count=pass_count,
     )
 
 

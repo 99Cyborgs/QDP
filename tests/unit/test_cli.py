@@ -133,3 +133,23 @@ def test_refinement_sanity_cli(tmp_path: Path) -> None:
     assert result.exit_code == 0
     assert '"status": "success"' in result.stdout
     assert '"case_count": 4' in result.stdout
+
+
+def test_run_ensemble_cli_executes_stochastic_case(tmp_path: Path) -> None:
+    config_path = write_case_config(
+        tmp_path,
+        "ensemble_cli_case",
+        overrides={
+            "metadata": {"phase": "S"},
+            "noise": {"enabled": True, "strength": 0.1, "seed": 1234},
+            "time": {"n_steps": 1},
+            "output": {"write_fields": False},
+        },
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["run-ensemble", str(config_path)])
+
+    assert result.exit_code == 0
+    assert '"status": "success"' in result.stdout
+    assert '"member_count": 1' in result.stdout

@@ -197,6 +197,39 @@
             "null"
           ]
         },
+        "vortex_seeds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "x0",
+              "y0",
+              "winding"
+            ],
+            "properties": {
+              "x0": {
+                "type": "number"
+              },
+              "y0": {
+                "type": "number"
+              },
+              "winding": {
+                "type": "integer",
+                "not": {
+                  "const": 0
+                }
+              },
+              "core_radius": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "exclusiveMinimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        },
         "pinning": {
           "type": "object",
           "required": [
@@ -311,13 +344,18 @@
     "noise": {
       "type": "object",
       "required": [
-        "enabled",
-        "gamma_psi",
-        "master_seed"
+        "enabled"
       ],
       "properties": {
         "enabled": {
           "type": "boolean"
+        },
+        "strength": {
+          "type": "number",
+          "minimum": 0
+        },
+        "seed": {
+          "type": "integer"
         },
         "gamma_psi": {
           "type": "number",

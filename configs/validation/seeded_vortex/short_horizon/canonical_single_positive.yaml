@@ -1,0 +1,9 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_short_single_positive
+  description: "Frozen short-horizon single positive seeded-vortex reference"
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1

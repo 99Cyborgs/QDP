@@ -1,0 +1,20 @@
+base_config: ../../phase1_matrix_base.yaml
+metadata:
+  case_id: seeded_vortex_short_horizon_base
+  description: "Phase-2.2 base config for short-horizon seeded-vortex checks"
+physics:
+  initial_condition: seeded_vortices
+forcing:
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+time:
+  n_steps: 4
+  obs_stride: 1
+  field_stride: 2
+  checkpoint_stride: 2
+output:
+  root_dir: runs/seeded_vortex_suite
+  write_fields: false
+  write_observables: true
+  compression: none

@@ -4,6 +4,8 @@
 
 Deterministic phase-1 validation now establishes a bounded local baseline with explicit thresholds, frozen references, and same-stack reproducibility. The next decision is not whether to add more features immediately, but which phase-2 direction best uses that validated baseline without overstating what the current evidence proves.
 
+Current branch note: seeded-vortex initialization has now been implemented as the first bounded phase-2 tranche. The ranking below remains useful as planning context for what should follow or what still lacks broader validation.
+
 ## Option Comparison
 
 | Option | Why it matters | Dependencies | Risks | Expected scientific value | Implementation cost / complexity | Prioritize next |

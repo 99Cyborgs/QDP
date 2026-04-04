@@ -40,7 +40,8 @@ The following limitations remain tolerated when entering phase-2. They must rema
 - The current evidence is short-horizon and deterministic only.
 - Same-stack reproducibility has been checked; cross-stack or cross-backend reproducibility has not.
 - The refinement harness is a bounded drift check, not an asymptotic convergence proof.
-- PETSc parity, larger-scale runs, seeded-vortex initial conditions, and stochastic workflows remain unvalidated.
+- PETSc parity, larger-scale runs, and stochastic workflows remain unvalidated.
+- Seeded-vortex initialization is now limited to the deterministic ansatz surface documented in `docs/PHASE2_SEEDED_VORTICES.md`; long-horizon and broader scientific claims remain unvalidated.
 - The proposal-usable deterministic surface is limited to the documented strip and simple masked-strip conditions in the current validation matrix and memo.
 
 ## Additional Evidence Required Before Specific Phase-2 Directions
@@ -65,12 +66,18 @@ Before ensemble workflows are allowed to proceed:
 
 ### Seeded Vortex Initialization
 
-Before seeded-vortex initialization is allowed to proceed:
+The first seeded-vortex tranche is now limited to:
 
-- Deterministic reference cases must exist with explicit expected initial vortex count and placement semantics.
-- The initialization path must be shown not to inject unintended vortices or immediate setup artifacts on the accepted short-horizon surface.
-- New frozen references and validation thresholds must be added for the seeded-vortex cases before broader interpretation is allowed.
-- The operating-conditions and limitations surfaces must be updated to show the exact supported seeded-vortex regime.
+- deterministic `physics.initial_condition: seeded_vortices` cases with explicit `physics.vortex_seeds`,
+- seeds that lie strictly inside fully active plaquettes,
+- canonical short-run frozen references in `validation/seeded_vortex_reference_manifest.yaml`,
+- the cheap hook `tdgl-rf validate-seeded-vortices validation/seeded_vortex_reference_manifest.yaml`.
+
+Broader seeded-vortex interpretation still requires:
+
+- longer-horizon seeded cases with explicit acceptance limits,
+- clearer evidence for initialization transients versus physically meaningful dynamics,
+- updated operating-condition and limitation surfaces before proposal-facing claims are widened.
 
 ### PETSc Parity / Larger-Scale Runs
 

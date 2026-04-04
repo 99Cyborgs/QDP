@@ -32,6 +32,18 @@ Run a deterministic case:
 tdgl-rf run-case configs/d01_smoke.yaml
 ```
 
+Run a deterministic seeded-vortex example:
+
+```bash
+tdgl-rf run-case configs/phase2_seeded_single_vortex.yaml
+```
+
+Run a deterministic seeded-vortex experiment harness:
+
+```bash
+tdgl-rf run-experiment validation/seeded_vortex_phase2_3_experiment_pack.yaml
+```
+
 The run directory is created under `runs/<case_id>/<timestamp>/`.
 
 ## Operational Notes
@@ -44,6 +56,11 @@ The run directory is created under `runs/<case_id>/<timestamp>/`.
 - `tdgl-rf evidence-bundle <validation_dir>` packages one completed validation run into a compact reviewer-facing bundle under `runs/evidence/...`.
 - `tdgl-rf reference-check validation/reference_manifest.yaml` regenerates the frozen canonical reference cases and checks their compact payload hashes.
 - `tdgl-rf reproducibility-check configs/validation/reference_rf_strip.yaml validation/thresholds.yaml` runs the same deterministic canonical case twice and checks exact same-stack reproducibility.
+- seeded-vortex runs write replay-oriented `provenance.json` metadata that conforms to `configs/tdgl_run_provenance.schema.json`.
+- seeded-vortex runs also write `diagnostics/seeded_vortex_tier2.json` with explicit `initialization_only` or `short_horizon` horizon contracts plus claim-bounded initialization/early-window observables.
+- `tdgl-rf validate-seeded-vortices validation/seeded_vortex_phase2_2_manifest.yaml` runs the deterministic same-stack seeded experiment-pack suite, including frozen canonical references, invariant-only exercise cases, and first-class rejection-taxonomy checks.
+- `tdgl-rf run-experiment <manifest>` dispatches Phase-2.2 suite manifests unchanged, runs Phase-2.3 experiment-pack manifests as deterministic same-stack sweep/repetition harnesses over the committed Tier-2 observable surface, and executes Phase-2.4A v4 manifests as sequential fail-fast stochastic ensembles with staged promotion, strict full-member aggregation, and replay-oriented provenance.
+- Phase-2.4A runtime support is an implementation capability only. It is not a scientific validation claim, and the repo does not currently define grounded acceptance guardrails for `noise.strength` beyond the explicit runtime contract `noise.enabled=true`, `noise.seed`, and `noise.strength > 0`.
 
 ## Validation Surface
 
@@ -54,6 +71,11 @@ The run directory is created under `runs/<case_id>/<timestamp>/`.
 - Evidence bundle workflow: `tdgl-rf evidence-bundle <validation_dir>`
 - Phase-2 entry gate: [docs/PHASE2_ENTRY_CRITERIA.md](docs/PHASE2_ENTRY_CRITERIA.md)
 - Phase-2 option ranking: [docs/PHASE2_OPTIONS_MEMO.md](docs/PHASE2_OPTIONS_MEMO.md)
+- Phase-2 seeded-vortex tranche: [docs/PHASE2_SEEDED_VORTICES.md](docs/PHASE2_SEEDED_VORTICES.md)
+- Phase-2.2 seeded experiment pack: [docs/PHASE2_2_SEEDED_EXPERIMENT_PACK.md](docs/PHASE2_2_SEEDED_EXPERIMENT_PACK.md)
+- Seeded-run provenance schema: [configs/tdgl_run_provenance.schema.json](configs/tdgl_run_provenance.schema.json)
+- Seeded Tier-2 schema: [configs/seeded_vortex_tier2.schema.json](configs/seeded_vortex_tier2.schema.json)
+- Seeded experiment-suite manifest: [validation/seeded_vortex_phase2_2_manifest.yaml](validation/seeded_vortex_phase2_2_manifest.yaml)
 - Current status and next decision point: [STATUS.md](STATUS.md)
 - Repo-level validation guidance: [VALIDATION.md](VALIDATION.md)
 

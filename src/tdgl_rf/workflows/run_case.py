@@ -9,6 +9,10 @@ from pathlib import Path
 from typing import Any
 
 from tdgl_rf.config.loaders import load_case_config, repo_root, write_expanded_config
+from tdgl_rf.diagnostics.seeded_vortex import (
+    compute_seeded_vortex_tier2_diagnostics,
+    infer_seeded_sampling_policy,
+)
 from tdgl_rf.exceptions import OutputWriteError
 from tdgl_rf.fields.observables import build_weight_profile, compute_basic_observables, compute_summary_stats
 from tdgl_rf.fields.vortices import compute_vortex_map, track_vortices
@@ -18,6 +22,7 @@ from tdgl_rf.io.checkpoints import write_checkpoint
 from tdgl_rf.io.hdf5_writer import write_field_snapshot
 from tdgl_rf.io.metadata import build_provenance, create_run_directory
 from tdgl_rf.io.reports import write_csv, write_json
+from tdgl_rf.solvers.seeded_vortices import resolve_vortex_seeds
 from tdgl_rf.solvers.state import initialize_state
 from tdgl_rf.solvers.tdgl_stepper import TDGLStepper
 from tdgl_rf.utils.logging import close_logger, configure_logger
@@ -112,6 +117,20 @@ def _diagnostic_paths(run_dir: Path) -> dict[str, str]:
         "convergence_report": str(run_dir / "diagnostics" / "convergence_report.json"),
         "run_summary": str(run_dir / "diagnostics" / "run_summary.json"),
     }
+
+
+def _seed_information(config, initialization_metadata: dict[str, Any] | None) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "noise_seed": config.noise.seed,
+        "pinning_seed": config.physics.pinning.seed,
+        "initial_condition": config.physics.initial_condition,
+        "vortex_seed_count": len(config.physics.vortex_seeds),
+    }
+    if initialization_metadata:
+        for key in ("configured_vortex_seeds", "resolved_vortex_seeds", "seed_resolution_policy", "seed_rejection_taxonomy_version"):
+            if key in initialization_metadata:
+                payload[key] = initialization_metadata[key]
+    return payload
 
 
 def _series_summary(values: list[float]) -> dict[str, float]:
@@ -261,21 +280,34 @@ def _write_final_summary(summary: RunSummary) -> None:
     write_json(Path(summary.run_dir) / "status.json", payload)
 
 
-def run_simulation(config_path: str | Path) -> RunSummary:
-    """Run a deterministic TDGL case from config."""
+def run_simulation(
+    config_path: str | Path,
+    *,
+    run_dir_override: str | Path | None = None,
+    experiment_metadata: dict[str, Any] | None = None,
+    ensemble_metadata: dict[str, Any] | None = None,
+) -> RunSummary:
+    """Run a TDGL case from config."""
 
     config_path = Path(config_path).resolve()
     config = load_case_config(config_path)
     output_root = Path(config.output.root_dir)
     if not output_root.is_absolute():
         output_root = (repo_root() / output_root).resolve()
-    run_dir = create_run_directory(output_root, config.metadata.case_id, datetime.now())
+    run_dir = create_run_directory(
+        output_root,
+        config.metadata.case_id,
+        datetime.now(),
+        explicit_path=run_dir_override,
+    )
     logger = configure_logger(run_dir / "logs" / "run.log")
-    write_expanded_config(config, run_dir / "expanded_config.yaml")
-    write_json(run_dir / "provenance.json", build_provenance(config, repo_root()))
+    expanded_config_path = run_dir / "expanded_config.yaml"
+    write_expanded_config(config, expanded_config_path)
     observable_mode = _observable_mode(config)
     observable_paths_all = _observable_paths(run_dir)
     diagnostic_file_paths = _diagnostic_paths(run_dir)
+    if config.physics.initial_condition == "seeded_vortices":
+        diagnostic_file_paths["seeded_vortex_tier2"] = str(run_dir / "diagnostics" / "seeded_vortex_tier2.json")
 
     start_timestamp = datetime.now().isoformat()
     write_json(
@@ -295,6 +327,9 @@ def run_simulation(config_path: str | Path) -> RunSummary:
     checkpoint_paths: list[str] = []
     observable_file_paths: dict[str, str] = {}
     wall_clock = 0.0
+    initialization_metadata: dict[str, Any] | None = None
+    initial_state = None
+    initial_vortex_map = None
 
     try:
         grid = grid_from_config(config.mesh)
@@ -304,12 +339,27 @@ def run_simulation(config_path: str | Path) -> RunSummary:
         state = initialize_state(grid, geometry, config, config_path.parent)
         if config.physics.initial_condition != "restart":
             state = stepper.align_state(state)
+        initial_state = state
+        initialization_metadata = dict(state.diagnostics.get("initialization", {})) if state.diagnostics else {}
+        write_json(
+            run_dir / "provenance.json",
+            build_provenance(
+                config,
+                repo_root(),
+                source_config_path=config_path,
+                expanded_config_path=expanded_config_path,
+                initialization_metadata=initialization_metadata,
+                experiment_metadata=experiment_metadata,
+                ensemble_metadata=ensemble_metadata,
+            ),
+        )
 
         weights_f, weights_q = _build_observable_weights(config, grid, geometry)
 
         links, supercurrent, normal_current = stepper.compute_currents(state)
         timeseries.append(_sample_observables(config, state, geometry, links, supercurrent, normal_current, weights_f, weights_q))
         prev_vortex_map = compute_vortex_map(state.psi, links, geometry) if config.observables.track_vortices else None
+        initial_vortex_map = prev_vortex_map.copy() if prev_vortex_map is not None else None
 
         _write_field_outputs(config, run_dir, state, checkpoint_paths)
         _write_running_status(
@@ -371,6 +421,19 @@ def run_simulation(config_path: str | Path) -> RunSummary:
 
         summary_payload = compute_summary_stats(timeseries, events)
         solver_iteration_stats = _solver_iteration_stats(config.time.n_steps, solver_rows)
+        if config.physics.initial_condition == "seeded_vortices" and initial_state is not None and initial_vortex_map is not None:
+            resolved_seeds = resolve_vortex_seeds(grid, geometry, config.physics.vortex_seeds)
+            write_json(
+                diagnostic_file_paths["seeded_vortex_tier2"],
+                compute_seeded_vortex_tier2_diagnostics(
+                    psi=initial_state.psi,
+                    vortex_map=initial_vortex_map,
+                    resolved_seeds=resolved_seeds,
+                    timeseries=timeseries,
+                    n_steps=config.time.n_steps,
+                    sampling_policy=infer_seeded_sampling_policy(config.time.n_steps),
+                ),
+            )
         if config.output.write_observables:
             write_csv(observable_paths_all["timeseries"], timeseries)
             write_csv(observable_paths_all["events"], events)
@@ -398,7 +461,7 @@ def run_simulation(config_path: str | Path) -> RunSummary:
             start_timestamp=start_timestamp,
             stop_timestamp=stop_timestamp,
             wall_clock_seconds=wall_clock,
-            seed_information={"master_seed": config.noise.master_seed, "pinning_seed": config.physics.pinning.seed},
+            seed_information=_seed_information(config, initialization_metadata),
             solver_iteration_stats=solver_iteration_stats,
             convergence_status="phase1_smoke",
             observable_mode=observable_mode,
@@ -435,7 +498,7 @@ def run_simulation(config_path: str | Path) -> RunSummary:
             start_timestamp=start_timestamp,
             stop_timestamp=stop_timestamp,
             wall_clock_seconds=wall_clock,
-            seed_information={"master_seed": config.noise.master_seed, "pinning_seed": config.physics.pinning.seed},
+            seed_information=_seed_information(config, initialization_metadata),
             solver_iteration_stats=solver_iteration_stats,
             convergence_status="failed",
             observable_mode=observable_mode,

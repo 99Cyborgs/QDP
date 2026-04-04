@@ -1,0 +1,10 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_unexpected_seeds
+  description: "Expected seeded-vortex rejection when seeds are provided for a non-seeded initial condition"
+physics:
+  initial_condition: meissner
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1
