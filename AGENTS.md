@@ -22,7 +22,7 @@ QDP is an incubate repo: strategically important, but not part of the default co
 - `active_runtime` includes `qdp.py`, `qdp_validation.py`, `modules/`, `packages/`, `apps/`, `tools/workflow/qdp_runtime/`, `tools/validators/`, `config/`, `configs/`, `scripts/`, and `tests/`.
 - `staged_donor` includes `staging/imported_*/` and `legacy/imported_artifacts/`.
 - `generated_artifacts` includes `artifacts/outputs/`, `artifacts/reports/`, `artifacts/lab/`, and `runs/`.
-- `docs_metadata` includes root markdown guidance files and `docs/`.
+- `docs_metadata` includes root markdown guidance files, `.github/`, and `docs/`.
 - Treat `tests/` as active-runtime support files, not a standalone commit bucket. Test-only diffs must ride with the runtime source change they validate.
 - Default commit sequence for behavior-changing work is: runtime commit first, artifact-refresh commit second if generated evidence changed, and staging/import commit separately when donor snapshots or migration bookkeeping move.
 - Keep ALL-MIND integration narrow: status, interfaces, and promotion artifacts, not whole-repo ingestion.

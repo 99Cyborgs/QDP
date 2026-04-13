@@ -33,7 +33,10 @@ GENERATED_ARTIFACT_PREFIXES = (
     "artifacts/lab/",
     "runs/",
 )
-DOCS_METADATA_PREFIXES = ("docs/",)
+DOCS_METADATA_PREFIXES = (
+    ".github/",
+    "docs/",
+)
 TEST_PREFIX = "tests/"
 
 

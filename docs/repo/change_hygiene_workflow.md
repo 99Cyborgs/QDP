@@ -7,7 +7,7 @@ This workflow keeps active runtime edits, staged donor imports, and generated ev
 - `active_runtime`: `qdp.py`, `qdp_validation.py`, `modules/`, `packages/`, `apps/`, `tools/workflow/qdp_runtime/`, `tools/validators/`, `config/`, `configs/`, `scripts/`, and `tests/`
 - `staged_donor`: `staging/imported_*/` and `legacy/imported_artifacts/`
 - `generated_artifacts`: `artifacts/outputs/`, `artifacts/reports/`, `artifacts/lab/`, and `runs/`
-- `docs_metadata`: root markdown guidance files and `docs/`
+- `docs_metadata`: root markdown guidance files, `.github/`, and `docs/`
 
 `docs_metadata` may accompany one primary bucket. `tests/` are active-runtime support files and are not a standalone commit bucket.
 
@@ -26,6 +26,8 @@ Inspect an existing diff span:
 git diff --name-only main..HEAD
 python scripts/check_change_scope.py --ref main..HEAD
 ```
+
+Pull requests now run the same check in GitHub Actions through `.github/workflows/change-scope-hygiene.yml`, so mixed-scope PRs fail automatically unless the workflow itself is intentionally changed.
 
 If you intentionally need a mixed primary-bucket diff, require an explicit override and capture the reason in the review notes:
 

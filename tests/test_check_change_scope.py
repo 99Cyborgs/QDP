@@ -121,6 +121,21 @@ def test_docs_and_staging_diff_passes() -> None:
     assert summary["primary_bucket"] == "staged_donor"
 
 
+def test_github_workflow_counts_as_docs_metadata() -> None:
+    checker = load_scope_checker()
+
+    summary = checker.summarize_scope(
+        [
+            ".github/workflows/change-scope-hygiene.yml",
+            "scripts/check_change_scope.py",
+        ]
+    )
+
+    assert summary["status"] == "ok"
+    assert summary["primary_bucket"] == "active_runtime"
+    assert summary["bucket_files"]["docs_metadata"] == [".github/workflows/change-scope-hygiene.yml"]
+
+
 def test_tests_without_runtime_source_fail() -> None:
     checker = load_scope_checker()
 
