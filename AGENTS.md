@@ -17,6 +17,14 @@ QDP is an incubate repo: strategically important, but not part of the default co
 
 - Keep source materials, runtime code, specs, and generated artifacts conceptually separate.
 - Do not treat generated outputs under `artifacts/outputs/` as the governing source of truth.
+- Separate commit scopes into one primary bucket at a time: `active_runtime`, `staged_donor`, or `generated_artifacts`. `docs_metadata` may accompany one primary bucket, but mixed primary-bucket commits require explicit override and justification.
+- Use `python scripts/check_change_scope.py --staged` before commit preparation for local bucket classification. Use `python scripts/check_change_scope.py --ref <base>..<head>` when reviewing an existing diff span.
+- `active_runtime` includes `qdp.py`, `qdp_validation.py`, `modules/`, `packages/`, `apps/`, `tools/workflow/qdp_runtime/`, `tools/validators/`, `config/`, `configs/`, `scripts/`, and `tests/`.
+- `staged_donor` includes `staging/imported_*/` and `legacy/imported_artifacts/`.
+- `generated_artifacts` includes `artifacts/outputs/`, `artifacts/reports/`, `artifacts/lab/`, and `runs/`.
+- `docs_metadata` includes root markdown guidance files and `docs/`.
+- Treat `tests/` as active-runtime support files, not a standalone commit bucket. Test-only diffs must ride with the runtime source change they validate.
+- Default commit sequence for behavior-changing work is: runtime commit first, artifact-refresh commit second if generated evidence changed, and staging/import commit separately when donor snapshots or migration bookkeeping move.
 - Keep ALL-MIND integration narrow: status, interfaces, and promotion artifacts, not whole-repo ingestion.
 - Update `STATUS.md` and `PROMOTION_NOTES.md` when the class, boundary, or promotion posture changes.
 - Preserve QDP as the umbrella destination repo.
@@ -33,6 +41,12 @@ QDP is an incubate repo: strategically important, but not part of the default co
 - Canonical QDP repo validation remains:
   - `python scripts/run_repo_validation.py`
 - Add `--require-authoritative-ready` only when the task is making a real readiness or staging claim rather than a structural one.
+- For active-runtime changes, review changed runtime symbols with file-qualified GitNexus analysis before commit:
+  1. `gitnexus_context({name: "symbolName", file_path: "path/to/file.py"})` or `gitnexus_context({uid: "..."})`
+  2. `gitnexus_impact({target: "symbolName", direction: "upstream"})`
+  3. confirm the impact result matches the disambiguated context before treating it as authoritative
+  4. review every `d=1` caller first and record one disposition per caller: `updated`, `validated unaffected`, or `deferred with risk note`
+  5. ignore GitNexus hits for `staging/imported_*/`, generated artifacts, and docs unless the commit is explicitly a staging-only review
 - For consolidation changes that only add skeleton structure, docs, or destination-boundary guidance and do not change the active runtime or control plane, use the smallest sufficient validation first:
   - read back changed files
   - verify the changed paths explicitly with scoped `git diff` or `git status`
@@ -64,6 +78,7 @@ This project is indexed by GitNexus as **QDP** (11727 symbols, 27694 relationshi
 ## Always Do
 
 - **MUST run impact analysis before editing any symbol.** Before modifying a function, class, or method, run `gitnexus_impact({target: "symbolName", direction: "upstream"})` and report the blast radius (direct callers, affected processes, risk level) to the user.
+- **MUST disambiguate active-runtime symbols with `file_path` or `uid` before relying on GitNexus impact results.** Use file-qualified review for runtime changes so staged donor copies and generated artifacts do not pollute the blast-radius read.
 - **MUST run `gitnexus_detect_changes()` before committing** to verify your changes only affect expected symbols and execution flows.
 - **MUST warn the user** if impact analysis returns HIGH or CRITICAL risk before proceeding with edits.
 - When exploring unfamiliar code, use `gitnexus_query({query: "concept"})` to find execution flows instead of grepping. It returns process-grouped results ranked by relevance.
@@ -121,9 +136,10 @@ This project is indexed by GitNexus as **QDP** (11727 symbols, 27694 relationshi
 
 Before completing any code modification task, verify:
 1. `gitnexus_impact` was run for all modified symbols
-2. No HIGH/CRITICAL risk warnings were ignored
-3. `gitnexus_detect_changes()` confirms changes match expected scope
-4. All d=1 (WILL BREAK) dependents were updated
+2. active-runtime symbol review used `file_path` or `uid` disambiguation and every `d=1` caller has a recorded disposition
+3. No HIGH/CRITICAL risk warnings were ignored
+4. `gitnexus_detect_changes()` confirms changes match expected scope
+5. `python scripts/check_change_scope.py --staged` reports one primary bucket unless an explicit mixed-scope override is being used
 
 ## Keeping the Index Fresh
 

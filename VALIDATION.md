@@ -45,6 +45,8 @@ Promoted into the active umbrella validation surface:
 - package smoke tests listed in `AGENTS.md`
 - `tests/integration/test_tdgl_material_registry_integration.py`
 
+For active-runtime refactors or behavior changes, run runtime validation before staging any generated evidence refresh. Generated outputs belong in an artifact-only follow-up commit rather than in the same commit as the source edits that produced them.
+
 Intentionally left staged for selective later promotion:
 
 - donor-wide `MMM-Studio` tests under `staging/imported_mmm_studio/snapshot/tests/`
@@ -90,6 +92,11 @@ Queue triage is operator-local: `queue list` to find candidates, `queue show` to
 
 ## Additional review
 
+- confirm `python scripts/check_change_scope.py --staged` reports a single primary bucket before commit preparation unless an explicit mixed-scope override is intentionally being used,
+- confirm runtime commits keep `staging/imported_*/`, `legacy/imported_artifacts/`, `artifacts/outputs/`, `artifacts/reports/`, `artifacts/lab/`, and `runs/` out of scope,
+- confirm artifact-refresh commits contain only generated outputs and any minimal companion docs, with no active runtime source edits,
+- confirm staging/import commits contain only staged donor content, migration bookkeeping, and any minimal companion docs, with no active runtime source edits or generated runtime evidence refresh,
+- confirm active-runtime GitNexus review used file-qualified `context` plus matching `impact` lookups and that every `d=1` caller has a disposition recorded,
 - confirm `STATUS.md`, `PROMOTION_NOTES.md`, and `REPO_MAP.md` still match the repo layout,
 - confirm `module_verification` and any propagated `closure_limitations` remain truthful to the current generated reports,
 - confirm `artifacts/reports/system/all_mind_interface.json` still matches the frozen contract in `INTEGRATION_PLAN.md`,
