@@ -1,0 +1,50 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.048917+00:00",
+  "candidate_id": "m09-case-tls",
+  "result_summary": {
+    "exact_falsifier": "If the TLS branch is real, readout-power and temperature sweeps must reproduce the saturation trend across matched geometry or participation changes.",
+    "priority_experiments": [
+      "TLS saturation sweep: readout power x temperature x geometry or participation"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "mechanism_discrimination",
+    "sweep_route_group": "TLS",
+    "candidate_target_devices": [],
+    "simulation_conditions": {
+      "branch_partition": "mechanism_discrimination",
+      "owner_route": "TLS",
+      "status": "PROPOSED",
+      "simulation_sweep_required": true,
+      "lab_sweep_required": true
+    },
+    "tested_parameter_ranges": {
+      "readout_power": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "temperature": [
+        "BASE",
+        "MID",
+        "HIGH"
+      ],
+      "geometry_or_participation": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "saturation_parameters": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ]
+    },
+    "suppression_reason": ""
+  }
+}

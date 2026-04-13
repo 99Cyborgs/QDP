@@ -1,0 +1,32 @@
+{
+  "artifact_id": "QDP_V10_6_M01_SELFTEST_CASES",
+  "module_id": "M01",
+  "cases": [
+    {
+      "case_id": "CASE_M01_RECOVERY_SURROGATE",
+      "description": "Surrogate retained provenance keeps M01 in the recovery lane.",
+      "retained_runtime_source_provenance": "reconstructed_surrogate",
+      "runtime_prompt_exists": true,
+      "retained_runtime_exists": true,
+      "surrogate_runtime_exists": true,
+      "expected": {
+        "assembly_lane": "RECOVERY_LANE",
+        "derived_status": "RECOVERY_INTERIM",
+        "retained_runtime_source_authoritative": false
+      }
+    },
+    {
+      "case_id": "CASE_M01_AUTHORITATIVE_LANE",
+      "description": "An uploaded retained source permits authoritative-lane assembly semantics.",
+      "retained_runtime_source_provenance": "uploaded",
+      "runtime_prompt_exists": true,
+      "retained_runtime_exists": true,
+      "surrogate_runtime_exists": false,
+      "expected": {
+        "assembly_lane": "AUTHORITATIVE_LANE",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "retained_runtime_source_authoritative": true
+      }
+    }
+  ]
+}

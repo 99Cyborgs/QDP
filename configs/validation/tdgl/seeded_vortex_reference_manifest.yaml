@@ -1,0 +1,89 @@
+﻿reference_runs:
+  - reference_id: seeded_single_positive
+    kind: config
+    config_path: configs/validation/tdgl/reference_seeded_single_positive.yaml
+    command: qdp-tdgl run-case configs/validation/tdgl/reference_seeded_single_positive.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.6691556353991124
+      final_mean_abs2: 0.9815640339925397
+      final_time: 0.04
+      max_vortex_count: 1
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      charge_residual_inf: 0.6691556353991124
+      mean_abs2: 0.9815640339925397
+      delta_f_over_f0: -0.018435966007460124
+      qinv: 0.011333561425600585
+      vortex_count: 1
+    expected_tier2_diagnostics:
+      tier2_overall_pass: true
+      local_winding_verification:
+        configured_winding_series: [1]
+        host_winding_series: [1]
+        local_signed_winding_series: [1]
+        local_abs_winding_series: [1]
+        initial_total_signed_winding: 1
+        initial_total_abs_winding: 1
+        all_host_winding_match: true
+        all_local_winding_match: true
+      core_amplitude_detection:
+        core_detected_series: [true]
+        all_core_detected: true
+      early_step_stability:
+        checked_sample_count: 4
+        sample_steps: [0, 1, 2, 3]
+        vortex_count_series: [1, 1, 1, 1]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_constant_pass: true
+        overall_pass: true
+    expected_payload_sha256: f21b3c985136d0b62008e79b1e35d908bc5395e391a4adc293421b91525e12e4
+  - reference_id: seeded_pair
+    kind: config
+    config_path: configs/validation/tdgl/reference_seeded_pair.yaml
+    command: qdp-tdgl run-case configs/validation/tdgl/reference_seeded_pair.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 1.2130805469440966
+      final_mean_abs2: 0.9643773008706715
+      final_time: 0.04
+      max_vortex_count: 2
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      charge_residual_inf: 1.2130805469440966
+      mean_abs2: 0.9643773008706715
+      delta_f_over_f0: -0.035622699129328576
+      qinv: 0.013112704428002844
+      vortex_count: 2
+    expected_tier2_diagnostics:
+      tier2_overall_pass: true
+      local_winding_verification:
+        configured_winding_series: [1, -1]
+        host_winding_series: [1, -1]
+        local_signed_winding_series: [1, -1]
+        local_abs_winding_series: [1, 1]
+        initial_total_signed_winding: 0
+        initial_total_abs_winding: 2
+        all_host_winding_match: true
+        all_local_winding_match: true
+      core_amplitude_detection:
+        core_detected_series: [true, true]
+        all_core_detected: true
+      early_step_stability:
+        checked_sample_count: 4
+        sample_steps: [0, 1, 2, 3]
+        vortex_count_series: [2, 2, 2, 2]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_constant_pass: true
+        overall_pass: true
+    expected_payload_sha256: b5038e4ed91740dd1e1e5a7eadf66709ec9d914cf42dc301d02f7a40f9822fc0

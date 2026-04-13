@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+  "module_id": "S19",
+  "diagnostics_reported": [
+    "symmetry_alias_score",
+    "slow_rank",
+    "observable_closure_defect",
+    "baseline_competition_margin"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "pass",
+    "projector_stability": "pass_or_borderline",
+    "finite_horizon_control": "pass_or_borderline",
+    "observable_closure": "fail_or_borderline",
+    "null_baseline_rejection": "fail_or_not_met",
+    "symmetry_alias_rejection": "fail",
+    "artifact_alias_rejection": "pass"
+  },
+  "expected_final_verdict": "inconclusive",
+  "actual_final_verdict": "inconclusive",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Final subsystem verdict is surfaced from required gate outcomes and expected final verdict.",
+    "supported_forbidden=True",
+    "supported_required=False"
+  ]
+}

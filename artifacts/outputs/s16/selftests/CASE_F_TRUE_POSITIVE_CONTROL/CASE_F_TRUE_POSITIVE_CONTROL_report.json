@@ -1,0 +1,20 @@
+{
+  "artifact_id": "QDP_V10_6_S16_REPORT",
+  "module_id": "S16",
+  "timestamp_utc": "2026-04-13T18:30:49.090165+00:00",
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "result_summary": {
+    "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+    "actual_final_verdict": "supported",
+    "gate_outcomes": {
+      "slow_sector_detected": "pass",
+      "projector_stability": "pass"
+    },
+    "diagnostics_reported": [
+      "slow_rank",
+      "spectral_gap_delta",
+      "riesz_projector_stability",
+      "projector_principal_angle_dispersion"
+    ]
+  }
+}

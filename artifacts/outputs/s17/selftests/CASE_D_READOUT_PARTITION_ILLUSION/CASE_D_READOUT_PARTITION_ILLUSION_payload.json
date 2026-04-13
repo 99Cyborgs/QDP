@@ -1,0 +1,24 @@
+{
+  "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+  "module_id": "S17",
+  "diagnostics_reported": [
+    "covariance_modularity",
+    "symmetry_alias_score",
+    "artifact_alias_score",
+    "tls_alias_score",
+    "baseline_competition_margin"
+  ],
+  "gate_outcomes": {
+    "null_baseline_rejection": "fail",
+    "symmetry_alias_rejection": "pass",
+    "artifact_alias_rejection": "fail"
+  },
+  "expected_final_verdict": "not_supported",
+  "actual_final_verdict": "not_supported",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Alias rejection is surfaced from required gate outcomes in the subsystem matrix.",
+    "description=Readout distortion, crosstalk, and calibration drift create measurement space partitions that mimic subsystem structure"
+  ]
+}

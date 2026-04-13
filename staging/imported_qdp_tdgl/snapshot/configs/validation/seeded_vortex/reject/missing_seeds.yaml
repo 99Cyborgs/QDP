@@ -1,0 +1,6 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_missing_seeds
+  description: "Expected seeded-vortex rejection when no seeds are provided"
+physics:
+  vortex_seeds: []

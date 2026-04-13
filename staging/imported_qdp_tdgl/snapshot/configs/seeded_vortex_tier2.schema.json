@@ -1,0 +1,488 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SeededVortexTier2Diagnostics",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "diagnostic_interpretation_version",
+    "resolution_policy",
+    "case_class",
+    "horizon_contract",
+    "diagnostic_classification",
+    "seed_count",
+    "configured_signed_winding",
+    "configured_abs_winding",
+    "expected_vortex_count",
+    "initialization_observables",
+    "early_window_observables",
+    "tier2_overall_pass"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "tdgl_rf.seeded_vortex_tier2.v2"
+    },
+    "diagnostic_interpretation_version": {
+      "const": "seeded_vortex_phase2_2"
+    },
+    "resolution_policy": {
+      "type": "string"
+    },
+    "case_class": {
+      "enum": [
+        "initialization_only",
+        "short_horizon"
+      ]
+    },
+    "horizon_contract": {
+      "$ref": "#/$defs/horizon_contract"
+    },
+    "diagnostic_classification": {
+      "type": "object",
+      "required": [
+        "initialization_observables",
+        "early_window_observables"
+      ],
+      "properties": {
+        "initialization_observables": {
+          "const": "initialization_observable"
+        },
+        "early_window_observables": {
+          "const": "early_window_observable"
+        }
+      },
+      "additionalProperties": false
+    },
+    "seed_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "configured_signed_winding": {
+      "type": "integer"
+    },
+    "configured_abs_winding": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expected_vortex_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "initialization_observables": {
+      "$ref": "#/$defs/initialization_observables"
+    },
+    "early_window_observables": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/early_window_observables"
+        }
+      ]
+    },
+    "tier2_overall_pass": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "case_class": {
+            "const": "initialization_only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "horizon_contract": {
+            "properties": {
+              "sampling_policy": {
+                "const": "initialization_surface"
+              },
+              "n_steps": {
+                "const": 0
+              }
+            }
+          },
+          "early_window_observables": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_class": {
+            "const": "short_horizon"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "horizon_contract": {
+            "properties": {
+              "sampling_policy": {
+                "const": "all_observable_samples_through_n_steps"
+              },
+              "n_steps": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "early_window_observables": {
+            "$ref": "#/$defs/early_window_observables"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "horizon_contract": {
+      "type": "object",
+      "required": [
+        "n_steps",
+        "sampling_policy",
+        "observed_sample_count",
+        "observed_step_series"
+      ],
+      "properties": {
+        "n_steps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sampling_policy": {
+          "enum": [
+            "initialization_surface",
+            "all_observable_samples_through_n_steps"
+          ]
+        },
+        "observed_sample_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "observed_step_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "local_winding_seed": {
+      "type": "object",
+      "required": [
+        "seed_index",
+        "configured_winding",
+        "plaquette_x",
+        "plaquette_y",
+        "host_winding",
+        "local_signed_winding",
+        "local_abs_winding",
+        "host_winding_match",
+        "local_winding_match"
+      ],
+      "properties": {
+        "seed_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "configured_winding": {
+          "type": "integer"
+        },
+        "plaquette_x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plaquette_y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "host_winding": {
+          "type": "integer"
+        },
+        "local_signed_winding": {
+          "type": "integer"
+        },
+        "local_abs_winding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "host_winding_match": {
+          "type": "boolean"
+        },
+        "local_winding_match": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "local_winding_verification": {
+      "type": "object",
+      "required": [
+        "seed_count",
+        "configured_winding_series",
+        "host_winding_series",
+        "local_signed_winding_series",
+        "local_abs_winding_series",
+        "initial_total_signed_winding",
+        "initial_total_abs_winding",
+        "all_host_winding_match",
+        "all_local_winding_match",
+        "per_seed"
+      ],
+      "properties": {
+        "seed_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "configured_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "host_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "local_signed_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "local_abs_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "initial_total_signed_winding": {
+          "type": "integer"
+        },
+        "initial_total_abs_winding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "all_host_winding_match": {
+          "type": "boolean"
+        },
+        "all_local_winding_match": {
+          "type": "boolean"
+        },
+        "per_seed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/local_winding_seed"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "core_contrast_seed": {
+      "type": "object",
+      "required": [
+        "seed_index",
+        "configured_winding",
+        "plaquette_x",
+        "plaquette_y",
+        "core_min_abs",
+        "core_mean_abs",
+        "ring_mean_abs",
+        "core_to_ring_ratio",
+        "core_observable"
+      ],
+      "properties": {
+        "seed_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "configured_winding": {
+          "type": "integer"
+        },
+        "plaquette_x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plaquette_y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "core_min_abs": {
+          "type": "number"
+        },
+        "core_mean_abs": {
+          "type": "number"
+        },
+        "ring_mean_abs": {
+          "type": "number"
+        },
+        "core_to_ring_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "core_observable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "core_contrast_observables": {
+      "type": "object",
+      "required": [
+        "seed_count",
+        "core_observable_series",
+        "core_to_ring_ratio_series",
+        "all_core_observable",
+        "per_seed"
+      ],
+      "properties": {
+        "seed_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "core_observable_series": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          },
+          "minItems": 1
+        },
+        "core_to_ring_ratio_series": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "minItems": 1
+        },
+        "all_core_observable": {
+          "type": "boolean"
+        },
+        "per_seed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/core_contrast_seed"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "initialization_observables": {
+      "type": "object",
+      "required": [
+        "local_winding_verification",
+        "core_contrast_observables",
+        "overall_pass"
+      ],
+      "properties": {
+        "local_winding_verification": {
+          "$ref": "#/$defs/local_winding_verification"
+        },
+        "core_contrast_observables": {
+          "$ref": "#/$defs/core_contrast_observables"
+        },
+        "overall_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "early_window_observables": {
+      "type": "object",
+      "required": [
+        "checked_sample_count",
+        "sample_steps",
+        "sample_times",
+        "vortex_count_series",
+        "mean_abs2_series",
+        "charge_residual_inf_series",
+        "finite_observables_pass",
+        "positive_amplitude_pass",
+        "vortex_count_matches_expected_pass",
+        "expected_vortex_count",
+        "overall_pass"
+      ],
+      "properties": {
+        "checked_sample_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_steps": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "sample_times": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "vortex_count_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "mean_abs2_series": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "charge_residual_inf_series": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "finite_observables_pass": {
+          "type": "boolean"
+        },
+        "positive_amplitude_pass": {
+          "type": "boolean"
+        },
+        "vortex_count_matches_expected_pass": {
+          "type": "boolean"
+        },
+        "expected_vortex_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "overall_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

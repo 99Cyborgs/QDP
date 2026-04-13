@@ -1,0 +1,27 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-03-18T22:57:06.581300+00:00",
+  "candidate_id": "m06-case-5",
+  "result_summary": {
+    "exact_falsifier": "If the orthogonal discriminants are real, the scheduled cross-device sweep must preserve the observed ranking.",
+    "priority_experiments": [
+      "Cross-device discriminant sweep"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "cross_device_confirmation",
+    "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+    "candidate_target_devices": [],
+    "simulation_conditions": {},
+    "tested_parameter_ranges": {},
+    "suppression_reason": ""
+  },
+  "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json",
+  "source_candidate_hash": "77fab08b87ce6a3c936159373b28d0099f0c402a52d2d2c0c1d6acf886f873ae",
+  "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json",
+  "output_candidate_hash": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c"
+}

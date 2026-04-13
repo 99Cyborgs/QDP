@@ -1,0 +1,618 @@
+{
+  "artifact_paths": {
+    "summary_json": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\tranche_summary.json",
+    "summary_markdown": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\tranche_summary.md"
+  },
+  "candidate_leaderboard": [
+    {
+      "best_rank": 1,
+      "genome_id": "GEN-003",
+      "mean_rank": 1.3333333333333333,
+      "mean_score": 0.7826035691135985,
+      "parent_structure_id": "STR-EM-LID-HIS",
+      "profile_sensitivity_score": 0.6558071580397138,
+      "rank_span": 1,
+      "robustness_score": 0.9892156862745097,
+      "score_stddev": 0.004147970028366971,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 3,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 2,
+      "worst_rank": 2
+    },
+    {
+      "best_rank": 1,
+      "genome_id": "GEN-001",
+      "mean_rank": 1.6666666666666667,
+      "mean_score": 0.7780253714970918,
+      "parent_structure_id": "STR-EM-CPW-EBG-RING",
+      "profile_sensitivity_score": 0.6511286702275492,
+      "rank_span": 1,
+      "robustness_score": 0.9784313725490196,
+      "score_stddev": 0.0008061930196779432,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 3,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 1,
+      "worst_rank": 2
+    },
+    {
+      "best_rank": 3,
+      "genome_id": "GEN-002",
+      "mean_rank": 3.0,
+      "mean_score": 0.7194300287439608,
+      "parent_structure_id": "STR-EM-CPW-EBG-RING",
+      "profile_sensitivity_score": 0.0009873019111735668,
+      "rank_span": 0,
+      "robustness_score": 0.9352941176470589,
+      "score_stddev": 0.0007052156508382621,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 3,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 3
+    },
+    {
+      "best_rank": 4,
+      "genome_id": "GEN-005",
+      "mean_rank": 4.666666666666667,
+      "mean_score": 0.7035813887790673,
+      "parent_structure_id": "STR-PH-SOI-JJ-PHC",
+      "profile_sensitivity_score": 0.17906829427619608,
+      "rank_span": 1,
+      "robustness_score": 0.8813725490196079,
+      "score_stddev": 0.01183449591156863,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 3,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 5
+    },
+    {
+      "best_rank": 4,
+      "genome_id": "GEN-018",
+      "mean_rank": 4.666666666666667,
+      "mean_score": 0.7113930246319976,
+      "parent_structure_id": "STR-EM-LID-HIS",
+      "profile_sensitivity_score": 0.26724421617373045,
+      "rank_span": 2,
+      "robustness_score": 0.8313725490196079,
+      "score_stddev": 0.005174440124093178,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 2,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 6
+    },
+    {
+      "best_rank": 5,
+      "genome_id": "GEN-007",
+      "mean_rank": 6.0,
+      "mean_score": 0.6882675923665306,
+      "parent_structure_id": "STR-PH-SOI-FULLCAP-PHC",
+      "profile_sensitivity_score": 0.24316677566281505,
+      "rank_span": 2,
+      "robustness_score": 0.7382352941176471,
+      "score_stddev": 0.018928649282963138,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 1,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 7
+    },
+    {
+      "best_rank": 6,
+      "genome_id": "GEN-006",
+      "mean_rank": 6.666666666666667,
+      "mean_score": 0.6791788533804357,
+      "parent_structure_id": "STR-PH-SOI-JJ-PHC",
+      "profile_sensitivity_score": 0.11927766886579282,
+      "rank_span": 1,
+      "robustness_score": 0.6666666666666667,
+      "score_stddev": 0.007817382523185345,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 7
+    },
+    {
+      "best_rank": 8,
+      "genome_id": "GEN-009",
+      "mean_rank": 8.0,
+      "mean_score": 0.6042073303407591,
+      "parent_structure_id": "STR-PH-GRADED-SINK",
+      "profile_sensitivity_score": 0.01062216805717687,
+      "rank_span": 0,
+      "robustness_score": 0.6235294117647059,
+      "score_stddev": 0.007587262897983479,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 8
+    },
+    {
+      "best_rank": 9,
+      "genome_id": "GEN-010",
+      "mean_rank": 9.333333333333334,
+      "mean_score": 0.5944235178534637,
+      "parent_structure_id": "STR-PH-GRADED-SINK",
+      "profile_sensitivity_score": 0.0786193446836218,
+      "rank_span": 1,
+      "robustness_score": 0.580392156862745,
+      "score_stddev": 0.004569373186713997,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 10
+    },
+    {
+      "best_rank": 9,
+      "genome_id": "GEN-016",
+      "mean_rank": 10.333333333333334,
+      "mean_score": 0.5722979084122316,
+      "parent_structure_id": "STR-HYB-BILAYER-INTERPOSER",
+      "profile_sensitivity_score": 0.20169849340538196,
+      "rank_span": 3,
+      "robustness_score": 0.5480392156862746,
+      "score_stddev": 0.01744697580903905,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 12
+    },
+    {
+      "best_rank": 11,
+      "genome_id": "GEN-008",
+      "mean_rank": 11.0,
+      "mean_score": 0.5700759946535727,
+      "parent_structure_id": "STR-PH-SOI-FULLCAP-PHC",
+      "profile_sensitivity_score": 0.017566018377555958,
+      "rank_span": 0,
+      "robustness_score": 0.5264705882352941,
+      "score_stddev": 0.012547155983968543,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 11
+    },
+    {
+      "best_rank": 10,
+      "genome_id": "GEN-017",
+      "mean_rank": 11.333333333333334,
+      "mean_score": 0.5606143598135425,
+      "parent_structure_id": "STR-CTRL-BANDSTOP-INTERPOSER",
+      "profile_sensitivity_score": 0.1267688009549537,
+      "rank_span": 2,
+      "robustness_score": 0.5156862745098039,
+      "score_stddev": 0.0061335591236682035,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 12
+    },
+    {
+      "best_rank": 13,
+      "genome_id": "GEN-013",
+      "mean_rank": 13.333333333333334,
+      "mean_score": 0.5068042828652964,
+      "parent_structure_id": "STR-VX-ANTIDOT-LATTICE",
+      "profile_sensitivity_score": 0.08475494039540127,
+      "rank_span": 1,
+      "robustness_score": 0.4509803921568627,
+      "score_stddev": 0.02482495742528662,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 14
+    },
+    {
+      "best_rank": 13,
+      "genome_id": "GEN-011",
+      "mean_rank": 14.0,
+      "mean_score": 0.4953501384982658,
+      "parent_structure_id": "STR-PH-SAW-BRAGG",
+      "profile_sensitivity_score": 0.09455145406468662,
+      "rank_span": 2,
+      "robustness_score": 0.4294117647058824,
+      "score_stddev": 0.0012102222911026862,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 15
+    },
+    {
+      "best_rank": 14,
+      "genome_id": "GEN-014",
+      "mean_rank": 14.666666666666666,
+      "mean_score": 0.46933613100794197,
+      "parent_structure_id": "STR-VX-ANTIDOT-LATTICE",
+      "profile_sensitivity_score": 0.08178745639791693,
+      "rank_span": 1,
+      "robustness_score": 0.40784313725490196,
+      "score_stddev": 0.025256346406675356,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 15
+    },
+    {
+      "best_rank": 16,
+      "genome_id": "GEN-015",
+      "mean_rank": 16.0,
+      "mean_score": 0.43216331154908333,
+      "parent_structure_id": "STR-3D-CAVITY-LINER",
+      "profile_sensitivity_score": 0.03176701188920986,
+      "rank_span": 0,
+      "robustness_score": 0.3647058823529412,
+      "score_stddev": 0.022690722778007044,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 16
+    },
+    {
+      "best_rank": 17,
+      "genome_id": "GEN-004",
+      "mean_rank": 17.0,
+      "mean_score": 0.367431179303436,
+      "parent_structure_id": "STR-EM-HKI-FENCE",
+      "profile_sensitivity_score": 0.023150921660694313,
+      "rank_span": 0,
+      "robustness_score": 0.3323529411764706,
+      "score_stddev": 0.016536372614781653,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 17
+    },
+    {
+      "best_rank": 18,
+      "genome_id": "GEN-012",
+      "mean_rank": 18.0,
+      "mean_score": 0.3525066307061506,
+      "parent_structure_id": "STR-QP-GAP-LATTICE",
+      "profile_sensitivity_score": 0.02833160239874182,
+      "rank_span": 0,
+      "robustness_score": 0.3,
+      "score_stddev": 0.02023685885624416,
+      "slice_ids": [
+        "broadband",
+        "manufacturability_aware",
+        "resonance_targeted"
+      ],
+      "successful_slice_count": 3,
+      "top_k_appearances": 0,
+      "tranche_ids": [
+        "profile_comparison"
+      ],
+      "win_count": 0,
+      "worst_rank": 18
+    }
+  ],
+  "consistent_top_performers": [
+    "GEN-003",
+    "GEN-001",
+    "GEN-002",
+    "GEN-005",
+    "GEN-018"
+  ],
+  "failed_slices": 0,
+  "objective": "Compare broadband, resonance-targeted, and manufacturability-aware scoring on the shared registry.",
+  "overlap_matrix": [
+    {
+      "jaccard_index": 1.0,
+      "left_only_candidates": [],
+      "left_slice_id": "broadband",
+      "overlap_count": 5,
+      "right_only_candidates": [],
+      "right_slice_id": "manufacturability_aware",
+      "same_winner": false,
+      "shared_top_candidates": [
+        "GEN-001",
+        "GEN-002",
+        "GEN-003",
+        "GEN-005",
+        "GEN-018"
+      ],
+      "top_k": 5,
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "jaccard_index": 0.6666666666666666,
+      "left_only_candidates": [
+        "GEN-018"
+      ],
+      "left_slice_id": "broadband",
+      "overlap_count": 4,
+      "right_only_candidates": [
+        "GEN-007"
+      ],
+      "right_slice_id": "resonance_targeted",
+      "same_winner": true,
+      "shared_top_candidates": [
+        "GEN-001",
+        "GEN-002",
+        "GEN-003",
+        "GEN-005"
+      ],
+      "top_k": 5,
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "jaccard_index": 0.6666666666666666,
+      "left_only_candidates": [
+        "GEN-018"
+      ],
+      "left_slice_id": "manufacturability_aware",
+      "overlap_count": 4,
+      "right_only_candidates": [
+        "GEN-007"
+      ],
+      "right_slice_id": "resonance_targeted",
+      "same_winner": false,
+      "shared_top_candidates": [
+        "GEN-001",
+        "GEN-002",
+        "GEN-003",
+        "GEN-005"
+      ],
+      "top_k": 5,
+      "tranche_id": "profile_comparison"
+    }
+  ],
+  "profile_sensitive_candidates": [
+    "GEN-003",
+    "GEN-001"
+  ],
+  "schema_name": "mmm_studio.tranche_summary",
+  "schema_version": "1.0",
+  "slice_records": [
+    {
+      "artifact_paths": {
+        "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\reports\\candidate_report.md",
+        "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\leaderboard.csv",
+        "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\leaderboard.png",
+        "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\run_manifest.json",
+        "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\metrics.json",
+        "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\params.yaml",
+        "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\provenance.json",
+        "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\score_breakdown.png",
+        "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\scores.json",
+        "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\RUN_SUMMARY.md"
+      },
+      "candidate_count": 18,
+      "completed_at": "2026-04-03T17:26:44.460347Z",
+      "error_message": null,
+      "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband",
+      "slice_id": "broadband",
+      "started_at": "2026-04-03T17:26:44.114271Z",
+      "status": "completed",
+      "top_candidate_id": "GEN-003",
+      "top_score": 0.7831834795321637,
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "artifact_paths": {
+        "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\reports\\candidate_report.md",
+        "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.csv",
+        "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.png",
+        "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\run_manifest.json",
+        "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\metrics.json",
+        "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\params.yaml",
+        "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\provenance.json",
+        "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\score_breakdown.png",
+        "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\scores.json",
+        "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\RUN_SUMMARY.md"
+      },
+      "candidate_count": 18,
+      "completed_at": "2026-04-03T17:26:44.775399Z",
+      "error_message": null,
+      "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted",
+      "slice_id": "resonance_targeted",
+      "started_at": "2026-04-03T17:26:44.461444Z",
+      "status": "completed",
+      "top_candidate_id": "GEN-003",
+      "top_score": 0.7873689339697694,
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "artifact_paths": {
+        "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\reports\\candidate_report.md",
+        "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\leaderboard.csv",
+        "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\leaderboard.png",
+        "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\run_manifest.json",
+        "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\metrics.json",
+        "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\params.yaml",
+        "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\provenance.json",
+        "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\score_breakdown.png",
+        "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\scores.json",
+        "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\RUN_SUMMARY.md"
+      },
+      "candidate_count": 18,
+      "completed_at": "2026-04-03T17:26:45.299811Z",
+      "error_message": null,
+      "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware",
+      "slice_id": "manufacturability_aware",
+      "started_at": "2026-04-03T17:26:44.776746Z",
+      "status": "completed",
+      "top_candidate_id": "GEN-001",
+      "top_score": 0.7785947867298579,
+      "tranche_id": "profile_comparison"
+    }
+  ],
+  "slice_winners": [
+    {
+      "candidate_count": 18,
+      "candidate_id": "GEN-003",
+      "decision_band": "lead_branch",
+      "parent_structure_id": "STR-EM-LID-HIS",
+      "score": 0.7831834795321637,
+      "scoring_profile": "broadband",
+      "slice_id": "broadband",
+      "status": "completed",
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "candidate_count": 18,
+      "candidate_id": "GEN-003",
+      "decision_band": "lead_branch",
+      "parent_structure_id": "STR-EM-LID-HIS",
+      "score": 0.7873689339697694,
+      "scoring_profile": "resonance_targeted",
+      "slice_id": "resonance_targeted",
+      "status": "completed",
+      "tranche_id": "profile_comparison"
+    },
+    {
+      "candidate_count": 18,
+      "candidate_id": "GEN-001",
+      "decision_band": "lead_branch",
+      "parent_structure_id": "STR-EM-CPW-EBG-RING",
+      "score": 0.7785947867298579,
+      "scoring_profile": "manufacturability_aware",
+      "slice_id": "manufacturability_aware",
+      "status": "completed",
+      "tranche_id": "profile_comparison"
+    }
+  ],
+  "status": "completed",
+  "successful_slices": 3,
+  "sweep_id": "profile_comparison_run",
+  "tranche_id": "profile_comparison",
+  "winner_consistency": {
+    "dominant_candidate_id": "GEN-003",
+    "dominant_win_count": 2,
+    "successful_slice_count": 3,
+    "winner_consistency_ratio": 0.6666666666666666
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "description": "Adversarial slow-sector case should surface pass plus fail_or_borderline projector stability.",
+      "expected": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "slow_rank",
+          "spectral_gap_delta",
+          "riesz_projector_stability",
+          "projector_principal_angle_dispersion"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "description": "Symmetry-only case should keep projector stability at pass_or_borderline.",
+      "expected": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "pass_or_borderline"
+        },
+        "diagnostics_reported": [
+          "slow_rank",
+          "spectral_gap_delta",
+          "riesz_projector_stability",
+          "projector_principal_angle_dispersion"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control should surface stable slow-sector detection.",
+      "expected": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "pass"
+        },
+        "diagnostics_reported": [
+          "slow_rank",
+          "spectral_gap_delta",
+          "riesz_projector_stability",
+          "projector_principal_angle_dispersion"
+        ]
+      }
+    }
+  ]
+}

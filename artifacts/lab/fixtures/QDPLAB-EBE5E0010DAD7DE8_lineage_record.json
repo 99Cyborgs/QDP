@@ -1,0 +1,14 @@
+{
+  "lineage_record_id": "LIN-EBE5E0010DAD7DE8",
+  "request_id": "QDPLAB-EBE5E0010DAD7DE8",
+  "device_ids": [
+    "DEV_MATCH_A",
+    "DEV_MATCH_B"
+  ],
+  "device_lineage_recorded": true,
+  "calibration_context_recorded": true,
+  "protocol_metadata_recorded": true,
+  "notes": [
+    "Synthetic lineage fixture for first-wave promotion-adjacent smoke test."
+  ]
+}

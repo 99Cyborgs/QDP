@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdp-mmm-studio"
+version = "0.1.0"
+description = "MMM Studio shell app for QDP packages."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "QDP Contributors" }]
+dependencies = [
+    "fastapi>=0.111",
+    "qdp-meta-materials>=0.1.0",
+    "typer>=0.21",
+    "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.28",
+    "pytest>=8.0",
+]
+
+[project.scripts]
+mmm-studio = "mmm_studio.cli:app"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"

@@ -1,0 +1,26 @@
+{
+  "candidate_id": "GEN-003",
+  "cell_size_um": [
+    50.0,
+    50.0,
+    10.0
+  ],
+  "lattice_topology": "2D square patch lattice",
+  "material_hints": {
+    "material_system": "superconducting-coated Si lid",
+    "structure_family": "high_impedance_surface"
+  },
+  "notes": [
+    "Geometry translation scaffold only.",
+    "Boundary conditions, dispersive media, and source definitions remain future work.",
+    "Meep import available: False"
+  ],
+  "parameter_map": {
+    "gap_um": 40,
+    "lid_spacing_um": 180,
+    "patch_pitch_um": 620,
+    "patch_size_um": 540
+  },
+  "resolution_pixels_per_um": 20,
+  "structure_id": "STR-EM-LID-HIS"
+}

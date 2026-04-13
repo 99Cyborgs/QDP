@@ -1,0 +1,3 @@
+2026-04-13 11:45:46,575 INFO Campaign start for matrix.csv with 1 selected rows
+2026-04-13 11:45:46,585 INFO Validated matrix row D01 (D)
+2026-04-13 11:45:46,588 INFO Campaign completed with status dry_run

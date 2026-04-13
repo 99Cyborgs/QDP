@@ -1,0 +1,249 @@
+{
+  "artifact_id": "QDP_V10_6_S19_SELFTEST_REPORT",
+  "module_id": "S19",
+  "timestamp_utc": "2026-04-13T18:30:49.121707+00:00",
+  "cases_total": 6,
+  "cases_passed": 6,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "description": "Nonnormal pseudo-subsystem must not return supported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive"
+      },
+      "actual_summary": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "fail_or_borderline",
+          "finite_horizon_control": "fail",
+          "observable_closure": "fail_or_borderline",
+          "null_baseline_rejection": "not_applicable",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "spectral_gap_delta",
+          "finite_horizon_gain_Gs",
+          "block_residual_rho_res",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "theorem_bound_looseness"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_report.json"
+    },
+    {
+      "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+      "description": "Correlated-noise mimic must return not_supported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported"
+      },
+      "actual_summary": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass_or_borderline",
+          "projector_stability": "fail_or_borderline",
+          "finite_horizon_control": "borderline",
+          "observable_closure": "fail_or_borderline",
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "slow_rank",
+          "projector_stability",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_report.json"
+    },
+    {
+      "case_id": "CASE_C_TLS_ALIAS",
+      "description": "TLS alias must return not_supported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_C_TLS_ALIAS\\CASE_C_TLS_ALIAS_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_C_TLS_ALIAS",
+        "actual_final_verdict": "not_supported"
+      },
+      "actual_summary": {
+        "case_id": "CASE_C_TLS_ALIAS",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass_or_borderline",
+          "projector_stability": "fail",
+          "finite_horizon_control": "borderline",
+          "observable_closure": "fail_or_borderline",
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "slow_rank",
+          "riesz_projector_stability",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_C_TLS_ALIAS\\CASE_C_TLS_ALIAS_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_C_TLS_ALIAS\\CASE_C_TLS_ALIAS_report.json"
+    },
+    {
+      "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+      "description": "Readout partition illusion must return not_supported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported"
+      },
+      "actual_summary": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "slow_sector_detected": "borderline_or_fail",
+          "projector_stability": "fail",
+          "finite_horizon_control": "not_primary",
+          "observable_closure": "fail",
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "fail"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "observable_space_leakage",
+          "artifact_alias_score",
+          "state_space_and_observable_space_consistency"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_report.json"
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "description": "Symmetry-only case must remain inconclusive.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive"
+      },
+      "actual_summary": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "pass_or_borderline",
+          "finite_horizon_control": "pass_or_borderline",
+          "observable_closure": "fail_or_borderline",
+          "null_baseline_rejection": "fail_or_not_met",
+          "symmetry_alias_rejection": "fail",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "symmetry_alias_score",
+          "slow_rank",
+          "observable_closure_defect",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_report.json"
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control must return supported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported"
+      },
+      "actual_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "slow_sector_detected": "pass",
+          "projector_stability": "pass",
+          "finite_horizon_control": "pass",
+          "observable_closure": "pass",
+          "null_baseline_rejection": "pass",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "slow_rank",
+          "riesz_projector_stability",
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "observable_closure_defect",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s19\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_report.json"
+    }
+  ]
+}

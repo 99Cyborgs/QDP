@@ -1,0 +1,40 @@
+{
+  "artifact_id": "QDP_V10_6_M15_REPORT",
+  "module_id": "M15",
+  "timestamp_utc": "2026-04-13T18:30:49.053638+00:00",
+  "candidate_id": "M15_WORKING_PATCH_CANDIDATE",
+  "result_summary": {
+    "calibration_status": {
+      "status": "VALID",
+      "validity_score": 81.0,
+      "threshold": 70.0,
+      "below_threshold": false,
+      "notes": ""
+    },
+    "identifiability_status": {
+      "status": "INSUFFICIENT",
+      "orthogonal_axes_satisfied": false,
+      "independent_constraints_satisfied": false,
+      "notes": ""
+    },
+    "drift_ledger": {
+      "status": "NOT_REQUIRED",
+      "hierarchical_model_required": false,
+      "hierarchical_model_applied": false,
+      "notes": ""
+    },
+    "dataset_governance": {
+      "status": "COMPLETE",
+      "device_lineage_recorded": true,
+      "calibration_context_recorded": true,
+      "protocol_metadata_recorded": true,
+      "independent_evidence_eligible": false,
+      "notes": ""
+    },
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "governance_outcome": "SANDBOX_ONLY",
+    "notes": [
+      "Identifiability remains insufficient for promotion."
+    ]
+  }
+}

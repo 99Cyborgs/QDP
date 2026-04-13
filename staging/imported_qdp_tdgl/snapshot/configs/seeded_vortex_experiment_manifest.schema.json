@@ -1,0 +1,678 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SeededVortexExperimentSuiteManifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "suite_id",
+    "claim_scope",
+    "defaults",
+    "canonical_cases",
+    "exercise_cases",
+    "rejection_cases"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "tdgl_rf.seeded_vortex_experiment_pack.v1"
+    },
+    "suite_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "horizon_contracts"
+      ],
+      "properties": {
+        "horizon_contracts": {
+          "type": "object",
+          "required": [
+            "initialization_only",
+            "short_horizon"
+          ],
+          "properties": {
+            "initialization_only": {
+              "$ref": "#/$defs/initialization_contract"
+            },
+            "short_horizon": {
+              "$ref": "#/$defs/short_horizon_contract"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "canonical_cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/canonical_case"
+      }
+    },
+    "exercise_cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exercise_case"
+      }
+    },
+    "rejection_cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rejection_case"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "initialization_contract": {
+      "type": "object",
+      "required": [
+        "n_steps",
+        "sampling_policy"
+      ],
+      "properties": {
+        "n_steps": {
+          "const": 0
+        },
+        "sampling_policy": {
+          "const": "initialization_surface"
+        }
+      },
+      "additionalProperties": false
+    },
+    "short_horizon_contract": {
+      "type": "object",
+      "required": [
+        "n_steps",
+        "sampling_policy"
+      ],
+      "properties": {
+        "n_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sampling_policy": {
+          "const": "all_observable_samples_through_n_steps"
+        }
+      },
+      "additionalProperties": false
+    },
+    "case_class": {
+      "enum": [
+        "initialization_only",
+        "short_horizon"
+      ]
+    },
+    "summary_expectations": {
+      "type": "object",
+      "properties": {
+        "final_charge_residual_inf": {
+          "type": "number"
+        },
+        "final_mean_abs2": {
+          "type": "number"
+        },
+        "final_time": {
+          "type": "number"
+        },
+        "max_vortex_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "n_events": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "n_samples": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "final_observable_expectations": {
+      "type": "object",
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "t": {
+          "type": "number"
+        },
+        "mean_abs2": {
+          "type": "number"
+        },
+        "charge_residual_inf": {
+          "type": "number"
+        },
+        "delta_f_over_f0": {
+          "type": "number"
+        },
+        "qinv": {
+          "type": "number"
+        },
+        "vortex_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "supercurrent_l2": {
+          "type": "number"
+        },
+        "normalcurrent_l2": {
+          "type": "number"
+        },
+        "max_abs2": {
+          "type": "number"
+        },
+        "min_abs2": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "local_winding_seed_subset": {
+      "type": "object",
+      "properties": {
+        "seed_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "configured_winding": {
+          "type": "integer"
+        },
+        "plaquette_x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plaquette_y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "host_winding": {
+          "type": "integer"
+        },
+        "local_signed_winding": {
+          "type": "integer"
+        },
+        "local_abs_winding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "host_winding_match": {
+          "type": "boolean"
+        },
+        "local_winding_match": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "local_winding_verification_subset": {
+      "type": "object",
+      "properties": {
+        "seed_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "configured_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "host_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "local_signed_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "local_abs_winding_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "initial_total_signed_winding": {
+          "type": "integer"
+        },
+        "initial_total_abs_winding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "all_host_winding_match": {
+          "type": "boolean"
+        },
+        "all_local_winding_match": {
+          "type": "boolean"
+        },
+        "per_seed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/local_winding_seed_subset"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "core_contrast_seed_subset": {
+      "type": "object",
+      "properties": {
+        "seed_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "configured_winding": {
+          "type": "integer"
+        },
+        "plaquette_x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "plaquette_y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "core_min_abs": {
+          "type": "number"
+        },
+        "core_mean_abs": {
+          "type": "number"
+        },
+        "ring_mean_abs": {
+          "type": "number"
+        },
+        "core_to_ring_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "core_observable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "core_contrast_observables_subset": {
+      "type": "object",
+      "properties": {
+        "seed_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "core_observable_series": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "core_to_ring_ratio_series": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "all_core_observable": {
+          "type": "boolean"
+        },
+        "per_seed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/core_contrast_seed_subset"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "initialization_observables_subset": {
+      "type": "object",
+      "properties": {
+        "local_winding_verification": {
+          "$ref": "#/$defs/local_winding_verification_subset"
+        },
+        "core_contrast_observables": {
+          "$ref": "#/$defs/core_contrast_observables_subset"
+        },
+        "overall_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "early_window_observables_subset": {
+      "type": "object",
+      "properties": {
+        "checked_sample_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_steps": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "sample_times": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "vortex_count_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "mean_abs2_series": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "charge_residual_inf_series": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "finite_observables_pass": {
+          "type": "boolean"
+        },
+        "positive_amplitude_pass": {
+          "type": "boolean"
+        },
+        "vortex_count_matches_expected_pass": {
+          "type": "boolean"
+        },
+        "expected_vortex_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "overall_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "horizon_contract_subset": {
+      "type": "object",
+      "properties": {
+        "n_steps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sampling_policy": {
+          "enum": [
+            "initialization_surface",
+            "all_observable_samples_through_n_steps"
+          ]
+        },
+        "observed_sample_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "observed_step_series": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "tier2_expectations": {
+      "type": "object",
+      "properties": {
+        "case_class": {
+          "$ref": "#/$defs/case_class"
+        },
+        "horizon_contract": {
+          "$ref": "#/$defs/horizon_contract_subset"
+        },
+        "initialization_observables": {
+          "$ref": "#/$defs/initialization_observables_subset"
+        },
+        "early_window_observables": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/early_window_observables_subset"
+            }
+          ]
+        },
+        "tier2_overall_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "canonical_case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_class",
+        "config_path",
+        "expected_summary",
+        "expected_final_observables",
+        "expected_payload_sha256",
+        "expected_tier2"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_class": {
+          "$ref": "#/$defs/case_class"
+        },
+        "config_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_summary": {
+          "$ref": "#/$defs/summary_expectations"
+        },
+        "expected_final_observables": {
+          "$ref": "#/$defs/final_observable_expectations"
+        },
+        "expected_payload_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "expected_tier2": {
+          "$ref": "#/$defs/tier2_expectations"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "case_class": {
+                "const": "initialization_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "expected_tier2": {
+                "required": [
+                  "initialization_observables"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "case_class": {
+                "const": "short_horizon"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "expected_tier2": {
+                "required": [
+                  "initialization_observables",
+                  "early_window_observables"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "exercise_case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_class",
+        "config_path",
+        "expected_invariants"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_class": {
+          "$ref": "#/$defs/case_class"
+        },
+        "config_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_invariants": {
+          "$ref": "#/$defs/tier2_expectations"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "case_class": {
+                "const": "initialization_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "expected_invariants": {
+                "required": [
+                  "initialization_observables"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "case_class": {
+                "const": "short_horizon"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "expected_invariants": {
+                "required": [
+                  "initialization_observables",
+                  "early_window_observables"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "rejection_expectation": {
+      "type": "object",
+      "required": [
+        "code",
+        "field_path",
+        "seed_index"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "missing_seeds",
+            "unexpected_seeds",
+            "schema_invalid",
+            "outside_domain",
+            "ambiguous_plaquette",
+            "inactive_plaquette",
+            "overlapping_plaquette"
+          ]
+        },
+        "field_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seed_index": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "rejection_case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "config_path",
+        "expected_stage",
+        "expected_rejection"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_stage": {
+          "enum": [
+            "config_validation",
+            "run_case"
+          ]
+        },
+        "expected_rejection": {
+          "$ref": "#/$defs/rejection_expectation"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

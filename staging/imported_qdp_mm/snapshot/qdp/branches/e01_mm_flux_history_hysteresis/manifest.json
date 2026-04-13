@@ -1,0 +1,227 @@
+{
+  "manifest_version": "1.0.0",
+  "created_on": "2026-03-17",
+  "structure_mode": "fallback_qdp",
+  "branch_tag": "E01_MM_FLUX_HISTORY_HYSTERESIS",
+  "branch_slug": "e01_mm_flux_history_hysteresis",
+  "branch_root": "qdp/branches/e01_mm_flux_history_hysteresis",
+  "artifacts": [
+    {
+      "relative_path": "README.md",
+      "artifact_type": "branch_readme",
+      "short_description": "Branch overview, non-claims, promotion path, and authoritative file map.",
+      "status": "ready_for_review",
+      "dependency_notes": "Points reviewers to the branch spec and exact falsifier."
+    },
+    {
+      "relative_path": "manifest.json",
+      "artifact_type": "manifest",
+      "short_description": "Enumerates every branch artifact and its intended role.",
+      "status": "ready_for_review",
+      "dependency_notes": "Self-describes this fallback QDP pack."
+    },
+    {
+      "relative_path": "specs/e01_mm_branch_spec.md",
+      "artifact_type": "branch_spec",
+      "short_description": "Defines the intake classification, scope, and interpretive limits.",
+      "status": "ready_for_registration",
+      "dependency_notes": "Authoritative over downstream summaries."
+    },
+    {
+      "relative_path": "specs/e01_mm_exact_falsifier.md",
+      "artifact_type": "exact_falsifier",
+      "short_description": "Maps required falsifying outcomes to branch and vortex dispositions.",
+      "status": "ready_for_registration",
+      "dependency_notes": "Used by intake and later review."
+    },
+    {
+      "relative_path": "protocols/e01_mm_measurement_protocol.md",
+      "artifact_type": "measurement_protocol",
+      "short_description": "Numbered laboratory protocol for fixed-T, fixed-drive history loops and controls.",
+      "status": "ready_for_lab_review",
+      "dependency_notes": "Depends on branch spec limits and exact falsifier stop conditions."
+    },
+    {
+      "relative_path": "protocols/e01_mm_first_cooldown_execution_sheet.md",
+      "artifact_type": "execution_sheet",
+      "short_description": "Dual-mode operator-facing template for pre-run minimum acquisition planning and post-run as-run binding.",
+      "status": "template_ready",
+      "dependency_notes": "Use the staged flow PRE_RUN_MINIMUM_ACQUISITION -> cooldown execution -> AS_RUN_BINDING, then mirror the final JSON state here."
+    },
+    {
+      "relative_path": "protocols/e01_mm_first_cooldown_run_binding.json",
+      "artifact_type": "run_binding_template",
+      "short_description": "Dual-mode machine-readable binding template with provenance fields, explicit units, and binding checks.",
+      "status": "template_ready",
+      "dependency_notes": "Local branch template only; use PRE_RUN_MINIMUM_READY, AS_RUN_PARTIAL, and AS_RUN_BOUND as staged status transitions, not as scientific decisions."
+    },
+    {
+      "relative_path": "protocols/e01_mm_candidate_packet_sweep_generator.ps1",
+      "artifact_type": "candidate_packet_generator",
+      "short_description": "Generates non-authoritative PRE_RUN field and dwell candidate packets from an external sweep-spec JSON.",
+      "status": "ready_for_packet_generation",
+      "dependency_notes": "Consumes an external sweep-spec and the local run-binding template; must not overwrite the authoritative run-binding JSON or execution sheet."
+    },
+    {
+      "relative_path": "protocols/e01_mm_first_cooldown_candidate_sweep_spec.json",
+      "artifact_type": "candidate_sweep_spec",
+      "short_description": "Single-candidate non-authoritative sweep spec for the minimum first-cooldown discriminator packet.",
+      "status": "ready_for_packet_generation",
+      "dependency_notes": "Feeds the candidate packet generator and remains non-authoritative until real hardware provenance is merged into the run-binding record."
+    },
+    {
+      "relative_path": "protocols/e01_mm_first_cooldown_candidate_packets.generated.json",
+      "artifact_type": "generated_candidate_packets",
+      "short_description": "Generated non-authoritative first-cooldown candidate packet set derived from the local sweep spec.",
+      "status": "generated_output",
+      "dependency_notes": "Selection aid only; must not be treated as a hardware-bound record or copied into as-run provenance without explicit binding."
+    },
+    {
+      "relative_path": "execution_queue/e01_mm_execution_queue_spec.md",
+      "artifact_type": "execution_queue_spec",
+      "short_description": "Defines queue states, reason codes, worker triggers, and the lease model for unattended lab-run progression.",
+      "status": "ready_for_review",
+      "dependency_notes": "Wraps the existing run-binding workflow without changing branch classification or falsifier logic."
+    },
+    {
+      "relative_path": "execution_queue/e01_mm_first_cooldown_queue_manifest.json",
+      "artifact_type": "execution_queue_manifest",
+      "short_description": "File-backed queue record for the first cooldown with embedded run-binding payload and worker metadata.",
+      "status": "template_ready",
+      "dependency_notes": "Mirrors the authoritative run-binding JSON on each worker tick and stores queue-only state alongside it."
+    },
+    {
+      "relative_path": "execution_queue/__init__.py",
+      "artifact_type": "execution_queue_package_init",
+      "short_description": "Exports the queue worker and validator entry points for import-style use and testing.",
+      "status": "ready_for_execution",
+      "dependency_notes": "Supports unittest imports without external dependencies."
+    },
+    {
+      "relative_path": "execution_queue/e01_mm_reconciliation.py",
+      "artifact_type": "execution_queue_reconciler",
+      "short_description": "Pure-Python evidence-ingestion and run-binding reconciliation layer for declared provenance sources.",
+      "status": "ready_for_execution",
+      "dependency_notes": "Loads repo-local JSON or markdown-frontmatter evidence, applies field ownership rules, computes binding checks, and reports conflicts structurally."
+    },
+    {
+      "relative_path": "execution_queue/e01_mm_execution_queue.py",
+      "artifact_type": "execution_queue_worker",
+      "short_description": "Pure-Python queue worker, validator, reconciler entrypoint, scheduler-facing runner, and CLI for unattended state progression around the first-cooldown run-binding record.",
+      "status": "ready_for_execution",
+      "dependency_notes": "Claims leases, reconciles source-owned fields, validates staged bindings, refreshes and persists the linked run-binding payload, supports one-shot queue discovery for external schedulers, and writes structured block, escalation, and audit-snapshot outputs."
+    },
+    {
+      "relative_path": "execution_queue/test_e01_mm_execution_queue.py",
+      "artifact_type": "execution_queue_test",
+      "short_description": "Unit tests for queue state transitions, blocking reasons, escalation handling, retry behavior, and lease conflicts.",
+      "status": "ready_for_smoke_test",
+      "dependency_notes": "Uses Python's standard unittest framework and temporary directories only."
+    },
+    {
+      "relative_path": "analysis/e01_mm_analysis_input_builder.py",
+      "artifact_type": "analysis_input_builder",
+      "short_description": "Builds normalized analysis_input.json from authoritative bound run evidence and declared measurement artifacts.",
+      "status": "ready_for_execution",
+      "dependency_notes": "Consumes a bound run-binding JSON or queue manifest plus structured measurement evidence and emits the schema accepted by the analysis runner."
+    },
+    {
+      "relative_path": "analysis/e01_mm_analysis_input_schema.md",
+      "artifact_type": "analysis_input_schema",
+      "short_description": "Defines the normalized JSON contract accepted by the analysis runner.",
+      "status": "ready_for_review",
+      "dependency_notes": "Authoritative for analysis_input.json produced by the builder."
+    },
+    {
+      "relative_path": "analysis/e01_mm_measurement_evidence_schema.md",
+      "artifact_type": "measurement_evidence_schema",
+      "short_description": "Defines the structured measurement evidence contract consumed by the analysis input builder.",
+      "status": "ready_for_review",
+      "dependency_notes": "Authoritative bridge format between bound as-run evidence and normalized analysis input."
+    },
+    {
+      "relative_path": "analysis/e01_mm_analysis_protocol.md",
+      "artifact_type": "analysis_protocol",
+      "short_description": "Defines model order, drift rules, gates, and required plots.",
+      "status": "ready_for_analysis_review",
+      "dependency_notes": "Must be applied before any H2 discussion."
+    },
+    {
+      "relative_path": "competition/e01_mm_mechanism_competition.md",
+      "artifact_type": "mechanism_competition_ledger",
+      "short_description": "Ranks H0 through H4 by signature, control, and implication.",
+      "status": "ready_for_review",
+      "dependency_notes": "Consumes outputs from the measurement and analysis protocols."
+    },
+    {
+      "relative_path": "failures/e01_mm_failure_mode_ledger.md",
+      "artifact_type": "failure_mode_ledger",
+      "short_description": "Records major failure modes, detection logic, and affected decision gates.",
+      "status": "ready_for_review",
+      "dependency_notes": "Supports stop conditions and interpretation limits."
+    },
+    {
+      "relative_path": "simulation/e01_mm_minimal_sim_plan.md",
+      "artifact_type": "minimal_simulation_plan",
+      "short_description": "Defines the exact synthetic cases required for phase 1 stress testing.",
+      "status": "ready_for_simulation_planning",
+      "dependency_notes": "Keeps synthetic scope aligned with the mechanism ledger."
+    },
+    {
+      "relative_path": "simulation/__init__.py",
+      "artifact_type": "simulation_package_init",
+      "short_description": "Exports the simulation suite entry points for package-style use and testing.",
+      "status": "ready_for_simulation_execution",
+      "dependency_notes": "Supports unittest-based imports without introducing external dependencies."
+    },
+    {
+      "relative_path": "simulation/e01_mm_simulation_suite.py",
+      "artifact_type": "simulation_suite",
+      "short_description": "Pure-Python implementation of the five authorized synthetic stress cases with deterministic JSON output.",
+      "status": "ready_for_simulation_execution",
+      "dependency_notes": "Implements the minimal simulation plan only and computes branch-facing summary metrics such as H_O and A_O."
+    },
+    {
+      "relative_path": "simulation/test_e01_mm_simulation_suite.py",
+      "artifact_type": "simulation_test",
+      "short_description": "Unit tests and smoke tests for the simulation suite output structure and core metric logic.",
+      "status": "ready_for_smoke_test",
+      "dependency_notes": "Uses Python's standard unittest framework and writes outputs only to temporary directories during tests."
+    },
+    {
+      "relative_path": "simulation/e01_mm_simulation_proposal.md",
+      "artifact_type": "simulation_proposal_doc",
+      "short_description": "Proposal-facing explanation of why the simulation-first package is the correct pre-hardware research path.",
+      "status": "ready_for_review",
+      "dependency_notes": "Bridges the branch simulation plan to a serious research proposal without changing scientific classification."
+    },
+    {
+      "relative_path": "simulation/e01_mm_simulation_appendix.md",
+      "artifact_type": "simulation_proposal_appendix",
+      "short_description": "Generated proposal appendix summarising deterministic outputs from the simulation suite.",
+      "status": "ready_for_review",
+      "dependency_notes": "Should be regenerated whenever simulation parameters or the declared seed change."
+    },
+    {
+      "relative_path": "intake/e01_mm_fork_intake.json",
+      "artifact_type": "fork_intake_json",
+      "short_description": "Machine-readable intake record with conservative classification and falsifier linkage.",
+      "status": "ready_for_registration",
+      "dependency_notes": "References the exact falsifier artifact."
+    },
+    {
+      "relative_path": "intake/e01_mm_candidate_seed.json",
+      "artifact_type": "candidate_seed_json",
+      "short_description": "Conservative candidate seed without cross-device or proceed-level escalation.",
+      "status": "ready_for_registration",
+      "dependency_notes": "Depends on branch spec and analysis gates remaining conservative."
+    },
+    {
+      "relative_path": "handoff/e01_mm_codex_handoff.md",
+      "artifact_type": "codex_handoff",
+      "short_description": "Compressed worker handoff with authoritative order, open fields, and next action.",
+      "status": "ready_for_handoff",
+      "dependency_notes": "Use after reading the branch spec and exact falsifier."
+    }
+  ]
+}

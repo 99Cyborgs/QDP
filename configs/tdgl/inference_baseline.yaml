@@ -1,0 +1,90 @@
+base_config: configs/stochastic_baseline.yaml
+metadata:
+  case_id: I01
+  phase: I
+  version: "0.1.0"
+  description: "Synthetic inverse baseline over low-dimensional parameter set"
+  tags: ["inference", "synthetic-data", "baseline"]
+mesh:
+  nx: 512
+  ny: 128
+  lx: 32.0
+  ly: 8.0
+  periodic_x: false
+  periodic_y: false
+geometry:
+  family: strip
+  moats: []
+  holes: []
+  mask_file: null
+materials:
+  registry_source: qdp_meta_materials.seed.stable
+  adapter_id: TDGL-MAT-001-BASELINE-V1
+  material_system_id: MAT-001
+physics:
+  initial_condition: meissner
+  restart_file: null
+  pinning:
+    model: random_field
+    seed: 33001
+    mu: 0.0
+    sigma: 0.18
+    lcorr: 1.0
+    defect_count: 0
+    defects: []
+forcing:
+  b_dc: 0.015
+  a_rf: 0.025
+  omega: 0.02
+  phase: 0.0
+  rf_profile: edge_crowding
+  rf_profile_file: null
+noise:
+  enabled: true
+  strength: 0.001
+  seed: 2026201
+time:
+  dt: 0.001
+  n_steps: 12000
+  obs_stride: 10
+  field_stride: 1000
+  checkpoint_stride: 2000
+solver:
+  backend: petsc
+  scheme: imex_linearized
+  psi_linear_solver: gmres
+  phi_linear_solver: cg
+  rtol: 1.0e-8
+  atol: 1.0e-12
+  max_it: 1500
+observables:
+  track_vortices: true
+  compute_frequency_shift_proxy: true
+  compute_qinv_proxy: true
+  weight_profile_f: edge_crowding
+  weight_profile_q: edge_crowding
+  c_f: 1.0
+  c_q: 1.0
+  qinv_bg: 0.02
+inference:
+  enabled: true
+  mode: synthetic_laplace
+  infer_parameters: ["pinning.sigma", "pinning.lcorr", "noise.strength", "forcing.a_rf"]
+  dataset_path: null
+  summary_statistics:
+    - mean_df
+    - std_df
+    - mean_qinv
+    - std_qinv
+    - event_count
+    - mean_jump_amplitude
+    - median_waiting_time
+output:
+  root_dir: runs
+  write_fields: true
+  write_observables: true
+  compression: gzip
+campaign:
+  ensemble_size: 128
+  matrix_row_id: null
+  promotion_rule: gate:G3

@@ -1,0 +1,169 @@
+{
+  "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+  "branch_or_model_tag": "M14_WORKING_PATCH_BRANCH",
+  "change_type": "",
+  "model_classification": "",
+  "declared_family_class": "",
+  "assigned_family_class": "",
+  "family_class_mismatch": false,
+  "family_status": "",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [],
+  "bath_classification_consistent_with_glossary": false,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {},
+  "relevant_nuisance_controls_list": [],
+  "exact_falsifier": "",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": false,
+    "L1_reduction_limit_verified": false,
+    "L2_convergence_plan_defined": false,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": false
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "signature_matches": [],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {},
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": true,
+  "fabrication_matched_for_geometry_claim": true,
+  "cross_device_validation": {
+    "status": "CONFIRMED",
+    "devices_tested": [
+      "DEV_A",
+      "DEV_B"
+    ],
+    "fabrication_matched": true,
+    "notes": ""
+  },
+  "cross_device_status": "CONFIRMED",
+  "instrument_capabilities": {},
+  "calibration_status": {
+    "status": "VALID",
+    "validity_score": 92.0,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": ""
+  },
+  "calibration_validity_score": 92.0,
+  "identifiability_status": {
+    "status": "SUFFICIENT",
+    "orthogonal_axes_satisfied": true,
+    "independent_constraints_satisfied": true,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "ASSESSED",
+    "hierarchical_model_required": true,
+    "hierarchical_model_applied": true,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "COMPLETE",
+    "device_lineage_recorded": true,
+    "calibration_context_recorded": true,
+    "protocol_metadata_recorded": true,
+    "independent_evidence_eligible": true,
+    "notes": ""
+  },
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "SANDBOX_ONLY",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [],
+  "gate_trace": [],
+  "system_status": "HARNESS_REQUIRED",
+  "governance_self_check": {
+    "validation_harness_status": "UNKNOWN",
+    "schema_validation_status": "UNKNOWN",
+    "reference_resolution_status": "UNKNOWN",
+    "determinism_status": "UNKNOWN",
+    "system_status": "HARNESS_REQUIRED"
+  },
+  "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+  "governance_outcome": "SANDBOX_ONLY",
+  "terminated_at": ""
+}

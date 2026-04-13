@@ -1,0 +1,51 @@
+schema_name: mmm_studio.sweep_spec
+schema_version: "1.0"
+name: threshold-sensitivity
+description: Examine how candidate rankings change across increasing fabrication-complexity thresholds.
+version: "1.0.0"
+default_output_root: artifacts/runs/sweeps
+shared_parameters:
+  default_profile: manufacturability_aware
+  top_n: 8
+tranches:
+  - tranche_id: threshold_sensitivity
+    objective: Compare strict, moderate, and relaxed manufacturability thresholds under one profile.
+    execution_mode: sequential
+    shared_profile: manufacturability_aware
+    comparison_strategy:
+      top_k: 5
+      robustness_top_k: 5
+      leaderboard_size: 10
+    slices:
+      - slice_id: complexity_le_4
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 4
+        tags:
+          - threshold
+          - strict
+      - slice_id: complexity_le_6
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 6
+        tags:
+          - threshold
+          - moderate
+      - slice_id: complexity_le_8
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 8
+        tags:
+          - threshold
+          - broad
+      - slice_id: complexity_le_9
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 9
+        tags:
+          - threshold
+          - relaxed

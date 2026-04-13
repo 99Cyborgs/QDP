@@ -450,6 +450,47 @@
       "type": "object",
       "additionalProperties": true
     },
+    "calibration_status": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "UNKNOWN",
+            "VALID",
+            "INVALID"
+          ]
+        },
+        "validity_score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "below_threshold": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "validity_score",
+        "threshold",
+        "below_threshold",
+        "notes"
+      ],
+      "additionalProperties": true
+    },
     "calibration_validity_score": {
       "type": [
         "number",
@@ -457,6 +498,103 @@
       ],
       "minimum": 0,
       "maximum": 100
+    },
+    "identifiability_status": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "INSUFFICIENT",
+            "PROVISIONAL",
+            "SUFFICIENT"
+          ]
+        },
+        "orthogonal_axes_satisfied": {
+          "type": "boolean"
+        },
+        "independent_constraints_satisfied": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "orthogonal_axes_satisfied",
+        "independent_constraints_satisfied",
+        "notes"
+      ],
+      "additionalProperties": true
+    },
+    "drift_ledger": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "NOT_REQUIRED",
+            "ASSESSED",
+            "MISSING_MODEL"
+          ]
+        },
+        "hierarchical_model_required": {
+          "type": "boolean"
+        },
+        "hierarchical_model_applied": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "hierarchical_model_required",
+        "hierarchical_model_applied",
+        "notes"
+      ],
+      "additionalProperties": true
+    },
+    "dataset_governance": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "INCOMPLETE",
+            "COMPLETE"
+          ]
+        },
+        "device_lineage_recorded": {
+          "type": "boolean"
+        },
+        "calibration_context_recorded": {
+          "type": "boolean"
+        },
+        "protocol_metadata_recorded": {
+          "type": "boolean"
+        },
+        "independent_evidence_eligible": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "device_lineage_recorded",
+        "calibration_context_recorded",
+        "protocol_metadata_recorded",
+        "independent_evidence_eligible",
+        "notes"
+      ],
+      "additionalProperties": true
     },
     "requested_output_artifacts": {
       "type": "array",
@@ -745,7 +883,11 @@
     "cross_device_validation",
     "cross_device_status",
     "instrument_capabilities",
+    "calibration_status",
     "calibration_validity_score",
+    "identifiability_status",
+    "drift_ledger",
+    "dataset_governance",
     "requested_output_artifacts",
     "automatic_flags_triggered",
     "promotion_cap_scientific",

@@ -1,0 +1,89 @@
+reference_runs:
+  - reference_id: clean_strip
+    kind: config
+    config_path: configs/validation/reference_clean_strip.yaml
+    command: tdgl-rf run-case configs/validation/reference_clean_strip.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.0
+      final_mean_abs2: 1.0
+      final_time: 0.04
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      charge_residual_inf: 0.0
+      mean_abs2: 1.0
+      delta_f_over_f0: -0.0
+      qinv: 0.0
+      vortex_count: 0
+    expected_payload_sha256: 9dc401d385723fafa936e925abffd9ea941ac6da151acb25649b5c9bbf9b0679
+  - reference_id: rf_driven_strip
+    kind: config
+    config_path: configs/validation/reference_rf_strip.yaml
+    command: tdgl-rf run-case configs/validation/reference_rf_strip.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.14556390653836668
+      final_mean_abs2: 0.9997551303503452
+      final_time: 0.04
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      charge_residual_inf: 0.14556390653836668
+      mean_abs2: 0.9997551303503452
+      delta_f_over_f0: -0.00024486964965476265
+      qinv: 0.003803326571701674
+      vortex_count: 0
+    expected_payload_sha256: 2164bc25e1cb012f41d97f031718ad90566ea901ead20cf309a1f7325024d6fb
+  - reference_id: masked_moat
+    kind: config
+    config_path: configs/validation/reference_masked_moat.yaml
+    command: tdgl-rf run-case configs/validation/reference_masked_moat.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.26426949046825
+      final_mean_abs2: 0.999887412790674
+      final_time: 0.04
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      charge_residual_inf: 0.26426949046825
+      mean_abs2: 0.999887412790674
+      delta_f_over_f0: -0.00011258720932599993
+      qinv: 0.0010726785773354749
+      vortex_count: 0
+    expected_payload_sha256: a837194cf1588946a652baff679a88e1812d78241f794d112872f42c33c17be9
+  - reference_id: refinement_anchor
+    kind: refinement_sanity
+    config_path: configs/phase1_refinement_sanity.yaml
+    selected_result_case_id: phase1_refinement_sanity_m24x12_dt0p005
+    command: tdgl-rf refinement-sanity configs/phase1_refinement_sanity.yaml
+    expected_files:
+      - comparison_table.csv
+      - comparison_table.json
+    expected_summary:
+      reference_case_id: phase1_refinement_sanity_m24x12_dt0p005
+      selected_case_id: phase1_refinement_sanity_m24x12_dt0p005
+      comparison_count: 4
+      final_mean_abs2: 0.9998669818004566
+      final_charge_residual_inf: 0.35805519250425005
+      final_delta_f_over_f0: -0.0001330181995433365
+      final_qinv: 0.0003325438783906908
+      delta_mean_abs2_vs_reference: 0.0
+      delta_charge_residual_inf_vs_reference: 0.0
+      delta_delta_f_over_f0_vs_reference: 0.0
+      delta_qinv_vs_reference: 0.0
+    expected_final_observables: {}
+    expected_payload_sha256: 425db4be7842b43ab8860dde9dabe07283758e0d25f5cca3ffbb23006114688e

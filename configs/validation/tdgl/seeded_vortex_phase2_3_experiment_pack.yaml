@@ -1,0 +1,17 @@
+﻿schema_version: "3.0"
+experiment_pack:
+  mode: deterministic_sweep
+  base_case: seeded_vortex/short_horizon/canonical_single_positive.yaml
+  sweep:
+    parameters:
+      - name: forcing.a_rf
+        values: [0.0, 0.05]
+      - name: physics.vortex_seeds.0.winding
+        values: [1, -1]
+  repetitions: 2
+  observables:
+    - initialization.local_winding.initial_total_signed_winding
+    - initialization.core_contrast.mean_core_to_ring_ratio
+    - early_window.mean_abs2_final
+  aggregation:
+    metrics: [mean, std, min, max]

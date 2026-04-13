@@ -1,0 +1,10 @@
+profile: broadband
+top_n: 8
+dataset_root: G:\GitHub\incubate\MMM-Studio\data\mmm_seed
+score_backend: baseline_surrogate_v1
+sweep_id: profile_comparison_run
+tranche_id: profile_comparison
+slice_id: broadband
+candidate_count: 18
+candidate_ids: GEN-001,GEN-002,GEN-003,GEN-004,GEN-005,GEN-006,GEN-007,GEN-008,GEN-009,GEN-010,GEN-011,GEN-012,GEN-013,GEN-014,GEN-015,GEN-016,GEN-017,GEN-018
+tags: profile,broadband

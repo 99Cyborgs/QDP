@@ -1,0 +1,1652 @@
+{
+  "artifact_id": "QDP_REPO_VALIDATION_REPORT",
+  "timestamp_utc": "2026-04-13T18:30:50.201516+00:00",
+  "mode": "repo_consistency",
+  "structural_consistency_passed": true,
+  "bootstrap": {
+    "executed": true,
+    "returncode": 0,
+    "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M06_BOOTSTRAP_REPORT\",\n  \"module_id\": \"M06\",\n  \"timestamp_utc\": \"2026-04-13T18:30:49.295809+00:00\",\n  \"checks\": {\n    \"reference_resolution\": {\n      \"ordinary_report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_ordinary.json\",\n      \"subsystem_report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_subsystem.json\",\n      \"ordinary_status\": \"PASSED\",\n      \"subsystem_status\": \"PASSED\",\n      \"ordinary_critical_unresolved_count\": 0,\n      \"subsystem_critical_unresolved_count\": 0,\n      \"passed\": true\n    },\n    \"schema_validation\": {\n      \"template_validation\": {\n        \"cmd\": [\n          \"C:\\\\Users\\\\Forre\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\python.exe\",\n          \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\",\n          \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_template.json\",\n          \"--mode\",\n          \"template\",\n          \"--schema\",\n          \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\"\n        ],\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: template\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_template.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"ok\": true\n      },\n      \"bootstrap_case_outputs_valid\": true,\n      \"module_selftests_all_valid\": true,\n      \"m01_selftests_all_valid\": true,\n      \"m02_selftests_all_valid\": true,\n      \"m04_selftests_all_valid\": true,\n      \"m05_selftests_all_valid\": true,\n      \"m07_selftests_all_valid\": true,\n      \"m08_selftests_all_valid\": true,\n      \"m09_selftests_all_valid\": true,\n      \"m10_selftests_all_valid\": true,\n      \"m11_selftests_all_valid\": true,\n      \"m12_selftests_all_valid\": true,\n      \"m13_selftests_all_valid\": true,\n      \"m14_selftests_all_valid\": true,\n      \"m15_selftests_all_valid\": true,\n      \"passed\": true\n    },\n    \"module_verification\": {\n      \"M01\": {\n        \"module_key\": \"m01\",\n        \"verification_kind\": \"assembly_report\",\n        \"evidence_paths\": {\n          \"assembly_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m01\\\\assembly_report.json\",\n          \"closure_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m01\\\\closure_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 2,\n        \"cases_passed\": 2,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true,\n        \"closure_report_exists\": true\n      },\n      \"M02\": {\n        \"module_key\": \"m02\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m02\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M03\": {\n        \"module_key\": \"m03\",\n        \"verification_kind\": \"reference_resolution\",\n        \"evidence_paths\": {\n          \"ordinary_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_ordinary.json\",\n          \"subsystem_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_subsystem.json\",\n          \"mode_divergence_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\mode_divergence_report.json\"\n        },\n        \"ordinary_status\": \"PASSED\",\n        \"subsystem_status\": \"PASSED\",\n        \"ordinary_critical_unresolved_count\": 0,\n        \"subsystem_critical_unresolved_count\": 0,\n        \"mode_divergence_status\": \"PASSED\",\n        \"verification_passed\": true\n      },\n      \"M04\": {\n        \"module_key\": \"m04\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m04\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M05\": {\n        \"module_key\": \"m05\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m05\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 9,\n        \"cases_passed\": 9,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M06\": {\n        \"module_key\": \"m06\",\n        \"verification_kind\": \"bootstrap_harness\",\n        \"evidence_paths\": {\n          \"bootstrap_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m06\\\\bootstrap_report.json\",\n          \"closure_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m06\\\\closure_report.json\",\n          \"mode_divergence_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\mode_divergence_report.json\"\n        },\n        \"validation_harness_status\": \"PASSED\",\n        \"schema_validation_status\": \"PASSED\",\n        \"reference_resolution_status\": \"PASSED\",\n        \"determinism_status\": \"PASSED\",\n        \"mode_divergence_status\": \"PASSED\",\n        \"verification_passed\": true\n      },\n      \"M07\": {\n        \"module_key\": \"m07\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m07\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M08\": {\n        \"module_key\": \"m08\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m08\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M09\": {\n        \"module_key\": \"m09\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m09\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M10\": {\n        \"module_key\": \"m10\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m10\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M11\": {\n        \"module_key\": \"m11\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m11\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M12\": {\n        \"module_key\": \"m12\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m12\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 8,\n        \"cases_passed\": 8,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M13\": {\n        \"module_key\": \"m13\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m13\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 4,\n        \"cases_passed\": 4,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M14\": {\n        \"module_key\": \"m14\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m14\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 4,\n        \"cases_passed\": 4,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M15\": {\n        \"module_key\": \"m15\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m15\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S16\": {\n        \"module_key\": \"s16\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s16\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S17\": {\n        \"module_key\": \"s17\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s17\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S18\": {\n        \"module_key\": \"s18\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s18\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S19\": {\n        \"module_key\": \"s19\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s19\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      }\n    },\n    \"module_selftests\": {\n      \"M01\": {\n        \"module_key\": \"m01\",\n        \"verification_kind\": \"assembly_report\",\n        \"evidence_paths\": {\n          \"assembly_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m01\\\\assembly_report.json\",\n          \"closure_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m01\\\\closure_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m01\\\\assembly_report.json\",\n        \"cases_total\": 2,\n        \"cases_passed\": 2,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M02\": {\n        \"module_key\": \"m02\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m02\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m02\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M03\": {\n        \"module_key\": \"m03\",\n        \"verification_kind\": \"reference_resolution\",\n        \"evidence_paths\": {\n          \"ordinary_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_ordinary.json\",\n          \"subsystem_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_subsystem.json\",\n          \"mode_divergence_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\mode_divergence_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"compatibility_alias\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m03\\\\reference_resolution_ordinary.json\",\n        \"cases_total\": 0,\n        \"cases_passed\": 0,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M04\": {\n        \"module_key\": \"m04\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m04\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m04\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M05\": {\n        \"module_key\": \"m05\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m05\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m05\\\\selftest_report.json\",\n        \"cases_total\": 9,\n        \"cases_passed\": 9,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M06\": {\n        \"module_key\": \"m06\",\n        \"verification_kind\": \"bootstrap_harness\",\n        \"evidence_paths\": {\n          \"bootstrap_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m06\\\\bootstrap_report.json\",\n          \"closure_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m06\\\\closure_report.json\",\n          \"mode_divergence_report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\mode_divergence_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"compatibility_alias\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m06\\\\bootstrap_report.json\",\n        \"cases_total\": 0,\n        \"cases_passed\": 0,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M07\": {\n        \"module_key\": \"m07\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m07\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m07\\\\selftest_report.json\",\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M08\": {\n        \"module_key\": \"m08\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m08\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m08\\\\selftest_report.json\",\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M09\": {\n        \"module_key\": \"m09\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m09\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m09\\\\selftest_report.json\",\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M10\": {\n        \"module_key\": \"m10\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m10\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m10\\\\selftest_report.json\",\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M11\": {\n        \"module_key\": \"m11\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m11\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m11\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M12\": {\n        \"module_key\": \"m12\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m12\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m12\\\\selftest_report.json\",\n        \"cases_total\": 8,\n        \"cases_passed\": 8,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M13\": {\n        \"module_key\": \"m13\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m13\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m13\\\\selftest_report.json\",\n        \"cases_total\": 4,\n        \"cases_passed\": 4,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M14\": {\n        \"module_key\": \"m14\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m14\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m14\\\\selftest_report.json\",\n        \"cases_total\": 4,\n        \"cases_passed\": 4,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"M15\": {\n        \"module_key\": \"m15\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m15\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m15\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S16\": {\n        \"module_key\": \"s16\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s16\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s16\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S17\": {\n        \"module_key\": \"s17\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s17\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s17\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S18\": {\n        \"module_key\": \"s18\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s18\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s18\\\\selftest_report.json\",\n        \"cases_total\": 3,\n        \"cases_passed\": 3,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      },\n      \"S19\": {\n        \"module_key\": \"s19\",\n        \"verification_kind\": \"selftest_report\",\n        \"evidence_paths\": {\n          \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s19\\\\selftest_report.json\"\n        },\n        \"execution\": {\n          \"ok\": true,\n          \"mode\": \"in_process\"\n        },\n        \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\s19\\\\selftest_report.json\",\n        \"cases_total\": 6,\n        \"cases_passed\": 6,\n        \"all_passed\": true,\n        \"validator_valid_all\": true,\n        \"verification_passed\": true\n      }\n    },\n    \"module_selftests_note\": \"Deprecated compatibility alias of checks.module_verification.\",\n    \"stage_machine_selftests\": {\n      \"module_key\": \"m05\",\n      \"verification_kind\": \"selftest_report\",\n      \"evidence_paths\": {\n        \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m05\\\\selftest_report.json\"\n      },\n      \"execution\": {\n        \"ok\": true,\n        \"mode\": \"in_process\"\n      },\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m05\\\\selftest_report.json\",\n      \"cases_total\": 9,\n      \"cases_passed\": 9,\n      \"all_passed\": true,\n      \"validator_valid_all\": true,\n      \"verification_passed\": true\n    },\n    \"family_triage_selftests\": {\n      \"module_key\": \"m07\",\n      \"verification_kind\": \"selftest_report\",\n      \"evidence_paths\": {\n        \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m07\\\\selftest_report.json\"\n      },\n      \"execution\": {\n        \"ok\": true,\n        \"mode\": \"in_process\"\n      },\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m07\\\\selftest_report.json\",\n      \"cases_total\": 6,\n      \"cases_passed\": 6,\n      \"all_passed\": true,\n      \"validator_valid_all\": true,\n      \"verification_passed\": true\n    },\n    \"baseline_fit_selftests\": {\n      \"module_key\": \"m08\",\n      \"verification_kind\": \"selftest_report\",\n      \"evidence_paths\": {\n        \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m08\\\\selftest_report.json\"\n      },\n      \"execution\": {\n        \"ok\": true,\n        \"mode\": \"in_process\"\n      },\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m08\\\\selftest_report.json\",\n      \"cases_total\": 6,\n      \"cases_passed\": 6,\n      \"all_passed\": true,\n      \"validator_valid_all\": true,\n      \"verification_passed\": true\n    },\n    \"mechanism_competition_selftests\": {\n      \"module_key\": \"m09\",\n      \"verification_kind\": \"selftest_report\",\n      \"evidence_paths\": {\n        \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m09\\\\selftest_report.json\"\n      },\n      \"execution\": {\n        \"ok\": true,\n        \"mode\": \"in_process\"\n      },\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m09\\\\selftest_report.json\",\n      \"cases_total\": 7,\n      \"cases_passed\": 7,\n      \"all_passed\": true,\n      \"validator_valid_all\": true,\n      \"verification_passed\": true\n    },\n    \"artifact_equivalence_selftests\": {\n      \"module_key\": \"m10\",\n      \"verification_kind\": \"selftest_report\",\n      \"evidence_paths\": {\n        \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m10\\\\selftest_report.json\"\n      },\n      \"execution\": {\n        \"ok\": true,\n        \"mode\": \"in_process\"\n      },\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\m10\\\\selftest_report.json\",\n      \"cases_total\": 7,\n      \"cases_passed\": 7,\n      \"all_passed\": true,\n      \"validator_valid_all\": true,\n      \"verification_passed\": true\n    },\n    \"governance_self_diagnostic\": {\n      \"fields_present_in_all_bootstrap_outputs\": true,\n      \"mirror_consistency_in_all_bootstrap_outputs\": true,\n      \"enum_validity_enforced_via_schema\": true,\n      \"passed\": true\n    },\n    \"runtime_integrity\": {\n      \"build_spec_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\specs\\\\core\\\\build_spec.md\",\n      \"build_spec_exists\": true,\n      \"runtime_prompt_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\runtime\\\\current\\\\runtime_prompt.md\",\n      \"retained_runtime_source_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\runtime\\\\retained\\\\operative_body_v10_1.md\",\n      \"runtime_prompt_exists\": true,\n      \"retained_runtime_source_exists\": true,\n      \"forbidden_shorthand_phrases\": [\n        \"operational meaning identical to prior version\",\n        \"same as v10.1\",\n        \"same as v10.2\",\n        \"same as earlier rules\"\n      ],\n      \"mandatory_retained_sections\": [\n        \"canonical references\",\n        \"reference resolution rule\",\n        \"full enum block\",\n        \"state initialization\",\n        \"terminal scientific rejection mapping\",\n        \"intake to schema field map\",\n        \"required fork registration before any compute\",\n        \"automatic flags\",\n        \"claim magnitude and burden law\",\n        \"numeric scale definitions\",\n        \"quantitative decision law\",\n        \"evidence law\",\n        \"novelty burden law\",\n        \"dataset governance law\",\n        \"instrument constraint model\",\n        \"parameter identifiability law\",\n        \"calibration integrity gate\",\n        \"drift ledger law\",\n        \"cross lab replication forecast law\",\n        \"registry aging law\",\n        \"failure mode library\",\n        \"governance transparency output\",\n        \"human override protocol\",\n        \"validation ladder\",\n        \"federated governance registry object\",\n        \"experimental design law\",\n        \"full execution order\",\n        \"full stage definitions\",\n        \"required output order\",\n        \"JSON emission rule\",\n        \"required JSON extension\",\n        \"decision discipline\"\n      ],\n      \"forbidden_shorthand_detected\": [],\n      \"missing_mandatory_sections\": [],\n      \"passed\": true,\n      \"status\": \"PASSED\",\n      \"blocking_reason\": \"\"\n    },\n    \"mode_divergence\": {\n      \"report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\mode_divergence_report.json\",\n      \"status\": \"PASSED\",\n      \"shared_field_override_detected\": false,\n      \"passed\": true\n    },\n    \"rule_binding_summary\": {\n      \"BOUND\": 6,\n      \"PARTIALLY_BOUND\": 3,\n      \"UNBOUND\": 0,\n      \"BLOCKED_BY_MISSING_SOURCE\": 1,\n      \"note\": \"Coverage summary counts terminal coverage_status values after M06 harness integration.\"\n    }\n  },\n  \"bootstrap_cases\": {\n    \"cases_total\": 7,\n    \"repeat_runs\": 2,\n    \"runs\": [\n      {\n        \"run_index\": 1,\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"results\": [\n          {\n            \"case_id\": \"CASE_1_BASELINE_SUFFICIENT_DATASET\",\n            \"class\": \"baseline_sufficient_dataset\",\n            \"description\": \"Canonical harness control: the baseline is sufficient and must terminate at Stage 6 with explicit rejection.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_BASELINE_SUFFICIENCY\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_6\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_2_KNOWN_TLS_MECHANISM_DATASET\",\n            \"class\": \"known_tls_mechanism_dataset\",\n            \"description\": \"Canonical harness control: a known TLS explanation must reject at Stage 8 by classical-mechanism equivalence.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_8\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_3_ARTIFACT_DOMINATED_DATASET\",\n            \"class\": \"artifact_dominated_dataset\",\n            \"description\": \"Canonical harness control: an artifact explanation must reject at Stage 9 by artifact equivalence.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_ARTIFACT_EQUIVALENCE\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_9\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\",\n            \"class\": \"over_parameterized_hamiltonian_branch\",\n            \"description\": \"Canonical harness control: an over-parameterized branch is forced to sandbox by promotion-cap clipping.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"SANDBOX_ONLY\",\n              \"governance_outcome\": \"SANDBOX_ONLY\",\n              \"cross_device_status\": \"CONFIRMED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"SANDBOX_ONLY\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\",\n            \"class\": \"valid_candidate_with_orthogonal_discriminants\",\n            \"description\": \"Canonical harness positive control: a valid candidate survives to provisional identifiability but remains sandboxed pending cross-device confirmation.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST\",\n              \"governance_outcome\": \"SANDBOX_ONLY\",\n              \"cross_device_status\": \"SCHEDULED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\",\n            \"class\": \"governance_guardrail_block\",\n            \"description\": \"Canonical harness control: governance evidence gaps must defer at Stage 12 before numerical promotion logic.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"NOT_EVALUATED\",\n              \"governance_outcome\": \"DEFER\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_12\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_7_CONFIRMED_READY_BRANCH\",\n            \"class\": \"confirmed_ready_branch\",\n            \"description\": \"Canonical harness positive control: a fully governed, confirmed branch can clear to PROCEED.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"CROSS_DEVICE_CONFIRMED_IDENTIFIABLE\",\n              \"governance_outcome\": \"PROCEED\",\n              \"cross_device_status\": \"CONFIRMED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_1\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_report.json\"\n            }\n          }\n        ],\n        \"normalized_hash\": \"cca8de97893b5daf0d26bf085bdd1e18b32a3648e51b42a12cddf77c353cc89f\"\n      },\n      {\n        \"run_index\": 2,\n        \"cases_total\": 7,\n        \"cases_passed\": 7,\n        \"all_passed\": true,\n        \"results\": [\n          {\n            \"case_id\": \"CASE_1_BASELINE_SUFFICIENT_DATASET\",\n            \"class\": \"baseline_sufficient_dataset\",\n            \"description\": \"Canonical harness control: the baseline is sufficient and must terminate at Stage 6 with explicit rejection.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_BASELINE_SUFFICIENCY\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_6\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_1_BASELINE_SUFFICIENT_DATASET\\\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_2_KNOWN_TLS_MECHANISM_DATASET\",\n            \"class\": \"known_tls_mechanism_dataset\",\n            \"description\": \"Canonical harness control: a known TLS explanation must reject at Stage 8 by classical-mechanism equivalence.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_8\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_3_ARTIFACT_DOMINATED_DATASET\",\n            \"class\": \"artifact_dominated_dataset\",\n            \"description\": \"Canonical harness control: an artifact explanation must reject at Stage 9 by artifact equivalence.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"REJECTED_BY_ARTIFACT_EQUIVALENCE\",\n              \"governance_outcome\": \"REJECT\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_9\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": false,\n                \"L2_convergence_plan_defined\": false,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_3_ARTIFACT_DOMINATED_DATASET\\\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\",\n            \"class\": \"over_parameterized_hamiltonian_branch\",\n            \"description\": \"Canonical harness control: an over-parameterized branch is forced to sandbox by promotion-cap clipping.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"SANDBOX_ONLY\",\n              \"governance_outcome\": \"SANDBOX_ONLY\",\n              \"cross_device_status\": \"CONFIRMED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"SANDBOX_ONLY\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\",\n            \"class\": \"valid_candidate_with_orthogonal_discriminants\",\n            \"description\": \"Canonical harness positive control: a valid candidate survives to provisional identifiability but remains sandboxed pending cross-device confirmation.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST\",\n              \"governance_outcome\": \"SANDBOX_ONLY\",\n              \"cross_device_status\": \"SCHEDULED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\",\n            \"class\": \"governance_guardrail_block\",\n            \"description\": \"Canonical harness control: governance evidence gaps must defer at Stage 12 before numerical promotion logic.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"NOT_EVALUATED\",\n              \"governance_outcome\": \"DEFER\",\n              \"cross_device_status\": \"NOT_REQUIRED\",\n              \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"STAGE_12\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": false,\n                \"L4_instrument_facing_comparison_path_defined\": false\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_report.json\"\n            }\n          },\n          {\n            \"case_id\": \"CASE_7_CONFIRMED_READY_BRANCH\",\n            \"class\": \"confirmed_ready_branch\",\n            \"description\": \"Canonical harness positive control: a fully governed, confirmed branch can clear to PROCEED.\",\n            \"passed\": true,\n            \"comparison_ok\": true,\n            \"comparison_failures\": [],\n            \"validator_result\": {\n              \"candidate_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\",\n              \"returncode\": 0,\n              \"stdout\": \"VALID\\n- mode: final\\n- candidate: G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\\n- schema: G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n              \"stderr\": \"\",\n              \"valid\": true,\n              \"errors\": [],\n              \"mode\": \"final\",\n              \"schema_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n              \"validator_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n            },\n            \"governance_self_check_ok\": true,\n            \"governance_self_check_failures\": [],\n            \"result_summary\": {\n              \"scientific_decision\": \"CROSS_DEVICE_CONFIRMED_IDENTIFIABLE\",\n              \"governance_outcome\": \"PROCEED\",\n              \"cross_device_status\": \"CONFIRMED\",\n              \"promotion_cap_governance\": \"\",\n              \"promotion_cap_scientific\": \"\",\n              \"system_status\": \"READY\",\n              \"terminated_at\": \"\",\n              \"validation_ladder\": {\n                \"L0_baseline_pipeline_reproduced\": true,\n                \"L1_reduction_limit_verified\": true,\n                \"L2_convergence_plan_defined\": true,\n                \"L3_numerical_stability_passed\": true,\n                \"L4_instrument_facing_comparison_path_defined\": true\n              }\n            },\n            \"output_paths\": {\n              \"candidate\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\",\n              \"report\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\outputs\\\\m06\\\\bootstrap\\\\run_2\\\\CASE_7_CONFIRMED_READY_BRANCH\\\\CASE_7_CONFIRMED_READY_BRANCH_report.json\"\n            }\n          }\n        ],\n        \"normalized_hash\": \"cca8de97893b5daf0d26bf085bdd1e18b32a3648e51b42a12cddf77c353cc89f\"\n      }\n    ],\n    \"all_cases_exact_match_all_runs\": true,\n    \"deterministic_across_repeated_runs\": true\n  },\n  \"validation_harness_status\": \"PASSED\",\n  \"determinism_status\": \"PASSED\",\n  \"reference_resolution_status\": \"PASSED\",\n  \"schema_validation_status\": \"PASSED\",\n  \"system_status\": \"READY\",\n  \"promotion_cap_governance\": \"\",\n  \"ordinary_recovery_ready\": true,\n  \"ordinary_authoritative_ready\": true,\n  \"ordinary_testing_ready\": true,\n  \"subsystem_recovery_ready\": true,\n  \"subsystem_authoritative_ready\": true,\n  \"subsystem_testing_ready\": true,\n  \"module_closure_evaluation_report_path\": \"G:\\\\GitHub\\\\incubate\\\\QDP\\\\artifacts\\\\reports\\\\system\\\\module_closure_evaluation.json\",\n  \"governance_self_check\": {\n    \"validation_harness_status\": \"PASSED\",\n    \"schema_validation_status\": \"PASSED\",\n    \"reference_resolution_status\": \"PASSED\",\n    \"determinism_status\": \"PASSED\",\n    \"system_status\": \"READY\"\n  },\n  \"ordinary_recovery_blockers\": [],\n  \"ordinary_authoritative_blockers\": [],\n  \"ordinary_testing_blockers\": [],\n  \"subsystem_recovery_blockers\": [],\n  \"subsystem_authoritative_blockers\": [],\n  \"subsystem_testing_blockers\": []\n}\n",
+    "stderr": ""
+  },
+  "readiness": {
+    "ordinary_recovery_ready": true,
+    "ordinary_authoritative_ready": true,
+    "subsystem_recovery_ready": true,
+    "subsystem_authoritative_ready": true,
+    "ordinary_recovery_blockers": [],
+    "ordinary_authoritative_blockers": [],
+    "subsystem_recovery_blockers": [],
+    "subsystem_authoritative_blockers": []
+  },
+  "candidate_validation": {
+    "outputs_root": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs",
+    "candidates_total": 81,
+    "candidates_failed": 0,
+    "valid": true,
+    "results": [
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_DEVICE_SPECIFIC_SANDBOX\\CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_DEVICE_SPECIFIC_SANDBOX\\CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_CALIBRATION_BLOCK\\CASE_M15_CALIBRATION_BLOCK_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_CALIBRATION_BLOCK\\CASE_M15_CALIBRATION_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_COMPLETE_GOVERNANCE\\CASE_M15_COMPLETE_GOVERNANCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_COMPLETE_GOVERNANCE\\CASE_M15_COMPLETE_GOVERNANCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_IDENTIFIABILITY_CAP\\CASE_M15_IDENTIFIABILITY_CAP_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_IDENTIFIABILITY_CAP\\CASE_M15_IDENTIFIABILITY_CAP_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\confirmed_ready_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\confirmed_ready_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      }
+    ]
+  },
+  "all_mind_interface_validation": {
+    "artifact_kind": "all-mind-interface",
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\all_mind_interface_schema.json",
+    "valid": true,
+    "errors": [],
+    "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\all_mind_interface.json"
+  },
+  "post_overhaul_blocker_ledger": {
+    "artifact_id": "QDP_POST_OVERHAUL_BLOCKER_LEDGER",
+    "timestamp_utc": "2026-04-13T18:30:49.879139+00:00",
+    "phase": "post",
+    "summary": {
+      "class": "incubate",
+      "activity": "active",
+      "promotion_mode": "incubation link",
+      "ordinary_recovery_ready": true,
+      "ordinary_authoritative_ready": true,
+      "subsystem_recovery_ready": true,
+      "subsystem_authoritative_ready": true,
+      "m06_derived_status": "AUTHORITATIVE_CLOSURE",
+      "module_verification": {
+        "M01": {
+          "module_key": "m01",
+          "verification_kind": "assembly_report",
+          "evidence_paths": {
+            "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+            "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 2,
+          "cases_passed": 2,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true,
+          "closure_report_exists": true
+        },
+        "M02": {
+          "module_key": "m02",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M03": {
+          "module_key": "m03",
+          "verification_kind": "reference_resolution",
+          "evidence_paths": {
+            "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+            "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+            "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+          },
+          "ordinary_status": "PASSED",
+          "subsystem_status": "PASSED",
+          "ordinary_critical_unresolved_count": 0,
+          "subsystem_critical_unresolved_count": 0,
+          "mode_divergence_status": "PASSED",
+          "verification_passed": true
+        },
+        "M04": {
+          "module_key": "m04",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M05": {
+          "module_key": "m05",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 9,
+          "cases_passed": 9,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M06": {
+          "module_key": "m06",
+          "verification_kind": "bootstrap_harness",
+          "evidence_paths": {
+            "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+            "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+            "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+          },
+          "validation_harness_status": "PASSED",
+          "schema_validation_status": "PASSED",
+          "reference_resolution_status": "PASSED",
+          "determinism_status": "PASSED",
+          "mode_divergence_status": "PASSED",
+          "verification_passed": true
+        },
+        "M07": {
+          "module_key": "m07",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M08": {
+          "module_key": "m08",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M09": {
+          "module_key": "m09",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 7,
+          "cases_passed": 7,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M10": {
+          "module_key": "m10",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 7,
+          "cases_passed": 7,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M11": {
+          "module_key": "m11",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M12": {
+          "module_key": "m12",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 8,
+          "cases_passed": 8,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M13": {
+          "module_key": "m13",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 4,
+          "cases_passed": 4,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M14": {
+          "module_key": "m14",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 4,
+          "cases_passed": 4,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M15": {
+          "module_key": "m15",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S16": {
+          "module_key": "s16",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S17": {
+          "module_key": "s17",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S18": {
+          "module_key": "s18",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S19": {
+          "module_key": "s19",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        }
+      },
+      "module_selftests": {
+        "M01": {
+          "module_key": "m01",
+          "verification_kind": "assembly_report",
+          "evidence_paths": {
+            "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+            "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+          "cases_total": 2,
+          "cases_passed": 2,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M02": {
+          "module_key": "m02",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M03": {
+          "module_key": "m03",
+          "verification_kind": "reference_resolution",
+          "evidence_paths": {
+            "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+            "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+            "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "compatibility_alias"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+          "cases_total": 0,
+          "cases_passed": 0,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M04": {
+          "module_key": "m04",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M05": {
+          "module_key": "m05",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json",
+          "cases_total": 9,
+          "cases_passed": 9,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M06": {
+          "module_key": "m06",
+          "verification_kind": "bootstrap_harness",
+          "evidence_paths": {
+            "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+            "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+            "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "compatibility_alias"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+          "cases_total": 0,
+          "cases_passed": 0,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M07": {
+          "module_key": "m07",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json",
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M08": {
+          "module_key": "m08",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json",
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M09": {
+          "module_key": "m09",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json",
+          "cases_total": 7,
+          "cases_passed": 7,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M10": {
+          "module_key": "m10",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json",
+          "cases_total": 7,
+          "cases_passed": 7,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M11": {
+          "module_key": "m11",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M12": {
+          "module_key": "m12",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json",
+          "cases_total": 8,
+          "cases_passed": 8,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M13": {
+          "module_key": "m13",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json",
+          "cases_total": 4,
+          "cases_passed": 4,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M14": {
+          "module_key": "m14",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json",
+          "cases_total": 4,
+          "cases_passed": 4,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "M15": {
+          "module_key": "m15",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S16": {
+          "module_key": "s16",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S17": {
+          "module_key": "s17",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S18": {
+          "module_key": "s18",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json",
+          "cases_total": 3,
+          "cases_passed": 3,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        },
+        "S19": {
+          "module_key": "s19",
+          "verification_kind": "selftest_report",
+          "evidence_paths": {
+            "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+          },
+          "execution": {
+            "ok": true,
+            "mode": "in_process"
+          },
+          "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json",
+          "cases_total": 6,
+          "cases_passed": 6,
+          "all_passed": true,
+          "validator_valid_all": true,
+          "verification_passed": true
+        }
+      },
+      "module_selftests_note": "Deprecated compatibility alias of summary.module_verification.",
+      "blocker_count": 0
+    },
+    "blockers": []
+  },
+  "all_mind_interface": {
+    "artifact_id": "QDP_ALL_MIND_INTERFACE",
+    "timestamp_utc": "2026-04-13T18:30:49.953936+00:00",
+    "repo_class": "incubate",
+    "activity": "active",
+    "promotion_mode": "incubation link",
+    "readiness": {
+      "ordinary_recovery_ready": true,
+      "ordinary_authoritative_ready": true,
+      "subsystem_recovery_ready": true,
+      "subsystem_authoritative_ready": true
+    },
+    "blockers": {
+      "ordinary_recovery_blockers": [],
+      "ordinary_authoritative_blockers": [],
+      "subsystem_recovery_blockers": [],
+      "subsystem_authoritative_blockers": []
+    },
+    "module_readiness_summary": {
+      "M01": "AUTHORITATIVE_CLOSURE",
+      "M02": "AUTHORITATIVE_CLOSURE",
+      "M03": "AUTHORITATIVE_CLOSURE",
+      "M04": "AUTHORITATIVE_CLOSURE",
+      "M05": "AUTHORITATIVE_CLOSURE",
+      "M06": "AUTHORITATIVE_CLOSURE",
+      "M07": "AUTHORITATIVE_CLOSURE",
+      "M08": "AUTHORITATIVE_CLOSURE",
+      "M09": "AUTHORITATIVE_CLOSURE",
+      "M10": "AUTHORITATIVE_CLOSURE",
+      "M11": "AUTHORITATIVE_CLOSURE",
+      "M12": "AUTHORITATIVE_CLOSURE",
+      "M13": "AUTHORITATIVE_CLOSURE",
+      "M14": "AUTHORITATIVE_CLOSURE",
+      "M15": "AUTHORITATIVE_CLOSURE",
+      "S16": "AUTHORITATIVE_CLOSURE",
+      "S17": "AUTHORITATIVE_CLOSURE",
+      "S18": "AUTHORITATIVE_CLOSURE",
+      "S19": "AUTHORITATIVE_CLOSURE"
+    },
+    "module_closure_limitations": {},
+    "promotion_posture": {
+      "suggested_mode": "incubation link",
+      "note": "Compact status and interface artifacts only; no whole-repo ingestion."
+    },
+    "callable_surfaces": [
+      {
+        "name": "qdp.py",
+        "command": "python qdp.py"
+      },
+      {
+        "name": "qdp_validation.py",
+        "command": "python qdp_validation.py"
+      },
+      {
+        "name": "readiness",
+        "command": "python qdp.py readiness"
+      },
+      {
+        "name": "validate",
+        "command": "python qdp.py validate <target> --kind candidate --mode final"
+      }
+    ]
+  },
+  "artifacts": {
+    "bootstrap_report": "artifacts/reports/m06/bootstrap_report.json",
+    "post_overhaul_blocker_ledger": "artifacts/reports/system/post_overhaul_blocker_ledger.json",
+    "all_mind_interface": "artifacts/reports/system/all_mind_interface.json",
+    "all_mind_interface_schema": "config/schema/all_mind_interface_schema.json",
+    "repo_validation_report": "artifacts/reports/system/repo_validation_report.json"
+  }
+}

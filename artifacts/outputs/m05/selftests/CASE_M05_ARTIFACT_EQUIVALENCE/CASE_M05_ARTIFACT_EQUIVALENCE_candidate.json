@@ -6,17 +6,19 @@
   "declared_family_class": "UNASSESSED",
   "assigned_family_class": "UNASSESSED",
   "family_class_mismatch": false,
-  "family_status": "PENDING_M05",
+  "family_status": "DECLARED_ONLY_PENDING_SIGNATURE_TRIAGE",
   "candidate_H_mod_symbolic": "",
   "candidate_H_mod_physical_interpretation": "",
   "claimed_effect": "",
   "declared_likely_bath_class": "",
-  "inferred_bath_rank_order": [],
-  "bath_classification_consistent_with_glossary": false,
+  "inferred_bath_rank_order": [
+    "UNASSESSED"
+  ],
+  "bath_classification_consistent_with_glossary": true,
   "primary_observable": "",
   "secondary_observable": "",
   "accessible_platform_or_device_class": "",
-  "minimal_discriminant_measurement": "",
+  "minimal_discriminant_measurement": "Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.",
   "cross_scale_claim_present": false,
   "effective_mapping_attached": false,
   "invariant_preserved": "",
@@ -53,7 +55,7 @@
     "P_PHONON": 0.0,
     "P_CONTROL_NOISE": 0.0,
     "P_EM_PURCELL": 0.0,
-    "P_OTHER": 0.0
+    "P_OTHER": 1.0
   },
   "signature_matches": [],
   "strongest_competing_mechanism_initial": "",
@@ -115,17 +117,52 @@
   },
   "cross_device_status": "NOT_REQUIRED",
   "instrument_capabilities": {},
+  "calibration_status": {
+    "status": "PENDING_REVIEW",
+    "validity_score": null,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": ""
+  },
   "calibration_validity_score": null,
+  "identifiability_status": {
+    "status": "PENDING_REVIEW",
+    "orthogonal_axes_satisfied": false,
+    "independent_constraints_satisfied": false,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "PENDING_REVIEW",
+    "hierarchical_model_required": false,
+    "hierarchical_model_applied": false,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "PENDING_REVIEW",
+    "device_lineage_recorded": false,
+    "calibration_context_recorded": false,
+    "protocol_metadata_recorded": false,
+    "independent_evidence_eligible": false,
+    "notes": ""
+  },
   "requested_output_artifacts": [],
-  "automatic_flags_triggered": [],
+  "automatic_flags_triggered": [
+    "M07_VISIBLE_SOURCE_TRIAGE_ONLY",
+    "M07_NO_STRONG_SIGNATURE_MATCH"
+  ],
   "promotion_cap_scientific": "",
   "promotion_cap_governance": "",
   "simulation_conditions": {},
   "tested_parameter_ranges": {},
-  "evaluation_notes": [],
+  "evaluation_notes": [
+    "M07 family triage used only surfaced specs/core/bath_glossary.md and specs/core/signature_to_bath_decision_chart.md mappings."
+  ],
   "failure_modes": [],
   "failure_mode_library_hits": [],
-  "linked_artifacts": [],
+  "linked_artifacts": [
+    "specs/core/bath_glossary.md",
+    "specs/core/signature_to_bath_decision_chart.md"
+  ],
   "gate_trace": [
     {
       "stage_id": "PRECHECK",
@@ -214,6 +251,21 @@
       "inputs_checked": [
         "lindblad_equivalence.equivalent_within_resolution",
         "lindblad_equivalence.best_equivalent_model"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because artifact equivalence trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_12",
+      "stage_name": "GOVERNANCE_GUARDRAILS",
+      "inputs_checked": [
+        "calibration_status",
+        "identifiability_status",
+        "drift_ledger",
+        "dataset_governance",
+        "promotion_cap_governance"
       ],
       "decision_or_cap_change": "SKIPPED",
       "key_evidence_ids": [],

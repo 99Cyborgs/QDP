@@ -1,0 +1,222 @@
+{
+  "artifact_id": "QDP_V10_6_CAMPAIGN_PLAN",
+  "campaign_id": "QDPCAM-00E5336CA1E82786",
+  "budgeted_slots": 5,
+  "candidate_count": 3,
+  "candidate_hashes": {
+    "m06-case-7": "833b34c49be24dac333a86454b21f73ecd244d82b16e2871943181252aaf4528",
+    "m06-case-5": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c",
+    "m06-case-1": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b"
+  },
+  "candidate_hashes_by_key": {
+    "m06-case-7@artifacts/outputs/simulations/sim_smoke_20260317/m05/confirmed_ready_candidate": "833b34c49be24dac333a86454b21f73ecd244d82b16e2871943181252aaf4528",
+    "m06-case-5@artifacts/outputs/simulations/sim_smoke_20260317/m05/scheduled_cross_device_candidate": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c",
+    "m06-case-1@artifacts/outputs/simulations/sim_smoke_20260317/m05/baseline_reject_candidate": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b"
+  },
+  "ranked_candidates": [
+    {
+      "candidate_key": "m06-case-7@artifacts/outputs/simulations/sim_smoke_20260317/m05/confirmed_ready_candidate",
+      "candidate_id": "m06-case-7",
+      "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\confirmed_ready_candidate.json",
+      "source_candidate_hash": "19b86f9473457452f8395a8623e77914479529c188ee183e5dfd3edb5b19eabf",
+      "candidate_origin": "operational",
+      "candidate_hash": "833b34c49be24dac333a86454b21f73ecd244d82b16e2871943181252aaf4528",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "branch_partition": "cross_device_confirmation",
+      "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+      "best_next_experiment": "Cross-device matched-fabrication sweep",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-5@artifacts/outputs/simulations/sim_smoke_20260317/m05/scheduled_cross_device_candidate",
+      "candidate_id": "m06-case-5",
+      "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json",
+      "source_candidate_hash": "77fab08b87ce6a3c936159373b28d0099f0c402a52d2d2c0c1d6acf886f873ae",
+      "candidate_origin": "operational",
+      "candidate_hash": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "branch_partition": "cross_device_confirmation",
+      "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+      "best_next_experiment": "Cross-device discriminant sweep",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-1@artifacts/outputs/simulations/sim_smoke_20260317/m05/baseline_reject_candidate",
+      "candidate_id": "m06-case-1",
+      "branch_or_model_tag": "M06_CASE_BASELINE_SUFFICIENT",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json",
+      "source_candidate_hash": "f2a74317af09baf35e9e7d4fe1bbe6095b7100d4facaea7238b1506e61791462",
+      "candidate_origin": "operational",
+      "candidate_hash": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+      "cross_device_status": "NOT_REQUIRED",
+      "branch_partition": "baseline_prune",
+      "sweep_route_group": "NO_NEW_SWEEP",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "candidate_key": "m06-case-7@artifacts/outputs/simulations/sim_smoke_20260317/m05/confirmed_ready_candidate",
+      "candidate_id": "m06-case-7",
+      "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\confirmed_ready_candidate.json",
+      "source_candidate_hash": "19b86f9473457452f8395a8623e77914479529c188ee183e5dfd3edb5b19eabf",
+      "candidate_origin": "operational",
+      "candidate_hash": "833b34c49be24dac333a86454b21f73ecd244d82b16e2871943181252aaf4528",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "branch_partition": "cross_device_confirmation",
+      "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+      "best_next_experiment": "Cross-device matched-fabrication sweep",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-5@artifacts/outputs/simulations/sim_smoke_20260317/m05/scheduled_cross_device_candidate",
+      "candidate_id": "m06-case-5",
+      "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json",
+      "source_candidate_hash": "77fab08b87ce6a3c936159373b28d0099f0c402a52d2d2c0c1d6acf886f873ae",
+      "candidate_origin": "operational",
+      "candidate_hash": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "branch_partition": "cross_device_confirmation",
+      "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+      "best_next_experiment": "Cross-device discriminant sweep",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-1@artifacts/outputs/simulations/sim_smoke_20260317/m05/baseline_reject_candidate",
+      "candidate_id": "m06-case-1",
+      "branch_or_model_tag": "M06_CASE_BASELINE_SUFFICIENT",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json",
+      "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json",
+      "source_candidate_hash": "f2a74317af09baf35e9e7d4fe1bbe6095b7100d4facaea7238b1506e61791462",
+      "candidate_origin": "operational",
+      "candidate_hash": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+      "cross_device_status": "NOT_REQUIRED",
+      "branch_partition": "baseline_prune",
+      "sweep_route_group": "NO_NEW_SWEEP",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    }
+  ],
+  "summary": {
+    "best_next_experiment": "Cross-device matched-fabrication sweep",
+    "promotion_ready_candidates": [
+      "m06-case-7"
+    ],
+    "promotion_ready_candidate_keys": [
+      "m06-case-7@artifacts/outputs/simulations/sim_smoke_20260317/m05/confirmed_ready_candidate"
+    ],
+    "blocked_candidates": {
+      "m06-case-5": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-1": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ]
+    },
+    "blocked_candidates_by_key": {
+      "m06-case-5@artifacts/outputs/simulations/sim_smoke_20260317/m05/scheduled_cross_device_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-1@artifacts/outputs/simulations/sim_smoke_20260317/m05/baseline_reject_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ]
+    },
+    "candidate_variants_by_id": {
+      "m06-case-7": [
+        "m06-case-7@artifacts/outputs/simulations/sim_smoke_20260317/m05/confirmed_ready_candidate"
+      ],
+      "m06-case-5": [
+        "m06-case-5@artifacts/outputs/simulations/sim_smoke_20260317/m05/scheduled_cross_device_candidate"
+      ],
+      "m06-case-1": [
+        "m06-case-1@artifacts/outputs/simulations/sim_smoke_20260317/m05/baseline_reject_candidate"
+      ]
+    },
+    "variant_count_by_candidate_id": {
+      "m06-case-7": 1,
+      "m06-case-5": 1,
+      "m06-case-1": 1
+    },
+    "candidate_ids_with_multiple_variants": []
+  }
+}

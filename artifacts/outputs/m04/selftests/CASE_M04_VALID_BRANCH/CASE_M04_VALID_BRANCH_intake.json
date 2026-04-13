@@ -1,0 +1,50 @@
+{
+  "artifact_id": "QDP_V10_6_FORK_INTAKE_TEMPLATE_M04",
+  "module_id": "M04",
+  "date": "2026-03-15",
+  "requestor": "workspace",
+  "branch_or_model_tag": "M04_VALID_BRANCH",
+  "change_types": [
+    "HAMILTONIAN_TERM"
+  ],
+  "model_classification": "FORMAL_CORE",
+  "candidate_H_mod_symbolic": "H = H0 + lambda * N",
+  "candidate_H_mod_physical_interpretation": "Nonlinear correction to the baseline dissipator picture.",
+  "claimed_effect": "Observable-dependent deviation from baseline decay.",
+  "declared_family_class": "KERNEL_MEMORY",
+  "declared_likely_bath_class_raw": "KERNEL_MEMORY",
+  "declared_likely_bath_class_other_text": "",
+  "bath_classification_consistent_with_glossary_asserted": true,
+  "primary_observable": "T1 decay",
+  "secondary_observable": "Ramsey envelope",
+  "accessible_platform_or_device_class": "transmon",
+  "minimal_discriminant_measurement": "matched time-domain sweep",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "trace preservation",
+  "reduction_limit": "When lambda=0 recover baseline GKSL dynamics.",
+  "count_new_free_parameters": 1,
+  "new_free_parameters": [
+    "lambda"
+  ],
+  "parameter_constraints": {
+    "lambda": "bounded by energy scale"
+  },
+  "independent_constraint_source_per_parameter": {
+    "lambda": "matched-control experiment"
+  },
+  "exact_falsifier": "The matched-control sweep must separate the branch from baseline and TLS alternatives.",
+  "does_increase_falsifiable_surface_area": true,
+  "relevant_nuisance_controls_list": [
+    "temperature",
+    "drive_power"
+  ],
+  "validation_ladder_plan": {
+    "L0_baseline_pipeline_reproduced": true,
+    "L1_reduction_limit_verified": true,
+    "L2_convergence_plan_defined": true,
+    "L3_stability_criterion_defined": false,
+    "L4_instrument_facing_comparison_path_defined": true
+  },
+  "notes": "Valid intake control."
+}

@@ -1,0 +1,10 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_short_explicit_core_radius
+  description: "Invariant-only short-horizon seeded-vortex exercise with explicit core radius"
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1
+      core_radius: 0.4

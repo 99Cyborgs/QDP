@@ -1,0 +1,52 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "description": "Nonnormal pseudo-subsystem must not return supported.",
+      "expected": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive"
+      }
+    },
+    {
+      "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+      "description": "Correlated-noise mimic must return not_supported.",
+      "expected": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported"
+      }
+    },
+    {
+      "case_id": "CASE_C_TLS_ALIAS",
+      "description": "TLS alias must return not_supported.",
+      "expected": {
+        "case_id": "CASE_C_TLS_ALIAS",
+        "actual_final_verdict": "not_supported"
+      }
+    },
+    {
+      "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+      "description": "Readout partition illusion must return not_supported.",
+      "expected": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported"
+      }
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "description": "Symmetry-only case must remain inconclusive.",
+      "expected": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive"
+      }
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control must return supported.",
+      "expected": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported"
+      }
+    }
+  ]
+}

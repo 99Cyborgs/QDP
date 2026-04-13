@@ -1,0 +1,184 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_SCALING_DISCRIMINATION_MODELS
+scaling_models:
+- scaling_model_id: SCALE-001
+  mechanism_id: MECH-EM-001
+  independent_variables:
+  - frequency
+  - geometry
+  predicted_form: T1 gain peaks when device frequency approaches stopband interior or lower band edge; gain rises with cell count then saturates.
+  distinctive_signature: Spectral alignment to stopband marker with weak temperature dependence.
+  null_comparators:
+  - NULL-EM-PURCELL
+  - NULL-PKG-MODE
+  - NULL-FAB-VAR
+  required_protocols:
+  - EXP-T1-FSWEEP-01
+  - EXP-GEO-SERIES-01
+  - EXP-PKG-MODE-01
+- scaling_model_id: SCALE-002
+  mechanism_id: MECH-PH-001
+  independent_variables:
+  - frequency
+  - temperature
+  - geometry
+  predicted_form: Non-Markovian score and coherence shift maximize when phononic gap overlaps active defect/bath frequencies; gap center scales approximately inversely with lattice constant.
+  distinctive_signature: Memory-kernel evidence plus geometry-shifted phononic band marker.
+  null_comparators:
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  - NULL-CTRL-DISTORT
+  required_protocols:
+  - EXP-HOLEBURN-THERM-01
+  - EXP-TEMP-SCAN-01
+  - EXP-GEO-SERIES-01
+- scaling_model_id: SCALE-003
+  mechanism_id: MECH-PH-002
+  independent_variables:
+  - geometry
+  - temperature
+  - injection_energy
+  predicted_form: QP recovery time decreases with shorter escape path and stronger acoustic impedance gradient until sink saturation.
+  distinctive_signature: Injection-recovery scaling tracks sink geometry rather than trap area.
+  null_comparators:
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  required_protocols:
+  - EXP-QP-INJECT-01
+  - EXP-GEO-SERIES-01
+  - EXP-TEMP-SCAN-01
+- scaling_model_id: SCALE-004
+  mechanism_id: MECH-VX-001
+  independent_variables:
+  - magnetic_field
+  - geometry
+  - temperature
+  predicted_form: Loss slope versus field decreases with optimized antidot pitch/radius; hysteresis depends on field history.
+  distinctive_signature: Strong field scaling dominates if vortex mechanism is active.
+  null_comparators:
+  - NULL-SHIELDING
+  - NULL-FAB-VAR
+  required_protocols:
+  - EXP-BFIELD-VORTEX-01
+  - EXP-GEO-SERIES-01
+- scaling_model_id: SCALE-005
+  mechanism_id: MECH-EM-002
+  independent_variables:
+  - frequency
+  - geometry
+  - lid_spacing
+  predicted_form: Boundary-condition benefit follows HIS or fence stopband placement and decays as lid spacing increases beyond near-field regime.
+  distinctive_signature: Removable-lid geometry dependence with preserved same-package wiring.
+  null_comparators:
+  - NULL-PKG-MODE
+  - NULL-EM-PURCELL
+  required_protocols:
+  - EXP-PKG-MODE-01
+  - EXP-T1-FSWEEP-01
+  - EXP-GEO-SERIES-01
+- scaling_model_id: SCALE-006
+  mechanism_id: MECH-EM-003
+  independent_variables:
+  - drive_amplitude
+  - geometry
+  - frequency
+  predicted_form: T2 improvement stays approximately constant with matched control fidelity while common-mode suppression tracks fence pitch.
+  distinctive_signature: Broadband reduction in control PSD without strong temperature signature.
+  null_comparators:
+  - NULL-CTRL-DISTORT
+  - NULL-PKG-MODE
+  required_protocols:
+  - EXP-RAMSEY-PSD-01
+  - EXP-DRIVE-AMP-01
+  - EXP-PKG-MODE-01
+- scaling_model_id: SCALE-007
+  mechanism_id: MECH-PH-003
+  independent_variables:
+  - frequency
+  - geometry
+  - temperature
+  predicted_form: SAW transmission notch and coherence benefit both shift with Bragg period; temperature dependence follows acoustic rather than microwave calibration drifts.
+  distinctive_signature: Dedicated SAW witness tracks qubit response.
+  null_comparators:
+  - NULL-SAW-CROSSTALK
+  - NULL-THERMAL
+  required_protocols:
+  - EXP-SAW-WITNESS-01
+  - EXP-GEO-SERIES-01
+  - EXP-TEMP-SCAN-01
+- scaling_model_id: SCALE-008
+  mechanism_id: MECH-QP-001
+  independent_variables:
+  - geometry
+  - temperature
+  - injection_energy
+  predicted_form: Parity and recovery improvements scale with trap spacing and gap contrast but show no narrow spectral signature.
+  distinctive_signature: Broadband particle-management trend only.
+  null_comparators:
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  required_protocols:
+  - EXP-QP-PARITY-01
+  - EXP-QP-INJECT-01
+  - EXP-TEMP-SCAN-01
+- scaling_model_id: SCALE-009
+  mechanism_id: MECH-HYB-001
+  independent_variables:
+  - frequency
+  - geometry
+  - temperature
+  predicted_form: Joint optimum requires overlapping EM stopband and phononic gap; deviations in either sub-geometry reduce benefit non-additively.
+  distinctive_signature: Correlated EM and phononic witness markers plus elevated non-Markovian evidence.
+  null_comparators:
+  - NULL-PKG-MODE
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  required_protocols:
+  - EXP-T1-FSWEEP-01
+  - EXP-HOLEBURN-THERM-01
+  - EXP-QP-PARITY-01
+  - EXP-GEO-SERIES-01
+- scaling_model_id: SCALE-010
+  mechanism_id: MECH-3D-001
+  independent_variables:
+  - frequency
+  - geometry
+  - assembly_repeat
+  predicted_form: Mode-density and coherence shifts follow corrugation period/depth and remain after repeated assembly if as-built geometry is stable.
+  distinctive_signature: 3D-specific cavity-mode map changes with reassembly robustness.
+  null_comparators:
+  - NULL-PKG-MODE
+  - NULL-FAB-VAR
+  required_protocols:
+  - EXP-PKG-MODE-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+- scaling_model_id: SCALE-011
+  mechanism_id: MECH-EM-004
+  independent_variables:
+  - frequency
+  - drive_amplitude
+  - geometry
+  predicted_form: Control-noise suppression appears in targeted stopband while passband control fidelity remains constant; parity benefit tracks high-frequency leakage suppression.
+  distinctive_signature: Matched conventional attenuation cannot reproduce same T2 + parity combination.
+  null_comparators:
+  - NULL-CTRL-DISTORT
+  - NULL-QP-TRAP
+  - NULL-PKG-MODE
+  required_protocols:
+  - EXP-RAMSEY-PSD-01
+  - EXP-DRIVE-AMP-01
+  - EXP-QP-PARITY-01
+  - EXP-PKG-MODE-01

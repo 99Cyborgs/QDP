@@ -1,0 +1,94 @@
+{
+  "case_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+  "checkpoint_file_paths": [],
+  "convergence_status": "phase1_smoke",
+  "diagnostic_file_paths": {
+    "convergence_report": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\diagnostics\\convergence_report.json",
+    "profiling": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\diagnostics\\profiling.json",
+    "run_summary": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\diagnostics\\run_summary.json",
+    "seeded_vortex_tier2": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\diagnostics\\seeded_vortex_tier2.json",
+    "solver_iterations": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\diagnostics\\solver_iterations.csv"
+  },
+  "failure_reason": null,
+  "observable_file_paths": {
+    "events": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\observables\\events.csv",
+    "summary": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\observables\\summary.json",
+    "timeseries": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2\\observables\\timeseries.csv"
+  },
+  "observable_mode": "written",
+  "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+  "seed_information": {
+    "configured_vortex_seeds": [
+      {
+        "core_radius": null,
+        "seed_index": 0,
+        "winding": 1,
+        "x0": 6.0,
+        "y0": 3.0
+      }
+    ],
+    "initial_condition": "seeded_vortices",
+    "noise_seed": 12091854522935283700,
+    "pinning_seed": null,
+    "resolved_vortex_seeds": [
+      {
+        "core_radius": 0.25,
+        "plaquette_x": 11,
+        "plaquette_y": 5,
+        "seed_index": 0,
+        "winding": 1,
+        "x0": 6.0,
+        "y0": 3.0
+      }
+    ],
+    "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+    "seed_resolution_policy": "strict_interior_fully_active_plaquette",
+    "vortex_seed_count": 1
+  },
+  "solver_iteration_stats": {
+    "completed_step_count": 4,
+    "phi_fallback_count": 0,
+    "phi_iteration_summary": {
+      "final": 198,
+      "max": 200,
+      "mean": 197.0,
+      "total": 788
+    },
+    "phi_residual_summary": {
+      "final": 1.6378225769685018e-07,
+      "max": 1.6378225769685018e-07,
+      "mean": 1.1770785237899118e-07
+    },
+    "phi_solver_method_counts": {
+      "cg": 4
+    },
+    "psi_fallback_count": 0,
+    "psi_iteration_summary": {
+      "final": 4,
+      "max": 4,
+      "mean": 4.0,
+      "total": 16
+    },
+    "psi_residual_summary": {
+      "final": 6.64603074071364e-05,
+      "max": 6.64603074071364e-05,
+      "mean": 5.011242090171009e-05
+    },
+    "psi_solver_method_counts": {
+      "gmres": 4
+    },
+    "requested_n_steps": 4
+  },
+  "start_timestamp": "2026-04-10T21:53:37.498353",
+  "status": "success",
+  "stop_timestamp": "2026-04-10T21:53:37.731388",
+  "summary_metrics": {
+    "final_charge_residual_inf": 6.7292593415868485,
+    "final_mean_abs2": 0.9871343061795564,
+    "final_time": 0.04,
+    "max_vortex_count": 1,
+    "n_events": 0,
+    "n_samples": 5
+  },
+  "wall_clock_seconds": 0.017982800000027055
+}

@@ -1,0 +1,148 @@
+{
+  "artifact_id": "QDP_V10_6_M14_SELFTEST_REPORT",
+  "module_id": "M14",
+  "timestamp_utc": "2026-04-13T18:30:49.081819+00:00",
+  "visible_source_only": true,
+  "cases_total": 4,
+  "cases_passed": 4,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M14_GOVERNANCE_CLIP",
+      "description": "Governance caps clip PROCEED to SANDBOX_ONLY while leaving the scientific label intact.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "actual_summary": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json"
+    },
+    {
+      "case_id": "CASE_M14_SCIENTIFIC_CLIP",
+      "description": "Scientific caps clip the confirmed-identifiable label to SANDBOX_ONLY.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "SANDBOX_ONLY"
+      },
+      "actual_summary": {
+        "scientific_decision": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "SANDBOX_ONLY"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json"
+    },
+    {
+      "case_id": "CASE_M14_FALLBACK_SANDBOX",
+      "description": "Fallback completion maps provisional survival to SANDBOX_ONLY when governance_outcome is unset.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "actual_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json"
+    },
+    {
+      "case_id": "CASE_M14_FALLBACK_DEFER",
+      "description": "Fallback completion maps unevaluated outcomes to DEFER and marks cross-device evidence not required.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "actual_summary": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json"
+    }
+  ]
+}

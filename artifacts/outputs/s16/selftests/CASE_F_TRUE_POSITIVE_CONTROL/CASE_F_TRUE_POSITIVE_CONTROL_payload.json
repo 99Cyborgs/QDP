@@ -1,0 +1,22 @@
+{
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "module_id": "S16",
+  "diagnostics_reported": [
+    "slow_rank",
+    "spectral_gap_delta",
+    "riesz_projector_stability",
+    "projector_principal_angle_dispersion"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "pass",
+    "projector_stability": "pass"
+  },
+  "expected_final_verdict": "supported",
+  "actual_final_verdict": "supported",
+  "supported_forbidden": false,
+  "supported_required": true,
+  "notes": [
+    "Sector detection is surfaced from the GKSL subsystem case matrix.",
+    "class=positive_control"
+  ]
+}

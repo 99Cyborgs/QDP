@@ -1,0 +1,70 @@
+{
+  "artifact_id": "QDP_V10_6_M11_SELFTEST_CASES",
+  "module_id": "M11",
+  "cases": [
+    {
+      "case_id": "CASE_M11_EXPLICIT_EQUIVALENCE",
+      "description": "An explicit equivalence flag is preserved and reported.",
+      "candidate_overrides": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_WITH_DRIFT"
+        }
+      },
+      "expected": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_WITH_DRIFT"
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE",
+      "description": "A surfaced best equivalent model implies equivalence conservatively.",
+      "candidate_overrides": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": false,
+          "best_equivalent_model": "GKSL_LIMIT"
+        }
+      },
+      "expected": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_LIMIT"
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M11_NON_EQUIVALENT_BRANCH",
+      "description": "A branch without equivalence signals remains non-equivalent.",
+      "candidate_overrides": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY"
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "features": [
+            "NON_GAUSSIAN_RESIDUALS"
+          ],
+          "time_series_based": true
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 2,
+          "axes_used": [
+            "power",
+            "field-history"
+          ],
+          "strongest_competitor_separated": true,
+          "geometry_claim_fabrication_matched": true,
+          "experimentally_resolvable": true
+        }
+      },
+      "expected": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": false,
+          "best_equivalent_model": ""
+        }
+      }
+    }
+  ]
+}

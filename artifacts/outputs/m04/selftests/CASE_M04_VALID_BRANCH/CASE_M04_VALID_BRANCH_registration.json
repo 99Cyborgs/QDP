@@ -1,0 +1,31 @@
+{
+  "artifact_id": "QDP_V10_6_BRANCH_REGISTRATION_M04",
+  "module_id": "M04",
+  "timestamp_utc": "2026-04-13T18:30:48.951179+00:00",
+  "intake_artifact": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_intake.json",
+  "branch_or_model_tag": "M04_VALID_BRANCH",
+  "candidate_id": "m04-m04-valid-branch-2026-03-15",
+  "normalized_fields": {
+    "change_types": [
+      "HAMILTONIAN_TERM"
+    ],
+    "model_classification": "FORMAL_CORE",
+    "declared_family_class": "KERNEL_MEMORY",
+    "declared_likely_bath_class": "KERNEL_MEMORY"
+  },
+  "bath_classification_consistent_with_glossary": true,
+  "duplicate_detection": {
+    "registry_duplicate_status": "CLEAR",
+    "duplicate_reference": ""
+  },
+  "unconstrained_new_parameter_count": 0,
+  "automatic_flags_triggered": [],
+  "preliminary_intake_outcome": "PROCEED",
+  "preliminary_promotion_cap_governance": "",
+  "intake_ready_for_compute": true,
+  "notes": [
+    "M04 preliminary_intake_outcome=PROCEED",
+    "M04 unconstrained_new_parameter_count=0",
+    "M04 L3 mapping preserved conservatively: intake L3_stability_criterion_defined does not set validation_ladder.L3_numerical_stability_passed"
+  ]
+}

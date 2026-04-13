@@ -1,0 +1,3 @@
+case_id,phase,base_config,geometry_family,nx,ny,pinning_model,pinning_mu,pinning_sigma,pinning_lcorr,defect_count,b_dc,a_rf,omega,gamma_noise,dt,n_steps,ensemble_size,obs_stride,field_stride,goal,success_metric,promotion_rule,notes
+VAL_A,D,base.yaml,strip,16,8,none,0.0,0.0,0.0,0,0.0,0.05,2.0,0.0,0.01,2,1,1,1,small validation strip,bounded residual,gate:G1,small strip row
+VAL_B,D,base.yaml,strip_with_moat,16,8,none,0.0,0.0,0.0,0,0.0,0.1,3.0,0.0,0.01,2,1,1,1,small validation moat,bounded residual,gate:G1,small moat row

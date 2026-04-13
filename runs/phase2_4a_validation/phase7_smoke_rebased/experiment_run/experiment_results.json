@@ -1,0 +1,259 @@
+{
+  "aggregation_metrics": [
+    "mean",
+    "std",
+    "min",
+    "max"
+  ],
+  "base_case_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex\\short_horizon\\canonical_single_positive_stochastic.yaml",
+  "claim_scope": "Stochastic same-stack ensemble aggregation of committed seeded initialization / short-horizon Tier-2 observables only.",
+  "expected_member_count": 3,
+  "manifest_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex_phase2_4a_experiment_pack.yaml",
+  "mode": "stochastic_ensemble",
+  "non_claims": {
+    "cross_stack_portability": "not established by this ensemble harness",
+    "equilibrium_preparation": "not established by this ensemble harness",
+    "long_time_dynamics": "not established by this ensemble harness"
+  },
+  "observable_classification": {
+    "early_window.mean_abs2_final": "early_window_observable"
+  },
+  "observables": [
+    "early_window.mean_abs2_final"
+  ],
+  "overall_status": "success",
+  "pack_name": "seeded_vortex_phase2_4a_experiment_pack",
+  "parameter_point_count": 2,
+  "parameter_points": [
+    {
+      "aggregates": {
+        "early_window.mean_abs2_final": {
+          "max": 0.9951355276307005,
+          "mean": 0.9877432798444367,
+          "min": 0.9809600057230531,
+          "std": 0.005803130880937511
+        }
+      },
+      "case_class": "short_horizon",
+      "ensemble_id": "e9a374e152ffd4ee",
+      "member_indices": [
+        0,
+        1,
+        2
+      ],
+      "noise_seeds": [
+        7435866037572974735,
+        69872281759179439,
+        12091854522935283700
+      ],
+      "notes": "aggregated stochastic same-stack Tier-2 observables",
+      "observable_classification": {
+        "early_window.mean_abs2_final": "early_window_observable"
+      },
+      "param_set_hash": "22c77fcc8895b7c6",
+      "parameters": {
+        "forcing.a_rf": 0.0
+      },
+      "robustness_summary": {
+        "failed_member_count": 0,
+        "failure_rate": 0.0,
+        "member_count": 3,
+        "observables": {
+          "early_window.mean_abs2_final": {
+            "coefficient_of_variation": 0.005875140838064186,
+            "coefficient_of_variation_defined": true,
+            "sign_consistency": 1.0,
+            "successful_member_count": 3
+          }
+        },
+        "successful_member_count": 3
+      },
+      "run_count": 3,
+      "run_dirs": [
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2"
+      ],
+      "run_ids": [
+        "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+        "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+        "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2"
+      ],
+      "status": "success",
+      "successful_run_count": 3
+    },
+    {
+      "aggregates": {
+        "early_window.mean_abs2_final": {
+          "max": 0.998333203155557,
+          "mean": 0.9934805444797786,
+          "min": 0.989072861339504,
+          "std": 0.0037935897738098747
+        }
+      },
+      "case_class": "short_horizon",
+      "ensemble_id": "3ac157a1aaa64018",
+      "member_indices": [
+        0,
+        1,
+        2
+      ],
+      "noise_seeds": [
+        16569354671516297555,
+        5055044444040433075,
+        2921146607582794029
+      ],
+      "notes": "aggregated stochastic same-stack Tier-2 observables",
+      "observable_classification": {
+        "early_window.mean_abs2_final": "early_window_observable"
+      },
+      "param_set_hash": "7e25b35f64dc7088",
+      "parameters": {
+        "forcing.a_rf": 0.05
+      },
+      "robustness_summary": {
+        "failed_member_count": 0,
+        "failure_rate": 0.0,
+        "member_count": 3,
+        "observables": {
+          "early_window.mean_abs2_final": {
+            "coefficient_of_variation": 0.0038184842117832633,
+            "coefficient_of_variation_defined": true,
+            "sign_consistency": 1.0,
+            "successful_member_count": 3
+          }
+        },
+        "successful_member_count": 3
+      },
+      "run_count": 3,
+      "run_dirs": [
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+        "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2"
+      ],
+      "run_ids": [
+        "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+        "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+        "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2"
+      ],
+      "status": "success",
+      "successful_run_count": 3
+    }
+  ],
+  "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+  "run_count": 6,
+  "run_records": [
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "e9a374e152ffd4ee",
+      "member_index": 0,
+      "noise_seed": 7435866037572974735,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.9951355276307005
+      },
+      "param_set_hash": "22c77fcc8895b7c6",
+      "parameters": {
+        "forcing.a_rf": 0.0
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "status": "success"
+    },
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "e9a374e152ffd4ee",
+      "member_index": 1,
+      "noise_seed": 69872281759179439,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.9809600057230531
+      },
+      "param_set_hash": "22c77fcc8895b7c6",
+      "parameters": {
+        "forcing.a_rf": 0.0
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "status": "success"
+    },
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "e9a374e152ffd4ee",
+      "member_index": 2,
+      "noise_seed": 12091854522935283700,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.9871343061795564
+      },
+      "param_set_hash": "22c77fcc8895b7c6",
+      "parameters": {
+        "forcing.a_rf": 0.0
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "status": "success"
+    },
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "3ac157a1aaa64018",
+      "member_index": 0,
+      "noise_seed": 16569354671516297555,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.989072861339504
+      },
+      "param_set_hash": "7e25b35f64dc7088",
+      "parameters": {
+        "forcing.a_rf": 0.05
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "status": "success"
+    },
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "3ac157a1aaa64018",
+      "member_index": 1,
+      "noise_seed": 5055044444040433075,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.998333203155557
+      },
+      "param_set_hash": "7e25b35f64dc7088",
+      "parameters": {
+        "forcing.a_rf": 0.05
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "status": "success"
+    },
+    {
+      "case_class": "short_horizon",
+      "ensemble_id": "3ac157a1aaa64018",
+      "member_index": 2,
+      "noise_seed": 2921146607582794029,
+      "notes": "completed stochastic same-stack ensemble member",
+      "observables": {
+        "early_window.mean_abs2_final": 0.993035568944275
+      },
+      "param_set_hash": "7e25b35f64dc7088",
+      "parameters": {
+        "forcing.a_rf": 0.05
+      },
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run\\param_7e25b35f64dc7088\\seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "status": "success"
+    }
+  ],
+  "schema_version": "4.0",
+  "sweep_parameters": [
+    "forcing.a_rf"
+  ]
+}

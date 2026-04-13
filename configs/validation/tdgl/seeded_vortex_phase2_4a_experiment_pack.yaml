@@ -1,0 +1,15 @@
+﻿schema_version: "4.0"
+experiment_pack:
+  mode: stochastic_ensemble
+  base_case: seeded_vortex/short_horizon/canonical_single_positive_stochastic.yaml
+  sweep:
+    parameters:
+      - name: forcing.a_rf
+        values: [0.0, 0.05]
+  ensemble:
+    member_count: 3
+    master_seed: 1234
+  observables:
+    - early_window.mean_abs2_final
+  aggregation:
+    metrics: [mean, std, min, max]

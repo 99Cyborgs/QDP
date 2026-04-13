@@ -1,0 +1,21 @@
+{
+  "artifact_id": "QDP_V10_6_S18_REPORT",
+  "module_id": "S18",
+  "timestamp_utc": "2026-04-13T18:30:49.101611+00:00",
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "result_summary": {
+    "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+    "actual_final_verdict": "supported",
+    "gate_outcomes": {
+      "finite_horizon_control": "pass",
+      "observable_closure": "pass"
+    },
+    "diagnostics_reported": [
+      "block_residual_rho_res",
+      "finite_horizon_gain_Gs",
+      "state_space_leakage",
+      "observable_space_leakage",
+      "observable_closure_defect"
+    ]
+  }
+}

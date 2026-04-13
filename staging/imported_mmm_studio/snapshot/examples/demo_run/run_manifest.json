@@ -1,0 +1,69 @@
+{
+  "artifact_paths": {
+    "candidate_report": "examples\\demo_run\\reports\\candidate_report.md",
+    "leaderboard_csv": "examples\\demo_run\\leaderboard.csv",
+    "leaderboard_plot": "examples\\demo_run\\leaderboard.png",
+    "manifest": "examples\\demo_run\\run_manifest.json",
+    "meep_geometry_scaffold": "examples\\demo_run\\meep_geometry_scaffold.json",
+    "metrics": "examples\\demo_run\\metrics.json",
+    "params": "examples\\demo_run\\params.yaml",
+    "provenance": "examples\\demo_run\\provenance.json",
+    "score_breakdown_plot": "examples\\demo_run\\score_breakdown.png",
+    "simulation_job": "examples\\demo_run\\simulation_job.json",
+    "simulation_preflight": "examples\\demo_run\\simulation_preflight.json",
+    "summary_report": "examples\\demo_run\\RUN_SUMMARY.md"
+  },
+  "created_at": "2026-04-03T16:54:14.856491Z",
+  "metrics": {
+    "candidate_count": 18,
+    "lead_branch_count": 2,
+    "primary_screen_count": 6,
+    "reject_count": 5,
+    "sandbox_count": 5,
+    "top_score": 0.7831834795321637
+  },
+  "parameters": {
+    "dataset_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+    "profile": "broadband",
+    "score_backend": "baseline_surrogate_v1",
+    "top_n": 10
+  },
+  "provenance": {
+    "application_version": "0.2.0",
+    "command": "mmm-studio run-demo",
+    "created_at": "2026-04-03T16:54:15.762082Z",
+    "environment": {
+      "python_entrypoint": "mmm-studio"
+    },
+    "run_id": "20260403T165414Z-broadband",
+    "schema_name": "mmm_studio.provenance",
+    "schema_version": "1.0",
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "broadband",
+    "source_artifacts": [
+      "MMM_MATERIAL_GENOME_DATABASE",
+      "MMM_CANDIDATE_RANKING_MODEL",
+      "MMM_MECHANISM_REGISTRY",
+      "MMM_STRUCTURE_LIBRARY",
+      "MMM_EXPERIMENT_REGISTRY",
+      "MMM_VALIDATION_RULES",
+      "MMM_BENCHMARK_MODELS",
+      "MMM_SCALING_DISCRIMINATION_MODELS",
+      "MMM_DEVICE_ARCHITECTURE_REGISTRY",
+      "MMM_TOLERANCE_MODELS",
+      "MMM_GEOMETRY_SCALING_MODELS",
+      "MMM_MATERIAL_SYSTEM_REGISTRY",
+      "MMM_ENVIRONMENT_MODEL_REGISTRY",
+      "MMM_INSTRUMENT_CONSTRAINTS",
+      "MMM_CROSS_DEVICE_REGISTRY"
+    ],
+    "source_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed"
+  },
+  "root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+  "run_id": "20260403T165414Z-broadband",
+  "schema_name": "mmm_studio.run_manifest",
+  "schema_version": "1.0",
+  "score_backend": "baseline_surrogate_v1",
+  "scoring_profile": "broadband",
+  "top_candidate_id": "GEN-003"
+}

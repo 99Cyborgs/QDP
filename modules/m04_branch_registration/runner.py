@@ -28,13 +28,25 @@ except ImportError:
     jsonschema = None  # pragma: no cover
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
 
-from qdp_paths import FORK_INTAKE_SCHEMA
+from qdp_io.artifacts import dump_json, module_report_header, module_selftest_report_payload, utc_now
+from tools.workflow.qdp_runtime.qdp_paths import BASE_TEMPLATE, CANDIDATE_VALIDATOR, FORK_INTAKE_SCHEMA, MODULES, SCHEMA
+from tools.workflow.qdp_runtime.qdp_validation import validate_candidate_file
 
 
+MODULE_PATHS = MODULES["m04"]
+DEFAULT_CANDIDATE_TEMPLATE = BASE_TEMPLATE
 DEFAULT_INTAKE_SCHEMA = FORK_INTAKE_SCHEMA
+DEFAULT_SCHEMA = SCHEMA
+DEFAULT_VALIDATOR = CANDIDATE_VALIDATOR
+DEFAULT_SELFTEST_CASES = MODULE_PATHS["selftest_cases"]
+DEFAULT_SELFTEST_REPORT = MODULE_PATHS["selftest_report"]
+DEFAULT_SELFTEST_OUTPUT_DIR = MODULE_PATHS["selftest_output_dir"]
 
 
 CHANGE_TYPE_MAP = {
@@ -84,6 +96,18 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"JSON root must be an object: {path}")
     return data
+
+
+def deep_merge(base: Any, override: Any) -> Any:
+    if isinstance(base, dict) and isinstance(override, dict):
+        merged = copy.deepcopy(base)
+        for key, value in override.items():
+            if key in merged:
+                merged[key] = deep_merge(merged[key], value)
+            else:
+                merged[key] = copy.deepcopy(value)
+        return merged
+    return copy.deepcopy(override)
 
 
 def normalize_text(value: str) -> str:
@@ -303,8 +327,15 @@ def build_registration(intake: Dict[str, Any], registry: Dict[str, Any], candida
             auto_flags.append(flag)
 
     existing_cap = str(out.get("promotion_cap_governance", "") or "")
-    out["promotion_cap_governance"] = strongest_cap(existing_cap, intake_cap)
+    out["promotion_cap_governance"] = strongest_cap(existing_cap, "SANDBOX_ONLY")
     out["scientific_decision"] = out.get("scientific_decision") or "NOT_EVALUATED"
+    out["governance_outcome"] = preliminary_outcome if preliminary_outcome in {"SANDBOX_ONLY", "DEFER", "REJECT"} else "SANDBOX_ONLY"
+    out["cross_device_status"] = "NOT_REQUIRED" if preliminary_outcome in {"DEFER", "REJECT"} else "SCHEDULED"
+    out.setdefault("cross_device_validation", {})
+    out["cross_device_validation"]["status"] = out["cross_device_status"]
+    out["cross_device_validation"].setdefault("devices_tested", [])
+    out["cross_device_validation"]["fabrication_matched"] = bool(out.get("fabrication_matched_for_geometry_claim", False))
+    out["cross_device_validation"]["notes"] = "M04 seeded precompute cross-device placeholder state."
 
     out.setdefault("evaluation_notes", [])
     notes.append(f"M04 preliminary_intake_outcome={preliminary_outcome}")
@@ -345,9 +376,7 @@ def build_registration(intake: Dict[str, Any], registry: Dict[str, Any], candida
     out["gate_trace"].append(gate_entry)
 
     registration = {
-        "artifact_id": "QDP_V10_6_BRANCH_REGISTRATION_M04",
-        "module_id": "M04",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        **module_report_header("QDP_V10_6_BRANCH_REGISTRATION_M04", "M04"),
         "intake_artifact": str(intake_path),
         "branch_or_model_tag": str(intake.get("branch_or_model_tag", "")).strip(),
         "candidate_id": out["candidate_id"],
@@ -372,15 +401,141 @@ def build_registration(intake: Dict[str, Any], registry: Dict[str, Any], candida
     return out, registration
 
 
+def summarize_candidate(candidate: Dict[str, Any], registration: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "branch_or_model_tag": candidate.get("branch_or_model_tag", ""),
+        "change_type": candidate.get("change_type", ""),
+        "declared_family_class": candidate.get("declared_family_class", ""),
+        "primary_observable": candidate.get("primary_observable", ""),
+        "secondary_observable": candidate.get("secondary_observable", ""),
+        "registry_duplicate_status": candidate.get("registry_duplicate_status", ""),
+        "promotion_cap_governance": candidate.get("promotion_cap_governance", ""),
+        "governance_outcome": candidate.get("governance_outcome", ""),
+        "cross_device_status": candidate.get("cross_device_status", ""),
+        "preliminary_intake_outcome": registration.get("preliminary_intake_outcome", ""),
+        "intake_ready_for_compute": registration.get("intake_ready_for_compute", False),
+    }
+
+
+def compare_expected(actual: Any, expected: Any, path: str = "$") -> List[str]:
+    failures: List[str] = []
+    if isinstance(expected, dict):
+        if not isinstance(actual, dict):
+            return [f"{path}: expected object, found {type(actual).__name__}"]
+        for key, value in expected.items():
+            next_path = f"{path}.{key}"
+            if key not in actual:
+                failures.append(f"{next_path}: missing")
+                continue
+            failures.extend(compare_expected(actual[key], value, next_path))
+        return failures
+    if actual != expected:
+        failures.append(f"{path}: expected {expected!r}, found {actual!r}")
+    return failures
+
+
+def run_selftests(
+    cases_path: Path,
+    candidate_template_path: Path,
+    registry_path: Path,
+    intake_schema_path: Path,
+    validator_path: Path,
+    schema_path: Path,
+    output_dir: Path,
+    write_report_path: Path,
+) -> Dict[str, Any]:
+    cases_obj = load_json(cases_path)
+    candidate_template = load_json(candidate_template_path)
+    registry = load_json(registry_path)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    results: List[Dict[str, Any]] = []
+
+    for case in cases_obj.get("cases", []):
+        if not isinstance(case, dict):
+            continue
+        case_id = str(case.get("case_id", "")).strip() or "UNNAMED_CASE"
+        case_dir = output_dir / case_id
+        case_dir.mkdir(parents=True, exist_ok=True)
+        intake = deep_merge({}, case.get("intake", {}))
+        intake_path = case_dir / f"{case_id}_intake.json"
+        dump_json(intake_path, intake)
+
+        validate_against_schema(intake, intake_schema_path)
+        candidate, registration = build_registration(intake, registry, candidate_template, intake_path)
+
+        candidate_path = case_dir / f"{case_id}_candidate.json"
+        registration_path = case_dir / f"{case_id}_registration.json"
+        dump_json(candidate_path, candidate)
+        dump_json(registration_path, registration)
+
+        validator_result = validate_candidate_file(candidate_path, validator_path, schema_path, mode="final")
+        actual_summary = summarize_candidate(candidate, registration)
+        expected_summary = case.get("expected", {})
+        comparison_failures = compare_expected(actual_summary, expected_summary)
+        comparison_ok = not comparison_failures
+        passed = comparison_ok and validator_result["valid"]
+        results.append(
+            {
+                "case_id": case_id,
+                "description": case.get("description", ""),
+                "passed": passed,
+                "comparison_ok": comparison_ok,
+                "comparison_failures": comparison_failures,
+                "validator_result": validator_result,
+                "expected_summary": expected_summary,
+                "actual_summary": actual_summary,
+                "registration_path": str(registration_path),
+                "output_candidate_path": str(candidate_path),
+            }
+        )
+
+    cases_total = len(results)
+    cases_passed = sum(1 for result in results if result["passed"])
+    report = module_selftest_report_payload(
+        "QDP_V10_6_M04_SELFTEST_REPORT",
+        "M04",
+        results,
+        visible_source_only=True,
+        all_passed=cases_total > 0 and cases_passed == cases_total,
+        schema_valid_all=all(result["validator_result"]["valid"] for result in results),
+    )
+    dump_json(write_report_path, report)
+    return report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Register a QDP branch intake and map it to the M02 candidate template.")
-    parser.add_argument("--intake", required=True, type=Path)
-    parser.add_argument("--candidate-template", required=True, type=Path)
-    parser.add_argument("--registry", required=True, type=Path)
+    parser.add_argument("--intake", type=Path)
+    parser.add_argument("--candidate-template", type=Path, default=DEFAULT_CANDIDATE_TEMPLATE)
+    parser.add_argument("--registry", type=Path, default=MODULE_PATHS["run_defaults"]["--registry"])
     parser.add_argument("--intake-schema", type=Path, default=DEFAULT_INTAKE_SCHEMA)
     parser.add_argument("--write-candidate", type=Path)
     parser.add_argument("--write-registration", type=Path)
+    parser.add_argument("--base-template", type=Path, default=DEFAULT_CANDIDATE_TEMPLATE)
+    parser.add_argument("--validator", type=Path, default=DEFAULT_VALIDATOR)
+    parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
+    parser.add_argument("--selftest", action="store_true")
+    parser.add_argument("--selftest-cases", type=Path, default=DEFAULT_SELFTEST_CASES)
+    parser.add_argument("--selftest-output-dir", type=Path, default=DEFAULT_SELFTEST_OUTPUT_DIR)
+    parser.add_argument("--write-report", type=Path, default=DEFAULT_SELFTEST_REPORT)
     args = parser.parse_args()
+
+    if args.selftest:
+        report = run_selftests(
+            cases_path=args.selftest_cases,
+            candidate_template_path=args.base_template,
+            registry_path=args.registry,
+            intake_schema_path=args.intake_schema,
+            validator_path=args.validator,
+            schema_path=args.schema,
+            output_dir=args.selftest_output_dir,
+            write_report_path=args.write_report,
+        )
+        print(json.dumps(report, indent=2))
+        return 0 if report.get("all_passed", False) and report.get("schema_valid_all", False) else 1
+
+    if args.intake is None:
+        raise SystemExit("M04 run requires --intake unless --selftest is set.")
 
     intake = load_json(args.intake)
     candidate_template = load_json(args.candidate_template)
@@ -392,12 +547,12 @@ def main() -> int:
     candidate, registration = build_registration(intake, registry, candidate_template, args.intake)
 
     if args.write_candidate:
-        args.write_candidate.write_text(json.dumps(candidate, indent=2), encoding="utf-8")
+        dump_json(args.write_candidate, candidate)
     else:
         print(json.dumps(candidate, indent=2))
 
     if args.write_registration:
-        args.write_registration.write_text(json.dumps(registration, indent=2), encoding="utf-8")
+        dump_json(args.write_registration, registration)
     elif args.write_candidate:
         # If candidate is written to file, also print registration to stdout for visibility.
         print(json.dumps(registration, indent=2))
@@ -407,3 +562,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

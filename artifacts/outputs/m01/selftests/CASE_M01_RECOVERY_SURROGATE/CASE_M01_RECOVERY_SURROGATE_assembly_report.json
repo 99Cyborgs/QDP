@@ -1,0 +1,18 @@
+{
+  "artifact_id": "QDP_V10_6_M01_ASSEMBLY_REPORT",
+  "module_id": "M01",
+  "timestamp_utc": "2026-04-13T18:30:48.943090+00:00",
+  "runtime_prompt_path": "G:\\GitHub\\incubate\\QDP\\runtime\\current\\runtime_prompt.md",
+  "runtime_prompt_exists": true,
+  "runtime_prompt_sha256": "43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997",
+  "retained_runtime_source_path": "G:\\GitHub\\incubate\\QDP\\runtime\\retained\\operative_body_v10_1.md",
+  "retained_runtime_source_exists": true,
+  "retained_runtime_source_provenance": "reconstructed_surrogate",
+  "retained_runtime_source_authoritative": false,
+  "assembly_lane": "RECOVERY_LANE",
+  "derived_status": "RECOVERY_INTERIM",
+  "notes": [
+    "M01 records runtime provenance and lane assignment for recovery versus authoritative execution.",
+    "A reconstructed_surrogate retained source keeps this module in recovery-interim status even when the runtime prompt exists."
+  ]
+}

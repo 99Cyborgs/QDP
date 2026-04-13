@@ -1,0 +1,158 @@
+{
+  "artifact_id": "QDP_V10_6_M14_SELFTEST_CASES",
+  "module_id": "M14",
+  "cases": [
+    {
+      "case_id": "CASE_M14_GOVERNANCE_CLIP",
+      "description": "Governance caps clip PROCEED to SANDBOX_ONLY while leaving the scientific label intact.",
+      "candidate_overrides": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "PROCEED",
+        "cross_device_status": "CONFIRMED",
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "calibration_status": {
+          "status": "VALID",
+          "validity_score": 92.0,
+          "threshold": 70.0,
+          "below_threshold": false,
+          "notes": ""
+        },
+        "calibration_validity_score": 92.0,
+        "identifiability_status": {
+          "status": "SUFFICIENT",
+          "orthogonal_axes_satisfied": true,
+          "independent_constraints_satisfied": true,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "ASSESSED",
+          "hierarchical_model_required": true,
+          "hierarchical_model_applied": true,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        }
+      },
+      "expected": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      }
+    },
+    {
+      "case_id": "CASE_M14_SCIENTIFIC_CLIP",
+      "description": "Scientific caps clip the confirmed-identifiable label to SANDBOX_ONLY.",
+      "candidate_overrides": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "PROCEED",
+        "cross_device_status": "CONFIRMED",
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "promotion_cap_scientific": "SANDBOX_ONLY",
+        "calibration_status": {
+          "status": "VALID",
+          "validity_score": 88.0,
+          "threshold": 70.0,
+          "below_threshold": false,
+          "notes": ""
+        },
+        "calibration_validity_score": 88.0,
+        "identifiability_status": {
+          "status": "PROVISIONAL",
+          "orthogonal_axes_satisfied": true,
+          "independent_constraints_satisfied": true,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "ASSESSED",
+          "hierarchical_model_required": false,
+          "hierarchical_model_applied": false,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        }
+      },
+      "expected": {
+        "scientific_decision": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "SANDBOX_ONLY"
+      }
+    },
+    {
+      "case_id": "CASE_M14_FALLBACK_SANDBOX",
+      "description": "Fallback completion maps provisional survival to SANDBOX_ONLY when governance_outcome is unset.",
+      "candidate_overrides": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "",
+        "cross_device_status": "",
+        "cross_device_validation": {
+          "status": "",
+          "devices_tested": [],
+          "fabrication_matched": false,
+          "notes": ""
+        },
+        "multi_device_data_available": false
+      },
+      "expected": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      }
+    },
+    {
+      "case_id": "CASE_M14_FALLBACK_DEFER",
+      "description": "Fallback completion maps unevaluated outcomes to DEFER and marks cross-device evidence not required.",
+      "candidate_overrides": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "",
+        "cross_device_status": "",
+        "cross_device_validation": {
+          "status": "",
+          "devices_tested": [],
+          "fabrication_matched": false,
+          "notes": ""
+        },
+        "multi_device_data_available": false
+      },
+      "expected": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": ""
+      }
+    }
+  ]
+}

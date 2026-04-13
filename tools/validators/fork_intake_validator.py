@@ -26,7 +26,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from qdp_paths import FORK_INTAKE_SCHEMA
+from tools.workflow.qdp_runtime.qdp_paths import FORK_INTAKE_SCHEMA
 
 
 DEFAULT_SCHEMA = FORK_INTAKE_SCHEMA
@@ -158,3 +158,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

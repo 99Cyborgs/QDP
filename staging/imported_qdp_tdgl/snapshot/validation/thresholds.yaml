@@ -1,0 +1,29 @@
+# Conservative phase-1 numerical gates for local deterministic validation.
+# These are bounded regression checks, not claims of asymptotic convergence
+# or broader scientific validity.
+campaign:
+  required_campaign_status: success
+  required_case_status: success
+  max_charge_residual_inf: 0.45
+  max_vortex_count: 0
+
+refinement:
+  delta_mean_abs2_max: 5.0e-4
+  delta_charge_residual_inf_max: 0.25
+  delta_delta_f_over_f0_max: 2.0e-4
+  delta_qinv_max: 5.0e-3
+
+reproducibility:
+  config_path: configs/validation/reference_rf_strip.yaml
+  summary_metric_tolerances:
+    final_charge_residual_inf: 0.0
+    final_mean_abs2: 0.0
+    final_time: 0.0
+    max_vortex_count: 0.0
+  final_observable_tolerances:
+    charge_residual_inf: 0.0
+    delta_f_over_f0: 0.0
+    mean_abs2: 0.0
+    qinv: 0.0
+    vortex_count: 0.0
+  require_payload_hash_match: true

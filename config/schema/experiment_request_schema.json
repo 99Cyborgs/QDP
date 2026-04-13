@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/experiment_request_schema.json",
+  "title": "QDP Experiment Request Pack",
+  "type": "object",
+  "properties": {
+    "request_id": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "branch_or_model_tag": {"type": "string"},
+    "lane": {"type": "string", "enum": ["recovery", "authoritative"]},
+    "scheduler_state": {"type": "string", "enum": ["DRAFTED", "QUEUED", "RUNNING", "COMPLETED", "FAILED", "INGESTED"]},
+    "exact_falsifier": {"type": "string"},
+    "priority_experiments": {"type": "array", "items": {"type": "string"}},
+    "requested_output_artifacts": {"type": "array", "items": {"type": "string"}},
+    "candidate_target_devices": {"type": "array", "items": {"type": "string"}},
+    "instrument_profile_ref": {"type": "string"},
+    "candidate_artifact_manifest_ref": {"type": "string"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "request_id",
+    "candidate_id",
+    "branch_or_model_tag",
+    "lane",
+    "scheduler_state",
+    "exact_falsifier",
+    "priority_experiments",
+    "requested_output_artifacts",
+    "candidate_target_devices",
+    "instrument_profile_ref",
+    "candidate_artifact_manifest_ref",
+    "notes"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_id": "QDP_V10_6_S19_REPORT",
+  "module_id": "S19",
+  "timestamp_utc": "2026-04-13T18:30:49.092837+00:00",
+  "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+  "result_summary": {
+    "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+    "actual_final_verdict": "inconclusive",
+    "gate_outcomes": {
+      "slow_sector_detected": "pass",
+      "projector_stability": "fail_or_borderline",
+      "finite_horizon_control": "fail",
+      "observable_closure": "fail_or_borderline",
+      "null_baseline_rejection": "not_applicable",
+      "symmetry_alias_rejection": "pass",
+      "artifact_alias_rejection": "pass"
+    },
+    "diagnostics_reported": [
+      "spectral_gap_delta",
+      "finite_horizon_gain_Gs",
+      "block_residual_rho_res",
+      "state_space_leakage",
+      "observable_space_leakage",
+      "theorem_bound_looseness"
+    ]
+  }
+}

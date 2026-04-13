@@ -1,0 +1,12 @@
+{
+  "instrument_profile_id": "QDPINST-C738B2EBFB4B8DA5",
+  "platform_class": "SURFACED_PLATFORM",
+  "device_ids": [],
+  "supported_measurements": [
+    "Vortex discriminant sweep: ZFC vs FC, field loops, cooldown field, matched width or thickness, delta fr over delta 1/Qi"
+  ],
+  "instrument_facing_requirement_satisfied": true,
+  "notes": [
+    "Generated from candidate surfaced experiment schedule."
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
   "module_id": "M07",
-  "timestamp_utc": "2026-03-15T20:19:14.442048+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.006462+00:00",
   "visible_source_only": true,
   "declared_family_class": "",
   "declared_likely_bath_class": "",
-  "evidence_text_sample": "m07-case-global m07_case_global                        not_required  not_required   sudden t1 collapses occur together with correlated events across devices during simultaneous monitoring. a quasiparticle burst remains plausible. ready passed passed passed passed ready not_evaluated defer",
+  "evidence_text_sample": "m07-case-global m07_case_global                        not_required  not_required pending_review  pending_review  pending_review  pending_review    sudden t1 collapses occur together with correlated events across devices during simultaneous monitoring. a quasiparticle burst remains plausible. ready passed passed passed passed ready not_evaluated defer",
   "rule_matches": [
     {
       "rule_index": 9,

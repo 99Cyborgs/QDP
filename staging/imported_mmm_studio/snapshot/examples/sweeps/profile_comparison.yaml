@@ -1,0 +1,41 @@
+schema_name: mmm_studio.sweep_spec
+schema_version: "1.0"
+name: profile-comparison
+description: Compare the built-in surrogate scoring profiles over the same candidate pool.
+version: "1.0.0"
+default_output_root: artifacts/runs/sweeps
+global_filters:
+  - field: screening_status
+    operator: in
+    value:
+      - prioritized
+      - screening
+      - sandbox
+shared_parameters:
+  default_profile: broadband
+  top_n: 8
+tranches:
+  - tranche_id: profile_comparison
+    objective: Compare broadband, resonance-targeted, and manufacturability-aware scoring on the shared registry.
+    execution_mode: sequential
+    shared_profile: broadband
+    comparison_strategy:
+      top_k: 5
+      robustness_top_k: 5
+      leaderboard_size: 10
+    slices:
+      - slice_id: broadband
+        profile_override: broadband
+        tags:
+          - profile
+          - broadband
+      - slice_id: resonance_targeted
+        profile_override: resonance_targeted
+        tags:
+          - profile
+          - resonance_targeted
+      - slice_id: manufacturability_aware
+        profile_override: manufacturability_aware
+        tags:
+          - profile
+          - manufacturability_aware

@@ -1,0 +1,32 @@
+{
+  "artifact_id": "QDP_V10_6_CAMPAIGN_PREPARE_REPORT",
+  "source_candidate_count": 3,
+  "prepared_candidate_count": 3,
+  "prepared_candidates": [
+    {
+      "candidate_id": "m06-case-1",
+      "source_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json",
+      "source_candidate_hash": "f2a74317af09baf35e9e7d4fe1bbe6095b7100d4facaea7238b1506e61791462",
+      "output_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json",
+      "output_candidate_hash": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b",
+      "report_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\reports\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_report.json"
+    },
+    {
+      "candidate_id": "m06-case-7",
+      "source_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m05\\confirmed_ready_candidate.json",
+      "source_candidate_hash": "19b86f9473457452f8395a8623e77914479529c188ee183e5dfd3edb5b19eabf",
+      "output_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_candidate.json",
+      "output_candidate_hash": "833b34c49be24dac333a86454b21f73ecd244d82b16e2871943181252aaf4528",
+      "report_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\reports\\simulations\\sim_smoke_20260317\\m12\\confirmed_ready_report.json"
+    },
+    {
+      "candidate_id": "m06-case-5",
+      "source_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m05\\scheduled_cross_device_candidate.json",
+      "source_candidate_hash": "77fab08b87ce6a3c936159373b28d0099f0c402a52d2d2c0c1d6acf886f873ae",
+      "output_candidate_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\outputs\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_candidate.json",
+      "output_candidate_hash": "891954d25c1f540a4f7e1dcebe3e257c63a2449ca2caf689cadc4cc297a4c32c",
+      "report_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-52\\test_queue_run_executes_campai0\\reports\\simulations\\sim_smoke_20260317\\m12\\scheduled_cross_device_report.json"
+    }
+  ],
+  "batch": "sim_smoke_20260317"
+}

@@ -1,0 +1,246 @@
+{
+  "artifact_id": "QDP_V10_6_GOVERNANCE_REGISTRY_M03",
+  "module_id": "M03",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "status": "WORKING_SURROGATE_NOT_AUTHORITATIVE",
+  "authoritative_limitations": [
+    "The retained v10.1 operative body file in this workspace is a regenerated local surrogate, not an independently recovered authoritative retained source.",
+    "The retained federated governance registry object in this workspace is a regenerated local surrogate, not an independently recovered authoritative retained object.",
+    "This registry is a working surrogate for blocker tracking and duplicate checks, not the final no-loss retained registry object."
+  ],
+  "reference_manifest_id": "QDP_V10_6_REFERENCE_MANIFEST_M03",
+  "reference_resolution_summary_current_environment": {
+    "resolved_count": 15,
+    "unresolved_count": 0,
+    "critical_unresolved_ref_ids": [],
+    "reference_resolution_status": "PASSED"
+  },
+  "canonical_references": [
+    {
+      "ref_id": "QDP_v10_6_BUILD_SPEC",
+      "relative_path": "specs/core/build_spec.md",
+      "sha256": "fd4720abb575cd4f7839653c455cb7d065f67309962ba03e3d695c483cec1da4",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_TEMPLATE_V10_6_M02",
+      "relative_path": "config/schema/candidate_template.json",
+      "sha256": "1a868485c55610780b627b93e8a4cfebd33dc4043a3c7c16f3a438d921e1d5aa",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_SCHEMA_V10_6_M02",
+      "relative_path": "config/schema/candidate_schema.json",
+      "sha256": "79970f7cf3cfc04a0427013b17e5a604ac22e209940bc0e38b42429b4c93f050",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_VALIDATE_CANDIDATE_M02",
+      "relative_path": "tools/validators/candidate_validator.py",
+      "sha256": "4567e8770ea149ff41b6c7b583b6baa3f91647d15330dc6e28452df54c7db65e",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_MASTER_SPEC",
+      "relative_path": "specs/core/master_spec.md",
+      "sha256": "a85a25423f978343453131178024265c55180bfc6d0dcca12c824c57c4e02cdb",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_VALIDATION_GATE",
+      "relative_path": "specs/core/validation_gate.md",
+      "sha256": "719c5fe7e991340fc35d8b6e1243c769b5e4c4fde62326c152933c65ca5a08b9",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_FORK_QUESTIONS",
+      "relative_path": "specs/intake/fork_questions.md",
+      "sha256": "02be27c4d8db7ec805d9bab8c0a79f7edb76dc3334d7a1c14dba73506bc50247",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_FALSIFIER_REGISTRY",
+      "relative_path": "specs/core/falsifier_registry.md",
+      "sha256": "646f0973ab027f6ec3f130fe1fe9b8a250e3e999c59535c59145d33dbb13c30a",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_BATH_GLOSSARY",
+      "relative_path": "specs/core/bath_glossary.md",
+      "sha256": "ec09bc936495ab227cb836ae089740ddb21ccfcd9d84a8d88687c9d5bc12da55",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_SIGNATURE_TO_BATH_CHART",
+      "relative_path": "specs/core/signature_to_bath_decision_chart.md",
+      "sha256": "a3de4e856c20116c8d32ab21f65b3c224c5123784a772c855ffaae4415eceffd",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_MODEL_SPEC_BASELINE",
+      "relative_path": "specs/core/model_spec.md",
+      "sha256": "55ffaf3e20b4a3118d5e870f47a29e772c47e2ad948b3be510dd9a3fce4e90f6",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_FORK_INTAKE_FORM",
+      "relative_path": "specs/intake/fork_intake_form_one_page.pdf",
+      "sha256": "3a86e3137169dba080875a7e6f5037f457609cf8996ee3bd043283e91cc96666",
+      "resolved": true
+    },
+    {
+      "ref_id": "QDP_DEEP_RESEARCH_REPORT",
+      "relative_path": "specs/research/deep_research_report.md",
+      "sha256": "7cb6e25604a5112ab89cb9563b1c66666498e7dd9e82a93c1428bd45aa6f3cc9",
+      "resolved": true
+    },
+    {
+      "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
+      "relative_path": "specs/subsystem/specs/subsystem/gksl_subsystem_case_matrix.json",
+      "sha256": "",
+      "resolved": false
+    },
+    {
+      "ref_id": "RETAINED_V10_1_OPERATIVE_BODY",
+      "relative_path": "runtime/retained/operative_body_v10_1.md",
+      "sha256": "7f96cf9936c2ff74dc422b5661a7d2635900c5a64ef09b1826e432ff5101c21f",
+      "resolved": true
+    },
+    {
+      "ref_id": "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT",
+      "relative_path": "runtime/missing/federated_governance_registry_object.json",
+      "sha256": "27b4cc848c17d44b1a711469d9dd89e3382808aff3d4d40f16ab387ff7b8caec",
+      "resolved": true
+    }
+  ],
+  "model_registry": [
+    {
+      "model_tag": "H0_BASELINE_LINDBLAD",
+      "objective": "Establish disciplined baseline reproduction prior to nonlinear modification.",
+      "governing_equation_class": "Standard GKSL master equation",
+      "state_variables": [
+        "Two level system density matrix."
+      ],
+      "parameter_vector": [
+        "T1",
+        "Tphi",
+        "Measurement noise level"
+      ],
+      "primary_observable": "T1 decay",
+      "secondary_observable": "Ramsey envelope",
+      "required_invariants": [
+        "Trace preservation",
+        "Complete positivity",
+        "Reduction to textbook limit"
+      ],
+      "reduction_limit": "When nonlinear term is zero, recover standard Lindblad dynamics.",
+      "expected_failure_modes": [
+        "Discretization artifact",
+        "Noise mis specification",
+        "Parameter overfit relative to observable count"
+      ],
+      "domain_of_validity": [
+        "Weak coupling regime",
+        "Markovian bath",
+        "No metastable configuration memory"
+      ],
+      "source_refs": [
+        "QDP_MODEL_SPEC_BASELINE"
+      ]
+    }
+  ],
+  "falsifier_registry_snapshot": [
+    {
+      "model_tag": "H0_BASELINE_LINDBLAD",
+      "claimed_effect": "Exponential T1 decay in Markovian regime.",
+      "observable": "Time domain T1 decay.",
+      "parameter_regime": "Weak coupling.",
+      "failure_condition": "Persistent non exponential decay after convergence and noise control.",
+      "status": "Open",
+      "notes": "Consult specs/core/signature_to_bath_decision_chart.md before modifying Hamiltonian.",
+      "source_refs": [
+        "QDP_FALSIFIER_REGISTRY",
+        "QDP_SIGNATURE_TO_BATH_CHART"
+      ]
+    }
+  ],
+  "active_branch_registry": [],
+  "duplicate_detection_rules": {
+    "exact_branch_or_model_tag_match": "set registry_duplicate_status=DUPLICATE and duplicate_reference=<matched_tag>",
+    "exact_symbolic_hamiltonian_match": "set registry_duplicate_status=DUPLICATE_SYMBOLIC_H and duplicate_reference=<matched_branch>",
+    "empty_candidate_fields": "set registry_duplicate_status=UNASSESSED"
+  },
+  "failure_mode_library": [
+    {
+      "code": "REFERENCE_UNRESOLVED",
+      "description": "Critical reference file required by the build/runtime rule is absent from the current environment."
+    },
+    {
+      "code": "SCHEMA_VALIDATION_FAILURE",
+      "description": "Post-run schema validation failed."
+    },
+    {
+      "code": "DUPLICATE_BRANCH_TAG",
+      "description": "Candidate branch tag exactly matches an existing registered branch or model tag."
+    },
+    {
+      "code": "DUPLICATE_SYMBOLIC_H",
+      "description": "Candidate symbolic Hamiltonian exactly matches an existing branch fingerprint."
+    },
+    {
+      "code": "MISSING_EXACT_FALSIFIER",
+      "description": "Fork intake failed to supply an exact falsifier."
+    },
+    {
+      "code": "MISSING_PRIMARY_OBSERVABLE",
+      "description": "Primary observable required by scope lock is absent."
+    },
+    {
+      "code": "MISSING_SECONDARY_OBSERVABLE",
+      "description": "Secondary observable required by scope lock is absent."
+    },
+    {
+      "code": "BATH_CLASSIFICATION_INCONSISTENT",
+      "description": "Declared bath class is inconsistent with glossary/triage output."
+    }
+  ],
+  "registry_aging_policy": {
+    "review_interval_days": 30,
+    "stale_branch_without_activity_days": 60,
+    "notes": "Placeholder aging policy until retained v10.1 registry-aging law is surfaced."
+  },
+  "human_override_protocol": {
+    "allowed": true,
+    "constraints": [
+      "Human override cannot convert REFERENCE_RESOLUTION_FAILURE into PROCEED.",
+      "Human override may only annotate or defer, not erase unresolved critical references.",
+      "All overrides require notes and a timestamp."
+    ]
+  },
+  "next_module_after_M03": "M04",
+  "reference_resolution_summary_by_mode": {
+    "ordinary": {
+      "report_id": "m03-reference-report-20260404T033430Z",
+      "resolved_count": 15,
+      "unresolved_count": 0,
+      "critical_unresolved_count": 0,
+      "reference_resolution_status": "PASSED"
+    },
+    "subsystem": {
+      "report_id": "m03-reference-report-20260404T033430Z",
+      "resolved_count": 15,
+      "unresolved_count": 1,
+      "critical_unresolved_count": 0,
+      "reference_resolution_status": "PASSED"
+    }
+  },
+  "last_reference_resolution_report_ids": {
+    "ordinary": "m03-reference-report-ordinary-20260313T225958521476Z",
+    "subsystem": "m03-reference-report-subsystem-20260313T225958622232Z"
+  },
+  "current_resolution_reports": {
+    "ordinary": "m03-reference-report-20260404T033430Z",
+    "subsystem": "m03-reference-report-20260404T033430Z"
+  }
+}

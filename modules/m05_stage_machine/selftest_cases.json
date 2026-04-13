@@ -144,6 +144,14 @@
           "convergence_plan_declared": true
         },
         "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 91.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
         "numerical_stability": {
           "stable": true,
           "failed_checks": []
@@ -158,7 +166,18 @@
         "instrument_capabilities": {
           "instrument_facing_requirement_satisfied": true
         },
-        "multi_device_data_available": false
+        "multi_device_data_available": false,
+        "new_free_parameters": [
+          "lambda"
+        ],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "matched-control experiment"
+        }
+      },
+      "stage_inputs": {
+        "stage11": {
+          "equivalent_within_resolution": false
+        }
       },
       "expected": {
         "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
@@ -185,6 +204,14 @@
           "status": "EXECUTED_SUCCESSFULLY",
           "reduction_limit_verified": true
         },
+        "calibration_validity_score": 88.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
         "hamiltonian_test": {
           "convergence_plan_declared": true
         },
@@ -195,6 +222,11 @@
             "CONDITION_NUMBER_DIVERGENCE"
           ],
           "stability_plan_defined": true
+        }
+      },
+      "stage_inputs": {
+        "stage11": {
+          "equivalent_within_resolution": false
         }
       },
       "expected": {
@@ -208,6 +240,218 @@
           "L2_convergence_plan_defined": true,
           "L3_numerical_stability_passed": false,
           "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK",
+      "description": "Calibration and dataset-governance failures now terminate at Stage 12 before late-stage promotion logic.",
+      "input_candidate": {
+        "candidate_id": "m05-case-governance-guardrail",
+        "branch_or_model_tag": "M05_CASE_GOVERNANCE_GUARDRAIL",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 52.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": false,
+          "protocol_metadata_recorded": false,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        }
+      },
+      "stage_inputs": {
+        "stage11": {
+          "equivalent_within_resolution": false
+        }
+      },
+      "expected": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "terminated_at": "STAGE_12",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED",
+      "description": "A fully governed, cross-device-confirmed branch can clear to PROCEED.",
+      "input_candidate": {
+        "candidate_id": "m05-case-confirmed-proceed",
+        "branch_or_model_tag": "M05_CASE_CONFIRMED_PROCEED",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 94.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        },
+        "numerical_stability": {
+          "stable": true,
+          "failed_checks": []
+        },
+        "exact_falsifier": "Confirmed cross-device discriminants must preserve the ordering under matched fabrication.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Cross-device matched-fabrication sweep"
+          ],
+          "executable_falsifier_package_emitted": true
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": [
+            "time-domain",
+            "power",
+            "cross-device"
+          ]
+        },
+        "new_free_parameters": [
+          "lambda"
+        ],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "independent metrology"
+        }
+      },
+      "stage_inputs": {
+        "stage11": {
+          "equivalent_within_resolution": false
+        },
+        "stage16": {
+          "signal_consistency": "CONFIRMED",
+          "devices_tested": ["DEV_A", "DEV_B"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "PROCEED",
+        "cross_device_status": "CONFIRMED",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M05_DEVICE_SPECIFIC_SANDBOX",
+      "description": "Device-specific evidence stays sandboxed even when the ladder is otherwise complete.",
+      "input_candidate": {
+        "candidate_id": "m05-case-device-specific",
+        "branch_or_model_tag": "M05_CASE_DEVICE_SPECIFIC",
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "reduction_limit_verified": true
+        },
+        "hamiltonian_test": {
+          "convergence_plan_declared": true
+        },
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 90.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "numerical_stability": {
+          "stable": true,
+          "failed_checks": []
+        },
+        "exact_falsifier": "Device-specific evidence alone should not clear promotion.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Single-device follow-up"
+          ],
+          "executable_falsifier_package_emitted": true
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "DEVICE_SPECIFIC",
+          "devices_tested": [
+            "DEV_A"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": [
+            "time-domain",
+            "power",
+            "device"
+          ]
+        },
+        "new_free_parameters": [
+          "lambda"
+        ],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "independent metrology"
+        }
+      },
+      "stage_inputs": {
+        "stage11": {
+          "equivalent_within_resolution": false
+        },
+        "stage16": {
+          "signal_consistency": "DEVICE_SPECIFIC",
+          "devices_tested": ["DEV_A"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "DEVICE_SPECIFIC",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
         }
       }
     }

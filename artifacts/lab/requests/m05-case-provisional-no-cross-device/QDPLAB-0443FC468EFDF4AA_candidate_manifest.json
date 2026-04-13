@@ -1,0 +1,24 @@
+{
+  "manifest_id": "QDPMAN-03865C905708B37F",
+  "candidate_id": "m05-case-provisional-no-cross-device",
+  "candidate_path": "artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json",
+  "candidate_sha256": "377c908c9c7eb72af60dba735fd776798691dd89dfa3ddcb4496f5691a92099e",
+  "linked_artifacts": [
+    {
+      "path": "specs\\core\\bath_glossary.md",
+      "sha256": "5df3b4b4a12df7bbf460606ea573adab562c3b91b372da1dd95ff261fa99a680"
+    },
+    {
+      "path": "specs\\core\\signature_to_bath_decision_chart.md",
+      "sha256": "cfa12a2292755b236e09f2fa3a67d325f3131bcfbd41a1e2286715e02c4622bd"
+    },
+    {
+      "path": "specs\\research\\deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6"
+    },
+    {
+      "path": "specs\\intake\\fork_intake_form_one_page.pdf",
+      "sha256": "3a86e3137169dba080875a7e6f5037f457609cf8996ee3bd043283e91cc96666"
+    }
+  ]
+}

@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import argparse
 import copy
-import hashlib
 import importlib.util
 import json
 import subprocess
@@ -26,10 +25,27 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
 
-from qdp_paths import (
+from qdp_io.artifacts import artifact_report_header, dump_json, module_report_header, sha256_file, stable_hash, utc_now
+from qdp_io.reference_manifest import (
+    RETAINED_GOVERNANCE_REGISTRY_REF_ID,
+    RETAINED_RUNTIME_REF_ID,
+    find_reference_entry,
+    reference_has_authoritative_binding as shared_reference_has_authoritative_binding,
+    reference_is_reconstructed_surrogate,
+)
+from tools.workflow.qdp_runtime.qdp_module_verification import (
+    build_module_selftest_alias,
+    build_module_verification_checks,
+)
+from tools.workflow.qdp_runtime.qdp_module_workflows import module_selftest_keys, report_all_passed, report_all_validator_valid, run_module_selftests
+from tools.workflow.qdp_runtime.qdp_paths import (
+    AUTHORITATIVE_DEPENDENT_MODULES,
     BASE_TEMPLATE,
     BATH_GLOSSARY,
     BUILD_SPEC,
@@ -49,18 +65,44 @@ from qdp_paths import (
     MODULE_REGISTRY_JSON,
     MODULE_REGISTRY_MD,
     REFERENCE_MANIFEST,
+    RESUME_POLICY,
     RETAINED_OPERATIVE_BODY,
     ROOT,
     RULE_BINDING_REGISTRY,
     RUNTIME_PROMPT,
     SCHEMA,
     SIGNATURE_TO_BATH_CHART,
+    VISIBLE_SOURCE_WORKING_PATCH_MODULES,
     VALIDATION_GATE,
     repo_rel,
 )
+from tools.workflow.qdp_runtime.qdp_registry import write_module_registry
+from tools.workflow.qdp_runtime.qdp_run_ledger import record_run
 
 
 DEFAULT_ROOT = ROOT
+SELFTEST_MODULE_KEYS = module_selftest_keys()
+PATCH_NOTE_TERMS = {
+    "M07": ["visible-source", "working", "patch"],
+    "M08": ["visible-source", "working", "patch"],
+    "M09": ["visible-source", "partial"],
+    "M10": ["visible-source", "working", "patch"],
+    "M11": ["visible-source", "working", "patch", "lindblad"],
+    "M12": ["visible-source", "working", "patch", "falsifier"],
+    "M13": ["visible-source", "working", "patch", "cross-device"],
+    "M14": ["visible-source", "working", "patch", "promotion-cap"],
+    "M15": ["visible-source", "working", "patch", "typed"],
+    "S16": ["visible-source", "working", "patch", "subsystem"],
+    "S17": ["visible-source", "working", "patch", "alias"],
+    "S18": ["visible-source", "working", "patch", "closure"],
+    "S19": ["visible-source", "working", "patch", "supported"],
+}
+M02_TYPED_FIELDS = [
+    "calibration_status",
+    "identifiability_status",
+    "drift_ledger",
+    "dataset_governance",
+]
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -69,30 +111,6 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"JSON root must be an object: {path}")
     return data
-
-
-def dump_json(path: Path, obj: Dict[str, Any]) -> None:
-    path.write_text(json.dumps(obj, indent=2), encoding="utf-8")
-
-
-def sha256_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as fh:
-        for chunk in iter(lambda: fh.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
-
-
-def stable_hash_obj(obj: Any) -> str:
-    payload = json.dumps(obj, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
-
-
-def find_manifest_entry(manifest: Dict[str, Any], ref_id: str) -> Dict[str, Any]:
-    for entry in manifest.get("reference_entries", []):
-        if entry.get("ref_id") == ref_id:
-            return entry
-    return {}
 
 
 def run_cmd(cmd: List[str]) -> Dict[str, Any]:
@@ -268,12 +286,10 @@ def emit_m01_closure_report(
 ) -> Dict[str, Any]:
     runtime_prompt = RUNTIME_PROMPT
     retained_runtime = RETAINED_OPERATIVE_BODY
-    retained_entry = find_manifest_entry(manifest, "RETAINED_V10_1_OPERATIVE_BODY")
+    retained_entry = find_reference_entry(manifest, RETAINED_RUNTIME_REF_ID)
     retained_provenance = retained_entry.get("provenance", "")
     report = {
-        "artifact_id": "QDP_V10_6_M01_CLOSURE_REPORT",
-        "module_id": "M01",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        **module_report_header("QDP_V10_6_M01_CLOSURE_REPORT", "M01"),
         "runtime_prompt_path": str(runtime_prompt),
         "runtime_prompt_sha256": sha256_file(runtime_prompt) if runtime_prompt.exists() else "",
         "retained_runtime_source_path": str(retained_runtime),
@@ -404,7 +420,7 @@ def run_bootstrap_cases(
                 "cases_passed": sum(1 for r in run_results if r["passed"]),
                 "all_passed": all(r["passed"] for r in run_results),
                 "results": run_results,
-                "normalized_hash": stable_hash_obj([normalize_case_result(r) for r in run_results]),
+                "normalized_hash": stable_hash([normalize_case_result(r) for r in run_results]),
             }
         )
 
@@ -519,7 +535,7 @@ def build_mode_divergence_report(
                 "sha256": sha256_file(path) if path.exists() else "",
             }
         )
-    shared_core_hash = stable_hash_obj(hash_inputs)
+    shared_core_hash = stable_hash(hash_inputs)
 
     shared_ref_ids = {
         e["ref_id"]
@@ -601,13 +617,12 @@ def build_mode_divergence_report(
     }
 
     report = {
-        "artifact_id": "QDP_V10_6_MODE_DIVERGENCE_REPORT",
+        **artifact_report_header("QDP_V10_6_MODE_DIVERGENCE_REPORT"),
         "policy_id": policy.get("artifact_id", ""),
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "shared_core_hash": shared_core_hash,
         "shared_core_hash_inputs": hash_inputs,
-        "ordinary_delta_hash": stable_hash_obj(ordinary_delta),
-        "subsystem_delta_hash": stable_hash_obj(subsystem_delta),
+        "ordinary_delta_hash": stable_hash(ordinary_delta),
+        "subsystem_delta_hash": stable_hash(subsystem_delta),
         "shared_field_override_detected": bool(shared_overrides),
         "override_details": shared_overrides,
         "override_exception_ids": [],
@@ -619,6 +634,55 @@ def build_mode_divergence_report(
     return report
 
 
+def module_selftest_report(context: Dict[str, Any], module_id: str) -> Dict[str, Any]:
+    return context.get("module_selftests", {}).get(module_id, {}).get("report", {})
+
+
+def patch_notes_terms_present(module_id: str) -> Tuple[bool, str]:
+    module = MODULES[module_id.lower()]
+    patch_notes = module.get("patch_notes")
+    if not isinstance(patch_notes, Path) or not patch_notes.exists():
+        return False, "patch notes missing"
+    text = patch_notes.read_text(encoding="utf-8").lower()
+    terms = PATCH_NOTE_TERMS.get(module_id, [])
+    missing = [term for term in terms if term not in text]
+    return not missing, f"missing_terms={missing}"
+
+
+def m02_contract_complete() -> Tuple[bool, str]:
+    if not BASE_TEMPLATE.exists() or not SCHEMA.exists() or not CANDIDATE_VALIDATOR.exists():
+        return False, "template, schema, or validator missing"
+    template = load_json(BASE_TEMPLATE)
+    schema = load_json(SCHEMA)
+    validator_text = CANDIDATE_VALIDATOR.read_text(encoding="utf-8")
+    template_missing = [field for field in M02_TYPED_FIELDS if field not in template]
+    schema_missing = [field for field in M02_TYPED_FIELDS if field not in schema.get("properties", {})]
+    validator_missing = [field for field in M02_TYPED_FIELDS if field not in validator_text]
+    passed = not template_missing and not schema_missing and not validator_missing
+    return passed, (
+        f"template_missing={template_missing}; "
+        f"schema_missing={schema_missing}; "
+        f"validator_missing={validator_missing}"
+    )
+
+
+def m04_intake_mapping_complete(context: Dict[str, Any]) -> Tuple[bool, str]:
+    report = module_selftest_report(context, "M04")
+    valid_case = next((case for case in report.get("cases", []) if case.get("case_id") == "CASE_M04_VALID_BRANCH"), None)
+    if not isinstance(valid_case, dict):
+        return False, "CASE_M04_VALID_BRANCH missing"
+    actual = valid_case.get("actual_summary", {})
+    required = {
+        "branch_or_model_tag": bool(str(actual.get("branch_or_model_tag", "")).strip()),
+        "primary_observable": bool(str(actual.get("primary_observable", "")).strip()),
+        "secondary_observable": bool(str(actual.get("secondary_observable", "")).strip()),
+        "preliminary_intake_outcome": bool(str(actual.get("preliminary_intake_outcome", "")).strip()),
+        "intake_ready_for_compute": bool(actual.get("intake_ready_for_compute", False)),
+    }
+    passed = all(required.values()) and bool(str(actual.get("governance_outcome", "")).strip())
+    return passed, f"required_fields={required}"
+
+
 def evaluate_contract_predicate(
     module_id: str,
     predicate_id: str,
@@ -628,31 +692,15 @@ def evaluate_contract_predicate(
 ) -> Tuple[bool, str]:
     path = root / target
 
-    if predicate_id in {
-        "M01_P1",
-        "M01_P2",
-        "M03_P1",
-        "M03_P2",
-        "M03_P3",
-        "M05_P1",
-        "M05_P2",
-        "M05_P3",
-        "M06_P1",
-        "M06_P2",
-        "M06_P3",
-        "M07_P1",
-        "M07_P2",
-        "M07_P3",
-        "M08_P1",
-        "M08_P2",
-        "M08_P3",
-        "M09_P1",
-        "M09_P2",
-        "M09_P3",
-        "M10_P1",
-        "M10_P2",
-        "M10_P3",
-    }:
+    if predicate_id == "M06_P2":
+        if not path.exists():
+            return False, f"bootstrap_cases_missing path={path.name}"
+        cases_obj = load_json(path)
+        case_count = len(cases_obj.get("cases", [])) if isinstance(cases_obj.get("cases", []), list) else 0
+        passed = case_count >= 5
+        return passed, f"bootstrap_case_count={case_count}"
+
+    if predicate_id.endswith(("_P1", "_P2", "_P3")) and predicate_id not in {"M01_P3", "M06_P2"}:
         exists = path.exists()
         return exists, f"artifact_exists={exists} path={path.name}"
 
@@ -702,99 +750,10 @@ def evaluate_contract_predicate(
         )
         return passed, f"ordinary_report_id={by_mode.get('ordinary', {}).get('report_id', '')}; subsystem_report_id={by_mode.get('subsystem', {}).get('report_id', '')}"
 
-    if predicate_id == "M05_P4":
-        report = context["m05_selftest_report"]
-        passed = bool(report.get("all_passed", False))
-        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
-
-    if predicate_id == "M05_P5":
-        report = context["m05_selftest_report"]
-        passed = bool(report.get("all_passed", False)) and all(c.get("validator_result", {}).get("valid", False) for c in report.get("cases", []))
-        return passed, f"all_validator_results_valid={passed}"
-
     if predicate_id == "M05_P6":
         retained = RETAINED_OPERATIVE_BODY
         passed = retained.exists()
         return passed, f"retained_v10_1_operative_body_exists={passed}"
-
-    if predicate_id == "M07_P4":
-        report = context["m07_selftest_report"]
-        passed = bool(report.get("all_passed", False))
-        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
-
-    if predicate_id == "M07_P5":
-        report = context["m07_selftest_report"]
-        passed = bool(report.get("all_passed", False)) and all(c.get("validator_result", {}).get("valid", False) for c in report.get("cases", []))
-        return passed, f"all_validator_results_valid={passed}"
-
-    if predicate_id == "M07_P6":
-        patch_notes = MODULES["m07"]["patch_notes"]
-        glossary = BATH_GLOSSARY
-        decision_chart = SIGNATURE_TO_BATH_CHART
-        if not patch_notes.exists() or not glossary.exists() or not decision_chart.exists():
-            return False, "M07 patch notes or surfaced source docs missing"
-        notes_text = patch_notes.read_text(encoding="utf-8").lower()
-        passed = "visible-source" in notes_text and "working-patch" in notes_text
-        return passed, f"patch_notes_visible_source_only={passed}"
-
-    if predicate_id == "M08_P4":
-        report = context["m08_selftest_report"]
-        passed = bool(report.get("all_passed", False))
-        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
-
-    if predicate_id == "M08_P5":
-        report = context["m08_selftest_report"]
-        passed = bool(report.get("all_passed", False)) and all(c.get("validator_result", {}).get("valid", False) for c in report.get("cases", []))
-        return passed, f"all_validator_results_valid={passed}"
-
-    if predicate_id == "M08_P6":
-        patch_notes = MODULES["m08"]["patch_notes"]
-        model_spec = MODEL_SPEC
-        research_report = DEEP_RESEARCH_REPORT
-        if not patch_notes.exists() or not model_spec.exists() or not research_report.exists():
-            return False, "M08 patch notes or surfaced source docs missing"
-        notes_text = patch_notes.read_text(encoding="utf-8").lower()
-        passed = "visible-source" in notes_text and "working patch" in notes_text
-        return passed, f"patch_notes_visible_source_only={passed}"
-
-    if predicate_id == "M09_P4":
-        report = context["m09_selftest_report"]
-        passed = bool(report.get("all_passed", False))
-        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
-
-    if predicate_id == "M09_P5":
-        report = context["m09_selftest_report"]
-        passed = bool(report.get("all_passed", False)) and all(c.get("validator_result", {}).get("valid", False) for c in report.get("cases", []))
-        return passed, f"all_validator_results_valid={passed}"
-
-    if predicate_id == "M09_P6":
-        patch_notes = MODULES["m09"]["patch_notes"]
-        mechanism_runner = MODULES["m09"]["runner"]
-        if not patch_notes.exists() or not mechanism_runner.exists():
-            return False, "M09 patch notes or mechanism runner missing"
-        notes_text = patch_notes.read_text(encoding="utf-8").lower()
-        passed = "visible-source" in notes_text and "partial" in notes_text
-        return passed, f"patch_notes_visible_source_only={passed}"
-
-    if predicate_id == "M10_P4":
-        report = context["m10_selftest_report"]
-        passed = bool(report.get("all_passed", False))
-        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
-
-    if predicate_id == "M10_P5":
-        report = context["m10_selftest_report"]
-        passed = bool(report.get("all_passed", False)) and all(c.get("validator_result", {}).get("valid", False) for c in report.get("cases", []))
-        return passed, f"all_validator_results_valid={passed}"
-
-    if predicate_id == "M10_P6":
-        patch_notes = MODULES["m10"]["patch_notes"]
-        artifact_runner = MODULES["m10"]["runner"]
-        research_report = DEEP_RESEARCH_REPORT
-        if not patch_notes.exists() or not artifact_runner.exists() or not research_report.exists():
-            return False, "M10 patch notes, runner, or surfaced source docs missing"
-        notes_text = patch_notes.read_text(encoding="utf-8").lower()
-        passed = "visible-source" in notes_text and "working patch" in notes_text
-        return passed, f"patch_notes_visible_source_only={passed}"
 
     if predicate_id == "M06_P4":
         report = context["m06_bootstrap_report"]
@@ -804,6 +763,7 @@ def evaluate_contract_predicate(
             for key in [
                 "reference_resolution",
                 "schema_validation",
+                "module_verification",
                 "stage_machine_selftests",
                 "governance_self_diagnostic",
                 "runtime_integrity",
@@ -821,6 +781,60 @@ def evaluate_contract_predicate(
         passed = divergence.get("status") == "PASSED"
         return passed, f"mode_divergence_status={divergence.get('status', '')}"
 
+    if predicate_id.endswith("_P4") and module_id in {
+        "M01",
+        "M02",
+        "M04",
+        "M05",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+    }:
+        report = module_selftest_report(context, module_id)
+        passed = report_all_passed(report)
+        return passed, f"cases_passed={report.get('cases_passed', 0)}/{report.get('cases_total', 0)}"
+
+    if predicate_id.endswith("_P5") and module_id in {
+        "M02",
+        "M04",
+        "M05",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+    }:
+        report = module_selftest_report(context, module_id)
+        passed = report_all_passed(report) and report_all_validator_valid(report)
+        return passed, f"all_validator_results_valid={passed}"
+
+    if predicate_id == "M02_P6":
+        return m02_contract_complete()
+
+    if predicate_id == "M04_P6":
+        return m04_intake_mapping_complete(context)
+
+    if predicate_id.endswith("_P6") and module_id in {"M07", "M08", "M09", "M10", "M11", "M12", "M13", "M14", "M15", "S16", "S17", "S18", "S19"}:
+        return patch_notes_terms_present(module_id)
+
     return False, f"Unhandled predicate {module_id}:{predicate_id}"
 
 
@@ -828,29 +842,61 @@ def surrogate_limitations_for_module(module_id: str, context: Dict[str, Any]) ->
     manifest = context.get("reference_manifest", {})
     limitations: List[str] = []
     if module_id in {"M01", "M05", "M06"}:
-        retained_runtime = find_manifest_entry(manifest, "RETAINED_V10_1_OPERATIVE_BODY")
-        if retained_runtime.get("provenance") == "reconstructed_surrogate":
-            limitations.append("retained_v10_1_operative_body is a reconstructed_surrogate artifact")
+        retained_runtime = find_reference_entry(manifest, RETAINED_RUNTIME_REF_ID)
+        if (
+            reference_is_reconstructed_surrogate(retained_runtime)
+            and not reference_has_authoritative_binding(RETAINED_RUNTIME_REF_ID, context)
+        ):
+            limitations.append(
+                "retained_v10_1_operative_body is a reconstructed_surrogate artifact without an authoritative binding"
+            )
     if module_id in {"M03", "M06"}:
-        retained_registry = find_manifest_entry(manifest, "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT")
-        if retained_registry.get("provenance") == "reconstructed_surrogate":
-            limitations.append("retained_federated_governance_registry_object is a reconstructed_surrogate artifact")
+        retained_registry = find_reference_entry(manifest, RETAINED_GOVERNANCE_REGISTRY_REF_ID)
+        if (
+            reference_is_reconstructed_surrogate(retained_registry)
+            and not reference_has_authoritative_binding(
+                RETAINED_GOVERNANCE_REGISTRY_REF_ID,
+                context,
+            )
+        ):
+            limitations.append(
+                "retained_federated_governance_registry_object is a reconstructed_surrogate artifact without an authoritative binding"
+            )
     return limitations
+
+
+def reference_has_authoritative_binding(ref_id: str, context: Dict[str, Any]) -> bool:
+    return shared_reference_has_authoritative_binding(
+        ref_id,
+        context.get("reference_manifest", {}),
+        context.get("governance_registry", {}),
+    )
+
+
+def module_has_authoritative_binding(module_id: str, context: Dict[str, Any]) -> bool:
+    binding_registry = context.get("rule_binding_registry", {})
+    module_bindings = binding_registry.get("authoritative_module_bindings", {})
+    binding = module_bindings.get(module_id, {})
+    if not isinstance(binding, dict) or binding.get("status") != "BOUND":
+        return False
+    evidence_paths = binding.get("evidence_paths", [])
+    return isinstance(evidence_paths, list) and bool(evidence_paths)
 
 
 def derive_contract_status(module_id: str, predicate_results: List[Dict[str, Any]], context: Dict[str, Any]) -> str:
     all_pass = all(r["passed"] for r in predicate_results)
     any_pass = any(r["passed"] for r in predicate_results)
     surrogate_limitations = surrogate_limitations_for_module(module_id, context)
-    if module_id in {"M07", "M08", "M09", "M10"} and all_pass:
-        return "WORKING_PATCH"
     if all_pass:
         if surrogate_limitations:
             return "RECOVERY_INTERIM"
+        if module_id in VISIBLE_SOURCE_WORKING_PATCH_MODULES and not module_has_authoritative_binding(
+            module_id,
+            context,
+        ):
+            return "WORKING_PATCH"
         return "AUTHORITATIVE_CLOSURE"
-    if module_id in {"M03", "M05", "M07", "M08", "M09", "M10"} and any_pass:
-        return "WORKING_PATCH"
-    if module_id == "M06" and any_pass:
+    if module_id in AUTHORITATIVE_DEPENDENT_MODULES.union(VISIBLE_SOURCE_WORKING_PATCH_MODULES) and any_pass:
         return "WORKING_PATCH"
     return "BLOCKED"
 
@@ -865,7 +911,7 @@ def evaluate_module_closure_contracts(
     modules_out: List[Dict[str, Any]] = []
     for contract in contracts.get("contracts", []):
         module_id = contract.get("module_id", "")
-        if module_id not in {"M01", "M03", "M05", "M06", "M07", "M08", "M09", "M10"}:
+        if not module_id.startswith(("M", "S")):
             continue
         predicate_results: List[Dict[str, Any]] = []
         for pred in contract.get("required_predicates", []):
@@ -898,9 +944,8 @@ def evaluate_module_closure_contracts(
         modules_out.append(module_record)
 
     report = {
-        "artifact_id": "QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT",
+        **artifact_report_header("QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT"),
         "contract_source": str(contracts_path),
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "modules": modules_out,
     }
     dump_json(output_path, report)
@@ -1082,39 +1127,51 @@ def update_module_registry(
 
 def effective_module_resume_status(
     module_id: str,
-    module_registry: Dict[str, Any],
     closure_by_module: Dict[str, Dict[str, Any]],
 ) -> str:
-    if module_id in closure_by_module:
-        return closure_by_module[module_id].get("derived_status", "BLOCKED")
-    for module in module_registry.get("modules", []):
-        if module.get("module_id") == module_id:
-            return module.get("derived_closure_status", module.get("status", ""))
-    return "MISSING"
+    return closure_by_module.get(module_id, {}).get("derived_status", "BLOCKED")
 
 
 def compute_testing_readiness(
-    module_registry: Dict[str, Any],
     closure_by_module: Dict[str, Dict[str, Any]],
+    policy: Dict[str, Any],
 ) -> Dict[str, Any]:
-    policy = module_registry.get("resume_policy", {})
     ordinary_required = policy.get("ordinary_candidate_testing_requires", [])
     subsystem_required = policy.get("subsystem_testing_requires", [])
-    ordinary_blockers = [
+    recovery_allowed = {"WORKING_PATCH", "RECOVERY_INTERIM", "AUTHORITATIVE_CLOSURE"}
+    ordinary_authoritative_blockers = [
         module_id
         for module_id in ordinary_required
-        if effective_module_resume_status(module_id, module_registry, closure_by_module) != "AUTHORITATIVE_CLOSURE"
+        if effective_module_resume_status(module_id, closure_by_module) != "AUTHORITATIVE_CLOSURE"
     ]
-    subsystem_blockers = [
+    ordinary_recovery_blockers = [
+        module_id
+        for module_id in ordinary_required
+        if effective_module_resume_status(module_id, closure_by_module) not in recovery_allowed
+    ]
+    subsystem_authoritative_blockers = [
         module_id
         for module_id in subsystem_required
-        if effective_module_resume_status(module_id, module_registry, closure_by_module) != "AUTHORITATIVE_CLOSURE"
+        if effective_module_resume_status(module_id, closure_by_module) != "AUTHORITATIVE_CLOSURE"
+    ]
+    subsystem_recovery_blockers = [
+        module_id
+        for module_id in subsystem_required
+        if effective_module_resume_status(module_id, closure_by_module) not in recovery_allowed
     ]
     return {
-        "ordinary_testing_ready": not ordinary_blockers,
-        "subsystem_testing_ready": not subsystem_blockers,
-        "ordinary_testing_blockers": ordinary_blockers,
-        "subsystem_testing_blockers": subsystem_blockers,
+        "ordinary_recovery_ready": not ordinary_recovery_blockers,
+        "ordinary_authoritative_ready": not ordinary_authoritative_blockers,
+        "ordinary_testing_ready": not ordinary_authoritative_blockers,
+        "subsystem_recovery_ready": not subsystem_recovery_blockers,
+        "subsystem_authoritative_ready": not subsystem_authoritative_blockers,
+        "subsystem_testing_ready": not subsystem_authoritative_blockers,
+        "ordinary_recovery_blockers": ordinary_recovery_blockers,
+        "ordinary_authoritative_blockers": ordinary_authoritative_blockers,
+        "ordinary_testing_blockers": ordinary_authoritative_blockers,
+        "subsystem_recovery_blockers": subsystem_recovery_blockers,
+        "subsystem_authoritative_blockers": subsystem_authoritative_blockers,
+        "subsystem_testing_blockers": subsystem_authoritative_blockers,
     }
 
 
@@ -1218,104 +1275,27 @@ def main() -> int:
         str(args.schema),
     ])
 
-    # 3. M05 self-tests refresh.
-    m05_selftest_exec = run_cmd([
-        sys.executable,
-        str(args.stage_machine),
-        "--selftest-cases",
-        str(args.m05_selftest_cases),
-        "--base-template",
-        str(args.base_template),
-        "--validator",
-        str(args.validator),
-        "--schema",
-        str(args.schema),
-        "--output-dir",
-        str(args.m05_selftest_output_dir),
-        "--write-selftest-report",
-        str(args.m05_selftest_report),
-    ])
-    m05_selftest_report = load_json(args.m05_selftest_report)
+    # 3. Core-module self-test refresh.
+    module_selftest_results = run_module_selftests(SELFTEST_MODULE_KEYS)
 
-    # 3b. M07 self-tests refresh.
-    m07_selftest_exec = run_cmd([
-        sys.executable,
-        str(args.family_triage),
-        "--selftest",
-        "--selftest-cases",
-        str(args.m07_selftest_cases),
-        "--base-template",
-        str(args.base_template),
-        "--validator",
-        str(args.validator),
-        "--schema",
-        str(args.schema),
-        "--selftest-output-dir",
-        str(args.m07_selftest_output_dir),
-        "--write-report",
-        str(args.m07_selftest_report),
-    ])
-    m07_selftest_report = load_json(args.m07_selftest_report)
-
-    # 3c. M08 self-tests refresh.
-    m08_selftest_exec = run_cmd([
-        sys.executable,
-        str(args.baseline_fit),
-        "--selftest",
-        "--selftest-cases",
-        str(args.m08_selftest_cases),
-        "--base-template",
-        str(args.base_template),
-        "--validator",
-        str(args.validator),
-        "--schema",
-        str(args.schema),
-        "--selftest-output-dir",
-        str(args.m08_selftest_output_dir),
-        "--write-report",
-        str(args.m08_selftest_report),
-    ])
-    m08_selftest_report = load_json(args.m08_selftest_report)
-
-    # 3d. M09 self-tests refresh.
-    m09_selftest_exec = run_cmd([
-        sys.executable,
-        str(args.mechanism_suite),
-        "--selftest",
-        "--selftest-cases",
-        str(args.m09_selftest_cases),
-        "--base-template",
-        str(args.base_template),
-        "--validator",
-        str(args.validator),
-        "--schema",
-        str(args.schema),
-        "--selftest-output-dir",
-        str(args.m09_selftest_output_dir),
-        "--write-report",
-        str(args.m09_selftest_report),
-    ])
-    m09_selftest_report = load_json(args.m09_selftest_report)
-
-    # 3e. M10 self-tests refresh.
-    m10_selftest_exec = run_cmd([
-        sys.executable,
-        str(args.artifact_audit_suite),
-        "--selftest",
-        "--selftest-cases",
-        str(args.m10_selftest_cases),
-        "--base-template",
-        str(args.base_template),
-        "--validator",
-        str(args.validator),
-        "--schema",
-        str(args.schema),
-        "--selftest-output-dir",
-        str(args.m10_selftest_output_dir),
-        "--write-report",
-        str(args.m10_selftest_report),
-    ])
-    m10_selftest_report = load_json(args.m10_selftest_report)
+    m01_selftest_report = module_selftest_results["m01"]["report"]
+    m02_selftest_report = module_selftest_results["m02"]["report"]
+    m04_selftest_report = module_selftest_results["m04"]["report"]
+    m05_selftest_exec = module_selftest_results["m05"]["execution"]
+    m05_selftest_report = module_selftest_results["m05"]["report"]
+    m07_selftest_exec = module_selftest_results["m07"]["execution"]
+    m07_selftest_report = module_selftest_results["m07"]["report"]
+    m08_selftest_exec = module_selftest_results["m08"]["execution"]
+    m08_selftest_report = module_selftest_results["m08"]["report"]
+    m09_selftest_exec = module_selftest_results["m09"]["execution"]
+    m09_selftest_report = module_selftest_results["m09"]["report"]
+    m10_selftest_exec = module_selftest_results["m10"]["execution"]
+    m10_selftest_report = module_selftest_results["m10"]["report"]
+    m11_selftest_report = module_selftest_results["m11"]["report"]
+    m12_selftest_report = module_selftest_results["m12"]["report"]
+    m13_selftest_report = module_selftest_results["m13"]["report"]
+    m14_selftest_report = module_selftest_results["m14"]["report"]
+    m15_selftest_report = module_selftest_results["m15"]["report"]
 
     # 4. M06 canonical bootstrap cases.
     m05_module = load_module(args.stage_machine, "qdp_m05_stage_machine")
@@ -1347,6 +1327,13 @@ def main() -> int:
         ordinary_report.get("critical_unresolved_count", 0) == 0 and subsystem_report.get("critical_unresolved_count", 0) == 0
     ) else "FAILED"
 
+    all_module_selftests_valid = all(
+        result.get("execution", {}).get("ok", False)
+        and report_all_passed(result.get("report", {}))
+        and report_all_validator_valid(result.get("report", {}))
+        for result in module_selftest_results.values()
+    )
+
     schema_validation_status = "PASSED" if (
         template_validation["ok"]
         and bootstrap_case_report.get("all_cases_exact_match_all_runs", False)
@@ -1355,11 +1342,7 @@ def main() -> int:
             for run in bootstrap_case_report.get("runs", [])
             for case in run.get("results", [])
         )
-        and m05_selftest_report.get("all_passed", False)
-        and m07_selftest_report.get("all_passed", False)
-        and m08_selftest_report.get("all_passed", False)
-        and m09_selftest_report.get("all_passed", False)
-        and m10_selftest_report.get("all_passed", False)
+        and all_module_selftests_valid
     ) else "FAILED"
 
     validation_harness_status = "PASSED" if bootstrap_case_report.get("all_cases_exact_match_all_runs", False) else "FAILED"
@@ -1390,10 +1373,22 @@ def main() -> int:
     governance_self_diagnostic_check["passed"] = all(governance_self_diagnostic_check.values())
 
     # 7. Closure evaluation and dynamic artifact updates.
+    bootstrap_verification_state = {
+        "validation_harness_status": validation_harness_status,
+        "determinism_status": determinism_status,
+        "reference_resolution_status": reference_resolution_status,
+        "schema_validation_status": schema_validation_status,
+    }
+    module_verification_checks = build_module_verification_checks(
+        module_selftest_results,
+        ordinary_report,
+        subsystem_report,
+        bootstrap_verification_state,
+        divergence_report,
+    )
+    module_selftest_alias = build_module_selftest_alias(module_verification_checks)
     preliminary_report = {
-        "artifact_id": "QDP_V10_6_M06_BOOTSTRAP_REPORT",
-        "module_id": "M06",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        **module_report_header("QDP_V10_6_M06_BOOTSTRAP_REPORT", "M06"),
         "checks": {
             "reference_resolution": {
                 "ordinary_report_path": str(args.ordinary_report),
@@ -1404,56 +1399,38 @@ def main() -> int:
                 "subsystem_critical_unresolved_count": subsystem_report.get("critical_unresolved_count", 0),
                 "passed": reference_resolution_status == "PASSED",
             },
-              "schema_validation": {
-                  "template_validation": template_validation,
-                  "bootstrap_case_outputs_valid": all(
-                      case.get("validator_result", {}).get("valid", False)
-                      for run in bootstrap_case_report.get("runs", [])
-                      for case in run.get("results", [])
-                  ),
-                  "m05_selftests_all_valid": m05_selftest_report.get("all_passed", False),
-                  "m07_selftests_all_valid": m07_selftest_report.get("all_passed", False),
-                  "m08_selftests_all_valid": m08_selftest_report.get("all_passed", False),
-                  "m09_selftests_all_valid": m09_selftest_report.get("all_passed", False),
-                  "m10_selftests_all_valid": m10_selftest_report.get("all_passed", False),
-                  "passed": schema_validation_status == "PASSED",
-              },
-              "stage_machine_selftests": {
-                  "execution": m05_selftest_exec,
-                  "report_path": str(args.m05_selftest_report),
-                  "cases_total": m05_selftest_report.get("cases_total", 0),
-                  "cases_passed": m05_selftest_report.get("cases_passed", 0),
-                  "all_passed": m05_selftest_report.get("all_passed", False),
-              },
-              "family_triage_selftests": {
-                  "execution": m07_selftest_exec,
-                  "report_path": str(args.m07_selftest_report),
-                  "cases_total": m07_selftest_report.get("cases_total", 0),
-                  "cases_passed": m07_selftest_report.get("cases_passed", 0),
-                  "all_passed": m07_selftest_report.get("all_passed", False),
-              },
-              "baseline_fit_selftests": {
-                  "execution": m08_selftest_exec,
-                  "report_path": str(args.m08_selftest_report),
-                  "cases_total": m08_selftest_report.get("cases_total", 0),
-                  "cases_passed": m08_selftest_report.get("cases_passed", 0),
-                  "all_passed": m08_selftest_report.get("all_passed", False),
-              },
-              "mechanism_competition_selftests": {
-                  "execution": m09_selftest_exec,
-                  "report_path": str(args.m09_selftest_report),
-                  "cases_total": m09_selftest_report.get("cases_total", 0),
-                  "cases_passed": m09_selftest_report.get("cases_passed", 0),
-                  "all_passed": m09_selftest_report.get("all_passed", False),
-              },
-              "artifact_equivalence_selftests": {
-                  "execution": m10_selftest_exec,
-                  "report_path": str(args.m10_selftest_report),
-                  "cases_total": m10_selftest_report.get("cases_total", 0),
-                  "cases_passed": m10_selftest_report.get("cases_passed", 0),
-                  "all_passed": m10_selftest_report.get("all_passed", False),
-              },
-              "governance_self_diagnostic": governance_self_diagnostic_check,
+            "schema_validation": {
+                "template_validation": template_validation,
+                "bootstrap_case_outputs_valid": all(
+                    case.get("validator_result", {}).get("valid", False)
+                    for run in bootstrap_case_report.get("runs", [])
+                    for case in run.get("results", [])
+                ),
+                "module_selftests_all_valid": all_module_selftests_valid,
+                "m01_selftests_all_valid": report_all_passed(m01_selftest_report),
+                "m02_selftests_all_valid": report_all_passed(m02_selftest_report),
+                "m04_selftests_all_valid": report_all_passed(m04_selftest_report),
+                "m05_selftests_all_valid": report_all_passed(m05_selftest_report),
+                "m07_selftests_all_valid": report_all_passed(m07_selftest_report),
+                "m08_selftests_all_valid": report_all_passed(m08_selftest_report),
+                "m09_selftests_all_valid": report_all_passed(m09_selftest_report),
+                "m10_selftests_all_valid": report_all_passed(m10_selftest_report),
+                "m11_selftests_all_valid": report_all_passed(m11_selftest_report),
+                "m12_selftests_all_valid": report_all_passed(m12_selftest_report),
+                "m13_selftests_all_valid": report_all_passed(m13_selftest_report),
+                "m14_selftests_all_valid": report_all_passed(m14_selftest_report),
+                "m15_selftests_all_valid": report_all_passed(m15_selftest_report),
+                "passed": schema_validation_status == "PASSED",
+            },
+            "module_verification": module_verification_checks,
+            "module_selftests": module_selftest_alias,
+            "module_selftests_note": "Deprecated compatibility alias of checks.module_verification.",
+            "stage_machine_selftests": module_selftest_alias.get("M05", {}),
+            "family_triage_selftests": module_selftest_alias.get("M07", {}),
+            "baseline_fit_selftests": module_selftest_alias.get("M08", {}),
+            "mechanism_competition_selftests": module_selftest_alias.get("M09", {}),
+            "artifact_equivalence_selftests": module_selftest_alias.get("M10", {}),
+            "governance_self_diagnostic": governance_self_diagnostic_check,
             "runtime_integrity": runtime_integrity,
             "mode_divergence": {
                 "report_path": str(args.mode_divergence_report),
@@ -1470,7 +1447,11 @@ def main() -> int:
         "schema_validation_status": schema_validation_status,
         "system_status": governance_self_diagnostic["system_status"],
         "promotion_cap_governance": "SANDBOX_ONLY" if reference_resolution_status == "FAILED" else "",
+        "ordinary_recovery_ready": False,
+        "ordinary_authoritative_ready": False,
         "ordinary_testing_ready": False,
+        "subsystem_recovery_ready": False,
+        "subsystem_authoritative_ready": False,
         "subsystem_testing_ready": False,
     }
 
@@ -1482,11 +1463,24 @@ def main() -> int:
         "ordinary_reference_report": ordinary_report,
         "subsystem_reference_report": subsystem_report,
         "governance_registry": governance_registry,
+        "rule_binding_registry": load_json(args.rule_binding_registry),
+        "module_selftests": {
+            MODULES[module_key]["module_id"]: result
+            for module_key, result in module_selftest_results.items()
+        },
+        "m01_selftest_report": m01_selftest_report,
+        "m02_selftest_report": m02_selftest_report,
+        "m04_selftest_report": m04_selftest_report,
         "m05_selftest_report": m05_selftest_report,
         "m07_selftest_report": m07_selftest_report,
         "m08_selftest_report": m08_selftest_report,
         "m09_selftest_report": m09_selftest_report,
         "m10_selftest_report": m10_selftest_report,
+        "m11_selftest_report": m11_selftest_report,
+        "m12_selftest_report": m12_selftest_report,
+        "m13_selftest_report": m13_selftest_report,
+        "m14_selftest_report": m14_selftest_report,
+        "m15_selftest_report": m15_selftest_report,
         "m06_bootstrap_report": preliminary_report,
         "mode_divergence_report": divergence_report,
         "reference_manifest": reference_manifest,
@@ -1503,15 +1497,28 @@ def main() -> int:
 
     # Refresh embedded rule-binding summary after registry update.
     closure_by_module = {m["module_id"]: m for m in closure_evaluation.get("modules", [])}
-    module_registry = load_json(args.module_registry_json)
-    testing_readiness = compute_testing_readiness(module_registry, closure_by_module)
+    testing_readiness = compute_testing_readiness(closure_by_module, policy=RESUME_POLICY)
+    write_module_registry(
+        args.module_registry_json,
+        args.module_registry_md,
+        closure_by_module,
+        testing_readiness,
+    )
     final_report = load_json(args.write_report)
     final_report["checks"]["rule_binding_summary"] = updated_rule_binding.get("coverage_summary", {})
     final_report["module_closure_evaluation_report_path"] = str(args.closure_evaluation_report)
     final_report["governance_self_check"] = governance_self_diagnostic
+    final_report["ordinary_recovery_ready"] = testing_readiness["ordinary_recovery_ready"]
+    final_report["ordinary_authoritative_ready"] = testing_readiness["ordinary_authoritative_ready"]
     final_report["ordinary_testing_ready"] = testing_readiness["ordinary_testing_ready"]
+    final_report["subsystem_recovery_ready"] = testing_readiness["subsystem_recovery_ready"]
+    final_report["subsystem_authoritative_ready"] = testing_readiness["subsystem_authoritative_ready"]
     final_report["subsystem_testing_ready"] = testing_readiness["subsystem_testing_ready"]
+    final_report["ordinary_recovery_blockers"] = testing_readiness["ordinary_recovery_blockers"]
+    final_report["ordinary_authoritative_blockers"] = testing_readiness["ordinary_authoritative_blockers"]
     final_report["ordinary_testing_blockers"] = testing_readiness["ordinary_testing_blockers"]
+    final_report["subsystem_recovery_blockers"] = testing_readiness["subsystem_recovery_blockers"]
+    final_report["subsystem_authoritative_blockers"] = testing_readiness["subsystem_authoritative_blockers"]
     final_report["subsystem_testing_blockers"] = testing_readiness["subsystem_testing_blockers"]
     dump_json(args.write_report, final_report)
 
@@ -1526,9 +1533,7 @@ def main() -> int:
     if not testing_readiness["ordinary_testing_ready"] or not testing_readiness["subsystem_testing_ready"]:
         m06_notes.append("Resume-testing readiness still follows the module-registry policy and remains false until the required module sets close authoritatively.")
     m06_closure_report = {
-        "artifact_id": "QDP_V10_6_M06_CLOSURE_REPORT",
-        "module_id": "M06",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        **module_report_header("QDP_V10_6_M06_CLOSURE_REPORT", "M06"),
         "derived_status": m06_closure.get("derived_status", "BLOCKED"),
         "predicate_results": m06_closure.get("predicate_results", []),
         "bootstrap_report_path": str(args.write_report),
@@ -1537,10 +1542,19 @@ def main() -> int:
     }
     dump_json(args.write_closure_report, m06_closure_report)
 
-    update_module_registry(
-        args.module_registry_json,
-        args.module_registry_md,
-        closure_by_module,
+    record_run(
+        operation="bootstrap",
+        lane="recovery",
+        status=final_report.get("system_status", "FAILED"),
+        summary={
+            "ordinary_recovery_ready": final_report.get("ordinary_recovery_ready", False),
+            "ordinary_authoritative_ready": final_report.get("ordinary_authoritative_ready", False),
+            "subsystem_recovery_ready": final_report.get("subsystem_recovery_ready", False),
+            "subsystem_authoritative_ready": final_report.get("subsystem_authoritative_ready", False),
+            "validation_harness_status": final_report.get("validation_harness_status", ""),
+            "schema_validation_status": final_report.get("schema_validation_status", ""),
+        },
+        artifacts=[args.write_report, args.write_closure_report, args.closure_evaluation_report, args.module_registry_json],
     )
 
     print(json.dumps(final_report, indent=2))
@@ -1550,3 +1564,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

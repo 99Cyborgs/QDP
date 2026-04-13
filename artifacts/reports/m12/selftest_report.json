@@ -1,0 +1,667 @@
+{
+  "artifact_id": "QDP_V10_6_M12_SELFTEST_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.088799+00:00",
+  "visible_source_only": true,
+  "cases_total": 8,
+  "cases_passed": 8,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE",
+      "description": "The module constructs a falsifier and emits an executable package when inputs are sufficient.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "experiment_schedule": {
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ]
+      },
+      "actual_summary": {
+        "exact_falsifier": "If the TLS branch is real, readout-power and temperature sweeps must reproduce the saturation trend across matched geometry or participation changes.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "TLS saturation sweep: readout power x temperature x geometry or participation"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "TLS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "TLS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "temperature": [
+            "BASE",
+            "MID",
+            "HIGH"
+          ],
+          "geometry_or_participation": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "saturation_parameters": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_PRESERVES_EXPLICIT_PLAN",
+      "description": "An explicit falsifier and concrete experiment plan are preserved.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "The control pair must invert the claimed ranking.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Explicit control inversion sweep"
+          ],
+          "default_templates_triggered": [
+            "EXISTING_TEMPLATE",
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "The control pair must invert the claimed ranking.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Explicit control inversion sweep"
+          ],
+          "default_templates_triggered": [
+            "EXISTING_TEMPLATE",
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "baseline_prune",
+          "sweep_route_group": "GENERIC_FAMILY"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {},
+        "tested_parameter_ranges": {}
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT",
+      "description": "Without observable or platform context, the package stays un-emitted.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "experiment_schedule": {
+          "executable_falsifier_package_emitted": false
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "",
+        "experiment_schedule": {
+          "priority_experiments": [],
+          "default_templates_triggered": [],
+          "executable_falsifier_package_emitted": false,
+          "branch_partition": "baseline_prune",
+          "sweep_route_group": "GENERIC_FAMILY"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": false
+        },
+        "requested_output_artifacts": [],
+        "candidate_target_devices": [],
+        "simulation_conditions": {},
+        "tested_parameter_ranges": {}
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_VORTEX_SWEEP_SYNTHESIS",
+      "description": "A vortex branch gets a branch-specific falsifier, sweep label, and parameter ranges.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "If the vortex branch is real, ZFC vs FC, field-loop history, and matched width or thickness sweeps must preserve the delta fr over delta 1/Qi ordering across cooldowns.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Vortex discriminant sweep: ZFC vs FC, field loops, cooldown field, matched width or thickness, delta fr over delta 1/Qi"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "VORTEX"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "VORTEX",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "field_history_tag": [
+            "ZFC",
+            "FC",
+            "UP_LOOP",
+            "DOWN_LOOP"
+          ]
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "If the vortex branch is real, ZFC vs FC, field-loop history, and matched width or thickness sweeps must preserve the delta fr over delta 1/Qi ordering across cooldowns.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Vortex discriminant sweep: ZFC vs FC, field loops, cooldown field, matched width or thickness, delta fr over delta 1/Qi"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "VORTEX"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "VORTEX",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "field_history_tag": [
+            "ZFC",
+            "FC",
+            "UP_LOOP",
+            "DOWN_LOOP"
+          ],
+          "field_magnitude": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "geometry": [
+            "MATCHED_WIDTH_A",
+            "MATCHED_WIDTH_B"
+          ],
+          "drive_amplitude": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "temperature": [
+            "BASE",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_VORTEX_SWEEP_SYNTHESIS\\CASE_M12_VORTEX_SWEEP_SYNTHESIS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_TLS_SWEEP_SYNTHESIS",
+      "description": "A TLS branch gets a saturation sweep and TLS-specific simulation axes.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "If the TLS branch is real, readout-power and temperature sweeps must reproduce the saturation trend across matched geometry or participation changes.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "TLS saturation sweep: readout power x temperature x geometry or participation"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "TLS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "TLS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "If the TLS branch is real, readout-power and temperature sweeps must reproduce the saturation trend across matched geometry or participation changes.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "TLS saturation sweep: readout power x temperature x geometry or participation"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "TLS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "TLS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "temperature": [
+            "BASE",
+            "MID",
+            "HIGH"
+          ],
+          "geometry_or_participation": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "saturation_parameters": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_TLS_SWEEP_SYNTHESIS\\CASE_M12_TLS_SWEEP_SYNTHESIS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_QP_SWEEP_SYNTHESIS",
+      "description": "A quasiparticle branch gets the synchronized burst sweep and correlation axes.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "If the quasiparticle branch is real, parity-switch and synchronized multi-device burst measurements must track shielding or injection controls.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Quasiparticle burst sweep: parity switching, synchronized multi-device T1, shielding or injection controls"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "QUASIPARTICLE"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "QUASIPARTICLE",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "burst_rate": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "If the quasiparticle branch is real, parity-switch and synchronized multi-device burst measurements must track shielding or injection controls.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Quasiparticle burst sweep: parity switching, synchronized multi-device T1, shielding or injection controls"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "QUASIPARTICLE"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "QUASIPARTICLE",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "burst_rate": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "correlation_window": [
+            "SHORT",
+            "MEDIUM",
+            "LONG"
+          ],
+          "cross_device_coupling": [
+            "WEAK",
+            "MEDIUM",
+            "STRONG"
+          ],
+          "shielding_or_injection": [
+            "BASELINE",
+            "PERTURBED"
+          ]
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_QP_SWEEP_SYNTHESIS\\CASE_M12_QP_SWEEP_SYNTHESIS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS",
+      "description": "A readout alias artifact branch gets the artifact-specific sweep label and relinearization axes.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "If the readout-alias branch is real, readout-power and gain sweeps plus a relinearized fit must remove the anomaly.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Readout alias sweep: readout power or gain, digitizer linearity, relinearized fit"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "artifact_elimination",
+          "sweep_route_group": "READOUT_ALIAS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "artifact_elimination",
+          "owner_route": "READOUT_ALIAS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      },
+      "actual_summary": {
+        "exact_falsifier": "If the readout-alias branch is real, readout-power and gain sweeps plus a relinearized fit must remove the anomaly.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Readout alias sweep: readout power or gain, digitizer linearity, relinearized fit"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "artifact_elimination",
+          "sweep_route_group": "READOUT_ALIAS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [],
+        "simulation_conditions": {
+          "branch_partition": "artifact_elimination",
+          "owner_route": "READOUT_ALIAS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "readout_gain": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ],
+          "digitizer_linearity_model": [
+            "BASELINE",
+            "RELINEARIZED"
+          ]
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS\\CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS_candidate.json"
+    },
+    {
+      "case_id": "CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL",
+      "description": "A confirmed-ready M06 candidate gets a non-empty cross-device priority experiment and device targets.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Cross-device matched-fabrication sweep"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "cross_device_confirmation",
+          "sweep_route_group": "CROSS_DEVICE_CONFIRMATION"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "candidate_target_devices": [
+          "DEV_A",
+          "DEV_B"
+        ],
+        "simulation_conditions": {},
+        "tested_parameter_ranges": {}
+      },
+      "actual_summary": {
+        "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Cross-device matched-fabrication sweep"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "cross_device_confirmation",
+          "sweep_route_group": "CROSS_DEVICE_CONFIRMATION"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ],
+        "candidate_target_devices": [
+          "DEV_A",
+          "DEV_B"
+        ],
+        "simulation_conditions": {},
+        "tested_parameter_ranges": {}
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL\\CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL_candidate.json"
+    }
+  ]
+}

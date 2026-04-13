@@ -1,0 +1,176 @@
+{
+  "artifact_id": "QDP_V10_6_M04_SELFTEST_CASES",
+  "module_id": "M04",
+  "cases": [
+    {
+      "case_id": "CASE_M04_VALID_BRANCH",
+      "description": "A fully specified intake maps to a canonical sandboxed precompute candidate with a clear branch identity.",
+      "intake": {
+        "artifact_id": "QDP_V10_6_FORK_INTAKE_TEMPLATE_M04",
+        "module_id": "M04",
+        "date": "2026-03-15",
+        "requestor": "workspace",
+        "branch_or_model_tag": "M04_VALID_BRANCH",
+        "change_types": ["HAMILTONIAN_TERM"],
+        "model_classification": "FORMAL_CORE",
+        "candidate_H_mod_symbolic": "H = H0 + lambda * N",
+        "candidate_H_mod_physical_interpretation": "Nonlinear correction to the baseline dissipator picture.",
+        "claimed_effect": "Observable-dependent deviation from baseline decay.",
+        "declared_family_class": "KERNEL_MEMORY",
+        "declared_likely_bath_class_raw": "KERNEL_MEMORY",
+        "declared_likely_bath_class_other_text": "",
+        "bath_classification_consistent_with_glossary_asserted": true,
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "accessible_platform_or_device_class": "transmon",
+        "minimal_discriminant_measurement": "matched time-domain sweep",
+        "cross_scale_claim_present": false,
+        "effective_mapping_attached": false,
+        "invariant_preserved": "trace preservation",
+        "reduction_limit": "When lambda=0 recover baseline GKSL dynamics.",
+        "count_new_free_parameters": 1,
+        "new_free_parameters": ["lambda"],
+        "parameter_constraints": {
+          "lambda": "bounded by energy scale"
+        },
+        "independent_constraint_source_per_parameter": {
+          "lambda": "matched-control experiment"
+        },
+        "exact_falsifier": "The matched-control sweep must separate the branch from baseline and TLS alternatives.",
+        "does_increase_falsifiable_surface_area": true,
+        "relevant_nuisance_controls_list": ["temperature", "drive_power"],
+        "validation_ladder_plan": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_stability_criterion_defined": false,
+          "L4_instrument_facing_comparison_path_defined": true
+        },
+        "notes": "Valid intake control."
+      },
+      "expected": {
+        "branch_or_model_tag": "M04_VALID_BRANCH",
+        "change_type": "HAMILTONIAN_TERM",
+        "declared_family_class": "KERNEL_MEMORY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "preliminary_intake_outcome": "PROCEED",
+        "intake_ready_for_compute": true
+      }
+    },
+    {
+      "case_id": "CASE_M04_MISSING_FALSIFIER",
+      "description": "Missing falsifier data must defer the intake and keep it out of compute readiness.",
+      "intake": {
+        "artifact_id": "QDP_V10_6_FORK_INTAKE_TEMPLATE_M04",
+        "module_id": "M04",
+        "date": "2026-03-15",
+        "requestor": "workspace",
+        "branch_or_model_tag": "M04_MISSING_FALSIFIER",
+        "change_types": ["OBSERVABLE"],
+        "model_classification": "EXAMPLE",
+        "candidate_H_mod_symbolic": "delta observable",
+        "candidate_H_mod_physical_interpretation": "Observable remapping only.",
+        "claimed_effect": "Observable aliasing correction.",
+        "declared_family_class": "MARKOVIAN_RESERVOIR",
+        "declared_likely_bath_class_raw": "MARKOVIAN_RESERVOIR",
+        "declared_likely_bath_class_other_text": "",
+        "bath_classification_consistent_with_glossary_asserted": true,
+        "primary_observable": "quality factor",
+        "secondary_observable": "frequency shift",
+        "accessible_platform_or_device_class": "resonator",
+        "minimal_discriminant_measurement": "power sweep",
+        "cross_scale_claim_present": false,
+        "effective_mapping_attached": false,
+        "invariant_preserved": "baseline normalization",
+        "reduction_limit": "Observable remapping reduces to baseline at zero correction.",
+        "count_new_free_parameters": 0,
+        "new_free_parameters": [],
+        "parameter_constraints": {},
+        "independent_constraint_source_per_parameter": {},
+        "exact_falsifier": "",
+        "does_increase_falsifiable_surface_area": true,
+        "relevant_nuisance_controls_list": ["readout_gain"],
+        "validation_ladder_plan": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_stability_criterion_defined": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "notes": "Missing falsifier control."
+      },
+      "expected": {
+        "branch_or_model_tag": "M04_MISSING_FALSIFIER",
+        "change_type": "OBSERVABLE",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "DEFER",
+        "intake_ready_for_compute": false
+      }
+    },
+    {
+      "case_id": "CASE_M04_INVALID_SCALE_CLAIM",
+      "description": "A cross-scale claim without an attached effective mapping must reject immediately.",
+      "intake": {
+        "artifact_id": "QDP_V10_6_FORK_INTAKE_TEMPLATE_M04",
+        "module_id": "M04",
+        "date": "2026-03-15",
+        "requestor": "workspace",
+        "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+        "change_types": ["SCALE_BRIDGE"],
+        "model_classification": "FORMAL_CORE",
+        "candidate_H_mod_symbolic": "H_eff(device) -> H_micro",
+        "candidate_H_mod_physical_interpretation": "Cross-scale reduction bridge.",
+        "claimed_effect": "Micro-to-device claim.",
+        "declared_family_class": "OTHER",
+        "declared_likely_bath_class_raw": "OTHER",
+        "declared_likely_bath_class_other_text": "custom",
+        "bath_classification_consistent_with_glossary_asserted": true,
+        "primary_observable": "switching histogram",
+        "secondary_observable": "relaxation tail",
+        "accessible_platform_or_device_class": "junction_array",
+        "minimal_discriminant_measurement": "matched geometry comparison",
+        "cross_scale_claim_present": true,
+        "effective_mapping_attached": false,
+        "invariant_preserved": "energy ordering",
+        "reduction_limit": "At zero bridge term recover mesoscopic baseline.",
+        "count_new_free_parameters": 1,
+        "new_free_parameters": ["eta"],
+        "parameter_constraints": {
+          "eta": "bounded by fabrication geometry"
+        },
+        "independent_constraint_source_per_parameter": {
+          "eta": "geometry metrology"
+        },
+        "exact_falsifier": "Matched geometry comparison must preserve the claimed ranking.",
+        "does_increase_falsifiable_surface_area": true,
+        "relevant_nuisance_controls_list": ["cooldown_history"],
+        "validation_ladder_plan": {
+          "L0_baseline_pipeline_reproduced": false,
+          "L1_reduction_limit_verified": false,
+          "L2_convergence_plan_defined": false,
+          "L3_stability_criterion_defined": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        },
+        "notes": "Missing effective mapping control."
+      },
+      "expected": {
+        "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+        "change_type": "SCALE_BRIDGE",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "REJECT",
+        "intake_ready_for_compute": false
+      }
+    }
+  ]
+}

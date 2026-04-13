@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M07_SELFTEST_REPORT",
   "module_id": "M07",
-  "timestamp_utc": "2026-03-15T20:19:14.448015+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.035235+00:00",
   "visible_source_only": true,
   "cases_total": 6,
   "cases_passed": 6,
@@ -15,15 +15,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
@@ -64,8 +64,8 @@
           "P_OTHER": 0.15
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json"
     },
     {
       "case_id": "CASE_M07_TLS_SATURATION",
@@ -74,15 +74,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "TLS_ENSEMBLE",
@@ -123,8 +123,8 @@
           "P_OTHER": 0.15
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json"
     },
     {
       "case_id": "CASE_M07_KERNEL_MEMORY",
@@ -133,15 +133,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "FINITE_SIZE_STRUCTURED_BATH",
@@ -186,8 +186,8 @@
           "P_OTHER": 0.175
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json"
     },
     {
       "case_id": "CASE_M07_PARASITIC_MODE",
@@ -196,15 +196,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "COHERENT_PARASITIC_MODE",
@@ -245,8 +245,8 @@
           "P_OTHER": 0.25
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json"
     },
     {
       "case_id": "CASE_M07_GLOBAL_BATH",
@@ -255,15 +255,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "GLOBAL_BATH_EVENT",
@@ -310,8 +310,8 @@
           "P_OTHER": 0.1
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json"
     },
     {
       "case_id": "CASE_M07_DECLARED_ONLY_FALLBACK",
@@ -320,15 +320,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "assigned_family_class": "TLS_ENSEMBLE",
@@ -361,8 +361,8 @@
           "P_OTHER": 0.0
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json"
     }
   ]
 }

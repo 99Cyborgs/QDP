@@ -1,0 +1,15 @@
+{
+  "instrument_profile_id": "QDPINST-A411434EF106C738",
+  "platform_class": "SURFACED_PLATFORM",
+  "device_ids": [
+    "DEV_A",
+    "DEV_B"
+  ],
+  "supported_measurements": [
+    "Cross-device matched-fabrication sweep"
+  ],
+  "instrument_facing_requirement_satisfied": true,
+  "notes": [
+    "Generated from candidate surfaced experiment schedule."
+  ]
+}

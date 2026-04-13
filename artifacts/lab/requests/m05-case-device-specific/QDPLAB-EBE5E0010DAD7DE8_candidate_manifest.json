@@ -1,0 +1,24 @@
+{
+  "manifest_id": "QDPMAN-C4E08DBA6E765986",
+  "candidate_id": "m05-case-device-specific",
+  "candidate_path": "artifacts\\outputs\\m05\\selftests\\CASE_M05_DEVICE_SPECIFIC_SANDBOX\\CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate.json",
+  "candidate_sha256": "7aa4dbd732e20317b1ad8abd409e1ef950464411bf6b22199f01165995aeb10f",
+  "linked_artifacts": [
+    {
+      "path": "specs\\core\\bath_glossary.md",
+      "sha256": "5df3b4b4a12df7bbf460606ea573adab562c3b91b372da1dd95ff261fa99a680"
+    },
+    {
+      "path": "specs\\core\\signature_to_bath_decision_chart.md",
+      "sha256": "cfa12a2292755b236e09f2fa3a67d325f3131bcfbd41a1e2286715e02c4622bd"
+    },
+    {
+      "path": "specs\\research\\deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6"
+    },
+    {
+      "path": "specs\\intake\\fork_intake_form_one_page.pdf",
+      "sha256": "3a86e3137169dba080875a7e6f5037f457609cf8996ee3bd043283e91cc96666"
+    }
+  ]
+}

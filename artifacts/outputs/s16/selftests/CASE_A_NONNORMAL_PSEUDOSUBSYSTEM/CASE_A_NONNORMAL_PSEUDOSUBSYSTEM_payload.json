@@ -1,0 +1,22 @@
+{
+  "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+  "module_id": "S16",
+  "diagnostics_reported": [
+    "slow_rank",
+    "spectral_gap_delta",
+    "riesz_projector_stability",
+    "projector_principal_angle_dispersion"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "pass",
+    "projector_stability": "fail_or_borderline"
+  },
+  "expected_final_verdict": "inconclusive",
+  "actual_final_verdict": "inconclusive",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Sector detection is surfaced from the GKSL subsystem case matrix.",
+    "class=adversarial_false_positive"
+  ]
+}

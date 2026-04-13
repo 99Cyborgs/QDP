@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a defect in registry loading, scoring, runs, simulation scaffolds, RF parsing, or docs.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the failure and the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include commands, API calls, or files needed to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Paste the exact error, traceback, or unexpected artifact path.

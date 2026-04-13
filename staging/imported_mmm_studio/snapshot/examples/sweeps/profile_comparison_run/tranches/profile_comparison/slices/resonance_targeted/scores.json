@@ -1,0 +1,1317 @@
+[
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.8125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.21408114558472552
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.7777777777777778,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1336515513126492
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.9612499999999999,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.15829653937947494
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5866666666666667,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.07840891010342085
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.6666666666666667,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.06873508353221959
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.8500000000000001,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.06491646778042962
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.87,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.02989976133651552
+      }
+    ],
+    "decision_band": "lead_branch",
+    "genome_id": "GEN-003",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-EM-LID-HIS",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.7873689339697694,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.7300000000000001,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.19234367541766112
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.6666666666666667,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1145584725536993
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.9112500000000001,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.15006264916467782
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.7777777777777778,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.0801909307875895
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.95,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.03264916467780431
+      }
+    ],
+    "decision_band": "lead_branch",
+    "genome_id": "GEN-001",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-EM-CPW-EBG-RING",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.7768852426412094,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.68,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.17916945107398569
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.5555555555555556,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.09546539379474941
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.8062500000000001,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.13277147971360384
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.6666666666666667,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.06873508353221959
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.72,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.054988066825775665
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.87,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.02989976133651552
+      }
+    ],
+    "decision_band": "primary_screen",
+    "genome_id": "GEN-002",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-EM-CPW-EBG-RING",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.7184675815433573,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.76,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.20024821002386634
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.6666666666666667,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1145584725536993
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.8662500000000002,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.14265214797136042
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.33333333333333337,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.034367541766109795
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.58,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.04429594272076373
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.6299999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.02165155131264917
+      }
+    ],
+    "decision_band": "primary_screen",
+    "genome_id": "GEN-005",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-SOI-JJ-PHC",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.7152122116149564,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.8575,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.2259379474940334
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.5555555555555556,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.09546539379474941
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.94,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.15479713603818615
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.2222222222222222,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.022911694510739856
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.45999999999999996,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.035131264916467786
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.4699999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.0161527446300716
+      }
+    ],
+    "decision_band": "primary_screen",
+    "genome_id": "GEN-007",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-SOI-FULLCAP-PHC",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.7078345266507559,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.6525000000000001,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.17192362768496422
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.7777777777777778,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1336515513126492
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.66125,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.10889319809069213
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5866666666666667,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.07840891010342085
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.7777777777777778,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.0801909307875895
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.8,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.06109785202863963
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.95,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.03264916467780431
+      }
+    ],
+    "decision_band": "primary_screen",
+    "genome_id": "GEN-018",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-EM-LID-HIS",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.706194709626094,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.6875,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.181145584725537
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.6666666666666667,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1145584725536993
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.79375,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.13071300715990453
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.4444444444444444,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.04582338902147971
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.45999999999999996,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.035131264916467786
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.63,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.021651551312649172
+      }
+    ],
+    "decision_band": "primary_screen",
+    "genome_id": "GEN-006",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-SOI-JJ-PHC",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.6864616149562451,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.45499999999999996,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.11988544152744629
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.7777777777777778,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1336515513126492
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.42,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.06916467780429594
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.7633333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.10202068416865556
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.6666666666666667,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.06873508353221959
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.53,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.040477326968973756
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.65,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03412887828162292
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.79,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.027150357995226738
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-009",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-GRADED-SINK",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.59521400159109,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.7975,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.2101288782816229
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.33333333333333337,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.05727923627684965
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.7550000000000001,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.12433174224343678
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.11111111111111116,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.011455847255369935
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.85,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.044630071599045355
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.47,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.016152744630071603
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-016",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed.",
+      "Candidate is already marked sandbox in the seed registry."
+    ],
+    "parent_structure_id": "STR-HYB-BILAYER-INTERPOSER",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.5915839299920447,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "sandbox"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.5249999999999999,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.13832935560859186
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.6666666666666667,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1145584725536993
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.4,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.0658711217183771
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.7633333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.10202068416865556
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.5555555555555556,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.05727923627684965
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.65,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03412887828162292
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.7899999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.027150357995226734
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-010",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-GRADED-SINK",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.5889801113762928,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.6275000000000001,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.1653365155131265
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.4444444444444444,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.07637231503579953
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.675,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.11115751789976135
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.8833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.11805887032617346
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.11111111111111116,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.011455847255369935
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.58,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.04429594272076373
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.47,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.016152744630071603
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-008",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-SOI-FULLCAP-PHC",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.5822092283214002,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.46249999999999997,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.1218615751789976
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.5555555555555556,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.09546539379474941
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.4,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.0658711217183771
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.7633333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.10202068416865556
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.5555555555555556,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.05727923627684965
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.65,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03412887828162292
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.7899999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.027150357995226734
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-017",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-CTRL-BANDSTOP-INTERPOSER",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.5534192521877487,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.4,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.10539379474940334
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.5555555555555556,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.09546539379474941
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.42375000000000007,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.06978221957040574
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.33333333333333337,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.034367541766109795
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.75,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03937947494033414
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.6299999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.02165155131264917
+      }
+    ],
+    "decision_band": "sandbox_only",
+    "genome_id": "GEN-011",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-PH-SAW-BRAGG",
+    "reject_reason": "",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.4936453858393,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.1125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.029642004773269687
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.7777777777777778,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1336515513126492
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.18,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.02964200477326969
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.8888888888888888,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.09164677804295943
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.72,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.054988066825775665
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.55,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.028878281622911704
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.95,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.03264916467780431
+      }
+    ],
+    "decision_band": "reject",
+    "genome_id": "GEN-013",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-VX-ANTIDOT-LATTICE",
+    "reject_reason": "below_detectability_gate",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.47906125696101837,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "prioritized"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.1125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.029642004773269687
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.6666666666666667,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.1145584725536993
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.1,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.016467780429594275
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.8888888888888888,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.09164677804295943
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.65,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.0496420047732697
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.55,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.028878281622911704
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.95,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.03264916467780431
+      }
+    ],
+    "decision_band": "reject",
+    "genome_id": "GEN-014",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-VX-ANTIDOT-LATTICE",
+    "reject_reason": "below_detectability_gate",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.4414478918058871,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.1125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.029642004773269687
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.5555555555555556,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.09546539379474941
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.1,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.016467780429594275
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.7777777777777778,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.0801909307875895
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.6,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.04582338902147972
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.55,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.028878281622911704
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.95,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.03264916467780431
+      }
+    ],
+    "decision_band": "reject",
+    "genome_id": "GEN-015",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-3D-CAVITY-LINER",
+    "reject_reason": "below_detectability_gate",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.40708035003977733,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.1125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.029642004773269687
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.4444444444444444,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.07637231503579953
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.1,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.016467780429594275
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.4666666666666666,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.06237072394590295
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.5555555555555556,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.05727923627684965
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.6,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.04582338902147972
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.65,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.03412887828162292
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.7899999999999999,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.027150357995226734
+      }
+    ],
+    "decision_band": "reject",
+    "genome_id": "GEN-004",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-EM-HKI-FENCE",
+    "reject_reason": "below_detectability_gate",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.3492346857597455,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  },
+  {
+    "components": [
+      {
+        "definition": "Predicted fractional improvement in target observable after null-normalized simulation.",
+        "feature": "coherence_uplift",
+        "value": 0.1125,
+        "weight": 0.26348448687350834,
+        "weighted_value": 0.029642004773269687
+      },
+      {
+        "definition": "Margin by which candidate-specific scaling differs from best baseline null model.",
+        "feature": "null_separation",
+        "value": 0.2222222222222222,
+        "weight": 0.17183770883054894,
+        "weighted_value": 0.03818615751789976
+      },
+      {
+        "definition": "Predicted effect size relative to instrument floor and sample count.",
+        "feature": "detectability_margin",
+        "value": 0.1,
+        "weight": 0.16467780429594273,
+        "weighted_value": 0.016467780429594275
+      },
+      {
+        "definition": "How cleanly geometry provides an internal falsification ladder.",
+        "feature": "geometry_scaling_clarity",
+        "value": 0.5833333333333334,
+        "weight": 0.1336515513126492,
+        "weighted_value": 0.0779634049323787
+      },
+      {
+        "definition": "Yield-adjusted survival probability under tolerance Monte Carlo.",
+        "feature": "fabrication_robustness",
+        "value": 0.6666666666666667,
+        "weight": 0.10310262529832936,
+        "weighted_value": 0.06873508353221959
+      },
+      {
+        "definition": "Expected portability across device classes/substrates.",
+        "feature": "replication_portability",
+        "value": 0.6,
+        "weight": 0.07637231503579954,
+        "weighted_value": 0.04582338902147972
+      },
+      {
+        "definition": "Agreement among solver fidelities and surrogate uncertainty.",
+        "feature": "simulation_confidence",
+        "value": 0.44999999999999996,
+        "weight": 0.052505966587112186,
+        "weighted_value": 0.023627684964200483
+      },
+      {
+        "definition": "Compatibility with academic cleanroom and mK packaging workflows.",
+        "feature": "standard_lab_feasibility",
+        "value": 0.87,
+        "weight": 0.034367541766109795,
+        "weighted_value": 0.02989976133651552
+      }
+    ],
+    "decision_band": "reject",
+    "genome_id": "GEN-012",
+    "notes": [
+      "Baseline surrogate ranking only; no full-wave simulation or measured RF data executed."
+    ],
+    "parent_structure_id": "STR-QP-GAP-LATTICE",
+    "reject_reason": "below_detectability_gate",
+    "schema_name": "mmm_studio.score_result",
+    "schema_version": "1.0",
+    "score": 0.33034526650755774,
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "screening_status": "screening"
+  }
+]

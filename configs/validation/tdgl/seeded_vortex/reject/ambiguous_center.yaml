@@ -1,0 +1,9 @@
+﻿base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_ambiguous_center
+  description: "Expected seeded-vortex rejection for a seed on an ambiguous cell center"
+physics:
+  vortex_seeds:
+    - x0: 6.25
+      y0: 3.0
+      winding: 1

@@ -1,0 +1,10 @@
+base_config: canonical_single_positive.yaml
+metadata:
+  case_id: seeded_short_single_positive_stochastic
+  phase: S
+  description: "Canonical short-horizon stochastic seeded-vortex base case for the committed Phase-2.4A runtime operator pack"
+  tags: ["phase2", "seeded-vortex", "stochastic", "short-horizon", "runtime-only"]
+noise:
+  enabled: true
+  strength: 0.05
+  seed: 1234

@@ -18,11 +18,15 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
 
-from qdp_paths import BATH_GLOSSARY, BASE_TEMPLATE, CANDIDATE_VALIDATOR, MODULES, SCHEMA, SIGNATURE_TO_BATH_CHART, repo_rel
-from qdp_validation import validate_candidate_file
+from qdp_io.artifacts import dump_json, module_selftest_report_payload, utc_now, visible_source_result_summary_report
+from tools.workflow.qdp_runtime.qdp_paths import BATH_GLOSSARY, BASE_TEMPLATE, CANDIDATE_VALIDATOR, MODULES, SCHEMA, SIGNATURE_TO_BATH_CHART, repo_rel
+from tools.workflow.qdp_runtime.qdp_validation import validate_candidate_file
 
 
 MODULE_PATHS = MODULES["m07"]
@@ -314,11 +318,6 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"JSON root must be an object: {path}")
     return data
-
-
-def dump_json(path: Path, obj: Dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2), encoding="utf-8")
 
 
 def deep_merge(base: Any, override: Any) -> Any:
@@ -613,17 +612,17 @@ def run_family_triage(candidate: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[s
         if matched_note not in candidate["evaluation_notes"]:
             candidate["evaluation_notes"].append(matched_note)
 
-    diagnostics = {
-        "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
-        "module_id": "M07",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "visible_source_only": True,
-        "declared_family_class": declared_family,
-        "declared_likely_bath_class": declared_bath,
-        "evidence_text_sample": evidence_text[:500],
-        "rule_matches": matches,
-        "result_summary": summarize_candidate(candidate),
-    }
+    diagnostics = visible_source_result_summary_report(
+        "QDP_V10_6_M07_TRIAGE_REPORT",
+        "M07",
+        summarize_candidate(candidate),
+        metadata={
+            "declared_family_class": declared_family,
+            "declared_likely_bath_class": declared_bath,
+            "evidence_text_sample": evidence_text[:500],
+            "rule_matches": matches,
+        },
+    )
     return candidate, diagnostics
 
 
@@ -700,17 +699,14 @@ def run_selftests(
 
     cases_total = len(results)
     cases_passed = sum(1 for case in results if case["passed"])
-    return {
-        "artifact_id": "QDP_V10_6_M07_SELFTEST_REPORT",
-        "module_id": "M07",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "visible_source_only": True,
-        "cases_total": cases_total,
-        "cases_passed": cases_passed,
-        "all_passed": cases_total > 0 and cases_passed == cases_total,
-        "schema_valid_all": all(case["validator_result"]["valid"] for case in results),
-        "cases": results,
-    }
+    return module_selftest_report_payload(
+        "QDP_V10_6_M07_SELFTEST_REPORT",
+        "M07",
+        results,
+        visible_source_only=True,
+        all_passed=cases_total > 0 and cases_passed == cases_total,
+        schema_valid_all=all(case["validator_result"]["valid"] for case in results),
+    )
 
 
 def main() -> int:
@@ -761,3 +757,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

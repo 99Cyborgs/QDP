@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SeededVortexRejectionPayload",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "taxonomy_version",
+    "exception_type",
+    "code",
+    "message",
+    "field_path",
+    "seed_index"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "tdgl_rf.seeded_vortex_rejection.v1"
+    },
+    "taxonomy_version": {
+      "const": "seeded_vortex_phase2_1"
+    },
+    "exception_type": {
+      "const": "SeedRejectionError"
+    },
+    "code": {
+      "enum": [
+        "missing_seeds",
+        "unexpected_seeds",
+        "schema_invalid",
+        "outside_domain",
+        "ambiguous_plaquette",
+        "inactive_plaquette",
+        "overlapping_plaquette"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "field_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "seed_index": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "details": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

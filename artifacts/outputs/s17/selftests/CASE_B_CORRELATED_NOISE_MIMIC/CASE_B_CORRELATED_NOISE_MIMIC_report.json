@@ -1,0 +1,22 @@
+{
+  "artifact_id": "QDP_V10_6_S17_REPORT",
+  "module_id": "S17",
+  "timestamp_utc": "2026-04-13T18:30:49.078640+00:00",
+  "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+  "result_summary": {
+    "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+    "actual_final_verdict": "not_supported",
+    "gate_outcomes": {
+      "null_baseline_rejection": "fail",
+      "symmetry_alias_rejection": "pass",
+      "artifact_alias_rejection": "pass"
+    },
+    "diagnostics_reported": [
+      "covariance_modularity",
+      "symmetry_alias_score",
+      "artifact_alias_score",
+      "tls_alias_score",
+      "baseline_competition_margin"
+    ]
+  }
+}

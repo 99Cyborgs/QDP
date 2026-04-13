@@ -1,0 +1,168 @@
+{
+  "artifact_id": "QDP_V10_6_M13_SELFTEST_REPORT",
+  "module_id": "M13",
+  "timestamp_utc": "2026-04-13T18:30:49.070093+00:00",
+  "visible_source_only": true,
+  "cases_total": 4,
+  "cases_passed": 4,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE",
+      "description": "Missing multi-device evidence yields SCHEDULED and a sandbox cap.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "SCHEDULED"
+        }
+      },
+      "actual_summary": {
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "SCHEDULED",
+          "devices_tested": [],
+          "fabrication_matched": false,
+          "notes": "Multi-device evidence is not yet available."
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M13_CONFOUNDED_GEOMETRY",
+      "description": "Geometry claims without fabrication matching are confounded.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "cross_device_status": "CONFUNDED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "CONFUNDED"
+        }
+      },
+      "actual_summary": {
+        "cross_device_status": "CONFUNDED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "CONFUNDED",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": false,
+          "notes": "Geometry claimed as discriminator without fabrication match."
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json"
+    },
+    {
+      "case_id": "CASE_M13_CONFIRMED",
+      "description": "Explicit confirmed evidence is preserved.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "",
+        "cross_device_validation": {
+          "status": "CONFIRMED"
+        }
+      },
+      "actual_summary": {
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "",
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json"
+    },
+    {
+      "case_id": "CASE_M13_DEVICE_SPECIFIC",
+      "description": "Single-device evidence normalizes to DEVICE_SPECIFIC.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "cross_device_status": "DEVICE_SPECIFIC",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "DEVICE_SPECIFIC"
+        }
+      },
+      "actual_summary": {
+        "cross_device_status": "DEVICE_SPECIFIC",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "DEVICE_SPECIFIC",
+          "devices_tested": [
+            "DEV_A"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json"
+    }
+  ]
+}

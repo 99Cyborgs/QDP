@@ -1,0 +1,83 @@
+base_config: null
+metadata:
+  case_id: D01
+  phase: D
+  version: "0.1.0"
+  description: "Clean strip, deterministic baseline"
+  tags: ["deterministic", "verification", "baseline"]
+mesh:
+  nx: 512
+  ny: 128
+  lx: 32.0
+  ly: 8.0
+  periodic_x: false
+  periodic_y: false
+geometry:
+  family: strip
+  moats: []
+  holes: []
+  mask_file: null
+materials:
+  registry_source: qdp_meta_materials.seed.stable
+  adapter_id: TDGL-MAT-001-BASELINE-V1
+  material_system_id: MAT-001
+physics:
+  initial_condition: meissner
+  restart_file: null
+  pinning:
+    model: none
+    seed: null
+    mu: 0.0
+    sigma: 0.0
+    lcorr: 0.0
+    defect_count: 0
+    defects: []
+forcing:
+  b_dc: 0.0
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+  rf_profile: uniform_y
+  rf_profile_file: null
+noise:
+  enabled: false
+  gamma_psi: 0.0
+  master_seed: 2026001
+time:
+  dt: 0.001
+  n_steps: 8000
+  obs_stride: 10
+  field_stride: 400
+  checkpoint_stride: 1000
+solver:
+  backend: scipy
+  scheme: imex_linearized
+  psi_linear_solver: gmres
+  phi_linear_solver: cg
+  rtol: 1.0e-8
+  atol: 1.0e-12
+  max_it: 1000
+observables:
+  track_vortices: true
+  compute_frequency_shift_proxy: true
+  compute_qinv_proxy: true
+  weight_profile_f: uniform
+  weight_profile_q: uniform
+  c_f: 1.0
+  c_q: 1.0
+  qinv_bg: 0.0
+inference:
+  enabled: false
+  mode: none
+  infer_parameters: []
+  dataset_path: null
+  summary_statistics: []
+output:
+  root_dir: runs
+  write_fields: true
+  write_observables: true
+  compression: gzip
+campaign:
+  ensemble_size: 1
+  matrix_row_id: null
+  promotion_rule: gate:G1

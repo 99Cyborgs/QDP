@@ -135,6 +135,14 @@
         "promotion_cap_governance": "SANDBOX_ONLY",
         "promotion_cap_scientific": "SANDBOX_ONLY",
         "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 90.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        },
         "exact_falsifier": "A confirmed cross-device comparison must preserve the claimed discriminant ordering under matched fabrication.",
         "multi_device_data_available": true,
         "fabrication_matched_for_geometry_claim": true,
@@ -151,7 +159,8 @@
           "strongest_competitor_separated": true,
           "geometry_claim_fabrication_matched": true,
           "experimentally_resolvable": true
-        }
+        },
+        "new_free_parameters": ["alpha", "beta", "gamma"]
       },
       "stage_inputs": {
         "stage5": {
@@ -220,6 +229,14 @@
         "candidate_id": "m06-case-5",
         "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
         "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 93.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
         "exact_falsifier": "If the orthogonal discriminants are real, the scheduled cross-device sweep must preserve the observed ranking.",
         "multi_device_data_available": false,
         "fabrication_matched_for_geometry_claim": false,
@@ -229,6 +246,10 @@
           "strongest_competitor_separated": true,
           "geometry_claim_fabrication_matched": false,
           "experimentally_resolvable": true
+        },
+        "new_free_parameters": ["lambda"],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "matched-control experiment"
         }
       },
       "stage_inputs": {
@@ -279,6 +300,160 @@
         "governance_outcome": "SANDBOX_ONLY",
         "cross_device_status": "SCHEDULED",
         "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": true,
+          "L4_instrument_facing_comparison_path_defined": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_6_GOVERNANCE_GUARDRAIL_BLOCK",
+      "class": "governance_guardrail_block",
+      "description": "Canonical harness control: governance evidence gaps must defer at Stage 12 before numerical promotion logic.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-6",
+        "branch_or_model_tag": "M06_CASE_GOVERNANCE_BLOCK",
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 51.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": false,
+          "protocol_metadata_recorded": false,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        }
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE6_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE6_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": false,
+          "evidence_ids": ["M06_CASE6_S8"]
+        },
+        "stage9": {
+          "artifact_route_explains": false,
+          "evidence_ids": ["M06_CASE6_S9"]
+        },
+        "stage10": {
+          "convergence_plan_declared": true,
+          "reduction_limit_verified": true,
+          "evidence_ids": ["M06_CASE6_S10"]
+        },
+        "stage11": {
+          "equivalent_within_resolution": false,
+          "evidence_ids": ["M06_CASE6_S11"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "NOT_EVALUATED",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "terminated_at": "STAGE_12",
+        "validation_ladder": {
+          "L0_baseline_pipeline_reproduced": true,
+          "L1_reduction_limit_verified": true,
+          "L2_convergence_plan_defined": true,
+          "L3_numerical_stability_passed": false,
+          "L4_instrument_facing_comparison_path_defined": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_7_CONFIRMED_READY_BRANCH",
+      "class": "confirmed_ready_branch",
+      "description": "Canonical harness positive control: a fully governed, confirmed branch can clear to PROCEED.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-7",
+        "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+        "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+        "calibration_validity_score": 95.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        },
+        "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": ["time-domain", "power", "cross-device"],
+          "strongest_competitor_separated": true,
+          "geometry_claim_fabrication_matched": true,
+          "experimentally_resolvable": true
+        },
+        "new_free_parameters": ["lambda"],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "independent metrology"
+        }
+      },
+      "stage_inputs": {
+        "stage5": {
+          "baseline_pipeline_executed": true,
+          "evidence_ids": ["M06_CASE7_S5"]
+        },
+        "stage6": {
+          "baseline_suffices": false,
+          "evidence_ids": ["M06_CASE7_S6"]
+        },
+        "stage8": {
+          "known_mechanism_explains": false,
+          "evidence_ids": ["M06_CASE7_S8"]
+        },
+        "stage9": {
+          "artifact_route_explains": false,
+          "evidence_ids": ["M06_CASE7_S9"]
+        },
+        "stage10": {
+          "convergence_plan_declared": true,
+          "reduction_limit_verified": true,
+          "evidence_ids": ["M06_CASE7_S10"]
+        },
+        "stage11": {
+          "equivalent_within_resolution": false,
+          "evidence_ids": ["M06_CASE7_S11"]
+        },
+        "stage13": {
+          "numerical_stability_passed": true,
+          "evidence_ids": ["M06_CASE7_S13"]
+        },
+        "stage15": {
+          "executable_falsifier_package_emitted": true,
+          "experiment_design_law_satisfied": true,
+          "evidence_ids": ["M06_CASE7_S15"]
+        },
+        "stage16": {
+          "geometry_claimed_discriminator": false,
+          "signal_consistency": "CONFIRMED",
+          "matched_protocols_satisfied": true,
+          "devices_tested": ["DEV_A", "DEV_B"],
+          "evidence_ids": ["M06_CASE7_S16"]
+        }
+      },
+      "expected": {
+        "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+        "governance_outcome": "PROCEED",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "",
         "terminated_at": "",
         "validation_ladder": {
           "L0_baseline_pipeline_reproduced": true,

@@ -26,7 +26,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from qdp_paths import SCHEMA
+from tools.workflow.qdp_runtime.qdp_paths import SCHEMA
 
 
 DEFAULT_SCHEMA = SCHEMA
@@ -48,6 +48,10 @@ CROSS_DEVICE_STATUS_VALUES = {
     "CONFIRMED",
 }
 GOVERNANCE_OUTCOME_VALUES = {"PROCEED", "SANDBOX_ONLY", "DEFER", "REJECT"}
+CALIBRATION_STATUS_VALUES = {"PENDING_REVIEW", "UNKNOWN", "VALID", "INVALID"}
+IDENTIFIABILITY_STATUS_VALUES = {"PENDING_REVIEW", "INSUFFICIENT", "PROVISIONAL", "SUFFICIENT"}
+DRIFT_STATUS_VALUES = {"PENDING_REVIEW", "NOT_REQUIRED", "ASSESSED", "MISSING_MODEL"}
+DATASET_GOVERNANCE_STATUS_VALUES = {"PENDING_REVIEW", "INCOMPLETE", "COMPLETE"}
 
 
 def load_json(path: Path) -> Any:
@@ -83,6 +87,10 @@ def semantic_validate(instance: Dict[str, Any], mode: str) -> List[str]:
     cross_nested = instance.get("cross_device_validation", {}).get("status", "")
     gov_outcome = instance.get("governance_outcome", "")
     sci = instance.get("scientific_decision", "")
+    calibration_status = instance.get("calibration_status", {})
+    identifiability_status = instance.get("identifiability_status", {})
+    drift_ledger = instance.get("drift_ledger", {})
+    dataset_governance = instance.get("dataset_governance", {})
 
     if mode == "final":
         require_nonempty("$.system_status", top_system)
@@ -94,6 +102,10 @@ def semantic_validate(instance: Dict[str, Any], mode: str) -> List[str]:
         require_nonempty("$.cross_device_status", cross_top)
         require_nonempty("$.cross_device_validation.status", cross_nested)
         require_nonempty("$.governance_outcome", gov_outcome)
+        require_nonempty("$.calibration_status.status", calibration_status.get("status", ""))
+        require_nonempty("$.identifiability_status.status", identifiability_status.get("status", ""))
+        require_nonempty("$.drift_ledger.status", drift_ledger.get("status", ""))
+        require_nonempty("$.dataset_governance.status", dataset_governance.get("status", ""))
         if instance.get("validation_ladder", {}).get("L4_instrument_facing_comparison_path_defined") and not instance.get("exact_falsifier"):
             errors.append("$.exact_falsifier must be non-empty when L4 instrument-facing comparison path is defined")
         if instance.get("validation_ladder", {}).get("L1_reduction_limit_verified") and not instance.get("reduction_limit"):
@@ -125,6 +137,14 @@ def semantic_validate(instance: Dict[str, Any], mode: str) -> List[str]:
         errors.append("$.cross_device_status has invalid value")
     if gov_outcome and gov_outcome not in GOVERNANCE_OUTCOME_VALUES:
         errors.append("$.governance_outcome has invalid value")
+    if calibration_status.get("status") and calibration_status.get("status") not in CALIBRATION_STATUS_VALUES:
+        errors.append("$.calibration_status.status has invalid value")
+    if identifiability_status.get("status") and identifiability_status.get("status") not in IDENTIFIABILITY_STATUS_VALUES:
+        errors.append("$.identifiability_status.status has invalid value")
+    if drift_ledger.get("status") and drift_ledger.get("status") not in DRIFT_STATUS_VALUES:
+        errors.append("$.drift_ledger.status has invalid value")
+    if dataset_governance.get("status") and dataset_governance.get("status") not in DATASET_GOVERNANCE_STATUS_VALUES:
+        errors.append("$.dataset_governance.status has invalid value")
 
     # Build-spec consistency checks
     if sv == "FAILED" and top_system != "SCHEMA_VALIDATION_FAILURE":
@@ -159,6 +179,44 @@ def semantic_validate(instance: Dict[str, Any], mode: str) -> List[str]:
         # only a soft check if geometry was not actually claimed; still useful to flag
         if instance.get("scaling_analysis", {}).get("geometry_claim_fabrication_matched") is False:
             errors.append("cross_device_status=CONFIRMED is suspect when fabrication_matched_for_geometry_claim=false and geometry_claim_fabrication_matched=false")
+
+    top_score = instance.get("calibration_validity_score")
+    nested_score = calibration_status.get("validity_score")
+    if top_score is not None and nested_score is not None and top_score != nested_score:
+        errors.append("$.calibration_validity_score must match $.calibration_status.validity_score when both are present")
+
+    threshold = calibration_status.get("threshold", 70)
+    below_threshold = calibration_status.get("below_threshold", False)
+    if nested_score is not None and isinstance(nested_score, (int, float)):
+        if nested_score < threshold and not below_threshold:
+            errors.append("$.calibration_status.below_threshold must be true when validity_score is below threshold")
+        if nested_score >= threshold and below_threshold:
+            errors.append("$.calibration_status.below_threshold must be false when validity_score meets threshold")
+        if nested_score < threshold and calibration_status.get("status") == "VALID":
+            errors.append("$.calibration_status.status=VALID is inconsistent with below-threshold calibration score")
+        if nested_score >= threshold and calibration_status.get("status") == "INVALID":
+            errors.append("$.calibration_status.status=INVALID is inconsistent with above-threshold calibration score")
+
+    if below_threshold and gov_outcome == "PROCEED":
+        errors.append("calibration below threshold is incompatible with governance_outcome=PROCEED")
+    if calibration_status.get("status") == "INVALID" and gov_outcome == "PROCEED":
+        errors.append("calibration_status=INVALID is incompatible with governance_outcome=PROCEED")
+    if dataset_governance.get("status") == "INCOMPLETE" and gov_outcome == "PROCEED":
+        errors.append("dataset_governance.status=INCOMPLETE is incompatible with governance_outcome=PROCEED")
+    if identifiability_status.get("status") == "INSUFFICIENT" and gov_outcome == "PROCEED":
+        errors.append("identifiability_status.status=INSUFFICIENT is incompatible with governance_outcome=PROCEED")
+    if drift_ledger.get("status") == "MISSING_MODEL" and gov_outcome == "PROCEED":
+        errors.append("drift_ledger.status=MISSING_MODEL is incompatible with governance_outcome=PROCEED")
+
+    if sci == "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE":
+        if calibration_status.get("status") in {"PENDING_REVIEW", "UNKNOWN", "INVALID"}:
+            errors.append("scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires calibration_status=VALID")
+        if dataset_governance.get("status") != "COMPLETE":
+            errors.append("scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires dataset_governance.status=COMPLETE")
+        if identifiability_status.get("status") not in {"PROVISIONAL", "SUFFICIENT"}:
+            errors.append("scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires identifiability_status to be provisional or sufficient")
+        if drift_ledger.get("status") not in {"ASSESSED", "NOT_REQUIRED"}:
+            errors.append("scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires drift_ledger.status to be assessed or not required")
 
     # failure_mode_library_hits consistency
     hits = instance.get("failure_mode_library_hits", [])
@@ -216,3 +274,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

@@ -1,0 +1,286 @@
+{
+  "artifact_id": "QDP_V10_6_M08_SELFTEST_CASES",
+  "module_id": "M08",
+  "cases": [
+    {
+      "case_id": "CASE_M08_BASELINE_SUFFICIENCY",
+      "description": "A joint GKSL baseline fit with drift-aware residual checks should reproduce the clean baseline-sufficiency signature M05 expects.",
+      "input_candidate": {
+        "candidate_id": "m08-case-baseline-sufficiency",
+        "branch_or_model_tag": "M08_CASE_BASELINE_SUFFICIENCY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "reduction_limit": "When nonlinear term is zero, recover standard Lindblad dynamics.",
+        "baseline_model": {
+          "parameters": {
+            "T1": "38us",
+            "Tphi": "24us",
+            "measurement_noise_level": "0.012"
+          },
+          "fit_windows": [
+            "day_1",
+            "day_2"
+          ],
+          "noise_model_declared": true,
+          "fit_converged": true,
+          "trace_preserving": true,
+          "complete_positive": true,
+          "textbook_limit_recovered": true
+        },
+        "residual_analysis": {
+          "time_series_available": true,
+          "stationarity_confirmed": true
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": true
+        },
+        "residual_analysis": {
+          "structured_residuals": false,
+          "white_residuals": true,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [],
+          "time_series_based": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M08_CORRELATED_RESIDUALS",
+      "description": "Correlated residuals should explicitly fail whiteness and mark structured residuals.",
+      "input_candidate": {
+        "candidate_id": "m08-case-correlated-residuals",
+        "branch_or_model_tag": "M08_CASE_CORRELATED_RESIDUALS",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "baseline_model": {
+          "parameters": {
+            "T1": "41us",
+            "Tphi": "19us",
+            "measurement_noise_level": "0.015"
+          },
+          "fit_windows": [
+            "day_1",
+            "day_2"
+          ],
+          "noise_model_declared": true,
+          "fit_converged": true
+        },
+        "residual_analysis": {
+          "time_series_available": true,
+          "correlated_residuals": true
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CORRELATED_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M08_DRIVE_AND_RAMSEY_MISMATCH",
+      "description": "Drive-conditional shifts and Ramsey-envelope mismatch should surface as structured residual features.",
+      "input_candidate": {
+        "candidate_id": "m08-case-drive-ramsey",
+        "branch_or_model_tag": "M08_CASE_DRIVE_RAMSEY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "baseline_model": {
+          "parameters": {
+            "T1": "33us",
+            "Tphi": "14us",
+            "measurement_noise_level": "0.02"
+          },
+          "fit_windows": [
+            "day_1",
+            "day_2"
+          ],
+          "noise_model_declared": true,
+          "fit_converged": true
+        },
+        "residual_analysis": {
+          "time_series_available": true,
+          "drive_conditional_shifts_detected": true,
+          "ramsey_envelope_mismatch": true
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "DRIVE_CONDITIONAL_SHIFTS",
+            "RAMSEY_ENVELOPE_MISMATCH"
+          ],
+          "time_series_based": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED",
+      "description": "Nonstationary cross-observable residuals should fail stationarity and correlation checks together.",
+      "input_candidate": {
+        "candidate_id": "m08-case-nonstationary",
+        "branch_or_model_tag": "M08_CASE_NONSTATIONARY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "baseline_model": {
+          "parameters": {
+            "T1": "29us",
+            "Tphi": "11us",
+            "measurement_noise_level": "0.025"
+          },
+          "fit_windows": [
+            "day_1",
+            "day_2",
+            "day_3"
+          ],
+          "noise_model_declared": true,
+          "fit_converged": true
+        },
+        "residual_analysis": {
+          "time_series_available": true,
+          "cross_observable_correlations_present": true,
+          "nonstationary_residuals": true
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": false,
+          "cross_observable_correlations_vanish": false,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "CROSS_OBSERVABLE_CORRELATIONS",
+            "NONSTATIONARY_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M08_NON_GAUSSIAN_BURSTS",
+      "description": "Bursty heavy-tailed residuals should be flagged even when autocorrelation is not the main issue.",
+      "input_candidate": {
+        "candidate_id": "m08-case-heavy-tails",
+        "branch_or_model_tag": "M08_CASE_HEAVY_TAILS",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "baseline_model": {
+          "parameters": {
+            "T1": "36us",
+            "Tphi": "16us",
+            "measurement_noise_level": "0.017"
+          },
+          "fit_windows": [
+            "day_1",
+            "day_2"
+          ],
+          "noise_model_declared": true,
+          "fit_converged": true
+        },
+        "residual_analysis": {
+          "time_series_available": true,
+          "heavy_tails_detected": true,
+          "burstiness_detected": true
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "EXECUTED_SUCCESSFULLY",
+          "joint_fit_used": true,
+          "hierarchical_drift_model_used": true,
+          "pipeline_executed": true,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": true,
+          "features": [
+            "NON_GAUSSIAN_RESIDUALS"
+          ],
+          "time_series_based": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M08_INSUFFICIENT_JOINT_DATA",
+      "description": "A single observable without time-series support should fall back conservatively instead of pretending a joint baseline fit ran.",
+      "input_candidate": {
+        "candidate_id": "m08-case-insufficient-data",
+        "branch_or_model_tag": "M08_CASE_INSUFFICIENT_DATA",
+        "primary_observable": "T1 decay",
+        "baseline_model": {
+          "parameters": {
+            "T1": "44us"
+          }
+        },
+        "residual_analysis": {
+          "time_series_available": false
+        }
+      },
+      "expected": {
+        "baseline_model": {
+          "status": "INSUFFICIENT_JOINT_FIT_DATA",
+          "joint_fit_used": false,
+          "hierarchical_drift_model_used": false,
+          "pipeline_executed": false,
+          "reduction_limit_verified": false
+        },
+        "residual_analysis": {
+          "structured_residuals": true,
+          "white_residuals": false,
+          "stationary_residuals": true,
+          "cross_observable_correlations_vanish": true,
+          "drift_aware_fit_applied": false,
+          "features": [
+            "INSUFFICIENT_TIME_SERIES_DATA"
+          ],
+          "time_series_based": false
+        }
+      }
+    }
+  ]
+}

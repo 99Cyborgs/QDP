@@ -1,0 +1,315 @@
+{
+  "artifact_id": "QDP_V10_6_M12_SELFTEST_CASES",
+  "module_id": "M12",
+  "cases": [
+    {
+      "case_id": "CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE",
+      "description": "The module constructs a falsifier and emits an executable package when inputs are sufficient.",
+      "candidate_overrides": {
+        "primary_observable": "Qi",
+        "strongest_competing_mechanism": "TLS",
+        "accessible_platform_or_device_class": "planar_resonator"
+      },
+      "expected": {
+        "experiment_schedule": {
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "requested_output_artifacts": [
+          "EXECUTABLE_FALSIFIER_PACKAGE"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_M12_PRESERVES_EXPLICIT_PLAN",
+      "description": "An explicit falsifier and concrete experiment plan are preserved.",
+      "candidate_overrides": {
+        "exact_falsifier": "The control pair must invert the claimed ranking.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Explicit control inversion sweep"
+          ],
+          "default_templates_triggered": [
+            "EXISTING_TEMPLATE"
+          ]
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        }
+      },
+      "expected": {
+        "exact_falsifier": "The control pair must invert the claimed ranking.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Explicit control inversion sweep"
+          ],
+          "default_templates_triggered": [
+            "EXISTING_TEMPLATE",
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT",
+      "description": "Without observable or platform context, the package stays un-emitted.",
+      "candidate_overrides": {
+        "primary_observable": "",
+        "secondary_observable": "",
+        "accessible_platform_or_device_class": "",
+        "strongest_competing_mechanism": "",
+        "minimal_discriminant_measurement": ""
+      },
+      "expected": {
+        "experiment_schedule": {
+          "executable_falsifier_package_emitted": false
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_VORTEX_SWEEP_SYNTHESIS",
+      "description": "A vortex branch gets a branch-specific falsifier, sweep label, and parameter ranges.",
+      "candidate_overrides": {
+        "candidate_id": "m09-case-vortex",
+        "branch_or_model_tag": "M09_CASE_VORTEX",
+        "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+        "strongest_competing_mechanism": "VORTEX",
+        "signature_matches": [
+          "HYSTERESIS",
+          "CONSISTENT_IMPEDANCE_RATIO"
+        ],
+        "evaluation_notes": [
+          "Bcool history, ZFC versus FC, and repeated field loop hysteresis index all track the loss shift."
+        ]
+      },
+      "expected": {
+        "exact_falsifier": "If the vortex branch is real, ZFC vs FC, field-loop history, and matched width or thickness sweeps must preserve the delta fr over delta 1/Qi ordering across cooldowns.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Vortex discriminant sweep: ZFC vs FC, field loops, cooldown field, matched width or thickness, delta fr over delta 1/Qi"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "VORTEX"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "VORTEX",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "field_history_tag": [
+            "ZFC",
+            "FC",
+            "UP_LOOP",
+            "DOWN_LOOP"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_TLS_SWEEP_SYNTHESIS",
+      "description": "A TLS branch gets a saturation sweep and TLS-specific simulation axes.",
+      "candidate_overrides": {
+        "candidate_id": "m09-case-tls",
+        "branch_or_model_tag": "M09_CASE_TLS",
+        "assigned_family_class": "TLS_ENSEMBLE",
+        "strongest_competing_mechanism": "TLS",
+        "signature_matches": [
+          "POWER_DEPENDENT_SATURATION"
+        ],
+        "evaluation_notes": [
+          "Calibrated power dependence follows a TLS saturation trend with participation scaling across geometry."
+        ]
+      },
+      "expected": {
+        "exact_falsifier": "If the TLS branch is real, readout-power and temperature sweeps must reproduce the saturation trend across matched geometry or participation changes.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "TLS saturation sweep: readout power x temperature x geometry or participation"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "TLS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "TLS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_QP_SWEEP_SYNTHESIS",
+      "description": "A quasiparticle branch gets the synchronized burst sweep and correlation axes.",
+      "candidate_overrides": {
+        "candidate_id": "m09-case-qp",
+        "branch_or_model_tag": "M09_CASE_QP",
+        "assigned_family_class": "GLOBAL_BATH_EVENT",
+        "strongest_competing_mechanism": "QUASIPARTICLE",
+        "signature_matches": [
+          "SUDDEN_T1_COLLAPSES"
+        ],
+        "evaluation_notes": [
+          "Parity switching correlates with the sudden T1 collapses and strong drive-induced QP generation is visible."
+        ]
+      },
+      "expected": {
+        "exact_falsifier": "If the quasiparticle branch is real, parity-switch and synchronized multi-device burst measurements must track shielding or injection controls.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Quasiparticle burst sweep: parity switching, synchronized multi-device T1, shielding or injection controls"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "mechanism_discrimination",
+          "sweep_route_group": "QUASIPARTICLE"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "mechanism_discrimination",
+          "owner_route": "QUASIPARTICLE",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "burst_rate": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_READOUT_ARTIFACT_SWEEP_SYNTHESIS",
+      "description": "A readout alias artifact branch gets the artifact-specific sweep label and relinearization axes.",
+      "candidate_overrides": {
+        "candidate_id": "m10-case-readout",
+        "branch_or_model_tag": "M10_CASE_READOUT",
+        "artifact_tests": {
+          "strongest_artifact_route": "READOUT_ALIAS"
+        },
+        "evaluation_notes": [
+          "Readout nonlinearity vanished after a relinearized fit and reduced readout power on the measurement chain."
+        ]
+      },
+      "expected": {
+        "exact_falsifier": "If the readout-alias branch is real, readout-power and gain sweeps plus a relinearized fit must remove the anomaly.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Readout alias sweep: readout power or gain, digitizer linearity, relinearized fit"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "artifact_elimination",
+          "sweep_route_group": "READOUT_ALIAS"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "simulation_conditions": {
+          "branch_partition": "artifact_elimination",
+          "owner_route": "READOUT_ALIAS",
+          "status": "PROPOSED",
+          "simulation_sweep_required": true,
+          "lab_sweep_required": true
+        },
+        "tested_parameter_ranges": {
+          "readout_power": [
+            "LOW",
+            "MID",
+            "HIGH"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M12_CONFIRMED_READY_CROSS_DEVICE_BACKFILL",
+      "description": "A confirmed-ready M06 candidate gets a non-empty cross-device priority experiment and device targets.",
+      "candidate_overrides": {
+        "candidate_id": "m06-case-7",
+        "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+        "minimal_discriminant_measurement": "Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.",
+        "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+        "cross_device_status": "CONFIRMED",
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        },
+        "experiment_schedule": {
+          "priority_experiments": [],
+          "default_templates_triggered": [],
+          "executable_falsifier_package_emitted": false
+        },
+        "candidate_target_devices": []
+      },
+      "expected": {
+        "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+        "experiment_schedule": {
+          "priority_experiments": [
+            "Cross-device matched-fabrication sweep"
+          ],
+          "default_templates_triggered": [
+            "ORTHOGONAL_DISCRIMINANT_SWEEP"
+          ],
+          "executable_falsifier_package_emitted": true,
+          "branch_partition": "cross_device_confirmation",
+          "sweep_route_group": "CROSS_DEVICE_CONFIRMATION"
+        },
+        "instrument_capabilities": {
+          "instrument_facing_requirement_satisfied": true
+        },
+        "candidate_target_devices": [
+          "DEV_A",
+          "DEV_B"
+        ],
+        "simulation_conditions": {},
+        "tested_parameter_ranges": {}
+      }
+    }
+  ]
+}

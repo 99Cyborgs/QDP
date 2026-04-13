@@ -1,0 +1,144 @@
+{
+  "artifact_id": "QDP_V10_6_M04_SELFTEST_REPORT",
+  "module_id": "M04",
+  "timestamp_utc": "2026-04-13T18:30:49.009133+00:00",
+  "visible_source_only": true,
+  "cases_total": 3,
+  "cases_passed": 3,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M04_VALID_BRANCH",
+      "description": "A fully specified intake maps to a canonical sandboxed precompute candidate with a clear branch identity.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "branch_or_model_tag": "M04_VALID_BRANCH",
+        "change_type": "HAMILTONIAN_TERM",
+        "declared_family_class": "KERNEL_MEMORY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "preliminary_intake_outcome": "PROCEED",
+        "intake_ready_for_compute": true
+      },
+      "actual_summary": {
+        "branch_or_model_tag": "M04_VALID_BRANCH",
+        "change_type": "HAMILTONIAN_TERM",
+        "declared_family_class": "KERNEL_MEMORY",
+        "primary_observable": "T1 decay",
+        "secondary_observable": "Ramsey envelope",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "SCHEDULED",
+        "preliminary_intake_outcome": "PROCEED",
+        "intake_ready_for_compute": true
+      },
+      "registration_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_registration.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json"
+    },
+    {
+      "case_id": "CASE_M04_MISSING_FALSIFIER",
+      "description": "Missing falsifier data must defer the intake and keep it out of compute readiness.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "branch_or_model_tag": "M04_MISSING_FALSIFIER",
+        "change_type": "OBSERVABLE",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "DEFER",
+        "intake_ready_for_compute": false
+      },
+      "actual_summary": {
+        "branch_or_model_tag": "M04_MISSING_FALSIFIER",
+        "change_type": "OBSERVABLE",
+        "declared_family_class": "MARKOVIAN_RESERVOIR",
+        "primary_observable": "quality factor",
+        "secondary_observable": "frequency shift",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "DEFER",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "DEFER",
+        "intake_ready_for_compute": false
+      },
+      "registration_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_registration.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json"
+    },
+    {
+      "case_id": "CASE_M04_INVALID_SCALE_CLAIM",
+      "description": "A cross-scale claim without an attached effective mapping must reject immediately.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+        "change_type": "SCALE_BRIDGE",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "REJECT",
+        "intake_ready_for_compute": false
+      },
+      "actual_summary": {
+        "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+        "change_type": "SCALE_BRIDGE",
+        "declared_family_class": "OTHER",
+        "primary_observable": "switching histogram",
+        "secondary_observable": "relaxation tail",
+        "registry_duplicate_status": "CLEAR",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "REJECT",
+        "cross_device_status": "NOT_REQUIRED",
+        "preliminary_intake_outcome": "REJECT",
+        "intake_ready_for_compute": false
+      },
+      "registration_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_registration.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json"
+    }
+  ]
+}

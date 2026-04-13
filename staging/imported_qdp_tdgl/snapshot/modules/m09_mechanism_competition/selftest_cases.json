@@ -1,0 +1,280 @@
+{
+  "artifact_id": "QDP_V10_6_M09_SELFTEST_CASES",
+  "module_id": "M09",
+  "cases": [
+    {
+      "case_id": "CASE_M09_TLS_EXPLAINS",
+      "description": "A surfaced TLS saturation signature should allow the TLS mechanism to explain the data conservatively.",
+      "input_candidate": {
+        "candidate_id": "m09-case-tls",
+        "branch_or_model_tag": "M09_CASE_TLS",
+        "assigned_family_class": "TLS_ENSEMBLE",
+        "signature_matches": [
+          "POWER_DEPENDENT_SATURATION"
+        ],
+        "evaluation_notes": [
+          "Calibrated power dependence follows a TLS saturation trend with participation scaling across geometry."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.8,
+          "P_VORTEX": 0.0,
+          "P_QUASIPARTICLE": 0.0,
+          "P_PHONON": 0.0,
+          "P_CONTROL_NOISE": 0.1,
+          "P_EM_PURCELL": 0.0,
+          "P_OTHER": 0.1
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "TLS",
+        "strongest_competing_mechanism": "TLS",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "tls": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "vortex": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_VORTEX_EXPLAINS",
+      "description": "Field-history hysteresis with cooldown protocol evidence should let the vortex mechanism explain the data.",
+      "input_candidate": {
+        "candidate_id": "m09-case-vortex",
+        "branch_or_model_tag": "M09_CASE_VORTEX",
+        "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+        "signature_matches": [
+          "HYSTERESIS",
+          "CONSISTENT_IMPEDANCE_RATIO"
+        ],
+        "evaluation_notes": [
+          "Bcool history, ZFC versus FC, and repeated field loop hysteresis index all track the loss shift."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.82,
+          "P_QUASIPARTICLE": 0.0,
+          "P_PHONON": 0.0,
+          "P_CONTROL_NOISE": 0.0,
+          "P_EM_PURCELL": 0.0,
+          "P_OTHER": 0.18
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "VORTEX",
+        "strongest_competing_mechanism": "VORTEX",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "vortex": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "tls": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_QP_EXPLAINS",
+      "description": "Parity-switching and drive-induced QP evidence should promote quasiparticles to the explaining mechanism.",
+      "input_candidate": {
+        "candidate_id": "m09-case-qp",
+        "branch_or_model_tag": "M09_CASE_QP",
+        "assigned_family_class": "GLOBAL_BATH_EVENT",
+        "signature_matches": [
+          "SUDDEN_T1_COLLAPSES"
+        ],
+        "evaluation_notes": [
+          "Parity switching correlates with the sudden T1 collapses and strong drive-induced QP generation is visible."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.1,
+          "P_QUASIPARTICLE": 0.7,
+          "P_PHONON": 0.1,
+          "P_CONTROL_NOISE": 0.0,
+          "P_EM_PURCELL": 0.0,
+          "P_OTHER": 0.1
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "QUASIPARTICLE",
+        "strongest_competing_mechanism": "QUASIPARTICLE",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "quasiparticle": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_CONTROL_NOISE_EXPLAINS",
+      "description": "Filter-function and line-attenuation evidence should let the control-noise mechanism explain the data.",
+      "input_candidate": {
+        "candidate_id": "m09-case-control-noise",
+        "branch_or_model_tag": "M09_CASE_CONTROL_NOISE",
+        "signature_matches": [
+          "NARROWBAND_NOISE_PSD"
+        ],
+        "evaluation_notes": [
+          "Filter-function noise spectroscopy found the same peak after pulse distortion and line attenuation changes in the control-line chain."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.0,
+          "P_QUASIPARTICLE": 0.0,
+          "P_PHONON": 0.0,
+          "P_CONTROL_NOISE": 0.76,
+          "P_EM_PURCELL": 0.14,
+          "P_OTHER": 0.1
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "CONTROL_NOISE",
+        "strongest_competing_mechanism": "CONTROL_NOISE",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_noise": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_EM_PURCELL_EXPLAINS",
+      "description": "A coherent parasitic mode / avoided-crossing signature should allow the EM Purcell route to explain the data.",
+      "input_candidate": {
+        "candidate_id": "m09-case-em-purcell",
+        "branch_or_model_tag": "M09_CASE_EM_PURCELL",
+        "assigned_family_class": "COHERENT_PARASITIC_MODE",
+        "signature_matches": [
+          "AVOIDED_CROSSING"
+        ],
+        "evaluation_notes": [
+          "High-resolution spectroscopy shows a spurious resonator anticrossing with a visible gap 2g and clean mode tracking."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.0,
+          "P_QUASIPARTICLE": 0.0,
+          "P_PHONON": 0.0,
+          "P_CONTROL_NOISE": 0.05,
+          "P_EM_PURCELL": 0.85,
+          "P_OTHER": 0.1
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "EM_PURCELL",
+        "strongest_competing_mechanism": "EM_PURCELL",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "em_purcell": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_PHONON_SUPPORT_ONLY",
+      "description": "A phonon-like revival signature without the surfaced discriminator should remain supporting only.",
+      "input_candidate": {
+        "candidate_id": "m09-case-phonon-supporting",
+        "branch_or_model_tag": "M09_CASE_PHONON_SUPPORTING",
+        "assigned_family_class": "FINITE_SIZE_STRUCTURED_BATH",
+        "signature_matches": [
+          "REVIVALS_BACKFLOW",
+          "NON_EXPONENTIAL_DECAY"
+        ],
+        "evaluation_notes": [
+          "Non-exponential decay with revivals is present, but no pulse tube synchronization or engineered phononic control has been run."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.0,
+          "P_QUASIPARTICLE": 0.0,
+          "P_PHONON": 0.6,
+          "P_CONTROL_NOISE": 0.0,
+          "P_EM_PURCELL": 0.15,
+          "P_OTHER": 0.25
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "PHONON",
+        "strongest_competing_mechanism": "",
+        "mechanism_tests": {
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "phonon": {
+            "status": "PRIMARY_DISCRIMINANT",
+            "explains_data": false
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M09_VORTEX_QP_COMBINATION",
+      "description": "Vortex and quasiparticle evidence with explicit interplay language should surface a parsimonious combination explanation.",
+      "input_candidate": {
+        "candidate_id": "m09-case-vortex-qp-combo",
+        "branch_or_model_tag": "M09_CASE_VORTEX_QP_COMBO",
+        "assigned_family_class": "METASTABLE_CONFIGURATION_MEMORY",
+        "signature_matches": [
+          "HYSTERESIS",
+          "SUDDEN_T1_COLLAPSES"
+        ],
+        "evaluation_notes": [
+          "Controlled vortex trapping acts as a quasiparticle sink and the observed interplay suppresses the sudden T1 collapses after field-history preparation.",
+          "Parity switching remains visible when the cooldown field is changed."
+        ],
+        "mechanism_scores_after_signature": {
+          "P_TLS": 0.0,
+          "P_VORTEX": 0.4,
+          "P_QUASIPARTICLE": 0.4,
+          "P_PHONON": 0.0,
+          "P_CONTROL_NOISE": 0.0,
+          "P_EM_PURCELL": 0.0,
+          "P_OTHER": 0.2
+        }
+      },
+      "expected": {
+        "strongest_competing_mechanism_initial": "VORTEX",
+        "strongest_competing_mechanism": "VORTEX_QUASIPARTICLE_INTERPLAY",
+        "mechanism_tests": {
+          "explains_data": true,
+          "parsimonious_combination_explains": true,
+          "parsimonious_combination_label": "VORTEX_QUASIPARTICLE_INTERPLAY",
+          "vortex": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "quasiparticle": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    }
+  ]
+}

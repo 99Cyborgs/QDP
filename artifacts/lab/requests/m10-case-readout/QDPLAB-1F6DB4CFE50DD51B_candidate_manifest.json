@@ -1,0 +1,16 @@
+{
+  "manifest_id": "QDPMAN-D28EF9CB23AEA248",
+  "candidate_id": "m10-case-readout",
+  "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
+  "candidate_sha256": "2b00ab86b11666439e50fc42f10b3482c7e8d7f12dfa1b1c89e9f1488b28bcb9",
+  "linked_artifacts": [
+    {
+      "path": "specs\\research\\deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6"
+    },
+    {
+      "path": "specs\\intake\\fork_intake_form_one_page.pdf",
+      "sha256": "3a86e3137169dba080875a7e6f5037f457609cf8996ee3bd043283e91cc96666"
+    }
+  ]
+}

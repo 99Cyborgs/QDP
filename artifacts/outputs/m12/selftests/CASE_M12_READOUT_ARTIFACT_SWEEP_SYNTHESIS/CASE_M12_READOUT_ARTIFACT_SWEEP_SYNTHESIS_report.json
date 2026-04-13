@@ -1,0 +1,44 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.075864+00:00",
+  "candidate_id": "m10-case-readout",
+  "result_summary": {
+    "exact_falsifier": "If the readout-alias branch is real, readout-power and gain sweeps plus a relinearized fit must remove the anomaly.",
+    "priority_experiments": [
+      "Readout alias sweep: readout power or gain, digitizer linearity, relinearized fit"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "artifact_elimination",
+    "sweep_route_group": "READOUT_ALIAS",
+    "candidate_target_devices": [],
+    "simulation_conditions": {
+      "branch_partition": "artifact_elimination",
+      "owner_route": "READOUT_ALIAS",
+      "status": "PROPOSED",
+      "simulation_sweep_required": true,
+      "lab_sweep_required": true
+    },
+    "tested_parameter_ranges": {
+      "readout_power": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "readout_gain": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "digitizer_linearity_model": [
+        "BASELINE",
+        "RELINEARIZED"
+      ]
+    },
+    "suppression_reason": ""
+  }
+}

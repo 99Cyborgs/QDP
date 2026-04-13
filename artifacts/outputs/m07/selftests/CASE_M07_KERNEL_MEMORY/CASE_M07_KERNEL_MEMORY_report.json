@@ -1,11 +1,11 @@
 {
   "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
   "module_id": "M07",
-  "timestamp_utc": "2026-03-15T20:19:14.436390+00:00",
+  "timestamp_utc": "2026-04-13T18:30:48.973547+00:00",
   "visible_source_only": true,
   "declared_family_class": "",
   "declared_likely_bath_class": "",
-  "evidence_text_sample": "m07-case-kernel m07_case_kernel                        not_required  not_required   the decay is non-exponential with partial recovery and revivals at late time. this looks like kernel memory from a structured bath. ready passed passed passed passed ready not_evaluated defer",
+  "evidence_text_sample": "m07-case-kernel m07_case_kernel                        not_required  not_required pending_review  pending_review  pending_review  pending_review    the decay is non-exponential with partial recovery and revivals at late time. this looks like kernel memory from a structured bath. ready passed passed passed passed ready not_evaluated defer",
   "rule_matches": [
     {
       "rule_index": 6,

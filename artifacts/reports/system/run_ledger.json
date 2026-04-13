@@ -1,0 +1,1731 @@
+{
+  "artifact_id": "QDP_V10_6_RUN_LEDGER",
+  "timestamp_utc": "2026-04-13T18:30:49.360735+00:00",
+  "runs": [
+    {
+      "run_id": "QDPRUN-DF13EB5BBFDC8176",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "df13eb5bbfdc81764e42cc6962ca444e39403a417c8495db9d2de2f5add1aa7f",
+      "first_seen_utc": "2026-04-13T18:30:49.316010+00:00",
+      "last_seen_utc": "2026-04-13T18:30:49.316010+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-FEC5CBCC7E500437",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "fec5cbcc7e50043766a323696a4fe21f9ee6e645cf1059cfd55dceb68db203e6",
+      "first_seen_utc": "2026-04-13T16:48:39.084699+00:00",
+      "last_seen_utc": "2026-04-13T16:48:39.084699+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-F25283637162D991",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f25283637162d99154c83a3bbe1ac963daaab4a53b04b0fc73578660bd3edf80",
+      "first_seen_utc": "2026-04-13T16:46:54.543270+00:00",
+      "last_seen_utc": "2026-04-13T16:46:54.543270+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-A4807B3141F74B19",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "a4807b3141f74b19a3830a411de0c34689038157c0939cae6ad191914cf2614c",
+      "first_seen_utc": "2026-04-13T02:37:50.088152+00:00",
+      "last_seen_utc": "2026-04-13T02:37:50.088152+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-24DDC28CBB79B7CA",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "24ddc28cbb79b7ca3da2dbde799f68608c9e0a4e2ec92a1ec35af2cf6b462155",
+      "first_seen_utc": "2026-04-13T01:35:13.861860+00:00",
+      "last_seen_utc": "2026-04-13T01:35:13.861860+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-4BE8863AA748BC4E",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "4be8863aa748bc4e000c4378befa5a694ecde808fb574413a060563a09dbe31a",
+      "first_seen_utc": "2026-04-12T23:30:07.051685+00:00",
+      "last_seen_utc": "2026-04-12T23:30:07.051685+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-AA3B017C20B779CD",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "aa3b017c20b779cd2189db5895d40b4786a17861426c3460bcbc65c0eb5af9a5",
+      "first_seen_utc": "2026-04-12T19:35:38.646570+00:00",
+      "last_seen_utc": "2026-04-12T19:35:38.646570+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-0803DB3CE4FB0479",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "0803db3ce4fb0479bf450246c355616d8f88f2036bd4948a2532faa219c53c13",
+      "first_seen_utc": "2026-04-12T19:29:23.571921+00:00",
+      "last_seen_utc": "2026-04-12T19:29:23.571921+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-15A331FAF459C8FE",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "15a331faf459c8feb4ae756b889c7a463572bb7278da0a2e80f0c7ce6cf43e98",
+      "first_seen_utc": "2026-04-12T15:58:36.493127+00:00",
+      "last_seen_utc": "2026-04-12T15:58:36.493127+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-C19FEF33B144FD0D",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "c19fef33b144fd0d0a908edf711b2b97ec0a31f9d3805e86ad7e758fc8f998ba",
+      "first_seen_utc": "2026-04-12T15:54:02.708126+00:00",
+      "last_seen_utc": "2026-04-12T15:54:02.708126+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-67806C3511ECB11D",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "67806c3511ecb11d5c9fb8d76d17984aaf3424d633ebddb9036ab2f961d805a7",
+      "first_seen_utc": "2026-04-12T02:34:18.211938+00:00",
+      "last_seen_utc": "2026-04-12T02:34:18.211938+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-98ED9B4F6CEF8775",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "98ed9b4f6cef87750dc27523d0ce143c08392fc9c16c4de42dc3d19351b07aeb",
+      "first_seen_utc": "2026-04-12T01:49:41.943096+00:00",
+      "last_seen_utc": "2026-04-12T01:49:41.943096+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-680DF283C02C7B56",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "680df283c02c7b5679ae6b105ce526ea97edb3f2af69d266ff63b73a79fd66f4",
+      "first_seen_utc": "2026-04-12T01:38:34.293419+00:00",
+      "last_seen_utc": "2026-04-12T01:38:34.293419+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-5EC909DD2E1ABF26",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "5ec909dd2e1abf260c79441da5b851c72069aace3291e6079354892b3ea0c623",
+      "first_seen_utc": "2026-04-12T01:21:13.179527+00:00",
+      "last_seen_utc": "2026-04-12T01:21:13.179527+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-DF2D4DC781127456",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "df2d4dc78112745699ce910df1f6926d579f3c583e54e85dbe27c54dfd4b3c14",
+      "first_seen_utc": "2026-04-12T00:51:44.780170+00:00",
+      "last_seen_utc": "2026-04-12T00:51:44.780170+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-00AF5A8ADC181C3C",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "00af5a8adc181c3cf629dbe3098e8f3ad7021d71dcad8476fb4dfc6f8898dd0d",
+      "first_seen_utc": "2026-04-11T23:55:52.494776+00:00",
+      "last_seen_utc": "2026-04-11T23:55:52.494776+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-EE74951C51C92DF0",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "ee74951c51c92df004a1b63021f746fc57d851438ad262cb07c678595eb2d259",
+      "first_seen_utc": "2026-04-11T23:55:13.413943+00:00",
+      "last_seen_utc": "2026-04-11T23:55:13.413943+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-ED53F13DDD96B73F",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "ed53f13ddd96b73fc526f448916fe03a67aa92a941f657c7ee92f0f81dba4326",
+      "first_seen_utc": "2026-04-11T23:53:24.681230+00:00",
+      "last_seen_utc": "2026-04-11T23:53:24.681230+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-42D167C83FA4D890",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "42d167c83fa4d890d836763ddad4abaa4ea8b10b316b7ca06febcc4b6d43e894",
+      "first_seen_utc": "2026-04-11T03:20:52.771900+00:00",
+      "last_seen_utc": "2026-04-11T03:20:52.771900+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-93774142775C51DC",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "93774142775c51dc4304e4d4d954f57458aa72ecfdbc775dfd26aeef98cf3c30",
+      "first_seen_utc": "2026-04-11T03:04:21.593707+00:00",
+      "last_seen_utc": "2026-04-11T03:04:21.593707+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-658801B5233C860C",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "658801b5233c860ced4e7ed41913c08b179951bb69cc045717744a10dece4f53",
+      "first_seen_utc": "2026-04-11T02:56:37.260698+00:00",
+      "last_seen_utc": "2026-04-11T02:56:37.260698+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-F1FC0A0D9B481507",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f1fc0a0d9b481507649fe5df4806c093740fd99fca88d92edabcb064d6164a45",
+      "first_seen_utc": "2026-04-11T02:54:13.854185+00:00",
+      "last_seen_utc": "2026-04-11T02:54:13.854185+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-B7F850977EBD86F3",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b7f850977ebd86f3bb0b22a1091969dace9fcc4ce6f61ec571a95202ae280f56",
+      "first_seen_utc": "2026-04-11T02:23:09.945079+00:00",
+      "last_seen_utc": "2026-04-11T02:23:09.945079+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-2FCCCC7E7588523B",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "2fcccc7e7588523b3f57407e789485b276087f5a849b9a7bc008630e0bd9713d",
+      "first_seen_utc": "2026-04-11T02:21:36.240524+00:00",
+      "last_seen_utc": "2026-04-11T02:21:36.240524+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-DB0D917ECAE81481",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "db0d917ecae814819866ab8c1f566f15657767a6219a56cfce8de5f63c5b12ee",
+      "first_seen_utc": "2026-04-11T02:20:48.119501+00:00",
+      "last_seen_utc": "2026-04-11T02:20:48.119501+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-9A2A674DAE3DCC78",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "9a2a674dae3dcc787c7d05a96ee0ec0092d73ec07c97a177ea3da8f5b0c300de",
+      "first_seen_utc": "2026-04-11T01:39:26.807922+00:00",
+      "last_seen_utc": "2026-04-11T01:39:26.807922+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-9F8797E3858BF710",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "9f8797e3858bf710f6a5492817eaafad37da77d2fd3c9e04fe21af6a25cf056d",
+      "first_seen_utc": "2026-03-19T00:51:38.288668+00:00",
+      "last_seen_utc": "2026-03-19T00:51:38.288668+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-5E8081CA576A58B9",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "5e8081ca576a58b9b1b5d7fe4e8f4f364758848eb83d516629280e3e9d02a046",
+      "first_seen_utc": "2026-03-18T22:57:08.666370+00:00",
+      "last_seen_utc": "2026-03-18T22:57:08.666370+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-AA8D829ECF7653E7",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "aa8d829ecf7653e779fdc412a5b83a9f53ac564f7529b6340453ab1feaa4e1d8",
+      "first_seen_utc": "2026-03-18T22:57:06.682983+00:00",
+      "last_seen_utc": "2026-03-18T22:57:06.682983+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-00E5336CA1E82786",
+        "candidate_count": 3,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-060465F1FBAA6A4B",
+      "operation": "campaign_prepare",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "060465f1fbaa6a4bccbdda548f3a8884a8c8a4446334d0f4b8e6bff9786cb872",
+      "first_seen_utc": "2026-03-18T17:03:50.407742+00:00",
+      "last_seen_utc": "2026-03-18T22:57:06.585627+00:00",
+      "occurrences": 2,
+      "summary": {
+        "prepared_candidate_count": 3,
+        "source_candidate_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-15FA65248807E21C",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "15fa65248807e21c13841bc0844936d5617d486b98fc3fcccb47824a775d679d",
+      "first_seen_utc": "2026-03-18T17:04:03.984612+00:00",
+      "last_seen_utc": "2026-03-18T17:04:03.984612+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-E2B1EDF1B819836D",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "e2b1edf1b819836d492f6e03739a8f226d80d0af0d59c4b6d304c4a4675add67",
+      "first_seen_utc": "2026-03-18T17:03:55.745467+00:00",
+      "last_seen_utc": "2026-03-18T17:03:55.745467+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-00E5336CA1E82786",
+        "candidate_count": 3,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-F29A596138741C75",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f29a596138741c7531cca72b4bbe7c82c445e1b4d254a7abae20a5d8b18a10ab",
+      "first_seen_utc": "2026-03-18T00:52:46.851213+00:00",
+      "last_seen_utc": "2026-03-18T00:52:46.851213+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-5F8BEF59F1478E7C",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "5f8bef59f1478e7c34edbbf6f319c63346f90435763826a9d9d9b4bf10251f88",
+      "first_seen_utc": "2026-03-17T23:28:46.707699+00:00",
+      "last_seen_utc": "2026-03-18T00:52:44.927471+00:00",
+      "occurrences": 6,
+      "summary": {
+        "campaign_id": "QDPCAM-AA83E5AE382CD167",
+        "candidate_count": 3,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-74288D23DDF6E08C",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "74288d23ddf6e08ccc12d13274854b788d7a14377087c26c877ac62c02b8d4c3",
+      "first_seen_utc": "2026-03-18T00:08:28.475711+00:00",
+      "last_seen_utc": "2026-03-18T00:08:28.475711+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-33954BFFB7FBFFE9",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "33954bffb7fbffe945361a4a448abf36e4b896e450b70dec16da6fbf1676b18f",
+      "first_seen_utc": "2026-03-17T23:51:50.404932+00:00",
+      "last_seen_utc": "2026-03-17T23:51:50.404932+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-338EA1C593E973BA",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "338ea1c593e973baccfd4ffcd0192abf631470d48b8960dd4d626b926c63ce14",
+      "first_seen_utc": "2026-03-17T23:29:31.596359+00:00",
+      "last_seen_utc": "2026-03-17T23:29:31.596359+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-DB275AC8EF7BB370",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "db275ac8ef7bb3700e9285b2b730a5556e0f7ee32fc1f2ac7cf4ac0702598a74",
+      "first_seen_utc": "2026-03-17T23:28:48.639112+00:00",
+      "last_seen_utc": "2026-03-17T23:28:48.639112+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-5266B3AABAC34F6C",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "5266b3aabac34f6c2396d57d901acaa548709bdc4529cd196f9925534410aa11",
+      "first_seen_utc": "2026-03-17T23:21:26.214905+00:00",
+      "last_seen_utc": "2026-03-17T23:21:26.214905+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-B81AAF4097C5FA4C",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b81aaf4097c5fa4c5abd247d3e23ed9d01970cc3d6a03f6fc59f0e3d94c0042b",
+      "first_seen_utc": "2026-03-17T22:04:22.833412+00:00",
+      "last_seen_utc": "2026-03-17T23:21:24.088991+00:00",
+      "occurrences": 2,
+      "summary": {
+        "campaign_id": "QDPCAM-AA83E5AE382CD167",
+        "candidate_count": 3,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-C4399AC81298E53B",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "c4399ac81298e53b66947ea8ab68d7e4adee8a9efdf7de87d8e0477f568a6f6b",
+      "first_seen_utc": "2026-03-17T23:21:24.042079+00:00",
+      "last_seen_utc": "2026-03-17T23:21:24.042079+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m10-case-readout",
+        "request_id": "QDPLAB-1F6DB4CFE50DD51B"
+      }
+    },
+    {
+      "run_id": "QDPRUN-BB29A46780347CBC",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "bb29a46780347cbc7a2a167b7886c8a178053b05bd75edec8e8dc2c6afabb2c2",
+      "first_seen_utc": "2026-03-17T23:21:23.983322+00:00",
+      "last_seen_utc": "2026-03-17T23:21:23.983322+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m06-case-7",
+        "request_id": "QDPLAB-CFFB44AC74F0D70D"
+      }
+    },
+    {
+      "run_id": "QDPRUN-6D8B88B32E4A674F",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "6d8b88b32e4a674f536df2738d91857272ef1302377de7180566eef614c6a35f",
+      "first_seen_utc": "2026-03-17T22:03:40.936345+00:00",
+      "last_seen_utc": "2026-03-17T23:21:23.916333+00:00",
+      "occurrences": 2,
+      "summary": {
+        "candidate_id": "m09-case-tls",
+        "request_id": "QDPLAB-33EF62EA8E8567A9"
+      }
+    },
+    {
+      "run_id": "QDPRUN-71794AD7D4138475",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "71794ad7d4138475cff676c7a67164d124fb0791d8285f6db3d36ab0ae825b0d",
+      "first_seen_utc": "2026-03-17T23:21:23.840723+00:00",
+      "last_seen_utc": "2026-03-17T23:21:23.840723+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m09-case-vortex",
+        "request_id": "QDPLAB-48A24B1CAD3FC365"
+      }
+    },
+    {
+      "run_id": "QDPRUN-F9B19A34895852D8",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f9b19a34895852d8ddf18572070c901ff7791879be3e7fefe2153131fb9b0928",
+      "first_seen_utc": "2026-03-17T22:04:31.949745+00:00",
+      "last_seen_utc": "2026-03-17T22:04:31.949745+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-AF8049586718320D",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "af8049586718320d3b6ddb6d9ac626e7dd998a62f00f4ab2f1542674e6a3f4a6",
+      "first_seen_utc": "2026-03-17T22:04:04.723901+00:00",
+      "last_seen_utc": "2026-03-17T22:04:04.723901+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m06-case-7",
+        "request_id": "QDPLAB-E6C79DE63F997436"
+      }
+    },
+    {
+      "run_id": "QDPRUN-DDCD1ADA4C857303",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "ddcd1ada4c8573030b8a84fcd3551fc35857da889948f964f3a8b9ff8045e8fc",
+      "first_seen_utc": "2026-03-17T22:03:53.347728+00:00",
+      "last_seen_utc": "2026-03-17T22:03:53.347728+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m10-case-readout",
+        "request_id": "QDPLAB-1F6DB4CFE50DD51B"
+      }
+    },
+    {
+      "run_id": "QDPRUN-F4DF547F7EA9F928",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f4df547f7ea9f928f9d6d237e347bc79fae32cf1de7f85cf984b4d63236f7945",
+      "first_seen_utc": "2026-03-17T22:03:21.593711+00:00",
+      "last_seen_utc": "2026-03-17T22:03:21.593711+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m09-case-vortex",
+        "request_id": "QDPLAB-48A24B1CAD3FC365"
+      }
+    },
+    {
+      "run_id": "QDPRUN-035B42860F32299A",
+      "operation": "check",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "035b42860f32299a9b06e134b0308f2635f72daaa1158a7c6e013e1d83788a6b",
+      "first_seen_utc": "2026-03-17T21:12:19.413033+00:00",
+      "last_seen_utc": "2026-03-17T21:12:19.413033+00:00",
+      "occurrences": 1,
+      "summary": {
+        "batch": "sim_smoke_20260317",
+        "candidates_failed": 0,
+        "candidates_total": 3,
+        "deterministic_hash_match": true,
+        "lane_blockers": [],
+        "lane_ready": true
+      }
+    },
+    {
+      "run_id": "QDPRUN-E7191EF34ABC6360",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "e7191ef34abc63609eda95d1f8c5ccdf5375dde5cc0d50b8299aeeca127d4f72",
+      "first_seen_utc": "2026-03-17T21:12:19.383136+00:00",
+      "last_seen_utc": "2026-03-17T21:12:19.383136+00:00",
+      "occurrences": 1,
+      "summary": {
+        "batch": "sim_smoke_20260317",
+        "campaign_id": "QDPCAM-AA83E5AE382CD167",
+        "candidate_count": 3,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-AED93147FA79D4B2",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "aed93147fa79d4b226149924c5fe0c547e7733d579e2db7f6ec7de7e9cd3ea9a",
+      "first_seen_utc": "2026-03-17T21:00:40.107363+00:00",
+      "last_seen_utc": "2026-03-17T21:00:40.107363+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-3D81B611F0189E22",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "3d81b611f0189e224f7045789d1ae803c7ad09181535e8f6db274c0aa9abd58a",
+      "first_seen_utc": "2026-03-17T18:27:49.695799+00:00",
+      "last_seen_utc": "2026-03-17T18:27:49.695799+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-6B4C2882566F17E4",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "6b4c2882566f17e431929cb522af070cf73aac00066ef2c993c060079213a397",
+      "first_seen_utc": "2026-03-17T17:15:10.174747+00:00",
+      "last_seen_utc": "2026-03-17T17:15:10.174747+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-DFB6D0C1843565E0",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "dfb6d0c1843565e0f5f1af50d88bf86a65550aceb72d18dfbab5930dc92f464b",
+      "first_seen_utc": "2026-03-17T17:14:36.121878+00:00",
+      "last_seen_utc": "2026-03-17T17:14:36.121878+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-6B2C150483E638CE",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "6b2c150483e638ce62aa1fd72193cf79a6d0561cd0c997a1ce859e9b31b1b3c0",
+      "first_seen_utc": "2026-03-17T16:37:43.338362+00:00",
+      "last_seen_utc": "2026-03-17T16:37:43.338362+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-B1FE8A2737A84338",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b1fe8a2737a84338ac7cc2476bfe98dc4bcaa05c158aeb0bdde0fcf5a4779147",
+      "first_seen_utc": "2026-03-17T16:30:54.565763+00:00",
+      "last_seen_utc": "2026-03-17T16:30:54.565763+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-B5C6623D5DD63960",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b5c6623d5dd63960e7db9344a780cbcb4efe1659fd008550005c8d684c36db74",
+      "first_seen_utc": "2026-03-17T16:27:47.312222+00:00",
+      "last_seen_utc": "2026-03-17T16:27:47.312222+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-76B04FEF2684A0C9",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "76b04fef2684a0c9017298a2f725417b6428c66ae3d70fa0ecfac99fd231cbde",
+      "first_seen_utc": "2026-03-17T16:24:37.492578+00:00",
+      "last_seen_utc": "2026-03-17T16:24:37.492578+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-02CD24712C2B7D95",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "02cd24712c2b7d95d829b22e7c13e48fdc2432da2735da09074458feb6275516",
+      "first_seen_utc": "2026-03-17T16:20:19.502570+00:00",
+      "last_seen_utc": "2026-03-17T16:20:19.502570+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": true,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": true,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-E51E9E094E799B35",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "e51e9e094e799b35e35956d169f718e4d832b91bdc4da7bff9ccf74943826bc6",
+      "first_seen_utc": "2026-03-17T15:40:17.553763+00:00",
+      "last_seen_utc": "2026-03-17T15:40:17.553763+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-CF4FC3ACC72E5CAA",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "cf4fc3acc72e5caa0c712257c183fb018278a0b8ad67dfe89b5d7cc4c1fee417",
+      "first_seen_utc": "2026-03-17T15:36:24.132333+00:00",
+      "last_seen_utc": "2026-03-17T15:36:24.132333+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-977EB9DE16F8D030",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "977eb9de16f8d030535371f1d797a35735b96b3de121ac21b4baa33d28e2fe51",
+      "first_seen_utc": "2026-03-17T14:50:29.619854+00:00",
+      "last_seen_utc": "2026-03-17T14:50:29.619854+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-31314CBFFF70CB90",
+      "operation": "lab_ingest",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "31314cbfff70cb90505c02c38cd7f5626153a530991445bc01cd6581c0d49b4c",
+      "first_seen_utc": "2026-03-16T22:52:58.239579+00:00",
+      "last_seen_utc": "2026-03-16T22:52:58.239579+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m05-case-device-specific",
+        "governance_outcome": "SANDBOX_ONLY",
+        "request_id": "QDPLAB-EBE5E0010DAD7DE8"
+      }
+    },
+    {
+      "run_id": "QDPRUN-CECDF3D3C8F7B121",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "cecdf3d3c8f7b1213c88e152c4bee18f3466e7148b76449cc11fa9064a1034ac",
+      "first_seen_utc": "2026-03-16T22:51:02.801154+00:00",
+      "last_seen_utc": "2026-03-16T22:51:02.801154+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-AAF29E7399C036C8",
+        "candidate_count": 63,
+        "selected_count": 5
+      }
+    },
+    {
+      "run_id": "QDPRUN-8A19FCFBBA831665",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "8a19fcfbba83166507e94e34ee7a8ac0d20717172dcd0b0ed7326ed746e27d1f",
+      "first_seen_utc": "2026-03-16T22:51:02.667440+00:00",
+      "last_seen_utc": "2026-03-16T22:51:02.667440+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m05-case-device-specific",
+        "request_id": "QDPLAB-EBE5E0010DAD7DE8"
+      }
+    },
+    {
+      "run_id": "QDPRUN-8BBD34483F52DE65",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "8bbd34483f52de65f48d8dd984bbf0aa1e828c7f0b1b31f3cb2dad3a28ac68d3",
+      "first_seen_utc": "2026-03-16T21:49:28.161799+00:00",
+      "last_seen_utc": "2026-03-16T21:49:28.161799+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m05-case-provisional-no-cross-device",
+        "request_id": "QDPLAB-0443FC468EFDF4AA"
+      }
+    },
+    {
+      "run_id": "QDPRUN-D90BF7744BB7DB96",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "d90bf7744bb7db96562464ff46131e0ee2200507cc1acda21758713b9794162f",
+      "first_seen_utc": "2026-03-16T21:48:46.176282+00:00",
+      "last_seen_utc": "2026-03-16T21:48:46.176282+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-AAF29E7399C036C8",
+        "candidate_count": 63,
+        "selected_count": 5
+      }
+    },
+    {
+      "run_id": "QDPRUN-FB8506469ABB4A16",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "fb8506469abb4a167cf20ab9ea7ead087b26b01937fc7c2d92061e9022966f56",
+      "first_seen_utc": "2026-03-16T21:25:58.088292+00:00",
+      "last_seen_utc": "2026-03-16T21:25:58.088292+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-AC4CAE88A7D1B166",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "ac4cae88a7d1b166edf748471194ad284711ae8e9bd7779dafaa8926b689cebf",
+      "first_seen_utc": "2026-03-16T21:25:50.852073+00:00",
+      "last_seen_utc": "2026-03-16T21:25:50.852073+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-07F3AEB715CC72A6",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "07f3aeb715cc72a673e75e0ac773cc95c4f933a0048afc23c4d18e24c98b4fd4",
+      "first_seen_utc": "2026-03-16T20:55:24.799536+00:00",
+      "last_seen_utc": "2026-03-16T20:55:24.799536+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-2E3394ACEA416964",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "2e3394acea41696489022478c53c8ea69abcaf7aa1ea03a5d4506b0f09a82a85",
+      "first_seen_utc": "2026-03-16T15:38:08.898648+00:00",
+      "last_seen_utc": "2026-03-16T15:38:08.898648+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-A19D2C29DA7B01A9",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "a19d2c29da7b01a958f1ff2e54633ccd01a2ee74efd3950f58cb05971ba47618",
+      "first_seen_utc": "2026-03-16T15:37:53.183737+00:00",
+      "last_seen_utc": "2026-03-16T15:37:53.183737+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-11E453D9CAA8EF77",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "11e453d9caa8ef77bb2ffc6a61b3757d1702a2c6c2054dcb2cf936030b16ab25",
+      "first_seen_utc": "2026-03-16T15:28:54.210449+00:00",
+      "last_seen_utc": "2026-03-16T15:28:54.210449+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-0C41C77863233887",
+      "operation": "check",
+      "lane": "authoritative",
+      "provenance_mode": "surrogate",
+      "status": "FAILED",
+      "content_hash": "0c41c778632338872781733fdd13f19034e76ad7bb441e7b5867733a2e9bf007",
+      "first_seen_utc": "2026-03-16T14:15:36.233651+00:00",
+      "last_seen_utc": "2026-03-16T14:15:36.233651+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidates_failed": 0,
+        "candidates_total": 70,
+        "deterministic_hash_match": true,
+        "lane_blockers": [
+          "M01",
+          "M02",
+          "M03",
+          "M04",
+          "M05",
+          "M06",
+          "M07",
+          "M08",
+          "M09",
+          "M10",
+          "M11",
+          "M12",
+          "M13",
+          "M14",
+          "M15"
+        ],
+        "lane_ready": false
+      }
+    },
+    {
+      "run_id": "QDPRUN-425FD6EB971EDA16",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "425fd6eb971eda1670910b7fcc96c95e0012c4be08714b7aea0e06fafe20ca3a",
+      "first_seen_utc": "2026-03-16T14:15:36.023773+00:00",
+      "last_seen_utc": "2026-03-16T14:15:36.023773+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-9DAE465A75EB6525",
+      "operation": "check",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "9dae465a75eb6525812c71861e3f9e7e1032ac7600a7841cf40110aabb80fced",
+      "first_seen_utc": "2026-03-16T14:15:22.297262+00:00",
+      "last_seen_utc": "2026-03-16T14:15:22.297262+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidates_failed": 0,
+        "candidates_total": 70,
+        "deterministic_hash_match": true,
+        "lane_blockers": [],
+        "lane_ready": true
+      }
+    },
+    {
+      "run_id": "QDPRUN-407B7EA30FFC83E0",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "407b7ea30ffc83e0700ad7511ebb466604cc6a23937a85e568e8d4ca5ebc2064",
+      "first_seen_utc": "2026-03-16T14:15:22.102963+00:00",
+      "last_seen_utc": "2026-03-16T14:15:22.102963+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-FE9A885898254F88",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "fe9a885898254f889e9d9acab5f7cd4ab6bc8849477d1d900f1df69d2000edd2",
+      "first_seen_utc": "2026-03-16T14:15:21.120634+00:00",
+      "last_seen_utc": "2026-03-16T14:15:21.120634+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-CE9A5A4E3D116FFC",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "ce9a5a4e3d116ffc3d4e5a875829beca8364ffac0ed302a91c2d89d90308c7cf",
+      "first_seen_utc": "2026-03-16T14:15:03.862596+00:00",
+      "last_seen_utc": "2026-03-16T14:15:03.862596+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-94BB96E307058494",
+        "candidate_count": 7,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-8CD8BA421CA9BB77",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "8cd8ba421ca9bb77cde71fd104ef8b4b2bb727f8987142bf702b85a85002c902",
+      "first_seen_utc": "2026-03-16T14:14:37.532653+00:00",
+      "last_seen_utc": "2026-03-16T14:14:37.532653+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-9C1A553FA3200FE8",
+        "candidate_count": 70,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-F2FA0BF2D8962B31",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f2fa0bf2d8962b31f571197df99e279710ee20017f320d730ca873947021c6fd",
+      "first_seen_utc": "2026-03-16T14:14:37.514145+00:00",
+      "last_seen_utc": "2026-03-16T14:14:37.514145+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-F25D111959624710",
+        "candidate_count": 14,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-E5D76393C1D8C023",
+      "operation": "check",
+      "lane": "authoritative",
+      "provenance_mode": "surrogate",
+      "status": "FAILED",
+      "content_hash": "e5d76393c1d8c0232065c99877afc90c032580682873263e00acefd5c98c816f",
+      "first_seen_utc": "2026-03-16T14:11:31.433817+00:00",
+      "last_seen_utc": "2026-03-16T14:11:31.433817+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidates_failed": 0,
+        "candidates_total": 70,
+        "deterministic_hash_match": true,
+        "lane_blockers": [
+          "M01",
+          "M02",
+          "M03",
+          "M04",
+          "M05",
+          "M06",
+          "M07",
+          "M08",
+          "M09",
+          "M10",
+          "M11",
+          "M12",
+          "M13",
+          "M14",
+          "M15"
+        ],
+        "lane_ready": false
+      }
+    },
+    {
+      "run_id": "QDPRUN-B9DB2E621230662A",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b9db2e621230662ad024ae4206a929346520b63c5c3fbcd3d1536eda60b35947",
+      "first_seen_utc": "2026-03-16T14:11:31.255226+00:00",
+      "last_seen_utc": "2026-03-16T14:11:31.255226+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-5A39928741DC655D",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "5a39928741dc655df6ff180562a0943793cc02c34d0f4a64a87398ceb9910d15",
+      "first_seen_utc": "2026-03-16T14:11:21.593989+00:00",
+      "last_seen_utc": "2026-03-16T14:11:21.593989+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-5A9ED78F2623E1D9",
+        "candidate_count": 65,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-F7225099840D07A7",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "f7225099840d07a749a0972315618af46efc67fa70beb31f39393436a21820db",
+      "first_seen_utc": "2026-03-16T14:09:44.107629+00:00",
+      "last_seen_utc": "2026-03-16T14:09:44.107629+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-5A9ED78F2623E1D9",
+        "candidate_count": 65,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-6BBCA639939AC2E3",
+      "operation": "lab_ingest",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "6bbca639939ac2e3d442bd5844d56fd7b347a4d0691fdd682a87cace16c69603",
+      "first_seen_utc": "2026-03-16T14:09:29.163124+00:00",
+      "last_seen_utc": "2026-03-16T14:09:29.163124+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m06-case-7",
+        "governance_outcome": "PROCEED",
+        "request_id": "QDPLAB-77FC92FFD3214625"
+      }
+    },
+    {
+      "run_id": "QDPRUN-6712D084012DFE38",
+      "operation": "lab_pack",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "6712d084012dfe383d89363842beab77849cdbd1a937ac5d9e74641b4dc10029",
+      "first_seen_utc": "2026-03-16T14:08:58.132545+00:00",
+      "last_seen_utc": "2026-03-16T14:08:58.132545+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidate_id": "m06-case-7",
+        "request_id": "QDPLAB-77FC92FFD3214625"
+      }
+    },
+    {
+      "run_id": "QDPRUN-243286BBD03E6621",
+      "operation": "campaign_plan",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "243286bbd03e6621ad5ab73a77a105ed5fb3fbd3d80aae4231f8db1bd5477deb",
+      "first_seen_utc": "2026-03-16T14:08:19.725806+00:00",
+      "last_seen_utc": "2026-03-16T14:08:19.725806+00:00",
+      "occurrences": 1,
+      "summary": {
+        "campaign_id": "QDPCAM-5A9ED78F2623E1D9",
+        "candidate_count": 72,
+        "selected_count": 3
+      }
+    },
+    {
+      "run_id": "QDPRUN-58565C92DA1F5515",
+      "operation": "check",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "58565c92da1f551525f0da1910a044d57c7a8074d5fb61b6b96ba1d9b79e9f0f",
+      "first_seen_utc": "2026-03-16T14:07:57.766254+00:00",
+      "last_seen_utc": "2026-03-16T14:07:57.766254+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidates_failed": 0,
+        "candidates_total": 70,
+        "deterministic_hash_match": true,
+        "lane_blockers": [],
+        "lane_ready": true
+      }
+    },
+    {
+      "run_id": "QDPRUN-1726BDA51F54CEBE",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "1726bda51f54cebe3c58702a566ed37bae6a266ddf69ad8ccc5110b13a5fcf7d",
+      "first_seen_utc": "2026-03-16T14:07:57.587139+00:00",
+      "last_seen_utc": "2026-03-16T14:07:57.587139+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-B0EED72646284F5D",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "b0eed72646284f5d16150291e6845da0c526ff61b15951edd457c5c7407db34c",
+      "first_seen_utc": "2026-03-16T14:07:56.533328+00:00",
+      "last_seen_utc": "2026-03-16T14:07:56.533328+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-84B41BDBE7AD705A",
+      "operation": "check",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "FAILED",
+      "content_hash": "84b41bdbe7ad705a65b7b5d1579b582ffa0ceb1af9f76f1025ac5baefc0d330f",
+      "first_seen_utc": "2026-03-16T14:07:34.191229+00:00",
+      "last_seen_utc": "2026-03-16T14:07:34.191229+00:00",
+      "occurrences": 1,
+      "summary": {
+        "candidates_failed": 0,
+        "candidates_total": 70,
+        "deterministic_hash_match": false,
+        "lane_blockers": [],
+        "lane_ready": true
+      }
+    },
+    {
+      "run_id": "QDPRUN-2B71C96D5BD4E7E8",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "2b71c96d5bd4e7e8fb7086b4deeaf877d6f49f80d98075f7f73fc124ff8b9dc7",
+      "first_seen_utc": "2026-03-16T14:07:34.013802+00:00",
+      "last_seen_utc": "2026-03-16T14:07:34.013802+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    },
+    {
+      "run_id": "QDPRUN-D6DF144486AACB71",
+      "operation": "bootstrap",
+      "lane": "recovery",
+      "provenance_mode": "surrogate",
+      "status": "READY",
+      "content_hash": "d6df144486aacb71aa90e5dc7f9b69ddd6fd999dd2e5cea9f1992cf6d7c2c484",
+      "first_seen_utc": "2026-03-16T14:07:33.010211+00:00",
+      "last_seen_utc": "2026-03-16T14:07:33.010211+00:00",
+      "occurrences": 1,
+      "summary": {
+        "ordinary_authoritative_ready": false,
+        "ordinary_recovery_ready": true,
+        "schema_validation_status": "PASSED",
+        "subsystem_authoritative_ready": false,
+        "subsystem_recovery_ready": true,
+        "validation_harness_status": "PASSED"
+      }
+    }
+  ]
+}

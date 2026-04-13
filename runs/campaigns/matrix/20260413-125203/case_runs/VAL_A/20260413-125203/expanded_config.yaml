@@ -1,0 +1,84 @@
+base_config: null
+metadata:
+  case_id: VAL_A
+  phase: D
+  version: 0.1.0
+  description: ''
+  tags: []
+mesh:
+  nx: 16
+  ny: 8
+  lx: 8.0
+  ly: 4.0
+  periodic_x: false
+  periodic_y: false
+geometry:
+  family: strip
+  moats: []
+  holes: []
+  mask_file: null
+physics:
+  u: 5.79
+  sigma_n: 1.0
+  alpha_background: 1.0
+  pinning:
+    model: none
+    seed: null
+    mu: 0.0
+    sigma: 0.0
+    lcorr: 0.0
+    defect_count: 0
+    defects: []
+  initial_condition: meissner
+  restart_file: null
+  vortex_seeds: []
+materials: null
+forcing:
+  b_dc: 0.0
+  a_rf: 0.05
+  omega: 2.0
+  phase: 0.0
+  rf_profile: uniform_y
+  rf_profile_file: null
+noise:
+  enabled: false
+  strength: 0.0
+  seed: 1234
+time:
+  dt: 0.01
+  n_steps: 2
+  obs_stride: 1
+  field_stride: 1
+  checkpoint_stride: 2
+solver:
+  backend: scipy
+  scheme: imex_linearized
+  psi_linear_solver: gmres
+  phi_linear_solver: cg
+  rtol: 1.0e-08
+  atol: 1.0e-12
+  max_it: 500
+output:
+  root_dir: G:\GitHub\incubate\QDP\runs\campaigns\matrix\20260413-125203\case_runs
+  write_fields: false
+  write_observables: true
+  compression: none
+observables:
+  track_vortices: true
+  compute_frequency_shift_proxy: true
+  compute_qinv_proxy: true
+  weight_profile_f: uniform
+  weight_profile_q: uniform
+  c_f: 1.0
+  c_q: 1.0
+  qinv_bg: 0.0
+inference:
+  enabled: false
+  mode: none
+  infer_parameters: []
+  dataset_path: null
+  summary_statistics: []
+campaign:
+  ensemble_size: 1
+  matrix_row_id: VAL_A
+  promotion_rule: gate:G1

@@ -1,0 +1,156 @@
+[
+    {
+        "branch_tag":  "E01_MM_FLUX_HISTORY_HYSTERESIS",
+        "branch_slug":  "e01_mm_flux_history_hysteresis",
+        "binding_context":  "PRE_RUN_MINIMUM_ACQUISITION",
+        "allowed_binding_contexts":  [
+                                         "PRE_RUN_MINIMUM_ACQUISITION",
+                                         "AS_RUN_BINDING"
+                                     ],
+        "binding_status":  "TEMPLATE_UNBOUND",
+        "allowed_binding_status_values":  [
+                                              "TEMPLATE_UNBOUND",
+                                              "PRE_RUN_MINIMUM_READY",
+                                              "AS_RUN_PARTIAL",
+                                              "AS_RUN_BOUND"
+                                          ],
+        "cooldown_id":  null,
+        "run_metadata":  {
+                             "operator":  null,
+                             "run_date":  null,
+                             "lab_location":  null,
+                             "execution_sheet_ref":  "protocols/e01_mm_first_cooldown_execution_sheet.md",
+                             "provenance_sources":  [
+                                                        "as_run_logbook",
+                                                        "fridge_log"
+                                                    ]
+                         },
+        "hardware_binding":  {
+                                 "target_device_ids":  [
+
+                                                       ],
+                                 "witness_channel_id":  null,
+                                 "matched_geometry_device_ids":  [
+
+                                                                 ],
+                                 "provenance_sources":  [
+                                                            "fridge_log",
+                                                            "sample_map",
+                                                            "channel_map"
+                                                        ]
+                             },
+        "fixed_settings":  {
+                               "T_base":  null,
+                               "P_read":  null,
+                               "readout_tone_id":  null,
+                               "attenuation_state":  null,
+                               "readout_chain_config":  null,
+                               "provenance_sources":  [
+                                                          "daq_record",
+                                                          "calibration_record"
+                                                      ]
+                           },
+        "field_program":  {
+                              "field_unit":  "mT",
+                              "B_max":  5,
+                              "fc_field":  5,
+                              "field_steps":  [
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  3,
+                                                  4,
+                                                  5,
+                                                  0,
+                                                  -1,
+                                                  -2,
+                                                  -3,
+                                                  -4,
+                                                  -5,
+                                                  0
+                                              ],
+                              "selected_fields":  [
+                                                      0,
+                                                      1,
+                                                      3
+                                                  ],
+                              "dwell_probe_schedule":  {
+                                                           "probe_fields":  [
+                                                                                0,
+                                                                                1,
+                                                                                3
+                                                                            ],
+                                                           "dwell_times":  [
+                                                                               30,
+                                                                               60,
+                                                                               120
+                                                                           ],
+                                                           "dwell_time_unit":  "s"
+                                                       },
+                              "production_dwell_t_conv":  null,
+                              "provenance_sources":  [
+                                                         "first_actual_loop"
+                                                     ]
+                          },
+        "control_requirements":  {
+                                     "zfc_required":  true,
+                                     "fc_required":  true,
+                                     "sham_timing_required":  true,
+                                     "return_to_zero_required":  true,
+                                     "package_witness_required":  true,
+                                     "cooldown_replication_minimum":  3,
+                                     "same_chip_geometry_required_for_h2":  true,
+                                     "pre_run_minimum_acquisition":  {
+                                                                         "true_zfc_required":  true,
+                                                                         "at_least_one_nonzero_fc_required":  true,
+                                                                         "symmetric_up_down_loop_required":  true,
+                                                                         "symmetric_loop_pattern":  "0 -\u003e +B_max -\u003e 0 -\u003e -B_max -\u003e 0",
+                                                                         "dwell_trace_regions_required":  [
+                                                                                                              "zero_field",
+                                                                                                              "suspected_onset_region",
+                                                                                                              "high_field"
+                                                                                                          ]
+                                                                     }
+                                 },
+        "data_capture":  {
+                             "required_fields":  [
+                                                     "cooldown identifier",
+                                                     "device identifier",
+                                                     "geometry identifier",
+                                                     "history label",
+                                                     "commanded field",
+                                                     "calibrated field estimate",
+                                                     "elapsed time",
+                                                     "dwell duration",
+                                                     "1/Qi",
+                                                     "fr",
+                                                     "delta fr over fr",
+                                                     "selected-field T1",
+                                                     "witness response",
+                                                     "bath temperature",
+                                                     "readout power"
+                                                 ],
+                             "raw_data_output_path":  null,
+                             "metadata_output_path":  null,
+                             "witness_trace_output_path":  null,
+                             "provenance_sources":  [
+                                                        "existing_as_run_files_or_directories_only"
+                                                    ]
+                         },
+        "binding_checks":  {
+                               "selected_fields_subset_of_field_steps":  true,
+                               "probe_schedule_lengths_match":  true,
+                               "field_unit_consistent":  true,
+                               "p_read_device_calibrated":  false,
+                               "output_paths_exist":  false
+                           },
+        "notes":  [
+                      "Workflow stage 1: keep binding_context = PRE_RUN_MINIMUM_ACQUISITION until the minimum discriminator plan is complete.",
+                      "Promote binding_status to PRE_RUN_MINIMUM_READY only after hardware, field program, dwell plan, and pre-run binding checks are verified.",
+                      "After the first cooldown exists, switch binding_context to AS_RUN_BINDING and use AS_RUN_PARTIAL until all as-run provenance and output-path checks are satisfied.",
+                      "Promote binding_status to AS_RUN_BOUND only when all populated fields come from the required sources and every binding_checks entry is true.",
+                      "Generated candidate packet. Non-authoritative until merged with real hardware provenance and written into the authoritative run-binding record.",
+                      "This candidate satisfies static pre-run field and dwell checks only. It does not justify PRE_RUN_MINIMUM_READY without explicit hardware binding."
+                  ]
+    }
+]

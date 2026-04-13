@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SeededVortexDeterministicExperimentPack",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "experiment_pack"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^3\\.[0-9]+$"
+    },
+    "experiment_pack": {
+      "type": "object",
+      "required": [
+        "mode",
+        "base_case",
+        "sweep",
+        "repetitions",
+        "observables",
+        "aggregation"
+      ],
+      "properties": {
+        "mode": {
+          "const": "deterministic_sweep"
+        },
+        "base_case": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sweep": {
+          "type": "object",
+          "required": [
+            "parameters"
+          ],
+          "properties": {
+            "parameters": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "values"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "values": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "repetitions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "observables": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "aggregation": {
+          "type": "object",
+          "required": [
+            "metrics"
+          ],
+          "properties": {
+            "metrics": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "mean",
+                  "std",
+                  "min",
+                  "max"
+                ]
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/candidate_artifact_manifest_schema.json",
+  "title": "QDP Candidate Artifact Manifest",
+  "type": "object",
+  "properties": {
+    "manifest_id": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "candidate_path": {"type": "string"},
+    "candidate_sha256": {"type": "string"},
+    "linked_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string"}
+        },
+        "required": ["path", "sha256"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["manifest_id", "candidate_id", "candidate_path", "candidate_sha256", "linked_artifacts"],
+  "additionalProperties": false
+}

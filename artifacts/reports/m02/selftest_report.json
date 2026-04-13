@@ -1,0 +1,170 @@
+{
+  "artifact_id": "QDP_V10_6_M02_SELFTEST_REPORT",
+  "module_id": "M02",
+  "timestamp_utc": "2026-04-13T18:30:48.970260+00:00",
+  "visible_source_only": true,
+  "contract_checks": {
+    "template_validation": {
+      "candidate_path": "",
+      "returncode": 0,
+      "stdout": "VALID\n- mode: template\n- candidate: <in-memory>\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+      "stderr": "",
+      "valid": true,
+      "errors": [],
+      "mode": "template",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+      "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+    },
+    "typed_fields_present_in_template": true,
+    "typed_fields_present_in_schema": true,
+    "typed_fields_required_in_schema": true,
+    "validator_exports_present": true,
+    "enum_mirror_ok": true,
+    "enum_details": {
+      "calibration_status": {
+        "schema": [
+          "INVALID",
+          "PENDING_REVIEW",
+          "UNKNOWN",
+          "VALID"
+        ],
+        "validator": [
+          "INVALID",
+          "PENDING_REVIEW",
+          "UNKNOWN",
+          "VALID"
+        ]
+      },
+      "identifiability_status": {
+        "schema": [
+          "INSUFFICIENT",
+          "PENDING_REVIEW",
+          "PROVISIONAL",
+          "SUFFICIENT"
+        ],
+        "validator": [
+          "INSUFFICIENT",
+          "PENDING_REVIEW",
+          "PROVISIONAL",
+          "SUFFICIENT"
+        ]
+      },
+      "drift_ledger": {
+        "schema": [
+          "ASSESSED",
+          "MISSING_MODEL",
+          "NOT_REQUIRED",
+          "PENDING_REVIEW"
+        ],
+        "validator": [
+          "ASSESSED",
+          "MISSING_MODEL",
+          "NOT_REQUIRED",
+          "PENDING_REVIEW"
+        ]
+      },
+      "dataset_governance": {
+        "schema": [
+          "COMPLETE",
+          "INCOMPLETE",
+          "PENDING_REVIEW"
+        ],
+        "validator": [
+          "COMPLETE",
+          "INCOMPLETE",
+          "PENDING_REVIEW"
+        ]
+      }
+    }
+  },
+  "cases_total": 3,
+  "cases_passed": 3,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M02_VALID_RECOVERY_CANDIDATE",
+      "description": "A conservative recovery-lane candidate passes final-mode validation.",
+      "passed": true,
+      "expected_valid": true,
+      "actual_valid": true,
+      "error_match": true,
+      "expected_error_fragments": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M02_INVALID_CROSS_DEVICE_PROCEED",
+      "description": "PROCEED cannot clear when the candidate is not cross-device confirmed.",
+      "passed": true,
+      "expected_valid": false,
+      "actual_valid": false,
+      "error_match": true,
+      "expected_error_fragments": [
+        "governance_outcome=PROCEED is invalid unless cross_device_status=CONFIRMED",
+        "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires cross_device_status=CONFIRMED"
+      ],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_INVALID_CROSS_DEVICE_PROCEED\\CASE_M02_INVALID_CROSS_DEVICE_PROCEED_candidate.json",
+        "returncode": 1,
+        "stdout": "INVALID\n- governance_outcome=PROCEED is invalid unless cross_device_status=CONFIRMED\n- scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires cross_device_status=CONFIRMED\n",
+        "stderr": "",
+        "valid": false,
+        "errors": [
+          "governance_outcome=PROCEED is invalid unless cross_device_status=CONFIRMED",
+          "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires cross_device_status=CONFIRMED"
+        ],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_INVALID_CROSS_DEVICE_PROCEED\\CASE_M02_INVALID_CROSS_DEVICE_PROCEED_candidate.json"
+    },
+    {
+      "case_id": "CASE_M02_INVALID_GOVERNANCE_GAP",
+      "description": "Final-mode validation rejects confirmed-identifiable outputs when M15 governance evidence is contradictory.",
+      "passed": true,
+      "expected_valid": false,
+      "actual_valid": false,
+      "error_match": true,
+      "expected_error_fragments": [
+        "requires calibration_status=VALID",
+        "requires dataset_governance.status=COMPLETE",
+        "requires identifiability_status to be provisional or sufficient",
+        "requires drift_ledger.status to be assessed or not required"
+      ],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_INVALID_GOVERNANCE_GAP\\CASE_M02_INVALID_GOVERNANCE_GAP_candidate.json",
+        "returncode": 1,
+        "stdout": "INVALID\n- calibration below threshold is incompatible with governance_outcome=PROCEED\n- calibration_status=INVALID is incompatible with governance_outcome=PROCEED\n- dataset_governance.status=INCOMPLETE is incompatible with governance_outcome=PROCEED\n- identifiability_status.status=INSUFFICIENT is incompatible with governance_outcome=PROCEED\n- drift_ledger.status=MISSING_MODEL is incompatible with governance_outcome=PROCEED\n- scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires calibration_status=VALID\n- scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires dataset_governance.status=COMPLETE\n- scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires identifiability_status to be provisional or sufficient\n- scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires drift_ledger.status to be assessed or not required\n",
+        "stderr": "",
+        "valid": false,
+        "errors": [
+          "calibration below threshold is incompatible with governance_outcome=PROCEED",
+          "calibration_status=INVALID is incompatible with governance_outcome=PROCEED",
+          "dataset_governance.status=INCOMPLETE is incompatible with governance_outcome=PROCEED",
+          "identifiability_status.status=INSUFFICIENT is incompatible with governance_outcome=PROCEED",
+          "drift_ledger.status=MISSING_MODEL is incompatible with governance_outcome=PROCEED",
+          "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires calibration_status=VALID",
+          "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires dataset_governance.status=COMPLETE",
+          "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires identifiability_status to be provisional or sufficient",
+          "scientific_decision=CROSS_DEVICE_CONFIRMED_IDENTIFIABLE requires drift_ledger.status to be assessed or not required"
+        ],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_INVALID_GOVERNANCE_GAP\\CASE_M02_INVALID_GOVERNANCE_GAP_candidate.json"
+    }
+  ]
+}

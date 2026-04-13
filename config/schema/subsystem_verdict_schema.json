@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/subsystem_verdict_schema.json",
+  "title": "QDP Subsystem Verdict Artifact",
+  "type": "object",
+  "properties": {
+    "case_id": {"type": "string"},
+    "module_id": {"type": "string"},
+    "diagnostics_reported": {"type": "array", "items": {"type": "string"}},
+    "gate_outcomes": {"type": "object", "additionalProperties": {"type": "string"}},
+    "expected_final_verdict": {"type": "string", "enum": ["supported", "inconclusive", "not_supported"]},
+    "actual_final_verdict": {"type": "string", "enum": ["supported", "inconclusive", "not_supported"]},
+    "supported_forbidden": {"type": "boolean"},
+    "supported_required": {"type": "boolean"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "case_id",
+    "module_id",
+    "diagnostics_reported",
+    "gate_outcomes",
+    "expected_final_verdict",
+    "actual_final_verdict",
+    "supported_forbidden",
+    "supported_required",
+    "notes"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "artifact_id": "QDP_V10_6_M11_REPORT",
+  "module_id": "M11",
+  "timestamp_utc": "2026-04-13T18:30:49.001573+00:00",
+  "candidate_id": "M11_WORKING_PATCH_CANDIDATE",
+  "result_summary": {
+    "lindblad_equivalence": {
+      "equivalent_within_resolution": true,
+      "best_equivalent_model": "GKSL_LIMIT",
+      "inferred_from_surviving_visible_signals": true
+    }
+  }
+}

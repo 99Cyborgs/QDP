@@ -1,0 +1,55 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.035979+00:00",
+  "candidate_id": "m09-case-vortex",
+  "result_summary": {
+    "exact_falsifier": "If the vortex branch is real, ZFC vs FC, field-loop history, and matched width or thickness sweeps must preserve the delta fr over delta 1/Qi ordering across cooldowns.",
+    "priority_experiments": [
+      "Vortex discriminant sweep: ZFC vs FC, field loops, cooldown field, matched width or thickness, delta fr over delta 1/Qi"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "mechanism_discrimination",
+    "sweep_route_group": "VORTEX",
+    "candidate_target_devices": [],
+    "simulation_conditions": {
+      "branch_partition": "mechanism_discrimination",
+      "owner_route": "VORTEX",
+      "status": "PROPOSED",
+      "simulation_sweep_required": true,
+      "lab_sweep_required": true
+    },
+    "tested_parameter_ranges": {
+      "field_history_tag": [
+        "ZFC",
+        "FC",
+        "UP_LOOP",
+        "DOWN_LOOP"
+      ],
+      "field_magnitude": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "geometry": [
+        "MATCHED_WIDTH_A",
+        "MATCHED_WIDTH_B"
+      ],
+      "drive_amplitude": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "temperature": [
+        "BASE",
+        "MID",
+        "HIGH"
+      ]
+    },
+    "suppression_reason": ""
+  }
+}

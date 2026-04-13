@@ -1,0 +1,63 @@
+{
+  "artifact_id": "QDP_ALL_MIND_INTERFACE",
+  "timestamp_utc": "2026-04-13T18:30:49.953936+00:00",
+  "repo_class": "incubate",
+  "activity": "active",
+  "promotion_mode": "incubation link",
+  "readiness": {
+    "ordinary_recovery_ready": true,
+    "ordinary_authoritative_ready": true,
+    "subsystem_recovery_ready": true,
+    "subsystem_authoritative_ready": true
+  },
+  "blockers": {
+    "ordinary_recovery_blockers": [],
+    "ordinary_authoritative_blockers": [],
+    "subsystem_recovery_blockers": [],
+    "subsystem_authoritative_blockers": []
+  },
+  "module_readiness_summary": {
+    "M01": "AUTHORITATIVE_CLOSURE",
+    "M02": "AUTHORITATIVE_CLOSURE",
+    "M03": "AUTHORITATIVE_CLOSURE",
+    "M04": "AUTHORITATIVE_CLOSURE",
+    "M05": "AUTHORITATIVE_CLOSURE",
+    "M06": "AUTHORITATIVE_CLOSURE",
+    "M07": "AUTHORITATIVE_CLOSURE",
+    "M08": "AUTHORITATIVE_CLOSURE",
+    "M09": "AUTHORITATIVE_CLOSURE",
+    "M10": "AUTHORITATIVE_CLOSURE",
+    "M11": "AUTHORITATIVE_CLOSURE",
+    "M12": "AUTHORITATIVE_CLOSURE",
+    "M13": "AUTHORITATIVE_CLOSURE",
+    "M14": "AUTHORITATIVE_CLOSURE",
+    "M15": "AUTHORITATIVE_CLOSURE",
+    "S16": "AUTHORITATIVE_CLOSURE",
+    "S17": "AUTHORITATIVE_CLOSURE",
+    "S18": "AUTHORITATIVE_CLOSURE",
+    "S19": "AUTHORITATIVE_CLOSURE"
+  },
+  "module_closure_limitations": {},
+  "promotion_posture": {
+    "suggested_mode": "incubation link",
+    "note": "Compact status and interface artifacts only; no whole-repo ingestion."
+  },
+  "callable_surfaces": [
+    {
+      "name": "qdp.py",
+      "command": "python qdp.py"
+    },
+    {
+      "name": "qdp_validation.py",
+      "command": "python qdp_validation.py"
+    },
+    {
+      "name": "readiness",
+      "command": "python qdp.py readiness"
+    },
+    {
+      "name": "validate",
+      "command": "python qdp.py validate <target> --kind candidate --mode final"
+    }
+  ]
+}

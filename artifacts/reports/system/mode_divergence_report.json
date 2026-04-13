@@ -1,36 +1,36 @@
 {
   "artifact_id": "QDP_V10_6_MODE_DIVERGENCE_REPORT",
+  "timestamp_utc": "2026-04-13T18:30:49.294979+00:00",
   "policy_id": "QDP_V10_6_MODE_DIVERGENCE_POLICY_V1",
-  "timestamp_utc": "2026-03-15T20:19:15.370840+00:00",
-  "shared_core_hash": "d70c67f5d62242448f167768548ecfb3df0410b97ceea93eae2ec435bedd3f70",
+  "shared_core_hash": "40e35627f4cf9c16176c5f0fa16a889c999b4dfc0939151af08987a6eeef74c1",
   "shared_core_hash_inputs": [
     {
       "path": "config/manifests/reference_manifest.json",
       "exists": true,
-      "sha256": "b7c432908d99dff61db6467b3cd463d6f383ed6cdb9c1ddaa884c6d1768a808a"
+      "sha256": "25a9a7175bd032be7a5bb3d3e87bbf93f23ccfcbbf0f5ce8c5813e09a83fb0b5"
     },
     {
       "path": "config/registries/governance_registry.json",
       "exists": true,
-      "sha256": "b23b5681d5035e855c07793b1ac506b59753b9d5c40429dba8df1cb4217819b8"
+      "sha256": "d4210a8e9427df03832c2afe2efdd1fca3fd256145accb221bb578a7daadc9fd"
     },
     {
       "path": "config/schema/candidate_schema.json",
       "exists": true,
-      "sha256": "b5876b94ccaf6cf154f62d83456d532d80c375805d783d83c18050fd1d31d0a7"
+      "sha256": "96389724d6b34b87d6942945fca9736c0794c01282fc1cca5577ade9368c1a5e"
     },
     {
       "path": "modules/m05_stage_machine/runner.py",
       "exists": true,
-      "sha256": "9968d5ca0b3e6f11b3ebfe9c9fa4b4b905923603d8db5cf25c382cb946beeb5a"
+      "sha256": "fcd80581b669534a217ae48a83c6f2e3c10c0230e92f2544f0161cea7a003ecb"
     }
   ],
   "ordinary_delta_hash": "acb6f9b2d0fea5196ee82bf6ae0ccdb0849d4cac90b9e415b890be4b90dd536e",
-  "subsystem_delta_hash": "6cdd488c9700761cb5a93d6392ec49cf3de736cacb7710bc738daba0e8971815",
+  "subsystem_delta_hash": "24fe7510fff83861da77448c35ec482df6986cb4c338236b7fcb5d5b1228fd39",
   "shared_field_override_detected": false,
   "override_details": [],
   "override_exception_ids": [],
-  "ordinary_report_id": "m03-reference-report-20260315T201913Z",
-  "subsystem_report_id": "m03-reference-report-20260315T201913Z",
+  "ordinary_report_id": "m03-reference-report-20260413T183048Z",
+  "subsystem_report_id": "m03-reference-report-20260413T183048Z",
   "status": "PASSED"
 }

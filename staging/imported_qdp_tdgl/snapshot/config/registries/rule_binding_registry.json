@@ -1,0 +1,293 @@
+{
+  "artifact_id": "QDP_V10_6_RULE_BINDING_REGISTRY_V1",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "purpose": "Bind retained QDP runtime rules to explicit enforcement surfaces so prose governance cannot drift away from executable behavior.",
+  "enforcement_classes": [
+    "PROMPT_ONLY",
+    "SCHEMA_ENFORCED",
+    "RESOLVER_ENFORCED",
+    "STAGE_MACHINE_ENFORCED",
+    "HARNESS_ENFORCED",
+    "MANUAL_REVIEW_ONLY"
+  ],
+  "binding_status_enums": [
+    "BOUND",
+    "PARTIALLY_BOUND",
+    "UNBOUND",
+    "BLOCKED_BY_MISSING_SOURCE"
+  ],
+  "source_artifacts": {
+    "build_spec": {
+      "path": "specs/core/build_spec.md",
+      "sha256": "fd4720abb575cd4f7839653c455cb7d065f67309962ba03e3d695c483cec1da4"
+    },
+    "master_spec": {
+      "path": "specs/core/master_spec.md",
+      "sha256": "a85a25423f978343453131178024265c55180bfc6d0dcca12c824c57c4e02cdb"
+    },
+    "validation_gate": {
+      "path": "specs/core/validation_gate.md",
+      "sha256": "719c5fe7e991340fc35d8b6e1243c769b5e4c4fde62326c152933c65ca5a08b9"
+    },
+    "reference_manifest": {
+      "path": "config/manifests/reference_manifest.json",
+      "sha256": "72b0ed266b3eb74a65bc919c0f4c8066f00361c125e151249e011fdbea740857"
+    },
+    "schema": {
+      "path": "config/schema/candidate_schema.json",
+      "sha256": "79970f7cf3cfc04a0427013b17e5a604ac22e209940bc0e38b42429b4c93f050"
+    },
+    "stage_machine": {
+      "path": "modules/m05_stage_machine/runner.py",
+      "sha256": "b079c6dab5f190fde1be9b57006bdc1d0e72f1223899d1440311ffc77af0165e"
+    },
+    "reference_resolver": {
+      "path": "modules/m03_reference_resolution/runner.py",
+      "sha256": "2320c38078d532f55ac463d59fd437974f5db4359ff6bb62c33965e3b9d0fd27"
+    },
+    "schema_validator": {
+      "path": "tools/validators/candidate_validator.py",
+      "sha256": "4567e8770ea149ff41b6c7b583b6baa3f91647d15330dc6e28452df54c7db65e"
+    },
+    "missing_retained_runtime": {
+      "path": "runtime/retained/operative_body_v10_1.md",
+      "sha256": "7f96cf9936c2ff74dc422b5661a7d2635900c5a64ef09b1826e432ff5101c21f"
+    },
+    "bootstrap_harness": {
+      "path": "modules/m06_bootstrap_harness/runner.py",
+      "sha256": "970d1192c368ef1384195221f7a16eeb0e3cb9faaae115c8bc2c9dc926262719"
+    },
+    "mode_divergence_report": {
+      "path": "artifacts/reports/system/mode_divergence_report.json",
+      "sha256": "83ba305fe3100aafde28db4382e56098ec693efb39e11dfad0eb9566613de21a"
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "RUNTIME_NO_LOSS_001",
+      "title": "No loss preservation for execution bearing runtime text",
+      "normative_source": [
+        "specs/core/build_spec.md"
+      ],
+      "required_behavior": "No future runtime assembly may replace detailed operational sections with shorthand references to prior versions.",
+      "enforcement_bindings": [
+        {
+          "class": "PROMPT_ONLY",
+          "implementation": "runtime/current/runtime_prompt.md must contain full retained sections explicitly",
+          "status": "BLOCKED_BY_MISSING_SOURCE"
+        },
+        {
+          "class": "HARNESS_ENFORCED",
+          "implementation": "modules/m06_bootstrap_harness/runner.py checks runtime prompt presence, forbidden shorthand, and mandatory retained section presence when the runtime artifact exists",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BLOCKED_BY_MISSING_SOURCE"
+    },
+    {
+      "rule_id": "RUNTIME_BUILD_002",
+      "title": "Authoritative runtime is additive composition, not summary substitution",
+      "normative_source": [
+        "specs/core/build_spec.md"
+      ],
+      "required_behavior": "The authoritative runtime equals retained v10.1 operative text plus deterministic control patches plus harness plus diagnostics plus post run validation plus typed self checks.",
+      "enforcement_bindings": [
+        {
+          "class": "PROMPT_ONLY",
+          "implementation": "runtime/current/runtime_prompt.md assembly process",
+          "status": "BLOCKED_BY_MISSING_SOURCE"
+        },
+        {
+          "class": "MANUAL_REVIEW_ONLY",
+          "implementation": "Patch notes and closure report inspection",
+          "status": "PARTIALLY_BOUND"
+        }
+      ],
+      "coverage_status": "PARTIALLY_BOUND"
+    },
+    {
+      "rule_id": "REFERENCE_STRICT_003",
+      "title": "Strict reference resolution for retained and canonical references",
+      "normative_source": [
+        "config/manifests/reference_manifest.json",
+        "specs/core/build_spec.md"
+      ],
+      "required_behavior": "All critical retained references must resolve in strict mode for ordinary and subsystem execution paths.",
+      "enforcement_bindings": [
+        {
+          "class": "RESOLVER_ENFORCED",
+          "implementation": "modules/m03_reference_resolution/runner.py",
+          "status": "BOUND"
+        },
+        {
+          "class": "HARNESS_ENFORCED",
+          "implementation": "modules/m06_bootstrap_harness/runner.py executes strict ordinary/subsystem reference-resolution and records failure in governance self check",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    },
+    {
+      "rule_id": "SCHEMA_POSTRUN_004",
+      "title": "Post run schema validation is mandatory",
+      "normative_source": [
+        "specs/core/build_spec.md",
+        "config/schema/candidate_schema.json"
+      ],
+      "required_behavior": "Candidate outputs must validate against the current schema after stage machine execution.",
+      "enforcement_bindings": [
+        {
+          "class": "SCHEMA_ENFORCED",
+          "implementation": "tools/validators/candidate_validator.py against config/schema/candidate_schema.json",
+          "status": "BOUND"
+        },
+        {
+          "class": "STAGE_MACHINE_ENFORCED",
+          "implementation": "modules/m05_stage_machine/runner.py self test pipeline validates emitted candidates",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    },
+    {
+      "rule_id": "LADDER_PROGRESS_005",
+      "title": "Validation ladder state must be explicit and monotone",
+      "normative_source": [
+        "specs/core/validation_gate.md",
+        "specs/core/build_spec.md"
+      ],
+      "required_behavior": "Outputs must emit explicit ladder states and termination points rather than implied progress.",
+      "enforcement_bindings": [
+        {
+          "class": "STAGE_MACHINE_ENFORCED",
+          "implementation": "modules/m05_stage_machine/runner.py emits validation_ladder and terminated_at fields",
+          "status": "BOUND"
+        },
+        {
+          "class": "SCHEMA_ENFORCED",
+          "implementation": "config/schema/candidate_schema.json requires system status fields consumed by stage machine",
+          "status": "PARTIALLY_BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    },
+    {
+      "rule_id": "BASELINE_PRIORITY_006",
+      "title": "Null model and baseline sufficiency take priority over Hamiltonian expansion",
+      "normative_source": [
+        "specs/core/master_spec.md",
+        "specs/core/validation_gate.md"
+      ],
+      "required_behavior": "A branch that is explained by the baseline or fails reduction checks must terminate before promotion logic.",
+      "enforcement_bindings": [
+        {
+          "class": "STAGE_MACHINE_ENFORCED",
+          "implementation": "modules/m05_stage_machine/runner.py baseline sufficiency termination at Stage 6 in self tests",
+          "status": "BOUND"
+        },
+        {
+          "class": "MANUAL_REVIEW_ONLY",
+          "implementation": "Baseline model adequacy still depends on future M08 quantitative suite",
+          "status": "PARTIALLY_BOUND"
+        }
+      ],
+      "coverage_status": "PARTIALLY_BOUND"
+    },
+    {
+      "rule_id": "FALSIFIER_EXPLICIT_007",
+      "title": "Every candidate must carry an explicit falsifier",
+      "normative_source": [
+        "specs/core/falsifier_registry.md",
+        "specs/core/master_spec.md"
+      ],
+      "required_behavior": "Branches cannot advance without a concrete falsifier tied to measurable observables.",
+      "enforcement_bindings": [
+        {
+          "class": "PROMPT_ONLY",
+          "implementation": "Retained runtime text and manual report review",
+          "status": "PARTIALLY_BOUND"
+        },
+        {
+          "class": "HARNESS_ENFORCED",
+          "implementation": "Future M06 or M12 should fail candidates missing exact_falsifier",
+          "status": "UNBOUND"
+        }
+      ],
+      "coverage_status": "PARTIALLY_BOUND"
+    },
+    {
+      "rule_id": "CROSS_DEVICE_CAP_008",
+      "title": "Cross device evidence governs promotion ceiling",
+      "normative_source": [
+        "specs/core/build_spec.md",
+        "specs/core/master_spec.md"
+      ],
+      "required_behavior": "Without confirmed cross device evidence the branch cannot be promoted beyond sandbox or provisional status.",
+      "enforcement_bindings": [
+        {
+          "class": "STAGE_MACHINE_ENFORCED",
+          "implementation": "modules/m05_stage_machine/runner.py clips provisional results to SANDBOX_ONLY absent confirmed cross device status",
+          "status": "BOUND"
+        },
+        {
+          "class": "SCHEMA_ENFORCED",
+          "implementation": "config/schema/candidate_schema.json includes cross_device_status",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    },
+    {
+      "rule_id": "GOVERNANCE_SELFCHECK_009",
+      "title": "Governance self diagnostic fields must be emitted",
+      "normative_source": [
+        "specs/core/build_spec.md",
+        "QDP_v10_6_SCHEMA_PATCH_NOTES_M02.md"
+      ],
+      "required_behavior": "Outputs must include governance_self_check and typed status fields sufficient for deterministic audit.",
+      "enforcement_bindings": [
+        {
+          "class": "SCHEMA_ENFORCED",
+          "implementation": "config/schema/candidate_schema.json",
+          "status": "BOUND"
+        },
+        {
+          "class": "HARNESS_ENFORCED",
+          "implementation": "modules/m06_bootstrap_harness/runner.py verifies governance_self_check field presence and mirror consistency across bootstrap outputs",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    },
+    {
+      "rule_id": "MODE_CORE_IMMUTABILITY_010",
+      "title": "Ordinary and subsystem modes share an immutable core unless explicit delta is declared",
+      "normative_source": [
+        "config/manifests/reference_manifest.json",
+        "config/registries/governance_registry.json"
+      ],
+      "required_behavior": "Mode specific logic may extend but not silently override shared core references, fields, or stage order.",
+      "enforcement_bindings": [
+        {
+          "class": "RESOLVER_ENFORCED",
+          "implementation": "Current resolver emits by mode summaries only",
+          "status": "PARTIALLY_BOUND"
+        },
+        {
+          "class": "HARNESS_ENFORCED",
+          "implementation": "modules/m06_bootstrap_harness/runner.py emits artifacts/reports/system/mode_divergence_report.json and fails if shared core fields diverge without exception",
+          "status": "BOUND"
+        }
+      ],
+      "coverage_status": "BOUND"
+    }
+  ],
+  "coverage_summary": {
+    "BOUND": 6,
+    "PARTIALLY_BOUND": 3,
+    "UNBOUND": 0,
+    "BLOCKED_BY_MISSING_SOURCE": 1,
+    "note": "Coverage summary counts terminal coverage_status values after M06 harness integration."
+  }
+}

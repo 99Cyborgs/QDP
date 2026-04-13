@@ -1,0 +1,4 @@
+2026-04-13 12:52:17,340 INFO Campaign start for matrix.csv with 2 selected rows
+2026-04-13 12:52:17,413 INFO Completed matrix row VAL_A via run_simulation
+2026-04-13 12:52:17,489 INFO Completed matrix row VAL_B via run_simulation
+2026-04-13 12:52:17,492 INFO Campaign completed with status success

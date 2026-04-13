@@ -1,0 +1,16 @@
+MMM VALIDATION REPORT
+=====================
+Root: /mnt/data/mmm
+Required files checked: 28
+Mechanisms: 11
+Structures: 12
+Genomes: 18
+Protocols: 12
+Validation rules: 15
+Scaling models: 11
+
+PASS
+----
+All required files exist.
+All critical references resolve.
+Governance links (observable / protocol / validation) are present for every mechanism.

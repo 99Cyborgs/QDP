@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdp-meta-materials"
+version = "0.1.0"
+description = "Canonical QDP materials and metamaterials core extracted from the MMM-Studio donor."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "QDP Contributors" }]
+dependencies = [
+    "matplotlib>=3.8",
+    "pandas>=2.2",
+    "pydantic>=2.12",
+    "PyYAML>=6.0",
+    "qdp-io>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+rf = [
+    "scikit-rf>=1.2",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qdp_meta_materials = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-q"

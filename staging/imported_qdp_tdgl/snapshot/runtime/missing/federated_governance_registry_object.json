@@ -1,0 +1,30 @@
+{
+  "artifact_id": "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT_REGENERATED_SURROGATE",
+  "status": "REGENERATED_LOCAL_SURROGATE_NOT_AUTHORITATIVE",
+  "generated_from_visible_local_artifacts": true,
+  "source_artifacts": [
+    "QDP_v10_6_GOVERNANCE_REGISTRY_M03.json",
+    "QDP_v10_6_MODULE_REGISTRY.json",
+    "QDP_v10_6_RULE_BINDING_REGISTRY.json",
+    "QDP_v10_6_MODULE_CLOSURE_CONTRACTS.json",
+    "QDP_v10_6_REFERENCE_MANIFEST_M03.json",
+    "FALSIFIER_REGISTRY.md"
+  ],
+  "limitations": [
+    "This object is a regenerated local surrogate, not an independently recovered retained federated governance registry object.",
+    "It is intended to satisfy explicit retained-object path requirements for local validation refreshes.",
+    "Authoritative source fidelity still depends on later recovery of the original retained registry object."
+  ],
+  "federated_bindings": {
+    "candidate_registry_path": "QDP_v10_6_GOVERNANCE_REGISTRY_M03.json",
+    "module_registry_path": "QDP_v10_6_MODULE_REGISTRY.json",
+    "rule_binding_registry_path": "QDP_v10_6_RULE_BINDING_REGISTRY.json",
+    "closure_contracts_path": "QDP_v10_6_MODULE_CLOSURE_CONTRACTS.json",
+    "reference_manifest_path": "QDP_v10_6_REFERENCE_MANIFEST_M03.json",
+    "falsifier_registry_seed_path": "FALSIFIER_REGISTRY.md"
+  },
+  "surrogate_snapshot": {
+    "governance_registry_status": "WORKING_SURROGATE_NOT_AUTHORITATIVE",
+    "intended_role": "single local bind point for retained-governance-object path resolution during working-patch validation"
+  }
+}

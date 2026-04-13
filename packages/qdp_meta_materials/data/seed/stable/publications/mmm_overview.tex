@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\title{MMM: Meta Material Module\\Research-Grade Implementation Overview}
+\author{Quantum Decoherence Program}
+\date{2026-03-14}
+
+\begin{document}
+\maketitle
+
+\section*{Mission}
+MMM is a controlled discovery, simulation, fabrication, replication, and validation platform for testing whether engineered metamaterial environments measurably alter decoherence mechanisms in quantum devices.
+
+\section*{Baseline-first doctrine}
+The baseline mechanism hierarchy is:
+\begin{enumerate}
+    \item vortex loss
+    \item quasiparticle poisoning
+    \item two-level systems
+    \item phonon coupling
+    \item control electronics noise
+\end{enumerate}
+No metamaterial claim is promotable until these explanations are quantitatively attacked.
+
+\section*{Platform engines}
+\begin{longtable}{p{0.12\linewidth} p{0.78\linewidth}}
+E1 & mechanism registry \\
+E2 & structure library and geometry specification \\
+E3 & material genome database \\
+E4 & discovery engine \\
+E5 & cryogenic environment simulator \\
+E6 & null mechanism benchmark engine \\
+E7 & scaling-law discrimination engine \\
+E8 & device integration architecture \\
+E9 & fabrication pipeline \\
+E10 & experimental protocol library \\
+E11 & instrument detectability gate \\
+E12 & analysis and validation framework \\
+E13 & multi-device replication engine \\
+E14 & geometry scaling engine \\
+E15 & fabrication variability engine \\
+\end{longtable}
+
+\section*{Lead branches}
+\begin{itemize}
+    \item Photonic-bandgap / electromagnetic-LDOS suppression
+    \item Phononic-bandgap engineering of TLS relaxation
+    \item Phonon escape routing and down-conversion
+    \item Vortex-pinning lattice and parked-vortex control (baseline-null branch)
+\end{itemize}
+
+\section*{Governance}
+Every mechanism entry in the registry references:
+\begin{itemize}
+    \item predicted observable IDs
+    \item experimental protocol IDs
+    \item validation rule IDs
+\end{itemize}
+Mechanisms lacking falsification pathways are rejected. Exotic fabrication is flagged and blocked from lead-branch promotion unless mitigated.
+
+\section*{Repository contract}
+The authoritative foundry structure is:
+\begin{verbatim}
+/mmm
+  /registry
+  /genome
+  /discovery
+  /simulation
+  /benchmark
+  /scaling
+  /integration
+  /fabrication
+  /experiments
+  /replication
+  /analysis
+  /publications
+\end{verbatim}
+
+\section*{Deliverable state}
+This repository contains YAML registries, markdown specifications, and Python validation utilities sufficient to instantiate MMM as a research program artifact stack.
+
+\end{document}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/lineage_record_schema.json",
+  "title": "QDP Device Lineage Record",
+  "type": "object",
+  "properties": {
+    "lineage_record_id": {"type": "string"},
+    "request_id": {"type": "string"},
+    "device_ids": {"type": "array", "items": {"type": "string"}},
+    "device_lineage_recorded": {"type": "boolean"},
+    "calibration_context_recorded": {"type": "boolean"},
+    "protocol_metadata_recorded": {"type": "boolean"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "lineage_record_id",
+    "request_id",
+    "device_ids",
+    "device_lineage_recorded",
+    "calibration_context_recorded",
+    "protocol_metadata_recorded",
+    "notes"
+  ],
+  "additionalProperties": false
+}

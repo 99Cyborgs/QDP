@@ -1,0 +1,10 @@
+{
+  "instrument_profile_id": "QDPINST-DFF923BDCC42F4A2",
+  "platform_class": "SURFACED_PLATFORM",
+  "device_ids": [],
+  "supported_measurements": [],
+  "instrument_facing_requirement_satisfied": true,
+  "notes": [
+    "Generated from candidate surfaced experiment schedule."
+  ]
+}

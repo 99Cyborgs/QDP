@@ -1,0 +1,33 @@
+{
+  "artifact_id": "QDP_V10_6_BRANCH_REGISTRATION_M04",
+  "module_id": "M04",
+  "timestamp_utc": "2026-04-13T18:30:48.992355+00:00",
+  "intake_artifact": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_intake.json",
+  "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+  "candidate_id": "m04-m04-invalid-scale-claim-2026-03-15",
+  "normalized_fields": {
+    "change_types": [
+      "SCALE_BRIDGE"
+    ],
+    "model_classification": "FORMAL_CORE",
+    "declared_family_class": "OTHER",
+    "declared_likely_bath_class": "OTHER"
+  },
+  "bath_classification_consistent_with_glossary": true,
+  "duplicate_detection": {
+    "registry_duplicate_status": "CLEAR",
+    "duplicate_reference": ""
+  },
+  "unconstrained_new_parameter_count": 0,
+  "automatic_flags_triggered": [
+    "SCALE_CLAIM_WITHOUT_EFFECTIVE_MAPPING"
+  ],
+  "preliminary_intake_outcome": "REJECT",
+  "preliminary_promotion_cap_governance": "REJECT",
+  "intake_ready_for_compute": false,
+  "notes": [
+    "M04 preliminary_intake_outcome=REJECT",
+    "M04 unconstrained_new_parameter_count=0",
+    "M04 L3 mapping preserved conservatively: intake L3_stability_criterion_defined does not set validation_ladder.L3_numerical_stability_passed"
+  ]
+}

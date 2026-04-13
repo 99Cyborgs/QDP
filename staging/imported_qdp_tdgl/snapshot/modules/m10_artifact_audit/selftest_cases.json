@@ -1,0 +1,215 @@
+{
+  "artifact_id": "QDP_V10_6_M10_SELFTEST_CASES",
+  "module_id": "M10",
+  "cases": [
+    {
+      "case_id": "CASE_M10_CONTROL_CHAIN_EXPLAINS",
+      "description": "Pulse-shape and attenuation-swap evidence should let the control-chain artifact route explain the data.",
+      "input_candidate": {
+        "candidate_id": "m10-case-control-chain",
+        "branch_or_model_tag": "M10_CASE_CONTROL_CHAIN",
+        "evaluation_notes": [
+          "Pulse distortion metrology and line attenuation swap move the same amplitude dependence with the microwave chain."
+        ],
+        "relevant_nuisance_controls_list": [
+          "line filtering swap",
+          "pulse-shape perturbation"
+        ],
+        "artifact_audit_inputs": {
+          "attenuation_swap_changes_signal": true,
+          "pulse_shape_variation_changes_signal": true
+        }
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CONTROL_CHAIN_DISTORTION",
+          "strongest_artifact_route": "CONTROL_CHAIN_DISTORTION",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_READOUT_ALIAS_EXPLAINS",
+      "description": "Readout relinearization and gain changes should surface a readout-alias explanation.",
+      "input_candidate": {
+        "candidate_id": "m10-case-readout",
+        "branch_or_model_tag": "M10_CASE_READOUT",
+        "evaluation_notes": [
+          "Readout nonlinearity vanished after a relinearized fit and reduced readout power on the measurement chain."
+        ],
+        "artifact_audit_inputs": {
+          "readout_relinearization_removes_effect": true,
+          "readout_gain_swap_changes_signal": true
+        }
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "READOUT_ALIAS",
+          "strongest_artifact_route": "READOUT_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "readout_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_CALIBRATION_DRIFT_EXPLAINS",
+      "description": "Recalibration and drift-ledger replay should allow calibration drift to explain the artifact route.",
+      "input_candidate": {
+        "candidate_id": "m10-case-calibration",
+        "branch_or_model_tag": "M10_CASE_CALIBRATION",
+        "evaluation_notes": [
+          "Same-day recalibration removes the anomaly and drift ledger replay matches the previous offset."
+        ],
+        "artifact_audit_inputs": {
+          "recalibration_eliminates_effect": true,
+          "drift_replay_matches_anomaly": true
+        }
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "CALIBRATION_DRIFT",
+          "strongest_artifact_route": "CALIBRATION_DRIFT",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "calibration_drift": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_REFRIGERATOR_SUPPORT_ONLY",
+      "description": "Pulse-tube language without synchronization evidence should remain supporting only.",
+      "input_candidate": {
+        "candidate_id": "m10-case-fridge-supporting",
+        "branch_or_model_tag": "M10_CASE_FRIDGE_SUPPORTING",
+        "evaluation_notes": [
+          "A pulse-tube line is visible in the lab environment, but no pulse-tube synchronization or phase binning has been run."
+        ]
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "REFRIGERATOR_CYCLE_ALIAS",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "refrigerator_cycle_alias": {
+            "status": "SUPPORTING",
+            "explains_data": false
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_POWER_CALIBRATION_EXPLAINS",
+      "description": "In-situ power mismatch against generator settings should surface a power-calibration alias explanation.",
+      "input_candidate": {
+        "candidate_id": "m10-case-power-alias",
+        "branch_or_model_tag": "M10_CASE_POWER_ALIAS",
+        "evaluation_notes": [
+          "In-situ power calibration showed the room-temperature generator settings overstated device power and the corrected attenuation map removed the amplitude dependence."
+        ],
+        "artifact_audit_inputs": {
+          "in_situ_power_mismatch_detected": true,
+          "power_recalibration_eliminates_effect": true
+        }
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "POWER_CALIBRATION_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_CONTROL_CHAIN_POWER_COMBINATION",
+      "description": "Control-chain distortion and power-calibration evidence together should surface a parsimonious artifact combination.",
+      "input_candidate": {
+        "candidate_id": "m10-case-control-chain-power-combo",
+        "branch_or_model_tag": "M10_CASE_CONTROL_CHAIN_POWER_COMBO",
+        "evaluation_notes": [
+          "Amplitude dependence tracked both attenuation swap and in-situ power mismatch; generator settings and control-chain distortion together account for the shift."
+        ],
+        "artifact_audit_inputs": {
+          "attenuation_swap_changes_signal": true,
+          "pulse_shape_variation_changes_signal": true,
+          "in_situ_power_mismatch_detected": true,
+          "power_recalibration_eliminates_effect": true
+        }
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "POWER_CALIBRATION_ALIAS",
+          "strongest_artifact_route": "CONTROL_CHAIN_POWER_ALIAS",
+          "route_explains_data": true,
+          "explains_data": true,
+          "parsimonious_combination_explains": true,
+          "parsimonious_combination_label": "CONTROL_CHAIN_POWER_ALIAS",
+          "control_chain_distortion": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          },
+          "power_calibration_alias": {
+            "status": "EXPLAINS_DATA",
+            "explains_data": true
+          }
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M10_NO_ARTIFACT_ROUTE",
+      "description": "A candidate with no surfaced artifact cues should keep the artifact route inactive.",
+      "input_candidate": {
+        "candidate_id": "m10-case-no-artifact",
+        "branch_or_model_tag": "M10_CASE_NO_ARTIFACT",
+        "evaluation_notes": [
+          "Field-history hysteresis dominates while nuisance controls were held fixed and no classical alias cues were surfaced."
+        ]
+      },
+      "expected": {
+        "artifact_tests": {
+          "strongest_artifact_route_initial": "",
+          "strongest_artifact_route": "",
+          "route_explains_data": false,
+          "explains_data": false,
+          "parsimonious_combination_explains": false,
+          "parsimonious_combination_label": "",
+          "control_chain_distortion": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          },
+          "readout_alias": {
+            "status": "NOT_SUPPORTED",
+            "explains_data": false
+          }
+        }
+      }
+    }
+  ]
+}

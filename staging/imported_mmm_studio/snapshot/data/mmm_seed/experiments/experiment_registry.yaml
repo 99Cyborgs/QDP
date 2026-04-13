@@ -1,0 +1,404 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_EXPERIMENT_REGISTRY
+observable_registry:
+- observable_id: OBS-T1-MEAN
+  name: Mean energy relaxation time
+  quantity: T1
+  units: microseconds
+  extraction_method: Single-exponential or censored-likelihood fit to repeated T1 traces with drift tracking
+  interpretation: Primary metric for radiative, dielectric, or quasiparticle-limited relaxation
+- observable_id: OBS-T1-NMARK
+  name: Non-Markovian relaxation kernel evidence
+  quantity: biexponential_fraction_or_memory_kernel_score
+  units: dimensionless
+  extraction_method: Model comparison between single-exponential, biexponential, and pseudomode relaxation models
+  interpretation: Elevated score supports structured-bath coupling rather than simple Markovian loss
+- observable_id: OBS-T2STAR
+  name: Ramsey dephasing time
+  quantity: T2_star
+  units: microseconds
+  extraction_method: Ramsey fringe fit with Bayesian frequency-drift estimator
+  interpretation: Sensitive to low-frequency noise, spectral diffusion, and control-line contamination
+- observable_id: OBS-T2ECHO
+  name: Echo dephasing time
+  quantity: T2_echo
+  units: microseconds
+  extraction_method: Hahn or CPMG echo fit with bootstrapped confidence interval
+  interpretation: Separates slow spectral diffusion from white or intermediate-band dephasing
+- observable_id: OBS-SDIFF-PSD
+  name: Spectral diffusion power spectral density
+  quantity: frequency_noise_psd
+  units: Hz^2/Hz
+  extraction_method: Long-duration Ramsey detuning traces converted to PSD by Welch / multitaper estimators
+  interpretation: Tracks TLS bath dynamics and control-noise leakage
+- observable_id: OBS-QP-PARITY
+  name: Charge-parity switching / quasiparticle proxy
+  quantity: parity_switching_rate
+  units: 1/s
+  extraction_method: Repeated parity-mapping or offset-charge-sensitive spectroscopy
+  interpretation: Proxy for nonequilibrium quasiparticle density at the device
+- observable_id: OBS-QP-RECOV
+  name: Quasiparticle recovery time after injection
+  quantity: qp_recovery_tau
+  units: microseconds
+  extraction_method: Fit of T1 or parity recovery following controlled pair-breaking or heater pulse
+  interpretation: Sensitive to phonon escape routes and quasiparticle trapping
+- observable_id: OBS-VORTEX-SLOPE
+  name: Magnetic-field-induced loss slope
+  quantity: dLoss_dB
+  units: 1/mT
+  extraction_method: Linear or piecewise fit of Q^-1, T1^-1, or witness-resonator loss versus field-cool value
+  interpretation: Diagnostic for vortex entry, mobility, and pinning efficacy
+- observable_id: OBS-PKG-S21
+  name: Package and control-path transfer function
+  quantity: S21_or_S11
+  units: dB
+  extraction_method: Cryogenic calibrated VNA sweep of package modes, launch transitions, and control paths
+  interpretation: Used to close electromagnetic null explanations
+- observable_id: OBS-BG-SHIFT
+  name: Band-edge / bandgap spectral signature
+  quantity: mode_shift_or_gap_marker
+  units: Hz
+  extraction_method: Witness resonator spectroscopy, transducer S-parameters, or finite-element to data alignment
+  interpretation: Direct evidence that the engineered metamaterial spectrum is present at low temperature
+- observable_id: OBS-SAW-S21
+  name: Surface-acoustic-wave transmission witness
+  quantity: S21_SAW
+  units: dB
+  extraction_method: IDT-to-IDT cryogenic transmission across phononic / piezoelectric structure
+  interpretation: Verifies acoustic stopband and piezoelectric pathway modification
+- observable_id: OBS-WITNESS-QI
+  name: Witness resonator internal quality factor
+  quantity: Qi
+  units: dimensionless
+  extraction_method: Power-dependent resonator fitting with participation-aware correction
+  interpretation: Fast screening metric for dielectric, vortex, and radiative loss changes
+- observable_id: OBS-TEMP-SLOPE
+  name: Temperature scaling slope
+  quantity: dObservable_dT_or_model_parameter
+  units: mixed
+  extraction_method: Model fit across controlled temperature points from base to elevated millikelvin regime
+  interpretation: Used to discriminate TLS, quasiparticle, and phonon-mediated mechanisms
+- observable_id: OBS-CTRL-PSD
+  name: Control-line noise power spectral density
+  quantity: control_noise_psd
+  units: V^2/Hz or phi0^2/Hz
+  extraction_method: De-embedded room-to-device noise reconstruction from chain calibration and in situ spectroscopy
+  interpretation: Used to reject dephasing changes caused by altered filtering or source noise
+protocols:
+- protocol_id: EXP-T1-FSWEEP-01
+  title: Frequency-resolved T1 sweep across target band edges
+  purpose: Measure whether T1 changes track the designed electromagnetic or phononic spectral features rather than generic package shifts
+  primary_observable_ids:
+  - OBS-T1-MEAN
+  secondary_observable_ids:
+  - OBS-BG-SHIFT
+  - OBS-PKG-S21
+  - OBS-T1-NMARK
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  - 3d_cavity
+  required_controls:
+  - same-wafer sham geometry
+  - same-package control device
+  - matched readout chain
+  - package transfer-function calibration
+  nulls_addressed:
+  - NULL-EM-PURCELL
+  - NULL-PKG-MODE
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: T1 extraction -> band-edge alignment -> null-model comparison -> replication gate
+- protocol_id: EXP-HOLEBURN-THERM-01
+  title: TLS hole-burning and thermalization dynamics
+  purpose: Probe whether phononic structuring modifies TLS relaxation or thermalization pathways
+  primary_observable_ids:
+  - OBS-T1-NMARK
+  - OBS-SDIFF-PSD
+  secondary_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-TEMP-SLOPE
+  device_classes:
+  - transmon
+  - planar_resonator
+  required_controls:
+  - same wafer without phononic lattice
+  - identical junction design
+  - temperature-calibrated sequence
+  nulls_addressed:
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  - NULL-CTRL-DISTORT
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: Pump-probe response -> memory-kernel model fit -> temperature scaling discrimination
+- protocol_id: EXP-RAMSEY-PSD-01
+  title: Long-duration Ramsey / echo spectral-diffusion assay
+  purpose: Measure low-frequency noise and dephasing changes under metamaterial integration
+  primary_observable_ids:
+  - OBS-T2STAR
+  - OBS-T2ECHO
+  - OBS-SDIFF-PSD
+  secondary_observable_ids:
+  - OBS-CTRL-PSD
+  device_classes:
+  - transmon
+  - fluxonium
+  required_controls:
+  - shared source electronics
+  - line-swapped confirmation
+  - same package or dummy package insert
+  nulls_addressed:
+  - NULL-CTRL-DISTORT
+  - NULL-SHIELDING
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: Frequency-noise trace -> PSD estimation -> control-noise closure -> hierarchical comparison
+- protocol_id: EXP-QP-PARITY-01
+  title: Steady-state quasiparticle and charge-parity monitor
+  purpose: Test whether metamaterial modifications change nonequilibrium quasiparticle population or parity switching
+  primary_observable_ids:
+  - OBS-QP-PARITY
+  secondary_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-QP-RECOV
+  device_classes:
+  - transmon
+  - fluxonium
+  required_controls:
+  - identical readout thresholding
+  - same shielding condition
+  - same wafer control
+  nulls_addressed:
+  - NULL-QP-TRAP
+  - NULL-SHIELDING
+  - NULL-THERMAL
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 3
+  analysis_route: Parity-event extraction -> stationarity checks -> link to T1 and thermal load
+- protocol_id: EXP-QP-INJECT-01
+  title: Controlled phonon / quasiparticle injection and recovery
+  purpose: Measure recovery dynamics after pair breaking or local heating to isolate phonon escape engineering
+  primary_observable_ids:
+  - OBS-QP-RECOV
+  secondary_observable_ids:
+  - OBS-QP-PARITY
+  - OBS-T1-MEAN
+  device_classes:
+  - transmon
+  - fluxonium
+  - kinetic_inductance_detector
+  required_controls:
+  - identical injector geometry
+  - equal injected energy calibration
+  - same ambient temperature
+  nulls_addressed:
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: Injection calibration -> recovery-curve fit -> diffusion-reaction inversion
+- protocol_id: EXP-BFIELD-VORTEX-01
+  title: Field-cool / field-sweep vortex assay
+  purpose: Determine whether periodic structures are acting through vortex pinning or entry suppression
+  primary_observable_ids:
+  - OBS-VORTEX-SLOPE
+  secondary_observable_ids:
+  - OBS-WITNESS-QI
+  - OBS-T1-MEAN
+  device_classes:
+  - planar_resonator
+  - transmon
+  - kinetic_inductance_detector
+  required_controls:
+  - zero-field cooldown reference
+  - field polarity reversal
+  - antidot-free control
+  nulls_addressed:
+  - NULL-VORTEX
+  - NULL-SHIELDING
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 4
+    cooldowns: 2
+  analysis_route: Loss-vs-field fit -> vortex model comparison -> pinning-threshold extraction
+- protocol_id: EXP-PKG-MODE-01
+  title: Package-mode and transfer-function closure
+  purpose: Measure full electromagnetic transfer function to ensure apparent improvements are not simple packaging or filtering changes
+  primary_observable_ids:
+  - OBS-PKG-S21
+  secondary_observable_ids:
+  - OBS-BG-SHIFT
+  - OBS-WITNESS-QI
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  - 3d_cavity
+  - kinetic_inductance_detector
+  required_controls:
+  - through-line package coupon
+  - open/short/load calibration structure
+  - same launch geometry
+  nulls_addressed:
+  - NULL-PKG-MODE
+  - NULL-EM-PURCELL
+  - NULL-CTRL-DISTORT
+  minimum_repeats:
+    devices_per_condition: 2
+    cooldowns: 2
+  analysis_route: De-embed launches -> mode map -> compare to sham and EM solver
+- protocol_id: EXP-TEMP-SCAN-01
+  title: Controlled temperature scaling scan
+  purpose: Discriminate TLS, quasiparticle, phonon, and radiative mechanisms through temperature response
+  primary_observable_ids:
+  - OBS-TEMP-SLOPE
+  secondary_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-T2STAR
+  - OBS-QP-PARITY
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  - kinetic_inductance_detector
+  required_controls:
+  - verified fridge temperature calibration
+  - thermal equilibration dwell
+  - fixed readout power
+  nulls_addressed:
+  - NULL-THERMAL
+  - NULL-QP-TRAP
+  - NULL-EM-PURCELL
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: Fit mechanism-specific temperature forms -> Bayes factor / information criteria ranking
+- protocol_id: EXP-DRIVE-AMP-01
+  title: Drive-amplitude and photon-number scaling
+  purpose: Distinguish saturation-sensitive TLS or control-path effects from genuine environment-engineering signatures
+  primary_observable_ids:
+  - OBS-T2STAR
+  - OBS-CTRL-PSD
+  secondary_observable_ids:
+  - OBS-WITNESS-QI
+  - OBS-T1-MEAN
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  required_controls:
+  - source-noise calibration
+  - attenuation chain consistency
+  - same package
+  nulls_addressed:
+  - NULL-CTRL-DISTORT
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 3
+    cooldowns: 2
+  analysis_route: Power sweep -> saturation / dephasing model fit -> null discrimination
+- protocol_id: EXP-GEO-SERIES-01
+  title: Geometry-series wafer study
+  purpose: Verify that effects scale with metamaterial pitch, fill factor, or number of cells as predicted
+  primary_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-BG-SHIFT
+  secondary_observable_ids:
+  - OBS-T2STAR
+  - OBS-VORTEX-SLOPE
+  - OBS-QP-PARITY
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  - 3d_cavity
+  - kinetic_inductance_detector
+  required_controls:
+  - split-lot DOE
+  - same process lot
+  - mask bias monitor structures
+  nulls_addressed:
+  - NULL-FAB-VAR
+  - NULL-PKG-MODE
+  - NULL-THERMAL
+  minimum_repeats:
+    devices_per_condition: 4
+    cooldowns: 2
+  analysis_route: SEM metrology -> inferred geometry -> response-surface comparison to scaling models
+- protocol_id: EXP-SAW-WITNESS-01
+  title: Surface-acoustic-wave / piezoelectric witness assay
+  purpose: Confirm acoustic bandstops or piezoelectric pathway modifications with a dedicated witness structure
+  primary_observable_ids:
+  - OBS-SAW-S21
+  secondary_observable_ids:
+  - OBS-BG-SHIFT
+  - OBS-T1-MEAN
+  device_classes:
+  - transmon
+  - planar_resonator
+  - kinetic_inductance_detector
+  required_controls:
+  - IDT-to-IDT control path
+  - same piezoelectric stack without stopband
+  - temperature sweep
+  nulls_addressed:
+  - NULL-SAW-CROSSTALK
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  minimum_repeats:
+    devices_per_condition: 2
+    cooldowns: 2
+  analysis_route: S21 extraction -> stopband alignment -> link to qubit or resonator response
+- protocol_id: EXP-REPL-01
+  title: Cross-device and cross-batch replication
+  purpose: Establish that candidate effects persist across device classes, substrates, and fabrication batches
+  primary_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-T2STAR
+  - OBS-QP-PARITY
+  - OBS-WITNESS-QI
+  secondary_observable_ids:
+  - OBS-BG-SHIFT
+  - OBS-TEMP-SLOPE
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  - 3d_cavity
+  - kinetic_inductance_detector
+  required_controls:
+  - minimum two fabrication batches
+  - minimum two cooldowns per batch
+  - same data reduction code path
+  nulls_addressed:
+  - NULL-FAB-VAR
+  - NULL-THERMAL
+  - NULL-PKG-MODE
+  - NULL-CTRL-DISTORT
+  minimum_repeats:
+    devices_per_condition: 6
+    cooldowns: 4
+  analysis_route: Hierarchical effect estimation -> batch random-effects model -> claim maturity gate

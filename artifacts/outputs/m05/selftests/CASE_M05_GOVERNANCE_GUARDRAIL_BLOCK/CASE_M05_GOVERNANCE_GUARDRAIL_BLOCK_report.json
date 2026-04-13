@@ -1,0 +1,36 @@
+{
+  "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-04-13T18:30:49.150803+00:00",
+  "candidate_id": "m05-case-governance-guardrail",
+  "branch_or_model_tag": "M05_CASE_GOVERNANCE_GUARDRAIL",
+  "terminated_at": "STAGE_12",
+  "final_state": {
+    "scientific_decision": "NOT_EVALUATED",
+    "governance_outcome": "DEFER",
+    "cross_device_status": "NOT_REQUIRED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "promotion_cap_scientific": "",
+    "system_status": "READY",
+    "validation_ladder": {
+      "L0_baseline_pipeline_reproduced": true,
+      "L1_reduction_limit_verified": true,
+      "L2_convergence_plan_defined": true,
+      "L3_numerical_stability_passed": false,
+      "L4_instrument_facing_comparison_path_defined": false
+    }
+  },
+  "schema_validation": {
+    "valid": true,
+    "errors": [],
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py",
+    "mode": "final"
+  },
+  "gate_trace_count": 16,
+  "stage_inputs_used": {
+    "stage11": {
+      "equivalent_within_resolution": false
+    }
+  }
+}

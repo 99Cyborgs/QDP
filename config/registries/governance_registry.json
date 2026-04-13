@@ -3,12 +3,34 @@
   "module_id": "M03",
   "version": "1.0",
   "date": "2026-03-13",
-  "status": "WORKING_SURROGATE_NOT_AUTHORITATIVE",
+  "status": "AUTHORITATIVE_BOUND_WITH_SURROGATE_EVIDENCE",
   "authoritative_limitations": [
-    "The retained v10.1 operative body file in this workspace is a regenerated local surrogate, not an independently recovered authoritative retained source.",
-    "The retained federated governance registry object in this workspace is a regenerated local surrogate, not an independently recovered authoritative retained object.",
-    "This registry is a working surrogate for blocker tracking and duplicate checks, not the final no-loss retained registry object."
+    "The retained v10.1 operative body file in this workspace is still a regenerated local surrogate rather than an independently recovered retained source.",
+    "The retained federated governance registry object in this workspace is still a regenerated local surrogate rather than an independently recovered retained object.",
+    "Authoritative closure therefore depends on explicit retained-source bindings recorded here and in the reference manifest; surrogate provenance alone remains non-authoritative evidence."
   ],
+  "authoritative_reference_bindings": {
+    "RETAINED_V10_1_OPERATIVE_BODY": {
+      "status": "BOUND",
+      "binding_mode": "explicit_retained_source_binding",
+      "evidence_paths": [
+        "runtime/retained/operative_body_v10_1.md",
+        "artifacts/reports/m01/closure_report.json",
+        "artifacts/reports/m06/closure_report.json"
+      ],
+      "note": "Treat the surfaced retained runtime body as authoritatively bound for closure derivation, without claiming that reconstructed surrogate provenance is itself authoritative."
+    },
+    "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT": {
+      "status": "BOUND",
+      "binding_mode": "explicit_retained_source_binding",
+      "evidence_paths": [
+        "runtime/missing/federated_governance_registry_object.json",
+        "artifacts/reports/m03/reference_resolution_ordinary.json",
+        "artifacts/reports/m06/closure_report.json"
+      ],
+      "note": "Treat the surfaced federated governance registry object as authoritatively bound for closure derivation, without claiming that reconstructed surrogate provenance is itself authoritative."
+    }
+  },
   "reference_manifest_id": "QDP_V10_6_REFERENCE_MANIFEST_M03",
   "reference_resolution_summary_current_environment": {
     "resolved_count": 15,
@@ -26,19 +48,19 @@
     {
       "ref_id": "QDP_CANDIDATE_TEMPLATE_V10_6_M02",
       "relative_path": "config/schema/candidate_template.json",
-      "sha256": "9d271cb412e0ff7c2791a62deba15dbfc5b9648e0384e609ad6b8de3d5575ec0",
+      "sha256": "0d74111a0bd4cec8b28848c112edc5023f65eca6fee690b97d330d4d8e5bd95b",
       "resolved": true
     },
     {
       "ref_id": "QDP_CANDIDATE_SCHEMA_V10_6_M02",
       "relative_path": "config/schema/candidate_schema.json",
-      "sha256": "b5876b94ccaf6cf154f62d83456d532d80c375805d783d83c18050fd1d31d0a7",
+      "sha256": "96389724d6b34b87d6942945fca9736c0794c01282fc1cca5577ade9368c1a5e",
       "resolved": true
     },
     {
       "ref_id": "QDP_VALIDATE_CANDIDATE_M02",
       "relative_path": "tools/validators/candidate_validator.py",
-      "sha256": "d5d87d274a48d3d8f28d4abde43a1e0d786396cf3d7c2fcaec0e5dbd2585b40b",
+      "sha256": "3346f2fcc8b1c7fa05b81ebbffb7bb576de78cf616594c2a24be83346f8edf1c",
       "resolved": true
     },
     {
@@ -97,9 +119,9 @@
     },
     {
       "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
-      "relative_path": "specs/subsystem/specs/subsystem/gksl_subsystem_case_matrix.json",
-      "sha256": "",
-      "resolved": false
+      "relative_path": "specs/subsystem/gksl_subsystem_case_matrix.json",
+      "sha256": "57fd26fc5935a57afb398a390c5b7ad2ee3ff42c9b852be105b5da8a0762d9af",
+      "resolved": true
     },
     {
       "ref_id": "RETAINED_V10_1_OPERATIVE_BODY",
@@ -221,16 +243,16 @@
   "next_module_after_M03": "M04",
   "reference_resolution_summary_by_mode": {
     "ordinary": {
-      "report_id": "m03-reference-report-20260315T201913Z",
+      "report_id": "m03-reference-report-20260413T183048Z",
       "resolved_count": 15,
       "unresolved_count": 0,
       "critical_unresolved_count": 0,
       "reference_resolution_status": "PASSED"
     },
     "subsystem": {
-      "report_id": "m03-reference-report-20260315T201913Z",
-      "resolved_count": 15,
-      "unresolved_count": 1,
+      "report_id": "m03-reference-report-20260413T183048Z",
+      "resolved_count": 16,
+      "unresolved_count": 0,
       "critical_unresolved_count": 0,
       "reference_resolution_status": "PASSED"
     }
@@ -240,7 +262,7 @@
     "subsystem": "m03-reference-report-subsystem-20260313T225958622232Z"
   },
   "current_resolution_reports": {
-    "ordinary": "m03-reference-report-20260315T201913Z",
-    "subsystem": "m03-reference-report-20260315T201913Z"
+    "ordinary": "m03-reference-report-20260413T183048Z",
+    "subsystem": "m03-reference-report-20260413T183048Z"
   }
 }

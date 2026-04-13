@@ -1,0 +1,106 @@
+schema_name: mmm_studio.sweep_spec
+schema_version: "1.0"
+name: adaptive-hypothesis-search
+description: Adaptive sweep that refines on instability, compares against a null model, prunes redundancy, and tests cross-tranche interactions.
+version: "1.0.0"
+default_output_root: artifacts/runs/sweeps
+global_filters:
+  - field: screening_status
+    operator: in
+    value:
+      - prioritized
+      - screening
+      - sandbox
+shared_parameters:
+  default_profile: manufacturability_aware
+  top_n: 8
+adaptive:
+  enabled: true
+  seed: 11
+  utility_weights:
+    rank_stability: 0.35
+    cross_slice_divergence: 0.30
+    robustness: 0.25
+    redundancy_penalty: 0.10
+  null_model:
+    enabled: true
+    mode: artifact_risk
+  robustness:
+    enabled: true
+    perturbation_runs: 4
+    noise_scale: 0.03
+    target_frequency_shift_ghz: 0.15
+    top_k: 5
+  refinement:
+    fields:
+      - fabrication_complexity_score
+      - null_risk_score
+    max_refinements_per_slice: 2
+    max_total_refinements_per_tranche: 4
+    candidate_count_floor: 3
+    minimum_pending_per_phase: 1
+    instability_threshold: 1.0
+    divergence_threshold: 0.05
+    utility_prune_threshold: 0.18
+  redundancy:
+    enabled: true
+    input_similarity_threshold: 0.55
+    output_similarity_threshold: 0.90
+    combined_similarity_threshold: 0.75
+  cross_tranche:
+    enabled: true
+    priority_threshold: 0.20
+    max_source_slices_per_tranche: 1
+    max_interaction_slices: 3
+    min_candidate_count: 2
+tranches:
+  - tranche_id: complexity_space
+    objective: Refine around manufacturability thresholds and measure stability under perturbation.
+    execution_mode: sequential
+    shared_profile: manufacturability_aware
+    comparison_strategy:
+      top_k: 5
+      robustness_top_k: 5
+      leaderboard_size: 10
+    slices:
+      - slice_id: complexity_le_8
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 8
+        tags:
+          - adaptive
+          - manufacturability
+      - slice_id: complexity_le_9
+        candidate_filters:
+          - field: fabrication_complexity_score
+            operator: lte
+            value: 9
+        tags:
+          - adaptive
+          - broad
+  - tranche_id: null_risk_space
+    objective: Compare broader and narrower null-risk bands before generating interaction slices.
+    execution_mode: sequential
+    shared_profile: broadband
+    comparison_strategy:
+      top_k: 5
+      robustness_top_k: 5
+      leaderboard_size: 10
+    slices:
+      - slice_id: null_risk_le_5
+        candidate_filters:
+          - field: null_risk_score
+            operator: lte
+            value: 5
+        tags:
+          - adaptive
+          - null_model
+      - slice_id: null_risk_le_6
+        candidate_filters:
+          - field: null_risk_score
+            operator: lte
+            value: 6
+        tags:
+          - adaptive
+          - null_model

@@ -1,0 +1,17 @@
+{
+  "instrument_profile_id": "QDPINST-29DB6C6EE1D169ED",
+  "platform_class": "SURFACED_PLATFORM",
+  "device_ids": [
+    "DEV_MATCH_A",
+    "DEV_MATCH_B"
+  ],
+  "supported_measurements": [
+    "Cross-device matched-fabrication sweep"
+  ],
+  "instrument_facing_requirement_satisfied": true,
+  "notes": [
+    "Generated from candidate surfaced experiment schedule.",
+    "Promotion-path override aligns the profile to a cross-device matched-fabrication sweep.",
+    "Synthetic placeholder device IDs are present for ingest smoke-test execution only and must be replaced before any physical lab run."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_id": "QDP_V10_6_M13_REPORT",
+  "module_id": "M13",
+  "timestamp_utc": "2026-04-13T18:30:49.023404+00:00",
+  "candidate_id": "M13_WORKING_PATCH_CANDIDATE",
+  "result_summary": {
+    "cross_device_status": "SCHEDULED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "cross_device_validation": {
+      "status": "SCHEDULED",
+      "devices_tested": [],
+      "fabrication_matched": false,
+      "notes": "Multi-device evidence is not yet available."
+    },
+    "notes": "Proceed remains blocked until cross-device evidence is available."
+  }
+}

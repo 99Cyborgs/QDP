@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdp-umbrella"
+version = "0.0.0"
+description = "Umbrella workspace manifest for the QDP monorepo consolidation."
+readme = "README.md"
+requires-python = ">=3.11"
+

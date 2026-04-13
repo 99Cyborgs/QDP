@@ -1,0 +1,177 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_CANDIDATE_GENERATION_ALGORITHMS
+algorithms:
+- algorithm_id: ALG-001
+  name: EM topology grammar generator
+  purpose: Generate planar microwave stopband structures from a constrained grammar of CPW corrugations, patch arrays, and inductive fences.
+  inputs:
+  - target_stopband_GHz
+  - device_keepout_map
+  - fabrication_rules
+  - package_clearance
+  outputs:
+  - geometry_seed
+  - parameter_bounds
+  - manufacturing_check
+  method: rule-based graph grammar + parameterized templates
+  hard_constraints:
+  - junction_keepout_respected
+  - minimum_feature_size_respected
+  - standard_package_footprint
+  software_targets:
+  - Python
+  - HFSS/CST/COMSOL parameter export
+  screening_stage: D1_seed
+- algorithm_id: ALG-002
+  name: Phononic topology grammar generator
+  purpose: Generate suspended or non-suspended phononic crystals, graded sinks, and Bragg structures.
+  inputs:
+  - target_gap_GHz
+  - substrate_stack
+  - allowed_release_depth
+  - mechanical_stress_budget
+  outputs:
+  - phononic_seed
+  - release_window
+  - sensitivity_prior
+  method: motif library + lattice tiling + release-aware pruning
+  hard_constraints:
+  - membrane_aspect_ratio_limit
+  - mechanical_support_continuity
+  - minimum_neck_width
+  software_targets:
+  - Python
+  - COMSOL/Gmsh parameter export
+  screening_stage: D1_seed
+- algorithm_id: ALG-003
+  name: Latin-hypercube / Sobol parameter sweep
+  purpose: Explore continuous parameter spaces for each topology family with broad coverage before local optimization.
+  inputs:
+  - seed_family
+  - parameter_bounds
+  - sample_budget
+  outputs:
+  - sampled_candidates
+  - surrogate_training_set
+  method: space-filling design of experiments
+  hard_constraints:
+  - sample_budget_cap
+  - fabrication_bounds_enforced
+  software_targets:
+  - Python
+  - NumPy
+  screening_stage: D2_broad_scan
+- algorithm_id: ALG-004
+  name: Bayesian surrogate optimizer
+  purpose: Optimize stopband placement, LDOS suppression, or phononic isolation under expensive simulation cost.
+  inputs:
+  - training_set
+  - objective_vector
+  - constraint_models
+  outputs:
+  - next_candidates
+  - uncertainty_scores
+  method: Gaussian-process or tree-based surrogate with constrained acquisition
+  hard_constraints:
+  - detectability_floor
+  - fabrication_robustness_floor
+  software_targets:
+  - Python
+  - BoTorch/GPyTorch or equivalent
+  screening_stage: D3_local_opt
+- algorithm_id: ALG-005
+  name: NSGA-II multiobjective selector
+  purpose: Identify Pareto-optimal tradeoffs between coherence benefit, fabrication complexity, and null-risk exposure.
+  inputs:
+  - candidate_pool
+  - objective_vector
+  outputs:
+  - pareto_front
+  - dominated_set
+  method: evolutionary multiobjective optimization
+  hard_constraints:
+  - lead_branch_standard_lab_feasibility
+  - minimum_detectability_margin
+  software_targets:
+  - Python
+  screening_stage: D4_pareto
+- algorithm_id: ALG-006
+  name: Robustness Monte Carlo
+  purpose: Estimate candidate survival under fabrication tolerances and package assembly variation.
+  inputs:
+  - candidate_geometry
+  - tolerance_models
+  - assembly_priors
+  outputs:
+  - yield_estimate
+  - robustness_score
+  - critical_dimension_rank
+  method: Monte Carlo with as-built perturbation sampling
+  hard_constraints:
+  - yield_floor
+  - stopband_shift_limit
+  software_targets:
+  - Python
+  screening_stage: D5_robustness
+- algorithm_id: ALG-007
+  name: Null-adversary search
+  purpose: Search for ordinary explanations that can reproduce the predicted signal without invoking metamaterial mechanisms.
+  inputs:
+  - candidate_effect
+  - benchmark_models
+  - package_measurements
+  outputs:
+  - best_null_explanation
+  - null_risk_update
+  method: adversarial optimization over null model parameter space
+  hard_constraints:
+  - must_include_baseline_mechanisms
+  software_targets:
+  - Python
+  screening_stage: D6_null_attack
+- algorithm_id: ALG-008
+  name: Package co-simulation loop
+  purpose: Co-optimize chip pattern and package/lid environment to prevent false-positive packaging improvements.
+  inputs:
+  - chip_candidate
+  - package_geometry
+  - launch_model
+  outputs:
+  - co_simulated_candidate
+  - package_sensitivity_score
+  method: alternating chip and package reduced-order solve
+  hard_constraints:
+  - same_box_reference
+  - transfer_function_export
+  software_targets:
+  - Python
+  - HFSS/CST
+  screening_stage: D3_local_opt
+- algorithm_id: ALG-009
+  name: Active-learning experiment loop
+  purpose: Update candidate ranking after each fabrication and measurement batch using measured observables and falsification outcomes.
+  inputs:
+  - measured_dataset
+  - prior_candidate_ranks
+  - validation_status
+  outputs:
+  - updated_ranking
+  - next_mask_recommendations
+  method: Bayesian active learning with hard governance gates
+  hard_constraints:
+  - no_promotion_without_null_closure
+  - no_exotic_lead_branch
+  software_targets:
+  - Python
+  screening_stage: D7_campaign_update

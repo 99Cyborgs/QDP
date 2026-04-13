@@ -1,0 +1,12 @@
+{
+  "instrument_profile_id": "QDPINST-80CA0805EFC5A1DD",
+  "platform_class": "SURFACED_PLATFORM",
+  "device_ids": [],
+  "supported_measurements": [
+    "TLS saturation sweep: readout power x temperature x geometry or participation"
+  ],
+  "instrument_facing_requirement_satisfied": true,
+  "notes": [
+    "Generated from candidate surfaced experiment schedule."
+  ]
+}

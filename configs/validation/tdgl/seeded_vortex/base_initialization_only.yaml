@@ -1,0 +1,20 @@
+base_config: ../../../tdgl/phase1_matrix_base.yaml
+metadata:
+  case_id: seeded_vortex_initialization_only_base
+  description: "Phase-2.2 base config for initialization-only seeded-vortex checks"
+physics:
+  initial_condition: seeded_vortices
+forcing:
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+time:
+  n_steps: 0
+  obs_stride: 1
+  field_stride: 1
+  checkpoint_stride: 1
+output:
+  root_dir: runs/seeded_vortex_suite
+  write_fields: false
+  write_observables: true
+  compression: none

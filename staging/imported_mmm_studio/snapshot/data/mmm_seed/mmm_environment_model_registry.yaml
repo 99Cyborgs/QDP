@@ -1,0 +1,333 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_ENVIRONMENT_MODEL_REGISTRY
+models:
+- model_id: ENV-EM-FEM
+  domain: electromagnetic
+  fidelity_level: high
+  state_variables:
+  - E(r,f)
+  - H(r,f)
+  - surface_current_density
+  - participation_ratios
+  inputs:
+  - chip_geometry
+  - package_geometry
+  - material_loss_tangents
+  - superconductor_surface_impedance
+  outputs:
+  - mode_frequencies
+  - LDOS_proxy
+  - participation_map
+  - S_parameters
+  validation_data:
+  - OBS-PKG-S21
+  - OBS-BG-SHIFT
+  - OBS-WITNESS-QI
+  software_candidates:
+  - HFSS
+  - CST
+  - COMSOL
+  surrogate_ready: true
+  crosslinks:
+  - MECH-EM-001
+  - MECH-EM-002
+  - MECH-EM-003
+  - MECH-EM-004
+  - MECH-3D-001
+- model_id: ENV-EM-RLGC
+  domain: electromagnetic
+  fidelity_level: reduced_order
+  state_variables:
+  - modal_network
+  - line_impedance
+  - effective_group_delay
+  inputs:
+  - unit_cell_abcd
+  - package_launch_model
+  - line_lengths
+  outputs:
+  - fast_S_parameters
+  - band_edges
+  - sensitivity_gradients
+  validation_data:
+  - OBS-PKG-S21
+  - OBS-BG-SHIFT
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - MECH-EM-001
+  - MECH-EM-004
+- model_id: ENV-PKG-MODE
+  domain: packaging
+  fidelity_level: intermediate
+  state_variables:
+  - package_modes
+  - port_couplings
+  - lid_gap_fields
+  inputs:
+  - sample_box_geometry
+  - lid_spacing
+  - wirebond_model
+  - launch_model
+  outputs:
+  - package_mode_map
+  - spur_coupling_strength
+  - transfer_function_explanation_power
+  validation_data:
+  - OBS-PKG-S21
+  software_candidates:
+  - HFSS
+  - CST
+  - Python reduced-order network
+  surrogate_ready: true
+  crosslinks:
+  - NULL-PKG-MODE
+  - MECH-EM-001
+  - MECH-EM-002
+  - MECH-3D-001
+- model_id: ENV-PH-BAND
+  domain: phononic
+  fidelity_level: high
+  state_variables:
+  - phonon_dispersion
+  - bandgap_edges
+  - localized_mode_profiles
+  inputs:
+  - phononic_geometry
+  - elastic_tensor
+  - membrane_thickness
+  - boundary_conditions
+  outputs:
+  - phononic_gap_map
+  - group_velocity
+  - mode_localization_score
+  validation_data:
+  - OBS-BG-SHIFT
+  - OBS-SAW-S21
+  software_candidates:
+  - COMSOL
+  - Abaqus
+  - Gmsh + custom eigensolver
+  surrogate_ready: true
+  crosslinks:
+  - MECH-PH-001
+  - MECH-PH-003
+  - MECH-HYB-001
+- model_id: ENV-PH-TD
+  domain: phononic
+  fidelity_level: intermediate
+  state_variables:
+  - transient_strain_field
+  - energy_flux
+  - arrival_time_distribution
+  inputs:
+  - phonon_source_location
+  - substrate_geometry
+  - sink_geometry
+  - boundary_losses
+  outputs:
+  - escape_time_distribution
+  - phonon_flux_map
+  - effective_downconversion_proxy
+  validation_data:
+  - OBS-QP-RECOV
+  - OBS-SAW-S21
+  software_candidates:
+  - COMSOL
+  - Python surrogate
+  surrogate_ready: true
+  crosslinks:
+  - MECH-PH-002
+  - MECH-PH-003
+  - MECH-HYB-001
+- model_id: ENV-QP-RD
+  domain: quasiparticle
+  fidelity_level: intermediate
+  state_variables:
+  - n_qp(r,t)
+  - recombination_rate
+  - trap_occupancy
+  inputs:
+  - phonon_flux
+  - trap_layout
+  - gap_landscape
+  - injection_profile
+  outputs:
+  - parity_switch_proxy
+  - recovery_time
+  - steady_state_qp_density
+  validation_data:
+  - OBS-QP-PARITY
+  - OBS-QP-RECOV
+  software_candidates:
+  - Python PDE solver
+  surrogate_ready: true
+  crosslinks:
+  - MECH-PH-002
+  - MECH-QP-001
+  - MECH-EM-004
+- model_id: ENV-VX-DYN
+  domain: vortex
+  fidelity_level: intermediate
+  state_variables:
+  - vortex_positions
+  - pinning_energy
+  - field_history_state
+  inputs:
+  - antidot_geometry
+  - cooldown_field
+  - current_distribution
+  - temperature
+  outputs:
+  - loss_vs_field_prediction
+  - hysteresis_metric
+  - entry_threshold
+  validation_data:
+  - OBS-VORTEX-SLOPE
+  - OBS-WITNESS-QI
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - MECH-VX-001
+  - NULL-VORTEX
+- model_id: ENV-CTRL-NOISE
+  domain: control_noise
+  fidelity_level: intermediate
+  state_variables:
+  - source_psd
+  - attenuator_chain
+  - reflections
+  - device_port_noise
+  inputs:
+  - room_temp_source_noise
+  - attenuator_map
+  - filter_map
+  - interposer_S_parameters
+  outputs:
+  - device_noise_psd
+  - dephasing_rate_proxy
+  - pair_breaking_leakage_proxy
+  validation_data:
+  - OBS-CTRL-PSD
+  - OBS-T2STAR
+  - OBS-QP-PARITY
+  software_candidates:
+  - Python
+  - scikit-rf
+  surrogate_ready: true
+  crosslinks:
+  - MECH-EM-003
+  - MECH-EM-004
+  - NULL-CTRL-DISTORT
+- model_id: ENV-THERMAL
+  domain: thermal
+  fidelity_level: reduced_order
+  state_variables:
+  - stage_temperatures
+  - chip_temperature
+  - local_heating
+  inputs:
+  - fridge_setpoint
+  - power_dissipation
+  - thermal_resistances
+  - package_materials
+  outputs:
+  - local_temperature_estimate
+  - thermal_gradient_score
+  - temperature_null_prediction
+  validation_data:
+  - OBS-TEMP-SLOPE
+  - OBS-QP-PARITY
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - NULL-THERMAL
+  - MECH-PH-001
+  - MECH-PH-002
+  - MECH-QP-001
+- model_id: ENV-OPEN-MARKOV
+  domain: open_quantum_system
+  fidelity_level: reduced_order
+  state_variables:
+  - gamma1
+  - gamma_phi
+  - spectral_density_parameters
+  inputs:
+  - bath_spectral_density
+  - device_frequency
+  - temperature
+  outputs:
+  - T1_prediction
+  - T2_prediction
+  - ramsey_envelope
+  validation_data:
+  - OBS-T1-MEAN
+  - OBS-T2STAR
+  - OBS-T2ECHO
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - all_mechanisms
+- model_id: ENV-OPEN-PSEUDOMODE
+  domain: open_quantum_system
+  fidelity_level: high_reduced_order
+  state_variables:
+  - memory_kernel
+  - pseudomode_frequency
+  - pseudomode_damping
+  - device_coupling
+  inputs:
+  - structured_bath_features
+  - device_frequency
+  - temperature
+  outputs:
+  - non_markovian_relaxation_curve
+  - biexponential_fraction
+  - memory_score
+  validation_data:
+  - OBS-T1-NMARK
+  - OBS-T1-MEAN
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - MECH-PH-001
+  - MECH-HYB-001
+  - VAL-013
+- model_id: ENV-SYNTHETIC-DATA
+  domain: validation
+  fidelity_level: utility
+  state_variables:
+  - latent_truth
+  - measurement_noise
+  - batch_effects
+  inputs:
+  - chosen_mechanism
+  - sample_size
+  - instrument_constraints
+  outputs:
+  - synthetic_raw_data
+  - ground_truth_labels
+  - analysis_benchmark
+  validation_data: []
+  software_candidates:
+  - Python
+  surrogate_ready: true
+  crosslinks:
+  - mmm_analysis_pipeline_spec.md
+  - mmm_detectability_tests.md

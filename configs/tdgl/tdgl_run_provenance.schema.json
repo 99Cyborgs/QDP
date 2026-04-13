@@ -1,0 +1,598 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TDGLRFRunProvenance",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "config_hash",
+    "git_revision",
+    "rank_count",
+    "seeds",
+    "packages",
+    "numeric_environment",
+    "execution",
+    "config",
+    "determinism",
+    "initialization"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "tdgl_rf.run_provenance.v3",
+        "tdgl_rf.run_provenance.v3.2",
+        "tdgl_rf.run_provenance.v3.3"
+      ]
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "matrix_row_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "python_version": {
+      "type": "string"
+    },
+    "git_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rank_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "config_hash": {
+      "type": "string"
+    },
+    "seeds": {
+      "type": "object",
+      "required": [
+        "master_seed",
+        "pinning_seed",
+        "initial_condition",
+        "vortex_seed_count"
+      ],
+      "properties": {
+        "master_seed": {
+          "type": "integer"
+        },
+        "noise_seed": {
+          "type": "integer"
+        },
+        "pinning_seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "initial_condition": {
+          "type": "string"
+        },
+        "vortex_seed_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "noise": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "strength",
+        "seed",
+        "contract_kind",
+        "sampling"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "strength": {
+          "type": "number"
+        },
+        "seed": {
+          "type": "integer"
+        },
+        "contract_kind": {
+          "const": "additive_complex_gaussian"
+        },
+        "sampling": {
+          "const": "run_local_complex_standard_normal"
+        }
+      },
+      "additionalProperties": false
+    },
+    "packages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "numeric_environment": {
+      "type": "object",
+      "required": [
+        "real_dtype",
+        "complex_dtype",
+        "float_epsilon",
+        "byteorder"
+      ],
+      "properties": {
+        "real_dtype": {
+          "type": "string"
+        },
+        "complex_dtype": {
+          "type": "string"
+        },
+        "float_epsilon": {
+          "type": "number"
+        },
+        "byteorder": {
+          "enum": [
+            "little",
+            "big"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "repo_root",
+        "git_revision",
+        "python_version",
+        "platform",
+        "hostname",
+        "rank_count"
+      ],
+      "properties": {
+        "repo_root": {
+          "type": "string"
+        },
+        "git_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "python_version": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "rank_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "config": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "phase",
+        "version",
+        "base_config",
+        "config_hash",
+        "source_config_path",
+        "expanded_config_path"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "base_config": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "config_hash": {
+          "type": "string"
+        },
+        "source_config_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expanded_config_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "output_root_dir": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "determinism": {
+      "type": "object",
+      "required": [
+        "noise_enabled",
+        "deterministic_expected",
+        "master_seed",
+        "pinning_seed",
+        "reproducibility_scope"
+      ],
+      "properties": {
+        "noise_enabled": {
+          "type": "boolean"
+        },
+        "deterministic_expected": {
+          "type": "boolean"
+        },
+        "master_seed": {
+          "type": "integer"
+        },
+        "noise_seed": {
+          "type": "integer"
+        },
+        "pinning_seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "reproducibility_scope": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "initialization": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "configured_vortex_seeds": {
+          "type": "array"
+        },
+        "resolved_vortex_seeds": {
+          "type": "array"
+        },
+        "seed_resolution_policy": {
+          "type": "string"
+        },
+        "seed_rejection_taxonomy_version": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "seeded_vortices"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "configured_vortex_seeds",
+              "resolved_vortex_seeds",
+              "seed_resolution_policy",
+              "seed_rejection_taxonomy_version"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "materials": {
+      "type": "object",
+      "required": [
+        "registry_source",
+        "adapter_id",
+        "material_system_id"
+      ],
+      "properties": {
+        "registry_source": {
+          "type": "string"
+        },
+        "registry_root": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "adapter_id": {
+          "type": "string"
+        },
+        "adapter_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "material_system_id": {
+          "type": "string"
+        },
+        "genome_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "material_system_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "runtime_family": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supported_geometry_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resolved_tdgl_parameters": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "u",
+            "sigma_n",
+            "alpha_background"
+          ],
+          "properties": {
+            "u": {
+              "type": "number"
+            },
+            "sigma_n": {
+              "type": "number"
+            },
+            "alpha_background": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "experiment": {
+      "type": "object",
+      "required": [
+        "experiment_name",
+        "param_set_hash",
+        "repetition_index",
+        "run_id",
+        "swept_parameters"
+      ],
+      "properties": {
+        "experiment_name": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "manifest_path": {
+          "type": "string"
+        },
+        "base_case_path": {
+          "type": "string"
+        },
+        "parent_manifest_hash": {
+          "type": "string"
+        },
+        "base_case_hash": {
+          "type": "string"
+        },
+        "param_set_hash": {
+          "type": "string"
+        },
+        "repetition_index": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "swept_parameters": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ensemble": {
+      "type": "object",
+      "required": [
+        "ensemble_id",
+        "member_index",
+        "noise_seed",
+        "member_count",
+        "master_seed",
+        "mode",
+        "parent_manifest_hash"
+      ],
+      "properties": {
+        "mode": {
+          "const": "stochastic_ensemble"
+        },
+        "ensemble_id": {
+          "type": "string"
+        },
+        "member_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "noise_seed": {
+          "type": "integer"
+        },
+        "member_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "master_seed": {
+          "type": "integer"
+        },
+        "parent_manifest_hash": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "experiment"
+        ]
+      },
+      "then": {
+        "properties": {
+          "schema_version": {
+            "enum": [
+              "tdgl_rf.run_provenance.v3.2",
+              "tdgl_rf.run_provenance.v3.3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "ensemble"
+        ]
+      },
+      "then": {
+        "required": [
+          "experiment"
+        ],
+        "properties": {
+          "schema_version": {
+            "enum": [
+              "tdgl_rf.run_provenance.v3.2",
+              "tdgl_rf.run_provenance.v3.3"
+            ]
+          },
+          "experiment": {
+            "properties": {
+              "repetition_index": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "experiment"
+        ],
+        "not": {
+          "required": [
+            "ensemble"
+          ]
+        }
+      },
+      "then": {
+        "properties": {
+          "experiment": {
+            "properties": {
+              "repetition_index": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "tdgl_rf.run_provenance.v3.3"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "noise"
+        ],
+        "properties": {
+          "config": {
+            "required": [
+              "output_root_dir"
+            ]
+          },
+          "determinism": {
+            "required": [
+              "noise_seed"
+            ]
+          },
+          "seeds": {
+            "required": [
+              "noise_seed"
+            ]
+          },
+          "experiment": {
+            "required": [
+              "mode",
+              "manifest_path",
+              "base_case_path",
+              "parent_manifest_hash",
+              "base_case_hash"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

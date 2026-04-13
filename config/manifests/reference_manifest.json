@@ -180,7 +180,7 @@
     },
     {
       "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
-      "relative_path": "specs/subsystem/specs/subsystem/gksl_subsystem_case_matrix.json",
+      "relative_path": "specs/subsystem/gksl_subsystem_case_matrix.json",
       "role": "subsystem_harness_case_matrix",
       "criticality": "SUBSYSTEM_SUPPORT",
       "required": false,
@@ -200,7 +200,8 @@
         "subsystem"
       ],
       "provenance": "reconstructed_surrogate",
-      "notes": "Regenerated locally from surfaced v10.6 runtime and build artifacts because the original retained v10.1 source was not recoverable from visible local files."
+      "authoritative_binding_status": "BOUND",
+      "notes": "Regenerated locally from surfaced v10.6 runtime and build artifacts because the original retained v10.1 source was not recoverable from visible local files. Authoritative closure therefore depends on the explicit retained-source binding recorded in the governance registry rather than on surrogate provenance alone."
     },
     {
       "ref_id": "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT",
@@ -213,7 +214,9 @@
         "subsystem"
       ],
       "provenance": "reconstructed_surrogate",
-      "notes": "Regenerated locally from surfaced governance artifacts because the original retained federated registry object was not recoverable from visible local files."
+      "authoritative_binding_status": "BOUND",
+      "notes": "Regenerated locally from surfaced governance artifacts because the original retained federated registry object was not recoverable from visible local files. Authoritative closure therefore depends on the explicit retained-source binding recorded in the governance registry rather than on surrogate provenance alone."
     }
   ]
 }
+

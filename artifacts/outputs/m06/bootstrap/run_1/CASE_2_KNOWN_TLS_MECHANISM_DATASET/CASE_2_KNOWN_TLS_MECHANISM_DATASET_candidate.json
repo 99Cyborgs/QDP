@@ -82,7 +82,67 @@
     "control_noise": {},
     "em_purcell": {}
   },
-  "artifact_tests": {},
+  "artifact_tests": {
+    "visible_source_partial_suite": true,
+    "surfaced_source_artifacts": [
+      "specs/research/deep_research_report.md",
+      "specs/intake/fork_intake_form_one_page.pdf",
+      "config/schema/candidate_template.json"
+    ],
+    "missing_owner_artifacts": [],
+    "control_chain_distortion": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Swap line filtering and attenuation, vary pulse shapes, and verify whether the anomaly follows measured chain distortion at the device."
+    },
+    "readout_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Sweep readout power and gain, check digitizer linearity, and re-fit with a relinearized readout model to see whether the anomaly disappears."
+    },
+    "calibration_drift": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Repeat the measurement with interleaved calibrations and a drift ledger to see whether recalibration removes the apparent anomaly."
+    },
+    "refrigerator_cycle_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Phase-bin the data against the pulse-tube or cryocooler cycle and test hold-time dependence to see whether the signal is a refrigerator alias."
+    },
+    "power_calibration_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Calibrate in-situ device power instead of generator settings and repeat the amplitude sweep across a checked attenuation map."
+    },
+    "strongest_artifact_route_initial": "",
+    "parsimonious_combination_explains": false,
+    "parsimonious_combination_label": "",
+    "route_explains_data": false,
+    "explains_data": false,
+    "strongest_artifact_route": "",
+    "alias_summary": []
+  },
   "hamiltonian_test": {
     "executed": false,
     "new_orthogonal_observables": [],
@@ -118,17 +178,51 @@
   },
   "cross_device_status": "NOT_REQUIRED",
   "instrument_capabilities": {},
+  "calibration_status": {
+    "status": "PENDING_REVIEW",
+    "validity_score": null,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": ""
+  },
   "calibration_validity_score": null,
+  "identifiability_status": {
+    "status": "PENDING_REVIEW",
+    "orthogonal_axes_satisfied": false,
+    "independent_constraints_satisfied": false,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "PENDING_REVIEW",
+    "hierarchical_model_required": false,
+    "hierarchical_model_applied": false,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "PENDING_REVIEW",
+    "device_lineage_recorded": false,
+    "calibration_context_recorded": false,
+    "protocol_metadata_recorded": false,
+    "independent_evidence_eligible": false,
+    "notes": ""
+  },
   "requested_output_artifacts": [],
-  "automatic_flags_triggered": [],
+  "automatic_flags_triggered": [
+    "M10_VISIBLE_SOURCE_ARTIFACT_AUDIT"
+  ],
   "promotion_cap_scientific": "",
   "promotion_cap_governance": "",
   "simulation_conditions": {},
   "tested_parameter_ranges": {},
-  "evaluation_notes": [],
+  "evaluation_notes": [
+    "M10 artifact-equivalence auditing used only surfaced visible-source artifact-elimination cues and candidate nuisance-control fields."
+  ],
   "failure_modes": [],
   "failure_mode_library_hits": [],
-  "linked_artifacts": [],
+  "linked_artifacts": [
+    "specs/research/deep_research_report.md",
+    "specs/intake/fork_intake_form_one_page.pdf"
+  ],
   "gate_trace": [
     {
       "stage_id": "PRECHECK",
@@ -223,6 +317,21 @@
       "inputs_checked": [
         "lindblad_equivalence.equivalent_within_resolution",
         "lindblad_equivalence.best_equivalent_model"
+      ],
+      "decision_or_cap_change": "SKIPPED",
+      "key_evidence_ids": [],
+      "status": "SKIPPED",
+      "notes": "Skipped because known mechanism trigger satisfied."
+    },
+    {
+      "stage_id": "STAGE_12",
+      "stage_name": "GOVERNANCE_GUARDRAILS",
+      "inputs_checked": [
+        "calibration_status",
+        "identifiability_status",
+        "drift_ledger",
+        "dataset_governance",
+        "promotion_cap_governance"
       ],
       "decision_or_cap_change": "SKIPPED",
       "key_evidence_ids": [],

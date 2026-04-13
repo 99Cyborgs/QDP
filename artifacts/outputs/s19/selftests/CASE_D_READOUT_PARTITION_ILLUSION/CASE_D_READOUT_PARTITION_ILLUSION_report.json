@@ -1,0 +1,25 @@
+{
+  "artifact_id": "QDP_V10_6_S19_REPORT",
+  "module_id": "S19",
+  "timestamp_utc": "2026-04-13T18:30:49.107986+00:00",
+  "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+  "result_summary": {
+    "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+    "actual_final_verdict": "not_supported",
+    "gate_outcomes": {
+      "slow_sector_detected": "borderline_or_fail",
+      "projector_stability": "fail",
+      "finite_horizon_control": "not_primary",
+      "observable_closure": "fail",
+      "null_baseline_rejection": "fail",
+      "symmetry_alias_rejection": "pass",
+      "artifact_alias_rejection": "fail"
+    },
+    "diagnostics_reported": [
+      "covariance_modularity",
+      "observable_space_leakage",
+      "artifact_alias_score",
+      "state_space_and_observable_space_consistency"
+    ]
+  }
+}

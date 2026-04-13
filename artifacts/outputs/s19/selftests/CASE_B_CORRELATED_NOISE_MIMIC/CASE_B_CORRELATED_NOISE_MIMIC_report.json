@@ -1,0 +1,25 @@
+{
+  "artifact_id": "QDP_V10_6_S19_REPORT",
+  "module_id": "S19",
+  "timestamp_utc": "2026-04-13T18:30:49.098481+00:00",
+  "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+  "result_summary": {
+    "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+    "actual_final_verdict": "not_supported",
+    "gate_outcomes": {
+      "slow_sector_detected": "pass_or_borderline",
+      "projector_stability": "fail_or_borderline",
+      "finite_horizon_control": "borderline",
+      "observable_closure": "fail_or_borderline",
+      "null_baseline_rejection": "fail",
+      "symmetry_alias_rejection": "pass",
+      "artifact_alias_rejection": "pass"
+    },
+    "diagnostics_reported": [
+      "covariance_modularity",
+      "slow_rank",
+      "projector_stability",
+      "baseline_competition_margin"
+    ]
+  }
+}

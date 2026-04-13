@@ -1,0 +1,95 @@
+{
+  "campaign_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203",
+  "dry_run": false,
+  "matrix_hash": "85d8ad5a791782820963fbfe3ba305150425f4348bccc088d3b977c76d7617b8",
+  "matrix_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-246\\test_run_phase1_validation_wri0\\matrix.csv",
+  "rows": [
+    {
+      "attempts": 1,
+      "base_config_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-246\\test_run_phase1_validation_wri0\\base.yaml",
+      "base_config_ref": "base.yaml",
+      "case_id": "VAL_A",
+      "dispatcher": "run_simulation",
+      "expanded_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\expanded_configs\\001_VAL_A.yaml",
+      "failure_reason": null,
+      "goal": "small validation strip",
+      "notes": "small strip row",
+      "phase": "D",
+      "promotion_rule": "gate:G1",
+      "row_index": 1,
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs\\VAL_A\\20260413-125203",
+      "start_timestamp": "2026-04-13T12:52:03.700430",
+      "status": "success",
+      "stop_timestamp": "2026-04-13T12:52:03.776264",
+      "success_metric": "bounded residual",
+      "summary_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs\\VAL_A\\20260413-125203\\observables\\summary.json",
+      "wall_clock_seconds": 0.06732310000006692
+    },
+    {
+      "attempts": 1,
+      "base_config_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-246\\test_run_phase1_validation_wri0\\base.yaml",
+      "base_config_ref": "base.yaml",
+      "case_id": "VAL_B",
+      "dispatcher": "run_simulation",
+      "expanded_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\expanded_configs\\002_VAL_B.yaml",
+      "failure_reason": null,
+      "goal": "small validation moat",
+      "notes": "small moat row",
+      "phase": "D",
+      "promotion_rule": "gate:G1",
+      "row_index": 2,
+      "run_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs\\VAL_B\\20260413-125203",
+      "start_timestamp": "2026-04-13T12:52:03.778016",
+      "status": "success",
+      "stop_timestamp": "2026-04-13T12:52:03.856368",
+      "success_metric": "bounded residual",
+      "summary_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs\\VAL_B\\20260413-125203\\observables\\summary.json",
+      "wall_clock_seconds": 0.06648009999844362
+    }
+  ],
+  "selectors": [],
+  "start_timestamp": "2026-04-13T12:52:03.697238",
+  "stop_timestamp": "2026-04-13T12:52:03.858055",
+  "summary": {
+    "attempted_row_count": 2,
+    "blocked_count": 0,
+    "campaign_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203",
+    "failed_count": 0,
+    "gate_status": {
+      "gate:G1": {
+        "dry_run_ready": true,
+        "passed": true,
+        "required": 2,
+        "success": 2,
+        "validated": 0
+      },
+      "gate:G2": {
+        "dry_run_ready": false,
+        "passed": false,
+        "required": 0,
+        "success": 0,
+        "validated": 0
+      },
+      "gate:G3": {
+        "dry_run_ready": false,
+        "passed": false,
+        "required": 0,
+        "success": 0,
+        "validated": 0
+      }
+    },
+    "log_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\logs\\campaign.log",
+    "matrix_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-246\\test_run_phase1_validation_wri0\\matrix.csv",
+    "pending_count": 0,
+    "row_results_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\row_results.csv",
+    "selected_row_count": 2,
+    "skipped_success_count": 0,
+    "start_timestamp": "2026-04-13T12:52:03.697238",
+    "state_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\campaign_state.json",
+    "status": "success",
+    "stop_timestamp": "2026-04-13T12:52:03.858055",
+    "success_count": 2,
+    "summary_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\campaign_summary.json",
+    "validated_count": 0
+  }
+}

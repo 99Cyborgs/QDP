@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdp-control"
+version = "0.1.0"
+description = "Umbrella QDP orchestration, campaign, queue, and control-plane helpers."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "QDP Contributors" }]
+dependencies = [
+    "qdp-io>=0.1.0",
+    "qdp-validation>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qdp_control = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-q"

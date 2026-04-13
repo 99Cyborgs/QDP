@@ -1,0 +1,49 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.063596+00:00",
+  "candidate_id": "m09-case-qp",
+  "result_summary": {
+    "exact_falsifier": "If the quasiparticle branch is real, parity-switch and synchronized multi-device burst measurements must track shielding or injection controls.",
+    "priority_experiments": [
+      "Quasiparticle burst sweep: parity switching, synchronized multi-device T1, shielding or injection controls"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "mechanism_discrimination",
+    "sweep_route_group": "QUASIPARTICLE",
+    "candidate_target_devices": [],
+    "simulation_conditions": {
+      "branch_partition": "mechanism_discrimination",
+      "owner_route": "QUASIPARTICLE",
+      "status": "PROPOSED",
+      "simulation_sweep_required": true,
+      "lab_sweep_required": true
+    },
+    "tested_parameter_ranges": {
+      "burst_rate": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "correlation_window": [
+        "SHORT",
+        "MEDIUM",
+        "LONG"
+      ],
+      "cross_device_coupling": [
+        "WEAK",
+        "MEDIUM",
+        "STRONG"
+      ],
+      "shielding_or_injection": [
+        "BASELINE",
+        "PERTURBED"
+      ]
+    },
+    "suppression_reason": ""
+  }
+}

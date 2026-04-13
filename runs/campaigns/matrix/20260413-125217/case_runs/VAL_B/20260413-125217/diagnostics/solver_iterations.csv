@@ -1,0 +1,3 @@
+step,psi_iterations,psi_residual_norm,psi_solver_method,phi_iterations,phi_residual_norm,phi_solver_method
+1,4,1.375451402779664e-06,gmres,132,7.072401985918662e-09,cg
+2,4,1.3513663171592216e-06,gmres,132,7.101223331638471e-09,cg

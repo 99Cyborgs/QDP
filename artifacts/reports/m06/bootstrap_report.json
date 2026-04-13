@@ -1,11 +1,11 @@
 {
   "artifact_id": "QDP_V10_6_M06_BOOTSTRAP_REPORT",
   "module_id": "M06",
-  "timestamp_utc": "2026-03-15T20:19:15.371260+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.295809+00:00",
   "checks": {
     "reference_resolution": {
-      "ordinary_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
-      "subsystem_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+      "ordinary_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+      "subsystem_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
       "ordinary_status": "PASSED",
       "subsystem_status": "PASSED",
       "ordinary_critical_unresolved_count": 0,
@@ -16,169 +16,756 @@
       "template_validation": {
         "cmd": [
           "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
+          "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py",
+          "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_template.json",
           "--mode",
           "template",
           "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json"
+          "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json"
         ],
         "returncode": 0,
-        "stdout": "VALID\n- mode: template\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: template\n- candidate: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_template.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "ok": true
       },
       "bootstrap_case_outputs_valid": true,
+      "module_selftests_all_valid": true,
+      "m01_selftests_all_valid": true,
+      "m02_selftests_all_valid": true,
+      "m04_selftests_all_valid": true,
       "m05_selftests_all_valid": true,
       "m07_selftests_all_valid": true,
       "m08_selftests_all_valid": true,
       "m09_selftests_all_valid": true,
       "m10_selftests_all_valid": true,
+      "m11_selftests_all_valid": true,
+      "m12_selftests_all_valid": true,
+      "m13_selftests_all_valid": true,
+      "m14_selftests_all_valid": true,
+      "m15_selftests_all_valid": true,
       "passed": true
     },
-    "stage_machine_selftests": {
-      "execution": {
-        "cmd": [
-          "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m05_stage_machine\\runner.py",
-          "--selftest-cases",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m05_stage_machine\\selftest_cases.json",
-          "--base-template",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
-          "--validator",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-          "--output-dir",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m05\\selftests",
-          "--write-selftest-report",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M05_SELFTEST_REPORT\",\n  \"module_id\": \"M05\",\n  \"timestamp_utc\": \"2026-03-15T20:19:14.198156+00:00\",\n  \"cases_total\": 6,\n  \"cases_passed\": 6,\n  \"all_passed\": true,\n  \"schema_valid_all\": true,\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_M05_BASELINE_SUFFICIENCY\",\n      \"description\": \"Baseline pipeline reproduced and drift-aware residual diagnostics support conservative baseline sufficiency rejection at Stage 6.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_BASELINE_SUFFICIENCY\\\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_BASELINE_SUFFICIENCY\\\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_BASELINE_SUFFICIENCY\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_6\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_BASELINE_SUFFICIENCY\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"promotion_cap_governance\": \"\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"STAGE_6\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_BASELINE_SUFFICIENCY\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_6\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_BASELINE_SUFFICIENCY\\\\CASE_M05_BASELINE_SUFFICIENCY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_BASELINE_SUFFICIENCY\\\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\",\n      \"description\": \"A surfaced known-mechanism explanation rejects the branch at Stage 8.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_8\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"promotion_cap_governance\": \"\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"STAGE_8\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_8\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M05_ARTIFACT_EQUIVALENCE\",\n      \"description\": \"An artifact explanation rejects the branch at Stage 9 once baseline and mechanism gates have been survived conservatively.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_ARTIFACT_EQUIVALENCE\\\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_ARTIFACT_EQUIVALENCE\\\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_ARTIFACT_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_9\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_ARTIFACT_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"promotion_cap_governance\": \"\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"STAGE_9\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_ARTIFACT_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_9\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": false,\n          \"L2_convergence_plan_defined\": false,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_ARTIFACT_EQUIVALENCE\\\\CASE_M05_ARTIFACT_EQUIVALENCE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_ARTIFACT_EQUIVALENCE\\\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M05_LINDBLAD_EQUIVALENCE\",\n      \"description\": \"A branch that survives to Stage 11 but remains equivalent within measurement resolution is rejected.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_LINDBLAD_EQUIVALENCE\\\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_LINDBLAD_EQUIVALENCE\\\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_LINDBLAD_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_11\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_LINDBLAD_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"promotion_cap_governance\": \"\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"STAGE_11\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"REJECTED_BY_LINDBLAD_EQUIVALENCE\",\n        \"governance_outcome\": \"REJECT\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_11\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_LINDBLAD_EQUIVALENCE\\\\CASE_M05_LINDBLAD_EQUIVALENCE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_LINDBLAD_EQUIVALENCE\\\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\",\n      \"description\": \"A surviving branch reaches provisional identifiability, then is clipped to SANDBOX_ONLY because cross-device evidence is only scheduled.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST\",\n        \"governance_outcome\": \"SANDBOX_ONLY\",\n        \"cross_device_status\": \"SCHEDULED\",\n        \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n        \"terminated_at\": \"\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": true,\n          \"L4_instrument_facing_comparison_path_defined\": true\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST\",\n        \"governance_outcome\": \"SANDBOX_ONLY\",\n        \"cross_device_status\": \"SCHEDULED\",\n        \"promotion_cap_governance\": \"SANDBOX_ONLY\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": true,\n          \"L4_instrument_facing_comparison_path_defined\": true\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST\",\n        \"governance_outcome\": \"SANDBOX_ONLY\",\n        \"cross_device_status\": \"SCHEDULED\",\n        \"terminated_at\": \"\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": true,\n          \"L4_instrument_facing_comparison_path_defined\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\",\n      \"description\": \"Convergence planning may set L2, but numerical-stability planning must not be conflated with a passed Stage 13 state.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"scientific_decision\": \"NUMERICALLY_UNSTABLE\",\n        \"governance_outcome\": \"DEFER\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_13\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"actual_summary\": {\n        \"scientific_decision\": \"NUMERICALLY_UNSTABLE\",\n        \"governance_outcome\": \"DEFER\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"promotion_cap_governance\": \"\",\n        \"promotion_cap_scientific\": \"\",\n        \"terminated_at\": \"STAGE_13\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        },\n        \"system_status\": \"READY\"\n      },\n      \"result_summary\": {\n        \"scientific_decision\": \"NUMERICALLY_UNSTABLE\",\n        \"governance_outcome\": \"DEFER\",\n        \"cross_device_status\": \"NOT_REQUIRED\",\n        \"terminated_at\": \"STAGE_13\",\n        \"validation_ladder\": {\n          \"L0_baseline_pipeline_reproduced\": true,\n          \"L1_reduction_limit_verified\": true,\n          \"L2_convergence_plan_defined\": true,\n          \"L3_numerical_stability_passed\": false,\n          \"L4_instrument_facing_comparison_path_defined\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m05\\\\selftests\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json\"\n    }\n  ]\n}\n",
-        "stderr": "",
-        "ok": true
+    "module_verification": {
+      "M01": {
+        "module_key": "m01",
+        "verification_kind": "assembly_report",
+        "evidence_paths": {
+          "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 2,
+        "cases_passed": 2,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true,
+        "closure_report_exists": true
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m05\\selftest_report.json",
-      "cases_total": 6,
-      "cases_passed": 6,
-      "all_passed": true
+      "M02": {
+        "module_key": "m02",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M03": {
+        "module_key": "m03",
+        "verification_kind": "reference_resolution",
+        "evidence_paths": {
+          "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+          "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "ordinary_status": "PASSED",
+        "subsystem_status": "PASSED",
+        "ordinary_critical_unresolved_count": 0,
+        "subsystem_critical_unresolved_count": 0,
+        "mode_divergence_status": "PASSED",
+        "verification_passed": true
+      },
+      "M04": {
+        "module_key": "m04",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M05": {
+        "module_key": "m05",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 9,
+        "cases_passed": 9,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M06": {
+        "module_key": "m06",
+        "verification_kind": "bootstrap_harness",
+        "evidence_paths": {
+          "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "validation_harness_status": "PASSED",
+        "schema_validation_status": "PASSED",
+        "reference_resolution_status": "PASSED",
+        "determinism_status": "PASSED",
+        "mode_divergence_status": "PASSED",
+        "verification_passed": true
+      },
+      "M07": {
+        "module_key": "m07",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M08": {
+        "module_key": "m08",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M09": {
+        "module_key": "m09",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M10": {
+        "module_key": "m10",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M11": {
+        "module_key": "m11",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M12": {
+        "module_key": "m12",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 8,
+        "cases_passed": 8,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M13": {
+        "module_key": "m13",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M14": {
+        "module_key": "m14",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M15": {
+        "module_key": "m15",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S16": {
+        "module_key": "s16",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S17": {
+        "module_key": "s17",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S18": {
+        "module_key": "s18",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S19": {
+        "module_key": "s19",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      }
+    },
+    "module_selftests": {
+      "M01": {
+        "module_key": "m01",
+        "verification_kind": "assembly_report",
+        "evidence_paths": {
+          "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+        "cases_total": 2,
+        "cases_passed": 2,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M02": {
+        "module_key": "m02",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M03": {
+        "module_key": "m03",
+        "verification_kind": "reference_resolution",
+        "evidence_paths": {
+          "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+          "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "compatibility_alias"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+        "cases_total": 0,
+        "cases_passed": 0,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M04": {
+        "module_key": "m04",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M05": {
+        "module_key": "m05",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json",
+        "cases_total": 9,
+        "cases_passed": 9,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M06": {
+        "module_key": "m06",
+        "verification_kind": "bootstrap_harness",
+        "evidence_paths": {
+          "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "compatibility_alias"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+        "cases_total": 0,
+        "cases_passed": 0,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M07": {
+        "module_key": "m07",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M08": {
+        "module_key": "m08",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M09": {
+        "module_key": "m09",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json",
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M10": {
+        "module_key": "m10",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json",
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M11": {
+        "module_key": "m11",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M12": {
+        "module_key": "m12",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json",
+        "cases_total": 8,
+        "cases_passed": 8,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M13": {
+        "module_key": "m13",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json",
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M14": {
+        "module_key": "m14",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json",
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M15": {
+        "module_key": "m15",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S16": {
+        "module_key": "s16",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S17": {
+        "module_key": "s17",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S18": {
+        "module_key": "s18",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S19": {
+        "module_key": "s19",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      }
+    },
+    "module_selftests_note": "Deprecated compatibility alias of checks.module_verification.",
+    "stage_machine_selftests": {
+      "module_key": "m05",
+      "verification_kind": "selftest_report",
+      "evidence_paths": {
+        "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+      },
+      "execution": {
+        "ok": true,
+        "mode": "in_process"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json",
+      "cases_total": 9,
+      "cases_passed": 9,
+      "all_passed": true,
+      "validator_valid_all": true,
+      "verification_passed": true
     },
     "family_triage_selftests": {
-      "execution": {
-        "cmd": [
-          "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m07_family_triage\\runner.py",
-          "--selftest",
-          "--selftest-cases",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m07_family_triage\\selftest_cases.json",
-          "--base-template",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
-          "--validator",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-          "--selftest-output-dir",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m07\\selftests",
-          "--write-report",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M07_SELFTEST_REPORT\",\n  \"module_id\": \"M07\",\n  \"timestamp_utc\": \"2026-03-15T20:19:14.448015+00:00\",\n  \"visible_source_only\": true,\n  \"cases_total\": 6,\n  \"cases_passed\": 6,\n  \"all_passed\": true,\n  \"schema_valid_all\": true,\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_M07_HYSTERESIS_MEMORY\",\n      \"description\": \"Hysteresis evidence should rank metastable vortex-memory style baths first and recommend field-loop discrimination.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_HYSTERESIS_MEMORY\\\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_HYSTERESIS_MEMORY\\\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"METASTABLE_CONFIGURATION_MEMORY\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_FAMILY_CONFIRMED\",\n        \"inferred_bath_rank_order\": [\n          \"METASTABLE_CONFIGURATION_MEMORY\",\n          \"PINNED_VORTEX_OCCUPANCY\",\n          \"SLOW_DEFECT_SECTOR\"\n        ],\n        \"signature_matches\": [\n          \"HYSTERESIS\"\n        ],\n        \"minimal_discriminant_measurement\": \"Repeat ZFC vs FC and up/down field loops; compute hysteresis index; replicate across cooldowns.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"METASTABLE_CONFIGURATION_MEMORY\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_FAMILY_CONFIRMED\",\n        \"inferred_bath_rank_order\": [\n          \"METASTABLE_CONFIGURATION_MEMORY\",\n          \"PINNED_VORTEX_OCCUPANCY\",\n          \"SLOW_DEFECT_SECTOR\"\n        ],\n        \"signature_matches\": [\n          \"HYSTERESIS\"\n        ],\n        \"minimal_discriminant_measurement\": \"Repeat ZFC vs FC and up/down field loops; compute hysteresis index; replicate across cooldowns.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 0.0,\n          \"P_VORTEX\": 0.8,\n          \"P_QUASIPARTICLE\": 0.0,\n          \"P_PHONON\": 0.0,\n          \"P_CONTROL_NOISE\": 0.05,\n          \"P_EM_PURCELL\": 0.0,\n          \"P_OTHER\": 0.15\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_HYSTERESIS_MEMORY\\\\CASE_M07_HYSTERESIS_MEMORY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_HYSTERESIS_MEMORY\\\\CASE_M07_HYSTERESIS_MEMORY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M07_TLS_SATURATION\",\n      \"description\": \"Smooth power dependence with TLS saturation should classify as TLS ensemble.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_TLS_SATURATION\\\\CASE_M07_TLS_SATURATION_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_TLS_SATURATION\\\\CASE_M07_TLS_SATURATION_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"TLS_ENSEMBLE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_FAMILY_CONFIRMED\",\n        \"inferred_bath_rank_order\": [\n          \"TLS_ENSEMBLE\",\n          \"DIELECTRIC_INTERFACE_LOSS\",\n          \"THERMAL_BATH\"\n        ],\n        \"signature_matches\": [\n          \"POWER_DEPENDENT_SATURATION\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run a Qi versus readout power sweep, fit a TLS saturation form, and repeat at two to three temperatures.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"TLS_ENSEMBLE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_FAMILY_CONFIRMED\",\n        \"inferred_bath_rank_order\": [\n          \"TLS_ENSEMBLE\",\n          \"DIELECTRIC_INTERFACE_LOSS\",\n          \"THERMAL_BATH\"\n        ],\n        \"signature_matches\": [\n          \"POWER_DEPENDENT_SATURATION\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run a Qi versus readout power sweep, fit a TLS saturation form, and repeat at two to three temperatures.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 0.8,\n          \"P_VORTEX\": 0.0,\n          \"P_QUASIPARTICLE\": 0.0,\n          \"P_PHONON\": 0.0,\n          \"P_CONTROL_NOISE\": 0.05,\n          \"P_EM_PURCELL\": 0.0,\n          \"P_OTHER\": 0.15\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_TLS_SATURATION\\\\CASE_M07_TLS_SATURATION_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_TLS_SATURATION\\\\CASE_M07_TLS_SATURATION_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M07_KERNEL_MEMORY\",\n      \"description\": \"Non-exponential decay and revivals should map to a structured-memory family.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_KERNEL_MEMORY\\\\CASE_M07_KERNEL_MEMORY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_KERNEL_MEMORY\\\\CASE_M07_KERNEL_MEMORY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"FINITE_SIZE_STRUCTURED_BATH\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"FINITE_SIZE_STRUCTURED_BATH\",\n          \"STRUCTURED_PHONON_BATH\",\n          \"STRUCTURED_EM_BATH\",\n          \"KERNEL_MEMORY\"\n        ],\n        \"signature_matches\": [\n          \"REVIVALS_BACKFLOW\",\n          \"NON_EXPONENTIAL_DECAY\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run time-domain sequences that expose revivals and compare with and without phononic or packaging changes.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"FINITE_SIZE_STRUCTURED_BATH\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"FINITE_SIZE_STRUCTURED_BATH\",\n          \"STRUCTURED_PHONON_BATH\",\n          \"STRUCTURED_EM_BATH\",\n          \"KERNEL_MEMORY\"\n        ],\n        \"signature_matches\": [\n          \"REVIVALS_BACKFLOW\",\n          \"NON_EXPONENTIAL_DECAY\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run time-domain sequences that expose revivals and compare with and without phononic or packaging changes.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 0.0,\n          \"P_VORTEX\": 0.0,\n          \"P_QUASIPARTICLE\": 0.0,\n          \"P_PHONON\": 0.6,\n          \"P_CONTROL_NOISE\": 0.0,\n          \"P_EM_PURCELL\": 0.225,\n          \"P_OTHER\": 0.175\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_KERNEL_MEMORY\\\\CASE_M07_KERNEL_MEMORY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_KERNEL_MEMORY\\\\CASE_M07_KERNEL_MEMORY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M07_PARASITIC_MODE\",\n      \"description\": \"Avoided crossings should prioritize a coherent parasitic mode path.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_PARASITIC_MODE\\\\CASE_M07_PARASITIC_MODE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_PARASITIC_MODE\\\\CASE_M07_PARASITIC_MODE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"COHERENT_PARASITIC_MODE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"COHERENT_PARASITIC_MODE\",\n          \"STRUCTURED_EM_BATH\",\n          \"DEFECT_MODE\"\n        ],\n        \"signature_matches\": [\n          \"AVOIDED_CROSSING\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"COHERENT_PARASITIC_MODE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"COHERENT_PARASITIC_MODE\",\n          \"STRUCTURED_EM_BATH\",\n          \"DEFECT_MODE\"\n        ],\n        \"signature_matches\": [\n          \"AVOIDED_CROSSING\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run high-resolution spectroscopy versus flux or bias and verify the anticrossing gap and mode tracking.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 0.0,\n          \"P_VORTEX\": 0.0,\n          \"P_QUASIPARTICLE\": 0.0,\n          \"P_PHONON\": 0.0,\n          \"P_CONTROL_NOISE\": 0.0,\n          \"P_EM_PURCELL\": 0.75,\n          \"P_OTHER\": 0.25\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_PARASITIC_MODE\\\\CASE_M07_PARASITIC_MODE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_PARASITIC_MODE\\\\CASE_M07_PARASITIC_MODE_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M07_GLOBAL_BATH\",\n      \"description\": \"Cross-device correlated bursts should rank a global bath path ahead of local alternatives.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_GLOBAL_BATH\\\\CASE_M07_GLOBAL_BATH_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_GLOBAL_BATH\\\\CASE_M07_GLOBAL_BATH_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"GLOBAL_BATH_EVENT\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"QUASIPARTICLE_BATH\",\n          \"PHONON_BATH\",\n          \"GLOBAL_BATH_EVENT\",\n          \"GLOBAL_BATH\",\n          \"RADIATIVE_GLOBAL_BATH\"\n        ],\n        \"signature_matches\": [\n          \"SUDDEN_T1_COLLAPSES\",\n          \"CORRELATED_EVENTS_ACROSS_DEVICES\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run fast repeated T1 sampling, look for cross-device correlations, and vary shielding, biasing, and thermalization.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"GLOBAL_BATH_EVENT\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"INFERRED_FROM_SIGNATURES\",\n        \"inferred_bath_rank_order\": [\n          \"QUASIPARTICLE_BATH\",\n          \"PHONON_BATH\",\n          \"GLOBAL_BATH_EVENT\",\n          \"GLOBAL_BATH\",\n          \"RADIATIVE_GLOBAL_BATH\"\n        ],\n        \"signature_matches\": [\n          \"SUDDEN_T1_COLLAPSES\",\n          \"CORRELATED_EVENTS_ACROSS_DEVICES\"\n        ],\n        \"minimal_discriminant_measurement\": \"Run fast repeated T1 sampling, look for cross-device correlations, and vary shielding, biasing, and thermalization.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 0.0,\n          \"P_VORTEX\": 0.0,\n          \"P_QUASIPARTICLE\": 0.575,\n          \"P_PHONON\": 0.25,\n          \"P_CONTROL_NOISE\": 0.0,\n          \"P_EM_PURCELL\": 0.075,\n          \"P_OTHER\": 0.1\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_GLOBAL_BATH\\\\CASE_M07_GLOBAL_BATH_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_GLOBAL_BATH\\\\CASE_M07_GLOBAL_BATH_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M07_DECLARED_ONLY_FALLBACK\",\n      \"description\": \"Without a surfaced signature, the module should fall back to a declared family without inventing stronger evidence.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_DECLARED_ONLY_FALLBACK\\\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_DECLARED_ONLY_FALLBACK\\\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"assigned_family_class\": \"TLS_ENSEMBLE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_ONLY_PENDING_SIGNATURE_TRIAGE\",\n        \"inferred_bath_rank_order\": [\n          \"DIELECTRIC_INTERFACE_LOSS\"\n        ],\n        \"signature_matches\": [],\n        \"minimal_discriminant_measurement\": \"Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.\",\n        \"bath_classification_consistent_with_glossary\": true\n      },\n      \"actual_summary\": {\n        \"assigned_family_class\": \"TLS_ENSEMBLE\",\n        \"family_class_mismatch\": false,\n        \"family_status\": \"DECLARED_ONLY_PENDING_SIGNATURE_TRIAGE\",\n        \"inferred_bath_rank_order\": [\n          \"DIELECTRIC_INTERFACE_LOSS\"\n        ],\n        \"signature_matches\": [],\n        \"minimal_discriminant_measurement\": \"Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.\",\n        \"bath_classification_consistent_with_glossary\": true,\n        \"mechanism_scores_after_signature\": {\n          \"P_TLS\": 1.0,\n          \"P_VORTEX\": 0.0,\n          \"P_QUASIPARTICLE\": 0.0,\n          \"P_PHONON\": 0.0,\n          \"P_CONTROL_NOISE\": 0.0,\n          \"P_EM_PURCELL\": 0.0,\n          \"P_OTHER\": 0.0\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_DECLARED_ONLY_FALLBACK\\\\CASE_M07_DECLARED_ONLY_FALLBACK_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m07\\\\selftests\\\\CASE_M07_DECLARED_ONLY_FALLBACK\\\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json\"\n    }\n  ]\n}\n",
-        "stderr": "",
-        "ok": true
+      "module_key": "m07",
+      "verification_kind": "selftest_report",
+      "evidence_paths": {
+        "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m07\\selftest_report.json",
+      "execution": {
+        "ok": true,
+        "mode": "in_process"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json",
       "cases_total": 6,
       "cases_passed": 6,
-      "all_passed": true
+      "all_passed": true,
+      "validator_valid_all": true,
+      "verification_passed": true
     },
     "baseline_fit_selftests": {
-      "execution": {
-        "cmd": [
-          "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m08_baseline_fit\\runner.py",
-          "--selftest",
-          "--selftest-cases",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m08_baseline_fit\\selftest_cases.json",
-          "--base-template",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
-          "--validator",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-          "--selftest-output-dir",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests",
-          "--write-report",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M08_SELFTEST_REPORT\",\n  \"module_id\": \"M08\",\n  \"timestamp_utc\": \"2026-03-15T20:19:14.682992+00:00\",\n  \"visible_source_only\": true,\n  \"cases_total\": 6,\n  \"cases_passed\": 6,\n  \"all_passed\": true,\n  \"schema_valid_all\": true,\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_M08_BASELINE_SUFFICIENCY\",\n      \"description\": \"A joint GKSL baseline fit with drift-aware residual checks should reproduce the clean baseline-sufficiency signature M05 expects.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_BASELINE_SUFFICIENCY\\\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_BASELINE_SUFFICIENCY\\\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": true\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": false,\n          \"white_residuals\": true,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [],\n          \"time_series_based\": true\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": true\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": false,\n          \"white_residuals\": true,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [],\n          \"time_series_based\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_BASELINE_SUFFICIENCY\\\\CASE_M08_BASELINE_SUFFICIENCY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_BASELINE_SUFFICIENCY\\\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M08_CORRELATED_RESIDUALS\",\n      \"description\": \"Correlated residuals should explicitly fail whiteness and mark structured residuals.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_CORRELATED_RESIDUALS\\\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_CORRELATED_RESIDUALS\\\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"CORRELATED_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"CORRELATED_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_CORRELATED_RESIDUALS\\\\CASE_M08_CORRELATED_RESIDUALS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_CORRELATED_RESIDUALS\\\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\",\n      \"description\": \"Drive-conditional shifts and Ramsey-envelope mismatch should surface as structured residual features.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"DRIVE_CONDITIONAL_SHIFTS\",\n            \"RAMSEY_ENVELOPE_MISMATCH\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"DRIVE_CONDITIONAL_SHIFTS\",\n            \"RAMSEY_ENVELOPE_MISMATCH\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\",\n      \"description\": \"Nonstationary cross-observable residuals should fail stationarity and correlation checks together.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": false,\n          \"cross_observable_correlations_vanish\": false,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"CROSS_OBSERVABLE_CORRELATIONS\",\n            \"NONSTATIONARY_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": false,\n          \"cross_observable_correlations_vanish\": false,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"CROSS_OBSERVABLE_CORRELATIONS\",\n            \"NONSTATIONARY_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M08_NON_GAUSSIAN_BURSTS\",\n      \"description\": \"Bursty heavy-tailed residuals should be flagged even when autocorrelation is not the main issue.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NON_GAUSSIAN_BURSTS\\\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NON_GAUSSIAN_BURSTS\\\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"NON_GAUSSIAN_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"EXECUTED_SUCCESSFULLY\",\n          \"joint_fit_used\": true,\n          \"hierarchical_drift_model_used\": true,\n          \"pipeline_executed\": true,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": true,\n          \"features\": [\n            \"NON_GAUSSIAN_RESIDUALS\"\n          ],\n          \"time_series_based\": true\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NON_GAUSSIAN_BURSTS\\\\CASE_M08_NON_GAUSSIAN_BURSTS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_NON_GAUSSIAN_BURSTS\\\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M08_INSUFFICIENT_JOINT_DATA\",\n      \"description\": \"A single observable without time-series support should fall back conservatively instead of pretending a joint baseline fit ran.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_INSUFFICIENT_JOINT_DATA\\\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_INSUFFICIENT_JOINT_DATA\\\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"baseline_model\": {\n          \"status\": \"INSUFFICIENT_JOINT_FIT_DATA\",\n          \"joint_fit_used\": false,\n          \"hierarchical_drift_model_used\": false,\n          \"pipeline_executed\": false,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": false,\n          \"features\": [\n            \"INSUFFICIENT_TIME_SERIES_DATA\"\n          ],\n          \"time_series_based\": false\n        }\n      },\n      \"actual_summary\": {\n        \"baseline_model\": {\n          \"status\": \"INSUFFICIENT_JOINT_FIT_DATA\",\n          \"joint_fit_used\": false,\n          \"hierarchical_drift_model_used\": false,\n          \"pipeline_executed\": false,\n          \"reduction_limit_verified\": false\n        },\n        \"residual_analysis\": {\n          \"structured_residuals\": true,\n          \"white_residuals\": false,\n          \"stationary_residuals\": true,\n          \"cross_observable_correlations_vanish\": true,\n          \"drift_aware_fit_applied\": false,\n          \"features\": [\n            \"INSUFFICIENT_TIME_SERIES_DATA\"\n          ],\n          \"time_series_based\": false\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_INSUFFICIENT_JOINT_DATA\\\\CASE_M08_INSUFFICIENT_JOINT_DATA_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m08\\\\selftests\\\\CASE_M08_INSUFFICIENT_JOINT_DATA\\\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\"\n    }\n  ]\n}\n",
-        "stderr": "",
-        "ok": true
+      "module_key": "m08",
+      "verification_kind": "selftest_report",
+      "evidence_paths": {
+        "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m08\\selftest_report.json",
+      "execution": {
+        "ok": true,
+        "mode": "in_process"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json",
       "cases_total": 6,
       "cases_passed": 6,
-      "all_passed": true
+      "all_passed": true,
+      "validator_valid_all": true,
+      "verification_passed": true
     },
     "mechanism_competition_selftests": {
-      "execution": {
-        "cmd": [
-          "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m09_mechanism_competition\\runner.py",
-          "--selftest",
-          "--selftest-cases",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m09_mechanism_competition\\selftest_cases.json",
-          "--base-template",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
-          "--validator",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-          "--selftest-output-dir",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests",
-          "--write-report",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M09_SELFTEST_REPORT\",\n  \"module_id\": \"M09\",\n  \"timestamp_utc\": \"2026-03-15T20:19:14.923980+00:00\",\n  \"visible_source_only\": true,\n  \"cases_total\": 7,\n  \"cases_passed\": 7,\n  \"all_passed\": true,\n  \"schema_valid_all\": true,\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_M09_TLS_EXPLAINS\",\n      \"description\": \"A surfaced TLS saturation signature should allow the TLS mechanism to explain the data conservatively.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_TLS_EXPLAINS\\\\CASE_M09_TLS_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_TLS_EXPLAINS\\\\CASE_M09_TLS_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"TLS\",\n        \"strongest_competing_mechanism\": \"TLS\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"vortex\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"TLS\",\n        \"strongest_competing_mechanism\": \"TLS\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"vortex\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"quasiparticle\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"phonon\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_TLS_EXPLAINS\\\\CASE_M09_TLS_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_TLS_EXPLAINS\\\\CASE_M09_TLS_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_VORTEX_EXPLAINS\",\n      \"description\": \"Field-history hysteresis with cooldown protocol evidence should let the vortex mechanism explain the data.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_EXPLAINS\\\\CASE_M09_VORTEX_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_EXPLAINS\\\\CASE_M09_VORTEX_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"VORTEX\",\n        \"strongest_competing_mechanism\": \"VORTEX\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"vortex\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"VORTEX\",\n        \"strongest_competing_mechanism\": \"VORTEX\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"quasiparticle\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"phonon\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_EXPLAINS\\\\CASE_M09_VORTEX_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_EXPLAINS\\\\CASE_M09_VORTEX_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_QP_EXPLAINS\",\n      \"description\": \"Parity-switching and drive-induced QP evidence should promote quasiparticles to the explaining mechanism.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_QP_EXPLAINS\\\\CASE_M09_QP_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_QP_EXPLAINS\\\\CASE_M09_QP_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"QUASIPARTICLE\",\n        \"strongest_competing_mechanism\": \"QUASIPARTICLE\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"quasiparticle\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"QUASIPARTICLE\",\n        \"strongest_competing_mechanism\": \"QUASIPARTICLE\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          },\n          \"quasiparticle\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"phonon\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_QP_EXPLAINS\\\\CASE_M09_QP_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_QP_EXPLAINS\\\\CASE_M09_QP_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_CONTROL_NOISE_EXPLAINS\",\n      \"description\": \"Filter-function and line-attenuation evidence should let the control-noise mechanism explain the data.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_CONTROL_NOISE_EXPLAINS\\\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_CONTROL_NOISE_EXPLAINS\\\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"CONTROL_NOISE\",\n        \"strongest_competing_mechanism\": \"CONTROL_NOISE\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_noise\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"CONTROL_NOISE\",\n        \"strongest_competing_mechanism\": \"CONTROL_NOISE\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"quasiparticle\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"phonon\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"em_purcell\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_CONTROL_NOISE_EXPLAINS\\\\CASE_M09_CONTROL_NOISE_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_CONTROL_NOISE_EXPLAINS\\\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_EM_PURCELL_EXPLAINS\",\n      \"description\": \"A coherent parasitic mode / avoided-crossing signature should allow the EM Purcell route to explain the data.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_EM_PURCELL_EXPLAINS\\\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_EM_PURCELL_EXPLAINS\\\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"EM_PURCELL\",\n        \"strongest_competing_mechanism\": \"EM_PURCELL\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"em_purcell\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"EM_PURCELL\",\n        \"strongest_competing_mechanism\": \"EM_PURCELL\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"quasiparticle\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"phonon\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_EM_PURCELL_EXPLAINS\\\\CASE_M09_EM_PURCELL_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_EM_PURCELL_EXPLAINS\\\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_PHONON_SUPPORT_ONLY\",\n      \"description\": \"A phonon-like revival signature without the surfaced discriminator should remain supporting only.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_PHONON_SUPPORT_ONLY\\\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_PHONON_SUPPORT_ONLY\\\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"PHONON\",\n        \"strongest_competing_mechanism\": \"\",\n        \"mechanism_tests\": {\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"phonon\": {\n            \"status\": \"PRIMARY_DISCRIMINANT\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"PHONON\",\n        \"strongest_competing_mechanism\": \"\",\n        \"mechanism_tests\": {\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"quasiparticle\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"phonon\": {\n            \"status\": \"PRIMARY_DISCRIMINANT\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_PHONON_SUPPORT_ONLY\\\\CASE_M09_PHONON_SUPPORT_ONLY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_PHONON_SUPPORT_ONLY\\\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M09_VORTEX_QP_COMBINATION\",\n      \"description\": \"Vortex and quasiparticle evidence with explicit interplay language should surface a parsimonious combination explanation.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_QP_COMBINATION\\\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_QP_COMBINATION\\\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"strongest_competing_mechanism_initial\": \"VORTEX\",\n        \"strongest_competing_mechanism\": \"VORTEX_QUASIPARTICLE_INTERPLAY\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": true,\n          \"parsimonious_combination_label\": \"VORTEX_QUASIPARTICLE_INTERPLAY\",\n          \"vortex\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"quasiparticle\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"strongest_competing_mechanism_initial\": \"VORTEX\",\n        \"strongest_competing_mechanism\": \"VORTEX_QUASIPARTICLE_INTERPLAY\",\n        \"mechanism_tests\": {\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": true,\n          \"parsimonious_combination_label\": \"VORTEX_QUASIPARTICLE_INTERPLAY\",\n          \"tls\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"vortex\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"quasiparticle\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"phonon\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"control_noise\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"em_purcell\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_QP_COMBINATION\\\\CASE_M09_VORTEX_QP_COMBINATION_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m09\\\\selftests\\\\CASE_M09_VORTEX_QP_COMBINATION\\\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\"\n    }\n  ]\n}\n",
-        "stderr": "",
-        "ok": true
+      "module_key": "m09",
+      "verification_kind": "selftest_report",
+      "evidence_paths": {
+        "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m09\\selftest_report.json",
+      "execution": {
+        "ok": true,
+        "mode": "in_process"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json",
       "cases_total": 7,
       "cases_passed": 7,
-      "all_passed": true
+      "all_passed": true,
+      "validator_valid_all": true,
+      "verification_passed": true
     },
     "artifact_equivalence_selftests": {
-      "execution": {
-        "cmd": [
-          "C:\\Users\\Forre\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m10_artifact_audit\\runner.py",
-          "--selftest",
-          "--selftest-cases",
-          "C:\\Users\\Forre\\Documents\\QDP\\modules\\m10_artifact_audit\\selftest_cases.json",
-          "--base-template",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_template.json",
-          "--validator",
-          "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
-          "--schema",
-          "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-          "--selftest-output-dir",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests",
-          "--write-report",
-          "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
-        ],
-        "returncode": 0,
-        "stdout": "{\n  \"artifact_id\": \"QDP_V10_6_M10_SELFTEST_REPORT\",\n  \"module_id\": \"M10\",\n  \"timestamp_utc\": \"2026-03-15T20:19:15.177070+00:00\",\n  \"visible_source_only\": true,\n  \"cases_total\": 7,\n  \"cases_passed\": 7,\n  \"all_passed\": true,\n  \"schema_valid_all\": true,\n  \"cases\": [\n    {\n      \"case_id\": \"CASE_M10_CONTROL_CHAIN_EXPLAINS\",\n      \"description\": \"Pulse-shape and attenuation-swap evidence should let the control-chain artifact route explain the data.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"CONTROL_CHAIN_DISTORTION\",\n          \"strongest_artifact_route\": \"CONTROL_CHAIN_DISTORTION\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"CONTROL_CHAIN_DISTORTION\",\n          \"strongest_artifact_route\": \"CONTROL_CHAIN_DISTORTION\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_READOUT_ALIAS_EXPLAINS\",\n      \"description\": \"Readout relinearization and gain changes should surface a readout-alias explanation.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_READOUT_ALIAS_EXPLAINS\\\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_READOUT_ALIAS_EXPLAINS\\\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"READOUT_ALIAS\",\n          \"strongest_artifact_route\": \"READOUT_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"readout_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"READOUT_ALIAS\",\n          \"strongest_artifact_route\": \"READOUT_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_READOUT_ALIAS_EXPLAINS\\\\CASE_M10_READOUT_ALIAS_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_READOUT_ALIAS_EXPLAINS\\\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_CALIBRATION_DRIFT_EXPLAINS\",\n      \"description\": \"Recalibration and drift-ledger replay should allow calibration drift to explain the artifact route.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"CALIBRATION_DRIFT\",\n          \"strongest_artifact_route\": \"CALIBRATION_DRIFT\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"calibration_drift\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"CALIBRATION_DRIFT\",\n          \"strongest_artifact_route\": \"CALIBRATION_DRIFT\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_REFRIGERATOR_SUPPORT_ONLY\",\n      \"description\": \"Pulse-tube language without synchronization evidence should remain supporting only.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"REFRIGERATOR_CYCLE_ALIAS\",\n          \"strongest_artifact_route\": \"\",\n          \"route_explains_data\": false,\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"REFRIGERATOR_CYCLE_ALIAS\",\n          \"strongest_artifact_route\": \"\",\n          \"route_explains_data\": false,\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"SUPPORTING\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_POWER_CALIBRATION_EXPLAINS\",\n      \"description\": \"In-situ power mismatch against generator settings should surface a power-calibration alias explanation.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"POWER_CALIBRATION_ALIAS\",\n          \"strongest_artifact_route\": \"POWER_CALIBRATION_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"power_calibration_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"POWER_CALIBRATION_ALIAS\",\n          \"strongest_artifact_route\": \"POWER_CALIBRATION_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\",\n      \"description\": \"Control-chain distortion and power-calibration evidence together should surface a parsimonious artifact combination.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"POWER_CALIBRATION_ALIAS\",\n          \"strongest_artifact_route\": \"CONTROL_CHAIN_POWER_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": true,\n          \"parsimonious_combination_label\": \"CONTROL_CHAIN_POWER_ALIAS\",\n          \"control_chain_distortion\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"POWER_CALIBRATION_ALIAS\",\n          \"strongest_artifact_route\": \"CONTROL_CHAIN_POWER_ALIAS\",\n          \"route_explains_data\": true,\n          \"explains_data\": true,\n          \"parsimonious_combination_explains\": true,\n          \"parsimonious_combination_label\": \"CONTROL_CHAIN_POWER_ALIAS\",\n          \"control_chain_distortion\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"EXPLAINS_DATA\",\n            \"explains_data\": true\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\"\n    },\n    {\n      \"case_id\": \"CASE_M10_NO_ARTIFACT_ROUTE\",\n      \"description\": \"A candidate with no surfaced artifact cues should keep the artifact route inactive.\",\n      \"passed\": true,\n      \"comparison_ok\": true,\n      \"comparison_failures\": [],\n      \"validator_result\": {\n        \"candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_NO_ARTIFACT_ROUTE\\\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\",\n        \"returncode\": 0,\n        \"stdout\": \"VALID\\n- mode: final\\n- candidate: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_NO_ARTIFACT_ROUTE\\\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\\n- schema: C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\\n\",\n        \"stderr\": \"\",\n        \"valid\": true,\n        \"errors\": [],\n        \"mode\": \"final\",\n        \"schema_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\config\\\\schema\\\\candidate_schema.json\",\n        \"validator_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\tools\\\\validators\\\\candidate_validator.py\"\n      },\n      \"expected_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"\",\n          \"strongest_artifact_route\": \"\",\n          \"route_explains_data\": false,\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"actual_summary\": {\n        \"artifact_tests\": {\n          \"strongest_artifact_route_initial\": \"\",\n          \"strongest_artifact_route\": \"\",\n          \"route_explains_data\": false,\n          \"explains_data\": false,\n          \"parsimonious_combination_explains\": false,\n          \"parsimonious_combination_label\": \"\",\n          \"control_chain_distortion\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"readout_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"calibration_drift\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"refrigerator_cycle_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          },\n          \"power_calibration_alias\": {\n            \"status\": \"NOT_SUPPORTED\",\n            \"explains_data\": false\n          }\n        }\n      },\n      \"report_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_NO_ARTIFACT_ROUTE\\\\CASE_M10_NO_ARTIFACT_ROUTE_report.json\",\n      \"output_candidate_path\": \"C:\\\\Users\\\\Forre\\\\Documents\\\\QDP\\\\artifacts\\\\outputs\\\\m10\\\\selftests\\\\CASE_M10_NO_ARTIFACT_ROUTE\\\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\"\n    }\n  ]\n}\n",
-        "stderr": "",
-        "ok": true
+      "module_key": "m10",
+      "verification_kind": "selftest_report",
+      "evidence_paths": {
+        "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m10\\selftest_report.json",
+      "execution": {
+        "ok": true,
+        "mode": "in_process"
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json",
       "cases_total": 7,
       "cases_passed": 7,
-      "all_passed": true
+      "all_passed": true,
+      "validator_valid_all": true,
+      "verification_passed": true
     },
     "governance_self_diagnostic": {
       "fields_present_in_all_bootstrap_outputs": true,
@@ -187,10 +774,10 @@
       "passed": true
     },
     "runtime_integrity": {
-      "build_spec_path": "C:\\Users\\Forre\\Documents\\QDP\\specs\\core\\build_spec.md",
+      "build_spec_path": "G:\\GitHub\\incubate\\QDP\\specs\\core\\build_spec.md",
       "build_spec_exists": true,
-      "runtime_prompt_path": "C:\\Users\\Forre\\Documents\\QDP\\runtime\\current\\runtime_prompt.md",
-      "retained_runtime_source_path": "C:\\Users\\Forre\\Documents\\QDP\\runtime\\retained\\operative_body_v10_1.md",
+      "runtime_prompt_path": "G:\\GitHub\\incubate\\QDP\\runtime\\current\\runtime_prompt.md",
+      "retained_runtime_source_path": "G:\\GitHub\\incubate\\QDP\\runtime\\retained\\operative_body_v10_1.md",
       "runtime_prompt_exists": true,
       "retained_runtime_source_exists": true,
       "forbidden_shorthand_phrases": [
@@ -240,7 +827,7 @@
       "blocking_reason": ""
     },
     "mode_divergence": {
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json",
       "status": "PASSED",
       "shared_field_override_detected": false,
       "passed": true
@@ -254,13 +841,13 @@
     }
   },
   "bootstrap_cases": {
-    "cases_total": 5,
+    "cases_total": 7,
     "repeat_runs": 2,
     "runs": [
       {
         "run_index": 1,
-        "cases_total": 5,
-        "cases_passed": 5,
+        "cases_total": 7,
+        "cases_passed": 7,
         "all_passed": true,
         "results": [
           {
@@ -271,15 +858,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -300,8 +887,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json"
             }
           },
           {
@@ -312,15 +899,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -341,8 +928,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json"
             }
           },
           {
@@ -353,15 +940,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -382,8 +969,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json"
             }
           },
           {
@@ -394,15 +981,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -423,8 +1010,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json"
             }
           },
           {
@@ -435,15 +1022,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -464,17 +1051,99 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json"
+            }
+          },
+          {
+            "case_id": "CASE_6_GOVERNANCE_GUARDRAIL_BLOCK",
+            "class": "governance_guardrail_block",
+            "description": "Canonical harness control: governance evidence gaps must defer at Stage 12 before numerical promotion logic.",
+            "passed": true,
+            "comparison_ok": true,
+            "comparison_failures": [],
+            "validator_result": {
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+              "returncode": 0,
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stderr": "",
+              "valid": true,
+              "errors": [],
+              "mode": "final",
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+            },
+            "governance_self_check_ok": true,
+            "governance_self_check_failures": [],
+            "result_summary": {
+              "scientific_decision": "NOT_EVALUATED",
+              "governance_outcome": "DEFER",
+              "cross_device_status": "NOT_REQUIRED",
+              "promotion_cap_governance": "SANDBOX_ONLY",
+              "promotion_cap_scientific": "",
+              "system_status": "READY",
+              "terminated_at": "STAGE_12",
+              "validation_ladder": {
+                "L0_baseline_pipeline_reproduced": true,
+                "L1_reduction_limit_verified": true,
+                "L2_convergence_plan_defined": true,
+                "L3_numerical_stability_passed": false,
+                "L4_instrument_facing_comparison_path_defined": false
+              }
+            },
+            "output_paths": {
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_report.json"
+            }
+          },
+          {
+            "case_id": "CASE_7_CONFIRMED_READY_BRANCH",
+            "class": "confirmed_ready_branch",
+            "description": "Canonical harness positive control: a fully governed, confirmed branch can clear to PROCEED.",
+            "passed": true,
+            "comparison_ok": true,
+            "comparison_failures": [],
+            "validator_result": {
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+              "returncode": 0,
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stderr": "",
+              "valid": true,
+              "errors": [],
+              "mode": "final",
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+            },
+            "governance_self_check_ok": true,
+            "governance_self_check_failures": [],
+            "result_summary": {
+              "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+              "governance_outcome": "PROCEED",
+              "cross_device_status": "CONFIRMED",
+              "promotion_cap_governance": "",
+              "promotion_cap_scientific": "",
+              "system_status": "READY",
+              "terminated_at": "",
+              "validation_ladder": {
+                "L0_baseline_pipeline_reproduced": true,
+                "L1_reduction_limit_verified": true,
+                "L2_convergence_plan_defined": true,
+                "L3_numerical_stability_passed": true,
+                "L4_instrument_facing_comparison_path_defined": true
+              }
+            },
+            "output_paths": {
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_report.json"
             }
           }
         ],
-        "normalized_hash": "e88e1c6f6df5f51a6575d9314b378e6c630dca4ce4f4f661dc1ead21788ad555"
+        "normalized_hash": "cca8de97893b5daf0d26bf085bdd1e18b32a3648e51b42a12cddf77c353cc89f"
       },
       {
         "run_index": 2,
-        "cases_total": 5,
-        "cases_passed": 5,
+        "cases_total": 7,
+        "cases_passed": 7,
         "all_passed": true,
         "results": [
           {
@@ -485,15 +1154,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -514,8 +1183,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_report.json"
             }
           },
           {
@@ -526,15 +1195,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -555,8 +1224,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_report.json"
             }
           },
           {
@@ -567,15 +1236,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -596,8 +1265,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_report.json"
             }
           },
           {
@@ -608,15 +1277,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -637,8 +1306,8 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_report.json"
             }
           },
           {
@@ -649,15 +1318,15 @@
             "comparison_ok": true,
             "comparison_failures": [],
             "validator_result": {
-              "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
               "returncode": 0,
-              "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
               "stderr": "",
               "valid": true,
               "errors": [],
               "mode": "final",
-              "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-              "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
             },
             "governance_self_check_ok": true,
             "governance_self_check_failures": [],
@@ -678,12 +1347,94 @@
               }
             },
             "output_paths": {
-              "candidate": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
-              "report": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json"
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_report.json"
+            }
+          },
+          {
+            "case_id": "CASE_6_GOVERNANCE_GUARDRAIL_BLOCK",
+            "class": "governance_guardrail_block",
+            "description": "Canonical harness control: governance evidence gaps must defer at Stage 12 before numerical promotion logic.",
+            "passed": true,
+            "comparison_ok": true,
+            "comparison_failures": [],
+            "validator_result": {
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+              "returncode": 0,
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stderr": "",
+              "valid": true,
+              "errors": [],
+              "mode": "final",
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+            },
+            "governance_self_check_ok": true,
+            "governance_self_check_failures": [],
+            "result_summary": {
+              "scientific_decision": "NOT_EVALUATED",
+              "governance_outcome": "DEFER",
+              "cross_device_status": "NOT_REQUIRED",
+              "promotion_cap_governance": "SANDBOX_ONLY",
+              "promotion_cap_scientific": "",
+              "system_status": "READY",
+              "terminated_at": "STAGE_12",
+              "validation_ladder": {
+                "L0_baseline_pipeline_reproduced": true,
+                "L1_reduction_limit_verified": true,
+                "L2_convergence_plan_defined": true,
+                "L3_numerical_stability_passed": false,
+                "L4_instrument_facing_comparison_path_defined": false
+              }
+            },
+            "output_paths": {
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_report.json"
+            }
+          },
+          {
+            "case_id": "CASE_7_CONFIRMED_READY_BRANCH",
+            "class": "confirmed_ready_branch",
+            "description": "Canonical harness positive control: a fully governed, confirmed branch can clear to PROCEED.",
+            "passed": true,
+            "comparison_ok": true,
+            "comparison_failures": [],
+            "validator_result": {
+              "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+              "returncode": 0,
+              "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+              "stderr": "",
+              "valid": true,
+              "errors": [],
+              "mode": "final",
+              "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+              "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+            },
+            "governance_self_check_ok": true,
+            "governance_self_check_failures": [],
+            "result_summary": {
+              "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+              "governance_outcome": "PROCEED",
+              "cross_device_status": "CONFIRMED",
+              "promotion_cap_governance": "",
+              "promotion_cap_scientific": "",
+              "system_status": "READY",
+              "terminated_at": "",
+              "validation_ladder": {
+                "L0_baseline_pipeline_reproduced": true,
+                "L1_reduction_limit_verified": true,
+                "L2_convergence_plan_defined": true,
+                "L3_numerical_stability_passed": true,
+                "L4_instrument_facing_comparison_path_defined": true
+              }
+            },
+            "output_paths": {
+              "candidate": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+              "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_2\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_report.json"
             }
           }
         ],
-        "normalized_hash": "e88e1c6f6df5f51a6575d9314b378e6c630dca4ce4f4f661dc1ead21788ad555"
+        "normalized_hash": "cca8de97893b5daf0d26bf085bdd1e18b32a3648e51b42a12cddf77c353cc89f"
       }
     ],
     "all_cases_exact_match_all_runs": true,
@@ -695,9 +1446,13 @@
   "schema_validation_status": "PASSED",
   "system_status": "READY",
   "promotion_cap_governance": "",
-  "ordinary_testing_ready": false,
-  "subsystem_testing_ready": false,
-  "module_closure_evaluation_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\system\\module_closure_evaluation.json",
+  "ordinary_recovery_ready": true,
+  "ordinary_authoritative_ready": true,
+  "ordinary_testing_ready": true,
+  "subsystem_recovery_ready": true,
+  "subsystem_authoritative_ready": true,
+  "subsystem_testing_ready": true,
+  "module_closure_evaluation_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\module_closure_evaluation.json",
   "governance_self_check": {
     "validation_harness_status": "PASSED",
     "schema_validation_status": "PASSED",
@@ -705,42 +1460,10 @@
     "determinism_status": "PASSED",
     "system_status": "READY"
   },
-  "ordinary_testing_blockers": [
-    "M01",
-    "M02",
-    "M03",
-    "M04",
-    "M05",
-    "M06",
-    "M07",
-    "M08",
-    "M09",
-    "M10",
-    "M11",
-    "M12",
-    "M13",
-    "M14",
-    "M15"
-  ],
-  "subsystem_testing_blockers": [
-    "M01",
-    "M02",
-    "M03",
-    "M04",
-    "M05",
-    "M06",
-    "M07",
-    "M08",
-    "M09",
-    "M10",
-    "M11",
-    "M12",
-    "M13",
-    "M14",
-    "M15",
-    "S16",
-    "S17",
-    "S18",
-    "S19"
-  ]
+  "ordinary_recovery_blockers": [],
+  "ordinary_authoritative_blockers": [],
+  "ordinary_testing_blockers": [],
+  "subsystem_recovery_blockers": [],
+  "subsystem_authoritative_blockers": [],
+  "subsystem_testing_blockers": []
 }

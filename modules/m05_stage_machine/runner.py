@@ -18,11 +18,24 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
 
-from qdp_paths import BASE_TEMPLATE, CANDIDATE_VALIDATOR, MODULES, SCHEMA
-from qdp_validation import validate_candidate_file
+from qdp_io.artifacts import dump_json, module_report_header, module_selftest_report_payload, utc_now
+from modules.m07_family_triage.runner import run_family_triage
+from modules.m08_baseline_fit.runner import run_baseline_fit
+from modules.m09_mechanism_competition.runner import run_mechanism_competition
+from modules.m10_artifact_audit.runner import run_artifact_audit
+from modules.m11_lindblad_equivalence.runner import run_lindblad_equivalence
+from modules.m12_experiment_design.runner import run_experiment_design
+from modules.m13_cross_device_gate.runner import run_cross_device_gate
+from modules.m14_promotion_caps.runner import run_promotion_caps
+from modules.m15_governance_guardrails.runner import run_governance_guardrails
+from tools.workflow.qdp_runtime.qdp_paths import BASE_TEMPLATE, CANDIDATE_VALIDATOR, MODULES, SCHEMA
+from tools.workflow.qdp_runtime.qdp_validation import validate_candidate_file
 
 
 MODULE_PATHS = MODULES["m05"]
@@ -56,11 +69,6 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"JSON root must be an object: {path}")
     return data
-
-
-def dump_json(path: Path, obj: Dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2), encoding="utf-8")
 
 
 def load_module(path: Path, module_name: str):
@@ -171,6 +179,15 @@ def stage_override(stage_inputs: Dict[str, Any], stage_key: str, field: str) -> 
 
 def stage_evidence_ids(stage_inputs: Dict[str, Any], stage_key: str) -> List[str]:
     return list_of_strings(stage_data(stage_inputs, stage_key).get("evidence_ids", []))
+
+
+def clear_placeholder_governance(candidate: Dict[str, Any]) -> bool:
+    scientific_decision = str(candidate.get("scientific_decision", "") or "")
+    governance_outcome = str(candidate.get("governance_outcome", "") or "")
+    if scientific_decision == "NOT_EVALUATED" and governance_outcome == "DEFER" and not str(candidate.get("terminated_at", "") or ""):
+        candidate["governance_outcome"] = ""
+        return True
+    return False
 
 
 def ensure_structures(candidate: Dict[str, Any]) -> None:
@@ -504,6 +521,17 @@ def run_state_machine(
         notes=termination_reason or "Mirror consistency enforced between top-level and governance self-check system_status.",
     )
 
+    if not terminated:
+        if upper_text(out.get("assigned_family_class", "")) in {"", "UNASSESSED"}:
+            out, _ = run_family_triage(out)
+        baseline_status = upper_text(out.get("baseline_model", {}).get("status", ""))
+        if baseline_status == "" and not out.get("residual_analysis", {}):
+            out, _ = run_baseline_fit(out)
+        if not out.get("mechanism_tests", {}):
+            out, _ = run_mechanism_competition(out)
+        if not out.get("artifact_tests", {}):
+            out, _ = run_artifact_audit(out)
+
     if terminated:
         append_gate_trace(
             out,
@@ -750,6 +778,13 @@ def run_state_machine(
             notes=f"Skipped because {termination_reason}.",
         )
     else:
+        equivalent_override = stage_override(stage_inputs, "stage11", "equivalent_within_resolution")
+        if equivalent_override is not MISSING:
+            out.setdefault("lindblad_equivalence", {})["equivalent_within_resolution"] = bool_value(equivalent_override)
+        best_model_override = stage_override(stage_inputs, "stage11", "best_equivalent_model")
+        if best_model_override is not MISSING:
+            out.setdefault("lindblad_equivalence", {})["best_equivalent_model"] = str(best_model_override or "")
+        out, lindblad_report = run_lindblad_equivalence(out)
         if equivalent_within_resolution(out, stage_inputs):
             apply_terminal_outcome(
                 out,
@@ -775,7 +810,72 @@ def run_state_machine(
             decision_or_cap_change=decision,
             key_evidence_ids=stage_evidence_ids(stage_inputs, "stage11"),
             status=stage_status,
-            notes=notes,
+            notes=f"{notes} M11 module report: {json.dumps(lindblad_report.get('lindblad_equivalence', {}), sort_keys=True)}",
+        )
+
+    placeholder_cleared = False
+    if not terminated:
+        placeholder_cleared = clear_placeholder_governance(out)
+
+    if terminated:
+        append_gate_trace(
+            out,
+            stage_id="STAGE_12",
+            stage_name="GOVERNANCE_GUARDRAILS",
+            inputs_checked=[
+                "calibration_status",
+                "identifiability_status",
+                "drift_ledger",
+                "dataset_governance",
+                "promotion_cap_governance",
+            ],
+            decision_or_cap_change="SKIPPED",
+            key_evidence_ids=stage_evidence_ids(stage_inputs, "stage12"),
+            status="SKIPPED",
+            notes=f"Skipped because {termination_reason}.",
+        )
+    else:
+        out, guardrail_report = run_governance_guardrails(out)
+        guardrail_notes = list_of_strings(guardrail_report.get("result_summary", {}).get("notes", []))
+        hard_guardrail_flags = {
+            "CALIBRATION_INVALID_OR_BELOW_THRESHOLD",
+            "DATASET_GOVERNANCE_INCOMPLETE",
+        }
+        if out.get("promotion_cap_governance", "") == "REJECT" or (
+            out.get("governance_outcome", "") == "DEFER"
+            and hard_guardrail_flags.intersection(set(list_of_strings(out.get("automatic_flags_triggered", []))))
+        ):
+            apply_terminal_outcome(
+                out,
+                scientific_decision="NOT_EVALUATED",
+                governance_outcome=out.get("governance_outcome", "") or "DEFER",
+                cross_device_status="NOT_REQUIRED",
+                terminated_at="STAGE_12",
+            )
+            terminated = True
+            termination_reason = "governance guardrail block triggered"
+            decision = f"TERMINATE governance_outcome={out.get('governance_outcome', '') or 'DEFER'} via M15 guardrails"
+            stage_status = "TERMINATED"
+        else:
+            decision = "SET typed governance guardrails from M15 module"
+            stage_status = "PASS"
+            if placeholder_cleared:
+                decision = f"{decision}; CLEAR placeholder governance_outcome=DEFER"
+        append_gate_trace(
+            out,
+            stage_id="STAGE_12",
+            stage_name="GOVERNANCE_GUARDRAILS",
+            inputs_checked=[
+                "calibration_status",
+                "identifiability_status",
+                "drift_ledger",
+                "dataset_governance",
+                "promotion_cap_governance",
+            ],
+            decision_or_cap_change=decision,
+            key_evidence_ids=stage_evidence_ids(stage_inputs, "stage12"),
+            status=stage_status,
+            notes="; ".join(guardrail_notes) if guardrail_notes else "Typed governance guardrails were refreshed from the shared M15 module.",
         )
 
     if terminated:
@@ -868,6 +968,7 @@ def run_state_machine(
             notes=f"Skipped because {termination_reason}.",
         )
     else:
+        out, experiment_report = run_experiment_design(out)
         if instrument_facing_path_defined(out, stage_inputs):
             out["validation_ladder"]["L4_instrument_facing_comparison_path_defined"] = True
             decision = "SET validation_ladder.L4_instrument_facing_comparison_path_defined=true"
@@ -890,7 +991,7 @@ def run_state_machine(
             decision_or_cap_change=decision,
             key_evidence_ids=stage_evidence_ids(stage_inputs, "stage15"),
             status=stage_status,
-            notes=notes,
+            notes=f"{notes} M12 module report: {json.dumps(experiment_report.get('result_summary', {}), sort_keys=True)}",
         )
 
     if terminated:
@@ -911,25 +1012,29 @@ def run_state_machine(
             notes=f"Skipped because {termination_reason}.",
         )
     else:
-        geometry_claim = geometry_claimed_discriminator(out, stage_inputs)
-        if not bool(out.get("multi_device_data_available", False)):
-            set_cross_device_status(out, "SCHEDULED", "Multi-device evidence is not yet available.")
-            out["promotion_cap_governance"] = strongest_governance_cap(str(out.get("promotion_cap_governance", "") or ""), "SANDBOX_ONLY")
-            decision = "SET cross_device_status=SCHEDULED; FORCE promotion_cap_governance=SANDBOX_ONLY"
-            stage_status = "WARN"
-            notes = "Proceed is blocked without confirmed cross-device evidence."
-        elif geometry_claim and not bool(out.get("fabrication_matched_for_geometry_claim", False)):
-            set_cross_device_status(out, "CONFUNDED", "Geometry claimed as discriminator without fabrication match.")
-            out["promotion_cap_governance"] = strongest_governance_cap(str(out.get("promotion_cap_governance", "") or ""), "SANDBOX_ONLY")
-            decision = "SET cross_device_status=CONFUNDED; FORCE promotion_cap_governance=SANDBOX_ONLY"
-            stage_status = "WARN"
-            notes = "Geometry-based discrimination remained confounded."
+        geometry_override = stage_override(stage_inputs, "stage16", "geometry_claimed_discriminator")
+        if geometry_override is not MISSING:
+            out.setdefault("scaling_analysis", {})["geometry_claimed_discriminator"] = bool_value(geometry_override)
+        signal_override = stage_override(stage_inputs, "stage16", "signal_consistency")
+        if signal_override is not MISSING:
+            out.setdefault("cross_device_validation", {})["status"] = upper_text(signal_override)
+        devices_override = stage_override(stage_inputs, "stage16", "devices_tested")
+        if devices_override is not MISSING:
+            out.setdefault("cross_device_validation", {})["devices_tested"] = list_of_strings(devices_override)
+        prior_cross_device_status = out.get("cross_device_status", "")
+        prior_governance_cap = out.get("promotion_cap_governance", "")
+        out, cross_device_report = run_cross_device_gate(out)
+        if out.get("cross_device_status", "") != prior_cross_device_status and out.get("promotion_cap_governance", "") != prior_governance_cap:
+            decision = (
+                f"SET cross_device_status={out.get('cross_device_status', '')}; "
+                f"FORCE promotion_cap_governance={out.get('promotion_cap_governance', '')}"
+            )
+        elif out.get("cross_device_status", "") != prior_cross_device_status:
+            decision = f"SET cross_device_status={out.get('cross_device_status', '')}"
         else:
-            mapped_status = mapped_cross_device_status(out, stage_inputs)
-            set_cross_device_status(out, mapped_status)
-            decision = f"SET cross_device_status={mapped_status}"
-            stage_status = "PASS" if mapped_status == "CONFIRMED" else "WARN"
-            notes = "Cross-device status mapped from surfaced cross_device_validation fields."
+            decision = "NO_CHANGE"
+        stage_status = "PASS" if out.get("cross_device_status", "") == "CONFIRMED" else "WARN"
+        notes = str(cross_device_report.get("result_summary", {}).get("notes", "") or "Cross-device status refreshed from the shared M13 module.")
         append_gate_trace(
             out,
             stage_id="STAGE_16",
@@ -1009,14 +1114,8 @@ def run_state_machine(
             notes=notes,
         )
 
-    clip_decisions: List[str] = []
-    if out.get("governance_outcome", "") == "PROCEED" and out.get("promotion_cap_governance", "") == "SANDBOX_ONLY":
-        out["governance_outcome"] = "SANDBOX_ONLY"
-        clip_decisions.append("CLIP governance_outcome PROCEED->SANDBOX_ONLY due promotion_cap_governance=SANDBOX_ONLY")
-    if out.get("scientific_decision", "") == "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE" and out.get("promotion_cap_scientific", "") == "SANDBOX_ONLY":
-        out["scientific_decision"] = "SANDBOX_ONLY"
-        out["governance_outcome"] = "SANDBOX_ONLY"
-        clip_decisions.append("CLIP scientific_decision CROSS_DEVICE_CONFIRMED_IDENTIFIABLE->SANDBOX_ONLY due promotion_cap_scientific=SANDBOX_ONLY")
+    out, promotion_report = run_promotion_caps(out)
+    clip_decisions = list_of_strings(promotion_report.get("result_summary", {}).get("clip_decisions", []))
     append_gate_trace(
         out,
         stage_id="FINAL_CLIP",
@@ -1028,16 +1127,7 @@ def run_state_machine(
         notes="Visible clipping rules were applied exactly as surfaced in the M05 implementation pack.",
     )
 
-    fallback_decision = "NO_CHANGE"
-    if out.get("governance_outcome", "") == "":
-        scientific_decision = out.get("scientific_decision", "")
-        if scientific_decision in {"PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST", "SANDBOX_ONLY"}:
-            out["governance_outcome"] = "SANDBOX_ONLY"
-        elif scientific_decision == "NOT_EVALUATED":
-            out["governance_outcome"] = "DEFER"
-        else:
-            out["governance_outcome"] = "REJECT"
-        fallback_decision = f"SET governance_outcome={out['governance_outcome']}"
+    fallback_decision = str(promotion_report.get("result_summary", {}).get("fallback_decision", "") or "NO_CHANGE")
     append_gate_trace(
         out,
         stage_id="FALLBACK",
@@ -1048,14 +1138,6 @@ def run_state_machine(
         status="PASS" if fallback_decision != "NO_CHANGE" else "NO_CHANGE",
         notes="Fallback completion was only applied when governance_outcome remained unset.",
     )
-
-    if out.get("cross_device_status", "") == "":
-        if out.get("governance_outcome", "") in {"REJECT", "DEFER"}:
-            set_cross_device_status(out, "NOT_REQUIRED")
-        elif not bool(out.get("multi_device_data_available", False)):
-            set_cross_device_status(out, "SCHEDULED")
-        else:
-            set_cross_device_status(out, "DEVICE_SPECIFIC")
 
     gsc = out.setdefault("governance_self_check", {})
     gsc["schema_validation_status"] = "PASSED"
@@ -1091,9 +1173,7 @@ def run_state_machine(
         )
 
     report = {
-        "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
-        "module_id": "M05",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        **module_report_header("QDP_V10_6_M05_STAGE_REPORT", "M05"),
         "candidate_id": out.get("candidate_id", ""),
         "branch_or_model_tag": out.get("branch_or_model_tag", ""),
         "terminated_at": out.get("terminated_at", ""),
@@ -1210,16 +1290,13 @@ def run_selftests(
             }
         )
 
-    report = {
-        "artifact_id": "QDP_V10_6_M05_SELFTEST_REPORT",
-        "module_id": "M05",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "cases_total": len(results),
-        "cases_passed": sum(1 for item in results if item.get("passed")),
-        "all_passed": all(item.get("passed") for item in results),
-        "schema_valid_all": all(item.get("validator_result", {}).get("valid", False) for item in results),
-        "cases": results,
-    }
+    report = module_selftest_report_payload(
+        "QDP_V10_6_M05_SELFTEST_REPORT",
+        "M05",
+        results,
+        all_passed=all(item.get("passed") for item in results),
+        schema_valid_all=all(item.get("validator_result", {}).get("valid", False) for item in results),
+    )
     if write_report_path is not None:
         dump_json(write_report_path, report)
     return report
@@ -1287,3 +1364,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

@@ -209,7 +209,34 @@
   },
   "cross_device_status": "NOT_REQUIRED",
   "instrument_capabilities": {},
+  "calibration_status": {
+    "status": "PENDING_REVIEW",
+    "validity_score": null,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": ""
+  },
   "calibration_validity_score": null,
+  "identifiability_status": {
+    "status": "PENDING_REVIEW",
+    "orthogonal_axes_satisfied": false,
+    "independent_constraints_satisfied": false,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "PENDING_REVIEW",
+    "hierarchical_model_required": false,
+    "hierarchical_model_applied": false,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "PENDING_REVIEW",
+    "device_lineage_recorded": false,
+    "calibration_context_recorded": false,
+    "protocol_metadata_recorded": false,
+    "independent_evidence_eligible": false,
+    "notes": ""
+  },
   "requested_output_artifacts": [],
   "automatic_flags_triggered": [
     "M09_VISIBLE_SOURCE_PARTIAL_DOC_SET",

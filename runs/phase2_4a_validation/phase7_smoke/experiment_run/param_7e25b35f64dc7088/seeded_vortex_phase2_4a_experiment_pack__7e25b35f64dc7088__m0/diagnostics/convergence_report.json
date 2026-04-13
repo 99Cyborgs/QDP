@@ -1,0 +1,56 @@
+{
+  "case_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+  "dt_levels": [
+    0.01
+  ],
+  "failure_reason": null,
+  "key_observables": {
+    "final_charge_residual_inf": 7.761408608671173,
+    "final_mean_abs2": 0.989072861339504,
+    "final_time": 0.04,
+    "max_vortex_count": 1,
+    "n_events": 0,
+    "n_samples": 5
+  },
+  "mesh_levels": [
+    "24x12"
+  ],
+  "notes": "Phase-1 deterministic run summary for baseline acceptance and campaign setup.",
+  "observable_mode": "written",
+  "pass": false,
+  "solver_iteration_stats": {
+    "completed_step_count": 4,
+    "phi_fallback_count": 0,
+    "phi_iteration_summary": {
+      "final": 203,
+      "max": 203,
+      "mean": 201.0,
+      "total": 804
+    },
+    "phi_residual_summary": {
+      "final": 1.530807455284771e-07,
+      "max": 1.530807455284771e-07,
+      "mean": 1.1236436114782551e-07
+    },
+    "phi_solver_method_counts": {
+      "cg": 4
+    },
+    "psi_fallback_count": 0,
+    "psi_iteration_summary": {
+      "final": 4,
+      "max": 4,
+      "mean": 4.0,
+      "total": 16
+    },
+    "psi_residual_summary": {
+      "final": 7.651208359400485e-05,
+      "max": 7.651208359400485e-05,
+      "mean": 5.5669294399278324e-05
+    },
+    "psi_solver_method_counts": {
+      "gmres": 4
+    },
+    "requested_n_steps": 4
+  },
+  "status": "success"
+}

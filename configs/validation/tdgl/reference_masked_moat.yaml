@@ -1,0 +1,19 @@
+base_config: ../../tdgl/phase1_matrix_base.yaml
+metadata:
+  case_id: reference_masked_moat
+  description: "Canonical masked geometry case for frozen reference checks"
+geometry:
+  family: strip_with_moat
+  moats:
+    - x0: 6.0
+      y0: 3.0
+      radius: 0.8
+forcing:
+  a_rf: 0.10
+  omega: 3.0
+  phase: 0.1
+output:
+  root_dir: runs/reference_cases
+  write_fields: false
+  write_observables: true
+  compression: none

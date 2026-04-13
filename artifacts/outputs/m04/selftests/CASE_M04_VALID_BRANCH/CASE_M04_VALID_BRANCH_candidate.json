@@ -1,0 +1,198 @@
+{
+  "candidate_id": "m04-m04-valid-branch-2026-03-15",
+  "branch_or_model_tag": "M04_VALID_BRANCH",
+  "change_type": "HAMILTONIAN_TERM",
+  "model_classification": "FORMAL_CORE",
+  "declared_family_class": "KERNEL_MEMORY",
+  "assigned_family_class": "",
+  "family_class_mismatch": false,
+  "family_status": "DECLARED_PENDING_TRIAGE",
+  "candidate_H_mod_symbolic": "H = H0 + lambda * N",
+  "candidate_H_mod_physical_interpretation": "Nonlinear correction to the baseline dissipator picture.",
+  "claimed_effect": "Observable-dependent deviation from baseline decay.",
+  "declared_likely_bath_class": "KERNEL_MEMORY",
+  "inferred_bath_rank_order": [],
+  "bath_classification_consistent_with_glossary": true,
+  "primary_observable": "T1 decay",
+  "secondary_observable": "Ramsey envelope",
+  "accessible_platform_or_device_class": "transmon",
+  "minimal_discriminant_measurement": "matched time-domain sweep",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "trace preservation",
+  "reduction_limit": "When lambda=0 recover baseline GKSL dynamics.",
+  "count_new_free_parameters": 1,
+  "new_free_parameters": [
+    "lambda"
+  ],
+  "parameter_constraints": {
+    "lambda": "bounded by energy scale"
+  },
+  "independent_constraint_source_per_parameter": {
+    "lambda": "matched-control experiment"
+  },
+  "relevant_nuisance_controls_list": [
+    "temperature",
+    "drive_power"
+  ],
+  "exact_falsifier": "The matched-control sweep must separate the branch from baseline and TLS alternatives.",
+  "falsifiable_surface_area_delta": "INCREASED",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": true,
+    "L1_reduction_limit_verified": true,
+    "L2_convergence_plan_defined": true,
+    "L3_numerical_stability_passed": false,
+    "L4_instrument_facing_comparison_path_defined": true
+  },
+  "registry_duplicate_status": "CLEAR",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "signature_matches": [],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {}
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {},
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 0,
+    "axes_used": [],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": false,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [],
+    "default_templates_triggered": []
+  },
+  "candidate_target_devices": [],
+  "multi_device_data_available": false,
+  "fabrication_matched_for_geometry_claim": false,
+  "cross_device_validation": {
+    "status": "SCHEDULED",
+    "devices_tested": [],
+    "fabrication_matched": false,
+    "notes": "M04 seeded precompute cross-device placeholder state."
+  },
+  "cross_device_status": "SCHEDULED",
+  "instrument_capabilities": {},
+  "calibration_status": {
+    "status": "PENDING_REVIEW",
+    "validity_score": null,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": ""
+  },
+  "calibration_validity_score": null,
+  "identifiability_status": {
+    "status": "PENDING_REVIEW",
+    "orthogonal_axes_satisfied": false,
+    "independent_constraints_satisfied": false,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "PENDING_REVIEW",
+    "hierarchical_model_required": false,
+    "hierarchical_model_applied": false,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "PENDING_REVIEW",
+    "device_lineage_recorded": false,
+    "calibration_context_recorded": false,
+    "protocol_metadata_recorded": false,
+    "independent_evidence_eligible": false,
+    "notes": ""
+  },
+  "requested_output_artifacts": [],
+  "automatic_flags_triggered": [],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "SANDBOX_ONLY",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [
+    "M04 preliminary_intake_outcome=PROCEED",
+    "M04 unconstrained_new_parameter_count=0",
+    "M04 L3 mapping preserved conservatively: intake L3_stability_criterion_defined does not set validation_ladder.L3_numerical_stability_passed"
+  ],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [
+    "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_intake.json"
+  ],
+  "gate_trace": [
+    {
+      "stage_id": "M04",
+      "stage_name": "FORK_INTAKE_AND_BRANCH_REGISTRATION",
+      "inputs_checked": [
+        "QDP_Fork_Intake_Form_One_Page",
+        "FORK_QUESTIONS",
+        "MASTER_SPEC",
+        "VALIDATION_GATE",
+        "governance_registry_duplicate_scan"
+      ],
+      "decision_or_cap_change": "PRELIMINARY_INTAKE_OUTCOME:PROCEED;PROMOTION_CAP_GOVERNANCE:SANDBOX_ONLY",
+      "key_evidence_ids": [
+        "CASE_M04_VALID_BRANCH_intake.json"
+      ],
+      "status": "PASS",
+      "notes": "bath_consistent=True; unconstrained_new_parameter_count=0; L3_stability_criterion_defined=False; duplicate_status=CLEAR"
+    }
+  ],
+  "system_status": "HARNESS_REQUIRED",
+  "governance_self_check": {
+    "validation_harness_status": "UNKNOWN",
+    "schema_validation_status": "UNKNOWN",
+    "reference_resolution_status": "UNKNOWN",
+    "determinism_status": "UNKNOWN",
+    "system_status": "HARNESS_REQUIRED"
+  },
+  "scientific_decision": "NOT_EVALUATED",
+  "governance_outcome": "SANDBOX_ONLY"
+}

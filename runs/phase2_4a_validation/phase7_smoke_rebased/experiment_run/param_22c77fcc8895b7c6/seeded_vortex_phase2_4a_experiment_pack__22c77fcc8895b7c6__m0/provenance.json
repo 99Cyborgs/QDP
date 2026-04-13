@@ -1,0 +1,139 @@
+{
+  "case_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+  "config": {
+    "base_config": null,
+    "case_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+    "config_hash": "cdc240ab1132669b97af0a53f0461f51a4b40c32cc95308b206408d3623ee3a3",
+    "expanded_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0\\expanded_config.yaml",
+    "output_root_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\experiment_run",
+    "phase": "S",
+    "source_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke_rebased\\.experiment_run.staging-1eww2_0x\\param_22c77fcc8895b7c6\\seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0\\source_config.yaml",
+    "version": "0.1.0"
+  },
+  "config_hash": "cdc240ab1132669b97af0a53f0461f51a4b40c32cc95308b206408d3623ee3a3",
+  "determinism": {
+    "deterministic_expected": false,
+    "master_seed": 1234,
+    "noise_enabled": true,
+    "noise_seed": 7435866037572974735,
+    "pinning_seed": null,
+    "reproducibility_scope": "same-stack seeded stochastic"
+  },
+  "ensemble": {
+    "ensemble_id": "e9a374e152ffd4ee",
+    "master_seed": 1234,
+    "member_count": 3,
+    "member_index": 0,
+    "mode": "stochastic_ensemble",
+    "noise_seed": 7435866037572974735,
+    "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+  },
+  "execution": {
+    "git_revision": "7007c5eef27f91f5d8a54a2c90c2599e742536ae",
+    "hostname": "Mothership",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "rank_count": 1,
+    "repo_root": "G:\\GitHub\\incubate\\QDP"
+  },
+  "experiment": {
+    "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c",
+    "base_case_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex\\short_horizon\\canonical_single_positive_stochastic.yaml",
+    "experiment_name": "seeded_vortex_phase2_4a_experiment_pack",
+    "manifest_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex_phase2_4a_experiment_pack.yaml",
+    "mode": "stochastic_ensemble",
+    "param_set_hash": "22c77fcc8895b7c6",
+    "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+    "repetition_index": null,
+    "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+    "swept_parameters": {
+      "forcing.a_rf": 0.0
+    }
+  },
+  "git_revision": "7007c5eef27f91f5d8a54a2c90c2599e742536ae",
+  "hostname": "Mothership",
+  "initialization": {
+    "configured_vortex_seeds": [
+      {
+        "core_radius": null,
+        "seed_index": 0,
+        "winding": 1,
+        "x0": 6.0,
+        "y0": 3.0
+      }
+    ],
+    "mode": "seeded_vortices",
+    "resolved_vortex_seeds": [
+      {
+        "core_radius": 0.25,
+        "plaquette_x": 11,
+        "plaquette_y": 5,
+        "seed_index": 0,
+        "winding": 1,
+        "x0": 6.0,
+        "y0": 3.0
+      }
+    ],
+    "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+    "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+  },
+  "materials": {
+    "adapter_id": "TDGL-MAT-001-BASELINE-V1",
+    "adapter_version": "1.0",
+    "genome_id": null,
+    "material_system_id": "MAT-001",
+    "material_system_name": "Al on high-resistivity silicon",
+    "notes": "Canonical baseline adapter for aluminum-on-high-resistivity-silicon strip-style TDGL examples inside the QDP umbrella. These defaults preserve the donor runtime baseline for the extracted validator and smoke surfaces.",
+    "registry_root": "G:\\GitHub\\incubate\\QDP\\packages\\qdp_meta_materials\\data\\seed\\stable",
+    "registry_source": "qdp_meta_materials.seed.stable",
+    "resolved_tdgl_parameters": {
+      "alpha_background": 1.0,
+      "sigma_n": 1.0,
+      "u": 5.79
+    },
+    "runtime_family": "thin_film_superconducting_strip_baseline",
+    "source_artifacts": [
+      "MMM_TDGL_MATERIAL_ADAPTER_REGISTRY",
+      "MMM_MATERIAL_SYSTEM_REGISTRY"
+    ],
+    "supported_geometry_families": [
+      "strip",
+      "strip_with_moat",
+      "strip_with_hole"
+    ]
+  },
+  "matrix_row_id": null,
+  "noise": {
+    "contract_kind": "additive_complex_gaussian",
+    "enabled": true,
+    "sampling": "run_local_complex_standard_normal",
+    "seed": 7435866037572974735,
+    "strength": 0.05
+  },
+  "numeric_environment": {
+    "byteorder": "little",
+    "complex_dtype": "complex128",
+    "float_epsilon": 2.220446049250313e-16,
+    "real_dtype": "float64"
+  },
+  "packages": {
+    "h5py": "3.16.0",
+    "jsonschema": "4.26.0",
+    "numpy": "2.4.3",
+    "pydantic": "2.12.5",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.1",
+    "typer": "0.24.1"
+  },
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "rank_count": 1,
+  "schema_version": "tdgl_rf.run_provenance.v3.3",
+  "seeds": {
+    "initial_condition": "seeded_vortices",
+    "master_seed": 1234,
+    "noise_seed": 7435866037572974735,
+    "pinning_seed": null,
+    "vortex_seed_count": 1
+  }
+}

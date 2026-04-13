@@ -1,0 +1,27 @@
+{
+  "artifact_id": "QDP_V10_6_LAB_REQUEST_REPORT",
+  "request_id": "QDPLAB-CFFB44AC74F0D70D",
+  "request_pack_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\lab\\requests\\m06-case-7\\QDPLAB-CFFB44AC74F0D70D_request_pack.json",
+  "candidate_artifact_manifest_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\lab\\requests\\m06-case-7\\QDPLAB-CFFB44AC74F0D70D_candidate_manifest.json",
+  "instrument_profile_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\lab\\requests\\m06-case-7\\QDPLAB-CFFB44AC74F0D70D_instrument_profile.json",
+  "validations": [
+    {
+      "artifact_kind": "candidate_manifest",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_artifact_manifest_schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "artifact_kind": "instrument_profile",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\instrument_profile_schema.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "artifact_kind": "experiment_request",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\experiment_request_schema.json",
+      "valid": true,
+      "errors": []
+    }
+  ]
+}

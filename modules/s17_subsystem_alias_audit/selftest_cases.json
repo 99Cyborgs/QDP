@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+      "description": "Correlated-noise mimic should fail the null-baseline rejection gate.",
+      "expected": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+      "description": "Readout illusion should fail artifact alias rejection.",
+      "expected": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "fail"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control should pass all alias-rejection gates.",
+      "expected": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "pass",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      }
+    }
+  ]
+}

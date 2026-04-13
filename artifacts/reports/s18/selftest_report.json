@@ -1,0 +1,149 @@
+{
+  "artifact_id": "QDP_V10_6_S18_SELFTEST_REPORT",
+  "module_id": "S18",
+  "timestamp_utc": "2026-04-13T18:30:49.107165+00:00",
+  "cases_total": 3,
+  "cases_passed": 3,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "description": "Nonnormal pseudosector should fail finite-horizon control.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "fail",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "fail",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM\\CASE_A_NONNORMAL_PSEUDOSUBSYSTEM_report.json"
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "description": "Symmetry-only case should remain closure-borderline.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass_or_borderline",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass_or_borderline",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM\\CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM_report.json"
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control should pass finite-horizon and closure gates.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass",
+          "observable_closure": "pass"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass",
+          "observable_closure": "pass"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s18\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_report.json"
+    }
+  ]
+}

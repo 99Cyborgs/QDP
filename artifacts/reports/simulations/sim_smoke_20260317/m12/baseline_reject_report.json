@@ -1,0 +1,23 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-03-18T22:57:06.568222+00:00",
+  "candidate_id": "m06-case-1",
+  "result_summary": {
+    "exact_falsifier": "",
+    "priority_experiments": [],
+    "default_templates_triggered": [],
+    "executable_falsifier_package_emitted": false,
+    "instrument_facing_requirement_satisfied": false,
+    "branch_partition": "baseline_prune",
+    "sweep_route_group": "NO_NEW_SWEEP",
+    "candidate_target_devices": [],
+    "simulation_conditions": {},
+    "tested_parameter_ranges": {},
+    "suppression_reason": "baseline_or_equivalence_pruned"
+  },
+  "source_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m05\\baseline_reject_candidate.json",
+  "source_candidate_hash": "f2a74317af09baf35e9e7d4fe1bbe6095b7100d4facaea7238b1506e61791462",
+  "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\simulations\\sim_smoke_20260317\\m12\\baseline_reject_candidate.json",
+  "output_candidate_hash": "9d1990d0ff4d9c8c92a03e2cdba170c6fc370e07baa0dfddbc7dc3dd6b5f529b"
+}

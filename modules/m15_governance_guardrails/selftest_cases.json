@@ -1,0 +1,171 @@
+{
+  "artifact_id": "QDP_V10_6_M15_SELFTEST_CASES",
+  "module_id": "M15",
+  "cases": [
+    {
+      "case_id": "CASE_M15_CALIBRATION_BLOCK",
+      "description": "Invalid calibration blocks promotion and forces a defer-class governance outcome.",
+      "candidate_overrides": {
+        "calibration_validity_score": 55.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": ["time", "power", "device"]
+        },
+        "new_free_parameters": ["lambda"],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "matched-control fit"
+        }
+      },
+      "expected": {
+        "calibration_status": {
+          "status": "INVALID",
+          "validity_score": 55.0,
+          "threshold": 70.0,
+          "below_threshold": true,
+          "notes": ""
+        },
+        "identifiability_status": {
+          "status": "SUFFICIENT",
+          "orthogonal_axes_satisfied": true,
+          "independent_constraints_satisfied": true,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "NOT_REQUIRED",
+          "hierarchical_model_required": false,
+          "hierarchical_model_applied": false,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "DEFER"
+      }
+    },
+    {
+      "case_id": "CASE_M15_IDENTIFIABILITY_CAP",
+      "description": "Insufficient orthogonal evidence caps promotion to sandbox without escalating to a defer block.",
+      "candidate_overrides": {
+        "calibration_validity_score": 81.0,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 1,
+          "axes_used": ["time"]
+        },
+        "new_free_parameters": ["lambda", "gamma"],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "single fit",
+          "gamma": ""
+        }
+      },
+      "expected": {
+        "calibration_status": {
+          "status": "VALID",
+          "validity_score": 81.0,
+          "threshold": 70.0,
+          "below_threshold": false,
+          "notes": ""
+        },
+        "identifiability_status": {
+          "status": "INSUFFICIENT",
+          "orthogonal_axes_satisfied": false,
+          "independent_constraints_satisfied": false,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "NOT_REQUIRED",
+          "hierarchical_model_required": false,
+          "hierarchical_model_applied": false,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY"
+      }
+    },
+    {
+      "case_id": "CASE_M15_COMPLETE_GOVERNANCE",
+      "description": "Complete governance bookkeeping populates all typed objects without adding new blocking caps.",
+      "candidate_overrides": {
+        "calibration_validity_score": 93.0,
+        "multi_device_data_available": true,
+        "dataset_governance": {
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": false,
+          "notes": ""
+        },
+        "scaling_analysis": {
+          "orthogonal_axes_count": 3,
+          "axes_used": ["time", "power", "device"]
+        },
+        "new_free_parameters": ["lambda"],
+        "independent_constraint_source_per_parameter": {
+          "lambda": "independent metrology"
+        },
+        "residual_analysis": {
+          "structured_residuals": false,
+          "drift_aware_fit_applied": false
+        }
+      },
+      "expected": {
+        "calibration_status": {
+          "status": "VALID",
+          "validity_score": 93.0,
+          "threshold": 70.0,
+          "below_threshold": false,
+          "notes": ""
+        },
+        "identifiability_status": {
+          "status": "SUFFICIENT",
+          "orthogonal_axes_satisfied": true,
+          "independent_constraints_satisfied": true,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "NOT_REQUIRED",
+          "hierarchical_model_required": false,
+          "hierarchical_model_applied": false,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": ""
+        },
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1606 @@
+{
+  "case_count": 9,
+  "case_rows": [
+    {
+      "mismatch_count": 1,
+      "notes": "parent_manifest_hash expected 'f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a' observed 'c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df'",
+      "overall_pass": false,
+      "subject_id": "overall",
+      "surface": "top_level"
+    },
+    {
+      "mismatch_count": 9,
+      "notes": "aggregates.early_window.mean_abs2_final.max expected 0.985397816512667 observed 0.9951355276307005; aggregates.early_window.mean_abs2_final.mean expected 0.9831634339751782 observed 0.9877432798444367; aggregates.early_window.mean_abs2_final.min expected 0.9796714636019817 observed 0.9809600057230531; +6 more",
+      "overall_pass": false,
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "mismatch_count": 9,
+      "notes": "aggregates.early_window.mean_abs2_final.max expected 1.0098235978162504 observed 0.998333203155557; aggregates.early_window.mean_abs2_final.mean expected 0.9965058858115697 observed 0.9934805444797786; aggregates.early_window.mean_abs2_final.min expected 0.9805662364242588 observed 0.989072861339504; +6 more",
+      "overall_pass": false,
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected 'ee673feeb9be7c90' observed 'e9a374e152ffd4ee'; noise_seed expected 15772809643778925079 observed 7435866037572974735; observables.early_window.mean_abs2_final expected 0.9796714636019817 observed 0.9951355276307005; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected 'ee673feeb9be7c90' observed 'e9a374e152ffd4ee'; noise_seed expected 15154531104290774412 observed 69872281759179439; observables.early_window.mean_abs2_final expected 0.9844210218108861 observed 0.9809600057230531; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected 'ee673feeb9be7c90' observed 'e9a374e152ffd4ee'; noise_seed expected 7818899112434404553 observed 12091854522935283700; observables.early_window.mean_abs2_final expected 0.985397816512667 observed 0.9871343061795564; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected '5da277a443560bc8' observed '3ac157a1aaa64018'; noise_seed expected 11180046491752410548 observed 16569354671516297555; observables.early_window.mean_abs2_final expected 0.9991278231942 observed 0.989072861339504; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected '5da277a443560bc8' observed '3ac157a1aaa64018'; noise_seed expected 4945300675176699028 observed 5055044444040433075; observables.early_window.mean_abs2_final expected 0.9805662364242588 observed 0.998333203155557; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "mismatch_count": 7,
+      "notes": "ensemble_id expected '5da277a443560bc8' observed '3ac157a1aaa64018'; noise_seed expected 12832028085284603670 observed 2921146607582794029; observables.early_window.mean_abs2_final expected 1.0098235978162504 observed 0.993035568944275; +4 more",
+      "overall_pass": false,
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    }
+  ],
+  "claim_scope": "Same-stack fixed-seed runtime/control-plane validation of the committed Phase-2.4A seeded-vortex ensemble pack only.",
+  "experiment_pack_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex_phase2_4a_experiment_pack.yaml",
+  "experiment_run": {
+    "output_dir": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke\\experiment_run",
+    "results_csv_path": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke\\experiment_run\\experiment_results.csv",
+    "results_json_path": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke\\experiment_run\\experiment_results.json",
+    "results_markdown_path": "G:\\GitHub\\incubate\\QDP\\runs\\phase2_4a_validation\\phase7_smoke\\experiment_run\\experiment_results.md",
+    "status": "success"
+  },
+  "manifest_path": "G:\\GitHub\\incubate\\QDP\\configs\\validation\\tdgl\\seeded_vortex_phase2_4a_validation_manifest.yaml",
+  "members": {
+    "expected": [
+      {
+        "ensemble_id": "ee673feeb9be7c90",
+        "member_index": 0,
+        "noise_seed": 15772809643778925079,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9796714636019817
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 15772809643778925079,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 15772809643778925079,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 15772809643778925079,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "ee673feeb9be7c90",
+        "member_index": 1,
+        "noise_seed": 15154531104290774412,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9844210218108861
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 15154531104290774412,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 15154531104290774412,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 15154531104290774412,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "ee673feeb9be7c90",
+        "member_index": 2,
+        "noise_seed": 7818899112434404553,
+        "observables": {
+          "early_window.mean_abs2_final": 0.985397816512667
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 7818899112434404553,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 7818899112434404553,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 7818899112434404553,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "5da277a443560bc8",
+        "member_index": 0,
+        "noise_seed": 11180046491752410548,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9991278231942
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 11180046491752410548,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 11180046491752410548,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 11180046491752410548,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "5da277a443560bc8",
+        "member_index": 1,
+        "noise_seed": 4945300675176699028,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9805662364242588
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 4945300675176699028,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 4945300675176699028,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 4945300675176699028,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "5da277a443560bc8",
+        "member_index": 2,
+        "noise_seed": 12832028085284603670,
+        "observables": {
+          "early_window.mean_abs2_final": 1.0098235978162504
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 12832028085284603670,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 12832028085284603670,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 12832028085284603670,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+        "status": "success"
+      }
+    ],
+    "observed": [
+      {
+        "ensemble_id": "e9a374e152ffd4ee",
+        "member_index": 0,
+        "noise_seed": 7435866037572974735,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9951355276307005
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 7435866037572974735,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 7435866037572974735,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 7435866037572974735,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "e9a374e152ffd4ee",
+        "member_index": 1,
+        "noise_seed": 69872281759179439,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9809600057230531
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 69872281759179439,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 69872281759179439,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 69872281759179439,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "e9a374e152ffd4ee",
+        "member_index": 2,
+        "noise_seed": 12091854522935283700,
+        "observables": {
+          "early_window.mean_abs2_final": 0.9871343061795564
+        },
+        "param_set_hash": "22c77fcc8895b7c6",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 12091854522935283700,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 12091854522935283700,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 12091854522935283700,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "3ac157a1aaa64018",
+        "member_index": 0,
+        "noise_seed": 16569354671516297555,
+        "observables": {
+          "early_window.mean_abs2_final": 0.989072861339504
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 16569354671516297555,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 16569354671516297555,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 16569354671516297555,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "3ac157a1aaa64018",
+        "member_index": 1,
+        "noise_seed": 5055044444040433075,
+        "observables": {
+          "early_window.mean_abs2_final": 0.998333203155557
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 5055044444040433075,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 5055044444040433075,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 5055044444040433075,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+        "status": "success"
+      },
+      {
+        "ensemble_id": "3ac157a1aaa64018",
+        "member_index": 2,
+        "noise_seed": 2921146607582794029,
+        "observables": {
+          "early_window.mean_abs2_final": 0.993035568944275
+        },
+        "param_set_hash": "7e25b35f64dc7088",
+        "provenance": {
+          "determinism": {
+            "deterministic_expected": false,
+            "master_seed": 1234,
+            "noise_enabled": true,
+            "noise_seed": 2921146607582794029,
+            "pinning_seed": null,
+            "reproducibility_scope": "same-stack seeded stochastic"
+          },
+          "ensemble": {
+            "master_seed": 1234,
+            "member_count": 3,
+            "mode": "stochastic_ensemble",
+            "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df"
+          },
+          "experiment": {
+            "base_case_hash": "4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c"
+          },
+          "initialization": {
+            "configured_vortex_seeds": [
+              {
+                "core_radius": null,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "mode": "seeded_vortices",
+            "resolved_vortex_seeds": [
+              {
+                "core_radius": 0.25,
+                "plaquette_x": 11,
+                "plaquette_y": 5,
+                "seed_index": 0,
+                "winding": 1,
+                "x0": 6.0,
+                "y0": 3.0
+              }
+            ],
+            "seed_rejection_taxonomy_version": "seeded_vortex_phase2_1",
+            "seed_resolution_policy": "strict_interior_fully_active_plaquette"
+          },
+          "noise": {
+            "contract_kind": "additive_complex_gaussian",
+            "enabled": true,
+            "sampling": "run_local_complex_standard_normal",
+            "seed": 2921146607582794029,
+            "strength": 0.05
+          },
+          "schema_version": "tdgl_rf.run_provenance.v3.3",
+          "seeds": {
+            "initial_condition": "seeded_vortices",
+            "master_seed": 1234,
+            "noise_seed": 2921146607582794029,
+            "vortex_seed_count": 1
+          }
+        },
+        "run_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+        "status": "success"
+      }
+    ]
+  },
+  "mismatch_count": 61,
+  "mismatch_records": [
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "parent_manifest_hash",
+      "subject_id": "overall",
+      "surface": "top_level"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.985397816512667,
+      "observed": 0.9951355276307005,
+      "path": "aggregates.early_window.mean_abs2_final.max",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9831634339751782,
+      "observed": 0.9877432798444367,
+      "path": "aggregates.early_window.mean_abs2_final.mean",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9796714636019817,
+      "observed": 0.9809600057230531,
+      "path": "aggregates.early_window.mean_abs2_final.min",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.002501189688637375,
+      "observed": 0.005803130880937511,
+      "path": "aggregates.early_window.mean_abs2_final.std",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "ee673feeb9be7c90",
+      "observed": "e9a374e152ffd4ee",
+      "path": "ensemble_id",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15772809643778925079,
+      "observed": 7435866037572974735,
+      "path": "noise_seeds[0]",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15154531104290774412,
+      "observed": 69872281759179439,
+      "path": "noise_seeds[1]",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 7818899112434404553,
+      "observed": 12091854522935283700,
+      "path": "noise_seeds[2]",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.0025440222878554716,
+      "observed": 0.005875140838064186,
+      "path": "robustness_summary.observables.early_window.mean_abs2_final.coefficient_of_variation",
+      "subject_id": "22c77fcc8895b7c6",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 1.0098235978162504,
+      "observed": 0.998333203155557,
+      "path": "aggregates.early_window.mean_abs2_final.max",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9965058858115697,
+      "observed": 0.9934805444797786,
+      "path": "aggregates.early_window.mean_abs2_final.mean",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9805662364242588,
+      "observed": 0.989072861339504,
+      "path": "aggregates.early_window.mean_abs2_final.min",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.012087299550471048,
+      "observed": 0.0037935897738098747,
+      "path": "aggregates.early_window.mean_abs2_final.std",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "5da277a443560bc8",
+      "observed": "3ac157a1aaa64018",
+      "path": "ensemble_id",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 11180046491752410548,
+      "observed": 16569354671516297555,
+      "path": "noise_seeds[0]",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 4945300675176699028,
+      "observed": 5055044444040433075,
+      "path": "noise_seeds[1]",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 12832028085284603670,
+      "observed": 2921146607582794029,
+      "path": "noise_seeds[2]",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.012129682044604248,
+      "observed": 0.0038184842117832633,
+      "path": "robustness_summary.observables.early_window.mean_abs2_final.coefficient_of_variation",
+      "subject_id": "7e25b35f64dc7088",
+      "surface": "parameter_point"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "ee673feeb9be7c90",
+      "observed": "e9a374e152ffd4ee",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15772809643778925079,
+      "observed": 7435866037572974735,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9796714636019817,
+      "observed": 0.9951355276307005,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15772809643778925079,
+      "observed": 7435866037572974735,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15772809643778925079,
+      "observed": 7435866037572974735,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15772809643778925079,
+      "observed": 7435866037572974735,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "ee673feeb9be7c90",
+      "observed": "e9a374e152ffd4ee",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15154531104290774412,
+      "observed": 69872281759179439,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9844210218108861,
+      "observed": 0.9809600057230531,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15154531104290774412,
+      "observed": 69872281759179439,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15154531104290774412,
+      "observed": 69872281759179439,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 15154531104290774412,
+      "observed": 69872281759179439,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "ee673feeb9be7c90",
+      "observed": "e9a374e152ffd4ee",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 7818899112434404553,
+      "observed": 12091854522935283700,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.985397816512667,
+      "observed": 0.9871343061795564,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 7818899112434404553,
+      "observed": 12091854522935283700,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 7818899112434404553,
+      "observed": 12091854522935283700,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 7818899112434404553,
+      "observed": 12091854522935283700,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "5da277a443560bc8",
+      "observed": "3ac157a1aaa64018",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 11180046491752410548,
+      "observed": 16569354671516297555,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9991278231942,
+      "observed": 0.989072861339504,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 11180046491752410548,
+      "observed": 16569354671516297555,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 11180046491752410548,
+      "observed": 16569354671516297555,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 11180046491752410548,
+      "observed": 16569354671516297555,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "5da277a443560bc8",
+      "observed": "3ac157a1aaa64018",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 4945300675176699028,
+      "observed": 5055044444040433075,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 0.9805662364242588,
+      "observed": 0.998333203155557,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 4945300675176699028,
+      "observed": 5055044444040433075,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 4945300675176699028,
+      "observed": 5055044444040433075,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 4945300675176699028,
+      "observed": 5055044444040433075,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "5da277a443560bc8",
+      "observed": "3ac157a1aaa64018",
+      "path": "ensemble_id",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 12832028085284603670,
+      "observed": 2921146607582794029,
+      "path": "noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 1.0098235978162504,
+      "observed": 0.993035568944275,
+      "path": "observables.early_window.mean_abs2_final",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 12832028085284603670,
+      "observed": 2921146607582794029,
+      "path": "provenance.determinism.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "observed": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "path": "provenance.ensemble.parent_manifest_hash",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 12832028085284603670,
+      "observed": 2921146607582794029,
+      "path": "provenance.noise.seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    },
+    {
+      "assessment": "value_mismatch",
+      "expected": 12832028085284603670,
+      "observed": 2921146607582794029,
+      "path": "provenance.seeds.noise_seed",
+      "subject_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2",
+      "surface": "member"
+    }
+  ],
+  "non_claims": {
+    "cross_stack_portability": "not established by this validation surface",
+    "long_time_dynamics": "not established by this validation surface",
+    "scientific_robustness": "not established by this validation surface"
+  },
+  "overall_status": "failed",
+  "parameter_points": {
+    "expected": [
+      {
+        "aggregates": {
+          "early_window.mean_abs2_final": {
+            "max": 0.985397816512667,
+            "mean": 0.9831634339751782,
+            "min": 0.9796714636019817,
+            "std": 0.002501189688637375
+          }
+        },
+        "case_class": "short_horizon",
+        "ensemble_id": "ee673feeb9be7c90",
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "noise_seeds": [
+          15772809643778925079,
+          15154531104290774412,
+          7818899112434404553
+        ],
+        "param_set_hash": "22c77fcc8895b7c6",
+        "parameters": {
+          "forcing.a_rf": 0.0
+        },
+        "robustness_summary": {
+          "failed_member_count": 0,
+          "failure_rate": 0.0,
+          "member_count": 3,
+          "observables": {
+            "early_window.mean_abs2_final": {
+              "coefficient_of_variation": 0.0025440222878554716,
+              "coefficient_of_variation_defined": true,
+              "sign_consistency": 1.0,
+              "successful_member_count": 3
+            }
+          },
+          "successful_member_count": 3
+        },
+        "run_count": 3,
+        "successful_run_count": 3
+      },
+      {
+        "aggregates": {
+          "early_window.mean_abs2_final": {
+            "max": 1.0098235978162504,
+            "mean": 0.9965058858115697,
+            "min": 0.9805662364242588,
+            "std": 0.012087299550471048
+          }
+        },
+        "case_class": "short_horizon",
+        "ensemble_id": "5da277a443560bc8",
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "noise_seeds": [
+          11180046491752410548,
+          4945300675176699028,
+          12832028085284603670
+        ],
+        "param_set_hash": "7e25b35f64dc7088",
+        "parameters": {
+          "forcing.a_rf": 0.05
+        },
+        "robustness_summary": {
+          "failed_member_count": 0,
+          "failure_rate": 0.0,
+          "member_count": 3,
+          "observables": {
+            "early_window.mean_abs2_final": {
+              "coefficient_of_variation": 0.012129682044604248,
+              "coefficient_of_variation_defined": true,
+              "sign_consistency": 1.0,
+              "successful_member_count": 3
+            }
+          },
+          "successful_member_count": 3
+        },
+        "run_count": 3,
+        "successful_run_count": 3
+      }
+    ],
+    "observed": [
+      {
+        "aggregates": {
+          "early_window.mean_abs2_final": {
+            "max": 0.9951355276307005,
+            "mean": 0.9877432798444367,
+            "min": 0.9809600057230531,
+            "std": 0.005803130880937511
+          }
+        },
+        "case_class": "short_horizon",
+        "ensemble_id": "e9a374e152ffd4ee",
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "noise_seeds": [
+          7435866037572974735,
+          69872281759179439,
+          12091854522935283700
+        ],
+        "param_set_hash": "22c77fcc8895b7c6",
+        "parameters": {
+          "forcing.a_rf": 0.0
+        },
+        "robustness_summary": {
+          "failed_member_count": 0,
+          "failure_rate": 0.0,
+          "member_count": 3,
+          "observables": {
+            "early_window.mean_abs2_final": {
+              "coefficient_of_variation": 0.005875140838064186,
+              "coefficient_of_variation_defined": true,
+              "sign_consistency": 1.0,
+              "successful_member_count": 3
+            }
+          },
+          "successful_member_count": 3
+        },
+        "run_count": 3,
+        "successful_run_count": 3
+      },
+      {
+        "aggregates": {
+          "early_window.mean_abs2_final": {
+            "max": 0.998333203155557,
+            "mean": 0.9934805444797786,
+            "min": 0.989072861339504,
+            "std": 0.0037935897738098747
+          }
+        },
+        "case_class": "short_horizon",
+        "ensemble_id": "3ac157a1aaa64018",
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "noise_seeds": [
+          16569354671516297555,
+          5055044444040433075,
+          2921146607582794029
+        ],
+        "param_set_hash": "7e25b35f64dc7088",
+        "parameters": {
+          "forcing.a_rf": 0.05
+        },
+        "robustness_summary": {
+          "failed_member_count": 0,
+          "failure_rate": 0.0,
+          "member_count": 3,
+          "observables": {
+            "early_window.mean_abs2_final": {
+              "coefficient_of_variation": 0.0038184842117832633,
+              "coefficient_of_variation_defined": true,
+              "sign_consistency": 1.0,
+              "successful_member_count": 3
+            }
+          },
+          "successful_member_count": 3
+        },
+        "run_count": 3,
+        "successful_run_count": 3
+      }
+    ]
+  },
+  "pass_count": 0,
+  "schema_version": "tdgl_rf.seeded_vortex_phase2_4a_validation.v1",
+  "top_level": {
+    "expected": {
+      "expected_member_count": 3,
+      "mode": "stochastic_ensemble",
+      "overall_status": "success",
+      "pack_name": "seeded_vortex_phase2_4a_experiment_pack",
+      "parameter_point_count": 2,
+      "parent_manifest_hash": "f69adc12c91bf639bbb6e1123ab5d3df4546e799a6dec37d5f8bd98e5c2c6e5a",
+      "run_count": 6
+    },
+    "observed": {
+      "expected_member_count": 3,
+      "mode": "stochastic_ensemble",
+      "overall_status": "success",
+      "pack_name": "seeded_vortex_phase2_4a_experiment_pack",
+      "parameter_point_count": 2,
+      "parent_manifest_hash": "c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df",
+      "run_count": 6
+    }
+  },
+  "validation_id": "seeded_vortex_phase2_4a_same_stack"
+}

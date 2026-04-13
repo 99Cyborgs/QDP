@@ -1,0 +1,128 @@
+{
+  "case_class": "short_horizon",
+  "configured_abs_winding": 1,
+  "configured_signed_winding": 1,
+  "diagnostic_classification": {
+    "early_window_observables": "early_window_observable",
+    "initialization_observables": "initialization_observable"
+  },
+  "diagnostic_interpretation_version": "seeded_vortex_phase2_2",
+  "early_window_observables": {
+    "charge_residual_inf_series": [
+      0.8134213938445176,
+      4.51836451211873,
+      6.924537080302546,
+      7.449282955532414,
+      6.291478798922233
+    ],
+    "checked_sample_count": 5,
+    "expected_vortex_count": 1,
+    "finite_observables_pass": true,
+    "mean_abs2_series": [
+      0.9848328688792792,
+      0.9876765543833529,
+      0.9862114504856988,
+      0.9895737724272693,
+      0.9951355276307005
+    ],
+    "overall_pass": true,
+    "positive_amplitude_pass": true,
+    "sample_steps": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sample_times": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04
+    ],
+    "vortex_count_matches_expected_pass": true,
+    "vortex_count_series": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "expected_vortex_count": 1,
+  "horizon_contract": {
+    "n_steps": 4,
+    "observed_sample_count": 5,
+    "observed_step_series": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sampling_policy": "all_observable_samples_through_n_steps"
+  },
+  "initialization_observables": {
+    "core_contrast_observables": {
+      "all_core_observable": true,
+      "core_observable_series": [
+        true
+      ],
+      "core_to_ring_ratio_series": [
+        0.8504423545385772
+      ],
+      "per_seed": [
+        {
+          "configured_winding": 1,
+          "core_mean_abs": 0.8164965809277261,
+          "core_min_abs": 0.816496580927726,
+          "core_observable": true,
+          "core_to_ring_ratio": 0.8504423545385772,
+          "plaquette_x": 11,
+          "plaquette_y": 5,
+          "ring_mean_abs": 0.9600845684252534,
+          "seed_index": 0
+        }
+      ],
+      "seed_count": 1
+    },
+    "local_winding_verification": {
+      "all_host_winding_match": true,
+      "all_local_winding_match": true,
+      "configured_winding_series": [
+        1
+      ],
+      "host_winding_series": [
+        1
+      ],
+      "initial_total_abs_winding": 1,
+      "initial_total_signed_winding": 1,
+      "local_abs_winding_series": [
+        1
+      ],
+      "local_signed_winding_series": [
+        1
+      ],
+      "per_seed": [
+        {
+          "configured_winding": 1,
+          "host_winding": 1,
+          "host_winding_match": true,
+          "local_abs_winding": 1,
+          "local_signed_winding": 1,
+          "local_winding_match": true,
+          "plaquette_x": 11,
+          "plaquette_y": 5,
+          "seed_index": 0
+        }
+      ],
+      "seed_count": 1
+    },
+    "overall_pass": true
+  },
+  "resolution_policy": "strict_interior_fully_active_plaquette",
+  "schema_version": "tdgl_rf.seeded_vortex_tier2.v2",
+  "seed_count": 1,
+  "tier2_overall_pass": true
+}

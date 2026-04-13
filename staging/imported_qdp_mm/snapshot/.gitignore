@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.coverage
+.mypy_cache/
+.pytest_cache/
+.venv/
+venv/
+
+qdp/branches/*.zip
+qdp/branches/*/analysis_outputs/
+qdp/branches/*/simulation_outputs/
+qdp/branches/*/audit/

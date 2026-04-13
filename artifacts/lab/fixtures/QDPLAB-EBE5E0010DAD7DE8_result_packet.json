@@ -1,0 +1,17 @@
+{
+  "request_id": "QDPLAB-EBE5E0010DAD7DE8",
+  "scheduler_state": "COMPLETED",
+  "devices_tested": [
+    "DEV_MATCH_A",
+    "DEV_MATCH_B"
+  ],
+  "cross_device_status": "CONFIRMED",
+  "fabrication_matched": true,
+  "observed_measurements": [
+    "Cross-device matched-fabrication sweep"
+  ],
+  "notes": [
+    "Synthetic ingest fixture for first-wave promotion-adjacent smoke test.",
+    "Matched-device comparison removes the device-specific-only evidence limitation but does not clear promotion_cap_governance."
+  ]
+}

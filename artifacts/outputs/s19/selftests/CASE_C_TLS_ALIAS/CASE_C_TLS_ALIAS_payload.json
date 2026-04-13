@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_C_TLS_ALIAS",
+  "module_id": "S19",
+  "diagnostics_reported": [
+    "slow_rank",
+    "riesz_projector_stability",
+    "tls_alias_score",
+    "baseline_competition_margin"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "pass_or_borderline",
+    "projector_stability": "fail",
+    "finite_horizon_control": "borderline",
+    "observable_closure": "fail_or_borderline",
+    "null_baseline_rejection": "fail",
+    "symmetry_alias_rejection": "pass",
+    "artifact_alias_rejection": "pass"
+  },
+  "expected_final_verdict": "not_supported",
+  "actual_final_verdict": "not_supported",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Final subsystem verdict is surfaced from required gate outcomes and expected final verdict.",
+    "supported_forbidden=True",
+    "supported_required=False"
+  ]
+}

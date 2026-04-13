@@ -1,0 +1,70 @@
+{
+  "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-04-13T18:30:49.215242+00:00",
+  "candidate_id": "m06-case-6",
+  "branch_or_model_tag": "M06_CASE_GOVERNANCE_BLOCK",
+  "terminated_at": "STAGE_12",
+  "final_state": {
+    "scientific_decision": "NOT_EVALUATED",
+    "governance_outcome": "DEFER",
+    "cross_device_status": "NOT_REQUIRED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "promotion_cap_scientific": "",
+    "system_status": "READY",
+    "validation_ladder": {
+      "L0_baseline_pipeline_reproduced": true,
+      "L1_reduction_limit_verified": true,
+      "L2_convergence_plan_defined": true,
+      "L3_numerical_stability_passed": false,
+      "L4_instrument_facing_comparison_path_defined": false
+    }
+  },
+  "schema_validation": {
+    "valid": true,
+    "errors": [],
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py",
+    "mode": "final"
+  },
+  "gate_trace_count": 16,
+  "stage_inputs_used": {
+    "stage5": {
+      "baseline_pipeline_executed": true,
+      "evidence_ids": [
+        "M06_CASE6_S5"
+      ]
+    },
+    "stage6": {
+      "baseline_suffices": false,
+      "evidence_ids": [
+        "M06_CASE6_S6"
+      ]
+    },
+    "stage8": {
+      "known_mechanism_explains": false,
+      "evidence_ids": [
+        "M06_CASE6_S8"
+      ]
+    },
+    "stage9": {
+      "artifact_route_explains": false,
+      "evidence_ids": [
+        "M06_CASE6_S9"
+      ]
+    },
+    "stage10": {
+      "convergence_plan_declared": true,
+      "reduction_limit_verified": true,
+      "evidence_ids": [
+        "M06_CASE6_S10"
+      ]
+    },
+    "stage11": {
+      "equivalent_within_resolution": false,
+      "evidence_ids": [
+        "M06_CASE6_S11"
+      ]
+    }
+  }
+}

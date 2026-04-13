@@ -1,14 +1,14 @@
 {
   "artifact_id": "QDP_V10_6_REFERENCE_RESOLUTION_REPORT_M03",
-  "report_id": "m03-reference-report-20260315T201913Z",
   "module_id": "M03",
+  "timestamp_utc": "2026-04-13T18:30:48.618649+00:00",
+  "report_id": "m03-reference-report-20260413T183048Z",
   "mode": "subsystem",
-  "root": "C:\\Users\\Forre\\Documents\\QDP",
-  "timestamp_utc": "2026-03-15T20:19:13.661541+00:00",
+  "root": "G:\\GitHub\\incubate\\QDP",
   "manifest_id": "QDP_V10_6_REFERENCE_MANIFEST_M03",
   "registry_id": "QDP_V10_6_GOVERNANCE_REGISTRY_M03",
-  "resolved_count": 15,
-  "unresolved_count": 1,
+  "resolved_count": 16,
+  "unresolved_count": 0,
   "critical_unresolved_count": 0,
   "reference_resolution_status": "PASSED",
   "system_status": "HARNESS_REQUIRED",
@@ -24,20 +24,20 @@
     {
       "ref_id": "QDP_CANDIDATE_TEMPLATE_V10_6_M02",
       "relative_path": "config/schema/candidate_template.json",
-      "sha256": "9d271cb412e0ff7c2791a62deba15dbfc5b9648e0384e609ad6b8de3d5575ec0",
-      "bytes": 3917
+      "sha256": "0d74111a0bd4cec8b28848c112edc5023f65eca6fee690b97d330d4d8e5bd95b",
+      "bytes": 4649
     },
     {
       "ref_id": "QDP_CANDIDATE_SCHEMA_V10_6_M02",
       "relative_path": "config/schema/candidate_schema.json",
-      "sha256": "b5876b94ccaf6cf154f62d83456d532d80c375805d783d83c18050fd1d31d0a7",
-      "bytes": 17637
+      "sha256": "96389724d6b34b87d6942945fca9736c0794c01282fc1cca5577ade9368c1a5e",
+      "bytes": 20841
     },
     {
       "ref_id": "QDP_VALIDATE_CANDIDATE_M02",
       "relative_path": "tools/validators/candidate_validator.py",
-      "sha256": "d5d87d274a48d3d8f28d4abde43a1e0d786396cf3d7c2fcaec0e5dbd2585b40b",
-      "bytes": 9565
+      "sha256": "3346f2fcc8b1c7fa05b81ebbffb7bb576de78cf616594c2a24be83346f8edf1c",
+      "bytes": 14422
     },
     {
       "ref_id": "QDP_MASTER_SPEC",
@@ -94,6 +94,12 @@
       "bytes": 32972
     },
     {
+      "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
+      "relative_path": "specs/subsystem/gksl_subsystem_case_matrix.json",
+      "sha256": "57fd26fc5935a57afb398a390c5b7ad2ee3ff42c9b852be105b5da8a0762d9af",
+      "bytes": 9882
+    },
+    {
       "ref_id": "RETAINED_V10_1_OPERATIVE_BODY",
       "relative_path": "runtime/retained/operative_body_v10_1.md",
       "sha256": "8c8b2cf6bd23b4aba43fcd691402471cf4aff7c0f199ef7279e99b578848f9a4",
@@ -106,13 +112,5 @@
       "bytes": 1527
     }
   ],
-  "unresolved_references": [
-    {
-      "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
-      "relative_path": "specs/subsystem/specs/subsystem/gksl_subsystem_case_matrix.json",
-      "criticality": "SUBSYSTEM_SUPPORT",
-      "required": false,
-      "missing_reason": "file_not_present_in_current_environment"
-    }
-  ]
+  "unresolved_references": []
 }

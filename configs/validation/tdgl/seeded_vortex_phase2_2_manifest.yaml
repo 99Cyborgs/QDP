@@ -1,0 +1,355 @@
+﻿schema_version: tdgl_rf.seeded_vortex_experiment_pack.v1
+suite_id: seeded_vortex_phase2_2
+claim_scope: Deterministic same-stack seeded initialization / bounded short-horizon expectation matching and seeded input rejection taxonomy only.
+defaults:
+  horizon_contracts:
+    initialization_only:
+      n_steps: 0
+      sampling_policy: initialization_surface
+    short_horizon:
+      n_steps: 4
+      sampling_policy: all_observable_samples_through_n_steps
+canonical_cases:
+  - case_id: init_single_positive
+    case_class: initialization_only
+    config_path: configs/validation/tdgl/seeded_vortex/initial/canonical_single_positive.yaml
+    expected_summary:
+      final_charge_residual_inf: 0.8134213938445176
+      final_mean_abs2: 0.9848328688792792
+      final_time: 0.0
+      max_vortex_count: 1
+      n_events: 0
+      n_samples: 1
+    expected_final_observables:
+      step: 0
+      t: 0.0
+      mean_abs2: 0.9848328688792792
+      charge_residual_inf: 0.8134213938445176
+      delta_f_over_f0: -0.015167131120720854
+      qinv: 0.010652415088062148
+      vortex_count: 1
+      supercurrent_l2: 7.38936180366617
+      normalcurrent_l2: 1.8230971567642282
+      max_abs2: 0.9984639016897083
+      min_abs2: 0.6666666666666666
+    expected_payload_sha256: 23131d80dffc084a766b9f4492b9ffa01b501c43aa5831bb94bb5aab46dc656e
+    expected_tier2:
+      case_class: initialization_only
+      horizon_contract:
+        n_steps: 0
+        sampling_policy: initialization_surface
+        observed_sample_count: 1
+        observed_step_series: [0]
+      initialization_observables:
+        local_winding_verification:
+          configured_winding_series: [1]
+          host_winding_series: [1]
+          local_signed_winding_series: [1]
+          local_abs_winding_series: [1]
+          initial_total_signed_winding: 1
+          initial_total_abs_winding: 1
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          core_observable_series: [true]
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables: null
+      tier2_overall_pass: true
+  - case_id: init_single_negative
+    case_class: initialization_only
+    config_path: configs/validation/tdgl/seeded_vortex/initial/canonical_single_negative.yaml
+    expected_summary:
+      final_charge_residual_inf: 0.8134213938445176
+      final_mean_abs2: 0.9848328688792792
+      final_time: 0.0
+      max_vortex_count: 1
+      n_events: 0
+      n_samples: 1
+    expected_final_observables:
+      step: 0
+      t: 0.0
+      mean_abs2: 0.9848328688792792
+      charge_residual_inf: 0.8134213938445176
+      delta_f_over_f0: -0.015167131120720854
+      qinv: 0.010652415088062148
+      vortex_count: 1
+      supercurrent_l2: 7.38936180366617
+      normalcurrent_l2: 1.8230971567642282
+      max_abs2: 0.9984639016897083
+      min_abs2: 0.6666666666666666
+    expected_payload_sha256: 23131d80dffc084a766b9f4492b9ffa01b501c43aa5831bb94bb5aab46dc656e
+    expected_tier2:
+      case_class: initialization_only
+      horizon_contract:
+        n_steps: 0
+        sampling_policy: initialization_surface
+        observed_sample_count: 1
+        observed_step_series: [0]
+      initialization_observables:
+        local_winding_verification:
+          configured_winding_series: [-1]
+          host_winding_series: [-1]
+          local_signed_winding_series: [-1]
+          local_abs_winding_series: [1]
+          initial_total_signed_winding: -1
+          initial_total_abs_winding: 1
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          core_observable_series: [true]
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables: null
+      tier2_overall_pass: true
+  - case_id: short_single_positive
+    case_class: short_horizon
+    config_path: configs/validation/tdgl/seeded_vortex/short_horizon/canonical_single_positive.yaml
+    expected_summary:
+      final_charge_residual_inf: 0.6691556353991124
+      final_mean_abs2: 0.9815640339925397
+      final_time: 0.04
+      max_vortex_count: 1
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      step: 4
+      t: 0.04
+      mean_abs2: 0.9815640339925397
+      charge_residual_inf: 0.6691556353991124
+      delta_f_over_f0: -0.018435966007460124
+      qinv: 0.011333561425600585
+      vortex_count: 1
+      supercurrent_l2: 7.236242221340086
+      normalcurrent_l2: 1.8716262531681405
+      max_abs2: 0.9983165486258554
+      min_abs2: 0.6048270511080691
+    expected_payload_sha256: f21b3c985136d0b62008e79b1e35d908bc5395e391a4adc293421b91525e12e4
+    expected_tier2:
+      case_class: short_horizon
+      horizon_contract:
+        n_steps: 4
+        sampling_policy: all_observable_samples_through_n_steps
+        observed_sample_count: 5
+        observed_step_series: [0, 1, 2, 3, 4]
+      initialization_observables:
+        local_winding_verification:
+          configured_winding_series: [1]
+          host_winding_series: [1]
+          local_signed_winding_series: [1]
+          local_abs_winding_series: [1]
+          initial_total_signed_winding: 1
+          initial_total_abs_winding: 1
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          core_observable_series: [true]
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables:
+        checked_sample_count: 5
+        sample_steps: [0, 1, 2, 3, 4]
+        vortex_count_series: [1, 1, 1, 1, 1]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_matches_expected_pass: true
+        expected_vortex_count: 1
+        overall_pass: true
+      tier2_overall_pass: true
+  - case_id: short_pair_opposite
+    case_class: short_horizon
+    config_path: configs/validation/tdgl/seeded_vortex/short_horizon/canonical_pair_opposite.yaml
+    expected_summary:
+      final_charge_residual_inf: 1.2130805469440966
+      final_mean_abs2: 0.9643773008706715
+      final_time: 0.04
+      max_vortex_count: 2
+      n_events: 0
+      n_samples: 5
+    expected_final_observables:
+      step: 4
+      t: 0.04
+      mean_abs2: 0.9643773008706715
+      charge_residual_inf: 1.2130805469440966
+      delta_f_over_f0: -0.035622699129328576
+      qinv: 0.013112704428002844
+      vortex_count: 2
+      supercurrent_l2: 9.282980744624362
+      normalcurrent_l2: 2.0465238305259854
+      max_abs2: 0.9961298506650272
+      min_abs2: 0.5956522540095104
+    expected_payload_sha256: b5038e4ed91740dd1e1e5a7eadf66709ec9d914cf42dc301d02f7a40f9822fc0
+    expected_tier2:
+      case_class: short_horizon
+      horizon_contract:
+        n_steps: 4
+        sampling_policy: all_observable_samples_through_n_steps
+        observed_sample_count: 5
+        observed_step_series: [0, 1, 2, 3, 4]
+      initialization_observables:
+        local_winding_verification:
+          configured_winding_series: [1, -1]
+          host_winding_series: [1, -1]
+          local_signed_winding_series: [1, -1]
+          local_abs_winding_series: [1, 1]
+          initial_total_signed_winding: 0
+          initial_total_abs_winding: 2
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          core_observable_series: [true, true]
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables:
+        checked_sample_count: 5
+        sample_steps: [0, 1, 2, 3, 4]
+        vortex_count_series: [2, 2, 2, 2, 2]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_matches_expected_pass: true
+        expected_vortex_count: 2
+        overall_pass: true
+      tier2_overall_pass: true
+exercise_cases:
+  - case_id: exercise_pair_positive
+    case_class: short_horizon
+    config_path: configs/validation/tdgl/seeded_vortex/short_horizon/exercise_pair_positive.yaml
+    expected_invariants:
+      case_class: short_horizon
+      horizon_contract:
+        n_steps: 4
+        sampling_policy: all_observable_samples_through_n_steps
+        observed_sample_count: 5
+        observed_step_series: [0, 1, 2, 3, 4]
+      initialization_observables:
+        local_winding_verification:
+          configured_winding_series: [1, 1]
+          host_winding_series: [1, 1]
+          initial_total_signed_winding: 2
+          initial_total_abs_winding: 2
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables:
+        checked_sample_count: 5
+        expected_vortex_count: 2
+        vortex_count_series: [2, 2, 2, 2, 2]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_matches_expected_pass: true
+        overall_pass: true
+      tier2_overall_pass: true
+  - case_id: exercise_moat_offset
+    case_class: short_horizon
+    config_path: configs/validation/tdgl/seeded_vortex/short_horizon/exercise_moat_offset.yaml
+    expected_invariants:
+      case_class: short_horizon
+      horizon_contract:
+        n_steps: 4
+        sampling_policy: all_observable_samples_through_n_steps
+        observed_sample_count: 5
+        observed_step_series: [0, 1, 2, 3, 4]
+      initialization_observables:
+        local_winding_verification:
+          host_winding_series: [1]
+          initial_total_signed_winding: 1
+          initial_total_abs_winding: 1
+          all_host_winding_match: true
+          all_local_winding_match: true
+          per_seed:
+            - seed_index: 0
+              plaquette_x: 15
+              plaquette_y: 5
+              configured_winding: 1
+              host_winding: 1
+              local_signed_winding: 1
+              local_abs_winding: 1
+              host_winding_match: true
+              local_winding_match: true
+        core_contrast_observables:
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables:
+        checked_sample_count: 5
+        expected_vortex_count: 1
+        vortex_count_series: [1, 1, 1, 1, 1]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_matches_expected_pass: true
+        overall_pass: true
+      tier2_overall_pass: true
+  - case_id: exercise_explicit_core_radius
+    case_class: short_horizon
+    config_path: configs/validation/tdgl/seeded_vortex/short_horizon/exercise_explicit_core_radius.yaml
+    expected_invariants:
+      case_class: short_horizon
+      horizon_contract:
+        n_steps: 4
+        sampling_policy: all_observable_samples_through_n_steps
+        observed_sample_count: 5
+        observed_step_series: [0, 1, 2, 3, 4]
+      initialization_observables:
+        local_winding_verification:
+          host_winding_series: [1]
+          initial_total_signed_winding: 1
+          initial_total_abs_winding: 1
+          all_host_winding_match: true
+          all_local_winding_match: true
+        core_contrast_observables:
+          core_to_ring_ratio_series: [0.7303732885543434]
+          all_core_observable: true
+        overall_pass: true
+      early_window_observables:
+        checked_sample_count: 5
+        expected_vortex_count: 1
+        vortex_count_series: [1, 1, 1, 1, 1]
+        finite_observables_pass: true
+        positive_amplitude_pass: true
+        vortex_count_matches_expected_pass: true
+        overall_pass: true
+      tier2_overall_pass: true
+rejection_cases:
+  - case_id: reject_missing_seeds
+    config_path: configs/validation/tdgl/seeded_vortex/reject/missing_seeds.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: missing_seeds
+      field_path: physics.vortex_seeds
+      seed_index: null
+  - case_id: reject_unexpected_seeds
+    config_path: configs/validation/tdgl/seeded_vortex/reject/unexpected_seeds.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: unexpected_seeds
+      field_path: physics.vortex_seeds
+      seed_index: null
+  - case_id: reject_outside_domain
+    config_path: configs/validation/tdgl/seeded_vortex/reject/outside_domain.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: outside_domain
+      field_path: physics.vortex_seeds[0].x0
+      seed_index: 0
+  - case_id: reject_ambiguous_center
+    config_path: configs/validation/tdgl/seeded_vortex/reject/ambiguous_center.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: ambiguous_plaquette
+      field_path: physics.vortex_seeds[0].x0
+      seed_index: 0
+  - case_id: reject_inactive_plaquette
+    config_path: configs/validation/tdgl/seeded_vortex/reject/inactive_plaquette.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: inactive_plaquette
+      field_path: physics.vortex_seeds[0]
+      seed_index: 0
+  - case_id: reject_overlapping_plaquette
+    config_path: configs/validation/tdgl/seeded_vortex/reject/overlapping_plaquette.yaml
+    expected_stage: config_validation
+    expected_rejection:
+      code: overlapping_plaquette
+      field_path: physics.vortex_seeds[1]
+      seed_index: 1

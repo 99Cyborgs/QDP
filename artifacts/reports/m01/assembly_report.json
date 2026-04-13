@@ -1,0 +1,48 @@
+{
+  "artifact_id": "QDP_V10_6_M01_SELFTEST_REPORT",
+  "module_id": "M01",
+  "timestamp_utc": "2026-04-13T18:30:48.963720+00:00",
+  "cases_total": 2,
+  "cases_passed": 2,
+  "all_passed": true,
+  "cases": [
+    {
+      "case_id": "CASE_M01_RECOVERY_SURROGATE",
+      "description": "Surrogate retained provenance keeps M01 in the recovery lane.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "expected_summary": {
+        "assembly_lane": "RECOVERY_LANE",
+        "derived_status": "RECOVERY_INTERIM",
+        "retained_runtime_source_authoritative": false
+      },
+      "actual_summary": {
+        "assembly_lane": "RECOVERY_LANE",
+        "derived_status": "RECOVERY_INTERIM",
+        "retained_runtime_source_authoritative": false
+      },
+      "assembly_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m01\\selftests\\CASE_M01_RECOVERY_SURROGATE\\CASE_M01_RECOVERY_SURROGATE_assembly_report.json",
+      "closure_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m01\\selftests\\CASE_M01_RECOVERY_SURROGATE\\CASE_M01_RECOVERY_SURROGATE_closure_report.json"
+    },
+    {
+      "case_id": "CASE_M01_AUTHORITATIVE_LANE",
+      "description": "An uploaded retained source permits authoritative-lane assembly semantics.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "expected_summary": {
+        "assembly_lane": "AUTHORITATIVE_LANE",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "retained_runtime_source_authoritative": true
+      },
+      "actual_summary": {
+        "assembly_lane": "AUTHORITATIVE_LANE",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "retained_runtime_source_authoritative": true
+      },
+      "assembly_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m01\\selftests\\CASE_M01_AUTHORITATIVE_LANE\\CASE_M01_AUTHORITATIVE_LANE_assembly_report.json",
+      "closure_report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m01\\selftests\\CASE_M01_AUTHORITATIVE_LANE\\CASE_M01_AUTHORITATIVE_LANE_closure_report.json"
+    }
+  ]
+}

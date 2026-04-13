@@ -1,0 +1,31 @@
+{
+  "application_version": "0.2.0",
+  "command": "mmm-studio sweep-run",
+  "created_at": "2026-04-03T17:26:44.770142Z",
+  "environment": {
+    "python_entrypoint": "mmm-studio"
+  },
+  "run_id": "profile_comparison_run.profile_comparison.resonance_targeted",
+  "schema_name": "mmm_studio.provenance",
+  "schema_version": "1.0",
+  "score_backend": "baseline_surrogate_v1",
+  "scoring_profile": "resonance_targeted",
+  "source_artifacts": [
+    "MMM_MATERIAL_GENOME_DATABASE",
+    "MMM_CANDIDATE_RANKING_MODEL",
+    "MMM_MECHANISM_REGISTRY",
+    "MMM_STRUCTURE_LIBRARY",
+    "MMM_EXPERIMENT_REGISTRY",
+    "MMM_VALIDATION_RULES",
+    "MMM_BENCHMARK_MODELS",
+    "MMM_SCALING_DISCRIMINATION_MODELS",
+    "MMM_DEVICE_ARCHITECTURE_REGISTRY",
+    "MMM_TOLERANCE_MODELS",
+    "MMM_GEOMETRY_SCALING_MODELS",
+    "MMM_MATERIAL_SYSTEM_REGISTRY",
+    "MMM_ENVIRONMENT_MODEL_REGISTRY",
+    "MMM_INSTRUMENT_CONSTRAINTS",
+    "MMM_CROSS_DEVICE_REGISTRY"
+  ],
+  "source_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed"
+}

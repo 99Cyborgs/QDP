@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/calibration_snapshot_schema.json",
+  "title": "QDP Calibration Snapshot",
+  "type": "object",
+  "properties": {
+    "snapshot_id": {"type": "string"},
+    "request_id": {"type": "string"},
+    "validity_score": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+    "threshold": {"type": "number", "minimum": 0, "maximum": 100},
+    "status": {"type": "string", "enum": ["PENDING_REVIEW", "UNKNOWN", "VALID", "INVALID"]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["snapshot_id", "request_id", "validity_score", "threshold", "status", "notes"],
+  "additionalProperties": false
+}

@@ -1,0 +1,2130 @@
+{
+  "artifact_id": "QDP_V10_6_CAMPAIGN_PLAN",
+  "campaign_id": "QDPCAM-AAF29E7399C036C8",
+  "budgeted_slots": 5,
+  "candidate_count": 63,
+  "candidate_hashes": {
+    "m05-case-confirmed-proceed": "a751d3617ca00c4411b79cb9a72018702867b9835d2b106c36a7d46c9d15f6f0",
+    "m06-case-7": "7f33f27adad31c0b8bd270ed3bff3a0b441b78dee413ed4382460ff27bd993c7",
+    "m05-case-device-specific": "a87c790efd9cc43857799a4d11b6d18c610c7f7f7468e144f0357970f13f9840",
+    "m05-case-provisional-no-cross-device": "a1e351865a3b5b08a9708cf6ab4157705d0e462a146383df2cf45f94d1dec730",
+    "m06-case-5": "dbb775d11476021a21c3b6e57512c9a748756856fe1297163b830c17349a627c",
+    "M14_WORKING_PATCH_CANDIDATE": "d3a7bf554f5b9f86659752438354533c2244284d80cac958a17d618374bce285",
+    "M12_WORKING_PATCH_CANDIDATE": "6e4f772130fd431d331e5eaffd3733e69c04f3f030eb02d3ee2c40ec97fbc134",
+    "m04-m04-valid-branch-2026-03-15": "76b68333daa4da7d2fcdb92bdf2bb7542ad468bc05b2159a8c03e3c0d0354c57",
+    "M02_WORKING_PATCH_CANDIDATE": "d91e645435f942dac258b490099865cebce7f048da148b580d06f15e46db61ba",
+    "M11_WORKING_PATCH_CANDIDATE": "5d48c7fa3b9425224a94b2523c63dbfcfd08a5b1629eb6d130043b28e026e680",
+    "M13_WORKING_PATCH_CANDIDATE": "54609e7bb0540e506176dd14e11b73e1cfbf25db7a850d9738192aec0601761f",
+    "M15_WORKING_PATCH_CANDIDATE": "4e0f5672a8a597ccd2c5734a43aace8f13ae83e2247c675fe315d42fff83328d",
+    "m06-case-4": "01458bed4f64102d746dda121eb051f364b581422d4f413e94754cf53deef70a",
+    "m04-m04-missing-falsifier-2026-03-15": "ba73c6148fc675d27f6a0cd743167e7311ecc08d1dd3184ff699677c6917b3a6",
+    "m05-case-governance-guardrail": "612703db5d33c628a1b5431da7951d35fa3d930a84b6adc7ce407646b477e741",
+    "m05-case-planning-not-pass": "1b5f783aef72391f5d09e8325d94ec9d9d55c753fb65ee3b098380bd14c81e0f",
+    "m06-case-6": "eee016da3ae96811aa921fc626ae6eb9c934770574d3747fc7ac9fd6d857cb23",
+    "m07-case-declared-only": "a21b309b1f139a8c40f834e7b4aa2600837f69d7dccf2d5621875a86b74d0e7c",
+    "m07-case-global": "795c739308126c45e193333a28a7ed0740611e14577600500f2b7d74a2950303",
+    "m07-case-hysteresis": "0d6a36236da6ab92645bc9dc4fc8605a56873e8de8710534f507805fb5510608",
+    "m07-case-kernel": "d4d302a7d7eed8f461eb44f172e3c880dfa1fb3560a5f4e8631640904202b337",
+    "m07-case-parasitic": "f5c8af034b68f8593a21e7d6fba9dc8b81d3fe4c69b01a93827f81a11b8d3f60",
+    "m07-case-tls": "49e354e1384b89d22401a0413760576a81449489626f33674802b57b6366aff6",
+    "m08-case-baseline-sufficiency": "f53a02363a589a574d66f6c7c2c38d30fa05f7fa95ad0c67141d4620436f9670",
+    "m08-case-correlated-residuals": "8f3934f718ab31b38aee54d063a1efa989969f18e63c899ce0fa52d7871c0912",
+    "m08-case-drive-ramsey": "a499580f6eace29d419b064c22bc93484278974c48246dd10105dafcf6251b94",
+    "m08-case-heavy-tails": "3163738764dc819a9f07ae4a8edb3eb3ab9394dc705677496a6fc498873308fa",
+    "m08-case-insufficient-data": "ce17dba6a3b5fdcb647a5c78d0b00f0f5aa53634e2930dfb41155ecf43596762",
+    "m08-case-nonstationary": "73653fe6dc7e8dff53ede86ca6e136cf32a819a7eb2e08200be3eef6be97ebcb",
+    "m09-case-control-noise": "072add8d10b7657804f0affdf903010c1f2caf3a73a72c90b2d6577d0b18433a",
+    "m09-case-em-purcell": "862c4fd0a086e8d65f271de353ade49ba8312f67c5b83c7fab127966bdb86b8b",
+    "m09-case-phonon-supporting": "37b2367344f710e19fa24d6f6d8a2ec053674abf949d431af5a9ce55e480b346",
+    "m09-case-qp": "4dcf2d4b6be5048156f92b1fbe38724ee044d814b579dfcffe6be4313184bc54",
+    "m09-case-tls": "43d4def054a79560cdbe7250bd7850e706dddc5fdafa39c48c3e3a3d1a1d6898",
+    "m09-case-vortex-qp-combo": "2da832ed377aa5f97bedf56f8b381e2a7be86468210702e081ea2685086c4260",
+    "m09-case-vortex": "91c580c047353ac05b5ebafb469b9c39422cd0fc33bf797607eedfe0721f4c3e",
+    "m10-case-calibration": "64ba5c8d14c12c8ecb3ae91a026aa0dc469b4c06c1a837375a9c5425dbf2c2d5",
+    "m10-case-control-chain-power-combo": "04202b9d5b19c3082c629db41ff8b67ff396b8125f843bb774392f1bf7fe4fb2",
+    "m10-case-control-chain": "35ee8ecd690550af63b34d931c0fbca9c516cd208c51eeac186f4ebbd07c5871",
+    "m10-case-fridge-supporting": "69bd5903ee5c4d8d800752969f4bff978363386fba5cff238978f57fe701eb15",
+    "m10-case-no-artifact": "171449ff5269192e47f04d8eaf67cdd7149991a9114379a01547742462b28e25",
+    "m10-case-power-alias": "a2a64070cd2af125124f1c8dbdbd17d883d361ecd2391e3d249b7b31bd6d118c",
+    "m10-case-readout": "db6701655996d134b970f93d560dcf094767246e900d7a4524efdec83f02dd1c",
+    "m04-m04-invalid-scale-claim-2026-03-15": "bd7f417529502a7121b99f7a786ca9b1d707a6f22931f14c31dc77f159acabf6",
+    "m05-case-artifact-equivalence": "aff15aad2f6af8973559e987469f9d28196be835c1c8751dd0c358d74033ce8a",
+    "m05-case-baseline-sufficiency": "f90973fd40f0232e28ff9521d4d6bd5e43d1fc370b94be60f58b26875716c12e",
+    "m05-case-classical-mechanism": "676a2907061623d60ed7f2d7cb8b22ee2df556ea2cb874b880e399ee5e096e68",
+    "m05-case-lindblad-equivalence": "748fe5e47274be087fe01386dd1074db4693f260d9b0ed30c9c702cee4b6b5a3",
+    "m06-case-1": "99aa20e157c2f72487d7eb280d9e24cbab71aa76c758a459030150829642abe9",
+    "m06-case-2": "373df231103d27646d78d1147508cca61ba383e50dca40844dc01c8fa5003c82",
+    "m06-case-3": "4da8467a3d4ea935fdcc2c260d355250ab17d25c10a5d6f8c52ee986329cf7aa"
+  },
+  "candidate_hashes_by_key": {
+    "m05-case-confirmed-proceed@artifacts/outputs/m05/selftests/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate": "a751d3617ca00c4411b79cb9a72018702867b9835d2b106c36a7d46c9d15f6f0",
+    "m06-case-7@artifacts/outputs/m06/bootstrap/run_1/CASE_7_CONFIRMED_READY_BRANCH/CASE_7_CONFIRMED_READY_BRANCH_candidate": "7f33f27adad31c0b8bd270ed3bff3a0b441b78dee413ed4382460ff27bd993c7",
+    "m05-case-device-specific@artifacts/outputs/m05/selftests/CASE_M05_DEVICE_SPECIFIC_SANDBOX/CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate": "a87c790efd9cc43857799a4d11b6d18c610c7f7f7468e144f0357970f13f9840",
+    "m05-case-provisional-no-cross-device@artifacts/outputs/m05/selftests/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate": "a1e351865a3b5b08a9708cf6ab4157705d0e462a146383df2cf45f94d1dec730",
+    "m06-case-5@artifacts/outputs/m06/bootstrap/run_1/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate": "dbb775d11476021a21c3b6e57512c9a748756856fe1297163b830c17349a627c",
+    "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_SANDBOX/CASE_M14_FALLBACK_SANDBOX_candidate": "d3a7bf554f5b9f86659752438354533c2244284d80cac958a17d618374bce285",
+    "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_GOVERNANCE_CLIP/CASE_M14_GOVERNANCE_CLIP_candidate": "1d630e0be9c796989ab1a81bf19195287962bceda33b058573cfd47ba623b0fe",
+    "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate": "6e4f772130fd431d331e5eaffd3733e69c04f3f030eb02d3ee2c40ec97fbc134",
+    "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_PRESERVES_EXPLICIT_PLAN/CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate": "1459f76b34af8edd947fc71f3623c7db57b9397d228e0832c1361bc27e3fcd98",
+    "m04-m04-valid-branch-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_VALID_BRANCH/CASE_M04_VALID_BRANCH_candidate": "76b68333daa4da7d2fcdb92bdf2bb7542ad468bc05b2159a8c03e3c0d0354c57",
+    "M02_WORKING_PATCH_CANDIDATE@artifacts/outputs/m02/selftests/CASE_M02_VALID_RECOVERY_CANDIDATE/CASE_M02_VALID_RECOVERY_CANDIDATE_candidate": "d91e645435f942dac258b490099865cebce7f048da148b580d06f15e46db61ba",
+    "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate": "5d48c7fa3b9425224a94b2523c63dbfcfd08a5b1629eb6d130043b28e026e680",
+    "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_EXPLICIT_EQUIVALENCE/CASE_M11_EXPLICIT_EQUIVALENCE_candidate": "79a3055a380b2e829a6221312ac942e16f1adc64ec30f82857d6caf2a6dfb105",
+    "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_NON_EQUIVALENT_BRANCH/CASE_M11_NON_EQUIVALENT_BRANCH_candidate": "b6478a7f6808ed273ef0c1d57e1552b2b41eeb4722b3b142c563977b6a9db1da",
+    "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate": "055758d9b474f74955c15944244bae4785b8505585f380cee69b3ac6b45308cd",
+    "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_DEVICE_SPECIFIC/CASE_M13_DEVICE_SPECIFIC_candidate": "54609e7bb0540e506176dd14e11b73e1cfbf25db7a850d9738192aec0601761f",
+    "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate": "97fb1d2a1fc64a10aeaf806e2e758da21690b4132d868ccd9cfa3598ca239a7c",
+    "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_COMPLETE_GOVERNANCE/CASE_M15_COMPLETE_GOVERNANCE_candidate": "4e0f5672a8a597ccd2c5734a43aace8f13ae83e2247c675fe315d42fff83328d",
+    "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_IDENTIFIABILITY_CAP/CASE_M15_IDENTIFIABILITY_CAP_candidate": "ba3e5ce69171119c19db66bf0ffcb1f7207a53172887208f2f8121674c5419cf",
+    "m06-case-4@artifacts/outputs/m06/bootstrap/run_1/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate": "01458bed4f64102d746dda121eb051f364b581422d4f413e94754cf53deef70a",
+    "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFIRMED/CASE_M13_CONFIRMED_candidate": "bb1b2c0874a74c0a70a62db2ade378d290cc127fd883bca390aa66b4ed5f2e9d",
+    "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFOUNDED_GEOMETRY/CASE_M13_CONFOUNDED_GEOMETRY_candidate": "34e19812c9a301706ab6db719c64de8a768bc69b4620e9ca2b5c64b018487519",
+    "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_SCIENTIFIC_CLIP/CASE_M14_SCIENTIFIC_CLIP_candidate": "6fe4044c635d235aabd7eaba1c14e207781af28c33e846bef8d1e1d54baa3397",
+    "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_CALIBRATION_BLOCK/CASE_M15_CALIBRATION_BLOCK_candidate": "546bd270df9a078c1f9f3bad4d151f754e0a6f5e85152f2f40d4d0fa01e56bce",
+    "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_DEFER/CASE_M14_FALLBACK_DEFER_candidate": "dc1e3ab3b6285de38e94d3d8e10b5afe2e546cd5665acbe7f70397c9679ccee3",
+    "m04-m04-missing-falsifier-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_MISSING_FALSIFIER/CASE_M04_MISSING_FALSIFIER_candidate": "ba73c6148fc675d27f6a0cd743167e7311ecc08d1dd3184ff699677c6917b3a6",
+    "m05-case-governance-guardrail@artifacts/outputs/m05/selftests/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate": "612703db5d33c628a1b5431da7951d35fa3d930a84b6adc7ce407646b477e741",
+    "m05-case-planning-not-pass@artifacts/outputs/m05/selftests/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate": "1b5f783aef72391f5d09e8325d94ec9d9d55c753fb65ee3b098380bd14c81e0f",
+    "m06-case-6@artifacts/outputs/m06/bootstrap/run_1/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate": "eee016da3ae96811aa921fc626ae6eb9c934770574d3747fc7ac9fd6d857cb23",
+    "m07-case-declared-only@artifacts/outputs/m07/selftests/CASE_M07_DECLARED_ONLY_FALLBACK/CASE_M07_DECLARED_ONLY_FALLBACK_candidate": "a21b309b1f139a8c40f834e7b4aa2600837f69d7dccf2d5621875a86b74d0e7c",
+    "m07-case-global@artifacts/outputs/m07/selftests/CASE_M07_GLOBAL_BATH/CASE_M07_GLOBAL_BATH_candidate": "795c739308126c45e193333a28a7ed0740611e14577600500f2b7d74a2950303",
+    "m07-case-hysteresis@artifacts/outputs/m07/selftests/CASE_M07_HYSTERESIS_MEMORY/CASE_M07_HYSTERESIS_MEMORY_candidate": "0d6a36236da6ab92645bc9dc4fc8605a56873e8de8710534f507805fb5510608",
+    "m07-case-kernel@artifacts/outputs/m07/selftests/CASE_M07_KERNEL_MEMORY/CASE_M07_KERNEL_MEMORY_candidate": "d4d302a7d7eed8f461eb44f172e3c880dfa1fb3560a5f4e8631640904202b337",
+    "m07-case-parasitic@artifacts/outputs/m07/selftests/CASE_M07_PARASITIC_MODE/CASE_M07_PARASITIC_MODE_candidate": "f5c8af034b68f8593a21e7d6fba9dc8b81d3fe4c69b01a93827f81a11b8d3f60",
+    "m07-case-tls@artifacts/outputs/m07/selftests/CASE_M07_TLS_SATURATION/CASE_M07_TLS_SATURATION_candidate": "49e354e1384b89d22401a0413760576a81449489626f33674802b57b6366aff6",
+    "m08-case-baseline-sufficiency@artifacts/outputs/m08/selftests/CASE_M08_BASELINE_SUFFICIENCY/CASE_M08_BASELINE_SUFFICIENCY_candidate": "f53a02363a589a574d66f6c7c2c38d30fa05f7fa95ad0c67141d4620436f9670",
+    "m08-case-correlated-residuals@artifacts/outputs/m08/selftests/CASE_M08_CORRELATED_RESIDUALS/CASE_M08_CORRELATED_RESIDUALS_candidate": "8f3934f718ab31b38aee54d063a1efa989969f18e63c899ce0fa52d7871c0912",
+    "m08-case-drive-ramsey@artifacts/outputs/m08/selftests/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate": "a499580f6eace29d419b064c22bc93484278974c48246dd10105dafcf6251b94",
+    "m08-case-heavy-tails@artifacts/outputs/m08/selftests/CASE_M08_NON_GAUSSIAN_BURSTS/CASE_M08_NON_GAUSSIAN_BURSTS_candidate": "3163738764dc819a9f07ae4a8edb3eb3ab9394dc705677496a6fc498873308fa",
+    "m08-case-insufficient-data@artifacts/outputs/m08/selftests/CASE_M08_INSUFFICIENT_JOINT_DATA/CASE_M08_INSUFFICIENT_JOINT_DATA_candidate": "ce17dba6a3b5fdcb647a5c78d0b00f0f5aa53634e2930dfb41155ecf43596762",
+    "m08-case-nonstationary@artifacts/outputs/m08/selftests/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate": "73653fe6dc7e8dff53ede86ca6e136cf32a819a7eb2e08200be3eef6be97ebcb",
+    "m09-case-control-noise@artifacts/outputs/m09/selftests/CASE_M09_CONTROL_NOISE_EXPLAINS/CASE_M09_CONTROL_NOISE_EXPLAINS_candidate": "072add8d10b7657804f0affdf903010c1f2caf3a73a72c90b2d6577d0b18433a",
+    "m09-case-em-purcell@artifacts/outputs/m09/selftests/CASE_M09_EM_PURCELL_EXPLAINS/CASE_M09_EM_PURCELL_EXPLAINS_candidate": "862c4fd0a086e8d65f271de353ade49ba8312f67c5b83c7fab127966bdb86b8b",
+    "m09-case-phonon-supporting@artifacts/outputs/m09/selftests/CASE_M09_PHONON_SUPPORT_ONLY/CASE_M09_PHONON_SUPPORT_ONLY_candidate": "37b2367344f710e19fa24d6f6d8a2ec053674abf949d431af5a9ce55e480b346",
+    "m09-case-qp@artifacts/outputs/m09/selftests/CASE_M09_QP_EXPLAINS/CASE_M09_QP_EXPLAINS_candidate": "4dcf2d4b6be5048156f92b1fbe38724ee044d814b579dfcffe6be4313184bc54",
+    "m09-case-tls@artifacts/outputs/m09/selftests/CASE_M09_TLS_EXPLAINS/CASE_M09_TLS_EXPLAINS_candidate": "43d4def054a79560cdbe7250bd7850e706dddc5fdafa39c48c3e3a3d1a1d6898",
+    "m09-case-vortex-qp-combo@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_QP_COMBINATION/CASE_M09_VORTEX_QP_COMBINATION_candidate": "2da832ed377aa5f97bedf56f8b381e2a7be86468210702e081ea2685086c4260",
+    "m09-case-vortex@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_EXPLAINS/CASE_M09_VORTEX_EXPLAINS_candidate": "91c580c047353ac05b5ebafb469b9c39422cd0fc33bf797607eedfe0721f4c3e",
+    "m10-case-calibration@artifacts/outputs/m10/selftests/CASE_M10_CALIBRATION_DRIFT_EXPLAINS/CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate": "64ba5c8d14c12c8ecb3ae91a026aa0dc469b4c06c1a837375a9c5425dbf2c2d5",
+    "m10-case-control-chain-power-combo@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate": "04202b9d5b19c3082c629db41ff8b67ff396b8125f843bb774392f1bf7fe4fb2",
+    "m10-case-control-chain@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_EXPLAINS/CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate": "35ee8ecd690550af63b34d931c0fbca9c516cd208c51eeac186f4ebbd07c5871",
+    "m10-case-fridge-supporting@artifacts/outputs/m10/selftests/CASE_M10_REFRIGERATOR_SUPPORT_ONLY/CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate": "69bd5903ee5c4d8d800752969f4bff978363386fba5cff238978f57fe701eb15",
+    "m10-case-no-artifact@artifacts/outputs/m10/selftests/CASE_M10_NO_ARTIFACT_ROUTE/CASE_M10_NO_ARTIFACT_ROUTE_candidate": "171449ff5269192e47f04d8eaf67cdd7149991a9114379a01547742462b28e25",
+    "m10-case-power-alias@artifacts/outputs/m10/selftests/CASE_M10_POWER_CALIBRATION_EXPLAINS/CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate": "a2a64070cd2af125124f1c8dbdbd17d883d361ecd2391e3d249b7b31bd6d118c",
+    "m10-case-readout@artifacts/outputs/m10/selftests/CASE_M10_READOUT_ALIAS_EXPLAINS/CASE_M10_READOUT_ALIAS_EXPLAINS_candidate": "db6701655996d134b970f93d560dcf094767246e900d7a4524efdec83f02dd1c",
+    "m04-m04-invalid-scale-claim-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_INVALID_SCALE_CLAIM/CASE_M04_INVALID_SCALE_CLAIM_candidate": "bd7f417529502a7121b99f7a786ca9b1d707a6f22931f14c31dc77f159acabf6",
+    "m05-case-artifact-equivalence@artifacts/outputs/m05/selftests/CASE_M05_ARTIFACT_EQUIVALENCE/CASE_M05_ARTIFACT_EQUIVALENCE_candidate": "aff15aad2f6af8973559e987469f9d28196be835c1c8751dd0c358d74033ce8a",
+    "m05-case-baseline-sufficiency@artifacts/outputs/m05/selftests/CASE_M05_BASELINE_SUFFICIENCY/CASE_M05_BASELINE_SUFFICIENCY_candidate": "f90973fd40f0232e28ff9521d4d6bd5e43d1fc370b94be60f58b26875716c12e",
+    "m05-case-classical-mechanism@artifacts/outputs/m05/selftests/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate": "676a2907061623d60ed7f2d7cb8b22ee2df556ea2cb874b880e399ee5e096e68",
+    "m05-case-lindblad-equivalence@artifacts/outputs/m05/selftests/CASE_M05_LINDBLAD_EQUIVALENCE/CASE_M05_LINDBLAD_EQUIVALENCE_candidate": "748fe5e47274be087fe01386dd1074db4693f260d9b0ed30c9c702cee4b6b5a3",
+    "m06-case-1@artifacts/outputs/m06/bootstrap/run_1/CASE_1_BASELINE_SUFFICIENT_DATASET/CASE_1_BASELINE_SUFFICIENT_DATASET_candidate": "99aa20e157c2f72487d7eb280d9e24cbab71aa76c758a459030150829642abe9",
+    "m06-case-2@artifacts/outputs/m06/bootstrap/run_1/CASE_2_KNOWN_TLS_MECHANISM_DATASET/CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate": "373df231103d27646d78d1147508cca61ba383e50dca40844dc01c8fa5003c82",
+    "m06-case-3@artifacts/outputs/m06/bootstrap/run_1/CASE_3_ARTIFACT_DOMINATED_DATASET/CASE_3_ARTIFACT_DOMINATED_DATASET_candidate": "4da8467a3d4ea935fdcc2c260d355250ab17d25c10a5d6f8c52ee986329cf7aa"
+  },
+  "ranked_candidates": [
+    {
+      "candidate_key": "m05-case-confirmed-proceed@artifacts/outputs/m05/selftests/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate",
+      "candidate_id": "m05-case-confirmed-proceed",
+      "branch_or_model_tag": "M05_CASE_CONFIRMED_PROCEED",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate.json",
+      "candidate_hash": "a751d3617ca00c4411b79cb9a72018702867b9835d2b106c36a7d46c9d15f6f0",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "Cross-device matched-fabrication sweep",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-7@artifacts/outputs/m06/bootstrap/run_1/CASE_7_CONFIRMED_READY_BRANCH/CASE_7_CONFIRMED_READY_BRANCH_candidate",
+      "candidate_id": "m06-case-7",
+      "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+      "candidate_hash": "7f33f27adad31c0b8bd270ed3bff3a0b441b78dee413ed4382460ff27bd993c7",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-device-specific@artifacts/outputs/m05/selftests/CASE_M05_DEVICE_SPECIFIC_SANDBOX/CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate",
+      "candidate_id": "m05-case-device-specific",
+      "branch_or_model_tag": "M05_CASE_DEVICE_SPECIFIC",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_DEVICE_SPECIFIC_SANDBOX\\CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate.json",
+      "candidate_hash": "a87c790efd9cc43857799a4d11b6d18c610c7f7f7468e144f0357970f13f9840",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "DEVICE_SPECIFIC",
+      "best_next_experiment": "Single-device follow-up",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-provisional-no-cross-device@artifacts/outputs/m05/selftests/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate",
+      "candidate_id": "m05-case-provisional-no-cross-device",
+      "branch_or_model_tag": "M05_CASE_PROVISIONAL_NO_CROSS_DEVICE",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json",
+      "candidate_hash": "a1e351865a3b5b08a9708cf6ab4157705d0e462a146383df2cf45f94d1dec730",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "Cross-device discriminant sweep",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-5@artifacts/outputs/m06/bootstrap/run_1/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate",
+      "candidate_id": "m06-case-5",
+      "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+      "candidate_hash": "dbb775d11476021a21c3b6e57512c9a748756856fe1297163b830c17349a627c",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "If the orthogonal discriminants are real, the scheduled cross-device sweep must preserve the observed ranking.",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_SANDBOX/CASE_M14_FALLBACK_SANDBOX_candidate",
+      "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M14_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_SANDBOX\\CASE_M14_FALLBACK_SANDBOX_candidate.json",
+      "candidate_hash": "d3a7bf554f5b9f86659752438354533c2244284d80cac958a17d618374bce285",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 100,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_GOVERNANCE_CLIP/CASE_M14_GOVERNANCE_CLIP_candidate",
+      "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M14_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_GOVERNANCE_CLIP\\CASE_M14_GOVERNANCE_CLIP_candidate.json",
+      "candidate_hash": "1d630e0be9c796989ab1a81bf19195287962bceda33b058573cfd47ba623b0fe",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "why_promoted": [
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 95,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate",
+      "candidate_id": "M12_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M12_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE\\CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate.json",
+      "candidate_hash": "6e4f772130fd431d331e5eaffd3733e69c04f3f030eb02d3ee2c40ec97fbc134",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "Matched discriminant sweep on Qi",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 85,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_PRESERVES_EXPLICIT_PLAN/CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate",
+      "candidate_id": "M12_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M12_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_PRESERVES_EXPLICIT_PLAN\\CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate.json",
+      "candidate_hash": "1459f76b34af8edd947fc71f3623c7db57b9397d228e0832c1361bc27e3fcd98",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "Matched control pair",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 85,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m04-m04-valid-branch-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_VALID_BRANCH/CASE_M04_VALID_BRANCH_candidate",
+      "candidate_id": "m04-m04-valid-branch-2026-03-15",
+      "branch_or_model_tag": "M04_VALID_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_VALID_BRANCH\\CASE_M04_VALID_BRANCH_candidate.json",
+      "candidate_hash": "76b68333daa4da7d2fcdb92bdf2bb7542ad468bc05b2159a8c03e3c0d0354c57",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "The matched-control sweep must separate the branch from baseline and TLS alternatives.",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 85,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M02_WORKING_PATCH_CANDIDATE@artifacts/outputs/m02/selftests/CASE_M02_VALID_RECOVERY_CANDIDATE/CASE_M02_VALID_RECOVERY_CANDIDATE_candidate",
+      "candidate_id": "M02_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M02_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m02\\selftests\\CASE_M02_VALID_RECOVERY_CANDIDATE\\CASE_M02_VALID_RECOVERY_CANDIDATE_candidate.json",
+      "candidate_hash": "d91e645435f942dac258b490099865cebce7f048da148b580d06f15e46db61ba",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate",
+      "candidate_id": "M11_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M11_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json",
+      "candidate_hash": "5d48c7fa3b9425224a94b2523c63dbfcfd08a5b1629eb6d130043b28e026e680",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_EXPLICIT_EQUIVALENCE/CASE_M11_EXPLICIT_EQUIVALENCE_candidate",
+      "candidate_id": "M11_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M11_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json",
+      "candidate_hash": "79a3055a380b2e829a6221312ac942e16f1adc64ec30f82857d6caf2a6dfb105",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_NON_EQUIVALENT_BRANCH/CASE_M11_NON_EQUIVALENT_BRANCH_candidate",
+      "candidate_id": "M11_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M11_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json",
+      "candidate_hash": "b6478a7f6808ed273ef0c1d57e1552b2b41eeb4722b3b142c563977b6a9db1da",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate",
+      "candidate_id": "M12_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M12_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m12\\selftests\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT\\CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate.json",
+      "candidate_hash": "055758d9b474f74955c15944244bae4785b8505585f380cee69b3ac6b45308cd",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_DEVICE_SPECIFIC/CASE_M13_DEVICE_SPECIFIC_candidate",
+      "candidate_id": "M13_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M13_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_DEVICE_SPECIFIC\\CASE_M13_DEVICE_SPECIFIC_candidate.json",
+      "candidate_hash": "54609e7bb0540e506176dd14e11b73e1cfbf25db7a850d9738192aec0601761f",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "DEVICE_SPECIFIC",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate",
+      "candidate_id": "M13_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M13_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE\\CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate.json",
+      "candidate_hash": "97fb1d2a1fc64a10aeaf806e2e758da21690b4132d868ccd9cfa3598ca239a7c",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_COMPLETE_GOVERNANCE/CASE_M15_COMPLETE_GOVERNANCE_candidate",
+      "candidate_id": "M15_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M15_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_COMPLETE_GOVERNANCE\\CASE_M15_COMPLETE_GOVERNANCE_candidate.json",
+      "candidate_hash": "4e0f5672a8a597ccd2c5734a43aace8f13ae83e2247c675fe315d42fff83328d",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_IDENTIFIABILITY_CAP/CASE_M15_IDENTIFIABILITY_CAP_candidate",
+      "candidate_id": "M15_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M15_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_IDENTIFIABILITY_CAP\\CASE_M15_IDENTIFIABILITY_CAP_candidate.json",
+      "candidate_hash": "ba3e5ce69171119c19db66bf0ffcb1f7207a53172887208f2f8121674c5419cf",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 80,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-4@artifacts/outputs/m06/bootstrap/run_1/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate",
+      "candidate_id": "m06-case-4",
+      "branch_or_model_tag": "M06_CASE_OVER_PARAMETERIZED",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH\\CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate.json",
+      "candidate_hash": "01458bed4f64102d746dda121eb051f364b581422d4f413e94754cf53deef70a",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "SANDBOX_ONLY",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "A confirmed cross-device comparison must preserve the claimed discriminant ordering under matched fabrication.",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "why_promoted": [
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 75,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFIRMED/CASE_M13_CONFIRMED_candidate",
+      "candidate_id": "M13_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M13_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFIRMED\\CASE_M13_CONFIRMED_candidate.json",
+      "candidate_hash": "bb1b2c0874a74c0a70a62db2ade378d290cc127fd883bca390aa66b4ed5f2e9d",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 70,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFOUNDED_GEOMETRY/CASE_M13_CONFOUNDED_GEOMETRY_candidate",
+      "candidate_id": "M13_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M13_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m13\\selftests\\CASE_M13_CONFOUNDED_GEOMETRY\\CASE_M13_CONFOUNDED_GEOMETRY_candidate.json",
+      "candidate_hash": "34e19812c9a301706ab6db719c64de8a768bc69b4620e9ca2b5c64b018487519",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "CONFUNDED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=CONFUNDED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 70,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_SCIENTIFIC_CLIP/CASE_M14_SCIENTIFIC_CLIP_candidate",
+      "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M14_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_SCIENTIFIC_CLIP\\CASE_M14_SCIENTIFIC_CLIP_candidate.json",
+      "candidate_hash": "6fe4044c635d235aabd7eaba1c14e207781af28c33e846bef8d1e1d54baa3397",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "SANDBOX_ONLY",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "why_promoted": [
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 70,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_CALIBRATION_BLOCK/CASE_M15_CALIBRATION_BLOCK_candidate",
+      "candidate_id": "M15_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M15_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m15\\selftests\\CASE_M15_CALIBRATION_BLOCK\\CASE_M15_CALIBRATION_BLOCK_candidate.json",
+      "candidate_hash": "546bd270df9a078c1f9f3bad4d151f754e0a6f5e85152f2f40d4d0fa01e56bce",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=INVALID"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 60,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_DEFER/CASE_M14_FALLBACK_DEFER_candidate",
+      "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+      "branch_or_model_tag": "M14_WORKING_PATCH_BRANCH",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m14\\selftests\\CASE_M14_FALLBACK_DEFER\\CASE_M14_FALLBACK_DEFER_candidate.json",
+      "candidate_hash": "dc1e3ab3b6285de38e94d3d8e10b5afe2e546cd5665acbe7f70397c9679ccee3",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m04-m04-missing-falsifier-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_MISSING_FALSIFIER/CASE_M04_MISSING_FALSIFIER_candidate",
+      "candidate_id": "m04-m04-missing-falsifier-2026-03-15",
+      "branch_or_model_tag": "M04_MISSING_FALSIFIER",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_MISSING_FALSIFIER\\CASE_M04_MISSING_FALSIFIER_candidate.json",
+      "candidate_hash": "ba73c6148fc675d27f6a0cd743167e7311ecc08d1dd3184ff699677c6917b3a6",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-governance-guardrail@artifacts/outputs/m05/selftests/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate",
+      "candidate_id": "m05-case-governance-guardrail",
+      "branch_or_model_tag": "M05_CASE_GOVERNANCE_GUARDRAIL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+      "candidate_hash": "612703db5d33c628a1b5431da7951d35fa3d930a84b6adc7ce407646b477e741",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-planning-not-pass@artifacts/outputs/m05/selftests/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate",
+      "candidate_id": "m05-case-planning-not-pass",
+      "branch_or_model_tag": "M05_CASE_PLANNING_NOT_PASS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS\\CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate.json",
+      "candidate_hash": "1b5f783aef72391f5d09e8325d94ec9d9d55c753fb65ee3b098380bd14c81e0f",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NUMERICALLY_UNSTABLE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-6@artifacts/outputs/m06/bootstrap/run_1/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate",
+      "candidate_id": "m06-case-6",
+      "branch_or_model_tag": "M06_CASE_GOVERNANCE_BLOCK",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK\\CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate.json",
+      "candidate_hash": "eee016da3ae96811aa921fc626ae6eb9c934770574d3747fc7ac9fd6d857cb23",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-declared-only@artifacts/outputs/m07/selftests/CASE_M07_DECLARED_ONLY_FALLBACK/CASE_M07_DECLARED_ONLY_FALLBACK_candidate",
+      "candidate_id": "m07-case-declared-only",
+      "branch_or_model_tag": "M07_CASE_DECLARED_ONLY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_DECLARED_ONLY_FALLBACK\\CASE_M07_DECLARED_ONLY_FALLBACK_candidate.json",
+      "candidate_hash": "a21b309b1f139a8c40f834e7b4aa2600837f69d7dccf2d5621875a86b74d0e7c",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-global@artifacts/outputs/m07/selftests/CASE_M07_GLOBAL_BATH/CASE_M07_GLOBAL_BATH_candidate",
+      "candidate_id": "m07-case-global",
+      "branch_or_model_tag": "M07_CASE_GLOBAL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_GLOBAL_BATH\\CASE_M07_GLOBAL_BATH_candidate.json",
+      "candidate_hash": "795c739308126c45e193333a28a7ed0740611e14577600500f2b7d74a2950303",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-hysteresis@artifacts/outputs/m07/selftests/CASE_M07_HYSTERESIS_MEMORY/CASE_M07_HYSTERESIS_MEMORY_candidate",
+      "candidate_id": "m07-case-hysteresis",
+      "branch_or_model_tag": "M07_CASE_HYSTERESIS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_HYSTERESIS_MEMORY\\CASE_M07_HYSTERESIS_MEMORY_candidate.json",
+      "candidate_hash": "0d6a36236da6ab92645bc9dc4fc8605a56873e8de8710534f507805fb5510608",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-kernel@artifacts/outputs/m07/selftests/CASE_M07_KERNEL_MEMORY/CASE_M07_KERNEL_MEMORY_candidate",
+      "candidate_id": "m07-case-kernel",
+      "branch_or_model_tag": "M07_CASE_KERNEL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_KERNEL_MEMORY\\CASE_M07_KERNEL_MEMORY_candidate.json",
+      "candidate_hash": "d4d302a7d7eed8f461eb44f172e3c880dfa1fb3560a5f4e8631640904202b337",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-parasitic@artifacts/outputs/m07/selftests/CASE_M07_PARASITIC_MODE/CASE_M07_PARASITIC_MODE_candidate",
+      "candidate_id": "m07-case-parasitic",
+      "branch_or_model_tag": "M07_CASE_PARASITIC",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_PARASITIC_MODE\\CASE_M07_PARASITIC_MODE_candidate.json",
+      "candidate_hash": "f5c8af034b68f8593a21e7d6fba9dc8b81d3fe4c69b01a93827f81a11b8d3f60",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m07-case-tls@artifacts/outputs/m07/selftests/CASE_M07_TLS_SATURATION/CASE_M07_TLS_SATURATION_candidate",
+      "candidate_id": "m07-case-tls",
+      "branch_or_model_tag": "M07_CASE_TLS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m07\\selftests\\CASE_M07_TLS_SATURATION\\CASE_M07_TLS_SATURATION_candidate.json",
+      "candidate_hash": "49e354e1384b89d22401a0413760576a81449489626f33674802b57b6366aff6",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-baseline-sufficiency@artifacts/outputs/m08/selftests/CASE_M08_BASELINE_SUFFICIENCY/CASE_M08_BASELINE_SUFFICIENCY_candidate",
+      "candidate_id": "m08-case-baseline-sufficiency",
+      "branch_or_model_tag": "M08_CASE_BASELINE_SUFFICIENCY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json",
+      "candidate_hash": "f53a02363a589a574d66f6c7c2c38d30fa05f7fa95ad0c67141d4620436f9670",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-correlated-residuals@artifacts/outputs/m08/selftests/CASE_M08_CORRELATED_RESIDUALS/CASE_M08_CORRELATED_RESIDUALS_candidate",
+      "candidate_id": "m08-case-correlated-residuals",
+      "branch_or_model_tag": "M08_CASE_CORRELATED_RESIDUALS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json",
+      "candidate_hash": "8f3934f718ab31b38aee54d063a1efa989969f18e63c899ce0fa52d7871c0912",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-drive-ramsey@artifacts/outputs/m08/selftests/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate",
+      "candidate_id": "m08-case-drive-ramsey",
+      "branch_or_model_tag": "M08_CASE_DRIVE_RAMSEY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json",
+      "candidate_hash": "a499580f6eace29d419b064c22bc93484278974c48246dd10105dafcf6251b94",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-heavy-tails@artifacts/outputs/m08/selftests/CASE_M08_NON_GAUSSIAN_BURSTS/CASE_M08_NON_GAUSSIAN_BURSTS_candidate",
+      "candidate_id": "m08-case-heavy-tails",
+      "branch_or_model_tag": "M08_CASE_HEAVY_TAILS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json",
+      "candidate_hash": "3163738764dc819a9f07ae4a8edb3eb3ab9394dc705677496a6fc498873308fa",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-insufficient-data@artifacts/outputs/m08/selftests/CASE_M08_INSUFFICIENT_JOINT_DATA/CASE_M08_INSUFFICIENT_JOINT_DATA_candidate",
+      "candidate_id": "m08-case-insufficient-data",
+      "branch_or_model_tag": "M08_CASE_INSUFFICIENT_DATA",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json",
+      "candidate_hash": "ce17dba6a3b5fdcb647a5c78d0b00f0f5aa53634e2930dfb41155ecf43596762",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m08-case-nonstationary@artifacts/outputs/m08/selftests/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate",
+      "candidate_id": "m08-case-nonstationary",
+      "branch_or_model_tag": "M08_CASE_NONSTATIONARY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json",
+      "candidate_hash": "73653fe6dc7e8dff53ede86ca6e136cf32a819a7eb2e08200be3eef6be97ebcb",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-control-noise@artifacts/outputs/m09/selftests/CASE_M09_CONTROL_NOISE_EXPLAINS/CASE_M09_CONTROL_NOISE_EXPLAINS_candidate",
+      "candidate_id": "m09-case-control-noise",
+      "branch_or_model_tag": "M09_CASE_CONTROL_NOISE",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json",
+      "candidate_hash": "072add8d10b7657804f0affdf903010c1f2caf3a73a72c90b2d6577d0b18433a",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-em-purcell@artifacts/outputs/m09/selftests/CASE_M09_EM_PURCELL_EXPLAINS/CASE_M09_EM_PURCELL_EXPLAINS_candidate",
+      "candidate_id": "m09-case-em-purcell",
+      "branch_or_model_tag": "M09_CASE_EM_PURCELL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json",
+      "candidate_hash": "862c4fd0a086e8d65f271de353ade49ba8312f67c5b83c7fab127966bdb86b8b",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-phonon-supporting@artifacts/outputs/m09/selftests/CASE_M09_PHONON_SUPPORT_ONLY/CASE_M09_PHONON_SUPPORT_ONLY_candidate",
+      "candidate_id": "m09-case-phonon-supporting",
+      "branch_or_model_tag": "M09_CASE_PHONON_SUPPORTING",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json",
+      "candidate_hash": "37b2367344f710e19fa24d6f6d8a2ec053674abf949d431af5a9ce55e480b346",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-qp@artifacts/outputs/m09/selftests/CASE_M09_QP_EXPLAINS/CASE_M09_QP_EXPLAINS_candidate",
+      "candidate_id": "m09-case-qp",
+      "branch_or_model_tag": "M09_CASE_QP",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json",
+      "candidate_hash": "4dcf2d4b6be5048156f92b1fbe38724ee044d814b579dfcffe6be4313184bc54",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-tls@artifacts/outputs/m09/selftests/CASE_M09_TLS_EXPLAINS/CASE_M09_TLS_EXPLAINS_candidate",
+      "candidate_id": "m09-case-tls",
+      "branch_or_model_tag": "M09_CASE_TLS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json",
+      "candidate_hash": "43d4def054a79560cdbe7250bd7850e706dddc5fdafa39c48c3e3a3d1a1d6898",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-vortex-qp-combo@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_QP_COMBINATION/CASE_M09_VORTEX_QP_COMBINATION_candidate",
+      "candidate_id": "m09-case-vortex-qp-combo",
+      "branch_or_model_tag": "M09_CASE_VORTEX_QP_COMBO",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json",
+      "candidate_hash": "2da832ed377aa5f97bedf56f8b381e2a7be86468210702e081ea2685086c4260",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m09-case-vortex@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_EXPLAINS/CASE_M09_VORTEX_EXPLAINS_candidate",
+      "candidate_id": "m09-case-vortex",
+      "branch_or_model_tag": "M09_CASE_VORTEX",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json",
+      "candidate_hash": "91c580c047353ac05b5ebafb469b9c39422cd0fc33bf797607eedfe0721f4c3e",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-calibration@artifacts/outputs/m10/selftests/CASE_M10_CALIBRATION_DRIFT_EXPLAINS/CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate",
+      "candidate_id": "m10-case-calibration",
+      "branch_or_model_tag": "M10_CASE_CALIBRATION",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json",
+      "candidate_hash": "64ba5c8d14c12c8ecb3ae91a026aa0dc469b4c06c1a837375a9c5425dbf2c2d5",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-control-chain-power-combo@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate",
+      "candidate_id": "m10-case-control-chain-power-combo",
+      "branch_or_model_tag": "M10_CASE_CONTROL_CHAIN_POWER_COMBO",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json",
+      "candidate_hash": "04202b9d5b19c3082c629db41ff8b67ff396b8125f843bb774392f1bf7fe4fb2",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-control-chain@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_EXPLAINS/CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate",
+      "candidate_id": "m10-case-control-chain",
+      "branch_or_model_tag": "M10_CASE_CONTROL_CHAIN",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json",
+      "candidate_hash": "35ee8ecd690550af63b34d931c0fbca9c516cd208c51eeac186f4ebbd07c5871",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-fridge-supporting@artifacts/outputs/m10/selftests/CASE_M10_REFRIGERATOR_SUPPORT_ONLY/CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate",
+      "candidate_id": "m10-case-fridge-supporting",
+      "branch_or_model_tag": "M10_CASE_FRIDGE_SUPPORTING",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json",
+      "candidate_hash": "69bd5903ee5c4d8d800752969f4bff978363386fba5cff238978f57fe701eb15",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-no-artifact@artifacts/outputs/m10/selftests/CASE_M10_NO_ARTIFACT_ROUTE/CASE_M10_NO_ARTIFACT_ROUTE_candidate",
+      "candidate_id": "m10-case-no-artifact",
+      "branch_or_model_tag": "M10_CASE_NO_ARTIFACT",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json",
+      "candidate_hash": "171449ff5269192e47f04d8eaf67cdd7149991a9114379a01547742462b28e25",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-power-alias@artifacts/outputs/m10/selftests/CASE_M10_POWER_CALIBRATION_EXPLAINS/CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate",
+      "candidate_id": "m10-case-power-alias",
+      "branch_or_model_tag": "M10_CASE_POWER_ALIAS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json",
+      "candidate_hash": "a2a64070cd2af125124f1c8dbdbd17d883d361ecd2391e3d249b7b31bd6d118c",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m10-case-readout@artifacts/outputs/m10/selftests/CASE_M10_READOUT_ALIAS_EXPLAINS/CASE_M10_READOUT_ALIAS_EXPLAINS_candidate",
+      "candidate_id": "m10-case-readout",
+      "branch_or_model_tag": "M10_CASE_READOUT",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
+      "candidate_hash": "db6701655996d134b970f93d560dcf094767246e900d7a4524efdec83f02dd1c",
+      "governance_outcome": "DEFER",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 50,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m04-m04-invalid-scale-claim-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_INVALID_SCALE_CLAIM/CASE_M04_INVALID_SCALE_CLAIM_candidate",
+      "candidate_id": "m04-m04-invalid-scale-claim-2026-03-15",
+      "branch_or_model_tag": "M04_INVALID_SCALE_CLAIM",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m04\\selftests\\CASE_M04_INVALID_SCALE_CLAIM\\CASE_M04_INVALID_SCALE_CLAIM_candidate.json",
+      "candidate_hash": "bd7f417529502a7121b99f7a786ca9b1d707a6f22931f14c31dc77f159acabf6",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "NOT_EVALUATED",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "Matched geometry comparison must preserve the claimed ranking.",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 5,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-artifact-equivalence@artifacts/outputs/m05/selftests/CASE_M05_ARTIFACT_EQUIVALENCE/CASE_M05_ARTIFACT_EQUIVALENCE_candidate",
+      "candidate_id": "m05-case-artifact-equivalence",
+      "branch_or_model_tag": "M05_CASE_ARTIFACT_EQUIVALENCE",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_ARTIFACT_EQUIVALENCE\\CASE_M05_ARTIFACT_EQUIVALENCE_candidate.json",
+      "candidate_hash": "aff15aad2f6af8973559e987469f9d28196be835c1c8751dd0c358d74033ce8a",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-baseline-sufficiency@artifacts/outputs/m05/selftests/CASE_M05_BASELINE_SUFFICIENCY/CASE_M05_BASELINE_SUFFICIENCY_candidate",
+      "candidate_id": "m05-case-baseline-sufficiency",
+      "branch_or_model_tag": "M05_CASE_BASELINE_SUFFICIENCY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_BASELINE_SUFFICIENCY\\CASE_M05_BASELINE_SUFFICIENCY_candidate.json",
+      "candidate_hash": "f90973fd40f0232e28ff9521d4d6bd5e43d1fc370b94be60f58b26875716c12e",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-classical-mechanism@artifacts/outputs/m05/selftests/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate",
+      "candidate_id": "m05-case-classical-mechanism",
+      "branch_or_model_tag": "M05_CASE_CLASSICAL_MECHANISM",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE\\CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate.json",
+      "candidate_hash": "676a2907061623d60ed7f2d7cb8b22ee2df556ea2cb874b880e399ee5e096e68",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-lindblad-equivalence@artifacts/outputs/m05/selftests/CASE_M05_LINDBLAD_EQUIVALENCE/CASE_M05_LINDBLAD_EQUIVALENCE_candidate",
+      "candidate_id": "m05-case-lindblad-equivalence",
+      "branch_or_model_tag": "M05_CASE_LINDBLAD_EQUIVALENCE",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_LINDBLAD_EQUIVALENCE\\CASE_M05_LINDBLAD_EQUIVALENCE_candidate.json",
+      "candidate_hash": "748fe5e47274be087fe01386dd1074db4693f260d9b0ed30c9c702cee4b6b5a3",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_LINDBLAD_EQUIVALENCE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-1@artifacts/outputs/m06/bootstrap/run_1/CASE_1_BASELINE_SUFFICIENT_DATASET/CASE_1_BASELINE_SUFFICIENT_DATASET_candidate",
+      "candidate_id": "m06-case-1",
+      "branch_or_model_tag": "M06_CASE_BASELINE_SUFFICIENT",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_1_BASELINE_SUFFICIENT_DATASET\\CASE_1_BASELINE_SUFFICIENT_DATASET_candidate.json",
+      "candidate_hash": "99aa20e157c2f72487d7eb280d9e24cbab71aa76c758a459030150829642abe9",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_BASELINE_SUFFICIENCY",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-2@artifacts/outputs/m06/bootstrap/run_1/CASE_2_KNOWN_TLS_MECHANISM_DATASET/CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate",
+      "candidate_id": "m06-case-2",
+      "branch_or_model_tag": "M06_CASE_KNOWN_TLS",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_2_KNOWN_TLS_MECHANISM_DATASET\\CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate.json",
+      "candidate_hash": "373df231103d27646d78d1147508cca61ba383e50dca40844dc01c8fa5003c82",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_CLASSICAL_MECHANISM_EQUIVALENCE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-3@artifacts/outputs/m06/bootstrap/run_1/CASE_3_ARTIFACT_DOMINATED_DATASET/CASE_3_ARTIFACT_DOMINATED_DATASET_candidate",
+      "candidate_id": "m06-case-3",
+      "branch_or_model_tag": "M06_CASE_ARTIFACT_DOMINATED",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_3_ARTIFACT_DOMINATED_DATASET\\CASE_3_ARTIFACT_DOMINATED_DATASET_candidate.json",
+      "candidate_hash": "4da8467a3d4ea935fdcc2c260d355250ab17d25c10a5d6f8c52ee986329cf7aa",
+      "governance_outcome": "REJECT",
+      "scientific_decision": "REJECTED_BY_ARTIFACT_EQUIVALENCE",
+      "cross_device_status": "NOT_REQUIRED",
+      "best_next_experiment": "No surfaced experiment path",
+      "why_blocked": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 0,
+      "what_changed_since_last_run": "unchanged"
+    }
+  ],
+  "selected_candidates": [
+    {
+      "candidate_key": "m05-case-confirmed-proceed@artifacts/outputs/m05/selftests/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate",
+      "candidate_id": "m05-case-confirmed-proceed",
+      "branch_or_model_tag": "M05_CASE_CONFIRMED_PROCEED",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED\\CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate.json",
+      "candidate_hash": "a751d3617ca00c4411b79cb9a72018702867b9835d2b106c36a7d46c9d15f6f0",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "Cross-device matched-fabrication sweep",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-7@artifacts/outputs/m06/bootstrap/run_1/CASE_7_CONFIRMED_READY_BRANCH/CASE_7_CONFIRMED_READY_BRANCH_candidate",
+      "candidate_id": "m06-case-7",
+      "branch_or_model_tag": "M06_CASE_CONFIRMED_READY",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_7_CONFIRMED_READY_BRANCH\\CASE_7_CONFIRMED_READY_BRANCH_candidate.json",
+      "candidate_hash": "7f33f27adad31c0b8bd270ed3bff3a0b441b78dee413ed4382460ff27bd993c7",
+      "governance_outcome": "PROCEED",
+      "scientific_decision": "CROSS_DEVICE_CONFIRMED_IDENTIFIABLE",
+      "cross_device_status": "CONFIRMED",
+      "best_next_experiment": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+      "why_blocked": [
+        "No surfaced blocker"
+      ],
+      "why_promoted": [
+        "governance_outcome=PROCEED",
+        "cross-device confirmation complete",
+        "cross_device_status=CONFIRMED"
+      ],
+      "priority_score": 130,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-device-specific@artifacts/outputs/m05/selftests/CASE_M05_DEVICE_SPECIFIC_SANDBOX/CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate",
+      "candidate_id": "m05-case-device-specific",
+      "branch_or_model_tag": "M05_CASE_DEVICE_SPECIFIC",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_DEVICE_SPECIFIC_SANDBOX\\CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate.json",
+      "candidate_hash": "a87c790efd9cc43857799a4d11b6d18c610c7f7f7468e144f0357970f13f9840",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "DEVICE_SPECIFIC",
+      "best_next_experiment": "Single-device follow-up",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m05-case-provisional-no-cross-device@artifacts/outputs/m05/selftests/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate",
+      "candidate_id": "m05-case-provisional-no-cross-device",
+      "branch_or_model_tag": "M05_CASE_PROVISIONAL_NO_CROSS_DEVICE",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m05\\selftests\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE\\CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate.json",
+      "candidate_hash": "a1e351865a3b5b08a9708cf6ab4157705d0e462a146383df2cf45f94d1dec730",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "Cross-device discriminant sweep",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    },
+    {
+      "candidate_key": "m06-case-5@artifacts/outputs/m06/bootstrap/run_1/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate",
+      "candidate_id": "m06-case-5",
+      "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+      "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m06\\bootstrap\\run_1\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS\\CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate.json",
+      "candidate_hash": "dbb775d11476021a21c3b6e57512c9a748756856fe1297163b830c17349a627c",
+      "governance_outcome": "SANDBOX_ONLY",
+      "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "cross_device_status": "SCHEDULED",
+      "best_next_experiment": "If the orthogonal discriminants are real, the scheduled cross-device sweep must preserve the observed ranking.",
+      "why_blocked": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "why_promoted": [
+        "Promotion criteria not fully met"
+      ],
+      "priority_score": 105,
+      "what_changed_since_last_run": "unchanged"
+    }
+  ],
+  "summary": {
+    "best_next_experiment": "Cross-device matched-fabrication sweep",
+    "promotion_ready_candidates": [
+      "m05-case-confirmed-proceed",
+      "m06-case-7"
+    ],
+    "promotion_ready_candidate_keys": [
+      "m05-case-confirmed-proceed@artifacts/outputs/m05/selftests/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED/CASE_M05_CROSS_DEVICE_CONFIRMED_PROCEED_candidate",
+      "m06-case-7@artifacts/outputs/m06/bootstrap/run_1/CASE_7_CONFIRMED_READY_BRANCH/CASE_7_CONFIRMED_READY_BRANCH_candidate"
+    ],
+    "blocked_candidates": {
+      "m05-case-device-specific": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC"
+      ],
+      "m05-case-provisional-no-cross-device": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-5": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "M14_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M12_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m04-m04-valid-branch-2026-03-15": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M02_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M11_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M13_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M15_WORKING_PATCH_CANDIDATE": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-4": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "m04-m04-missing-falsifier-2026-03-15": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-governance-guardrail": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "m05-case-planning-not-pass": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED"
+      ],
+      "m06-case-6": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "m07-case-declared-only": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-global": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-hysteresis": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-kernel": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-parasitic": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-tls": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-baseline-sufficiency": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-correlated-residuals": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-drive-ramsey": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-heavy-tails": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-insufficient-data": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-nonstationary": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-control-noise": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-em-purcell": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-phonon-supporting": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-qp": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-tls": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-vortex-qp-combo": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-vortex": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-calibration": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-control-chain-power-combo": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-control-chain": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-fridge-supporting": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-no-artifact": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-power-alias": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-readout": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m04-m04-invalid-scale-claim-2026-03-15": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-artifact-equivalence": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-baseline-sufficiency": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-classical-mechanism": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-lindblad-equivalence": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-1": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-2": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-3": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ]
+    },
+    "blocked_candidates_by_key": {
+      "m05-case-device-specific@artifacts/outputs/m05/selftests/CASE_M05_DEVICE_SPECIFIC_SANDBOX/CASE_M05_DEVICE_SPECIFIC_SANDBOX_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC"
+      ],
+      "m05-case-provisional-no-cross-device@artifacts/outputs/m05/selftests/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE/CASE_M05_PROVISIONAL_SURVIVAL_NO_CROSS_DEVICE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-5@artifacts/outputs/m06/bootstrap/run_1/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS/CASE_5_VALID_CANDIDATE_WITH_ORTHOGONAL_DISCRIMINANTS_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_SANDBOX/CASE_M14_FALLBACK_SANDBOX_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_GOVERNANCE_CLIP/CASE_M14_GOVERNANCE_CLIP_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE/CASE_M12_CONSTRUCTS_FALSIFIER_PACKAGE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_PRESERVES_EXPLICIT_PLAN/CASE_M12_PRESERVES_EXPLICIT_PLAN_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m04-m04-valid-branch-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_VALID_BRANCH/CASE_M04_VALID_BRANCH_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M02_WORKING_PATCH_CANDIDATE@artifacts/outputs/m02/selftests/CASE_M02_VALID_RECOVERY_CANDIDATE/CASE_M02_VALID_RECOVERY_CANDIDATE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE/CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_EXPLICIT_EQUIVALENCE/CASE_M11_EXPLICIT_EQUIVALENCE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M11_WORKING_PATCH_CANDIDATE@artifacts/outputs/m11/selftests/CASE_M11_NON_EQUIVALENT_BRANCH/CASE_M11_NON_EQUIVALENT_BRANCH_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M12_WORKING_PATCH_CANDIDATE@artifacts/outputs/m12/selftests/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT/CASE_M12_NO_PACKAGE_WITHOUT_MINIMUM_CONTEXT_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_DEVICE_SPECIFIC/CASE_M13_DEVICE_SPECIFIC_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=DEVICE_SPECIFIC",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE/CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_COMPLETE_GOVERNANCE/CASE_M15_COMPLETE_GOVERNANCE_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_IDENTIFIABILITY_CAP/CASE_M15_IDENTIFIABILITY_CAP_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED"
+      ],
+      "m06-case-4@artifacts/outputs/m06/bootstrap/run_1/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH/CASE_4_OVER_PARAMETERIZED_HAMILTONIAN_BRANCH_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFIRMED/CASE_M13_CONFIRMED_candidate": [
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M13_WORKING_PATCH_CANDIDATE@artifacts/outputs/m13/selftests/CASE_M13_CONFOUNDED_GEOMETRY/CASE_M13_CONFOUNDED_GEOMETRY_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=CONFUNDED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_SCIENTIFIC_CLIP/CASE_M14_SCIENTIFIC_CLIP_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY"
+      ],
+      "M15_WORKING_PATCH_CANDIDATE@artifacts/outputs/m15/selftests/CASE_M15_CALIBRATION_BLOCK/CASE_M15_CALIBRATION_BLOCK_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=SCHEDULED",
+        "calibration_status=INVALID"
+      ],
+      "M14_WORKING_PATCH_CANDIDATE@artifacts/outputs/m14/selftests/CASE_M14_FALLBACK_DEFER/CASE_M14_FALLBACK_DEFER_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m04-m04-missing-falsifier-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_MISSING_FALSIFIER/CASE_M04_MISSING_FALSIFIER_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-governance-guardrail@artifacts/outputs/m05/selftests/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK/CASE_M05_GOVERNANCE_GUARDRAIL_BLOCK_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "m05-case-planning-not-pass@artifacts/outputs/m05/selftests/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS/CASE_M05_PLANNING_FIELD_DOES_NOT_EQUAL_PASS_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED"
+      ],
+      "m06-case-6@artifacts/outputs/m06/bootstrap/run_1/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK/CASE_6_GOVERNANCE_GUARDRAIL_BLOCK_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=INVALID",
+        "dataset_governance=INCOMPLETE"
+      ],
+      "m07-case-declared-only@artifacts/outputs/m07/selftests/CASE_M07_DECLARED_ONLY_FALLBACK/CASE_M07_DECLARED_ONLY_FALLBACK_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-global@artifacts/outputs/m07/selftests/CASE_M07_GLOBAL_BATH/CASE_M07_GLOBAL_BATH_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-hysteresis@artifacts/outputs/m07/selftests/CASE_M07_HYSTERESIS_MEMORY/CASE_M07_HYSTERESIS_MEMORY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-kernel@artifacts/outputs/m07/selftests/CASE_M07_KERNEL_MEMORY/CASE_M07_KERNEL_MEMORY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-parasitic@artifacts/outputs/m07/selftests/CASE_M07_PARASITIC_MODE/CASE_M07_PARASITIC_MODE_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m07-case-tls@artifacts/outputs/m07/selftests/CASE_M07_TLS_SATURATION/CASE_M07_TLS_SATURATION_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-baseline-sufficiency@artifacts/outputs/m08/selftests/CASE_M08_BASELINE_SUFFICIENCY/CASE_M08_BASELINE_SUFFICIENCY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-correlated-residuals@artifacts/outputs/m08/selftests/CASE_M08_CORRELATED_RESIDUALS/CASE_M08_CORRELATED_RESIDUALS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-drive-ramsey@artifacts/outputs/m08/selftests/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH/CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-heavy-tails@artifacts/outputs/m08/selftests/CASE_M08_NON_GAUSSIAN_BURSTS/CASE_M08_NON_GAUSSIAN_BURSTS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-insufficient-data@artifacts/outputs/m08/selftests/CASE_M08_INSUFFICIENT_JOINT_DATA/CASE_M08_INSUFFICIENT_JOINT_DATA_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m08-case-nonstationary@artifacts/outputs/m08/selftests/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED/CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-control-noise@artifacts/outputs/m09/selftests/CASE_M09_CONTROL_NOISE_EXPLAINS/CASE_M09_CONTROL_NOISE_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-em-purcell@artifacts/outputs/m09/selftests/CASE_M09_EM_PURCELL_EXPLAINS/CASE_M09_EM_PURCELL_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-phonon-supporting@artifacts/outputs/m09/selftests/CASE_M09_PHONON_SUPPORT_ONLY/CASE_M09_PHONON_SUPPORT_ONLY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-qp@artifacts/outputs/m09/selftests/CASE_M09_QP_EXPLAINS/CASE_M09_QP_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-tls@artifacts/outputs/m09/selftests/CASE_M09_TLS_EXPLAINS/CASE_M09_TLS_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-vortex-qp-combo@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_QP_COMBINATION/CASE_M09_VORTEX_QP_COMBINATION_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m09-case-vortex@artifacts/outputs/m09/selftests/CASE_M09_VORTEX_EXPLAINS/CASE_M09_VORTEX_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-calibration@artifacts/outputs/m10/selftests/CASE_M10_CALIBRATION_DRIFT_EXPLAINS/CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-control-chain-power-combo@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION/CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-control-chain@artifacts/outputs/m10/selftests/CASE_M10_CONTROL_CHAIN_EXPLAINS/CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-fridge-supporting@artifacts/outputs/m10/selftests/CASE_M10_REFRIGERATOR_SUPPORT_ONLY/CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-no-artifact@artifacts/outputs/m10/selftests/CASE_M10_NO_ARTIFACT_ROUTE/CASE_M10_NO_ARTIFACT_ROUTE_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-power-alias@artifacts/outputs/m10/selftests/CASE_M10_POWER_CALIBRATION_EXPLAINS/CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m10-case-readout@artifacts/outputs/m10/selftests/CASE_M10_READOUT_ALIAS_EXPLAINS/CASE_M10_READOUT_ALIAS_EXPLAINS_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m04-m04-invalid-scale-claim-2026-03-15@artifacts/outputs/m04/selftests/CASE_M04_INVALID_SCALE_CLAIM/CASE_M04_INVALID_SCALE_CLAIM_candidate": [
+        "promotion_cap_governance=SANDBOX_ONLY",
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-artifact-equivalence@artifacts/outputs/m05/selftests/CASE_M05_ARTIFACT_EQUIVALENCE/CASE_M05_ARTIFACT_EQUIVALENCE_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-baseline-sufficiency@artifacts/outputs/m05/selftests/CASE_M05_BASELINE_SUFFICIENCY/CASE_M05_BASELINE_SUFFICIENCY_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-classical-mechanism@artifacts/outputs/m05/selftests/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE/CASE_M05_CLASSICAL_MECHANISM_EQUIVALENCE_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m05-case-lindblad-equivalence@artifacts/outputs/m05/selftests/CASE_M05_LINDBLAD_EQUIVALENCE/CASE_M05_LINDBLAD_EQUIVALENCE_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-1@artifacts/outputs/m06/bootstrap/run_1/CASE_1_BASELINE_SUFFICIENT_DATASET/CASE_1_BASELINE_SUFFICIENT_DATASET_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-2@artifacts/outputs/m06/bootstrap/run_1/CASE_2_KNOWN_TLS_MECHANISM_DATASET/CASE_2_KNOWN_TLS_MECHANISM_DATASET_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ],
+      "m06-case-3@artifacts/outputs/m06/bootstrap/run_1/CASE_3_ARTIFACT_DOMINATED_DATASET/CASE_3_ARTIFACT_DOMINATED_DATASET_candidate": [
+        "cross_device_status=NOT_REQUIRED",
+        "calibration_status=PENDING_REVIEW",
+        "dataset_governance=PENDING_REVIEW"
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+schema_name: mmm_studio.sweep_spec
+schema_version: "1.0"
+name: geometry-family-tranche
+description: Compare candidate subsets by geometry family using the existing surrogate scorer.
+version: "1.0.0"
+default_output_root: artifacts/runs/sweeps
+shared_parameters:
+  default_profile: broadband
+  top_n: 6
+tranches:
+  - tranche_id: geometry_family
+    objective: Hold the profile fixed while comparing distinct structure-family subsets.
+    execution_mode: sequential
+    shared_profile: broadband
+    comparison_strategy:
+      top_k: 3
+      robustness_top_k: 3
+      leaderboard_size: 8
+    slices:
+      - slice_id: high_impedance_surface
+        input_registry_scope:
+          structure_families:
+            - high_impedance_surface
+        tags:
+          - geometry_family
+          - packaging
+      - slice_id: local_phononic_crystal
+        input_registry_scope:
+          structure_families:
+            - local_phononic_crystal
+        tags:
+          - geometry_family
+          - phononic
+      - slice_id: phonon_escape_router
+        input_registry_scope:
+          structure_families:
+            - phonon_escape_router
+        tags:
+          - geometry_family
+          - phononic
+      - slice_id: vortex_pinning_lattice
+        input_registry_scope:
+          structure_families:
+            - vortex_pinning_lattice
+        tags:
+          - geometry_family
+          - null_control

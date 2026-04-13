@@ -20,13 +20,20 @@ from __future__ import annotations
 
 import argparse
 import copy
-import hashlib
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
+
+from qdp_io.artifacts import dump_json, module_report_header, sha256_file, utc_now
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -35,15 +42,6 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f'JSON root must be an object: {path}')
     return data
-
-
-def sha256(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open('rb') as fh:
-        for chunk in iter(lambda: fh.read(65536), b''):
-            h.update(chunk)
-    return h.hexdigest()
-
 
 def resolve_manifest(manifest: Dict[str, Any], root: Path, mode: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     resolved: List[Dict[str, Any]] = []
@@ -58,7 +56,7 @@ def resolve_manifest(manifest: Dict[str, Any], root: Path, mode: str) -> Tuple[L
         item['absolute_path'] = str(path)
         if path.exists():
             item['resolved'] = True
-            item['sha256'] = sha256(path)
+            item['sha256'] = sha256_file(path)
             item['bytes'] = path.stat().st_size
             resolved.append(item)
         else:
@@ -173,12 +171,10 @@ def main() -> int:
     auto_flags = [f"REFERENCE_UNRESOLVED:{u['ref_id']}" for u in critical_unresolved]
 
     report = {
-        'artifact_id': 'QDP_V10_6_REFERENCE_RESOLUTION_REPORT_M03',
+        **module_report_header('QDP_V10_6_REFERENCE_RESOLUTION_REPORT_M03', 'M03'),
         'report_id': f"m03-reference-report-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}",
-        'module_id': 'M03',
         'mode': args.mode,
         'root': str(args.root),
-        'timestamp_utc': datetime.now(timezone.utc).isoformat(),
         'manifest_id': manifest.get('artifact_id', ''),
         'registry_id': registry.get('artifact_id', ''),
         'resolved_count': len(resolved),
@@ -210,7 +206,7 @@ def main() -> int:
     }
 
     if args.write_report:
-        args.write_report.write_text(json.dumps(report, indent=2), encoding='utf-8')
+        dump_json(args.write_report, report)
 
     if args.candidate:
         candidate = load_json(args.candidate)
@@ -219,7 +215,7 @@ def main() -> int:
             linked.append(str(args.write_report))
         patched = update_candidate(candidate, registry, critical_unresolved, report['report_id'], linked)
         if args.write_candidate:
-            args.write_candidate.write_text(json.dumps(patched, indent=2), encoding='utf-8')
+            dump_json(args.write_candidate, patched)
         else:
             print(json.dumps(patched, indent=2))
     else:

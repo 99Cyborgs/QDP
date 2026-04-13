@@ -1,0 +1,756 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_MECHANISM_REGISTRY
+baseline_mechanism_hierarchy:
+- vortex_loss
+- quasiparticle_poisoning
+- two_level_systems
+- phonon_coupling
+- control_electronics_noise
+mechanisms:
+- mechanism_id: MECH-EM-001
+  name: Photonic-bandgap / electromagnetic-LDOS suppression
+  mechanism_class: electromagnetic_environment
+  priority_tier: A
+  status: active
+  physical_principle: Periodic microwave structures suppress local electromagnetic density of states and radiative decay channels near the device frequency.
+  target_decoherence_channels:
+    primary:
+    - T1 relaxation
+    secondary:
+    - spectral diffusion via reduced parasitic mode density
+  predicted_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-BG-SHIFT
+  - OBS-PKG-S21
+  predicted_observable_signatures:
+  - T1 enhancement centered near engineered stopband or band edge.
+  - Witness spectroscopy resolves stopband / band-edge marker at cryogenic temperature.
+  - Package transfer function remains insufficient to explain the full T1 gain.
+  expected_scaling_laws:
+    frequency: Maximal effect when qubit or resonator frequency sits inside or just below target bandgap.
+    geometry: Effect increases with number of cells and impedance contrast until saturation.
+    temperature: Weak direct temperature dependence after packaging is fixed.
+    magnetic_field: No primary scaling except through superconducting film degradation.
+    drive_amplitude: Weak amplitude dependence; strong amplitude dependence suggests TLS or control null.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Lead-branch feasible in planar superconducting hardware.
+  experimental_protocol_ids:
+  - EXP-T1-FSWEEP-01
+  - EXP-PKG-MODE-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-004
+  - VAL-007
+  - VAL-009
+  - VAL-011
+  - VAL-015
+  baseline_null_priority:
+  - NULL-EM-PURCELL
+  - NULL-PKG-MODE
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-EM-HKI-FENCE
+  rejection_criteria:
+  - Reject if package-mode or Purcell-null model explains the T1 shift using measured S-parameters alone.
+  - Reject if stopband witness is absent at cryogenic temperature.
+  - Reject if geometry scaling fails.
+  literature_basis:
+  - Mirhosseini et al., Nat. Commun. 2018, 10.1038/s41467-018-06142-z
+  - Review evidence for superconducting quantum metamaterials with lifetime enhancement and band-edge effects
+- mechanism_id: MECH-PH-001
+  name: Phononic-bandgap engineering of TLS relaxation
+  mechanism_class: phononic_environment
+  priority_tier: A
+  status: active
+  physical_principle: A local phononic crystal suppresses or reshapes phonon density of states that couple to TLSs and junction-region excitations, altering relaxation memory and spectral diffusion.
+  target_decoherence_channels:
+    primary:
+    - T1 relaxation
+    - spectral diffusion
+    secondary:
+    - T2 dephasing
+    - non-Markovian bath signatures
+  predicted_observable_ids:
+  - OBS-T1-NMARK
+  - OBS-T1-MEAN
+  - OBS-SDIFF-PSD
+  - OBS-BG-SHIFT
+  - OBS-TEMP-SLOPE
+  predicted_observable_signatures:
+  - Biexponential or memory-kernel relaxation appears near the phononic stopband.
+  - Spectral-diffusion PSD changes together with T1/T2 rather than independently.
+  - Witness or simulation alignment shows phononic gap near target mode frequency.
+  expected_scaling_laws:
+    frequency: Strongest when defect or device-relevant phonon frequency overlaps the engineered gap.
+    geometry: Gap center and width scale with lattice constant, neck width, membrane thickness, and cell count.
+    temperature: TLS-related temperature scaling is modified; nontrivial crossover expected as thermal phonon population rises.
+    magnetic_field: No direct field scaling expected.
+    drive_amplitude: Strong power dependence would indicate TLS saturation rather than bath engineering.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: SOI membrane release increases process risk but remains within advanced academic cleanroom capability.
+  experimental_protocol_ids:
+  - EXP-HOLEBURN-THERM-01
+  - EXP-T1-FSWEEP-01
+  - EXP-RAMSEY-PSD-01
+  - EXP-TEMP-SCAN-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-003
+  - VAL-004
+  - VAL-005
+  - VAL-007
+  - VAL-008
+  - VAL-009
+  - VAL-013
+  - VAL-015
+  baseline_null_priority:
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  - NULL-CTRL-DISTORT
+  related_structure_ids:
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-SOI-FULLCAP-PHC
+  rejection_criteria:
+  - Reject if memory-kernel evidence is absent and single-exponential decay fits remain sufficient.
+  - Reject if temperature dependence matches standard TLS saturation / thermal-gradient nulls more closely.
+  - Reject if as-built lattice dimensions move the bandgap away from the target range.
+  literature_basis:
+  - Chen et al., Sci. Adv. 2024, 10.1126/sciadv.ado6240
+  - Odeh et al., Nat. Phys. 2025, 10.1038/s41567-024-02740-5
+  - Fluxonium non-Markovian relaxometry evidence, Nat. Commun. 2026, 10.1038/s41467-026-69910-2
+- mechanism_id: MECH-PH-002
+  name: Phonon escape routing and down-conversion
+  mechanism_class: phonon_transport
+  priority_tier: A
+  status: active
+  physical_principle: Structured acoustic pathways route pair-breaking phonons away from the active region or down-convert them before re-breaking Cooper pairs, reducing local quasiparticle burden.
+  target_decoherence_channels:
+    primary:
+    - quasiparticle density
+    - T1 relaxation
+    secondary:
+    - phonon escape pathways
+  predicted_observable_ids:
+  - OBS-QP-RECOV
+  - OBS-QP-PARITY
+  - OBS-T1-MEAN
+  - OBS-TEMP-SLOPE
+  predicted_observable_signatures:
+  - Faster recovery after controlled quasiparticle or phonon injection.
+  - Lower steady-state parity-switching rate at fixed shielding and temperature.
+  - Improvement correlates with phonon routing geometry, not only with added normal metal.
+  expected_scaling_laws:
+    frequency: Acoustic routing effect tied to pair-breaking phonon energies and broad phonon transport spectrum rather than single microwave resonance.
+    geometry: Recovery time scales with sink distance, taper angle, impedance gradient, and escape area.
+    temperature: Effect weakens when thermal quasiparticles dominate over injected nonequilibrium population.
+    magnetic_field: Weak direct scaling except through vortex-assisted recombination or heating.
+    drive_amplitude: Large drive-induced heating should expose thermal null if present.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Graded acoustic sinks are standard-lab feasible if membrane release is avoided or controlled.
+  experimental_protocol_ids:
+  - EXP-QP-INJECT-01
+  - EXP-QP-PARITY-01
+  - EXP-TEMP-SCAN-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-007
+  - VAL-008
+  - VAL-009
+  - VAL-012
+  - VAL-015
+  baseline_null_priority:
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-PH-GRADED-SINK
+  - STR-HYB-BILAYER-INTERPOSER
+  rejection_criteria:
+  - Reject if recovery improvements are fully explained by ordinary gap-engineered traps or added normal-metal area.
+  - Reject if parity switching does not co-move with recovery improvement.
+  - Reject if injected energy calibration differs across variants.
+  literature_basis:
+  - Yelton et al., Phys. Rev. B 2024, 10.1103/PhysRevB.110.024519
+  - Pair-breaking phonon and quasiparticle transport literature in superconducting circuits
+- mechanism_id: MECH-VX-001
+  name: Vortex-pinning lattice and parked-vortex control
+  mechanism_class: magnetic_vortex_control
+  priority_tier: A
+  status: active
+  physical_principle: Periodic antidots or engineered pinning sites set vortex entry and mobility, separating vortex-related loss from claimed metamaterial effects.
+  target_decoherence_channels:
+    primary:
+    - vortex mobility
+    - T1 relaxation
+    - witness resonator loss
+    secondary:
+    - quasiparticle density
+  predicted_observable_ids:
+  - OBS-VORTEX-SLOPE
+  - OBS-T1-MEAN
+  - OBS-WITNESS-QI
+  - OBS-QP-PARITY
+  predicted_observable_signatures:
+  - Loss versus field-cool becomes flatter or more reproducible when pinning lattice is present.
+  - Effect depends strongly on field history and antidot geometry.
+  - If dominant, coherence changes track magnetic field more strongly than band-edge placement.
+  expected_scaling_laws:
+    frequency: Mostly broadband microwave-loss effect rather than narrowband spectral feature.
+    geometry: Strong dependence on antidot pitch, radius, and placement relative to current crowding regions.
+    temperature: Vortex mobility increases with temperature; field-cooled loss slope typically rises.
+    magnetic_field: Primary discriminant; strong hysteresis or slope indicates vortex mechanism.
+    drive_amplitude: Weak except in nonlinear vortex motion regimes.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Mandatory null-closure pathway for perforated or periodic superconducting films.
+  experimental_protocol_ids:
+  - EXP-BFIELD-VORTEX-01
+  - EXP-QP-PARITY-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-003
+  - VAL-006
+  - VAL-007
+  - VAL-009
+  - VAL-010
+  - VAL-015
+  baseline_null_priority:
+  - NULL-VORTEX
+  - NULL-SHIELDING
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-VX-ANTIDOT-LATTICE
+  rejection_criteria:
+  - Reject metamaterial interpretation if field dependence dominates effect size.
+  - Reject if zero-field and field-cooled differences exceed candidate geometry trend.
+  - Reject if antidot process damage degrades base-film quality independently.
+  literature_basis:
+  - Bothner et al., Appl. Phys. Lett. 2012, 10.1063/1.3684612
+  - Bafia et al., J. Appl. Phys. 2025, 10.1063/5.0282159
+- mechanism_id: MECH-EM-002
+  name: High-impedance boundary-condition engineering
+  mechanism_class: electromagnetic_boundary_condition
+  priority_tier: B
+  status: active
+  physical_principle: High-impedance surfaces or metamaterial boundaries reduce electric-field participation and parasitic current closure into package or lid structures.
+  target_decoherence_channels:
+    primary:
+    - T1 relaxation
+    - T2 dephasing
+    secondary:
+    - control electronics noise susceptibility
+  predicted_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-WITNESS-QI
+  - OBS-PKG-S21
+  - OBS-BG-SHIFT
+  predicted_observable_signatures:
+  - Witness resonators and qubits show coherence improvement without requiring local membrane release.
+  - Transfer-function changes are localized to designed boundary stopbands rather than arbitrary package modes.
+  - Improvement scales with patch period and substrate spacing.
+  expected_scaling_laws:
+    frequency: Optimized around qubit control and readout bands with stopband centered above the readout band when possible.
+    geometry: Depends on patch size, gap width, via or fence spacing, and lid separation.
+    temperature: Weak direct dependence.
+    magnetic_field: Weak, unless film quality or trapped flux changes current distribution.
+    drive_amplitude: Weak direct dependence.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Good standard-lab lead or support branch for planar packaging studies.
+  experimental_protocol_ids:
+  - EXP-T1-FSWEEP-01
+  - EXP-PKG-MODE-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-004
+  - VAL-007
+  - VAL-009
+  - VAL-011
+  - VAL-015
+  baseline_null_priority:
+  - NULL-PKG-MODE
+  - NULL-EM-PURCELL
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-EM-LID-HIS
+  - STR-EM-HKI-FENCE
+  rejection_criteria:
+  - Reject if effect is reproduced by moving the lid or package geometry without metamaterial patterning.
+  - Reject if stopband is not seen in cryogenic package characterization.
+  - Reject if boundary pattern introduces slotline or control-path problems.
+  literature_basis:
+  - Microwave high-impedance-surface packaging literature and superconducting resonator boundary-engineering practice
+- mechanism_id: MECH-EM-003
+  name: Common-mode / slotline suppression by periodic ground engineering
+  mechanism_class: control_mode_suppression
+  priority_tier: B
+  status: active
+  physical_principle: Periodic ground interruptions, bridges, or inductive fences suppress slotline/common-mode propagation that can drive dephasing or unintended loss.
+  target_decoherence_channels:
+    primary:
+    - T2 dephasing
+    secondary:
+    - T1 relaxation
+    - control electronics noise
+  predicted_observable_ids:
+  - OBS-T2STAR
+  - OBS-T2ECHO
+  - OBS-CTRL-PSD
+  - OBS-PKG-S21
+  predicted_observable_signatures:
+  - Improved T2* and echo with reduced de-embedded control-line/common-mode noise.
+  - Effect is broadband over control bands and does not require narrow band-edge alignment.
+  - Package-mode closure alone cannot reproduce the dephasing reduction.
+  expected_scaling_laws:
+    frequency: Broadband across control and readout spur bands.
+    geometry: Depends on bridge spacing, fence inductance, and ground-gap pitch.
+    temperature: Weak direct dependence.
+    magnetic_field: Possible secondary sensitivity if added bridges trap flux.
+    drive_amplitude: Improvement should persist at matched source power unless saturation null is active.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Must explicitly separate from ordinary wiring/filtering improvements.
+  experimental_protocol_ids:
+  - EXP-RAMSEY-PSD-01
+  - EXP-DRIVE-AMP-01
+  - EXP-PKG-MODE-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-007
+  - VAL-009
+  - VAL-011
+  - VAL-015
+  baseline_null_priority:
+  - NULL-CTRL-DISTORT
+  - NULL-PKG-MODE
+  - NULL-SHIELDING
+  related_structure_ids:
+  - STR-EM-HKI-FENCE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  rejection_criteria:
+  - Reject if line-calibration differences explain the T2 improvement.
+  - Reject if source-noise or attenuation changes dominate control-noise PSD change.
+  - Reject if slotline suppression merely duplicates an existing crossover / bridge fix.
+  literature_basis:
+  - Ground-mode engineering practice in superconducting qubit packaging and control delivery
+- mechanism_id: MECH-PH-003
+  name: Surface-acoustic-wave / piezoelectric bandstop engineering
+  mechanism_class: phononic_piezoelectric_interface
+  priority_tier: B
+  status: screening
+  physical_principle: A piezoelectric or acoustic metamaterial stopband reduces SAW or interface-piezoelectric coupling that can feed loss and dephasing on susceptible substrates.
+  target_decoherence_channels:
+    primary:
+    - phonon escape pathways
+    - T1 relaxation
+    - T2 dephasing
+    secondary:
+    - spectral diffusion
+  predicted_observable_ids:
+  - OBS-SAW-S21
+  - OBS-T1-MEAN
+  - OBS-T2STAR
+  - OBS-BG-SHIFT
+  predicted_observable_signatures:
+  - Direct witness stopband appears in SAW transmission.
+  - Coherence changes are strongest on substrates or interfaces with measurable piezoelectric pathway activity.
+  - Effect follows acoustic not microwave band placement.
+  expected_scaling_laws:
+    frequency: Acoustic stopband must overlap susceptible SAW/interface mode frequencies.
+    geometry: Scales with Bragg period, finger width, piezoelectric thickness, and aperture.
+    temperature: May change with piezoelectric response and phonon occupation.
+    magnetic_field: No direct dependence expected.
+    drive_amplitude: Weak unless acoustic drive is intentionally increased.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: true
+    gating_notes: Piezoelectric integration or dedicated witness transducers are exotic relative to baseline planar qubit flows.
+  experimental_protocol_ids:
+  - EXP-SAW-WITNESS-01
+  - EXP-T1-FSWEEP-01
+  - EXP-TEMP-SCAN-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-003
+  - VAL-004
+  - VAL-005
+  - VAL-008
+  - VAL-009
+  - VAL-015
+  baseline_null_priority:
+  - NULL-SAW-CROSSTALK
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-PH-SAW-BRAGG
+  rejection_criteria:
+  - Reject if SAW witness does not show the designed stopband.
+  - Reject if effect is absent on piezo-insensitive control substrates.
+  - Reject if added piezoelectric stack degrades superconducting film quality enough to dominate outcome.
+  literature_basis:
+  - Interface piezoelectricity in superconducting devices on silicon, Nat. Commun. 2025, 10.1038/s41467-025-67066-z
+- mechanism_id: MECH-QP-001
+  name: Gap-contrast meta-trap network
+  mechanism_class: quasiparticle_trapping
+  priority_tier: C
+  status: confound_heavy
+  physical_principle: A periodic network of lower-gap or normal-metal regions drains nonequilibrium quasiparticles away from active junction regions.
+  target_decoherence_channels:
+    primary:
+    - quasiparticle density
+    - T1 relaxation
+    secondary:
+    - spectral diffusion via charge-parity events
+  predicted_observable_ids:
+  - OBS-QP-PARITY
+  - OBS-QP-RECOV
+  - OBS-T1-MEAN
+  predicted_observable_signatures:
+  - Parity switching and injected-recovery metrics improve together.
+  - Effect can be strong but is difficult to distinguish from ordinary trap design without geometry-specific scaling.
+  - No narrow band-edge witness is required.
+  expected_scaling_laws:
+    frequency: Not a resonant mechanism; broadband nonequilibrium-particle management.
+    geometry: Trap pitch, island size, gap contrast, and diffusion pathway dominate.
+    temperature: Effect collapses as thermal quasiparticles dominate.
+    magnetic_field: Possible secondary interplay through vortex-assisted trapping.
+    drive_amplitude: Large drive heating should reduce apparent benefit.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Allowed only as secondary/support branch because null risk is high.
+  experimental_protocol_ids:
+  - EXP-QP-PARITY-01
+  - EXP-QP-INJECT-01
+  - EXP-TEMP-SCAN-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-003
+  - VAL-007
+  - VAL-009
+  - VAL-012
+  - VAL-015
+  baseline_null_priority:
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  related_structure_ids:
+  - STR-QP-GAP-LATTICE
+  rejection_criteria:
+  - Reject unless geometry scaling shows behavior beyond ordinary trap-area scaling.
+  - Reject if benefits are reproduced by non-periodic trap placement with the same material area.
+  - Reject if parity proxy does not improve.
+  literature_basis:
+  - Pan et al., Nat. Commun. 2022, 10.1038/s41467-022-34727-2
+- mechanism_id: MECH-HYB-001
+  name: Co-designed EM + phononic bilayer environment
+  mechanism_class: hybrid_multiphysics
+  priority_tier: B
+  status: sandbox
+  physical_principle: A bilayer or interposer simultaneously shapes microwave LDOS and local phonon DOS, targeting both radiative and bath-mediated loss channels.
+  target_decoherence_channels:
+    primary:
+    - T1 relaxation
+    - spectral diffusion
+    - quasiparticle density
+    secondary:
+    - phonon escape pathways
+    - non-Markovian dynamics
+  predicted_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-T1-NMARK
+  - OBS-QP-PARITY
+  - OBS-BG-SHIFT
+  - OBS-PKG-S21
+  predicted_observable_signatures:
+  - Correlated EM and phononic witness features appear in the same geometry family.
+  - Improvement exceeds what either EM-only or PH-only branch predicts additively.
+  - Requires strict closure against packaging and gap-trap nulls.
+  expected_scaling_laws:
+    frequency: Requires joint overlap between microwave and phononic targets.
+    geometry: Highly sensitive to alignment, membrane thickness, and interposer spacing.
+    temperature: Mixed response reflecting both bath and radiative contributions.
+    magnetic_field: Should remain weak unless superconducting pattern introduces vortex sensitivity.
+    drive_amplitude: Strong amplitude dependence would indicate TLS/control contamination.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: true
+    gating_notes: Exotic. Only sandbox after single-domain branches succeed.
+  experimental_protocol_ids:
+  - EXP-T1-FSWEEP-01
+  - EXP-HOLEBURN-THERM-01
+  - EXP-QP-PARITY-01
+  - EXP-PKG-MODE-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-004
+  - VAL-007
+  - VAL-008
+  - VAL-009
+  - VAL-013
+  - VAL-014
+  - VAL-015
+  baseline_null_priority:
+  - NULL-PKG-MODE
+  - NULL-QP-TRAP
+  - NULL-THERMAL
+  - NULL-FAB-VAR
+  related_structure_ids:
+  - STR-HYB-BILAYER-INTERPOSER
+  rejection_criteria:
+  - Reject if effect decomposes into ordinary trap network plus package filtering.
+  - Reject if either EM or phononic witness channel is absent.
+  - Reject if required fabrication stack exceeds standard-lab mitigation plan.
+  literature_basis:
+  - Cross-domain metamaterial environment concept; treated as sandbox until single-domain evidence is established
+- mechanism_id: MECH-3D-001
+  name: 3D cavity-wall corrugation / metamaterial liner
+  mechanism_class: three_dimensional_environment
+  priority_tier: B
+  status: screening
+  physical_principle: A structured cavity wall or insert modifies cavity mode density, seam currents, and parasitic boundary participation around embedded devices.
+  target_decoherence_channels:
+    primary:
+    - T1 relaxation
+    - witness resonator loss
+    secondary:
+    - T2 dephasing
+  predicted_observable_ids:
+  - OBS-T1-MEAN
+  - OBS-WITNESS-QI
+  - OBS-PKG-S21
+  - OBS-BG-SHIFT
+  predicted_observable_signatures:
+  - 3D cavity devices show altered mode density or suppressed parasitic boundary modes.
+  - Effect scales with corrugation depth and periodicity.
+  - Transfer-function and cavity-mode map must confirm intended boundary modification.
+  expected_scaling_laws:
+    frequency: Tied to cavity and parasitic mode spectrum.
+    geometry: Depends on corrugation depth, period, insert placement, and seam distance.
+    temperature: Weak direct dependence.
+    magnetic_field: Possible flux-trapping sensitivity in cavity seams.
+    drive_amplitude: Weak unless nonlinear cavity heating occurs.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Machining-compatible and mK compatible; careful seam metrology required.
+  experimental_protocol_ids:
+  - EXP-T1-FSWEEP-01
+  - EXP-PKG-MODE-01
+  - EXP-GEO-SERIES-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-004
+  - VAL-007
+  - VAL-009
+  - VAL-010
+  - VAL-015
+  baseline_null_priority:
+  - NULL-PKG-MODE
+  - NULL-FAB-VAR
+  - NULL-SHIELDING
+  related_structure_ids:
+  - STR-3D-CAVITY-LINER
+  rejection_criteria:
+  - Reject if seam-loss model or cavity assembly tolerance explains the result.
+  - Reject if as-machined geometry differs beyond validated range.
+  - Reject if effect is absent after cavity reassembly replication.
+  literature_basis:
+  - 3D cavity mode-engineering practice; mapped here as a structured-environment branch
+- mechanism_id: MECH-EM-004
+  name: Control-bandstop interposer for dephasing and pair-breaking-noise suppression
+  mechanism_class: control_path_filtering
+  priority_tier: B
+  status: active
+  physical_principle: A metamaterial interposer or filter section suppresses out-of-band control noise, high-frequency leakage, and pair-breaking radiation while preserving control fidelity.
+  target_decoherence_channels:
+    primary:
+    - T2 dephasing
+    - quasiparticle density
+    secondary:
+    - T1 relaxation
+  predicted_observable_ids:
+  - OBS-CTRL-PSD
+  - OBS-T2STAR
+  - OBS-T2ECHO
+  - OBS-QP-PARITY
+  - OBS-PKG-S21
+  predicted_observable_signatures:
+  - De-embedded control-noise PSD decreases in targeted bands.
+  - T2 and parity metrics improve at matched control fidelity.
+  - Transfer-function improvement is confined to designed stopbands rather than arbitrary attenuation changes.
+  expected_scaling_laws:
+    frequency: Stopband targeted above qubit/readout bands and below pair-breaking leakage band as needed.
+    geometry: Depends on resonant cell pitch, via inductance, interposer thickness, and line impedance transitions.
+    temperature: Weak direct dependence.
+    magnetic_field: No direct dependence expected.
+    drive_amplitude: Improvements must persist after matching Rabi rate and pulse shape.
+  device_compatibility:
+    transmon: native
+    fluxonium: compatible
+    planar_resonator: witness_native
+    3d_cavity: adapted_or_indirect
+    kinetic_inductance_detector: adaptable
+  fabrication_feasibility:
+    standard_academic_cleanroom: true
+    dilution_refrigerator_compatible: true
+    millikelvin_compatible: true
+    exotic_fabrication_flag: false
+    gating_notes: Potentially high value but must be separated from ordinary filtering upgrades.
+  experimental_protocol_ids:
+  - EXP-RAMSEY-PSD-01
+  - EXP-DRIVE-AMP-01
+  - EXP-QP-PARITY-01
+  - EXP-PKG-MODE-01
+  - EXP-REPL-01
+  validation_rule_ids:
+  - VAL-001
+  - VAL-002
+  - VAL-003
+  - VAL-007
+  - VAL-009
+  - VAL-011
+  - VAL-012
+  - VAL-015
+  baseline_null_priority:
+  - NULL-CTRL-DISTORT
+  - NULL-PKG-MODE
+  - NULL-QP-TRAP
+  related_structure_ids:
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  rejection_criteria:
+  - Reject if matched conventional filters reproduce the same benefit.
+  - Reject if control fidelity or pulse distortions confound the apparent gain.
+  - Reject if parity proxy is unchanged despite claimed pair-breaking suppression.
+  literature_basis:
+  - Noise-suppression / filtering branch integrated into metamaterial repository with explicit null closure

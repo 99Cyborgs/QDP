@@ -1,0 +1,403 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_MATERIAL_GENOME_DATABASE
+parameter_schema:
+  fabrication_complexity_score: 1=trivial planar add-on, 10=exotic bonded/released hybrid stack
+  null_risk_score: 1=easy to separate from baselines, 10=highly confounded with ordinary mechanisms
+  screening_status:
+  - prioritized
+  - screening
+  - sandbox
+  - rejected
+genomes:
+- genome_id: GEN-001
+  parent_structure_id: STR-EM-CPW-EBG-RING
+  lattice_topology: 1D CPW corrugation ring
+  geometric_parameters:
+    lattice_constant_um: 260
+    cell_count: 14
+    line_width_um: 14
+    gap_width_um: 10
+    impedance_contrast: 2.1
+  material_system: Al on high-resistivity Si
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 5.1
+    stopband_width_GHz: 1.3
+    estimated_group_delay_ps: 55
+    package_mode_sensitivity: moderate
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 3
+  null_risk_score: 4
+  screening_status: prioritized
+  notes: Baseline planar EM candidate centered on fixed-frequency transmon band.
+- genome_id: GEN-002
+  parent_structure_id: STR-EM-CPW-EBG-RING
+  lattice_topology: 1D CPW corrugation ring
+  geometric_parameters:
+    lattice_constant_um: 210
+    cell_count: 18
+    line_width_um: 10
+    gap_width_um: 7
+    impedance_contrast: 2.8
+  material_system: NbTiN on sapphire
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 6.3
+    stopband_width_GHz: 1.7
+    estimated_group_delay_ps: 80
+    package_mode_sensitivity: moderate
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 4
+  null_risk_score: 5
+  screening_status: prioritized
+  notes: Higher-frequency variant for fluxonium / tunable transmon coverage.
+- genome_id: GEN-003
+  parent_structure_id: STR-EM-LID-HIS
+  lattice_topology: 2D square patch lattice
+  geometric_parameters:
+    patch_pitch_um: 620
+    patch_size_um: 540
+    gap_um: 40
+    lid_spacing_um: 180
+  material_system: superconducting-coated Si lid
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 5.5
+    stopband_width_GHz: 2.0
+    estimated_surface_impedance_ohm: 750
+    package_mode_sensitivity: low
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 4
+  null_risk_score: 3
+  screening_status: prioritized
+  notes: Low-null-risk packaging candidate with removable lid.
+- genome_id: GEN-004
+  parent_structure_id: STR-EM-HKI-FENCE
+  lattice_topology: perimeter inductive fence
+  geometric_parameters:
+    fence_pitch_um: 70
+    bridge_length_um: 28
+    strip_width_um: 0.35
+    gap_to_ground_um: 4
+  material_system: NbTiN HKI fence on Al ground plane
+  predicted_electromagnetic_properties:
+    slotline_cutoff_GHz: 16.0
+    common_mode_suppression_dB: 18
+    package_mode_sensitivity: moderate
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 5
+  null_risk_score: 6
+  screening_status: screening
+  notes: Supports control-mode suppression and EM boundary tuning.
+- genome_id: GEN-005
+  parent_structure_id: STR-PH-SOI-JJ-PHC
+  lattice_topology: 2D snowflake-like local phononic crystal
+  geometric_parameters:
+    lattice_constant_nm: 445
+    neck_width_nm: 70
+    slot_or_hole_size_nm: 320
+    membrane_thickness_nm: 220
+    cell_count: 9
+  material_system: Al junction stack on SOI
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: 5.1
+    gap_width_GHz: 1.0
+    mode_localization: junction-local
+    estimated_tls_coupling_reduction: moderate_to_high
+  fabrication_complexity_score: 7
+  null_risk_score: 4
+  screening_status: prioritized
+  notes: Lead phononic candidate matched to reported GHz-scale bandgaps in suspended Si platforms.
+- genome_id: GEN-006
+  parent_structure_id: STR-PH-SOI-JJ-PHC
+  lattice_topology: 2D square-hole local phononic crystal
+  geometric_parameters:
+    lattice_constant_nm: 520
+    neck_width_nm: 110
+    slot_or_hole_size_nm: 280
+    membrane_thickness_nm: 250
+    cell_count: 7
+  material_system: Ta junction-compatible capacitor on SOI
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: 4.7
+    gap_width_GHz: 0.7
+    mode_localization: junction-local
+    estimated_tls_coupling_reduction: moderate
+  fabrication_complexity_score: 6
+  null_risk_score: 4
+  screening_status: prioritized
+  notes: Lower-risk release geometry with wider necks.
+- genome_id: GEN-007
+  parent_structure_id: STR-PH-SOI-FULLCAP-PHC
+  lattice_topology: 2D hexagonal full-cap lattice
+  geometric_parameters:
+    lattice_constant_nm: 600
+    neck_width_nm: 95
+    hole_or_cross_size_nm: 410
+    membrane_thickness_nm: 300
+    fill_factor: 0.42
+  material_system: Ta on SOI membrane
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: 5.0
+    gap_width_GHz: 1.4
+    mode_localization: extended
+    estimated_tls_coupling_reduction: high
+  fabrication_complexity_score: 8
+  null_risk_score: 5
+  screening_status: prioritized
+  notes: Extended lattice with strong spectral shaping but higher release risk.
+- genome_id: GEN-008
+  parent_structure_id: STR-PH-SOI-FULLCAP-PHC
+  lattice_topology: quasi-crystal membrane lattice
+  geometric_parameters:
+    lattice_constant_nm: 530
+    neck_width_nm: 80
+    hole_or_cross_size_nm: 350
+    membrane_thickness_nm: 220
+    fill_factor: 0.56
+  material_system: Al on SOI membrane
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: 5.8
+    gap_width_GHz: 0.9
+    mode_localization: extended
+    estimated_tls_coupling_reduction: screening_only
+  fabrication_complexity_score: 9
+  null_risk_score: 6
+  screening_status: screening
+  notes: Broader disorder tolerance hypothesis; fabrication risk elevated.
+- genome_id: GEN-009
+  parent_structure_id: STR-PH-GRADED-SINK
+  lattice_topology: radial graded trench ring
+  geometric_parameters:
+    sink_radius_um: 120
+    taper_angle_deg: 12
+    stage_count: 4
+    gradient_strength: 0.8
+    escape_channel_width_um: 6
+  material_system: etched Si substrate with metal sink pad
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    broadband_escape_gain_dB: 8
+    estimated_qp_recovery_improvement: 2x
+    mode_localization: escape_route
+  fabrication_complexity_score: 4
+  null_risk_score: 3
+  screening_status: prioritized
+  notes: Primary phonon-escape candidate without membrane release.
+- genome_id: GEN-010
+  parent_structure_id: STR-PH-GRADED-SINK
+  lattice_topology: backside-thinned annular sink
+  geometric_parameters:
+    sink_radius_um: 180
+    taper_angle_deg: 6
+    stage_count: 5
+    gradient_strength: 1.2
+    escape_channel_width_um: 10
+  material_system: thinned Si substrate with backside recess
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    broadband_escape_gain_dB: 11
+    estimated_qp_recovery_improvement: 2.5x
+    mode_localization: escape_route
+  fabrication_complexity_score: 5
+  null_risk_score: 4
+  screening_status: screening
+  notes: Requires backside processing but remains plausible in standard cleanrooms.
+- genome_id: GEN-011
+  parent_structure_id: STR-PH-SAW-BRAGG
+  lattice_topology: 1D Bragg reflector with witness IDTs
+  geometric_parameters:
+    period_nm: 780
+    duty_cycle: 0.48
+    aperture_um: 120
+    pair_count: 70
+    piezo_thickness_nm: 150
+  material_system: Al on Si with optional AlN witness
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: 2.7
+    gap_width_GHz: 0.6
+    saw_suppression_dB: 20
+    mode_localization: surface
+  fabrication_complexity_score: 7
+  null_risk_score: 5
+  screening_status: screening
+  notes: Witness-heavy branch for acoustic-pathway validation.
+- genome_id: GEN-012
+  parent_structure_id: STR-QP-GAP-LATTICE
+  lattice_topology: 2D trap island lattice
+  geometric_parameters:
+    trap_pitch_um: 8
+    trap_size_um: 2.0
+    distance_to_junction_um: 35
+    coverage_fraction: 0.06
+    gap_contrast_meV: 0.12
+  material_system: Al with Cu trap islands
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: null
+    stopband_width_GHz: null
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+    estimated_qp_sink_strength: high
+  fabrication_complexity_score: 4
+  null_risk_score: 8
+  screening_status: screening
+  notes: Explicitly confound-heavy; included for benchmarking and support.
+- genome_id: GEN-013
+  parent_structure_id: STR-VX-ANTIDOT-LATTICE
+  lattice_topology: graded antidot array
+  geometric_parameters:
+    antidot_radius_um: 1.0
+    pitch_um: 4.0
+    edge_offset_um: 12
+    grading_factor: 1.4
+    coverage_fraction: 0.08
+  material_system: Nb resonator film on sapphire
+  predicted_electromagnetic_properties:
+    field_robustness_metric: high
+    expected_common_mode_change: low
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 2
+  null_risk_score: 3
+  screening_status: prioritized
+  notes: Null-closure lattice for vortex discrimination.
+- genome_id: GEN-014
+  parent_structure_id: STR-VX-ANTIDOT-LATTICE
+  lattice_topology: uniform antidot lattice
+  geometric_parameters:
+    antidot_radius_um: 0.5
+    pitch_um: 2.0
+    edge_offset_um: 6
+    grading_factor: 1.0
+    coverage_fraction: 0.12
+  material_system: Al transmon ground plane on Si
+  predicted_electromagnetic_properties:
+    field_robustness_metric: moderate
+    expected_common_mode_change: moderate
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 2
+  null_risk_score: 4
+  screening_status: screening
+  notes: Used to bound magnetic confounds for perforated films.
+- genome_id: GEN-015
+  parent_structure_id: STR-3D-CAVITY-LINER
+  lattice_topology: 1D cavity corrugation
+  geometric_parameters:
+    corrugation_period_mm: 1.2
+    corrugation_depth_mm: 0.8
+    fill_fraction: 0.45
+    insert_distance_mm: 1.0
+    target_mode_GHz: 6.8
+  material_system: bulk Nb cavity liner
+  predicted_electromagnetic_properties:
+    mode_density_reduction: moderate
+    estimated_boundary_participation_change: -30%
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 3
+  null_risk_score: 5
+  screening_status: screening
+  notes: 3D branch candidate for cavity transmons.
+- genome_id: GEN-016
+  parent_structure_id: STR-HYB-BILAYER-INTERPOSER
+  lattice_topology: bilayer square EM + local PH lattice
+  geometric_parameters:
+    em_pitch_um: 420
+    phononic_pitch_nm: 430
+    spacer_um: 40
+    alignment_tolerance_um: 0.8
+    active_area_mm: 2.5
+  material_system: patterned Si interposer with superconducting EM layer and released local phononic windows
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 5.2
+    stopband_width_GHz: 1.1
+  predicted_phononic_band_structure:
+    gap_center_GHz: 5.0
+    gap_width_GHz: 0.8
+    mode_localization: co-localized
+  fabrication_complexity_score: 9
+  null_risk_score: 7
+  screening_status: sandbox
+  notes: Hybrid co-design hypothesis. Not lead-branch eligible.
+- genome_id: GEN-017
+  parent_structure_id: STR-CTRL-BANDSTOP-INTERPOSER
+  lattice_topology: inline resonant cell filter
+  geometric_parameters:
+    cell_pitch_um: 180
+    cell_count: 10
+    line_impedance_ohm: 55
+    via_inductance_pH: 60
+    target_stopband_GHz: 25
+  material_system: NbTiN on Si interposer
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 25.0
+    stopband_width_GHz: 12.0
+    passband_insertion_loss_dB: 0.7
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 5
+  null_risk_score: 5
+  screening_status: screening
+  notes: Targets control leakage and pair-breaking radiation.
+- genome_id: GEN-018
+  parent_structure_id: STR-EM-LID-HIS
+  lattice_topology: hexagonal patch lid
+  geometric_parameters:
+    patch_pitch_um: 480
+    patch_size_um: 410
+    gap_um: 35
+    lid_spacing_um: 120
+  material_system: Au-plated Cu lid with superconducting patch overlay
+  predicted_electromagnetic_properties:
+    stopband_center_GHz: 7.1
+    stopband_width_GHz: 2.4
+    estimated_surface_impedance_ohm: 620
+    package_mode_sensitivity: low
+  predicted_phononic_band_structure:
+    gap_center_GHz: null
+    gap_width_GHz: null
+  fabrication_complexity_score: 3
+  null_risk_score: 3
+  screening_status: screening
+  notes: High-frequency package branch variant.

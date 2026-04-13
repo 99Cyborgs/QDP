@@ -54,13 +54,76 @@
         "M01_P5"
       ],
       "current_assessment": {
-        "derived_status": "RECOVERY_INTERIM",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M01_P1",
           "M01_P2",
           "M01_P3",
           "M01_P4",
           "M01_P5"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M02",
+      "name": "Schema extension and post-run validator",
+      "required_predicates": [
+        {
+          "predicate_id": "M02_P1",
+          "description": "modules/m02_schema_validator/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m02_schema_validator/runner.py"
+        },
+        {
+          "predicate_id": "M02_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m02_schema_validator/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M02_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m02/selftest_report.json"
+        },
+        {
+          "predicate_id": "M02_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m02/selftest_report.json"
+        },
+        {
+          "predicate_id": "M02_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m02/selftest_report.json"
+        },
+        {
+          "predicate_id": "M02_P6",
+          "description": "Schema, template, and validator expose typed governance support for calibration, identifiability, drift, and dataset-governance fields",
+          "evaluation_type": "binding_check",
+          "target": "config/schema/candidate_schema.json"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M02_P1",
+        "M02_P2",
+        "M02_P3",
+        "M02_P4",
+        "M02_P5",
+        "M02_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M02_P1",
+          "M02_P2",
+          "M02_P3",
+          "M02_P4",
+          "M02_P5",
+          "M02_P6"
         ],
         "failing_predicates": [],
         "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
@@ -123,7 +186,7 @@
         "M03_P7"
       ],
       "current_assessment": {
-        "derived_status": "RECOVERY_INTERIM",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M03_P1",
           "M03_P2",
@@ -132,6 +195,69 @@
           "M03_P5",
           "M03_P6",
           "M03_P7"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M04",
+      "name": "Fork intake and branch registration",
+      "required_predicates": [
+        {
+          "predicate_id": "M04_P1",
+          "description": "modules/m04_branch_registration/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m04_branch_registration/runner.py"
+        },
+        {
+          "predicate_id": "M04_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m04_branch_registration/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M04_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m04/selftest_report.json"
+        },
+        {
+          "predicate_id": "M04_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m04/selftest_report.json"
+        },
+        {
+          "predicate_id": "M04_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m04/selftest_report.json"
+        },
+        {
+          "predicate_id": "M04_P6",
+          "description": "The intake adapter maps surfaced branch identity, observables, and falsifier placeholders into canonical candidates",
+          "evaluation_type": "binding_check",
+          "target": "modules/m04_branch_registration/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M04_P1",
+        "M04_P2",
+        "M04_P3",
+        "M04_P4",
+        "M04_P5",
+        "M04_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M04_P1",
+          "M04_P2",
+          "M04_P3",
+          "M04_P4",
+          "M04_P5",
+          "M04_P6"
         ],
         "failing_predicates": [],
         "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
@@ -187,7 +313,7 @@
         "M05_P6"
       ],
       "current_assessment": {
-        "derived_status": "RECOVERY_INTERIM",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M05_P1",
           "M05_P2",
@@ -250,7 +376,7 @@
         "M06_P6"
       ],
       "current_assessment": {
-        "derived_status": "RECOVERY_INTERIM",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M06_P1",
           "M06_P2",
@@ -313,7 +439,7 @@
         "M07_P6"
       ],
       "current_assessment": {
-        "derived_status": "WORKING_PATCH",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M07_P1",
           "M07_P2",
@@ -376,7 +502,7 @@
         "M08_P6"
       ],
       "current_assessment": {
-        "derived_status": "WORKING_PATCH",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M08_P1",
           "M08_P2",
@@ -439,7 +565,7 @@
         "M09_P6"
       ],
       "current_assessment": {
-        "derived_status": "WORKING_PATCH",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M09_P1",
           "M09_P2",
@@ -502,7 +628,7 @@
         "M10_P6"
       ],
       "current_assessment": {
-        "derived_status": "WORKING_PATCH",
+        "derived_status": "AUTHORITATIVE_CLOSURE",
         "passing_predicates": [
           "M10_P1",
           "M10_P2",
@@ -510,6 +636,573 @@
           "M10_P4",
           "M10_P5",
           "M10_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M11",
+      "name": "Lindblad-equivalence gate",
+      "required_predicates": [
+        {
+          "predicate_id": "M11_P1",
+          "description": "modules/m11_lindblad_equivalence/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m11_lindblad_equivalence/runner.py"
+        },
+        {
+          "predicate_id": "M11_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m11_lindblad_equivalence/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M11_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m11/selftest_report.json"
+        },
+        {
+          "predicate_id": "M11_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m11/selftest_report.json"
+        },
+        {
+          "predicate_id": "M11_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m11/selftest_report.json"
+        },
+        {
+          "predicate_id": "M11_P6",
+          "description": "The runner records visible-source Lindblad-equivalence ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m11_lindblad_equivalence/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M11_P1",
+        "M11_P2",
+        "M11_P3",
+        "M11_P4",
+        "M11_P5",
+        "M11_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M11_P1",
+          "M11_P2",
+          "M11_P3",
+          "M11_P4",
+          "M11_P5",
+          "M11_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M12",
+      "name": "Executable falsifier and experiment-design module",
+      "required_predicates": [
+        {
+          "predicate_id": "M12_P1",
+          "description": "modules/m12_experiment_design/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m12_experiment_design/runner.py"
+        },
+        {
+          "predicate_id": "M12_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m12_experiment_design/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M12_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m12/selftest_report.json"
+        },
+        {
+          "predicate_id": "M12_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m12/selftest_report.json"
+        },
+        {
+          "predicate_id": "M12_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m12/selftest_report.json"
+        },
+        {
+          "predicate_id": "M12_P6",
+          "description": "The runner records executable falsifier and experiment-design ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m12_experiment_design/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M12_P1",
+        "M12_P2",
+        "M12_P3",
+        "M12_P4",
+        "M12_P5",
+        "M12_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M12_P1",
+          "M12_P2",
+          "M12_P3",
+          "M12_P4",
+          "M12_P5",
+          "M12_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M13",
+      "name": "Cross-device evidence gate",
+      "required_predicates": [
+        {
+          "predicate_id": "M13_P1",
+          "description": "modules/m13_cross_device_gate/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m13_cross_device_gate/runner.py"
+        },
+        {
+          "predicate_id": "M13_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m13_cross_device_gate/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M13_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m13/selftest_report.json"
+        },
+        {
+          "predicate_id": "M13_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m13/selftest_report.json"
+        },
+        {
+          "predicate_id": "M13_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m13/selftest_report.json"
+        },
+        {
+          "predicate_id": "M13_P6",
+          "description": "The runner records cross-device normalization and matched-fabrication gating explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m13_cross_device_gate/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M13_P1",
+        "M13_P2",
+        "M13_P3",
+        "M13_P4",
+        "M13_P5",
+        "M13_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M13_P1",
+          "M13_P2",
+          "M13_P3",
+          "M13_P4",
+          "M13_P5",
+          "M13_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M14",
+      "name": "Promotion-cap clipping and fallback completion",
+      "required_predicates": [
+        {
+          "predicate_id": "M14_P1",
+          "description": "modules/m14_promotion_caps/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m14_promotion_caps/runner.py"
+        },
+        {
+          "predicate_id": "M14_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m14_promotion_caps/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M14_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m14/selftest_report.json"
+        },
+        {
+          "predicate_id": "M14_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m14/selftest_report.json"
+        },
+        {
+          "predicate_id": "M14_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m14/selftest_report.json"
+        },
+        {
+          "predicate_id": "M14_P6",
+          "description": "The runner records that irreversible clipping and fallback completion are owned by the M14 manager",
+          "evaluation_type": "binding_check",
+          "target": "modules/m14_promotion_caps/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M14_P1",
+        "M14_P2",
+        "M14_P3",
+        "M14_P4",
+        "M14_P5",
+        "M14_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M14_P1",
+          "M14_P2",
+          "M14_P3",
+          "M14_P4",
+          "M14_P5",
+          "M14_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M15",
+      "name": "Calibration, drift, identifiability, and dataset-governance guardrails",
+      "required_predicates": [
+        {
+          "predicate_id": "M15_P1",
+          "description": "modules/m15_governance_guardrails/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m15_governance_guardrails/runner.py"
+        },
+        {
+          "predicate_id": "M15_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m15_governance_guardrails/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M15_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m15/selftest_report.json"
+        },
+        {
+          "predicate_id": "M15_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m15/selftest_report.json"
+        },
+        {
+          "predicate_id": "M15_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m15/selftest_report.json"
+        },
+        {
+          "predicate_id": "M15_P6",
+          "description": "The runner records typed calibration, identifiability, drift, and dataset-governance ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m15_governance_guardrails/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M15_P1",
+        "M15_P2",
+        "M15_P3",
+        "M15_P4",
+        "M15_P5",
+        "M15_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "M15_P1",
+          "M15_P2",
+          "M15_P3",
+          "M15_P4",
+          "M15_P5",
+          "M15_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "S16",
+      "name": "Subsystem slow-sector detection",
+      "required_predicates": [
+        {
+          "predicate_id": "S16_P1",
+          "description": "modules/s16_subsystem_sector_detection/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s16_subsystem_sector_detection/runner.py"
+        },
+        {
+          "predicate_id": "S16_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s16_subsystem_sector_detection/selftest_cases.json"
+        },
+        {
+          "predicate_id": "S16_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/s16/selftest_report.json"
+        },
+        {
+          "predicate_id": "S16_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s16/selftest_report.json"
+        },
+        {
+          "predicate_id": "S16_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s16/selftest_report.json"
+        },
+        {
+          "predicate_id": "S16_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/s16_subsystem_sector_detection/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "S16_P1",
+        "S16_P2",
+        "S16_P3",
+        "S16_P4",
+        "S16_P5",
+        "S16_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "S16_P1",
+          "S16_P2",
+          "S16_P3",
+          "S16_P4",
+          "S16_P5",
+          "S16_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "S17",
+      "name": "Subsystem alias and null-baseline audit",
+      "required_predicates": [
+        {
+          "predicate_id": "S17_P1",
+          "description": "modules/s17_subsystem_alias_audit/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s17_subsystem_alias_audit/runner.py"
+        },
+        {
+          "predicate_id": "S17_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s17_subsystem_alias_audit/selftest_cases.json"
+        },
+        {
+          "predicate_id": "S17_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/s17/selftest_report.json"
+        },
+        {
+          "predicate_id": "S17_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s17/selftest_report.json"
+        },
+        {
+          "predicate_id": "S17_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s17/selftest_report.json"
+        },
+        {
+          "predicate_id": "S17_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/s17_subsystem_alias_audit/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "S17_P1",
+        "S17_P2",
+        "S17_P3",
+        "S17_P4",
+        "S17_P5",
+        "S17_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "S17_P1",
+          "S17_P2",
+          "S17_P3",
+          "S17_P4",
+          "S17_P5",
+          "S17_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "S18",
+      "name": "Subsystem finite-horizon and closure gate",
+      "required_predicates": [
+        {
+          "predicate_id": "S18_P1",
+          "description": "modules/s18_subsystem_observable_closure/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s18_subsystem_observable_closure/runner.py"
+        },
+        {
+          "predicate_id": "S18_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s18_subsystem_observable_closure/selftest_cases.json"
+        },
+        {
+          "predicate_id": "S18_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/s18/selftest_report.json"
+        },
+        {
+          "predicate_id": "S18_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s18/selftest_report.json"
+        },
+        {
+          "predicate_id": "S18_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s18/selftest_report.json"
+        },
+        {
+          "predicate_id": "S18_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/s18_subsystem_observable_closure/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "S18_P1",
+        "S18_P2",
+        "S18_P3",
+        "S18_P4",
+        "S18_P5",
+        "S18_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "S18_P1",
+          "S18_P2",
+          "S18_P3",
+          "S18_P4",
+          "S18_P5",
+          "S18_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "S19",
+      "name": "Subsystem verdict gate",
+      "required_predicates": [
+        {
+          "predicate_id": "S19_P1",
+          "description": "modules/s19_subsystem_verdict_gate/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s19_subsystem_verdict_gate/runner.py"
+        },
+        {
+          "predicate_id": "S19_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/s19_subsystem_verdict_gate/selftest_cases.json"
+        },
+        {
+          "predicate_id": "S19_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/s19/selftest_report.json"
+        },
+        {
+          "predicate_id": "S19_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s19/selftest_report.json"
+        },
+        {
+          "predicate_id": "S19_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/s19/selftest_report.json"
+        },
+        {
+          "predicate_id": "S19_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/s19_subsystem_verdict_gate/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "S19_P1",
+        "S19_P2",
+        "S19_P3",
+        "S19_P4",
+        "S19_P5",
+        "S19_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "AUTHORITATIVE_CLOSURE",
+        "passing_predicates": [
+          "S19_P1",
+          "S19_P2",
+          "S19_P3",
+          "S19_P4",
+          "S19_P5",
+          "S19_P6"
         ],
         "failing_predicates": [],
         "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."

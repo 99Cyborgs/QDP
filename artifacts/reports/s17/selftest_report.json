@@ -1,0 +1,155 @@
+{
+  "artifact_id": "QDP_V10_6_S17_SELFTEST_REPORT",
+  "module_id": "S17",
+  "timestamp_utc": "2026-04-13T18:30:49.094221+00:00",
+  "cases_total": 3,
+  "cases_passed": 3,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+      "description": "Correlated-noise mimic should fail the null-baseline rejection gate.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_B_CORRELATED_NOISE_MIMIC\\CASE_B_CORRELATED_NOISE_MIMIC_report.json"
+    },
+    {
+      "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+      "description": "Readout illusion should fail artifact alias rejection.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "fail"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+        "actual_final_verdict": "not_supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "fail",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "fail"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_D_READOUT_PARTITION_ILLUSION\\CASE_D_READOUT_PARTITION_ILLUSION_report.json"
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control should pass all alias-rejection gates.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "artifact_kind": "subsystem_verdict",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\subsystem_verdict_schema.json",
+        "valid": true,
+        "errors": [],
+        "path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json"
+      },
+      "expected_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "pass",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "actual_summary": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "null_baseline_rejection": "pass",
+          "symmetry_alias_rejection": "pass",
+          "artifact_alias_rejection": "pass"
+        },
+        "diagnostics_reported": [
+          "covariance_modularity",
+          "symmetry_alias_score",
+          "artifact_alias_score",
+          "tls_alias_score",
+          "baseline_competition_margin"
+        ]
+      },
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_payload.json",
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\s17\\selftests\\CASE_F_TRUE_POSITIVE_CONTROL\\CASE_F_TRUE_POSITIVE_CONTROL_report.json"
+    }
+  ]
+}

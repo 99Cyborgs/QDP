@@ -1,0 +1,23 @@
+{
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "module_id": "S18",
+  "diagnostics_reported": [
+    "block_residual_rho_res",
+    "finite_horizon_gain_Gs",
+    "state_space_leakage",
+    "observable_space_leakage",
+    "observable_closure_defect"
+  ],
+  "gate_outcomes": {
+    "finite_horizon_control": "pass",
+    "observable_closure": "pass"
+  },
+  "expected_final_verdict": "supported",
+  "actual_final_verdict": "supported",
+  "supported_forbidden": false,
+  "supported_required": true,
+  "notes": [
+    "Finite-horizon and closure outputs are surfaced from the subsystem matrix.",
+    "truth_family=Two qubit GKSL family with isolated slow coherence sector, weak inter block coupling, stable Schur extracted projector, and bounded finite horizon amplification"
+  ]
+}

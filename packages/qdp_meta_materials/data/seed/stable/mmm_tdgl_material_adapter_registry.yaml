@@ -1,0 +1,25 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-04-10'
+  governance_rules:
+  - TDGL runtime material adapters must resolve to one material-system identity in the canonical seed registry.
+  - TDGL adapter defaults preserve the extracted runtime baseline and do not by themselves claim calibrated material truth.
+  - If a TDGL case cites a genome_id, the genome material system must match the adapter material-system identity.
+  artifact_id: MMM_TDGL_MATERIAL_ADAPTER_REGISTRY
+adapters:
+- adapter_id: TDGL-MAT-001-BASELINE-V1
+  adapter_version: '1.0'
+  material_system_id: MAT-001
+  runtime_family: thin_film_superconducting_strip_baseline
+  supported_geometry_families:
+  - strip
+  - strip_with_moat
+  - strip_with_hole
+  tdgl_parameters:
+    u: 5.79
+    sigma_n: 1.0
+    alpha_background: 1.0
+  notes: Canonical baseline adapter for aluminum-on-high-resistivity-silicon strip-style TDGL examples inside the QDP umbrella. These defaults preserve the donor runtime baseline for the extracted validator and smoke surfaces.

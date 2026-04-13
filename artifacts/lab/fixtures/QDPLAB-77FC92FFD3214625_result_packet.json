@@ -1,0 +1,15 @@
+{
+  "request_id": "QDPLAB-77FC92FFD3214625",
+  "scheduler_state": "COMPLETED",
+  "devices_tested": ["DEV_A", "DEV_B"],
+  "cross_device_status": "CONFIRMED",
+  "fabrication_matched": true,
+  "observed_measurements": [
+    "Matched discriminant sweep on Qi",
+    "Control comparison versus MARKOVIAN_RESERVOIR"
+  ],
+  "notes": [
+    "Synthetic ingest fixture",
+    "Matched-fabrication result confirms surfaced discriminant ordering"
+  ]
+}

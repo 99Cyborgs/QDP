@@ -1,0 +1,208 @@
+{
+  "artifact_id": "QDP_PRE_OVERHAUL_BLOCKER_LEDGER",
+  "phase": "pre",
+  "timestamp_utc": "2026-03-16T15:17:45.321215+00:00",
+  "summary": {
+    "class": "incubate",
+    "activity": "active",
+    "promotion_mode": "incubation link",
+    "ordinary_recovery_ready": true,
+    "ordinary_authoritative_ready": false,
+    "subsystem_recovery_ready": true,
+    "subsystem_authoritative_ready": false,
+    "m06_derived_status": "RECOVERY_INTERIM",
+    "module_selftests": {
+      "M01": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M02": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M03": {
+        "has_selftest_result": false,
+        "all_passed": false,
+        "validator_valid_all": false
+      },
+      "M04": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M05": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M06": {
+        "has_selftest_result": false,
+        "all_passed": false,
+        "validator_valid_all": false
+      },
+      "M07": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M08": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M09": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M10": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M11": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M12": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M13": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M14": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "M15": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "S16": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "S17": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "S18": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      },
+      "S19": {
+        "has_selftest_result": true,
+        "all_passed": true,
+        "validator_valid_all": true
+      }
+    },
+    "blocker_count": 8
+  },
+  "blockers": [
+    {
+      "blocker_id": "ROOT_SUPPORT_MODULES_PRESENT",
+      "class": "STRUCTURE",
+      "severity": "high",
+      "detail": "Root still contains shared implementation-heavy support modules instead of a canonical internal package.",
+      "paths": [
+        "qdp_governance.py",
+        "qdp_control_plane.py",
+        "qdp_paths.py",
+        "qdp_artifact_contracts.py",
+        "qdp_subsystem.py",
+        "qdp_registry.py",
+        "qdp_lab_workflows.py",
+        "qdp_module_workflows.py",
+        "qdp_campaign_planner.py",
+        "qdp_run_ledger.py",
+        "qdp_module_sdk.py"
+      ]
+    },
+    {
+      "blocker_id": "ROOT_OUTLIER_DIRS_PRESENT",
+      "class": "STRUCTURE",
+      "severity": "medium",
+      "detail": "Root contains outlier or generated directories that should be quarantined or removed.",
+      "paths": [
+        "RL framework",
+        "MISSING",
+        "__pycache__"
+      ]
+    },
+    {
+      "blocker_id": "QDP_VALIDATION_NOT_CLI",
+      "class": "ENTRYPOINT",
+      "severity": "high",
+      "detail": "qdp_validation.py is documented as a repo-level validation entrypoint but does not expose a real CLI.",
+      "paths": [
+        "qdp_validation.py",
+        "VALIDATION.md",
+        "REPO_MAP.md"
+      ]
+    },
+    {
+      "blocker_id": "SUBSYSTEM_MATRIX_PATH_DRIFT",
+      "class": "PATH_DRIFT",
+      "severity": "high",
+      "detail": "The subsystem case matrix path is inconsistent with the canonical specs/subsystem location.",
+      "paths": [
+        "config/manifests/reference_manifest.json",
+        "config/registries/governance_registry.json",
+        "artifacts/reports/m03/reference_resolution_subsystem.json"
+      ]
+    },
+    {
+      "blocker_id": "STALE_NARRATIVE_TRUTH",
+      "class": "TRUTHFULNESS",
+      "severity": "high",
+      "detail": "Narrative docs disagree with current executable closure artifacts and readiness reports.",
+      "paths": [
+        "modules/m06_bootstrap_harness/patch_notes.md",
+        "modules/m06_bootstrap_harness/integration_run_report.md",
+        "docs/reports/drift_control_artifact_pack.md"
+      ]
+    },
+    {
+      "blocker_id": "NON_CANONICAL_DOCS_LAYOUT",
+      "class": "STRUCTURE",
+      "severity": "medium",
+      "detail": "docs/ still uses non-canonical implementation/reports/schema subdirectories.",
+      "paths": [
+        "docs/implementation",
+        "docs/reports",
+        "docs/schema"
+      ]
+    },
+    {
+      "blocker_id": "LEGACY_DOC_DUPLICATION",
+      "class": "STRUCTURE",
+      "severity": "medium",
+      "detail": "legacy/docs duplicates canonical docs instead of acting as a compact forwarding surface.",
+      "paths": [
+        "legacy/docs"
+      ]
+    },
+    {
+      "blocker_id": "AUTHORITATIVE_READY_FALSE",
+      "class": "READINESS",
+      "severity": "informational",
+      "detail": "Authoritative readiness remains false and must not be upgraded unless regenerated predicates truly change.",
+      "paths": [
+        "config/registries/module_registry.json",
+        "artifacts/reports/m06/bootstrap_report.json"
+      ]
+    }
+  ]
+}

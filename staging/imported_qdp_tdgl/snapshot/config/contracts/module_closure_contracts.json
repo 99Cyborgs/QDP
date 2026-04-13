@@ -1,0 +1,528 @@
+{
+  "artifact_id": "QDP_V10_6_MODULE_CLOSURE_CONTRACTS_V1",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "purpose": "Define module closure as derived predicates computed from artifacts and test results rather than hand assigned labels.",
+  "status_enums": [
+    "AUTHORITATIVE_CLOSURE",
+    "WORKING_PATCH",
+    "RECOVERY_INTERIM",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "contracts": [
+    {
+      "module_id": "M01",
+      "name": "Runtime assembly and freeze",
+      "required_predicates": [
+        {
+          "predicate_id": "M01_P1",
+          "description": "runtime/retained/operative_body_v10_1.md exists",
+          "evaluation_type": "artifact_exists",
+          "target": "runtime/retained/operative_body_v10_1.md"
+        },
+        {
+          "predicate_id": "M01_P2",
+          "description": "runtime/current/runtime_prompt.md exists",
+          "evaluation_type": "artifact_exists",
+          "target": "runtime/current/runtime_prompt.md"
+        },
+        {
+          "predicate_id": "M01_P3",
+          "description": "Runtime prompt contains all mandatory retained operational sections",
+          "evaluation_type": "content_check",
+          "target": "runtime/current/runtime_prompt.md"
+        },
+        {
+          "predicate_id": "M01_P4",
+          "description": "Runtime prompt contains no forbidden shorthand references such as same as v10.1",
+          "evaluation_type": "content_check",
+          "target": "runtime/current/runtime_prompt.md"
+        },
+        {
+          "predicate_id": "M01_P5",
+          "description": "Closure report hash matches assembled runtime prompt hash",
+          "evaluation_type": "hash_match",
+          "target": "artifacts/reports/m01/closure_report.json"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M01_P1",
+        "M01_P2",
+        "M01_P3",
+        "M01_P4",
+        "M01_P5"
+      ],
+      "current_assessment": {
+        "derived_status": "RECOVERY_INTERIM",
+        "passing_predicates": [
+          "M01_P1",
+          "M01_P2",
+          "M01_P3",
+          "M01_P4",
+          "M01_P5"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M03",
+      "name": "Reference resolution and governance registry",
+      "required_predicates": [
+        {
+          "predicate_id": "M03_P1",
+          "description": "modules/m03_reference_resolution/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m03_reference_resolution/runner.py"
+        },
+        {
+          "predicate_id": "M03_P2",
+          "description": "Ordinary strict resolution report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m03/reference_resolution_ordinary.json"
+        },
+        {
+          "predicate_id": "M03_P3",
+          "description": "Subsystem strict resolution report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m03/reference_resolution_subsystem.json"
+        },
+        {
+          "predicate_id": "M03_P4",
+          "description": "Ordinary report has zero critical unresolved references",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m03/reference_resolution_ordinary.json"
+        },
+        {
+          "predicate_id": "M03_P5",
+          "description": "Subsystem report has zero critical unresolved references",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m03/reference_resolution_subsystem.json"
+        },
+        {
+          "predicate_id": "M03_P6",
+          "description": "Governance registry records the current report IDs and mode summaries coherently",
+          "evaluation_type": "json_predicate",
+          "target": "config/registries/governance_registry.json"
+        },
+        {
+          "predicate_id": "M03_P7",
+          "description": "Mode divergence report status is PASSED for the shared core",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/system/mode_divergence_report.json"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M03_P1",
+        "M03_P2",
+        "M03_P3",
+        "M03_P4",
+        "M03_P5",
+        "M03_P6",
+        "M03_P7"
+      ],
+      "current_assessment": {
+        "derived_status": "RECOVERY_INTERIM",
+        "passing_predicates": [
+          "M03_P1",
+          "M03_P2",
+          "M03_P3",
+          "M03_P4",
+          "M03_P5",
+          "M03_P6",
+          "M03_P7"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M05",
+      "name": "Gate trace and validation ladder stage machine",
+      "required_predicates": [
+        {
+          "predicate_id": "M05_P1",
+          "description": "modules/m05_stage_machine/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m05_stage_machine/runner.py"
+        },
+        {
+          "predicate_id": "M05_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m05_stage_machine/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M05_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m05/selftest_report.json"
+        },
+        {
+          "predicate_id": "M05_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m05/selftest_report.json"
+        },
+        {
+          "predicate_id": "M05_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m05/selftest_report.json"
+        },
+        {
+          "predicate_id": "M05_P6",
+          "description": "Stage order and gate semantics are sourced from retained authoritative runtime rather than an interim subset",
+          "evaluation_type": "binding_check",
+          "target": "runtime/retained/operative_body_v10_1.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M05_P1",
+        "M05_P2",
+        "M05_P3",
+        "M05_P4",
+        "M05_P5",
+        "M05_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "RECOVERY_INTERIM",
+        "passing_predicates": [
+          "M05_P1",
+          "M05_P2",
+          "M05_P3",
+          "M05_P4",
+          "M05_P5",
+          "M05_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M06",
+      "name": "Bootstrap harness runner and fixture loader",
+      "required_predicates": [
+        {
+          "predicate_id": "M06_P1",
+          "description": "modules/m06_bootstrap_harness/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m06_bootstrap_harness/runner.py"
+        },
+        {
+          "predicate_id": "M06_P2",
+          "description": "Bootstrap fixture pack exists with at least five canonical cases",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m06_bootstrap_harness/bootstrap_cases.json"
+        },
+        {
+          "predicate_id": "M06_P3",
+          "description": "Bootstrap report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m06/bootstrap_report.json"
+        },
+        {
+          "predicate_id": "M06_P4",
+          "description": "Harness executes reference resolution, schema validation, stage machine tests, governance self diagnostic, and runtime integrity checks",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m06/bootstrap_report.json"
+        },
+        {
+          "predicate_id": "M06_P5",
+          "description": "Harness is deterministic across repeated fixture runs",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m06/bootstrap_report.json"
+        },
+        {
+          "predicate_id": "M06_P6",
+          "description": "Mode divergence report status is PASSED and shared-core overrides are absent",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/system/mode_divergence_report.json"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M06_P1",
+        "M06_P2",
+        "M06_P3",
+        "M06_P4",
+        "M06_P5",
+        "M06_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "RECOVERY_INTERIM",
+        "passing_predicates": [
+          "M06_P1",
+          "M06_P2",
+          "M06_P3",
+          "M06_P4",
+          "M06_P5",
+          "M06_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M07",
+      "name": "Family-class triage and signature-to-bath scorer",
+      "required_predicates": [
+        {
+          "predicate_id": "M07_P1",
+          "description": "modules/m07_family_triage/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m07_family_triage/runner.py"
+        },
+        {
+          "predicate_id": "M07_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m07_family_triage/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M07_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m07/selftest_report.json"
+        },
+        {
+          "predicate_id": "M07_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m07/selftest_report.json"
+        },
+        {
+          "predicate_id": "M07_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m07/selftest_report.json"
+        },
+        {
+          "predicate_id": "M07_P6",
+          "description": "The scorer is sourced from surfaced family-triage documents and records visible-source-only limitations",
+          "evaluation_type": "binding_check",
+          "target": "modules/m07_family_triage/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M07_P1",
+        "M07_P2",
+        "M07_P3",
+        "M07_P4",
+        "M07_P5",
+        "M07_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "WORKING_PATCH",
+        "passing_predicates": [
+          "M07_P1",
+          "M07_P2",
+          "M07_P3",
+          "M07_P4",
+          "M07_P5",
+          "M07_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M08",
+      "name": "Baseline GKSL fit and drift-aware residual diagnostics",
+      "required_predicates": [
+        {
+          "predicate_id": "M08_P1",
+          "description": "modules/m08_baseline_fit/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m08_baseline_fit/runner.py"
+        },
+        {
+          "predicate_id": "M08_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m08_baseline_fit/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M08_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m08/selftest_report.json"
+        },
+        {
+          "predicate_id": "M08_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m08/selftest_report.json"
+        },
+        {
+          "predicate_id": "M08_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m08/selftest_report.json"
+        },
+        {
+          "predicate_id": "M08_P6",
+          "description": "The runner is sourced from surfaced baseline-fit documents and records visible-source-only limitations",
+          "evaluation_type": "binding_check",
+          "target": "modules/m08_baseline_fit/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M08_P1",
+        "M08_P2",
+        "M08_P3",
+        "M08_P4",
+        "M08_P5",
+        "M08_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "WORKING_PATCH",
+        "passing_predicates": [
+          "M08_P1",
+          "M08_P2",
+          "M08_P3",
+          "M08_P4",
+          "M08_P5",
+          "M08_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M09",
+      "name": "Known-mechanism competition suite",
+      "required_predicates": [
+        {
+          "predicate_id": "M09_P1",
+          "description": "modules/m09_mechanism_competition/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m09_mechanism_competition/runner.py"
+        },
+        {
+          "predicate_id": "M09_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m09_mechanism_competition/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M09_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m09/selftest_report.json"
+        },
+        {
+          "predicate_id": "M09_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m09/selftest_report.json"
+        },
+        {
+          "predicate_id": "M09_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m09/selftest_report.json"
+        },
+        {
+          "predicate_id": "M09_P6",
+          "description": "The runner records the partial visible-source mechanism-doc limitation explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m09_mechanism_competition/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M09_P1",
+        "M09_P2",
+        "M09_P3",
+        "M09_P4",
+        "M09_P5",
+        "M09_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "WORKING_PATCH",
+        "passing_predicates": [
+          "M09_P1",
+          "M09_P2",
+          "M09_P3",
+          "M09_P4",
+          "M09_P5",
+          "M09_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    },
+    {
+      "module_id": "M10",
+      "name": "Artifact-equivalence audit",
+      "required_predicates": [
+        {
+          "predicate_id": "M10_P1",
+          "description": "modules/m10_artifact_audit/runner.py exists",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m10_artifact_audit/runner.py"
+        },
+        {
+          "predicate_id": "M10_P2",
+          "description": "Self test cases exist",
+          "evaluation_type": "artifact_exists",
+          "target": "modules/m10_artifact_audit/selftest_cases.json"
+        },
+        {
+          "predicate_id": "M10_P3",
+          "description": "Self test report exists",
+          "evaluation_type": "artifact_exists",
+          "target": "artifacts/reports/m10/selftest_report.json"
+        },
+        {
+          "predicate_id": "M10_P4",
+          "description": "All self tests pass",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m10/selftest_report.json"
+        },
+        {
+          "predicate_id": "M10_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "evaluation_type": "json_predicate",
+          "target": "artifacts/reports/m10/selftest_report.json"
+        },
+        {
+          "predicate_id": "M10_P6",
+          "description": "The runner records the visible-source artifact-audit limitation explicitly",
+          "evaluation_type": "binding_check",
+          "target": "modules/m10_artifact_audit/patch_notes.md"
+        }
+      ],
+      "authoritative_requires_all": [
+        "M10_P1",
+        "M10_P2",
+        "M10_P3",
+        "M10_P4",
+        "M10_P5",
+        "M10_P6"
+      ],
+      "current_assessment": {
+        "derived_status": "WORKING_PATCH",
+        "passing_predicates": [
+          "M10_P1",
+          "M10_P2",
+          "M10_P3",
+          "M10_P4",
+          "M10_P5",
+          "M10_P6"
+        ],
+        "failing_predicates": [],
+        "reason": "Derived from QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT."
+      }
+    }
+  ],
+  "derivation_policy": {
+    "closure_is_computed": true,
+    "manual_status_assignment_forbidden": true,
+    "override_mechanism": {
+      "allowed": true,
+      "required_artifact": "QDP_v10_6_MANUAL_OVERRIDE_LEDGER.json",
+      "rule": "Overrides must never reuse AUTHORITATIVE_CLOSURE. They must be labeled RECOVERY_INTERIM or WORKING_PATCH with a named approver and explicit expiry."
+    }
+  }
+}

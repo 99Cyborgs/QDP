@@ -1,0 +1,487 @@
+{
+  "candidate_id": "m05-case-device-specific",
+  "branch_or_model_tag": "M05_CASE_DEVICE_SPECIFIC",
+  "change_type": "HAMILTONIAN_TERM",
+  "model_classification": "FORMAL_CORE",
+  "declared_family_class": "UNASSESSED",
+  "assigned_family_class": "UNASSESSED",
+  "family_class_mismatch": false,
+  "family_status": "DECLARED_ONLY_PENDING_SIGNATURE_TRIAGE",
+  "candidate_H_mod_symbolic": "",
+  "candidate_H_mod_physical_interpretation": "",
+  "claimed_effect": "",
+  "declared_likely_bath_class": "",
+  "inferred_bath_rank_order": [
+    "UNASSESSED"
+  ],
+  "bath_classification_consistent_with_glossary": true,
+  "primary_observable": "",
+  "secondary_observable": "",
+  "accessible_platform_or_device_class": "",
+  "minimal_discriminant_measurement": "Collect one surfaced signature from specs/core/signature_to_bath_decision_chart.md before parameter expansion.",
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "invariant_preserved": "",
+  "reduction_limit": "When the nonlinear term is zero, recover the baseline Lindblad limit.",
+  "count_new_free_parameters": 0,
+  "new_free_parameters": [
+    "lambda"
+  ],
+  "parameter_constraints": {},
+  "independent_constraint_source_per_parameter": {
+    "lambda": "independent metrology"
+  },
+  "relevant_nuisance_controls_list": [],
+  "exact_falsifier": "Device-specific evidence alone should not clear promotion.",
+  "falsifiable_surface_area_delta": "",
+  "validation_ladder": {
+    "L0_baseline_pipeline_reproduced": true,
+    "L1_reduction_limit_verified": true,
+    "L2_convergence_plan_defined": true,
+    "L3_numerical_stability_passed": true,
+    "L4_instrument_facing_comparison_path_defined": true
+  },
+  "registry_duplicate_status": "",
+  "duplicate_reference": "",
+  "mechanism_priors": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 0.0
+  },
+  "mechanism_scores_after_signature": {
+    "P_TLS": 0.0,
+    "P_VORTEX": 0.0,
+    "P_QUASIPARTICLE": 0.0,
+    "P_PHONON": 0.0,
+    "P_CONTROL_NOISE": 0.0,
+    "P_EM_PURCELL": 0.0,
+    "P_OTHER": 1.0
+  },
+  "signature_matches": [],
+  "strongest_competing_mechanism_initial": "",
+  "strongest_competing_mechanism": "",
+  "baseline_model": {
+    "status": "EXECUTED_SUCCESSFULLY",
+    "joint_fit_used": true,
+    "hierarchical_drift_model_used": true,
+    "parameters": {},
+    "reduction_limit_verified": true
+  },
+  "residual_analysis": {
+    "structured_residuals": false,
+    "features": [],
+    "time_series_based": true
+  },
+  "mechanism_tests": {
+    "vortex": {},
+    "quasiparticle": {},
+    "tls": {},
+    "phonon": {},
+    "control_noise": {},
+    "em_purcell": {}
+  },
+  "artifact_tests": {
+    "visible_source_partial_suite": true,
+    "surfaced_source_artifacts": [
+      "specs/research/deep_research_report.md",
+      "specs/intake/fork_intake_form_one_page.pdf",
+      "config/schema/candidate_template.json"
+    ],
+    "missing_owner_artifacts": [],
+    "control_chain_distortion": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Swap line filtering and attenuation, vary pulse shapes, and verify whether the anomaly follows measured chain distortion at the device."
+    },
+    "readout_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Sweep readout power and gain, check digitizer linearity, and re-fit with a relinearized readout model to see whether the anomaly disappears."
+    },
+    "calibration_drift": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Repeat the measurement with interleaved calibrations and a drift ledger to see whether recalibration removes the apparent anomaly."
+    },
+    "refrigerator_cycle_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Phase-bin the data against the pulse-tube or cryocooler cycle and test hold-time dependence to see whether the signal is a refrigerator alias."
+    },
+    "power_calibration_alias": {
+      "status": "NOT_SUPPORTED",
+      "support_score": 0.0,
+      "explains_data": false,
+      "primary_term_hits": [],
+      "supporting_term_hits": [],
+      "primary_flag_hits": [],
+      "minimal_discriminant_measurement": "Calibrate in-situ device power instead of generator settings and repeat the amplitude sweep across a checked attenuation map."
+    },
+    "strongest_artifact_route_initial": "",
+    "parsimonious_combination_explains": false,
+    "parsimonious_combination_label": "",
+    "route_explains_data": false,
+    "explains_data": false,
+    "strongest_artifact_route": "",
+    "alias_summary": []
+  },
+  "hamiltonian_test": {
+    "executed": false,
+    "new_orthogonal_observables": [],
+    "survives_known_mechanisms": false,
+    "convergence_plan_declared": true,
+    "experiment_design_law_satisfied": true,
+    "instrument_facing_requirement_satisfied": true
+  },
+  "lindblad_equivalence": {
+    "equivalent_within_resolution": false,
+    "best_equivalent_model": ""
+  },
+  "scaling_analysis": {
+    "orthogonal_axes_count": 3,
+    "axes_used": [
+      "time-domain",
+      "power",
+      "device"
+    ],
+    "strongest_competitor_separated": false,
+    "geometry_claim_fabrication_matched": false,
+    "experimentally_resolvable": false
+  },
+  "numerical_stability": {
+    "stable": true,
+    "failed_checks": []
+  },
+  "experiment_schedule": {
+    "priority_experiments": [
+      "Single-device follow-up"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true
+  },
+  "candidate_target_devices": [
+    "DEV_MATCH_A",
+    "DEV_MATCH_B"
+  ],
+  "multi_device_data_available": true,
+  "fabrication_matched_for_geometry_claim": true,
+  "cross_device_validation": {
+    "status": "CONFIRMED",
+    "devices_tested": [
+      "DEV_MATCH_A",
+      "DEV_MATCH_B"
+    ],
+    "fabrication_matched": true,
+    "notes": "Synthetic ingest fixture for first-wave promotion-adjacent smoke test.; Matched-device comparison removes the device-specific-only evidence limitation but does not clear promotion_cap_governance."
+  },
+  "cross_device_status": "CONFIRMED",
+  "instrument_capabilities": {
+    "instrument_facing_requirement_satisfied": true
+  },
+  "calibration_status": {
+    "status": "VALID",
+    "validity_score": 95.0,
+    "threshold": 70.0,
+    "below_threshold": false,
+    "notes": "Synthetic calibration snapshot for first-wave promotion-adjacent smoke test."
+  },
+  "calibration_validity_score": 95.0,
+  "identifiability_status": {
+    "status": "SUFFICIENT",
+    "orthogonal_axes_satisfied": true,
+    "independent_constraints_satisfied": true,
+    "notes": ""
+  },
+  "drift_ledger": {
+    "status": "NOT_REQUIRED",
+    "hierarchical_model_required": false,
+    "hierarchical_model_applied": false,
+    "notes": ""
+  },
+  "dataset_governance": {
+    "status": "COMPLETE",
+    "device_lineage_recorded": true,
+    "calibration_context_recorded": true,
+    "protocol_metadata_recorded": true,
+    "independent_evidence_eligible": true,
+    "notes": "Synthetic lineage fixture for first-wave promotion-adjacent smoke test."
+  },
+  "requested_output_artifacts": [
+    "EXECUTABLE_FALSIFIER_PACKAGE"
+  ],
+  "automatic_flags_triggered": [
+    "M07_VISIBLE_SOURCE_TRIAGE_ONLY",
+    "M07_NO_STRONG_SIGNATURE_MATCH",
+    "M10_VISIBLE_SOURCE_ARTIFACT_AUDIT"
+  ],
+  "promotion_cap_scientific": "",
+  "promotion_cap_governance": "SANDBOX_ONLY",
+  "simulation_conditions": {},
+  "tested_parameter_ranges": {},
+  "evaluation_notes": [
+    "M07 family triage used only surfaced specs/core/bath_glossary.md and specs/core/signature_to_bath_decision_chart.md mappings.",
+    "M10 artifact-equivalence auditing used only surfaced visible-source artifact-elimination cues and candidate nuisance-control fields."
+  ],
+  "failure_modes": [],
+  "failure_mode_library_hits": [],
+  "linked_artifacts": [
+    "specs/core/bath_glossary.md",
+    "specs/core/signature_to_bath_decision_chart.md",
+    "specs/research/deep_research_report.md",
+    "specs/intake/fork_intake_form_one_page.pdf",
+    "artifacts\\lab\\requests\\m05-case-device-specific\\QDPLAB-EBE5E0010DAD7DE8_request_pack.json",
+    "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_result_packet.json",
+    "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_calibration_snapshot.json",
+    "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_lineage_record.json"
+  ],
+  "gate_trace": [
+    {
+      "stage_id": "PRECHECK",
+      "stage_name": "GOVERNANCE_PRECHECK",
+      "inputs_checked": [
+        "system_status",
+        "governance_self_check.validation_harness_status",
+        "governance_self_check.reference_resolution_status",
+        "governance_self_check.system_status"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Mirror consistency enforced between top-level and governance self-check system_status."
+    },
+    {
+      "stage_id": "STAGE_5",
+      "stage_name": "BASELINE_PIPELINE_REPRODUCTION",
+      "inputs_checked": [
+        "baseline_model.status",
+        "baseline_model.pipeline_executed"
+      ],
+      "decision_or_cap_change": "SET validation_ladder.L0_baseline_pipeline_reproduced=true",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Baseline pipeline trigger satisfied by baseline_model.status or baseline_model.pipeline_executed."
+    },
+    {
+      "stage_id": "STAGE_6",
+      "stage_name": "BASELINE_SUFFICIENCY_GATE",
+      "inputs_checked": [
+        "validation_ladder.L0_baseline_pipeline_reproduced",
+        "residual_analysis.white_residuals",
+        "residual_analysis.stationary_residuals",
+        "residual_analysis.structured_residuals",
+        "residual_analysis.cross_observable_correlations_vanish",
+        "residual_analysis.drift_aware_fit_applied"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Baseline sufficiency trigger not satisfied."
+    },
+    {
+      "stage_id": "STAGE_8",
+      "stage_name": "KNOWN_MECHANISM_COMPETITION",
+      "inputs_checked": [
+        "mechanism_tests.*.explains_data",
+        "mechanism_tests.parsimonious_combination_explains"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "No surfaced known-mechanism equivalence trigger was present."
+    },
+    {
+      "stage_id": "STAGE_9",
+      "stage_name": "ARTIFACT_EQUIVALENCE_AUDIT",
+      "inputs_checked": [
+        "artifact_tests.route_explains_data",
+        "artifact_tests.explains_data"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "No surfaced artifact-equivalence trigger was present."
+    },
+    {
+      "stage_id": "STAGE_10",
+      "stage_name": "CONVERGENCE_AND_REDUCTION_LIMIT_GATE",
+      "inputs_checked": [
+        "hamiltonian_test.convergence_plan_declared",
+        "hamiltonian_test.plan_declared_before_nonlinear_sweeps",
+        "reduction_limit",
+        "baseline_model.reduction_limit_verified",
+        "baseline_model.reduction_limit_test_passed"
+      ],
+      "decision_or_cap_change": "SET validation_ladder.L2_convergence_plan_defined=true; SET validation_ladder.L1_reduction_limit_verified=true",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Convergence planning is allowed to set L2, but reduction-limit verification is required before continuing."
+    },
+    {
+      "stage_id": "STAGE_11",
+      "stage_name": "LINDBLAD_EQUIVALENCE_GATE",
+      "inputs_checked": [
+        "lindblad_equivalence.equivalent_within_resolution",
+        "lindblad_equivalence.best_equivalent_model"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "No surfaced Lindblad-equivalence trigger was present. M11 module report: {\"best_equivalent_model\": \"\", \"equivalent_within_resolution\": false, \"inferred_from_surviving_visible_signals\": false}"
+    },
+    {
+      "stage_id": "STAGE_12",
+      "stage_name": "GOVERNANCE_GUARDRAILS",
+      "inputs_checked": [
+        "calibration_status",
+        "identifiability_status",
+        "drift_ledger",
+        "dataset_governance",
+        "promotion_cap_governance"
+      ],
+      "decision_or_cap_change": "SET typed governance guardrails from M15 module; CLEAR placeholder governance_outcome=DEFER",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Typed governance guardrails were refreshed from the shared M15 module."
+    },
+    {
+      "stage_id": "STAGE_13",
+      "stage_name": "NUMERICAL_STABILITY_GATE",
+      "inputs_checked": [
+        "numerical_stability.stable",
+        "numerical_stability.failed_checks"
+      ],
+      "decision_or_cap_change": "SET validation_ladder.L3_numerical_stability_passed=true",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Numerical stability required a surfaced passed state, not planning text."
+    },
+    {
+      "stage_id": "STAGE_14",
+      "stage_name": "PROVISIONAL_IDENTIFIABILITY_ASSIGNMENT",
+      "inputs_checked": [
+        "scientific_decision",
+        "validation_ladder.L0-L3"
+      ],
+      "decision_or_cap_change": "SET scientific_decision=PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Visible Stage 14 survival assignment applied after Stages 5-13."
+    },
+    {
+      "stage_id": "STAGE_15",
+      "stage_name": "INSTRUMENT_FACING_L4_RULE",
+      "inputs_checked": [
+        "exact_falsifier",
+        "experiment_schedule.executable_falsifier_package_emitted",
+        "experiment_schedule.priority_experiments",
+        "instrument_capabilities.instrument_facing_requirement_satisfied"
+      ],
+      "decision_or_cap_change": "SET validation_ladder.L4_instrument_facing_comparison_path_defined=true",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "L4 required both an executable falsifier package and at least one surfaced instrument-facing experiment. M12 module report: {\"default_templates_triggered\": [\"ORTHOGONAL_DISCRIMINANT_SWEEP\"], \"exact_falsifier\": \"Device-specific evidence alone should not clear promotion.\", \"executable_falsifier_package_emitted\": true, \"instrument_facing_requirement_satisfied\": true, \"priority_experiments\": [\"Single-device follow-up\"]}"
+    },
+    {
+      "stage_id": "STAGE_16",
+      "stage_name": "CROSS_DEVICE_GATE",
+      "inputs_checked": [
+        "multi_device_data_available",
+        "fabrication_matched_for_geometry_claim",
+        "scaling_analysis.geometry_claimed_discriminator",
+        "cross_device_validation.status",
+        "cross_device_validation.devices_tested"
+      ],
+      "decision_or_cap_change": "SET cross_device_status=DEVICE_SPECIFIC; FORCE promotion_cap_governance=SANDBOX_ONLY",
+      "key_evidence_ids": [],
+      "status": "WARN",
+      "notes": "Cross-device status normalized from surfaced evidence."
+    },
+    {
+      "stage_id": "STAGE_17",
+      "stage_name": "PROCEED_GATE",
+      "inputs_checked": [
+        "cross_device_status",
+        "validation_ladder.L0_baseline_pipeline_reproduced",
+        "validation_ladder.L1_reduction_limit_verified",
+        "validation_ladder.L2_convergence_plan_defined",
+        "validation_ladder.L3_numerical_stability_passed",
+        "validation_ladder.L4_instrument_facing_comparison_path_defined"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "NO_CHANGE",
+      "notes": "Proceed remained impossible without confirmed cross-device evidence and a complete visible ladder."
+    },
+    {
+      "stage_id": "FINAL_CLIP",
+      "stage_name": "FINAL_CLIPPING_RULE",
+      "inputs_checked": [
+        "governance_outcome",
+        "promotion_cap_governance",
+        "scientific_decision",
+        "promotion_cap_scientific"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "NO_CHANGE",
+      "notes": "Visible clipping rules were applied exactly as surfaced in the M05 implementation pack."
+    },
+    {
+      "stage_id": "FALLBACK",
+      "stage_name": "FALLBACK_COMPLETION_RULE",
+      "inputs_checked": [
+        "governance_outcome",
+        "scientific_decision"
+      ],
+      "decision_or_cap_change": "NO_CHANGE",
+      "key_evidence_ids": [],
+      "status": "NO_CHANGE",
+      "notes": "Fallback completion was only applied when governance_outcome remained unset."
+    },
+    {
+      "stage_id": "SCHEMA",
+      "stage_name": "POST_RUN_SCHEMA_VALIDATION",
+      "inputs_checked": [
+        "config/schema/candidate_schema.json",
+        "tools/validators/candidate_validator.py final semantics"
+      ],
+      "decision_or_cap_change": "SET governance_self_check.schema_validation_status=PASSED",
+      "key_evidence_ids": [],
+      "status": "PASS",
+      "notes": "Post-run final-mode schema validation passed."
+    }
+  ],
+  "system_status": "READY",
+  "governance_self_check": {
+    "validation_harness_status": "PASSED",
+    "schema_validation_status": "PASSED",
+    "reference_resolution_status": "PASSED",
+    "determinism_status": "PASSED",
+    "system_status": "READY"
+  },
+  "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+  "governance_outcome": "SANDBOX_ONLY",
+  "terminated_at": ""
+}

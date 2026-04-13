@@ -1,0 +1,10 @@
+{
+  "artifact_paths": [],
+  "backend": "local_placeholder",
+  "extracted_metrics": {},
+  "job_id": "GEN-003-local_placeholder",
+  "schema_name": "mmm_studio.simulation_result",
+  "schema_version": "1.0",
+  "status": "preflight_only",
+  "summary": "Preflight-only local backend. Geometry and sweep metadata were serialized, but no electromagnetic or phononic solver was run."
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "created_on": "2026-03-17",
+  "branch_or_model_tag": "E01_MM_FLUX_HISTORY_HYSTERESIS",
+  "branch_slug": "e01_mm_flux_history_hysteresis",
+  "declared_bath_class": "METASTABLE_C_STATE",
+  "conditional_promoted_interpretation": "VORTEX",
+  "registration_state": "INTAKE_READY",
+  "cross_device_status": "NOT_CLAIMED",
+  "same_chip_matched_geometry_status": "REQUIRED_NOT_YET_SHOWN",
+  "scientific_decision": "MINIMAL_DISCRIMINANT_PENDING",
+  "governance_outcome": "CONSERVATIVE_REVIEW_ONLY",
+  "recommended_next_gate": "RUN_PHASE_1_FIXED_T_FIXED_DRIVE_PROTOCOL",
+  "package_witness_status": "REQUIRED",
+  "authoritative_artifacts": [
+    "specs/e01_mm_branch_spec.md",
+    "specs/e01_mm_exact_falsifier.md",
+    "protocols/e01_mm_measurement_protocol.md",
+    "analysis/e01_mm_analysis_protocol.md"
+  ],
+  "seed_notes": [
+    "Retain metastable memory as the intake label until H0 is rejected and H1 versus H3 versus H4 has been ranked with the required controls.",
+    "Do not promote to a vortex candidate without same-chip matched geometry and consistent ordering across the minimum three cooldowns.",
+    "No cross-device confirmation or proceed-level governance outcome is asserted at this stage."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.083487+00:00",
+  "candidate_id": "m06-case-7",
+  "result_summary": {
+    "exact_falsifier": "Confirmed matched-fabrication sweeps must preserve the discriminant ordering.",
+    "priority_experiments": [
+      "Cross-device matched-fabrication sweep"
+    ],
+    "default_templates_triggered": [
+      "ORTHOGONAL_DISCRIMINANT_SWEEP"
+    ],
+    "executable_falsifier_package_emitted": true,
+    "instrument_facing_requirement_satisfied": true,
+    "branch_partition": "cross_device_confirmation",
+    "sweep_route_group": "CROSS_DEVICE_CONFIRMATION",
+    "candidate_target_devices": [
+      "DEV_A",
+      "DEV_B"
+    ],
+    "simulation_conditions": {},
+    "tested_parameter_ranges": {},
+    "suppression_reason": ""
+  }
+}

@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
   "module_id": "M05",
-  "timestamp_utc": "2026-03-15T20:19:15.311600+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.192619+00:00",
   "candidate_id": "m06-case-3",
   "branch_or_model_tag": "M06_CASE_ARTIFACT_DOMINATED",
   "terminated_at": "STAGE_9",
@@ -23,11 +23,11 @@
   "schema_validation": {
     "valid": true,
     "errors": [],
-    "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-    "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py",
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py",
     "mode": "final"
   },
-  "gate_trace_count": 15,
+  "gate_trace_count": 16,
   "stage_inputs_used": {
     "stage5": {
       "baseline_pipeline_executed": true,

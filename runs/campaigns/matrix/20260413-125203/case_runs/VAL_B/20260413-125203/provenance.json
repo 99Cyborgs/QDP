@@ -1,0 +1,69 @@
+{
+  "case_id": "VAL_B",
+  "config": {
+    "base_config": null,
+    "case_id": "VAL_B",
+    "config_hash": "05a021bdc9f23db1549de8ca0ce07e6827516119d6f36a70353ecce88f381aad",
+    "expanded_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs\\VAL_B\\20260413-125203\\expanded_config.yaml",
+    "output_root_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\case_runs",
+    "phase": "D",
+    "source_config_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125203\\expanded_configs\\002_VAL_B.yaml",
+    "version": "0.1.0"
+  },
+  "config_hash": "05a021bdc9f23db1549de8ca0ce07e6827516119d6f36a70353ecce88f381aad",
+  "determinism": {
+    "deterministic_expected": true,
+    "master_seed": 1234,
+    "noise_enabled": false,
+    "noise_seed": 1234,
+    "pinning_seed": null,
+    "reproducibility_scope": "same-stack deterministic"
+  },
+  "execution": {
+    "git_revision": "ec122dfd14e656a5b2783ca2689c1397bc0f4367",
+    "hostname": "Mothership",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "rank_count": 1,
+    "repo_root": "G:\\GitHub\\incubate\\QDP"
+  },
+  "git_revision": "ec122dfd14e656a5b2783ca2689c1397bc0f4367",
+  "hostname": "Mothership",
+  "initialization": {
+    "mode": "meissner"
+  },
+  "matrix_row_id": "VAL_B",
+  "noise": {
+    "contract_kind": "additive_complex_gaussian",
+    "enabled": false,
+    "sampling": "run_local_complex_standard_normal",
+    "seed": 1234,
+    "strength": 0.0
+  },
+  "numeric_environment": {
+    "byteorder": "little",
+    "complex_dtype": "complex128",
+    "float_epsilon": 2.220446049250313e-16,
+    "real_dtype": "float64"
+  },
+  "packages": {
+    "PyYAML": "6.0.3",
+    "h5py": "3.16.0",
+    "jsonschema": "4.26.0",
+    "numpy": "2.4.3",
+    "pydantic": "2.12.5",
+    "scipy": "1.17.1",
+    "typer": "0.24.1"
+  },
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "rank_count": 1,
+  "schema_version": "tdgl_rf.run_provenance.v3",
+  "seeds": {
+    "initial_condition": "meissner",
+    "master_seed": 1234,
+    "noise_seed": 1234,
+    "pinning_seed": null,
+    "vortex_seed_count": 0
+  }
+}

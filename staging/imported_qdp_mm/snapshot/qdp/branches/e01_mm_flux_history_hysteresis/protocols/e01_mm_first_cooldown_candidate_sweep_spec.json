@@ -1,0 +1,40 @@
+{
+  "field_unit": "mT",
+  "B_max_values": [
+    5.0
+  ],
+  "fc_field_values": [
+    5.0
+  ],
+  "field_step_loops": [
+    [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      0.0,
+      -1.0,
+      -2.0,
+      -3.0,
+      -4.0,
+      -5.0,
+      0.0
+    ]
+  ],
+  "onset_fields": [
+    1.0
+  ],
+  "high_field_selections": [
+    3.0
+  ],
+  "dwell_time_ladders": [
+    [
+      30.0,
+      60.0,
+      120.0
+    ]
+  ],
+  "dwell_time_unit": "s"
+}

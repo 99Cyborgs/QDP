@@ -1,0 +1,108 @@
+{
+  "artifact_id": "QDP_V10_6_M11_SELFTEST_REPORT",
+  "module_id": "M11",
+  "timestamp_utc": "2026-04-13T18:30:49.031063+00:00",
+  "visible_source_only": true,
+  "cases_total": 3,
+  "cases_passed": 3,
+  "all_passed": true,
+  "schema_valid_all": true,
+  "cases": [
+    {
+      "case_id": "CASE_M11_EXPLICIT_EQUIVALENCE",
+      "description": "An explicit equivalence flag is preserved and reported.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_WITH_DRIFT"
+        }
+      },
+      "actual_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_WITH_DRIFT"
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_EXPLICIT_EQUIVALENCE\\CASE_M11_EXPLICIT_EQUIVALENCE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE",
+      "description": "A surfaced best equivalent model implies equivalence conservatively.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_LIMIT"
+        }
+      },
+      "actual_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": true,
+          "best_equivalent_model": "GKSL_LIMIT"
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE\\CASE_M11_BEST_MODEL_IMPLIES_EQUIVALENCE_candidate.json"
+    },
+    {
+      "case_id": "CASE_M11_NON_EQUIVALENT_BRANCH",
+      "description": "A branch without equivalence signals remains non-equivalent.",
+      "passed": true,
+      "comparison_ok": true,
+      "comparison_failures": [],
+      "validator_result": {
+        "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json",
+        "returncode": 0,
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stderr": "",
+        "valid": true,
+        "errors": [],
+        "mode": "final",
+        "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+      },
+      "expected_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": false,
+          "best_equivalent_model": ""
+        }
+      },
+      "actual_summary": {
+        "lindblad_equivalence": {
+          "equivalent_within_resolution": false,
+          "best_equivalent_model": ""
+        }
+      },
+      "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m11\\selftests\\CASE_M11_NON_EQUIVALENT_BRANCH\\CASE_M11_NON_EQUIVALENT_BRANCH_candidate.json"
+    }
+  ]
+}

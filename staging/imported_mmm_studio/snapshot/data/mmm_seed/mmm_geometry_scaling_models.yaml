@@ -1,0 +1,112 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_GEOMETRY_SCALING_MODELS
+geometry_scaling_models:
+- model_id: GEO-001
+  structure_id: STR-EM-CPW-EBG-RING
+  response_variables:
+  - OBS-T1-MEAN
+  - OBS-BG-SHIFT
+  geometry_variables:
+  - lattice_constant_um
+  - cell_count
+  - impedance_contrast
+  predicted_relationship: Band center scales approximately inversely with lattice constant; T1 gain rises with cell count until stopband attenuation saturates.
+  required_series_size: 5
+  acceptance_criterion: Monotonic band-center shift and saturating T1 trend recovered after as-built metrology correction.
+- model_id: GEO-002
+  structure_id: STR-EM-LID-HIS
+  response_variables:
+  - OBS-T1-MEAN
+  - OBS-PKG-S21
+  geometry_variables:
+  - patch_pitch_um
+  - patch_size_um
+  - lid_spacing_um
+  predicted_relationship: Stopband position follows patch period; benefit decays with lid spacing.
+  required_series_size: 4
+  acceptance_criterion: Removable-lid geometry trend exceeds package-only control trend.
+- model_id: GEO-003
+  structure_id: STR-PH-SOI-JJ-PHC
+  response_variables:
+  - OBS-T1-NMARK
+  - OBS-BG-SHIFT
+  - OBS-T1-MEAN
+  geometry_variables:
+  - lattice_constant_nm
+  - neck_width_nm
+  - cell_count
+  - membrane_thickness_nm
+  predicted_relationship: Gap center shifts with lattice constant and thickness; non-Markovian score rises when gap overlaps active bath frequencies.
+  required_series_size: 5
+  acceptance_criterion: Gap shift and memory-score alignment both observed.
+- model_id: GEO-004
+  structure_id: STR-PH-SOI-FULLCAP-PHC
+  response_variables:
+  - OBS-T1-MEAN
+  - OBS-SDIFF-PSD
+  geometry_variables:
+  - fill_factor
+  - lattice_constant_nm
+  - membrane_thickness_nm
+  predicted_relationship: Full-cap lattice broadens gap and modifies spectral diffusion across device area.
+  required_series_size: 4
+  acceptance_criterion: Trend survives after correcting for membrane stress variation.
+- model_id: GEO-005
+  structure_id: STR-PH-GRADED-SINK
+  response_variables:
+  - OBS-QP-RECOV
+  - OBS-QP-PARITY
+  geometry_variables:
+  - sink_radius_um
+  - taper_angle_deg
+  - stage_count
+  predicted_relationship: Recovery time falls with stronger gradient and shorter escape distance until diminishing returns.
+  required_series_size: 4
+  acceptance_criterion: Recovery improvement tracks sink geometry more strongly than trap area or temperature drift.
+- model_id: GEO-006
+  structure_id: STR-VX-ANTIDOT-LATTICE
+  response_variables:
+  - OBS-VORTEX-SLOPE
+  - OBS-WITNESS-QI
+  geometry_variables:
+  - antidot_radius_um
+  - pitch_um
+  - edge_offset_um
+  predicted_relationship: Field-cool loss slope minimized near geometry that maximizes pinning without excessive current crowding.
+  required_series_size: 5
+  acceptance_criterion: Distinct optimum in field dependence reproduced across cooldowns.
+- model_id: GEO-007
+  structure_id: STR-PH-SAW-BRAGG
+  response_variables:
+  - OBS-SAW-S21
+  - OBS-T1-MEAN
+  geometry_variables:
+  - period_nm
+  - pair_count
+  - piezo_thickness_nm
+  predicted_relationship: SAW notch center scales with Bragg period; notch depth grows with reflector count.
+  required_series_size: 4
+  acceptance_criterion: Acoustic witness shift matches geometry trend and correlates with any device response.
+- model_id: GEO-008
+  structure_id: STR-3D-CAVITY-LINER
+  response_variables:
+  - OBS-PKG-S21
+  - OBS-T1-MEAN
+  geometry_variables:
+  - corrugation_period_mm
+  - corrugation_depth_mm
+  - insert_distance_mm
+  predicted_relationship: Parasitic mode density and seam-current participation change with corrugation geometry.
+  required_series_size: 4
+  acceptance_criterion: Mode map shift follows machining series and repeats after reassembly.

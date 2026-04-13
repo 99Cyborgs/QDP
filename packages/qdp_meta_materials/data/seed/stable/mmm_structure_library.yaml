@@ -1,0 +1,594 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_STRUCTURE_LIBRARY
+lab_feasibility_requirement:
+  dilution_refrigerator_operation: true
+  millikelvin_operation: true
+  standard_nanofabrication_processes: true
+  academic_cleanroom_facilities: true
+  exotic_structures_flagged: true
+structures:
+- structure_id: STR-EM-CPW-EBG-RING
+  name: CPW electromagnetic bandgap ring
+  structure_family: planar_photonic_crystal
+  implements_mechanisms:
+  - MECH-EM-001
+  geometry:
+    topology: Concentric or surround ring of periodic CPW unit cells around the qubit island and readout neck
+    parameters:
+      lattice_constant_um:
+      - 180
+      - 520
+      cell_count:
+      - 6
+      - 32
+      line_width_um:
+      - 8
+      - 24
+      gap_width_um:
+      - 6
+      - 18
+      impedance_contrast:
+      - 1.5
+      - 4.0
+      target_stopband_GHz:
+      - 4.0
+      - 8.5
+  material_composition:
+  - superconducting Al or NbTiN trace
+  - high-resistivity Si or sapphire substrate
+  operating_frequency_range:
+    microwave_GHz:
+    - 4.0
+    - 8.5
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - superconducting film deposition
+    - optical_or_e-beam patterning
+    - dry etch or lift-off
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: top metal layer around qubit / resonator perimeter
+    electrical_interface: galvanically isolated or weakly coupled boundary structure
+    packaging_interface: planar chip within standard sample box
+  device_compatibility: &id001
+    transmon: native
+    fluxonium: native_or_variant
+    planar_resonator: native
+    3d_cavity: not_primary
+    kinetic_inductance_detector: variant
+  notes: Primary EM stopband candidate for planar devices.
+- structure_id: STR-EM-LID-HIS
+  name: High-impedance metasurface lid or interposer
+  structure_family: high_impedance_surface
+  implements_mechanisms:
+  - MECH-EM-001
+  - MECH-EM-002
+  geometry:
+    topology: Periodic patch or mushroom surface on lid / interposer above device
+    parameters:
+      patch_pitch_um:
+      - 200
+      - 1500
+      patch_size_um:
+      - 120
+      - 1200
+      gap_um:
+      - 10
+      - 100
+      lid_spacing_um:
+      - 50
+      - 1000
+      target_stopband_GHz:
+      - 4.0
+      - 12.0
+  material_composition:
+  - Cu/Au plated lid with superconducting coating optional
+  - silicon or sapphire interposer optional
+  - indium or spacer stand-off
+  operating_frequency_range:
+    microwave_GHz:
+    - 4.0
+    - 12.0
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - lid machining or wafer interposer
+    - metal patterning
+    - optional bump/spacer assembly
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: device lid or removable interposer
+    electrical_interface: floating boundary surface
+    packaging_interface: drop-in sample-box compatible
+  device_compatibility: &id002
+    transmon: compatible
+    fluxonium: compatible
+    planar_resonator: compatible
+    3d_cavity: compatible_via_insert_or_lid
+    kinetic_inductance_detector: compatible
+  notes: Low-risk packaging branch with direct package-mode metrology.
+- structure_id: STR-EM-HKI-FENCE
+  name: High-kinetic-inductance fence / slotline suppressor
+  structure_family: periodic_ground_engineering
+  implements_mechanisms:
+  - MECH-EM-001
+  - MECH-EM-002
+  - MECH-EM-003
+  geometry:
+    topology: Perimeter fence or inductive bridge lattice using high-kinetic-inductance segments
+    parameters:
+      fence_pitch_um:
+      - 40
+      - 300
+      bridge_length_um:
+      - 10
+      - 100
+      strip_width_um:
+      - 0.1
+      - 2.0
+      gap_to_ground_um:
+      - 2
+      - 20
+      target_common_mode_band_GHz:
+      - 2.0
+      - 20.0
+  material_composition:
+  - NbTiN, TiN, or granular Al HKI film
+  - baseline Al/Nb ground plane
+  - Si or sapphire substrate
+  operating_frequency_range:
+    microwave_GHz:
+    - 2.0
+    - 20.0
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - multilayer or single-layer HKI deposition
+    - fine-line lithography
+    - bridge/crossover integration if needed
+    cleanroom_level: advanced_standard
+    exotic_flag: false
+  integration_interface:
+    placement: ground-plane gaps, package interface perimeter, control-line transitions
+    electrical_interface: galvanic ground engineering
+    packaging_interface: standard planar package
+  device_compatibility: *id001
+  notes: Supports slotline suppression and boundary engineering; must be compared to ordinary bridge fixes.
+- structure_id: STR-PH-SOI-JJ-PHC
+  name: Junction-local SOI phononic crystal
+  structure_family: local_phononic_crystal
+  implements_mechanisms:
+  - MECH-PH-001
+  geometry:
+    topology: Released membrane or localized suspended region with periodic holes / necks beneath and around the Josephson junction region
+    parameters:
+      lattice_constant_nm:
+      - 250
+      - 700
+      neck_width_nm:
+      - 40
+      - 180
+      slot_or_hole_size_nm:
+      - 120
+      - 500
+      membrane_thickness_nm:
+      - 150
+      - 400
+      cell_count:
+      - 5
+      - 20
+      target_gap_GHz:
+      - 3.0
+      - 10.0
+  material_composition:
+  - SOI device layer Si
+  - Al or Ta junction stack
+  - optional SiNx hard mask
+  operating_frequency_range:
+    microwave_GHz:
+    - 3.0
+    - 10.0
+    phononic_GHz:
+    - 3.0
+    - 10.0
+  fabrication_requirements:
+    process_flow:
+    - junction patterning
+    - front-side phononic lattice lithography
+    - selective release / undercut
+    - critical point dry optional
+    cleanroom_level: advanced_standard
+    exotic_flag: false
+  integration_interface:
+    placement: local to junction capacitor neck or island edge
+    electrical_interface: mechanically structured substrate under active device
+    packaging_interface: standard planar package with vibration precautions
+  device_compatibility: *id001
+  notes: Lead phononic branch. Release window kept local to preserve yield.
+- structure_id: STR-PH-SOI-FULLCAP-PHC
+  name: Full-capacitor SOI phononic crystal
+  structure_family: extended_phononic_crystal
+  implements_mechanisms:
+  - MECH-PH-001
+  geometry:
+    topology: Phononic lattice spanning most of capacitor footprint or qubit body on suspended/structured substrate
+    parameters:
+      lattice_constant_nm:
+      - 300
+      - 900
+      neck_width_nm:
+      - 50
+      - 220
+      hole_or_cross_size_nm:
+      - 150
+      - 650
+      membrane_thickness_nm:
+      - 150
+      - 500
+      fill_factor:
+      - 0.2
+      - 0.7
+      target_gap_GHz:
+      - 2.5
+      - 8.0
+  material_composition:
+  - SOI or membrane Si
+  - Al, Ta, or Nb device metal
+  operating_frequency_range:
+    microwave_GHz:
+    - 2.5
+    - 8.0
+    phononic_GHz:
+    - 2.5
+    - 8.0
+  fabrication_requirements:
+    process_flow:
+    - large-area phononic lithography
+    - release/etch
+    - stress control metrology
+    cleanroom_level: advanced_standard
+    exotic_flag: false
+  integration_interface:
+    placement: below full capacitor or resonator section
+    electrical_interface: structured support under high-participation region
+    packaging_interface: requires chip-handling fixtures
+  device_compatibility: *id001
+  notes: Higher signal potential, lower fabrication robustness than local PHC.
+- structure_id: STR-PH-GRADED-SINK
+  name: Graded phonon sink / acoustic black-hole ring
+  structure_family: phonon_escape_router
+  implements_mechanisms:
+  - MECH-PH-002
+  geometry:
+    topology: Radially graded acoustic impedance or tapered trench network guiding phonons away from active region
+    parameters:
+      sink_radius_um:
+      - 20
+      - 400
+      taper_angle_deg:
+      - 2
+      - 30
+      stage_count:
+      - 2
+      - 8
+      gradient_strength:
+      - 0.2
+      - 2.0
+      escape_channel_width_um:
+      - 1
+      - 20
+  material_composition:
+  - Si or sapphire substrate
+  - etched trenches / variable-thickness regions
+  - optional metal sink pad
+  operating_frequency_range:
+    microwave_GHz: null
+    phononic_GHz:
+    - 0.5
+    - 50.0
+  fabrication_requirements:
+    process_flow:
+    - multi-depth etch or graded patterning
+    - optional backside thinning
+    - no mandatory membrane release for baseline design
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: annular region around qubit / resonator / injector
+    electrical_interface: acoustic only
+    packaging_interface: standard
+  device_compatibility: *id001
+  notes: Best branch for explicit phonon-routing tests with QP injection.
+- structure_id: STR-PH-SAW-BRAGG
+  name: Surface-acoustic-wave Bragg lattice
+  structure_family: saw_bandstop
+  implements_mechanisms:
+  - MECH-PH-003
+  geometry:
+    topology: Periodic etched or piezoelectric SAW reflector with witness IDTs
+    parameters:
+      period_nm:
+      - 200
+      - 2000
+      duty_cycle:
+      - 0.2
+      - 0.8
+      aperture_um:
+      - 20
+      - 400
+      pair_count:
+      - 10
+      - 200
+      piezo_thickness_nm:
+      - 50
+      - 1000
+  material_composition:
+  - Al on Si with interface piezoelectricity
+  - optional AlN or LiNbO3 piezo layer
+  - IDT witness metal
+  operating_frequency_range:
+    microwave_GHz: null
+    phononic_GHz:
+    - 0.3
+    - 8.0
+  fabrication_requirements:
+    process_flow:
+    - piezo deposition optional
+    - IDT lithography
+    - Bragg etch or metal patterning
+    cleanroom_level: advanced_standard
+    exotic_flag: true
+  integration_interface:
+    placement: witness lane adjacent to device or dedicated test die
+    electrical_interface: IDT transducers
+    packaging_interface: RF-compatible bondout for SAW witness
+  device_compatibility: *id001
+  notes: Explicitly exotic because piezo integration is not baseline qubit process.
+- structure_id: STR-QP-GAP-LATTICE
+  name: Gap-contrast quasiparticle trap lattice
+  structure_family: gap_engineered_trap_network
+  implements_mechanisms:
+  - MECH-QP-001
+  geometry:
+    topology: Periodic lower-gap islands or normal-metal traps surrounding active region
+    parameters:
+      trap_pitch_um:
+      - 2
+      - 50
+      trap_size_um:
+      - 0.5
+      - 20
+      distance_to_junction_um:
+      - 5
+      - 200
+      coverage_fraction:
+      - 0.01
+      - 0.25
+      gap_contrast_meV:
+      - 0.01
+      - 0.3
+  material_composition:
+  - Al base layer
+  - Cu/Au/Pd normal metal or lower-gap superconducting trap metal
+  - optional oxide barrier
+  operating_frequency_range:
+    microwave_GHz: null
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - multimetal deposition
+    - trap alignment lithography
+    - surface-clean requirement
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: qubit perimeter and leads
+    electrical_interface: diffusion-path engineering
+    packaging_interface: standard
+  device_compatibility: *id001
+  notes: High confound risk; must be benchmarked against non-periodic trap controls.
+- structure_id: STR-VX-ANTIDOT-LATTICE
+  name: Antidot vortex-pinning lattice
+  structure_family: vortex_pinning_lattice
+  implements_mechanisms:
+  - MECH-VX-001
+  geometry:
+    topology: Periodic or graded hole array placed in low-field-participation regions and feedline grounds
+    parameters:
+      antidot_radius_um:
+      - 0.2
+      - 5.0
+      pitch_um:
+      - 0.5
+      - 20.0
+      edge_offset_um:
+      - 2
+      - 100
+      grading_factor:
+      - 0.5
+      - 2.0
+      coverage_fraction:
+      - 0.01
+      - 0.4
+  material_composition:
+  - Al, Nb, Ta, or NbTiN film on Si or sapphire
+  operating_frequency_range:
+    microwave_GHz:
+    - 1.0
+    - 20.0
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - single-layer lithography or etch
+    - CD metrology
+    - field-cool witness design
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: ground planes, feedline edges, cavity current nodes
+    electrical_interface: superconducting film perforation
+    packaging_interface: standard
+  device_compatibility:
+    transmon: control_and_null_only
+    fluxonium: control_and_null_only
+    planar_resonator: native
+    3d_cavity: not_primary
+    kinetic_inductance_detector: native
+  notes: Primarily baseline-null architecture; included because periodic structures can masquerade as metamaterial effects.
+- structure_id: STR-3D-CAVITY-LINER
+  name: 3D cavity corrugated liner / insert
+  structure_family: three_dimensional_metamaterial_boundary
+  implements_mechanisms:
+  - MECH-3D-001
+  geometry:
+    topology: Machined corrugation or inserted periodic liner inside cavity wall
+    parameters:
+      corrugation_period_mm:
+      - 0.2
+      - 5.0
+      corrugation_depth_mm:
+      - 0.1
+      - 3.0
+      fill_fraction:
+      - 0.1
+      - 0.9
+      insert_distance_mm:
+      - 0.1
+      - 10.0
+      target_mode_GHz:
+      - 3.0
+      - 12.0
+  material_composition:
+  - bulk Nb, Al, OFHC Cu with superconducting coating
+  - sapphire or Si insert optional
+  operating_frequency_range:
+    microwave_GHz:
+    - 3.0
+    - 12.0
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - precision machining
+    - surface polish
+    - optional insert fabrication
+    - assembly metrology
+    cleanroom_level: machine_shop_plus_clean_assembly
+    exotic_flag: false
+  integration_interface:
+    placement: inside 3D cavity wall or as removable insert
+    electrical_interface: cavity boundary condition
+    packaging_interface: 3D cavity assembly
+  device_compatibility:
+    transmon: with_3d_transmon_variant
+    fluxonium: with_3d_variant
+    planar_resonator: not_primary
+    3d_cavity: native
+    kinetic_inductance_detector: possible
+  notes: 3D screening branch with straightforward assembly replication.
+- structure_id: STR-HYB-BILAYER-INTERPOSER
+  name: Hybrid EM-phononic bilayer interposer
+  structure_family: hybrid_interposer
+  implements_mechanisms:
+  - MECH-PH-002
+  - MECH-HYB-001
+  geometry:
+    topology: Two-layer interposer with microwave stopband pattern and acoustic membrane or graded sink features
+    parameters:
+      em_pitch_um:
+      - 100
+      - 1000
+      phononic_pitch_nm:
+      - 250
+      - 800
+      spacer_um:
+      - 5
+      - 200
+      alignment_tolerance_um:
+      - 0.2
+      - 5.0
+      active_area_mm:
+      - 0.5
+      - 10.0
+  material_composition:
+  - patterned Si or sapphire interposer
+  - superconducting top metal
+  - released or etched acoustic layer
+  operating_frequency_range:
+    microwave_GHz:
+    - 3.0
+    - 12.0
+    phononic_GHz:
+    - 1.0
+    - 10.0
+  fabrication_requirements:
+    process_flow:
+    - multilayer patterning
+    - possibly bonded interposer
+    - alignment assembly
+    cleanroom_level: advanced_exotic
+    exotic_flag: true
+  integration_interface:
+    placement: between device chip and lid or as bonded substrate
+    electrical_interface: near-field EM boundary + acoustic environment
+    packaging_interface: custom spacer/alignment hardware
+  device_compatibility: *id002
+  notes: Sandbox-only until single-domain branches mature.
+- structure_id: STR-CTRL-BANDSTOP-INTERPOSER
+  name: Control-line bandstop interposer
+  structure_family: metamaterial_filter_section
+  implements_mechanisms:
+  - MECH-EM-003
+  - MECH-EM-004
+  geometry:
+    topology: Periodic resonant section or interposer inserted in control/readout path near device package
+    parameters:
+      cell_pitch_um:
+      - 50
+      - 1000
+      cell_count:
+      - 2
+      - 40
+      line_impedance_ohm:
+      - 30
+      - 80
+      via_inductance_pH:
+      - 1
+      - 500
+      target_stopband_GHz:
+      - 6.0
+      - 100.0
+  material_composition:
+  - Si interposer or PCB-like cryogenic laminate
+  - superconducting NbTiN/Al or normal-metal reference
+  operating_frequency_range:
+    microwave_GHz:
+    - 6.0
+    - 100.0
+    phononic_GHz: null
+  fabrication_requirements:
+    process_flow:
+    - interposer lithography
+    - through-substrate vias optional
+    - wirebond or flip-chip attach
+    cleanroom_level: standard
+    exotic_flag: false
+  integration_interface:
+    placement: control/readout line segment proximal to sample box or on-chip launch region
+    electrical_interface: series inline filter / shunt-resonant network
+    packaging_interface: replaceable line module
+  device_compatibility: *id002
+  notes: Designed to explicitly challenge control-noise and pair-breaking leakage hypotheses.

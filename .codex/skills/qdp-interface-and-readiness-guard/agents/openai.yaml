@@ -1,0 +1,6 @@
+interface:
+  display_name: "QDP Interface Guard"
+  short_description: "Protect QDP interface truth"
+  default_prompt: "Use $qdp-interface-and-readiness-guard to keep the frozen ALL-MIND interface narrow and separate structural consistency from authoritative readiness."
+policy:
+  allow_implicit_invocation: true

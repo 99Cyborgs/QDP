@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+  "module_id": "S19",
+  "diagnostics_reported": [
+    "covariance_modularity",
+    "observable_space_leakage",
+    "artifact_alias_score",
+    "state_space_and_observable_space_consistency"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "borderline_or_fail",
+    "projector_stability": "fail",
+    "finite_horizon_control": "not_primary",
+    "observable_closure": "fail",
+    "null_baseline_rejection": "fail",
+    "symmetry_alias_rejection": "pass",
+    "artifact_alias_rejection": "fail"
+  },
+  "expected_final_verdict": "not_supported",
+  "actual_final_verdict": "not_supported",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Final subsystem verdict is surfaced from required gate outcomes and expected final verdict.",
+    "supported_forbidden=True",
+    "supported_required=False"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/run_result_packet_schema.json",
+  "title": "QDP Lab Run Result Packet",
+  "type": "object",
+  "properties": {
+    "request_id": {"type": "string"},
+    "scheduler_state": {"type": "string", "enum": ["COMPLETED", "FAILED", "INGESTED"]},
+    "devices_tested": {"type": "array", "items": {"type": "string"}},
+    "cross_device_status": {
+      "type": "string",
+      "enum": ["NOT_REQUIRED", "SCHEDULED", "CONFUNDED", "DEVICE_SPECIFIC", "INCONSISTENT", "CONFIRMED"]
+    },
+    "fabrication_matched": {"type": "boolean"},
+    "observed_measurements": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "request_id",
+    "scheduler_state",
+    "devices_tested",
+    "cross_device_status",
+    "fabrication_matched",
+    "observed_measurements",
+    "notes"
+  ],
+  "additionalProperties": false
+}

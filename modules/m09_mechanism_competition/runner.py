@@ -19,11 +19,15 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+QDP_IO_SRC = REPO_ROOT / "packages" / "qdp_io" / "src"
+for path in (REPO_ROOT, QDP_IO_SRC):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
 
-from qdp_paths import BASE_TEMPLATE, CANDIDATE_VALIDATOR, DEEP_RESEARCH_REPORT, MODULES, ROOT, SCHEMA, SIGNATURE_TO_BATH_CHART, VORTEX_PINNING_METHODS, repo_rel
-from qdp_validation import validate_candidate_file
+from qdp_io.artifacts import dump_json, module_selftest_report_payload, utc_now, visible_source_result_summary_report
+from tools.workflow.qdp_runtime.qdp_paths import BASE_TEMPLATE, CANDIDATE_VALIDATOR, DEEP_RESEARCH_REPORT, MODULES, ROOT, SCHEMA, SIGNATURE_TO_BATH_CHART, VORTEX_PINNING_METHODS, repo_rel
+from tools.workflow.qdp_runtime.qdp_validation import validate_candidate_file
 
 
 MODULE_PATHS = MODULES["m09"]
@@ -137,11 +141,6 @@ def load_json(path: Path) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"JSON root must be an object: {path}")
     return data
-
-
-def dump_json(path: Path, obj: Dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2), encoding="utf-8")
 
 
 def deep_merge(base: Any, override: Any) -> Any:
@@ -483,18 +482,16 @@ def run_mechanism_competition(candidate: Dict[str, Any]) -> Tuple[Dict[str, Any]
     if note not in out["evaluation_notes"]:
         out["evaluation_notes"].append(note)
 
-    diagnostics = {
-        "artifact_id": "QDP_V10_6_M09_MECHANISM_REPORT",
-        "module_id": "M09",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "visible_source_only": True,
-        "result_summary": summarize_candidate(out),
-        "diagnostics": {
+    diagnostics = visible_source_result_summary_report(
+        "QDP_V10_6_M09_MECHANISM_REPORT",
+        "M09",
+        summarize_candidate(out),
+        diagnostics={
             "evidence_text_sample": text[:700],
             "signature_matches": signatures,
             "missing_owner_artifacts": tests["missing_owner_artifacts"],
         },
-    }
+    )
     return out, diagnostics
 
 
@@ -571,17 +568,14 @@ def run_selftests(
 
     cases_total = len(results)
     cases_passed = sum(1 for case in results if case["passed"])
-    return {
-        "artifact_id": "QDP_V10_6_M09_SELFTEST_REPORT",
-        "module_id": "M09",
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "visible_source_only": True,
-        "cases_total": cases_total,
-        "cases_passed": cases_passed,
-        "all_passed": cases_total > 0 and cases_passed == cases_total,
-        "schema_valid_all": all(case["validator_result"]["valid"] for case in results),
-        "cases": results,
-    }
+    return module_selftest_report_payload(
+        "QDP_V10_6_M09_SELFTEST_REPORT",
+        "M09",
+        results,
+        visible_source_only=True,
+        all_passed=cases_total > 0 and cases_passed == cases_total,
+        schema_valid_all=all(case["validator_result"]["valid"] for case in results),
+    )
 
 
 def main() -> int:
@@ -630,3 +624,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

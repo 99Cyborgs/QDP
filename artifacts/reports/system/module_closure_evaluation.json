@@ -1,11 +1,11 @@
 {
   "artifact_id": "QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT",
-  "contract_source": "C:\\Users\\Forre\\Documents\\QDP\\config\\contracts\\module_closure_contracts.json",
-  "timestamp_utc": "2026-03-15T20:19:15.376118+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.304881+00:00",
+  "contract_source": "G:\\GitHub\\incubate\\QDP\\config\\contracts\\module_closure_contracts.json",
   "modules": [
     {
       "module_id": "M01",
-      "derived_status": "RECOVERY_INTERIM",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M01_P1",
         "M01_P2",
@@ -45,14 +45,62 @@
           "passed": true,
           "detail": "expected=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997 actual=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997"
         }
+      ]
+    },
+    {
+      "module_id": "M02",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M02_P1",
+        "M02_P2",
+        "M02_P3",
+        "M02_P4",
+        "M02_P5",
+        "M02_P6"
       ],
-      "closure_limitations": [
-        "retained_v10_1_operative_body is a reconstructed_surrogate artifact"
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M02_P1",
+          "description": "modules/m02_schema_validator/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M02_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M02_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M02_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "M02_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M02_P6",
+          "description": "Schema, template, and validator expose typed governance support for calibration, identifiability, drift, and dataset-governance fields",
+          "passed": true,
+          "detail": "template_missing=[]; schema_missing=[]; validator_missing=[]"
+        }
       ]
     },
     {
       "module_id": "M03",
-      "derived_status": "RECOVERY_INTERIM",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M03_P1",
         "M03_P2",
@@ -98,7 +146,7 @@
           "predicate_id": "M03_P6",
           "description": "Governance registry records the current report IDs and mode summaries coherently",
           "passed": true,
-          "detail": "ordinary_report_id=m03-reference-report-20260315T201913Z; subsystem_report_id=m03-reference-report-20260315T201913Z"
+          "detail": "ordinary_report_id=m03-reference-report-20260413T183048Z; subsystem_report_id=m03-reference-report-20260413T183048Z"
         },
         {
           "predicate_id": "M03_P7",
@@ -106,14 +154,62 @@
           "passed": true,
           "detail": "mode_divergence_status=PASSED"
         }
+      ]
+    },
+    {
+      "module_id": "M04",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M04_P1",
+        "M04_P2",
+        "M04_P3",
+        "M04_P4",
+        "M04_P5",
+        "M04_P6"
       ],
-      "closure_limitations": [
-        "retained_federated_governance_registry_object is a reconstructed_surrogate artifact"
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M04_P1",
+          "description": "modules/m04_branch_registration/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M04_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M04_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M04_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "M04_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M04_P6",
+          "description": "The intake adapter maps surfaced branch identity, observables, and falsifier placeholders into canonical candidates",
+          "passed": true,
+          "detail": "required_fields={'branch_or_model_tag': True, 'primary_observable': True, 'secondary_observable': True, 'preliminary_intake_outcome': True, 'intake_ready_for_compute': True}"
+        }
       ]
     },
     {
       "module_id": "M05",
-      "derived_status": "RECOVERY_INTERIM",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M05_P1",
         "M05_P2",
@@ -146,7 +242,7 @@
           "predicate_id": "M05_P4",
           "description": "All self tests pass",
           "passed": true,
-          "detail": "cases_passed=6/6"
+          "detail": "cases_passed=9/9"
         },
         {
           "predicate_id": "M05_P5",
@@ -160,14 +256,11 @@
           "passed": true,
           "detail": "retained_v10_1_operative_body_exists=True"
         }
-      ],
-      "closure_limitations": [
-        "retained_v10_1_operative_body is a reconstructed_surrogate artifact"
       ]
     },
     {
       "module_id": "M06",
-      "derived_status": "RECOVERY_INTERIM",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M06_P1",
         "M06_P2",
@@ -188,7 +281,7 @@
           "predicate_id": "M06_P2",
           "description": "Bootstrap fixture pack exists with at least five canonical cases",
           "passed": true,
-          "detail": "artifact_exists=True path=bootstrap_cases.json"
+          "detail": "bootstrap_case_count=7"
         },
         {
           "predicate_id": "M06_P3",
@@ -200,7 +293,7 @@
           "predicate_id": "M06_P4",
           "description": "Harness executes reference resolution, schema validation, stage machine tests, governance self diagnostic, and runtime integrity checks",
           "passed": true,
-          "detail": "check_keys=['artifact_equivalence_selftests', 'baseline_fit_selftests', 'family_triage_selftests', 'governance_self_diagnostic', 'mechanism_competition_selftests', 'mode_divergence', 'reference_resolution', 'rule_binding_summary', 'runtime_integrity', 'schema_validation', 'stage_machine_selftests']"
+          "detail": "check_keys=['artifact_equivalence_selftests', 'baseline_fit_selftests', 'family_triage_selftests', 'governance_self_diagnostic', 'mechanism_competition_selftests', 'mode_divergence', 'module_selftests', 'module_selftests_note', 'module_verification', 'reference_resolution', 'rule_binding_summary', 'runtime_integrity', 'schema_validation', 'stage_machine_selftests']"
         },
         {
           "predicate_id": "M06_P5",
@@ -214,15 +307,11 @@
           "passed": true,
           "detail": "mode_divergence_status=PASSED"
         }
-      ],
-      "closure_limitations": [
-        "retained_v10_1_operative_body is a reconstructed_surrogate artifact",
-        "retained_federated_governance_registry_object is a reconstructed_surrogate artifact"
       ]
     },
     {
       "module_id": "M07",
-      "derived_status": "WORKING_PATCH",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M07_P1",
         "M07_P2",
@@ -267,13 +356,13 @@
           "predicate_id": "M07_P6",
           "description": "The scorer is sourced from surfaced family-triage documents and records visible-source-only limitations",
           "passed": true,
-          "detail": "patch_notes_visible_source_only=True"
+          "detail": "missing_terms=[]"
         }
       ]
     },
     {
       "module_id": "M08",
-      "derived_status": "WORKING_PATCH",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M08_P1",
         "M08_P2",
@@ -318,13 +407,13 @@
           "predicate_id": "M08_P6",
           "description": "The runner is sourced from surfaced baseline-fit documents and records visible-source-only limitations",
           "passed": true,
-          "detail": "patch_notes_visible_source_only=True"
+          "detail": "missing_terms=[]"
         }
       ]
     },
     {
       "module_id": "M09",
-      "derived_status": "WORKING_PATCH",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M09_P1",
         "M09_P2",
@@ -369,13 +458,13 @@
           "predicate_id": "M09_P6",
           "description": "The runner records the partial visible-source mechanism-doc limitation explicitly",
           "passed": true,
-          "detail": "patch_notes_visible_source_only=True"
+          "detail": "missing_terms=[]"
         }
       ]
     },
     {
       "module_id": "M10",
-      "derived_status": "WORKING_PATCH",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
       "passing_predicates": [
         "M10_P1",
         "M10_P2",
@@ -420,7 +509,466 @@
           "predicate_id": "M10_P6",
           "description": "The runner records the visible-source artifact-audit limitation explicitly",
           "passed": true,
-          "detail": "patch_notes_visible_source_only=True"
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "M11",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M11_P1",
+        "M11_P2",
+        "M11_P3",
+        "M11_P4",
+        "M11_P5",
+        "M11_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M11_P1",
+          "description": "modules/m11_lindblad_equivalence/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M11_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M11_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M11_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "M11_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M11_P6",
+          "description": "The runner records visible-source Lindblad-equivalence ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "M12",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M12_P1",
+        "M12_P2",
+        "M12_P3",
+        "M12_P4",
+        "M12_P5",
+        "M12_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M12_P1",
+          "description": "modules/m12_experiment_design/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M12_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M12_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M12_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=8/8"
+        },
+        {
+          "predicate_id": "M12_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M12_P6",
+          "description": "The runner records executable falsifier and experiment-design ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "M13",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M13_P1",
+        "M13_P2",
+        "M13_P3",
+        "M13_P4",
+        "M13_P5",
+        "M13_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M13_P1",
+          "description": "modules/m13_cross_device_gate/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M13_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M13_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M13_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=4/4"
+        },
+        {
+          "predicate_id": "M13_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M13_P6",
+          "description": "The runner records cross-device normalization and matched-fabrication gating explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "M14",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M14_P1",
+        "M14_P2",
+        "M14_P3",
+        "M14_P4",
+        "M14_P5",
+        "M14_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M14_P1",
+          "description": "modules/m14_promotion_caps/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M14_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M14_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M14_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=4/4"
+        },
+        {
+          "predicate_id": "M14_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M14_P6",
+          "description": "The runner records that irreversible clipping and fallback completion are owned by the M14 manager",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "M15",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "M15_P1",
+        "M15_P2",
+        "M15_P3",
+        "M15_P4",
+        "M15_P5",
+        "M15_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "M15_P1",
+          "description": "modules/m15_governance_guardrails/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "M15_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "M15_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "M15_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "M15_P5",
+          "description": "Every emitted candidate validates against config/schema/candidate_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "M15_P6",
+          "description": "The runner records typed calibration, identifiability, drift, and dataset-governance ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "S16",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "S16_P1",
+        "S16_P2",
+        "S16_P3",
+        "S16_P4",
+        "S16_P5",
+        "S16_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "S16_P1",
+          "description": "modules/s16_subsystem_sector_detection/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "S16_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "S16_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "S16_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "S16_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "S16_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "S17",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "S17_P1",
+        "S17_P2",
+        "S17_P3",
+        "S17_P4",
+        "S17_P5",
+        "S17_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "S17_P1",
+          "description": "modules/s17_subsystem_alias_audit/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "S17_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "S17_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "S17_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "S17_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "S17_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "S18",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "S18_P1",
+        "S18_P2",
+        "S18_P3",
+        "S18_P4",
+        "S18_P5",
+        "S18_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "S18_P1",
+          "description": "modules/s18_subsystem_observable_closure/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "S18_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "S18_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "S18_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=3/3"
+        },
+        {
+          "predicate_id": "S18_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "S18_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
+        }
+      ]
+    },
+    {
+      "module_id": "S19",
+      "derived_status": "AUTHORITATIVE_CLOSURE",
+      "passing_predicates": [
+        "S19_P1",
+        "S19_P2",
+        "S19_P3",
+        "S19_P4",
+        "S19_P5",
+        "S19_P6"
+      ],
+      "failing_predicates": [],
+      "predicate_results": [
+        {
+          "predicate_id": "S19_P1",
+          "description": "modules/s19_subsystem_verdict_gate/runner.py exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=runner.py"
+        },
+        {
+          "predicate_id": "S19_P2",
+          "description": "Self test cases exist",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_cases.json"
+        },
+        {
+          "predicate_id": "S19_P3",
+          "description": "Self test report exists",
+          "passed": true,
+          "detail": "artifact_exists=True path=selftest_report.json"
+        },
+        {
+          "predicate_id": "S19_P4",
+          "description": "All self tests pass",
+          "passed": true,
+          "detail": "cases_passed=6/6"
+        },
+        {
+          "predicate_id": "S19_P5",
+          "description": "Every emitted subsystem artifact validates against config/schema/subsystem_verdict_schema.json",
+          "passed": true,
+          "detail": "all_validator_results_valid=True"
+        },
+        {
+          "predicate_id": "S19_P6",
+          "description": "The runner records visible-source subsystem ownership explicitly",
+          "passed": true,
+          "detail": "missing_terms=[]"
         }
       ]
     }

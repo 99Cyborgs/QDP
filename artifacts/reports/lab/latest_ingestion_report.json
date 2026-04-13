@@ -1,0 +1,126 @@
+{
+  "artifact_id": "QDP_V10_6_LAB_INGEST_REPORT",
+  "request_id": "QDPLAB-EBE5E0010DAD7DE8",
+  "updated_candidate_path": "artifacts\\lab\\ingestions\\m05-case-device-specific_updated_candidate.json",
+  "validations": [
+    {
+      "artifact_kind": "experiment_request",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\experiment_request_schema.json",
+      "valid": true,
+      "errors": [],
+      "path": "artifacts\\lab\\requests\\m05-case-device-specific\\QDPLAB-EBE5E0010DAD7DE8_request_pack.json"
+    },
+    {
+      "artifact_kind": "run_result_packet",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\run_result_packet_schema.json",
+      "valid": true,
+      "errors": [],
+      "path": "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_result_packet.json"
+    },
+    {
+      "artifact_kind": "calibration_snapshot",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\calibration_snapshot_schema.json",
+      "valid": true,
+      "errors": [],
+      "path": "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_calibration_snapshot.json"
+    },
+    {
+      "artifact_kind": "lineage_record",
+      "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\lineage_record_schema.json",
+      "valid": true,
+      "errors": [],
+      "path": "artifacts\\lab\\fixtures\\QDPLAB-EBE5E0010DAD7DE8_lineage_record.json"
+    }
+  ],
+  "candidate_validation": {
+    "candidate_path": "artifacts\\lab\\ingestions\\m05-case-device-specific_updated_candidate.json",
+    "returncode": 0,
+    "stdout": "VALID\n- mode: final\n- candidate: artifacts\\lab\\ingestions\\m05-case-device-specific_updated_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json\n",
+    "stderr": "",
+    "valid": true,
+    "errors": [],
+    "mode": "final",
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py"
+  },
+  "module_reports": {
+    "M13": {
+      "artifact_id": "QDP_V10_6_M13_REPORT",
+      "module_id": "M13",
+      "timestamp_utc": "2026-03-16T22:52:58.206114+00:00",
+      "candidate_id": "m05-case-device-specific",
+      "result_summary": {
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": [
+            "DEV_MATCH_A",
+            "DEV_MATCH_B"
+          ],
+          "fabrication_matched": true,
+          "notes": "Synthetic ingest fixture for first-wave promotion-adjacent smoke test.; Matched-device comparison removes the device-specific-only evidence limitation but does not clear promotion_cap_governance."
+        },
+        "notes": "Cross-device status normalized from surfaced evidence."
+      }
+    },
+    "M15": {
+      "artifact_id": "QDP_V10_6_M15_REPORT",
+      "module_id": "M15",
+      "timestamp_utc": "2026-03-16T22:52:58.206317+00:00",
+      "candidate_id": "m05-case-device-specific",
+      "result_summary": {
+        "calibration_status": {
+          "status": "VALID",
+          "validity_score": 95.0,
+          "threshold": 70.0,
+          "below_threshold": false,
+          "notes": "Synthetic calibration snapshot for first-wave promotion-adjacent smoke test."
+        },
+        "identifiability_status": {
+          "status": "SUFFICIENT",
+          "orthogonal_axes_satisfied": true,
+          "independent_constraints_satisfied": true,
+          "notes": ""
+        },
+        "drift_ledger": {
+          "status": "NOT_REQUIRED",
+          "hierarchical_model_required": false,
+          "hierarchical_model_applied": false,
+          "notes": ""
+        },
+        "dataset_governance": {
+          "status": "COMPLETE",
+          "device_lineage_recorded": true,
+          "calibration_context_recorded": true,
+          "protocol_metadata_recorded": true,
+          "independent_evidence_eligible": true,
+          "notes": "Synthetic lineage fixture for first-wave promotion-adjacent smoke test."
+        },
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "governance_outcome": "SANDBOX_ONLY",
+        "notes": []
+      }
+    },
+    "M14": {
+      "artifact_id": "QDP_V10_6_M14_REPORT",
+      "module_id": "M14",
+      "timestamp_utc": "2026-03-16T22:52:58.206499+00:00",
+      "candidate_id": "m05-case-device-specific",
+      "result_summary": {
+        "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+        "governance_outcome": "SANDBOX_ONLY",
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "promotion_cap_scientific": "",
+        "clip_decisions": [],
+        "fallback_decision": "NO_CHANGE"
+      }
+    }
+  },
+  "result_summary": {
+    "cross_device_status": "CONFIRMED",
+    "governance_outcome": "SANDBOX_ONLY",
+    "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST"
+  }
+}

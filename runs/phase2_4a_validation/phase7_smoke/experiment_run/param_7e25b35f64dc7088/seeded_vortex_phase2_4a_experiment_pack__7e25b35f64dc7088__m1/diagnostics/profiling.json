@@ -1,0 +1,29 @@
+{
+  "case_id": "seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1",
+  "max_phi_iterations": 199,
+  "max_psi_iterations": 4,
+  "mean_phi_iterations": 198.25,
+  "mean_psi_iterations": 4.0,
+  "phi_fallback_count": 0,
+  "phi_residual_summary": {
+    "final": 1.7728332847753053e-07,
+    "max": 1.7728332847753053e-07,
+    "mean": 1.348977682946223e-07
+  },
+  "phi_solver_method_counts": {
+    "cg": 4
+  },
+  "psi_fallback_count": 0,
+  "psi_residual_summary": {
+    "final": 7.085602017314146e-05,
+    "max": 7.085602017314146e-05,
+    "mean": 5.454299189390475e-05
+  },
+  "psi_solver_method_counts": {
+    "gmres": 4
+  },
+  "requested_n_steps": 4,
+  "step_count": 4,
+  "steps_per_second": 217.0857325854884,
+  "wall_clock_seconds": 0.018425899999783724
+}

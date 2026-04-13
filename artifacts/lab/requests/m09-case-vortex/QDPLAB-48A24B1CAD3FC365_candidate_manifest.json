@@ -1,0 +1,20 @@
+{
+  "manifest_id": "QDPMAN-C95B4DBF37AC559E",
+  "candidate_id": "m09-case-vortex",
+  "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json",
+  "candidate_sha256": "c78f113710bb6e40f4da9cbb0d34dcfe9afd581f63e82989c93ceca1c723f206",
+  "linked_artifacts": [
+    {
+      "path": "specs\\core\\signature_to_bath_decision_chart.md",
+      "sha256": "cfa12a2292755b236e09f2fa3a67d325f3131bcfbd41a1e2286715e02c4622bd"
+    },
+    {
+      "path": "specs\\research\\vortex_pinning_methods.md",
+      "sha256": "59e783d645684c37379da24e858055ddb356e1b460018217a2ae0c85adbdb82c"
+    },
+    {
+      "path": "specs\\research\\deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6"
+    }
+  ]
+}

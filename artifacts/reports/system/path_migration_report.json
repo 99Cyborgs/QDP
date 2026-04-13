@@ -1,0 +1,64 @@
+{
+  "artifact_id": "QDP_PATH_MIGRATION_REPORT",
+  "timestamp_utc": "2026-04-13T18:30:49.952699+00:00",
+  "phase": "post",
+  "known_drift": [
+    {
+      "issue_id": "GKSL_SUBSYSTEM_CASE_MATRIX_PATH",
+      "status": "resolved",
+      "current_value": "specs/subsystem/gksl_subsystem_case_matrix.json",
+      "canonical_value": "specs/subsystem/gksl_subsystem_case_matrix.json",
+      "affected_paths": [
+        "config/manifests/reference_manifest.json",
+        "config/registries/governance_registry.json",
+        "artifacts/reports/m03/reference_resolution_subsystem.json"
+      ]
+    }
+  ],
+  "planned_moves": [
+    {
+      "from": "root qdp_*.py shared support modules",
+      "to": "tools/workflow/qdp_runtime/",
+      "reason": "Move shared implementation out of the root while keeping root compatibility shims.",
+      "status": "applied"
+    },
+    {
+      "from": "docs/implementation/*",
+      "to": "docs/architecture/*",
+      "reason": "Normalize non-canonical source docs.",
+      "status": "applied"
+    },
+    {
+      "from": "docs/reports/*",
+      "to": "docs/decisions/*",
+      "reason": "Keep source docs distinct from generated reports under artifacts/.",
+      "status": "applied"
+    },
+    {
+      "from": "docs/schema/*",
+      "to": "docs/decisions/*",
+      "reason": "Treat schema patch notes as decisions/source docs, not generated reports.",
+      "status": "applied"
+    },
+    {
+      "from": "RL framework/*",
+      "to": "legacy/imported_artifacts/rl_framework/*",
+      "reason": "Quarantine non-governing reference material from the active root surface.",
+      "status": "applied"
+    },
+    {
+      "from": "superseded readiness narrative under modules/ and docs/",
+      "to": "legacy/docs/archive/",
+      "reason": "Archive historical readiness notes outside the active truth surface while preserving chronology.",
+      "status": "applied"
+    }
+  ],
+  "retained_legacy_surfaces": [
+    "qdp.py",
+    "qdp_validation.py",
+    "root qdp_*.py compatibility shims",
+    "existing module runner paths under modules/*/runner.py",
+    "root read-first guidance files"
+  ],
+  "explicit_write_log_path": "artifacts/reports/system/migration_write_log.json"
+}

@@ -1,0 +1,50 @@
+{
+  "backend": "local_placeholder",
+  "candidate": {
+    "candidate_id": "GEN-003",
+    "parameters": {
+      "gap_um": 40,
+      "lid_spacing_um": 180,
+      "patch_pitch_um": 620,
+      "patch_size_um": 540
+    },
+    "parent_structure_id": "STR-EM-LID-HIS",
+    "schema_name": "mmm_studio.candidate_geometry",
+    "schema_version": "1.0",
+    "topology": "Periodic patch or mushroom surface on lid / interposer above device"
+  },
+  "job_id": "GEN-003-local_placeholder",
+  "materials": {
+    "material_system": "superconducting-coated Si lid",
+    "parameters": {
+      "notes": "Low-null-risk packaging candidate with removable lid.",
+      "structure_family": "high_impedance_surface"
+    },
+    "schema_name": "mmm_studio.material_parameters",
+    "schema_version": "1.0"
+  },
+  "notes": "Local placeholder backend. This bundle is suitable for manifesting geometry, material, and sweep intent, but it does not execute field solves.",
+  "requested_outputs": [
+    "geometry_preflight",
+    "parameter_manifest"
+  ],
+  "schema_name": "mmm_studio.simulation_job",
+  "schema_version": "1.0",
+  "sweep": {
+    "domain": "electromagnetic",
+    "notes": "Repository demo sweep definition for backend scaffolding.",
+    "observables": [
+      "OBS-BG-SHIFT",
+      "OBS-PKG-S21"
+    ],
+    "sample_count": 201,
+    "schema_name": "mmm_studio.sweep_specification",
+    "schema_version": "1.0",
+    "sweep_id": "20260403T165414Z-broadband-default-sweep",
+    "target_frequency_window_ghz": [
+      4.0,
+      6.0
+    ],
+    "temperature_points_mK": []
+  }
+}

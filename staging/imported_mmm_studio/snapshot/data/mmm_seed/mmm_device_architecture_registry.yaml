@@ -1,0 +1,156 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_DEVICE_ARCHITECTURE_REGISTRY
+device_architectures:
+- device_class: transmon
+  integration_modes:
+  - on-chip perimeter EM bandgap ring
+  - local phononic crystal under junction neck / capacitor edge
+  - lid/interposer boundary structure
+  - control-line bandstop interposer
+  allowed_structure_ids:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-EM-HKI-FENCE
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-SOI-FULLCAP-PHC
+  - STR-PH-GRADED-SINK
+  - STR-PH-SAW-BRAGG
+  - STR-QP-GAP-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  - STR-HYB-BILAYER-INTERPOSER
+  keepout_rules:
+  - No metamaterial metal within 3 um of junction electrodes unless explicitly modeled.
+  - No membrane release directly under large bond pads.
+  - Maintain readout resonator coupling geometry constant across sham and candidate variants.
+  readout_modes:
+  - dispersive resonator
+  - time-domain parity monitor
+  - witness resonator
+  primary_metrics:
+  - OBS-T1-MEAN
+  - OBS-T2STAR
+  - OBS-QP-PARITY
+  - OBS-T1-NMARK
+  preferred_witnesses:
+  - SAW lane
+  - package through-line
+  - adjacent resonator
+  packaging_notes: Use same sample box for sham/candidate pairs whenever possible.
+- device_class: fluxonium
+  integration_modes:
+  - EM bandgap around antenna or readout interfaces
+  - local phononic crystal near junction array anchor or antenna arm
+  - control-line bandstop interposer
+  - package lid HIS
+  allowed_structure_ids:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-EM-HKI-FENCE
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-GRADED-SINK
+  - STR-QP-GAP-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  - STR-HYB-BILAYER-INTERPOSER
+  - STR-3D-CAVITY-LINER
+  keepout_rules:
+  - Maintain array inductance and antenna geometry fixed across structure variants.
+  - Avoid phononic release beneath high-stress array crossovers without anchor simulation.
+  readout_modes:
+  - dispersive resonator
+  - relaxometry
+  - parity-sensitive spectroscopy
+  primary_metrics:
+  - OBS-T1-MEAN
+  - OBS-T1-NMARK
+  - OBS-T2ECHO
+  - OBS-QP-PARITY
+  preferred_witnesses:
+  - adjacent resonator
+  - package through-line
+  packaging_notes: Flux-tunable devices require explicit field-history logs for every cooldown.
+- device_class: planar_resonator
+  integration_modes:
+  - witness resonator for EM and vortex screening
+  - phononic witness resonator on SOI
+  - SAW witness lane
+  allowed_structure_ids:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-EM-HKI-FENCE
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-SOI-FULLCAP-PHC
+  - STR-PH-SAW-BRAGG
+  - STR-VX-ANTIDOT-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  keepout_rules:
+  - Maintain resonator frequency crowding manageable for multiplexed readout.
+  - Antidot lattices must be placed away from maximum current density unless intentionally testing loss.
+  readout_modes:
+  - VNA
+  - ringdown
+  - power sweep
+  primary_metrics:
+  - OBS-WITNESS-QI
+  - OBS-VORTEX-SLOPE
+  - OBS-BG-SHIFT
+  preferred_witnesses:
+  - through line
+  - field-cool series
+  packaging_notes: Preferred for fast screening before qubit deployment.
+- device_class: 3d_cavity
+  integration_modes:
+  - corrugated cavity wall
+  - removable liner or insert
+  - lid/interposer boundary structure for hybrid planar-in-cavity variants
+  allowed_structure_ids:
+  - STR-3D-CAVITY-LINER
+  - STR-EM-LID-HIS
+  - STR-HYB-BILAYER-INTERPOSER
+  keepout_rules:
+  - Maintain seam preparation and assembly torque identical across variants.
+  - Track cavity frequency shifts separately from coherence metrics.
+  readout_modes:
+  - cavity spectroscopy
+  - embedded qubit time-domain
+  primary_metrics:
+  - OBS-T1-MEAN
+  - OBS-WITNESS-QI
+  - OBS-PKG-S21
+  preferred_witnesses:
+  - bare cavity mode map
+  - reassembly repeat
+  packaging_notes: Assembly reproducibility is part of validation, not a nuisance variable.
+- device_class: kinetic_inductance_detector
+  integration_modes:
+  - graded phonon sink
+  - antidot lattice for magnetic robustness
+  - SAW / phononic witness structures
+  allowed_structure_ids:
+  - STR-PH-GRADED-SINK
+  - STR-PH-SAW-BRAGG
+  - STR-VX-ANTIDOT-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  keepout_rules:
+  - Maintain absorber geometry constant when comparing phonon-routing structures.
+  - Field-cool series required for antidot variants.
+  readout_modes:
+  - S21 resonance tracking
+  - pulse injection / recovery
+  primary_metrics:
+  - OBS-QP-RECOV
+  - OBS-WITNESS-QI
+  - OBS-VORTEX-SLOPE
+  preferred_witnesses:
+  - controlled injection coupon
+  packaging_notes: Useful for high-throughput phonon and vortex screening.

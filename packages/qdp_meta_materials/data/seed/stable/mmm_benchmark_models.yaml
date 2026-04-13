@@ -1,0 +1,181 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_BENCHMARK_MODELS
+benchmark_models:
+- null_model_id: NULL-EM-PURCELL
+  name: Ordinary Purcell / impedance engineering null
+  category: electromagnetic
+  claim_can_mimic: T1 improvement due to altered impedance environment without requiring a true metamaterial mechanism.
+  inputs:
+  - package_S_parameters
+  - line_impedance
+  - qubit_couplings
+  - resonator_loading
+  matching_requirements:
+  - measured transfer function
+  - same launch geometry
+  - same box
+  decisive_observables:
+  - OBS-T1-MEAN
+  - OBS-PKG-S21
+  - OBS-BG-SHIFT
+  failure_mode: Cannot reproduce geometry-specific stopband scaling or witness band-edge markers.
+  governance_priority: 1
+- null_model_id: NULL-PKG-MODE
+  name: Package-mode shift null
+  category: packaging
+  claim_can_mimic: Apparent coherence gain arises from modified package resonances, seams, or lid spacing.
+  inputs:
+  - sample_box_geometry
+  - lid_spacing
+  - wirebond_count
+  - chip_position
+  matching_requirements:
+  - cryogenic package S-parameters
+  - same package hardware unless intentionally varied
+  decisive_observables:
+  - OBS-PKG-S21
+  - OBS-T1-MEAN
+  failure_mode: Fails when removable lid/interposer controls isolate metamaterial pattern as sole difference.
+  governance_priority: 1
+- null_model_id: NULL-QP-TRAP
+  name: Ordinary quasiparticle trap null
+  category: quasiparticle
+  claim_can_mimic: T1 or parity improvement arises from conventional gap engineering or normal-metal traps, not metamaterial environment shaping.
+  inputs:
+  - trap_area
+  - gap_contrast
+  - distance_to_junction
+  - injection_profile
+  matching_requirements:
+  - same trap area control
+  - same shielding
+  - same injected energy
+  decisive_observables:
+  - OBS-QP-PARITY
+  - OBS-QP-RECOV
+  - OBS-T1-MEAN
+  failure_mode: Fails when periodic geometry or phonon-routing scaling outperforms area-based model.
+  governance_priority: 1
+- null_model_id: NULL-SHIELDING
+  name: Improved magnetic / infrared shielding null
+  category: environmental_control
+  claim_can_mimic: Observed gains come from better shielding, light-tightness, or flux hygiene introduced with the new assembly.
+  inputs:
+  - shield_stack
+  - absorber_layout
+  - field_history
+  - assembly_changes
+  matching_requirements:
+  - same shield stack
+  - same optical seals
+  - field-cooled controls
+  decisive_observables:
+  - OBS-VORTEX-SLOPE
+  - OBS-QP-PARITY
+  - OBS-T1-MEAN
+  failure_mode: Fails when same-shield controls and field sweeps show no explanatory power.
+  governance_priority: 1
+- null_model_id: NULL-THERMAL
+  name: Thermal gradient / hidden heating null
+  category: thermal
+  claim_can_mimic: Coherence changes arise from altered thermalization or local heating rather than structured environment coupling.
+  inputs:
+  - chip_temperature
+  - dissipated_power
+  - thermal_path
+  - fridge_stage_data
+  matching_requirements:
+  - temperature calibration
+  - settling-time verification
+  - matched pulse duty cycle
+  decisive_observables:
+  - OBS-TEMP-SLOPE
+  - OBS-QP-PARITY
+  - OBS-T1-MEAN
+  failure_mode: Fails when temperature scans prefer candidate-specific scaling and local temperature proxies are matched.
+  governance_priority: 1
+- null_model_id: NULL-FAB-VAR
+  name: Fabrication variation null
+  category: fabrication
+  claim_can_mimic: Observed gain is due to uncontrolled changes in junction resistance, film quality, or etch bias.
+  inputs:
+  - junction_Rn
+  - sheet_resistance
+  - critical_dimensions
+  - surface_roughness
+  matching_requirements:
+  - same-wafer split lot
+  - CD metrology
+  - junction monitor structures
+  decisive_observables:
+  - OBS-T1-MEAN
+  - OBS-WITNESS-QI
+  - OBS-BG-SHIFT
+  failure_mode: Fails when geometry-series trend persists after as-built metrology normalization.
+  governance_priority: 1
+- null_model_id: NULL-VORTEX
+  name: Vortex-entry / mobility null
+  category: magnetic
+  claim_can_mimic: Periodic superconducting features act mainly by changing vortex pinning or flux entry.
+  inputs:
+  - cooldown_field
+  - antidot_geometry
+  - current_distribution
+  - temperature
+  matching_requirements:
+  - field-cool sweep
+  - field polarity reversal
+  - zero-field controls
+  decisive_observables:
+  - OBS-VORTEX-SLOPE
+  - OBS-WITNESS-QI
+  - OBS-T1-MEAN
+  failure_mode: Fails when effect persists with bounded field sensitivity and nonmagnetic scaling dominates.
+  governance_priority: 1
+- null_model_id: NULL-CTRL-DISTORT
+  name: Control electronics / line distortion null
+  category: control_path
+  claim_can_mimic: Changed attenuation, reflections, or pulse distortions alter observed T2/T1 without a new materials mechanism.
+  inputs:
+  - source_noise
+  - line_calibration
+  - filter_stack
+  - pulse_shape
+  matching_requirements:
+  - same room electronics
+  - matched Rabi calibration
+  - de-embedded control PSD
+  decisive_observables:
+  - OBS-CTRL-PSD
+  - OBS-T2STAR
+  - OBS-T2ECHO
+  failure_mode: Fails when matched conventional filters cannot reproduce candidate performance.
+  governance_priority: 1
+- null_model_id: NULL-SAW-CROSSTALK
+  name: SAW witness cross-talk null
+  category: measurement_artifact
+  claim_can_mimic: Witness acoustic stopband is an RF crosstalk artifact or packaging resonance, not true acoustic isolation.
+  inputs:
+  - IDT calibration
+  - RF cross-talk paths
+  - package mode map
+  matching_requirements:
+  - control lane without acoustic structure
+  - temperature dependence
+  - dummy load witness
+  decisive_observables:
+  - OBS-SAW-S21
+  - OBS-BG-SHIFT
+  failure_mode: Fails when acoustic scaling and control-lane subtraction confirm true SAW suppression.
+  governance_priority: 2

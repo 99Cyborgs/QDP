@@ -1,0 +1,412 @@
+{
+  "artifact_paths": {
+    "aggregate_leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\aggregate_leaderboard.csv",
+    "cross_slice_score_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\plots\\cross_slice_score_comparison.png",
+    "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\sweep_manifest.json",
+    "plots_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\plots",
+    "robustness_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\plots\\robustness_overview.png",
+    "summary_json": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\sweep_summary.json",
+    "summary_markdown": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\sweep_summary.md",
+    "tranche_index": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranche_index.json"
+  },
+  "command": "mmm-studio sweep-run",
+  "completed_at": "2026-04-03T17:26:45.308077Z",
+  "dataset_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+  "description": "Compare the built-in surrogate scoring profiles over the same candidate pool.",
+  "input_hashes": [
+    {
+      "label": "sweep_spec",
+      "sha256": "7a6f1763f7571fccd05e5f25d7ff083dcad7f1f470e962b8b74966e239388cdb",
+      "source": "examples\\sweeps\\profile_comparison.yaml"
+    },
+    {
+      "label": "dataset_bundle",
+      "sha256": "77c6908928400aa6bbf57867761040a6f0edd9d13b617f7049dc0508eaddab61",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed"
+    },
+    {
+      "label": "benchmark_doc",
+      "sha256": "4cf86d103e48a6acc0f7a488460b6493479b65d88c36ff9633d333d6846741ab",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_benchmark_models.yaml"
+    },
+    {
+      "label": "cross_device_doc",
+      "sha256": "5f3160597b84bc04f0750f32822c202312d50bfc0d32c497070a26a31ec0818f",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_cross_device_registry.yaml"
+    },
+    {
+      "label": "device_doc",
+      "sha256": "731c8eeef47ca45546c4d563a1d972557dbf2833cb60e8cd863a51afaac1ba49",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_device_architecture_registry.yaml"
+    },
+    {
+      "label": "environment_model_doc",
+      "sha256": "0ae5a8bd435790f04143a5445576454a9956ea5f054cbb55d2426875cb1d40bb",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_environment_model_registry.yaml"
+    },
+    {
+      "label": "experiment_doc",
+      "sha256": "1c6e60c5ab5bfe554f70f6c627684d579d6d96b440b96c0938048533a5351d5e",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_experiment_registry.yaml"
+    },
+    {
+      "label": "genome_doc",
+      "sha256": "c63543be92a55bf981a5ed0eed4bca56800d4c458b8533fff1b1aa438cb05ed6",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_material_genome_database.yaml"
+    },
+    {
+      "label": "geometry_doc",
+      "sha256": "2f03951ee0ae6df6ac95b73be4ea6a69715f98eeb01ec63757eb307ecd3d76cb",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_geometry_scaling_models.yaml"
+    },
+    {
+      "label": "instrument_constraint_doc",
+      "sha256": "bb2144fad5a54ebadc73f75800dd7e49abcb6d0e46ae3ca7aeb8aa8f54ed85ee",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_instrument_constraints.yaml"
+    },
+    {
+      "label": "material_system_doc",
+      "sha256": "b3405f883b689c85ff00d1d6a8ffee336804f92464dcefdf38fa4b8442e7c471",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_material_system_registry.yaml"
+    },
+    {
+      "label": "mechanism_doc",
+      "sha256": "4e93ca8c9a6828a044710ac0fa67e579e916be8c397cd89a90b9249e1088742c",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_mechanism_registry.yaml"
+    },
+    {
+      "label": "ranking_model_doc",
+      "sha256": "29ab38974cebcdac70b654234713f1cbbf02f8bfd3a733977b0b6215963290aa",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_candidate_ranking_model.yaml"
+    },
+    {
+      "label": "scaling_doc",
+      "sha256": "333a53893c929e2570f9e9c58debe690da4c43ba47e03f0bc7bea48da3501eb3",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_scaling_discrimination_models.yaml"
+    },
+    {
+      "label": "structure_doc",
+      "sha256": "58943ebdcf0a74c7c7b675a64a330bff9be705aa5daefb4ab97116b6c5544dae",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_structure_library.yaml"
+    },
+    {
+      "label": "tolerance_doc",
+      "sha256": "fe5062a0e7ed82e7ad7d1c6ed8ab77f6d0576ab79ec5df789fb4ad0343ce568d",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_tolerance_models.yaml"
+    },
+    {
+      "label": "validation_doc",
+      "sha256": "8b95ad996df90c65519f6b2685b3ef4daca3b753466947444006ef7a3a9503d6",
+      "source": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed\\mmm_validation_rules.yaml"
+    }
+  ],
+  "metrics_summary": {
+    "failed_slices": 0,
+    "successful_slices": 3,
+    "top_robust_candidate": "GEN-003",
+    "top_robustness_score": 0.9892156862745097
+  },
+  "output_root": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run",
+  "plan": {
+    "dataset_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+    "description": "Compare the built-in surrogate scoring profiles over the same candidate pool.",
+    "output_root": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run",
+    "sweep_name": "profile-comparison",
+    "tranches": [
+      {
+        "comparison_strategy": {
+          "leaderboard_size": 10,
+          "robustness_top_k": 5,
+          "top_k": 5
+        },
+        "execution_mode": "sequential",
+        "objective": "Compare broadband, resonance-targeted, and manufacturability-aware scoring on the shared registry.",
+        "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison",
+        "shared_profile": "broadband",
+        "slices": [
+          {
+            "candidate_count": 18,
+            "candidate_filters": [
+              {
+                "field": "screening_status",
+                "operator": "in",
+                "value": [
+                  "prioritized",
+                  "screening",
+                  "sandbox"
+                ]
+              }
+            ],
+            "candidate_ids": [
+              "GEN-001",
+              "GEN-002",
+              "GEN-003",
+              "GEN-004",
+              "GEN-005",
+              "GEN-006",
+              "GEN-007",
+              "GEN-008",
+              "GEN-009",
+              "GEN-010",
+              "GEN-011",
+              "GEN-012",
+              "GEN-013",
+              "GEN-014",
+              "GEN-015",
+              "GEN-016",
+              "GEN-017",
+              "GEN-018"
+            ],
+            "input_registry_scope": {
+              "genome_ids": [],
+              "material_systems": [],
+              "mechanism_ids": [],
+              "screening_statuses": [],
+              "structure_families": [],
+              "structure_ids": [],
+              "topologies": []
+            },
+            "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband",
+            "output_requirements": {
+              "write_candidate_report": true,
+              "write_leaderboard_csv": true,
+              "write_plots": true
+            },
+            "resolved_parameters": {
+              "default_profile": "broadband",
+              "top_n": 8
+            },
+            "resolved_profile": "broadband",
+            "slice_id": "broadband",
+            "tags": [
+              "profile",
+              "broadband"
+            ],
+            "tranche_id": "profile_comparison"
+          },
+          {
+            "candidate_count": 18,
+            "candidate_filters": [
+              {
+                "field": "screening_status",
+                "operator": "in",
+                "value": [
+                  "prioritized",
+                  "screening",
+                  "sandbox"
+                ]
+              }
+            ],
+            "candidate_ids": [
+              "GEN-001",
+              "GEN-002",
+              "GEN-003",
+              "GEN-004",
+              "GEN-005",
+              "GEN-006",
+              "GEN-007",
+              "GEN-008",
+              "GEN-009",
+              "GEN-010",
+              "GEN-011",
+              "GEN-012",
+              "GEN-013",
+              "GEN-014",
+              "GEN-015",
+              "GEN-016",
+              "GEN-017",
+              "GEN-018"
+            ],
+            "input_registry_scope": {
+              "genome_ids": [],
+              "material_systems": [],
+              "mechanism_ids": [],
+              "screening_statuses": [],
+              "structure_families": [],
+              "structure_ids": [],
+              "topologies": []
+            },
+            "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted",
+            "output_requirements": {
+              "write_candidate_report": true,
+              "write_leaderboard_csv": true,
+              "write_plots": true
+            },
+            "resolved_parameters": {
+              "default_profile": "resonance_targeted",
+              "top_n": 8
+            },
+            "resolved_profile": "resonance_targeted",
+            "slice_id": "resonance_targeted",
+            "tags": [
+              "profile",
+              "resonance_targeted"
+            ],
+            "tranche_id": "profile_comparison"
+          },
+          {
+            "candidate_count": 18,
+            "candidate_filters": [
+              {
+                "field": "screening_status",
+                "operator": "in",
+                "value": [
+                  "prioritized",
+                  "screening",
+                  "sandbox"
+                ]
+              }
+            ],
+            "candidate_ids": [
+              "GEN-001",
+              "GEN-002",
+              "GEN-003",
+              "GEN-004",
+              "GEN-005",
+              "GEN-006",
+              "GEN-007",
+              "GEN-008",
+              "GEN-009",
+              "GEN-010",
+              "GEN-011",
+              "GEN-012",
+              "GEN-013",
+              "GEN-014",
+              "GEN-015",
+              "GEN-016",
+              "GEN-017",
+              "GEN-018"
+            ],
+            "input_registry_scope": {
+              "genome_ids": [],
+              "material_systems": [],
+              "mechanism_ids": [],
+              "screening_statuses": [],
+              "structure_families": [],
+              "structure_ids": [],
+              "topologies": []
+            },
+            "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware",
+            "output_requirements": {
+              "write_candidate_report": true,
+              "write_leaderboard_csv": true,
+              "write_plots": true
+            },
+            "resolved_parameters": {
+              "default_profile": "manufacturability_aware",
+              "top_n": 8
+            },
+            "resolved_profile": "manufacturability_aware",
+            "slice_id": "manufacturability_aware",
+            "tags": [
+              "profile",
+              "manufacturability_aware"
+            ],
+            "tranche_id": "profile_comparison"
+          }
+        ],
+        "tranche_id": "profile_comparison"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "planned_at": "2026-04-03T17:26:43.910801Z",
+  "schema_name": "mmm_studio.sweep_manifest",
+  "schema_version": "1.0",
+  "spec_version": "1.0.0",
+  "started_at": "2026-04-03T17:26:43.914382Z",
+  "status": "completed",
+  "sweep_id": "profile_comparison_run",
+  "sweep_name": "profile-comparison",
+  "tranches": [
+    {
+      "artifact_paths": {
+        "summary_json": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\tranche_summary.json",
+        "summary_markdown": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\tranche_summary.md"
+      },
+      "metrics_summary": {
+        "dominant_candidate_id": "GEN-003",
+        "failed_slices": 0,
+        "successful_slices": 3,
+        "winner_consistency_ratio": 0.6666666666666666
+      },
+      "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison",
+      "slice_statuses": [
+        {
+          "artifact_paths": {
+            "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\reports\\candidate_report.md",
+            "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\leaderboard.csv",
+            "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\leaderboard.png",
+            "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\run_manifest.json",
+            "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\metrics.json",
+            "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\params.yaml",
+            "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\provenance.json",
+            "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\score_breakdown.png",
+            "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\scores.json",
+            "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband\\RUN_SUMMARY.md"
+          },
+          "candidate_count": 18,
+          "completed_at": "2026-04-03T17:26:44.460347Z",
+          "error_message": null,
+          "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\broadband",
+          "slice_id": "broadband",
+          "started_at": "2026-04-03T17:26:44.114271Z",
+          "status": "completed",
+          "top_candidate_id": "GEN-003",
+          "top_score": 0.7831834795321637,
+          "tranche_id": "profile_comparison"
+        },
+        {
+          "artifact_paths": {
+            "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\reports\\candidate_report.md",
+            "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.csv",
+            "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.png",
+            "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\run_manifest.json",
+            "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\metrics.json",
+            "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\params.yaml",
+            "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\provenance.json",
+            "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\score_breakdown.png",
+            "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\scores.json",
+            "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\RUN_SUMMARY.md"
+          },
+          "candidate_count": 18,
+          "completed_at": "2026-04-03T17:26:44.775399Z",
+          "error_message": null,
+          "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted",
+          "slice_id": "resonance_targeted",
+          "started_at": "2026-04-03T17:26:44.461444Z",
+          "status": "completed",
+          "top_candidate_id": "GEN-003",
+          "top_score": 0.7873689339697694,
+          "tranche_id": "profile_comparison"
+        },
+        {
+          "artifact_paths": {
+            "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\reports\\candidate_report.md",
+            "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\leaderboard.csv",
+            "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\leaderboard.png",
+            "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\run_manifest.json",
+            "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\metrics.json",
+            "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\params.yaml",
+            "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\provenance.json",
+            "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\score_breakdown.png",
+            "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\scores.json",
+            "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware\\RUN_SUMMARY.md"
+          },
+          "candidate_count": 18,
+          "completed_at": "2026-04-03T17:26:45.299811Z",
+          "error_message": null,
+          "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\manufacturability_aware",
+          "slice_id": "manufacturability_aware",
+          "started_at": "2026-04-03T17:26:44.776746Z",
+          "status": "completed",
+          "top_candidate_id": "GEN-001",
+          "top_score": 0.7785947867298579,
+          "tranche_id": "profile_comparison"
+        }
+      ],
+      "status": "completed",
+      "tranche_id": "profile_comparison"
+    }
+  ]
+}

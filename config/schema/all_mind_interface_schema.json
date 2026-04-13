@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QDP ALL-MIND Interface",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "timestamp_utc",
+    "repo_class",
+    "activity",
+    "promotion_mode",
+    "readiness",
+    "blockers",
+    "module_readiness_summary",
+    "module_closure_limitations",
+    "promotion_posture",
+    "callable_surfaces"
+  ],
+  "properties": {
+    "artifact_id": {
+      "const": "QDP_ALL_MIND_INTERFACE"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo_class": {
+      "type": "string",
+      "enum": [
+        "incubate"
+      ]
+    },
+    "activity": {
+      "type": "string",
+      "enum": [
+        "active"
+      ]
+    },
+    "promotion_mode": {
+      "type": "string",
+      "enum": [
+        "incubation link"
+      ]
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordinary_recovery_ready",
+        "ordinary_authoritative_ready",
+        "subsystem_recovery_ready",
+        "subsystem_authoritative_ready"
+      ],
+      "properties": {
+        "ordinary_recovery_ready": {
+          "type": "boolean"
+        },
+        "ordinary_authoritative_ready": {
+          "type": "boolean"
+        },
+        "subsystem_recovery_ready": {
+          "type": "boolean"
+        },
+        "subsystem_authoritative_ready": {
+          "type": "boolean"
+        }
+      }
+    },
+    "blockers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordinary_recovery_blockers",
+        "ordinary_authoritative_blockers",
+        "subsystem_recovery_blockers",
+        "subsystem_authoritative_blockers"
+      ],
+      "properties": {
+        "ordinary_recovery_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ordinary_authoritative_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subsystem_recovery_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subsystem_authoritative_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "module_readiness_summary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "BLOCKED",
+          "WORKING_PATCH",
+          "RECOVERY_INTERIM",
+          "AUTHORITATIVE_CLOSURE"
+        ]
+      },
+      "propertyNames": {
+        "pattern": "^(M(0[1-9]|1[0-5])|S1[6-9])$"
+      },
+      "required": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "S16",
+        "S17",
+        "S18",
+        "S19"
+      ]
+    },
+    "module_closure_limitations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "pattern": "^(M(0[1-9]|1[0-5])|S1[6-9])$"
+      }
+    },
+    "promotion_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "suggested_mode",
+        "note"
+      ],
+      "properties": {
+        "suggested_mode": {
+          "type": "string",
+          "enum": [
+            "incubation link"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "callable_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "command"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

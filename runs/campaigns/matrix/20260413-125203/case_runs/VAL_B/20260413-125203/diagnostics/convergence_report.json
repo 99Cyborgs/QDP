@@ -1,0 +1,56 @@
+{
+  "case_id": "VAL_B",
+  "dt_levels": [
+    0.01
+  ],
+  "failure_reason": null,
+  "key_observables": {
+    "final_charge_residual_inf": 0.36562604513816477,
+    "final_mean_abs2": 0.9999424762306802,
+    "final_time": 0.02,
+    "max_vortex_count": 0,
+    "n_events": 0,
+    "n_samples": 3
+  },
+  "mesh_levels": [
+    "16x8"
+  ],
+  "notes": "Phase-1 deterministic run summary for baseline acceptance and campaign setup.",
+  "observable_mode": "written",
+  "pass": false,
+  "solver_iteration_stats": {
+    "completed_step_count": 2,
+    "phi_fallback_count": 0,
+    "phi_iteration_summary": {
+      "final": 132,
+      "max": 132,
+      "mean": 132.0,
+      "total": 264
+    },
+    "phi_residual_summary": {
+      "final": 7.101223331638471e-09,
+      "max": 7.101223331638471e-09,
+      "mean": 7.086812658778567e-09
+    },
+    "phi_solver_method_counts": {
+      "cg": 2
+    },
+    "psi_fallback_count": 0,
+    "psi_iteration_summary": {
+      "final": 4,
+      "max": 4,
+      "mean": 4.0,
+      "total": 8
+    },
+    "psi_residual_summary": {
+      "final": 1.3513663171592216e-06,
+      "max": 1.375451402779664e-06,
+      "mean": 1.3634088599694428e-06
+    },
+    "psi_solver_method_counts": {
+      "gmres": 2
+    },
+    "requested_n_steps": 2
+  },
+  "status": "success"
+}

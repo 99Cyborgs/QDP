@@ -1,0 +1,12 @@
+﻿base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_short_pair_positive
+  description: "Invariant-only short-horizon same-sign seeded-vortex pair exercise"
+physics:
+  vortex_seeds:
+    - x0: 4.0
+      y0: 3.0
+      winding: 1
+    - x0: 8.0
+      y0: 3.0
+      winding: 1

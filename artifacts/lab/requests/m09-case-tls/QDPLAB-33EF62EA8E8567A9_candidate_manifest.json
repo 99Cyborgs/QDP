@@ -1,0 +1,20 @@
+{
+  "manifest_id": "QDPMAN-0BD89B169817E841",
+  "candidate_id": "m09-case-tls",
+  "candidate_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json",
+  "candidate_sha256": "065a376a7654b94b9a17179d1faba548f515fc9585f017ff7e29434f3dd03bc7",
+  "linked_artifacts": [
+    {
+      "path": "specs\\core\\signature_to_bath_decision_chart.md",
+      "sha256": "cfa12a2292755b236e09f2fa3a67d325f3131bcfbd41a1e2286715e02c4622bd"
+    },
+    {
+      "path": "specs\\research\\vortex_pinning_methods.md",
+      "sha256": "59e783d645684c37379da24e858055ddb356e1b460018217a2ae0c85adbdb82c"
+    },
+    {
+      "path": "specs\\research\\deep_research_report.md",
+      "sha256": "6fe8482b2ad2c6abbedc691444a7c39a97c20d2cd5566e3fd7db7e628f381fe6"
+    }
+  ]
+}

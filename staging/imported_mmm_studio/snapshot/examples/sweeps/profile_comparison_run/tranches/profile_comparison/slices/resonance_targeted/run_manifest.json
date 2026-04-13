@@ -1,0 +1,73 @@
+{
+  "artifact_paths": {
+    "candidate_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\reports\\candidate_report.md",
+    "leaderboard_csv": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.csv",
+    "leaderboard_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\leaderboard.png",
+    "manifest": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\run_manifest.json",
+    "metrics": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\metrics.json",
+    "params": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\params.yaml",
+    "provenance": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\provenance.json",
+    "score_breakdown_plot": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\score_breakdown.png",
+    "scores": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\scores.json",
+    "summary_report": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\slices\\resonance_targeted\\RUN_SUMMARY.md"
+  },
+  "created_at": "2026-04-03T17:26:44.462614Z",
+  "metrics": {
+    "candidate_count": 18,
+    "lead_branch_count": 2,
+    "primary_screen_count": 5,
+    "reject_count": 5,
+    "sandbox_count": 6,
+    "top_score": 0.7873689339697694
+  },
+  "parameters": {
+    "candidate_count": 18,
+    "candidate_ids": "GEN-001,GEN-002,GEN-003,GEN-004,GEN-005,GEN-006,GEN-007,GEN-008,GEN-009,GEN-010,GEN-011,GEN-012,GEN-013,GEN-014,GEN-015,GEN-016,GEN-017,GEN-018",
+    "dataset_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+    "profile": "resonance_targeted",
+    "score_backend": "baseline_surrogate_v1",
+    "slice_id": "resonance_targeted",
+    "sweep_id": "profile_comparison_run",
+    "tags": "profile,resonance_targeted",
+    "top_n": 8,
+    "tranche_id": "profile_comparison"
+  },
+  "provenance": {
+    "application_version": "0.2.0",
+    "command": "mmm-studio sweep-run",
+    "created_at": "2026-04-03T17:26:44.770142Z",
+    "environment": {
+      "python_entrypoint": "mmm-studio"
+    },
+    "run_id": "profile_comparison_run.profile_comparison.resonance_targeted",
+    "schema_name": "mmm_studio.provenance",
+    "schema_version": "1.0",
+    "score_backend": "baseline_surrogate_v1",
+    "scoring_profile": "resonance_targeted",
+    "source_artifacts": [
+      "MMM_MATERIAL_GENOME_DATABASE",
+      "MMM_CANDIDATE_RANKING_MODEL",
+      "MMM_MECHANISM_REGISTRY",
+      "MMM_STRUCTURE_LIBRARY",
+      "MMM_EXPERIMENT_REGISTRY",
+      "MMM_VALIDATION_RULES",
+      "MMM_BENCHMARK_MODELS",
+      "MMM_SCALING_DISCRIMINATION_MODELS",
+      "MMM_DEVICE_ARCHITECTURE_REGISTRY",
+      "MMM_TOLERANCE_MODELS",
+      "MMM_GEOMETRY_SCALING_MODELS",
+      "MMM_MATERIAL_SYSTEM_REGISTRY",
+      "MMM_ENVIRONMENT_MODEL_REGISTRY",
+      "MMM_INSTRUMENT_CONSTRAINTS",
+      "MMM_CROSS_DEVICE_REGISTRY"
+    ],
+    "source_root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed"
+  },
+  "root": "G:\\GitHub\\incubate\\MMM-Studio\\data\\mmm_seed",
+  "run_id": "profile_comparison_run.profile_comparison.resonance_targeted",
+  "schema_name": "mmm_studio.run_manifest",
+  "schema_version": "1.0",
+  "score_backend": "baseline_surrogate_v1",
+  "scoring_profile": "resonance_targeted",
+  "top_candidate_id": "GEN-003"
+}

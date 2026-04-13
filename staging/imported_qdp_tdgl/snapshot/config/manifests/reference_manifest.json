@@ -1,0 +1,219 @@
+{
+  "artifact_id": "QDP_V10_6_REFERENCE_MANIFEST_M03",
+  "module_id": "M03",
+  "version": "1.0",
+  "date": "2026-03-13",
+  "root_resolution_base": ".",
+  "strict_mode_default": true,
+  "resolution_rule": {
+    "all_critical_resolved": {
+      "reference_resolution_status": "PASSED"
+    },
+    "any_critical_missing": {
+      "reference_resolution_status": "FAILED",
+      "system_status": "REFERENCE_RESOLUTION_FAILURE",
+      "promotion_cap_governance": "SANDBOX_ONLY",
+      "automatic_flag_template": "REFERENCE_UNRESOLVED:{ref_id}"
+    }
+  },
+  "duplicate_detection_rules": {
+    "branch_tag_exact_match": "DUPLICATE_BRANCH_TAG",
+    "model_tag_exact_match": "DUPLICATE_MODEL_TAG",
+    "symbolic_hamiltonian_exact_match": "DUPLICATE_SYMBOLIC_H"
+  },
+  "reference_entries": [
+    {
+      "ref_id": "QDP_v10_6_BUILD_SPEC",
+      "relative_path": "specs/core/build_spec.md",
+      "role": "authoritative_build_rule",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_TEMPLATE_V10_6_M02",
+      "relative_path": "config/schema/candidate_template.json",
+      "role": "working_candidate_template",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "generated"
+    },
+    {
+      "ref_id": "QDP_CANDIDATE_SCHEMA_V10_6_M02",
+      "relative_path": "config/schema/candidate_schema.json",
+      "role": "working_schema_guardrail",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "generated"
+    },
+    {
+      "ref_id": "QDP_VALIDATE_CANDIDATE_M02",
+      "relative_path": "tools/validators/candidate_validator.py",
+      "role": "post_run_validator",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "generated"
+    },
+    {
+      "ref_id": "QDP_MASTER_SPEC",
+      "relative_path": "specs/core/master_spec.md",
+      "role": "governance_master_spec",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_VALIDATION_GATE",
+      "relative_path": "specs/core/validation_gate.md",
+      "role": "validation_ladder_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_FORK_QUESTIONS",
+      "relative_path": "specs/intake/fork_questions.md",
+      "role": "fork_decision_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_FALSIFIER_REGISTRY",
+      "relative_path": "specs/core/falsifier_registry.md",
+      "role": "falsifier_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_BATH_GLOSSARY",
+      "relative_path": "specs/core/bath_glossary.md",
+      "role": "bath_taxonomy_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_SIGNATURE_TO_BATH_CHART",
+      "relative_path": "specs/core/signature_to_bath_decision_chart.md",
+      "role": "mechanism_triage_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_MODEL_SPEC_BASELINE",
+      "relative_path": "specs/core/model_spec.md",
+      "role": "baseline_model_reference",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_FORK_INTAKE_FORM",
+      "relative_path": "specs/intake/fork_intake_form_one_page.pdf",
+      "role": "branch_registration_reference",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "QDP_DEEP_RESEARCH_REPORT",
+      "relative_path": "specs/research/deep_research_report.md",
+      "role": "mechanism_and_residual_background",
+      "criticality": "OPTIONAL_SUPPORT",
+      "required": false,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "GKSL_SUBSYSTEM_CASE_MATRIX",
+      "relative_path": "specs/subsystem/specs/subsystem/gksl_subsystem_case_matrix.json",
+      "role": "subsystem_harness_case_matrix",
+      "criticality": "SUBSYSTEM_SUPPORT",
+      "required": false,
+      "modes": [
+        "subsystem"
+      ],
+      "provenance": "uploaded"
+    },
+    {
+      "ref_id": "RETAINED_V10_1_OPERATIVE_BODY",
+      "relative_path": "runtime/retained/operative_body_v10_1.md",
+      "role": "mandatory_retained_runtime_body",
+      "criticality": "CRITICAL_EXECUTION",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "reconstructed_surrogate",
+      "notes": "Regenerated locally from surfaced v10.6 runtime and build artifacts because the original retained v10.1 source was not recoverable from visible local files."
+    },
+    {
+      "ref_id": "RETAINED_FEDERATED_GOVERNANCE_REGISTRY_OBJECT",
+      "relative_path": "runtime/missing/federated_governance_registry_object.json",
+      "role": "mandatory_retained_registry_object",
+      "criticality": "CRITICAL_GOVERNANCE",
+      "required": true,
+      "modes": [
+        "ordinary",
+        "subsystem"
+      ],
+      "provenance": "reconstructed_surrogate",
+      "notes": "Regenerated locally from surfaced governance artifacts because the original retained federated registry object was not recoverable from visible local files."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "artifact_id": "QDP_V10_6_M13_SELFTEST_CASES",
+  "module_id": "M13",
+  "cases": [
+    {
+      "case_id": "CASE_M13_SCHEDULED_WITHOUT_MULTI_DEVICE",
+      "description": "Missing multi-device evidence yields SCHEDULED and a sandbox cap.",
+      "candidate_overrides": {
+        "multi_device_data_available": false
+      },
+      "expected": {
+        "cross_device_status": "SCHEDULED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "SCHEDULED"
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M13_CONFOUNDED_GEOMETRY",
+      "description": "Geometry claims without fabrication matching are confounded.",
+      "candidate_overrides": {
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": false,
+        "scaling_analysis": {
+          "orthogonal_axes_count": 2,
+          "axes_used": [
+            "geometry",
+            "power"
+          ],
+          "strongest_competitor_separated": true,
+          "geometry_claim_fabrication_matched": false,
+          "experimentally_resolvable": true,
+          "geometry_claimed_discriminator": true
+        },
+        "cross_device_validation": {
+          "status": "",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": false,
+          "notes": ""
+        }
+      },
+      "expected": {
+        "cross_device_status": "CONFUNDED",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "CONFUNDED"
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M13_CONFIRMED",
+      "description": "Explicit confirmed evidence is preserved.",
+      "candidate_overrides": {
+        "promotion_cap_governance": "",
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "CONFIRMED",
+          "devices_tested": [
+            "DEV_A",
+            "DEV_B"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        }
+      },
+      "expected": {
+        "cross_device_status": "CONFIRMED",
+        "promotion_cap_governance": "",
+        "cross_device_validation": {
+          "status": "CONFIRMED"
+        }
+      }
+    },
+    {
+      "case_id": "CASE_M13_DEVICE_SPECIFIC",
+      "description": "Single-device evidence normalizes to DEVICE_SPECIFIC.",
+      "candidate_overrides": {
+        "multi_device_data_available": true,
+        "fabrication_matched_for_geometry_claim": true,
+        "cross_device_validation": {
+          "status": "",
+          "devices_tested": [
+            "DEV_A"
+          ],
+          "fabrication_matched": true,
+          "notes": ""
+        }
+      },
+      "expected": {
+        "cross_device_status": "DEVICE_SPECIFIC",
+        "promotion_cap_governance": "SANDBOX_ONLY",
+        "cross_device_validation": {
+          "status": "DEVICE_SPECIFIC"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+base_config: phase1_matrix_base.yaml
+metadata:
+  case_id: phase2_seeded_vortex_pair
+  description: "Phase-2 deterministic seeded opposite-sign vortex pair example"
+  tags: ["phase2", "seeded-vortex", "deterministic"]
+physics:
+  initial_condition: seeded_vortices
+  vortex_seeds:
+    - x0: 4.0
+      y0: 3.0
+      winding: 1
+    - x0: 8.0
+      y0: 3.0
+      winding: -1
+forcing:
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+output:
+  root_dir: runs/phase2_seeded
+  write_fields: false
+  write_observables: true
+  compression: none

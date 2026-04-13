@@ -1,0 +1,84 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_CANDIDATE_RANKING_MODEL
+ranking_model:
+  model_id: RANK-001
+  name: Weighted constrained candidate ranker
+  objective_direction: maximize
+  score_formula: score = 0.24*coherence_uplift + 0.18*null_separation + 0.15*detectability_margin + 0.14*geometry_scaling_clarity + 0.12*fabrication_robustness + 0.08*replication_portability + 0.05*simulation_confidence + 0.04*standard_lab_feasibility
+  feature_definitions:
+  - feature: coherence_uplift
+    range:
+    - 0
+    - 1
+    definition: Predicted fractional improvement in target observable after null-normalized simulation.
+  - feature: null_separation
+    range:
+    - 0
+    - 1
+    definition: Margin by which candidate-specific scaling differs from best baseline null model.
+  - feature: detectability_margin
+    range:
+    - 0
+    - 1
+    definition: Predicted effect size relative to instrument floor and sample count.
+  - feature: geometry_scaling_clarity
+    range:
+    - 0
+    - 1
+    definition: How cleanly geometry provides an internal falsification ladder.
+  - feature: fabrication_robustness
+    range:
+    - 0
+    - 1
+    definition: Yield-adjusted survival probability under tolerance Monte Carlo.
+  - feature: replication_portability
+    range:
+    - 0
+    - 1
+    definition: Expected portability across device classes/substrates.
+  - feature: simulation_confidence
+    range:
+    - 0
+    - 1
+    definition: Agreement among solver fidelities and surrogate uncertainty.
+  - feature: standard_lab_feasibility
+    range:
+    - 0
+    - 1
+    definition: Compatibility with academic cleanroom and mK packaging workflows.
+  hard_reject_rules:
+  - Reject if no predicted observable is above detectability gate.
+  - Reject if no explicit validation rule is linked.
+  - Reject if best null model explains >= 80% of effect.
+  - Reject if required minimum feature is below demonstrated line width for chosen process.
+  - Reject if candidate depends on exotic fabrication and no standard-lab mitigation path exists.
+  decision_bands:
+  - band: lead_branch
+    score_min: 0.75
+    requirements:
+    - standard_lab_feasible
+    - null_risk_score <= 5
+    - replication_portability >= 0.5
+  - band: primary_screen
+    score_min: 0.6
+    requirements:
+    - detectability_margin >= 0.4
+  - band: sandbox_only
+    score_min: 0.4
+    requirements:
+    - explicit_exotic_flag_ok
+  - band: reject
+    score_min: 0.0
+    requirements:
+    - fails_hard_rule_or_score_below_0.40

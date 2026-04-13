@@ -1,0 +1,10 @@
+{
+  "snapshot_id": "CAL-77FC92FFD3214625",
+  "request_id": "QDPLAB-77FC92FFD3214625",
+  "validity_score": 96.0,
+  "threshold": 70.0,
+  "status": "VALID",
+  "notes": [
+    "Synthetic calibration snapshot for lab-ingest smoke test"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "lineage_record_id": "LIN-77FC92FFD3214625",
+  "request_id": "QDPLAB-77FC92FFD3214625",
+  "device_ids": ["DEV_A", "DEV_B"],
+  "device_lineage_recorded": true,
+  "calibration_context_recorded": true,
+  "protocol_metadata_recorded": true,
+  "notes": [
+    "Synthetic lineage fixture for lab-ingest smoke test"
+  ]
+}

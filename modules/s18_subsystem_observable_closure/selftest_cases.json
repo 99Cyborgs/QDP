@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "description": "Nonnormal pseudosector should fail finite-horizon control.",
+      "expected": {
+        "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "fail",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "description": "Symmetry-only case should remain closure-borderline.",
+      "expected": {
+        "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+        "actual_final_verdict": "inconclusive",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass_or_borderline",
+          "observable_closure": "fail_or_borderline"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "description": "Positive control should pass finite-horizon and closure gates.",
+      "expected": {
+        "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+        "actual_final_verdict": "supported",
+        "gate_outcomes": {
+          "finite_horizon_control": "pass",
+          "observable_closure": "pass"
+        },
+        "diagnostics_reported": [
+          "block_residual_rho_res",
+          "finite_horizon_gain_Gs",
+          "state_space_leakage",
+          "observable_space_leakage",
+          "observable_closure_defect"
+        ]
+      }
+    }
+  ]
+}

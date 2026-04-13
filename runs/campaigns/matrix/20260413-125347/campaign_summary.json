@@ -1,0 +1,42 @@
+{
+  "attempted_row_count": 2,
+  "blocked_count": 0,
+  "campaign_dir": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125347",
+  "failed_count": 0,
+  "gate_status": {
+    "gate:G1": {
+      "dry_run_ready": true,
+      "passed": true,
+      "required": 2,
+      "success": 2,
+      "validated": 0
+    },
+    "gate:G2": {
+      "dry_run_ready": false,
+      "passed": false,
+      "required": 0,
+      "success": 0,
+      "validated": 0
+    },
+    "gate:G3": {
+      "dry_run_ready": false,
+      "passed": false,
+      "required": 0,
+      "success": 0,
+      "validated": 0
+    }
+  },
+  "log_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125347\\logs\\campaign.log",
+  "matrix_path": "C:\\Users\\Forre\\AppData\\Local\\Temp\\pytest-of-Forre\\pytest-249\\test_run_phase1_validation_wri0\\matrix.csv",
+  "pending_count": 0,
+  "row_results_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125347\\row_results.csv",
+  "selected_row_count": 2,
+  "skipped_success_count": 0,
+  "start_timestamp": "2026-04-13T12:53:47.586960",
+  "state_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125347\\campaign_state.json",
+  "status": "success",
+  "stop_timestamp": "2026-04-13T12:53:47.739798",
+  "success_count": 2,
+  "summary_path": "G:\\GitHub\\incubate\\QDP\\runs\\campaigns\\matrix\\20260413-125347\\campaign_summary.json",
+  "validated_count": 0
+}

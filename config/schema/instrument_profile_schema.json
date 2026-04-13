@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config/schema/instrument_profile_schema.json",
+  "title": "QDP Instrument Capability Profile",
+  "type": "object",
+  "properties": {
+    "instrument_profile_id": {"type": "string"},
+    "platform_class": {"type": "string"},
+    "device_ids": {"type": "array", "items": {"type": "string"}},
+    "supported_measurements": {"type": "array", "items": {"type": "string"}},
+    "instrument_facing_requirement_satisfied": {"type": "boolean"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "instrument_profile_id",
+    "platform_class",
+    "device_ids",
+    "supported_measurements",
+    "instrument_facing_requirement_satisfied",
+    "notes"
+  ],
+  "additionalProperties": false
+}

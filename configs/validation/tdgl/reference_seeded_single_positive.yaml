@@ -1,0 +1,19 @@
+base_config: ../../tdgl/phase1_matrix_base.yaml
+metadata:
+  case_id: reference_seeded_single_positive
+  description: "Canonical short-horizon seeded single-vortex ansatz reference"
+physics:
+  initial_condition: seeded_vortices
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1
+forcing:
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+output:
+  root_dir: runs/reference_cases
+  write_fields: false
+  write_observables: true
+  compression: none

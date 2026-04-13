@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "module_id": "S19",
+  "diagnostics_reported": [
+    "slow_rank",
+    "riesz_projector_stability",
+    "block_residual_rho_res",
+    "finite_horizon_gain_Gs",
+    "observable_closure_defect",
+    "baseline_competition_margin"
+  ],
+  "gate_outcomes": {
+    "slow_sector_detected": "pass",
+    "projector_stability": "pass",
+    "finite_horizon_control": "pass",
+    "observable_closure": "pass",
+    "null_baseline_rejection": "pass",
+    "symmetry_alias_rejection": "pass",
+    "artifact_alias_rejection": "pass"
+  },
+  "expected_final_verdict": "supported",
+  "actual_final_verdict": "supported",
+  "supported_forbidden": false,
+  "supported_required": true,
+  "notes": [
+    "Final subsystem verdict is surfaced from required gate outcomes and expected final verdict.",
+    "supported_forbidden=False",
+    "supported_required=True"
+  ]
+}

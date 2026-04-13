@@ -1,0 +1,109 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_MATERIAL_SYSTEM_REGISTRY
+material_systems:
+- material_system_id: MAT-001
+  name: Al on high-resistivity silicon
+  device_roles:
+  - transmon
+  - planar_resonator
+  - control coupons
+  mm_compatibility:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-PH-GRADED-SINK
+  - STR-QP-GAP-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  cryogenic_status: standard_mK
+  fabrication_notes: Baseline academic process. Good control platform.
+- material_system_id: MAT-002
+  name: Ta on sapphire
+  device_roles:
+  - high-coherence transmon
+  - fluxonium
+  mm_compatibility:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  - STR-PH-SOI-FULLCAP-PHC via adapted stack
+  - STR-PH-GRADED-SINK
+  cryogenic_status: standard_mK
+  fabrication_notes: High baseline coherence; useful for demonstrating residual improvements.
+- material_system_id: MAT-003
+  name: Nb or NbTiN on silicon / sapphire
+  device_roles:
+  - planar resonator
+  - HKI fence
+  - KID
+  mm_compatibility:
+  - STR-EM-HKI-FENCE
+  - STR-VX-ANTIDOT-LATTICE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  cryogenic_status: standard_mK
+  fabrication_notes: Supports narrow HKI features and robust resonator screening.
+- material_system_id: MAT-004
+  name: Al or Ta on SOI membrane
+  device_roles:
+  - phononic-crystal transmon
+  - phononic witness resonator
+  mm_compatibility:
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-SOI-FULLCAP-PHC
+  cryogenic_status: standard_mK_with_release_risk
+  fabrication_notes: Advanced but feasible; release and stress control are critical.
+- material_system_id: MAT-005
+  name: Granular Al / TiN / NbTiN high-kinetic-inductance film
+  device_roles:
+  - fence
+  - interposer
+  - resonant filter
+  mm_compatibility:
+  - STR-EM-HKI-FENCE
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  cryogenic_status: standard_mK
+  fabrication_notes: Requires line-width calibration and loss tangent characterization.
+- material_system_id: MAT-006
+  name: Al plus Cu/Pd normal-metal trap stack
+  device_roles:
+  - quasiparticle trap controls
+  mm_compatibility:
+  - STR-QP-GAP-LATTICE
+  cryogenic_status: standard_mK
+  fabrication_notes: Support branch only; trap-area matched controls mandatory.
+- material_system_id: MAT-007
+  name: Bulk niobium or aluminum 3D cavity
+  device_roles:
+  - 3D cavity transmon / fluxonium
+  mm_compatibility:
+  - STR-3D-CAVITY-LINER
+  cryogenic_status: standard_mK
+  fabrication_notes: Machine-shop compatible; seam control required.
+- material_system_id: MAT-008
+  name: Piezoelectric witness stack (AlN or LiNbO3)
+  device_roles:
+  - SAW witness
+  - piezoelectric screening
+  mm_compatibility:
+  - STR-PH-SAW-BRAGG
+  cryogenic_status: mK_compatible_but_exotic
+  fabrication_notes: Exotic relative to baseline superconducting qubit process.
+- material_system_id: MAT-009
+  name: Hybrid patterned silicon or sapphire interposer
+  device_roles:
+  - packaging interposer
+  - hybrid EM+phononic sandbox
+  mm_compatibility:
+  - STR-EM-LID-HIS
+  - STR-HYB-BILAYER-INTERPOSER
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  cryogenic_status: standard_mK_or_exotic_depending_stack
+  fabrication_notes: Classify as exotic when bonded or released multilayers are required.

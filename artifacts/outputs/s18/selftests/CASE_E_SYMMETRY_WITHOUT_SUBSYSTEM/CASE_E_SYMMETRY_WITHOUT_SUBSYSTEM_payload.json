@@ -1,0 +1,23 @@
+{
+  "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+  "module_id": "S18",
+  "diagnostics_reported": [
+    "block_residual_rho_res",
+    "finite_horizon_gain_Gs",
+    "state_space_leakage",
+    "observable_space_leakage",
+    "observable_closure_defect"
+  ],
+  "gate_outcomes": {
+    "finite_horizon_control": "pass_or_borderline",
+    "observable_closure": "fail_or_borderline"
+  },
+  "expected_final_verdict": "inconclusive",
+  "actual_final_verdict": "inconclusive",
+  "supported_forbidden": true,
+  "supported_required": false,
+  "notes": [
+    "Finite-horizon and closure outputs are surfaced from the subsystem matrix.",
+    "truth_family=Generator with approximate parity or excitation number conservation and weak symmetry breaking"
+  ]
+}

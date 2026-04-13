@@ -1,0 +1,2 @@
+case_id,phase,base_config,geometry_family,nx,ny,pinning_model,pinning_mu,pinning_sigma,pinning_lcorr,defect_count,b_dc,a_rf,omega,gamma_noise,dt,n_steps,ensemble_size,obs_stride,field_stride,goal,success_metric,promotion_rule,notes
+D01,D,base.yaml,strip,16,8,none,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.01,1,1,1,1,deterministic smoke,completes,gate:G1,cli dry-run

@@ -1,11 +1,11 @@
 {
   "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
   "module_id": "M07",
-  "timestamp_utc": "2026-03-15T20:19:14.445519+00:00",
+  "timestamp_utc": "2026-04-13T18:30:49.024298+00:00",
   "visible_source_only": true,
   "declared_family_class": "TLS_ENSEMBLE",
   "declared_likely_bath_class": "DIELECTRIC_INTERFACE_LOSS",
-  "evidence_text_sample": "m07-case-declared-only m07_case_declared_only   tls_ensemble      dielectric_interface_loss               not_required  not_required   fork registration completed before any discriminant measurement was run. ready passed passed passed passed ready not_evaluated defer",
+  "evidence_text_sample": "m07-case-declared-only m07_case_declared_only   tls_ensemble      dielectric_interface_loss               not_required  not_required pending_review  pending_review  pending_review  pending_review    fork registration completed before any discriminant measurement was run. ready passed passed passed passed ready not_evaluated defer",
   "rule_matches": [],
   "result_summary": {
     "assigned_family_class": "TLS_ENSEMBLE",

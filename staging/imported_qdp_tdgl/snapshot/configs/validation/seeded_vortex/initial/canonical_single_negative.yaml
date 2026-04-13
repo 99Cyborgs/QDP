@@ -1,0 +1,9 @@
+base_config: ../base_initialization_only.yaml
+metadata:
+  case_id: seeded_init_single_negative
+  description: "Frozen initialization-only single negative seeded-vortex reference"
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: -1

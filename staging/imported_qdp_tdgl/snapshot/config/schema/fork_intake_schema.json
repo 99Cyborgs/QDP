@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "QDP_v10_6_FORK_INTAKE_SCHEMA_M04.schema.json",
+  "title": "QDP v10.6 M04 Fork Intake Schema",
+  "description": "Machine-readable intake object for M04 fork intake and branch registration. Strings may remain blank in template mode; final-mode validation is handled by tools/validators/fork_intake_validator.py.",
+  "type": "object",
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "module_id": {
+      "type": "string",
+      "const": "M04"
+    },
+    "date": {
+      "type": "string"
+    },
+    "requestor": {
+      "type": "string"
+    },
+    "branch_or_model_tag": {
+      "type": "string"
+    },
+    "change_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "HAMILTONIAN_TERM",
+          "FREE_PARAMETER",
+          "OBSERVABLE",
+          "INTEGRATOR",
+          "PLATFORM",
+          "SCALE_BRIDGE"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "model_classification": {
+      "type": "string",
+      "enum": [
+        "",
+        "FORMAL_CORE",
+        "EXAMPLE",
+        "INTERPRETATION"
+      ]
+    },
+    "candidate_H_mod_symbolic": {
+      "type": "string"
+    },
+    "candidate_H_mod_physical_interpretation": {
+      "type": "string"
+    },
+    "claimed_effect": {
+      "type": "string"
+    },
+    "declared_family_class": {
+      "type": "string",
+      "enum": [
+        "",
+        "MARKOVIAN_RESERVOIR",
+        "KERNEL_MEMORY",
+        "METASTABLE_C_STATE",
+        "TLS",
+        "QP",
+        "PHONON",
+        "VORTEX",
+        "EM_PURCELL",
+        "OTHER"
+      ]
+    },
+    "declared_likely_bath_class_raw": {
+      "type": "string",
+      "enum": [
+        "",
+        "MARKOVIAN_RESERVOIR",
+        "KERNEL_MEMORY",
+        "METASTABLE_C_STATE",
+        "TLS",
+        "QP",
+        "PHONON",
+        "VORTEX",
+        "EM_PURCELL",
+        "OTHER"
+      ]
+    },
+    "declared_likely_bath_class_other_text": {
+      "type": "string"
+    },
+    "bath_classification_consistent_with_glossary_asserted": {
+      "type": "boolean"
+    },
+    "primary_observable": {
+      "type": "string"
+    },
+    "secondary_observable": {
+      "type": "string"
+    },
+    "accessible_platform_or_device_class": {
+      "type": "string"
+    },
+    "minimal_discriminant_measurement": {
+      "type": "string"
+    },
+    "cross_scale_claim_present": {
+      "type": "boolean"
+    },
+    "effective_mapping_attached": {
+      "type": "boolean"
+    },
+    "invariant_preserved": {
+      "type": "string"
+    },
+    "reduction_limit": {
+      "type": "string"
+    },
+    "count_new_free_parameters": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "new_free_parameters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "parameter_constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "independent_constraint_source_per_parameter": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "exact_falsifier": {
+      "type": "string"
+    },
+    "does_increase_falsifiable_surface_area": {
+      "type": "boolean"
+    },
+    "relevant_nuisance_controls_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_ladder_plan": {
+      "type": "object",
+      "properties": {
+        "L0_baseline_pipeline_reproduced": {
+          "type": "boolean"
+        },
+        "L1_reduction_limit_verified": {
+          "type": "boolean"
+        },
+        "L2_convergence_plan_defined": {
+          "type": "boolean"
+        },
+        "L3_stability_criterion_defined": {
+          "type": "boolean"
+        },
+        "L4_instrument_facing_comparison_path_defined": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "L0_baseline_pipeline_reproduced",
+        "L1_reduction_limit_verified",
+        "L2_convergence_plan_defined",
+        "L3_stability_criterion_defined",
+        "L4_instrument_facing_comparison_path_defined"
+      ],
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "module_id",
+    "date",
+    "requestor",
+    "branch_or_model_tag",
+    "change_types",
+    "model_classification",
+    "candidate_H_mod_symbolic",
+    "candidate_H_mod_physical_interpretation",
+    "claimed_effect",
+    "declared_family_class",
+    "declared_likely_bath_class_raw",
+    "declared_likely_bath_class_other_text",
+    "bath_classification_consistent_with_glossary_asserted",
+    "primary_observable",
+    "secondary_observable",
+    "accessible_platform_or_device_class",
+    "minimal_discriminant_measurement",
+    "cross_scale_claim_present",
+    "effective_mapping_attached",
+    "invariant_preserved",
+    "reduction_limit",
+    "count_new_free_parameters",
+    "new_free_parameters",
+    "parameter_constraints",
+    "independent_constraint_source_per_parameter",
+    "exact_falsifier",
+    "does_increase_falsifiable_surface_area",
+    "relevant_nuisance_controls_list",
+    "validation_ladder_plan",
+    "notes"
+  ],
+  "additionalProperties": false
+}

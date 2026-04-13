@@ -1,0 +1,10 @@
+{
+  "snapshot_id": "CAL-EBE5E0010DAD7DE8",
+  "request_id": "QDPLAB-EBE5E0010DAD7DE8",
+  "validity_score": 95.0,
+  "threshold": 70.0,
+  "status": "VALID",
+  "notes": [
+    "Synthetic calibration snapshot for first-wave promotion-adjacent smoke test."
+  ]
+}

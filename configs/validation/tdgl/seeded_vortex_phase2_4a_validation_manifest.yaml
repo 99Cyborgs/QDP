@@ -1,0 +1,398 @@
+schema_version: tdgl_rf.seeded_vortex_phase2_4a_validation.v1
+validation_id: seeded_vortex_phase2_4a_same_stack
+claim_scope: Same-stack fixed-seed runtime/control-plane validation of the committed
+  Phase-2.4A seeded-vortex ensemble pack only.
+experiment_pack: seeded_vortex_phase2_4a_experiment_pack.yaml
+expected_results:
+  top_level:
+    expected_member_count: 3
+    mode: stochastic_ensemble
+    overall_status: success
+    pack_name: seeded_vortex_phase2_4a_experiment_pack
+    parameter_point_count: 2
+    parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+    run_count: 6
+  parameter_points:
+  - aggregates:
+      early_window.mean_abs2_final:
+        max: 0.9951355276307005
+        mean: 0.9877432798444367
+        min: 0.9809600057230531
+        std: 0.005803130880937511
+    case_class: short_horizon
+    ensemble_id: e9a374e152ffd4ee
+    member_indices:
+    - 0
+    - 1
+    - 2
+    noise_seeds:
+    - 7435866037572974735
+    - 69872281759179439
+    - 12091854522935283700
+    param_set_hash: 22c77fcc8895b7c6
+    parameters:
+      forcing.a_rf: 0.0
+    robustness_summary:
+      failed_member_count: 0
+      failure_rate: 0.0
+      member_count: 3
+      observables:
+        early_window.mean_abs2_final:
+          coefficient_of_variation: 0.005875140838064186
+          coefficient_of_variation_defined: true
+          sign_consistency: 1.0
+          successful_member_count: 3
+      successful_member_count: 3
+    run_count: 3
+    successful_run_count: 3
+  - aggregates:
+      early_window.mean_abs2_final:
+        max: 0.998333203155557
+        mean: 0.9934805444797786
+        min: 0.989072861339504
+        std: 0.0037935897738098747
+    case_class: short_horizon
+    ensemble_id: 3ac157a1aaa64018
+    member_indices:
+    - 0
+    - 1
+    - 2
+    noise_seeds:
+    - 16569354671516297555
+    - 5055044444040433075
+    - 2921146607582794029
+    param_set_hash: 7e25b35f64dc7088
+    parameters:
+      forcing.a_rf: 0.05
+    robustness_summary:
+      failed_member_count: 0
+      failure_rate: 0.0
+      member_count: 3
+      observables:
+        early_window.mean_abs2_final:
+          coefficient_of_variation: 0.0038184842117832633
+          coefficient_of_variation_defined: true
+          sign_consistency: 1.0
+          successful_member_count: 3
+      successful_member_count: 3
+    run_count: 3
+    successful_run_count: 3
+  members:
+  - ensemble_id: e9a374e152ffd4ee
+    member_index: 0
+    noise_seed: 7435866037572974735
+    observables:
+      early_window.mean_abs2_final: 0.9951355276307005
+    param_set_hash: 22c77fcc8895b7c6
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 7435866037572974735
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 7435866037572974735
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 7435866037572974735
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m0
+    status: success
+  - ensemble_id: e9a374e152ffd4ee
+    member_index: 1
+    noise_seed: 69872281759179439
+    observables:
+      early_window.mean_abs2_final: 0.9809600057230531
+    param_set_hash: 22c77fcc8895b7c6
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 69872281759179439
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 69872281759179439
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 69872281759179439
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m1
+    status: success
+  - ensemble_id: e9a374e152ffd4ee
+    member_index: 2
+    noise_seed: 12091854522935283700
+    observables:
+      early_window.mean_abs2_final: 0.9871343061795564
+    param_set_hash: 22c77fcc8895b7c6
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 12091854522935283700
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 12091854522935283700
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 12091854522935283700
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__22c77fcc8895b7c6__m2
+    status: success
+  - ensemble_id: 3ac157a1aaa64018
+    member_index: 0
+    noise_seed: 16569354671516297555
+    observables:
+      early_window.mean_abs2_final: 0.989072861339504
+    param_set_hash: 7e25b35f64dc7088
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 16569354671516297555
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 16569354671516297555
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 16569354671516297555
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m0
+    status: success
+  - ensemble_id: 3ac157a1aaa64018
+    member_index: 1
+    noise_seed: 5055044444040433075
+    observables:
+      early_window.mean_abs2_final: 0.998333203155557
+    param_set_hash: 7e25b35f64dc7088
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 5055044444040433075
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 5055044444040433075
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 5055044444040433075
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m1
+    status: success
+  - ensemble_id: 3ac157a1aaa64018
+    member_index: 2
+    noise_seed: 2921146607582794029
+    observables:
+      early_window.mean_abs2_final: 0.993035568944275
+    param_set_hash: 7e25b35f64dc7088
+    provenance:
+      determinism:
+        deterministic_expected: false
+        master_seed: 1234
+        noise_enabled: true
+        noise_seed: 2921146607582794029
+        pinning_seed: null
+        reproducibility_scope: same-stack seeded stochastic
+      ensemble:
+        master_seed: 1234
+        member_count: 3
+        mode: stochastic_ensemble
+        parent_manifest_hash: c7a53a7cebb5041c4f3a03640087c40b1b8bd719293fa481a6742c9c777a15df
+      experiment:
+        base_case_hash: 4028bbd8fc4f72e12d3d3d36e4de3d323b3ac881fc7985c7ab35958220b5bd4c
+      initialization:
+        configured_vortex_seeds:
+        - core_radius: null
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        mode: seeded_vortices
+        resolved_vortex_seeds:
+        - core_radius: 0.25
+          plaquette_x: 11
+          plaquette_y: 5
+          seed_index: 0
+          winding: 1
+          x0: 6.0
+          y0: 3.0
+        seed_rejection_taxonomy_version: seeded_vortex_phase2_1
+        seed_resolution_policy: strict_interior_fully_active_plaquette
+      noise:
+        contract_kind: additive_complex_gaussian
+        enabled: true
+        sampling: run_local_complex_standard_normal
+        seed: 2921146607582794029
+        strength: 0.05
+      schema_version: tdgl_rf.run_provenance.v3.3
+      seeds:
+        initial_condition: seeded_vortices
+        master_seed: 1234
+        noise_seed: 2921146607582794029
+        vortex_seed_count: 1
+    run_id: seeded_vortex_phase2_4a_experiment_pack__7e25b35f64dc7088__m2
+    status: success

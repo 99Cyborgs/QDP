@@ -1,0 +1,654 @@
+{
+  "artifact_id": "QDP_POST_OVERHAUL_BLOCKER_LEDGER",
+  "timestamp_utc": "2026-04-13T18:30:49.879139+00:00",
+  "phase": "post",
+  "summary": {
+    "class": "incubate",
+    "activity": "active",
+    "promotion_mode": "incubation link",
+    "ordinary_recovery_ready": true,
+    "ordinary_authoritative_ready": true,
+    "subsystem_recovery_ready": true,
+    "subsystem_authoritative_ready": true,
+    "m06_derived_status": "AUTHORITATIVE_CLOSURE",
+    "module_verification": {
+      "M01": {
+        "module_key": "m01",
+        "verification_kind": "assembly_report",
+        "evidence_paths": {
+          "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 2,
+        "cases_passed": 2,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true,
+        "closure_report_exists": true
+      },
+      "M02": {
+        "module_key": "m02",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M03": {
+        "module_key": "m03",
+        "verification_kind": "reference_resolution",
+        "evidence_paths": {
+          "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+          "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "ordinary_status": "PASSED",
+        "subsystem_status": "PASSED",
+        "ordinary_critical_unresolved_count": 0,
+        "subsystem_critical_unresolved_count": 0,
+        "mode_divergence_status": "PASSED",
+        "verification_passed": true
+      },
+      "M04": {
+        "module_key": "m04",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M05": {
+        "module_key": "m05",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 9,
+        "cases_passed": 9,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M06": {
+        "module_key": "m06",
+        "verification_kind": "bootstrap_harness",
+        "evidence_paths": {
+          "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "validation_harness_status": "PASSED",
+        "schema_validation_status": "PASSED",
+        "reference_resolution_status": "PASSED",
+        "determinism_status": "PASSED",
+        "mode_divergence_status": "PASSED",
+        "verification_passed": true
+      },
+      "M07": {
+        "module_key": "m07",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M08": {
+        "module_key": "m08",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M09": {
+        "module_key": "m09",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M10": {
+        "module_key": "m10",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M11": {
+        "module_key": "m11",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M12": {
+        "module_key": "m12",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 8,
+        "cases_passed": 8,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M13": {
+        "module_key": "m13",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M14": {
+        "module_key": "m14",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M15": {
+        "module_key": "m15",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S16": {
+        "module_key": "s16",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S17": {
+        "module_key": "s17",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S18": {
+        "module_key": "s18",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S19": {
+        "module_key": "s19",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      }
+    },
+    "module_selftests": {
+      "M01": {
+        "module_key": "m01",
+        "verification_kind": "assembly_report",
+        "evidence_paths": {
+          "assembly_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\closure_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m01\\assembly_report.json",
+        "cases_total": 2,
+        "cases_passed": 2,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M02": {
+        "module_key": "m02",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m02\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M03": {
+        "module_key": "m03",
+        "verification_kind": "reference_resolution",
+        "evidence_paths": {
+          "ordinary_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+          "subsystem_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_subsystem.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "compatibility_alias"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m03\\reference_resolution_ordinary.json",
+        "cases_total": 0,
+        "cases_passed": 0,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M04": {
+        "module_key": "m04",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m04\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M05": {
+        "module_key": "m05",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m05\\selftest_report.json",
+        "cases_total": 9,
+        "cases_passed": 9,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M06": {
+        "module_key": "m06",
+        "verification_kind": "bootstrap_harness",
+        "evidence_paths": {
+          "bootstrap_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+          "closure_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\closure_report.json",
+          "mode_divergence_report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "compatibility_alias"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
+        "cases_total": 0,
+        "cases_passed": 0,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M07": {
+        "module_key": "m07",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m07\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M08": {
+        "module_key": "m08",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m08\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M09": {
+        "module_key": "m09",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m09\\selftest_report.json",
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M10": {
+        "module_key": "m10",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m10\\selftest_report.json",
+        "cases_total": 7,
+        "cases_passed": 7,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M11": {
+        "module_key": "m11",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m11\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M12": {
+        "module_key": "m12",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m12\\selftest_report.json",
+        "cases_total": 8,
+        "cases_passed": 8,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M13": {
+        "module_key": "m13",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m13\\selftest_report.json",
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M14": {
+        "module_key": "m14",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m14\\selftest_report.json",
+        "cases_total": 4,
+        "cases_passed": 4,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "M15": {
+        "module_key": "m15",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\m15\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S16": {
+        "module_key": "s16",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s16\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S17": {
+        "module_key": "s17",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s17\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S18": {
+        "module_key": "s18",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s18\\selftest_report.json",
+        "cases_total": 3,
+        "cases_passed": 3,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      },
+      "S19": {
+        "module_key": "s19",
+        "verification_kind": "selftest_report",
+        "evidence_paths": {
+          "report": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json"
+        },
+        "execution": {
+          "ok": true,
+          "mode": "in_process"
+        },
+        "report_path": "G:\\GitHub\\incubate\\QDP\\artifacts\\reports\\s19\\selftest_report.json",
+        "cases_total": 6,
+        "cases_passed": 6,
+        "all_passed": true,
+        "validator_valid_all": true,
+        "verification_passed": true
+      }
+    },
+    "module_selftests_note": "Deprecated compatibility alias of summary.module_verification.",
+    "blocker_count": 0
+  },
+  "blockers": []
+}

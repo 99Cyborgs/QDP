@@ -1,0 +1,15 @@
+{
+  "artifact_id": "QDP_V10_6_M14_REPORT",
+  "module_id": "M14",
+  "timestamp_utc": "2026-04-13T18:30:49.058947+00:00",
+  "candidate_id": "M14_WORKING_PATCH_CANDIDATE",
+  "result_summary": {
+    "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+    "governance_outcome": "SANDBOX_ONLY",
+    "cross_device_status": "SCHEDULED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "promotion_cap_scientific": "",
+    "clip_decisions": [],
+    "fallback_decision": "SET governance_outcome=SANDBOX_ONLY"
+  }
+}

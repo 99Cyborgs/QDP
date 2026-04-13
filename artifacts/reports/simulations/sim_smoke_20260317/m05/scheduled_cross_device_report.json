@@ -1,0 +1,92 @@
+{
+  "artifact_id": "QDP_V10_6_M05_STAGE_REPORT",
+  "module_id": "M05",
+  "timestamp_utc": "2026-03-17T21:12:11.603589+00:00",
+  "candidate_id": "m06-case-5",
+  "branch_or_model_tag": "M06_CASE_VALID_ORTHOGONAL",
+  "terminated_at": "",
+  "final_state": {
+    "scientific_decision": "PROVISIONALLY_IDENTIFIABLE_PENDING_CROSS_DEVICE_TEST",
+    "governance_outcome": "SANDBOX_ONLY",
+    "cross_device_status": "SCHEDULED",
+    "promotion_cap_governance": "SANDBOX_ONLY",
+    "promotion_cap_scientific": "",
+    "system_status": "READY",
+    "validation_ladder": {
+      "L0_baseline_pipeline_reproduced": true,
+      "L1_reduction_limit_verified": true,
+      "L2_convergence_plan_defined": true,
+      "L3_numerical_stability_passed": true,
+      "L4_instrument_facing_comparison_path_defined": true
+    }
+  },
+  "schema_validation": {
+    "valid": true,
+    "errors": [],
+    "schema_path": "G:\\GitHub\\incubate\\QDP\\config\\schema\\candidate_schema.json",
+    "validator_path": "G:\\GitHub\\incubate\\QDP\\tools\\validators\\candidate_validator.py",
+    "mode": "final"
+  },
+  "gate_trace_count": 32,
+  "stage_inputs_used": {
+    "stage5": {
+      "baseline_pipeline_executed": true,
+      "evidence_ids": [
+        "M06_CASE5_S5"
+      ]
+    },
+    "stage6": {
+      "baseline_suffices": false,
+      "evidence_ids": [
+        "M06_CASE5_S6"
+      ]
+    },
+    "stage8": {
+      "known_mechanism_explains": false,
+      "evidence_ids": [
+        "M06_CASE5_S8"
+      ]
+    },
+    "stage9": {
+      "artifact_route_explains": false,
+      "evidence_ids": [
+        "M06_CASE5_S9"
+      ]
+    },
+    "stage10": {
+      "convergence_plan_declared": true,
+      "reduction_limit_verified": true,
+      "evidence_ids": [
+        "M06_CASE5_S10"
+      ]
+    },
+    "stage11": {
+      "equivalent_within_resolution": false,
+      "evidence_ids": [
+        "M06_CASE5_S11"
+      ]
+    },
+    "stage13": {
+      "numerical_stability_passed": true,
+      "evidence_ids": [
+        "M06_CASE5_S13"
+      ]
+    },
+    "stage15": {
+      "executable_falsifier_package_emitted": true,
+      "experiment_design_law_satisfied": true,
+      "evidence_ids": [
+        "M06_CASE5_S15"
+      ]
+    },
+    "stage16": {
+      "geometry_claimed_discriminator": false,
+      "signal_consistency": "",
+      "matched_protocols_satisfied": false,
+      "devices_tested": [],
+      "evidence_ids": [
+        "M06_CASE5_S16"
+      ]
+    }
+  }
+}

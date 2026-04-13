@@ -1,0 +1,240 @@
+{
+  "artifact_id": "GKSL_SUBSYSTEM_CASE_MATRIX_V1",
+  "module_id": "GKSL_SUBSYSTEM_AUDIT_V1",
+  "purpose": "Adversarial and control harness for subsystem emergence claims in finite dimensional GKSL settings",
+  "global_rules": {
+    "finite_dimensional_only": true,
+    "liouville_representation_required_when_needed": true,
+    "naive_eigenvector_projectors_forbidden": true,
+    "schur_or_riesz_projector_construction_required": true,
+    "spectral_gap_alone_never_sufficient": true,
+    "null_baselines_must_compete": true,
+    "supported_verdict_requires_all_core_gates": true
+  },
+  "required_diagnostics": [
+    "slow_rank",
+    "spectral_gap_delta",
+    "riesz_projector_stability",
+    "projector_principal_angle_dispersion",
+    "block_residual_rho_res",
+    "fast_decay_rate_alpha_f",
+    "finite_horizon_gain_Gs",
+    "finite_horizon_gain_GD",
+    "finite_horizon_gain_Gf",
+    "state_space_leakage",
+    "observable_space_leakage",
+    "observable_closure_defect",
+    "held_out_leakage_fit",
+    "covariance_modularity",
+    "symmetry_alias_score",
+    "artifact_alias_score",
+    "tls_alias_score",
+    "baseline_competition_margin"
+  ],
+  "verdicts": [
+    "supported",
+    "inconclusive",
+    "not_supported"
+  ],
+  "cases": [
+    {
+      "case_id": "CASE_A_NONNORMAL_PSEUDOSUBSYSTEM",
+      "class": "adversarial_false_positive",
+      "description": "Spectral isolation with strong nonnormal amplification and residual slow fast coupling",
+      "construction": {
+        "generator_form": "Block upper triangular Liouville generator with slow block A, fast block F, and nontrivial coupling B",
+        "features": [
+          "isolated slow spectral cluster",
+          "large resolvent norm near slow cluster",
+          "non small block residual",
+          "transient amplification on inference horizon"
+        ]
+      },
+      "expected_observations": {
+        "spectral_gap_delta": "positive",
+        "finite_horizon_gain_Gs": "large",
+        "block_residual_rho_res": "moderate_or_large",
+        "state_space_leakage": "non negligible",
+        "observable_space_leakage": "non negligible",
+        "theorem_bound_looseness": "large"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "pass",
+        "projector_stability": "fail_or_borderline",
+        "finite_horizon_control": "fail",
+        "observable_closure": "fail_or_borderline",
+        "null_baseline_rejection": "not_applicable",
+        "symmetry_alias_rejection": "pass",
+        "artifact_alias_rejection": "pass"
+      },
+      "expected_final_verdict": "inconclusive",
+      "supported_forbidden": true
+    },
+    {
+      "case_id": "CASE_B_CORRELATED_NOISE_MIMIC",
+      "class": "adversarial_false_positive",
+      "description": "Shared classical or correlated Lindblad noise creates apparent modular coherence structure without a true emergent subsystem",
+      "construction": {
+        "truth_family": "Two qubit Hamiltonian with correlated dephasing and optional common mode classical phase drift",
+        "features": [
+          "Ramsey slow common envelope",
+          "echo partial recovery",
+          "modular covariance appearance",
+          "no stable closed subsystem"
+        ]
+      },
+      "expected_observations": {
+        "covariance_modularity": "moderate_or_high",
+        "slow_rank": "apparently_low",
+        "projector_stability": "weak_or_model_dependent",
+        "baseline_competition_margin": "null_baseline_competitive_or_better"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "pass_or_borderline",
+        "projector_stability": "fail_or_borderline",
+        "finite_horizon_control": "borderline",
+        "observable_closure": "fail_or_borderline",
+        "null_baseline_rejection": "fail",
+        "symmetry_alias_rejection": "pass",
+        "artifact_alias_rejection": "pass"
+      },
+      "expected_final_verdict": "not_supported",
+      "supported_forbidden": true
+    },
+    {
+      "case_id": "CASE_C_TLS_ALIAS",
+      "class": "adversarial_false_positive",
+      "description": "Slow telegraph style defect dynamics induce multi timescale decay and covariance anomalies that can be misread as subsystem structure",
+      "construction": {
+        "truth_family": "Two qubit system with local damping, dephasing, and one or two slow fluctuator processes",
+        "features": [
+          "nonexponential Ramsey structure",
+          "imperfect echo recovery",
+          "time window instability",
+          "apparent low rank covariance"
+        ]
+      },
+      "expected_observations": {
+        "slow_rank": "unstable_under_bootstrap",
+        "riesz_projector_stability": "weak",
+        "tls_alias_score": "high",
+        "baseline_competition_margin": "tls_baseline_competitive_or_better"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "pass_or_borderline",
+        "projector_stability": "fail",
+        "finite_horizon_control": "borderline",
+        "observable_closure": "fail_or_borderline",
+        "null_baseline_rejection": "fail",
+        "symmetry_alias_rejection": "pass",
+        "artifact_alias_rejection": "pass"
+      },
+      "expected_final_verdict": "not_supported",
+      "supported_forbidden": true
+    },
+    {
+      "case_id": "CASE_D_READOUT_PARTITION_ILLUSION",
+      "class": "adversarial_false_positive",
+      "description": "Readout distortion, crosstalk, and calibration drift create measurement space partitions that mimic subsystem structure",
+      "construction": {
+        "truth_family": "Ordinary dephasing and damping with injected measurement channel artifacts",
+        "features": [
+          "gain distortion",
+          "readout crosstalk",
+          "condition imbalance",
+          "channel dependent filtering mismatch"
+        ]
+      },
+      "expected_observations": {
+        "covariance_modularity": "high_in_measurement_space",
+        "observable_space_leakage": "artifact_sensitive",
+        "artifact_alias_score": "high",
+        "state_space_and_observable_space_consistency": "poor"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "borderline_or_fail",
+        "projector_stability": "fail",
+        "finite_horizon_control": "not_primary",
+        "observable_closure": "fail",
+        "null_baseline_rejection": "fail",
+        "symmetry_alias_rejection": "pass",
+        "artifact_alias_rejection": "fail"
+      },
+      "expected_final_verdict": "not_supported",
+      "supported_forbidden": true
+    },
+    {
+      "case_id": "CASE_E_SYMMETRY_WITHOUT_SUBSYSTEM",
+      "class": "adversarial_false_positive",
+      "description": "Approximate symmetry or conserved quantity yields a slow sector but not a robust experimentally meaningful subsystem",
+      "construction": {
+        "truth_family": "Generator with approximate parity or excitation number conservation and weak symmetry breaking",
+        "features": [
+          "slow spectral cluster",
+          "commutant enlargement",
+          "apparent block structure",
+          "weak observable closure"
+        ]
+      },
+      "expected_observations": {
+        "symmetry_alias_score": "high",
+        "slow_rank": "stable_or_borderline",
+        "observable_closure_defect": "moderate_or_large",
+        "baseline_competition_margin": "symmetry_explanation_competitive"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "pass",
+        "projector_stability": "pass_or_borderline",
+        "finite_horizon_control": "pass_or_borderline",
+        "observable_closure": "fail_or_borderline",
+        "null_baseline_rejection": "fail_or_not_met",
+        "symmetry_alias_rejection": "fail",
+        "artifact_alias_rejection": "pass"
+      },
+      "expected_final_verdict": "inconclusive",
+      "supported_forbidden": true
+    },
+    {
+      "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+      "class": "positive_control",
+      "description": "Genuine slow sector with stable projector, controlled amplification, acceptable closure, and null baselines rejected",
+      "construction": {
+        "truth_family": "Two qubit GKSL family with isolated slow coherence sector, weak inter block coupling, stable Schur extracted projector, and bounded finite horizon amplification",
+        "features": [
+          "small block residual",
+          "stable slow rank",
+          "bounded gains on inference horizon",
+          "observable closure acceptable",
+          "null baselines rejected"
+        ]
+      },
+      "expected_observations": {
+        "slow_rank": "stable",
+        "riesz_projector_stability": "strong",
+        "block_residual_rho_res": "small",
+        "finite_horizon_gain_Gs": "moderate",
+        "observable_closure_defect": "small",
+        "baseline_competition_margin": "subsystem_model_better"
+      },
+      "required_gate_outcomes": {
+        "slow_sector_detected": "pass",
+        "projector_stability": "pass",
+        "finite_horizon_control": "pass",
+        "observable_closure": "pass",
+        "null_baseline_rejection": "pass",
+        "symmetry_alias_rejection": "pass",
+        "artifact_alias_rejection": "pass"
+      },
+      "expected_final_verdict": "supported",
+      "supported_required": true
+    }
+  ],
+  "module_level_acceptance_criteria": {
+    "all_adversarial_cases_must_not_return_supported": true,
+    "true_positive_control_must_return_supported": true,
+    "case_level_expected_verdict_match_rate_required": 1.0,
+    "projector_stability_metrics_must_be_reported": true,
+    "observable_closure_metrics_must_be_reported": true,
+    "baseline_competition_margins_must_be_reported": true
+  }
+}

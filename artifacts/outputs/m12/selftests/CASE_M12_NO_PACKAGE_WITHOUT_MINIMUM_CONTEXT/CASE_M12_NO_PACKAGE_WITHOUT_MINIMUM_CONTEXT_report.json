@@ -1,0 +1,19 @@
+{
+  "artifact_id": "QDP_V10_6_M12_REPORT",
+  "module_id": "M12",
+  "timestamp_utc": "2026-04-13T18:30:49.023884+00:00",
+  "candidate_id": "M12_WORKING_PATCH_CANDIDATE",
+  "result_summary": {
+    "exact_falsifier": "",
+    "priority_experiments": [],
+    "default_templates_triggered": [],
+    "executable_falsifier_package_emitted": false,
+    "instrument_facing_requirement_satisfied": false,
+    "branch_partition": "baseline_prune",
+    "sweep_route_group": "GENERIC_FAMILY",
+    "candidate_target_devices": [],
+    "simulation_conditions": {},
+    "tested_parameter_ranges": {},
+    "suppression_reason": ""
+  }
+}

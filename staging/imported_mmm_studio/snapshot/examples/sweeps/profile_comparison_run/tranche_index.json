@@ -1,0 +1,13 @@
+[
+  {
+    "output_dir": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison",
+    "slice_ids": [
+      "broadband",
+      "resonance_targeted",
+      "manufacturability_aware"
+    ],
+    "status": "completed",
+    "summary_path": "G:\\GitHub\\incubate\\MMM-Studio\\examples\\sweeps\\profile_comparison_run\\tranches\\profile_comparison\\tranche_summary.json",
+    "tranche_id": "profile_comparison"
+  }
+]

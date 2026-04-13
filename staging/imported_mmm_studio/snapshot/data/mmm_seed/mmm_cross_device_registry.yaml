@@ -1,0 +1,104 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_CROSS_DEVICE_REGISTRY
+replication_matrix:
+- replication_id: REPL-MAT-EM-01
+  mechanism_ids:
+  - MECH-EM-001
+  - MECH-EM-002
+  device_classes:
+  - transmon
+  - planar_resonator
+  - fluxonium
+  substrates:
+  - high-resistivity silicon
+  - sapphire
+  fabrication_batches_min: 2
+  cooldowns_per_batch_min: 2
+  required_structure_ids:
+  - STR-EM-CPW-EBG-RING
+  - STR-EM-LID-HIS
+  claim_grade_if_passed: portable_planar_em_effect
+- replication_id: REPL-PH-01
+  mechanism_ids:
+  - MECH-PH-001
+  device_classes:
+  - transmon
+  - planar_resonator
+  substrates:
+  - SOI membrane
+  fabrication_batches_min: 2
+  cooldowns_per_batch_min: 2
+  required_structure_ids:
+  - STR-PH-SOI-JJ-PHC
+  - STR-PH-SOI-FULLCAP-PHC
+  claim_grade_if_passed: portable_structured_bath_effect
+- replication_id: REPL-PH-QP-01
+  mechanism_ids:
+  - MECH-PH-002
+  device_classes:
+  - transmon
+  - kinetic_inductance_detector
+  substrates:
+  - silicon
+  - sapphire
+  fabrication_batches_min: 2
+  cooldowns_per_batch_min: 2
+  required_structure_ids:
+  - STR-PH-GRADED-SINK
+  claim_grade_if_passed: portable_phonon_escape_effect
+- replication_id: REPL-VX-01
+  mechanism_ids:
+  - MECH-VX-001
+  device_classes:
+  - planar_resonator
+  - kinetic_inductance_detector
+  - transmon_control
+  substrates:
+  - silicon
+  - sapphire
+  fabrication_batches_min: 2
+  cooldowns_per_batch_min: 2
+  required_structure_ids:
+  - STR-VX-ANTIDOT-LATTICE
+  claim_grade_if_passed: vortex_null_closed
+- replication_id: REPL-CTRL-01
+  mechanism_ids:
+  - MECH-EM-003
+  - MECH-EM-004
+  device_classes:
+  - transmon
+  - fluxonium
+  - planar_resonator
+  substrates:
+  - silicon
+  - sapphire
+  fabrication_batches_min: 2
+  cooldowns_per_batch_min: 2
+  required_structure_ids:
+  - STR-CTRL-BANDSTOP-INTERPOSER
+  - STR-EM-HKI-FENCE
+  claim_grade_if_passed: portable_control_path_effect
+- replication_id: REPL-3D-01
+  mechanism_ids:
+  - MECH-3D-001
+  device_classes:
+  - 3d_cavity
+  - 3d_transmon_variant
+  substrates:
+  - bulk cavity
+  fabrication_batches_min: 1
+  cooldowns_per_batch_min: 3
+  required_structure_ids:
+  - STR-3D-CAVITY-LINER
+  claim_grade_if_passed: 3d_environment_effect

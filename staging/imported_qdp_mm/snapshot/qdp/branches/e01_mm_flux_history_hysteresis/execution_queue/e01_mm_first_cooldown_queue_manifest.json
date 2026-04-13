@@ -1,0 +1,177 @@
+{
+  "queue_schema_version": "1.1.0",
+  "queue_item_id": "e01_mm_first_cooldown",
+  "branch_slug": "e01_mm_flux_history_hysteresis",
+  "cooldown_id": null,
+  "queue_state": "QUEUED",
+  "run_binding_path": "../protocols/e01_mm_first_cooldown_run_binding.json",
+  "execution_sheet_path": "../protocols/e01_mm_first_cooldown_execution_sheet.md",
+  "required_evidence_paths": {
+    "as_run_logbook_path": null,
+    "fridge_log_path": null,
+    "sample_map_path": null,
+    "channel_map_path": null,
+    "daq_record_path": null,
+    "calibration_record_path": null,
+    "raw_data_output_path": null,
+    "metadata_output_path": null,
+    "witness_trace_output_path": null
+  },
+  "retry_count": 0,
+  "max_retry_count": 3,
+  "last_validator_result": null,
+  "escalation_reason": null,
+  "lease_owner": null,
+  "lease_acquired_at": null,
+  "lease_expires_at": null,
+  "created_at": "2026-03-27T00:00:00Z",
+  "updated_at": "2026-03-27T00:00:00Z",
+  "stop_condition_reasons": [],
+  "reconciliation": {
+    "status": "not_run",
+    "reconciled_at": null,
+    "populated_fields": [],
+    "missing_fields": [],
+    "source_conflicts": [],
+    "evidence_summary": {},
+    "reason_codes": [],
+    "details": []
+  },
+  "sheet_sync": {
+    "status": "not_run",
+    "synced_at": null,
+    "updated_fields": [],
+    "skipped_fields": [],
+    "reason_codes": []
+  },
+  "history": [
+    {
+      "state": "QUEUED",
+      "event": "manifest_created",
+      "reason_codes": [],
+      "checked_at": "2026-03-27T00:00:00Z"
+    }
+  ],
+  "run_binding": {
+    "branch_tag": "E01_MM_FLUX_HISTORY_HYSTERESIS",
+    "branch_slug": "e01_mm_flux_history_hysteresis",
+    "binding_context": "PRE_RUN_MINIMUM_ACQUISITION",
+    "allowed_binding_contexts": [
+      "PRE_RUN_MINIMUM_ACQUISITION",
+      "AS_RUN_BINDING"
+    ],
+    "binding_status": "TEMPLATE_UNBOUND",
+    "allowed_binding_status_values": [
+      "TEMPLATE_UNBOUND",
+      "PRE_RUN_MINIMUM_READY",
+      "AS_RUN_PARTIAL",
+      "AS_RUN_BOUND"
+    ],
+    "cooldown_id": null,
+    "run_metadata": {
+      "operator": null,
+      "run_date": null,
+      "lab_location": null,
+      "execution_sheet_ref": "protocols/e01_mm_first_cooldown_execution_sheet.md",
+      "provenance_sources": [
+        "as_run_logbook",
+        "fridge_log"
+      ]
+    },
+    "hardware_binding": {
+      "target_device_ids": [],
+      "witness_channel_id": null,
+      "matched_geometry_device_ids": [],
+      "provenance_sources": [
+        "fridge_log",
+        "sample_map",
+        "channel_map"
+      ]
+    },
+    "fixed_settings": {
+      "T_base": null,
+      "P_read": null,
+      "readout_tone_id": null,
+      "attenuation_state": null,
+      "readout_chain_config": null,
+      "provenance_sources": [
+        "daq_record",
+        "calibration_record"
+      ]
+    },
+    "field_program": {
+      "field_unit": null,
+      "B_max": null,
+      "fc_field": null,
+      "field_steps": [],
+      "selected_fields": [],
+      "dwell_probe_schedule": {
+        "probe_fields": [],
+        "dwell_times": [],
+        "dwell_time_unit": null
+      },
+      "production_dwell_t_conv": null,
+      "provenance_sources": [
+        "first_actual_loop"
+      ]
+    },
+    "control_requirements": {
+      "zfc_required": true,
+      "fc_required": true,
+      "sham_timing_required": true,
+      "return_to_zero_required": true,
+      "package_witness_required": true,
+      "cooldown_replication_minimum": 3,
+      "same_chip_geometry_required_for_h2": true,
+      "pre_run_minimum_acquisition": {
+        "true_zfc_required": true,
+        "at_least_one_nonzero_fc_required": true,
+        "symmetric_up_down_loop_required": true,
+        "symmetric_loop_pattern": "0 -> +B_max -> 0 -> -B_max -> 0",
+        "dwell_trace_regions_required": [
+          "zero_field",
+          "suspected_onset_region",
+          "high_field"
+        ]
+      }
+    },
+    "data_capture": {
+      "required_fields": [
+        "cooldown identifier",
+        "device identifier",
+        "geometry identifier",
+        "history label",
+        "commanded field",
+        "calibrated field estimate",
+        "elapsed time",
+        "dwell duration",
+        "1/Qi",
+        "fr",
+        "delta fr over fr",
+        "selected-field T1",
+        "witness response",
+        "bath temperature",
+        "readout power"
+      ],
+      "raw_data_output_path": null,
+      "metadata_output_path": null,
+      "witness_trace_output_path": null,
+      "provenance_sources": [
+        "existing_as_run_files_or_directories_only"
+      ]
+    },
+    "binding_checks": {
+      "selected_fields_subset_of_field_steps": false,
+      "probe_schedule_lengths_match": false,
+      "field_unit_consistent": false,
+      "p_read_device_calibrated": false,
+      "output_paths_exist": false
+    },
+    "notes": [
+      "Workflow stage 1: keep binding_context = PRE_RUN_MINIMUM_ACQUISITION until the minimum discriminator plan is complete.",
+      "Promote binding_status to PRE_RUN_MINIMUM_READY only after hardware, field program, dwell plan, and pre-run binding checks are verified.",
+      "After the first cooldown exists, switch binding_context to AS_RUN_BINDING and use AS_RUN_PARTIAL until all as-run provenance and output-path checks are satisfied.",
+      "Promote binding_status to AS_RUN_BOUND only when all populated fields come from the required sources and every binding_checks entry is true."
+    ]
+  }
+}

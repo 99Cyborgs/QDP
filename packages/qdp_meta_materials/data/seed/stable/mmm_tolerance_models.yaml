@@ -1,0 +1,150 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_TOLERANCE_MODELS
+tolerance_models:
+- structure_id: STR-EM-CPW-EBG-RING
+  critical_dimensions:
+  - name: lattice_constant_um
+    nominal_tolerance: ±2 um
+    sensitivity: moderate
+  - name: gap_width_um
+    nominal_tolerance: ±0.5 um
+    sensitivity: high
+  - name: line_width_um
+    nominal_tolerance: ±0.5 um
+    sensitivity: moderate
+  stopband_shift_budget_percent: 5
+  yield_floor: 0.8
+  intentional_bias_doe:
+  - -2sigma
+  - nominal
+  - +2sigma
+- structure_id: STR-EM-LID-HIS
+  critical_dimensions:
+  - name: patch_size_um
+    nominal_tolerance: ±3 um
+    sensitivity: moderate
+  - name: lid_spacing_um
+    nominal_tolerance: ±10 um
+    sensitivity: high
+  - name: gap_um
+    nominal_tolerance: ±1 um
+    sensitivity: moderate
+  stopband_shift_budget_percent: 7
+  yield_floor: 0.85
+  intentional_bias_doe:
+  - spacer_low
+  - spacer_nominal
+  - spacer_high
+- structure_id: STR-PH-SOI-JJ-PHC
+  critical_dimensions:
+  - name: neck_width_nm
+    nominal_tolerance: ±10 nm
+    sensitivity: very_high
+  - name: membrane_thickness_nm
+    nominal_tolerance: ±10 nm
+    sensitivity: high
+  - name: lattice_constant_nm
+    nominal_tolerance: ±8 nm
+    sensitivity: moderate
+  stopband_shift_budget_percent: 8
+  yield_floor: 0.55
+  intentional_bias_doe:
+  - neck_minus10nm
+  - nominal
+  - neck_plus10nm
+- structure_id: STR-PH-SOI-FULLCAP-PHC
+  critical_dimensions:
+  - name: fill_factor
+    nominal_tolerance: ±0.03
+    sensitivity: high
+  - name: membrane_thickness_nm
+    nominal_tolerance: ±15 nm
+    sensitivity: very_high
+  - name: lattice_constant_nm
+    nominal_tolerance: ±10 nm
+    sensitivity: moderate
+  stopband_shift_budget_percent: 10
+  yield_floor: 0.45
+  intentional_bias_doe:
+  - sparse
+  - nominal
+  - dense
+- structure_id: STR-PH-GRADED-SINK
+  critical_dimensions:
+  - name: taper_angle_deg
+    nominal_tolerance: ±1 deg
+    sensitivity: moderate
+  - name: sink_radius_um
+    nominal_tolerance: ±5 um
+    sensitivity: low
+  - name: escape_channel_width_um
+    nominal_tolerance: ±0.5 um
+    sensitivity: moderate
+  stopband_shift_budget_percent: null
+  yield_floor: 0.85
+  intentional_bias_doe:
+  - shallow
+  - nominal
+  - steep
+- structure_id: STR-VX-ANTIDOT-LATTICE
+  critical_dimensions:
+  - name: antidot_radius_um
+    nominal_tolerance: ±0.1 um
+    sensitivity: high
+  - name: pitch_um
+    nominal_tolerance: ±0.1 um
+    sensitivity: moderate
+  - name: edge_offset_um
+    nominal_tolerance: ±0.5 um
+    sensitivity: moderate
+  stopband_shift_budget_percent: null
+  yield_floor: 0.9
+  intentional_bias_doe:
+  - radius_low
+  - nominal
+  - radius_high
+- structure_id: STR-CTRL-BANDSTOP-INTERPOSER
+  critical_dimensions:
+  - name: cell_pitch_um
+    nominal_tolerance: ±2 um
+    sensitivity: moderate
+  - name: via_inductance_pH
+    nominal_tolerance: ±10 pH equivalent
+    sensitivity: high
+  - name: line_impedance_ohm
+    nominal_tolerance: ±2 ohm
+    sensitivity: moderate
+  stopband_shift_budget_percent: 8
+  yield_floor: 0.75
+  intentional_bias_doe:
+  - low_viaL
+  - nominal
+  - high_viaL
+- structure_id: STR-3D-CAVITY-LINER
+  critical_dimensions:
+  - name: corrugation_depth_mm
+    nominal_tolerance: ±0.02 mm
+    sensitivity: high
+  - name: corrugation_period_mm
+    nominal_tolerance: ±0.02 mm
+    sensitivity: moderate
+  - name: insert_distance_mm
+    nominal_tolerance: ±0.05 mm
+    sensitivity: high
+  stopband_shift_budget_percent: 5
+  yield_floor: 0.9
+  intentional_bias_doe:
+  - depth_low
+  - nominal
+  - depth_high

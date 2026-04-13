@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "created_on": "2026-03-17",
+  "branch_or_model_tag": "E01_MM_FLUX_HISTORY_HYSTERESIS",
+  "branch_slug": "e01_mm_flux_history_hysteresis",
+  "change_types": [
+    "OBSERVABLE"
+  ],
+  "model_classification": "INTERPRETATION",
+  "declared_family_class": "METASTABLE_C_STATE",
+  "declared_likely_bath_class_raw": "METASTABLE_C_STATE",
+  "bath_classification_consistent_with_glossary_asserted": true,
+  "cross_scale_claim_present": false,
+  "effective_mapping_attached": false,
+  "does_increase_falsifiable_surface_area": true,
+  "claimed_effect": "Field-history-dependent hysteresis in 1/Qi at fixed low temperature and fixed low drive, registered conservatively as a metastable memory candidate until stronger geometry evidence exists.",
+  "primary_observable": "hysteresis index in 1/Qi versus magnetic field history",
+  "secondary_observable": [
+    "selected field T1",
+    "delta fr over fr"
+  ],
+  "accessible_platform_or_device_class": "superconducting chip with field-biased resonator or resonator-coupled qubit package, including a same-cooldown package witness or reference channel",
+  "minimal_discriminant_measurement": "ZFC versus FC plus up and down loops with dwell convergence and sham timing control",
+  "invariant_preserved": "standard GKSL baseline and ordinary dissipative interpretation",
+  "reduction_limit": "zero history dependence recovers memoryless field dependent baseline",
+  "count_new_free_parameters": 2,
+  "new_free_parameters": [
+    {
+      "name": "hidden_state_relaxation_time",
+      "role": "sets the dwell-converged memory retention timescale",
+      "phase_1_status": "allowed only if independently constrained"
+    },
+    {
+      "name": "history_coupling_amplitude",
+      "role": "sets the excess loss contribution from retained hidden-state occupancy",
+      "phase_1_status": "allowed only if independently constrained"
+    }
+  ],
+  "independent_constraint_source_for_each_parameter": [
+    {
+      "parameter": "hidden_state_relaxation_time",
+      "constraint_source": "dwell-doubling convergence scans plus sham timing control on the same cooldown"
+    },
+    {
+      "parameter": "history_coupling_amplitude",
+      "constraint_source": "cooldown-replicated loop-amplitude consistency after H0, H3, and H4 have been challenged"
+    }
+  ],
+  "exact_falsifier": {
+    "artifact_ref": "specs/e01_mm_exact_falsifier.md",
+    "summary": "Kill the branch if dwell convergence removes hysteresis, sham reproduces loop area, H0 explains the data, or witness or quasiparticle controls explain the primary observable."
+  },
+  "relevant_nuisance_controls_list": [
+    "dwell convergence",
+    "sham timing control",
+    "package witness or reference channel",
+    "return-to-zero checkpoints",
+    "coil calibration tracking",
+    "residual fridge field estimate",
+    "readout linearity lock",
+    "cooldown replication minimum of 3"
+  ],
+  "validation_ladder_planning": {
+    "phase_1_scope": "fixed low temperature and fixed low drive only",
+    "minimum_cooldowns": 3,
+    "primary_gate": "reject H0 before any retained-history claim",
+    "competition_gate": "rank H1 versus H3 versus H4 before any H2 discussion",
+    "geometry_gate": "same-chip matched geometry with consistent susceptibility ordering across cooldowns",
+    "package_witness_required": true,
+    "sham_required": true
+  },
+  "recommended_outcome": "REGISTER_METASTABLE_MEMORY_BRANCH_AND_RUN_MINIMAL_PROTOCOL",
+  "reviewer_notes": [
+    "This intake is conservative by construction and does not assert vortex proof.",
+    "H2 remains unavailable unless the same-chip matched-geometry gate passes.",
+    "Cross-device confirmation is not claimed or implied."
+  ]
+}

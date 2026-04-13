@@ -1,0 +1,24 @@
+{
+  "case_id": "CASE_F_TRUE_POSITIVE_CONTROL",
+  "module_id": "S17",
+  "diagnostics_reported": [
+    "covariance_modularity",
+    "symmetry_alias_score",
+    "artifact_alias_score",
+    "tls_alias_score",
+    "baseline_competition_margin"
+  ],
+  "gate_outcomes": {
+    "null_baseline_rejection": "pass",
+    "symmetry_alias_rejection": "pass",
+    "artifact_alias_rejection": "pass"
+  },
+  "expected_final_verdict": "supported",
+  "actual_final_verdict": "supported",
+  "supported_forbidden": false,
+  "supported_required": true,
+  "notes": [
+    "Alias rejection is surfaced from required gate outcomes in the subsystem matrix.",
+    "description=Genuine slow sector with stable projector, controlled amplification, acceptable closure, and null baselines rejected"
+  ]
+}

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdp-tdgl"
+version = "0.1.0"
+description = "Canonical QDP TDGL runtime extracted from the QDP TDGL donor."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "QDP Contributors" }]
+dependencies = [
+    "h5py>=3.10",
+    "jsonschema>=4.0",
+    "numpy>=1.26",
+    "pydantic>=2.0",
+    "PyYAML>=6.0",
+    "qdp-io>=0.1.0",
+    "qdp-meta-materials>=0.1.0",
+    "scipy>=1.11",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+qdp-tdgl = "qdp_tdgl.cli:app"
+tdgl-rf = "qdp_tdgl.cli:app"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"

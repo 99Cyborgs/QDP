@@ -1,0 +1,53 @@
+{
+  "artifact_id": "QDP_LEGACY_DOC_FORWARDING_MANIFEST",
+  "timestamp_utc": "2026-03-16T00:00:00Z",
+  "forwarding": [
+    {
+      "legacy_path": "legacy/docs/architecture/solver_architecture.md",
+      "canonical_path": "docs/architecture/solver_architecture.md"
+    },
+    {
+      "legacy_path": "legacy/docs/implementation/m05_implementation_pack.md",
+      "canonical_path": "docs/architecture/m05_stage_machine_implementation_pack.md"
+    },
+    {
+      "legacy_path": "legacy/docs/reports/drift_control_artifact_pack.md",
+      "canonical_path": "docs/decisions/drift_control_artifact_pack.md"
+    },
+    {
+      "legacy_path": "legacy/docs/schema/schema_patch_notes_m02.md",
+      "canonical_path": "docs/decisions/schema_patch_notes_m02.md"
+    },
+    {
+      "legacy_path": "legacy/docs/repo/module_registry.md",
+      "canonical_path": "docs/repo/module_registry.md"
+    },
+    {
+      "legacy_path": "legacy/QDP_REPO_REFACTOR_PLAN.md",
+      "canonical_path": "docs/repo/qdp_repo_refactor_plan.md"
+    }
+  ],
+  "archived_history": [
+    {
+      "active_path": "modules/m05_stage_machine/patch_notes.md",
+      "archived_path": "legacy/docs/archive/modules/m05_stage_machine/patch_notes.md"
+    },
+    {
+      "active_path": "modules/m06_bootstrap_harness/patch_notes.md",
+      "archived_path": "legacy/docs/archive/modules/m06_bootstrap_harness/patch_notes.md"
+    },
+    {
+      "active_path": "modules/m06_bootstrap_harness/integration_run_report.md",
+      "archived_path": "legacy/docs/archive/modules/m06_bootstrap_harness/integration_run_report.md"
+    },
+    {
+      "active_path": "docs/architecture/m05_stage_machine_implementation_pack.md",
+      "archived_path": "legacy/docs/archive/docs/architecture/m05_stage_machine_implementation_pack.md"
+    },
+    {
+      "active_path": "docs/decisions/drift_control_artifact_pack.md",
+      "archived_path": "legacy/docs/archive/docs/decisions/drift_control_artifact_pack.md"
+    }
+  ],
+  "note": "Legacy documentation duplicates were collapsed into forwarding metadata to keep the active repo surface canonical and lower audit cost. Superseded readiness narratives now live only under legacy/docs/archive/."
+}

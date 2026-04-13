@@ -1,0 +1,152 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_VALIDATION_RULES
+validation_rules:
+- validation_rule_id: VAL-001
+  title: Same-wafer sham and same-package control closure
+  category: control_equivalence
+  logic: A candidate effect is only admissible if same-wafer sham structures and same-package controls fail to reproduce the effect magnitude within uncertainty.
+  pass_condition: Sham/control effect size < 0.5x candidate effect and confidence intervals do not overlap materially.
+  fail_condition: Controls reproduce the candidate effect or differ only by package / wiring changes.
+  required_artifacts:
+  - EXP-T1-FSWEEP-01
+  - EXP-PKG-MODE-01
+  - EXP-REPL-01
+- validation_rule_id: VAL-002
+  title: Electromagnetic transfer-function equivalence
+  category: null_rejection
+  logic: If package or control-path S-parameters change enough to explain the observed coherence shift, the metamaterial claim is rejected.
+  pass_condition: Measured package/control transfer function differences are insufficient to account for observed coherence improvement in EM null models.
+  fail_condition: EM null fits explain the full effect using transfer-function changes alone.
+  required_artifacts:
+  - EXP-PKG-MODE-01
+  - OBS-PKG-S21
+- validation_rule_id: VAL-003
+  title: Mechanism-specific model beats nulls
+  category: model_comparison
+  logic: The claimed metamaterial mechanism must outperform all baseline null models under held-out likelihood or information criteria.
+  pass_condition: Primary mechanism model has delta_BIC >= 10 or Bayes factor >= 30 over strongest null.
+  fail_condition: Best null model ties or beats the candidate mechanism.
+  required_artifacts:
+  - mmm_benchmark_models.yaml
+  - mmm_analysis_pipeline_spec.md
+- validation_rule_id: VAL-004
+  title: Geometry scaling agreement
+  category: scaling
+  logic: Effect magnitude and/or spectral location must scale with geometry according to the predicted metamaterial law.
+  pass_condition: Predicted scaling coefficient recovered within 20% and monotonic direction matches theory.
+  fail_condition: No geometry trend or trend matches fabrication-only drift better than metamaterial model.
+  required_artifacts:
+  - EXP-GEO-SERIES-01
+  - mmm_geometry_scaling_models.yaml
+- validation_rule_id: VAL-005
+  title: Temperature scaling discrimination
+  category: scaling
+  logic: Temperature dependence must prefer the proposed mechanism over TLS, quasiparticle, radiative, and thermal-gradient nulls.
+  pass_condition: Candidate model wins held-out fit and residuals are structureless over temperature.
+  fail_condition: Temperature dependence matches a baseline mechanism more closely.
+  required_artifacts:
+  - EXP-TEMP-SCAN-01
+  - mmm_scaling_discrimination_models.yaml
+- validation_rule_id: VAL-006
+  title: Magnetic-field dependence closure
+  category: baseline_first
+  logic: For any periodic perforation or superconducting boundary structure, vortex effects must be measured explicitly before metamaterial interpretation.
+  pass_condition: Field-cool slope and hysteresis are bounded below mechanism-specific thresholds or modeled separately.
+  fail_condition: Magnetic-field sensitivity dominates the claimed effect.
+  required_artifacts:
+  - EXP-BFIELD-VORTEX-01
+  - OBS-VORTEX-SLOPE
+- validation_rule_id: VAL-007
+  title: Cooldown replication
+  category: replication
+  logic: Claimed effects must survive at least two independent cooldowns with the same sign.
+  pass_condition: Effect sign preserved in >= 2 cooldowns and random-effects estimate excludes zero.
+  fail_condition: Effect vanishes or flips sign across cooldowns.
+  required_artifacts:
+  - EXP-REPL-01
+- validation_rule_id: VAL-008
+  title: Cross-device / cross-batch replication
+  category: replication
+  logic: A promotable mechanism must replicate across at least two device classes or two fabrication batches.
+  pass_condition: Hierarchical replication estimate remains positive across device/batch strata.
+  fail_condition: Effect is single-device or single-batch only.
+  required_artifacts:
+  - mmm_cross_device_registry.yaml
+  - EXP-REPL-01
+- validation_rule_id: VAL-009
+  title: Detectability margin
+  category: instrument_gate
+  logic: Predicted signal must exceed measurement floor with safety margin.
+  pass_condition: Predicted effect > 3x estimated observable uncertainty or detection floor.
+  fail_condition: Effect lies below detectability gate.
+  required_artifacts:
+  - mmm_instrument_constraints.yaml
+  - mmm_detectability_tests.md
+- validation_rule_id: VAL-010
+  title: Metrology and tolerance closure
+  category: fabrication
+  logic: As-built geometry must remain within tolerance windows where the simulated claim survives.
+  pass_condition: Measured critical dimensions fall within acceptance band and sensitivity Monte Carlo retains sign.
+  fail_condition: As-built bias moves candidate outside validated operating region.
+  required_artifacts:
+  - mmm_fabrication_variability_tests.md
+  - mmm_tolerance_models.yaml
+- validation_rule_id: VAL-011
+  title: Control electronics stability
+  category: baseline_first
+  logic: Dephasing or relaxation changes coincident with altered attenuation, filters, or source noise are rejected.
+  pass_condition: Control-path calibrations are matched and residual control-noise difference is sub-threshold.
+  fail_condition: Control electronics explain the effect.
+  required_artifacts:
+  - OBS-CTRL-PSD
+  - EXP-PKG-MODE-01
+  - EXP-DRIVE-AMP-01
+- validation_rule_id: VAL-012
+  title: Quasiparticle-specific linkage
+  category: mechanism_linkage
+  logic: A quasiparticle-related claim requires aligned changes in parity, recovery, or injection response.
+  pass_condition: At least one direct QP proxy changes consistently with T1 shift and null controls fail.
+  fail_condition: T1 changes with no QP proxy change or opposite sign.
+  required_artifacts:
+  - EXP-QP-PARITY-01
+  - EXP-QP-INJECT-01
+- validation_rule_id: VAL-013
+  title: Non-Markovian evidence threshold
+  category: model_comparison
+  logic: Structured-bath claims require direct evidence of non-single-exponential dynamics or memory kernels.
+  pass_condition: Pseudomode / memory-kernel model decisively outperforms single-exponential model.
+  fail_condition: Relaxation remains well-described by simple exponential decay.
+  required_artifacts:
+  - OBS-T1-NMARK
+  - EXP-HOLEBURN-THERM-01
+  - mmm_environment_model_registry.yaml
+- validation_rule_id: VAL-014
+  title: Standard-lab feasibility flagging
+  category: governance
+  logic: Structures requiring nonstandard materials, wafer bonding, or high-risk membrane release must be flagged and cannot be lead-branch items without mitigation.
+  pass_condition: Exotic structures are flagged, mitigation plan exists, and lead branch remains standard-lab feasible.
+  fail_condition: Lead branch depends on unmitigated exotic fabrication.
+  required_artifacts:
+  - mmm_structure_library.yaml
+  - mmm_material_system_registry.yaml
+- validation_rule_id: VAL-015
+  title: Mechanism rejection on baseline closure
+  category: termination
+  logic: A mechanism is rejected when baseline mechanisms explain the signal with fewer assumptions.
+  pass_condition: Baseline nulls are quantitatively bounded below explanatory threshold.
+  fail_condition: Baseline mechanism closure is incomplete or dominant.
+  required_artifacts:
+  - mmm_null_mechanism_tests.md
+  - mmm_benchmark_models.yaml
+  - mmm_validation_rules.yaml

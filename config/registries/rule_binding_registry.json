@@ -32,23 +32,23 @@
     },
     "reference_manifest": {
       "path": "config/manifests/reference_manifest.json",
-      "sha256": "b7c432908d99dff61db6467b3cd463d6f383ed6cdb9c1ddaa884c6d1768a808a"
+      "sha256": "25a9a7175bd032be7a5bb3d3e87bbf93f23ccfcbbf0f5ce8c5813e09a83fb0b5"
     },
     "schema": {
       "path": "config/schema/candidate_schema.json",
-      "sha256": "b5876b94ccaf6cf154f62d83456d532d80c375805d783d83c18050fd1d31d0a7"
+      "sha256": "96389724d6b34b87d6942945fca9736c0794c01282fc1cca5577ade9368c1a5e"
     },
     "stage_machine": {
       "path": "modules/m05_stage_machine/runner.py",
-      "sha256": "9968d5ca0b3e6f11b3ebfe9c9fa4b4b905923603d8db5cf25c382cb946beeb5a"
+      "sha256": "fcd80581b669534a217ae48a83c6f2e3c10c0230e92f2544f0161cea7a003ecb"
     },
     "reference_resolver": {
       "path": "modules/m03_reference_resolution/runner.py",
-      "sha256": "12595872abd92c903c70e9c450d33f772a1dc6152caf429f9e954abfa3d83448"
+      "sha256": "db656fa87645c5e1ad0e84eebf5d87db1648e734e975cec074daa59bfaf9284a"
     },
     "schema_validator": {
       "path": "tools/validators/candidate_validator.py",
-      "sha256": "d5d87d274a48d3d8f28d4abde43a1e0d786396cf3d7c2fcaec0e5dbd2585b40b"
+      "sha256": "3346f2fcc8b1c7fa05b81ebbffb7bb576de78cf616594c2a24be83346f8edf1c"
     },
     "missing_retained_runtime": {
       "path": "runtime/retained/operative_body_v10_1.md",
@@ -56,11 +56,133 @@
     },
     "bootstrap_harness": {
       "path": "modules/m06_bootstrap_harness/runner.py",
-      "sha256": "0cc7523abc47748f32680c34c8ded10ba9992bd74000cef295f9269c45543f3b"
+      "sha256": "6a0dc5cb78ba6729f3d2633ce48b1bd699d229014d60b03dfb947a11fc2e92a2"
     },
     "mode_divergence_report": {
       "path": "artifacts/reports/system/mode_divergence_report.json",
-      "sha256": "fb112660c887aed43739d61c81cbbd14f0dbee05bc228ac823ff0b8cad592f78"
+      "sha256": "ea11919e6cb37a5d96b40ead17ba14f5eb5052e64922c692d945ac8ddb52890e"
+    }
+  },
+  "authoritative_module_bindings": {
+    "M02": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m02_schema_validator/runner.py",
+        "artifacts/reports/m02/selftest_report.json"
+      ]
+    },
+    "M04": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m04_branch_registration/runner.py",
+        "artifacts/reports/m04/selftest_report.json"
+      ]
+    },
+    "M07": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m07_family_triage/runner.py",
+        "artifacts/reports/m07/selftest_report.json"
+      ]
+    },
+    "M08": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m08_baseline_fit/runner.py",
+        "artifacts/reports/m08/selftest_report.json"
+      ]
+    },
+    "M09": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m09_mechanism_competition/runner.py",
+        "artifacts/reports/m09/selftest_report.json"
+      ]
+    },
+    "M10": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m10_artifact_audit/runner.py",
+        "artifacts/reports/m10/selftest_report.json"
+      ]
+    },
+    "M11": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m11_lindblad_equivalence/runner.py",
+        "artifacts/reports/m11/selftest_report.json"
+      ]
+    },
+    "M12": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m12_experiment_design/runner.py",
+        "artifacts/reports/m12/selftest_report.json"
+      ]
+    },
+    "M13": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m13_cross_device_gate/runner.py",
+        "artifacts/reports/m13/selftest_report.json"
+      ]
+    },
+    "M14": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m14_promotion_caps/runner.py",
+        "artifacts/reports/m14/selftest_report.json"
+      ]
+    },
+    "M15": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/m15_governance_guardrails/runner.py",
+        "artifacts/reports/m15/selftest_report.json"
+      ]
+    },
+    "S16": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/s16_subsystem_sector_detection/runner.py",
+        "artifacts/reports/s16/selftest_report.json"
+      ]
+    },
+    "S17": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/s17_subsystem_alias_audit/runner.py",
+        "artifacts/reports/s17/selftest_report.json"
+      ]
+    },
+    "S18": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/s18_subsystem_observable_closure/runner.py",
+        "artifacts/reports/s18/selftest_report.json"
+      ]
+    },
+    "S19": {
+      "status": "BOUND",
+      "binding_basis": "visible_source_authoritative_binding",
+      "evidence_paths": [
+        "modules/s19_subsystem_verdict_gate/runner.py",
+        "artifacts/reports/s19/selftest_report.json"
+      ]
     }
   },
   "rules": [

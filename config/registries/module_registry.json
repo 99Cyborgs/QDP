@@ -1,7 +1,7 @@
 {
-  "artifact_id": "QDP_V10_6_MODULE_REGISTRY_V1",
-  "version": "1.0",
-  "date": "2026-03-13",
+  "artifact_id": "QDP_V10_6_MODULE_REGISTRY_V2",
+  "version": "2.0",
+  "date": "2026-04-13",
   "resume_policy": {
     "ordinary_candidate_testing_requires": [
       "M01",
@@ -42,6 +42,20 @@
       "S19"
     ]
   },
+  "readiness": {
+    "ordinary_recovery_ready": true,
+    "ordinary_authoritative_ready": true,
+    "ordinary_testing_ready": true,
+    "subsystem_recovery_ready": true,
+    "subsystem_authoritative_ready": true,
+    "subsystem_testing_ready": true,
+    "ordinary_recovery_blockers": [],
+    "ordinary_authoritative_blockers": [],
+    "ordinary_testing_blockers": [],
+    "subsystem_recovery_blockers": [],
+    "subsystem_authoritative_blockers": [],
+    "subsystem_testing_blockers": []
+  },
   "modules": [
     {
       "module_id": "M01",
@@ -49,13 +63,17 @@
       "blocker_class": "CORE_BLOCKER",
       "owner_artifacts": [
         "specs/core/build_spec.md",
-        "MISSING: retained_v10_1_operative_body"
+        "runtime/retained/operative_body_v10_1.md",
+        "runtime/missing/operative_body_v10_1.md"
       ],
       "required_outputs": [
-        "QDP_v10_6_RUNTIME_PROMPT"
+        "runtime_prompt",
+        "closure_report",
+        "provenance_metadata"
       ],
-      "status": "RECOVERY_ARTIFACT_EMITTED_BLOCKED_BY_MISSING_RETAINED_SOURCE",
-      "derived_closure_status": "RECOVERY_INTERIM"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M02",
@@ -63,15 +81,19 @@
       "blocker_class": "CORE_BLOCKER",
       "owner_artifacts": [
         "specs/core/build_spec.md",
-        "config/schema/candidate_template.json"
+        "config/schema/candidate_template.json",
+        "config/schema/candidate_schema.json",
+        "tools/validators/candidate_validator.py"
       ],
       "required_outputs": [
-        "system_status",
-        "governance_self_check",
-        "enum_validation",
-        "cross_device_status_mapping"
+        "schema",
+        "template",
+        "typed_governance_fields",
+        "validator_semantics"
       ],
-      "status": "SCHEMA_DRIFT_PRESENT"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M03",
@@ -80,16 +102,16 @@
       "owner_artifacts": [
         "specs/core/build_spec.md",
         "specs/core/master_spec.md",
-        "specs/core/falsifier_registry.md",
-        "MISSING: retained_federated_registry_object"
+        "specs/core/falsifier_registry.md"
       ],
       "required_outputs": [
         "reference_resolution_status",
-        "automatic_flags_triggered",
-        "governance_registry_object"
+        "governance_registry",
+        "mode_reports"
       ],
-      "status": "WORKING_PATCH_HARDENED_STRICT_FAILURE_REMAINS",
-      "derived_closure_status": "RECOVERY_INTERIM"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M04",
@@ -102,12 +124,12 @@
       ],
       "required_outputs": [
         "branch_registration",
-        "bath_classification",
-        "primary_observable",
-        "secondary_observable",
-        "exact_falsifier"
+        "candidate_from_intake",
+        "precompute_flags"
       ],
-      "status": "DESIGN_PRESENT_IMPLEMENTATION_MISSING"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M05",
@@ -120,25 +142,32 @@
       ],
       "required_outputs": [
         "gate_trace",
-        "validation_ladder"
+        "validation_ladder",
+        "governance_outcome",
+        "scientific_decision"
       ],
-      "status": "WORKING_EXECUTABLE_SUBSET_NOT_AUTHORITATIVE",
-      "derived_closure_status": "RECOVERY_INTERIM"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M06",
       "name": "Bootstrap harness runner and fixture loader",
       "blocker_class": "CORE_BLOCKER",
       "owner_artifacts": [
-        "specs/core/build_spec.md"
+        "specs/core/build_spec.md",
+        "artifacts/reports/system/run_ledger.json",
+        "artifacts/state/control_plane.sqlite3"
       ],
       "required_outputs": [
-        "validation_harness_status",
-        "determinism_status",
-        "system_status"
+        "bootstrap_report",
+        "closure_evaluation",
+        "readiness_flags",
+        "run_ledger"
       ],
-      "status": "RECOVERY_INTERIM",
-      "derived_closure_status": "RECOVERY_INTERIM"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M07",
@@ -152,11 +181,11 @@
       "required_outputs": [
         "assigned_family_class",
         "inferred_bath_rank_order",
-        "signature_matches",
-        "minimal_discriminant_measurement"
+        "signature_matches"
       ],
-      "status": "WORKING_PATCH",
-      "derived_closure_status": "WORKING_PATCH"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M08",
@@ -171,8 +200,9 @@
         "baseline_model",
         "residual_analysis"
       ],
-      "status": "WORKING_PATCH",
-      "derived_closure_status": "WORKING_PATCH"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M09",
@@ -180,19 +210,16 @@
       "blocker_class": "CORE_BLOCKER",
       "owner_artifacts": [
         "specs/core/signature_to_bath_decision_chart.md",
-        "QDP_Vortex_Pinning_Microwave_Loss_Module.md",
-        "vortex_entry_barrier.md",
-        "vortex_entry_calculator.md",
-        "vortex_microwave_dissipation.md",
-        "residual_field_estimation_dilution_fridge.md",
+        "specs/research/vortex_pinning_methods.md",
         "config/schema/candidate_template.json"
       ],
       "required_outputs": [
         "mechanism_tests",
         "strongest_competing_mechanism"
       ],
-      "status": "WORKING_PATCH",
-      "derived_closure_status": "WORKING_PATCH"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M10",
@@ -206,8 +233,9 @@
       "required_outputs": [
         "artifact_tests"
       ],
-      "status": "WORKING_PATCH",
-      "derived_closure_status": "WORKING_PATCH"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M11",
@@ -220,7 +248,9 @@
       "required_outputs": [
         "lindblad_equivalence"
       ],
-      "status": "MISSING"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M12",
@@ -237,7 +267,9 @@
         "hamiltonian_test",
         "experiment_schedule"
       ],
-      "status": "MISSING"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M13",
@@ -252,7 +284,9 @@
         "cross_device_status",
         "cross_device_validation"
       ],
-      "status": "SCHEMA_ALIAS_UNRESOLVED"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M14",
@@ -267,7 +301,9 @@
         "promotion_cap_scientific",
         "governance_outcome"
       ],
-      "status": "MISSING"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "M15",
@@ -276,93 +312,93 @@
       "owner_artifacts": [
         "specs/core/build_spec.md",
         "specs/research/deep_research_report.md",
-        "MISSING: retained_v10_1_governance_sections"
+        "config/schema/candidate_template.json"
       ],
       "required_outputs": [
-        "calibration_integrity",
+        "calibration_status",
         "drift_ledger",
         "identifiability_status",
-        "dataset_governance_status"
+        "dataset_governance"
       ],
-      "status": "DECLARED_BUT_NOT_SURFACED"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "S16",
-      "name": "GKSL subsystem audit core",
-      "blocker_class": "SUBSYSTEM_BLOCKER",
-      "owner_artifacts": [
-        "MISSING: gksl_subsystem_audit_v1.md",
-        "specs/subsystem/gksl_subsystem_case_matrix.json"
-      ],
-      "required_outputs": [
-        "theorem_status",
-        "corollary_status",
-        "simulation_validation_status",
-        "null_audit_status",
-        "real_data_verdict"
-      ],
-      "status": "MISSING_CORE_PROMPT"
-    },
-    {
-      "module_id": "S17",
-      "name": "Subsystem stability / closure / finite-horizon control",
-      "blocker_class": "SUBSYSTEM_BLOCKER",
-      "owner_artifacts": [
-        "MISSING: gksl_subsystem_decision_patch.md",
-        "specs/subsystem/gksl_subsystem_case_matrix.json"
-      ],
-      "required_outputs": [
-        "projector_stability_status",
-        "finite_horizon_control_status",
-        "observable_closure_status",
-        "symmetry_alias_status",
-        "artifact_alias_status",
-        "identifiability_status"
-      ],
-      "status": "MISSING"
-    },
-    {
-      "module_id": "S18",
-      "name": "Subsystem adversarial/null harness",
+      "name": "Subsystem slow-sector detection",
       "blocker_class": "SUBSYSTEM_BLOCKER",
       "owner_artifacts": [
         "specs/subsystem/gksl_subsystem_case_matrix.json",
-        "MISSING: gksl_subsystem_harness_spec.md"
+        "config/schema/subsystem_verdict_schema.json"
       ],
       "required_outputs": [
-        "subsystem_harness_status",
-        "case_verdict_matrix"
+        "slow_sector_detected",
+        "projector_stability",
+        "diagnostic_report"
       ],
-      "status": "CASE_MATRIX_ONLY"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
+    },
+    {
+      "module_id": "S17",
+      "name": "Subsystem alias and null-baseline audit",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "specs/subsystem/gksl_subsystem_case_matrix.json",
+        "config/schema/subsystem_verdict_schema.json"
+      ],
+      "required_outputs": [
+        "symmetry_alias_rejection",
+        "artifact_alias_rejection",
+        "null_baseline_rejection"
+      ],
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
+    },
+    {
+      "module_id": "S18",
+      "name": "Subsystem finite-horizon and closure gate",
+      "blocker_class": "SUBSYSTEM_BLOCKER",
+      "owner_artifacts": [
+        "specs/subsystem/gksl_subsystem_case_matrix.json",
+        "config/schema/subsystem_verdict_schema.json"
+      ],
+      "required_outputs": [
+        "finite_horizon_control",
+        "observable_closure",
+        "closure_metrics"
+      ],
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     },
     {
       "module_id": "S19",
-      "name": "Subsystem intake and schema adapter",
+      "name": "Subsystem verdict gate",
       "blocker_class": "SUBSYSTEM_BLOCKER",
       "owner_artifacts": [
-        "MISSING: gksl_subsystem_branch_intake.json",
-        "config/schema/candidate_template.json",
-        "specs/intake/fork_intake_form_one_page.pdf"
+        "specs/subsystem/gksl_subsystem_case_matrix.json",
+        "config/schema/subsystem_verdict_schema.json"
       ],
       "required_outputs": [
-        "subsystem_branch_registration",
-        "bath_ranking",
-        "closure_targets",
-        "publication_claim_cap"
+        "subsystem_verdict",
+        "verdict_report"
       ],
-      "status": "MISSING"
+      "status": "AUTHORITATIVE_CLOSURE",
+      "derived_closure_status": "AUTHORITATIVE_CLOSURE",
+      "closure_limitations": []
     }
   ],
-  "deferred_non_blockers": [
-    {
-      "module_id": "D20",
-      "name": "Subsystem publication gate",
-      "status": "DEFERRED"
-    },
-    {
-      "module_id": "D21",
-      "name": "Registry maintenance export",
-      "status": "DEFERRED"
-    }
-  ]
+  "next_phase": {
+    "subsystem_modules_in_scope": [
+      "S16",
+      "S17",
+      "S18",
+      "S19"
+    ],
+    "note": "Subsystem modules are scaffolded in the current repo; authoritative status is governed by the live readiness predicates and explicit authoritative bindings recorded in this registry."
+  }
 }

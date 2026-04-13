@@ -1,0 +1,2 @@
+row_index,case_id,phase,status,dispatcher,attempts,expanded_config_path,base_config_ref,base_config_path,goal,success_metric,promotion_rule,notes,start_timestamp,stop_timestamp,wall_clock_seconds,run_dir,summary_path,failure_reason
+1,D01,D,validated,run_simulation,0,G:\GitHub\incubate\QDP\runs\campaigns\matrix\20260410-214549\expanded_configs\001_D01.yaml,base.yaml,C:\Users\Forre\AppData\Local\Temp\pytest-of-Forre\pytest-162\test_run_matrix_dry_run_cli0\base.yaml,deterministic smoke,completes,gate:G1,cli dry-run,,,0.0,,,

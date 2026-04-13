@@ -1,0 +1,60 @@
+artifact:
+  program_id: QDP_MMM
+  program_name: Meta Material Module
+  module_acronym: MMM
+  version: 1.0.0
+  generated_on: '2026-03-14'
+  governance_rules:
+  - 'Baseline mechanisms are evaluated first: vortex loss, quasiparticle poisoning, two-level systems, phonon coupling, control electronics noise.'
+  - Every metamaterial mechanism must reference at least one predicted observable, one experimental protocol, and one validation rule.
+  - Mechanisms lacking a falsification pathway are rejected.
+  - All structures must be dilution-refrigerator compatible, millikelvin compatible, and compatible with academic cleanroom fabrication unless explicitly flagged exotic.
+  - Negative results are valid outputs and must be archived.
+  artifact_id: MMM_INSTRUMENT_CONSTRAINTS
+cryostat:
+  base_temperature_mK:
+    target: 10
+    max_for_primary_claims: 25
+  temperature_stability_mK:
+    over_1h: 1.0
+    over_24h: 3.0
+  magnetic_environment:
+    ambient_field_at_sample_uT:
+      target: <1 after shielding
+    field_sweep_capability_mT:
+      range:
+      - -10
+      - 10
+      resolution_uT: 5
+microwave_measurement:
+  qubit_frequency_coverage_GHz:
+  - 2.0
+  - 12.0
+  readout_chain_noise_temperature_K:
+    target: <4 with parametric amplification if used
+  vna_dynamic_range_dB: 90
+  time_domain_t1_resolution_us: 1.0
+  ramsey_trace_duration_h: 12
+  calibrated_S_parameter_accuracy_dB: 0.5
+quasiparticle_and_parity:
+  minimum_detectable_parity_rate_change_percent: 20
+  injection_energy_repeatability_percent: 5
+  recovery_time_resolution_us: 5
+phononic_and_saw_witness:
+  saw_witness_frequency_coverage_GHz:
+  - 0.3
+  - 8.0
+  minimum_detectable_saw_notch_dB: 3
+  phonon_injection_repeatability_percent: 10
+fabrication_metrology:
+  sem_cd_precision_nm: 5
+  afm_roughness_precision_nm: 0.1
+  film_thickness_precision_nm: 2
+  junction_resistance_repeatability_percent: 3
+minimum_claim_margins:
+  T1_fractional_change: 0.15
+  T2_fractional_change: 0.15
+  parity_rate_fractional_change: 0.2
+  recovery_time_fractional_change: 0.2
+  vortex_slope_change_fractional_change: 0.25
+  witness_band_marker_shift_MHz: 50
