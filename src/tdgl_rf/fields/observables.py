@@ -14,7 +14,12 @@ from tdgl_rf.solvers.state import SimulationState
 
 
 def build_weight_profile(grid: StructuredGrid2D, profile: str, mask: GeometryMask | None = None) -> np.ndarray:
-    """Build normalized cell-centered weights for reduced observables."""
+    """Build normalized cell-centered weights for reduced observables.
+
+    The weights integrate against cell area, so the returned field sums to one only after the
+    area factor is applied. This keeps the proxy definitions invariant under uniform mesh
+    refinement.
+    """
 
     x, y = grid.cell_center_mesh
     if profile == "uniform":
@@ -77,7 +82,12 @@ def compute_basic_observables(
     c_q: float,
     qinv_bg: float,
 ) -> dict[str, Any]:
-    """Compute the phase-1 observable bundle."""
+    """Compute the phase-1 observable bundle.
+
+    The returned payload is intentionally limited to numerically stable reductions over active
+    cells so it can be emitted every sample without coupling the runtime to reviewer-facing
+    reporting formats.
+    """
 
     total_current = add_currents(supercurrent, normal_current)
     charge_residual = divergence(state.grid, total_current)
@@ -94,6 +104,8 @@ def compute_basic_observables(
         "vortex_count": 0,
     }
     if track_vortices:
+        # The observable surface records unsigned count only; winding detail stays in the
+        # dedicated seeded-vortex diagnostics payload.
         vortex_map = compute_vortex_map(state.psi, links, mask)
         data["vortex_count"] = int(np.sum(np.abs(vortex_map)))
     if compute_freq and weights_f is not None:

@@ -1,0 +1,43 @@
+# Conservative phase-1 numerical gates for local deterministic validation.
+# These are bounded regression checks, not claims of asymptotic convergence
+# or broader scientific validity.
+surface:
+  surface_id: phase1_short_horizon
+  display_name: Deterministic Phase-1 Short-Horizon
+  claim_scope: Short-horizon deterministic strip and simple masked-strip baseline with conservative numerical gates, frozen references, and same-stack reproducibility on the committed n_steps=4 matrix surface only.
+  reproduction_command: tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml
+  accepted_use: Cite the current runtime as a short-horizon deterministic baseline for strip and simple masked-strip runs inside the committed n_steps=4 validation matrix surface.
+  not_established:
+    - Asymptotic convergence certification.
+    - PETSc parity or broader cross-stack reproducibility.
+    - Stochastic robustness or ensemble behavior.
+    - Seeded-vortex support or broader geometry support beyond the committed phase-1 surface.
+    - Longer-horizon or very-long-time stability beyond the committed n_steps=4 matrix.
+    - Broader physics-validation or external-benchmark claims.
+
+campaign:
+  required_campaign_status: success
+  required_case_status: success
+  max_charge_residual_inf: 0.45
+  max_vortex_count: 0
+
+refinement:
+  delta_mean_abs2_max: 5.0e-4
+  delta_charge_residual_inf_max: 0.25
+  delta_delta_f_over_f0_max: 2.0e-4
+  delta_qinv_max: 5.0e-3
+
+reproducibility:
+  config_path: configs/validation/reference_rf_strip.yaml
+  summary_metric_tolerances:
+    final_charge_residual_inf: 0.0
+    final_mean_abs2: 0.0
+    final_time: 0.0
+    max_vortex_count: 0.0
+  final_observable_tolerances:
+    charge_residual_inf: 0.0
+    delta_f_over_f0: 0.0
+    mean_abs2: 0.0
+    qinv: 0.0
+    vortex_count: 0.0
+  require_payload_hash_match: true

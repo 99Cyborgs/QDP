@@ -40,8 +40,8 @@ forcing:
   rf_profile_file: null
 noise:
   enabled: true
-  gamma_psi: 0.001
-  master_seed: 2026201
+  strength: 0.001
+  seed: 2026201
 time:
   dt: 0.001
   n_steps: 12000
@@ -68,7 +68,7 @@ observables:
 inference:
   enabled: true
   mode: synthetic_laplace
-  infer_parameters: ["pinning.sigma", "pinning.lcorr", "noise.gamma_psi", "forcing.a_rf"]
+  infer_parameters: ["pinning.sigma", "pinning.lcorr", "noise.strength", "forcing.a_rf"]
   dataset_path: null
   summary_statistics:
     - mean_df

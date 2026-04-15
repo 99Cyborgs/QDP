@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M06_CLOSURE_REPORT",
   "module_id": "M06",
-  "timestamp_utc": "2026-03-15T20:19:15.383838+00:00",
+  "timestamp_utc": "2026-04-04T03:34:31.878411+00:00",
   "derived_status": "RECOVERY_INTERIM",
   "predicate_results": [
     {
@@ -41,8 +41,8 @@
       "detail": "mode_divergence_status=PASSED"
     }
   ],
-  "bootstrap_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\m06\\bootstrap_report.json",
-  "mode_divergence_report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\reports\\system\\mode_divergence_report.json",
+  "bootstrap_report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\reports\\m06\\bootstrap_report.json",
+  "mode_divergence_report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\reports\\system\\mode_divergence_report.json",
   "notes": [
     "M06 closure is computed from config/contracts/module_closure_contracts.json.",
     "Closure is downgraded to RECOVERY_INTERIM because retained dependencies currently resolve through regenerated local surrogate artifacts.",

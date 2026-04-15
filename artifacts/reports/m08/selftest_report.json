@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M08_SELFTEST_REPORT",
   "module_id": "M08",
-  "timestamp_utc": "2026-03-15T20:19:14.682992+00:00",
+  "timestamp_utc": "2026-04-04T03:34:31.281204+00:00",
   "visible_source_only": true,
   "cases_total": 6,
   "cases_passed": 6,
@@ -15,15 +15,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -61,8 +61,8 @@
           "time_series_based": true
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_BASELINE_SUFFICIENCY\\CASE_M08_BASELINE_SUFFICIENCY_candidate.json"
     },
     {
       "case_id": "CASE_M08_CORRELATED_RESIDUALS",
@@ -71,15 +71,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -121,8 +121,8 @@
           "time_series_based": true
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_CORRELATED_RESIDUALS\\CASE_M08_CORRELATED_RESIDUALS_candidate.json"
     },
     {
       "case_id": "CASE_M08_DRIVE_AND_RAMSEY_MISMATCH",
@@ -131,15 +131,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -183,8 +183,8 @@
           "time_series_based": true
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH\\CASE_M08_DRIVE_AND_RAMSEY_MISMATCH_candidate.json"
     },
     {
       "case_id": "CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED",
@@ -193,15 +193,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -245,8 +245,8 @@
           "time_series_based": true
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED\\CASE_M08_NONSTATIONARY_AND_CROSS_CORRELATED_candidate.json"
     },
     {
       "case_id": "CASE_M08_NON_GAUSSIAN_BURSTS",
@@ -255,15 +255,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -305,8 +305,8 @@
           "time_series_based": true
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_NON_GAUSSIAN_BURSTS\\CASE_M08_NON_GAUSSIAN_BURSTS_candidate.json"
     },
     {
       "case_id": "CASE_M08_INSUFFICIENT_JOINT_DATA",
@@ -315,15 +315,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "baseline_model": {
@@ -365,8 +365,8 @@
           "time_series_based": false
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m08\\selftests\\CASE_M08_INSUFFICIENT_JOINT_DATA\\CASE_M08_INSUFFICIENT_JOINT_DATA_candidate.json"
     }
   ]
 }

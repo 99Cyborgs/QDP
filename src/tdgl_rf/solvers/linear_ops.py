@@ -58,7 +58,12 @@ class ActiveCellMap:
 
 @dataclass(frozen=True)
 class MeanZeroReducer:
-    """Reduction helper for zero-mean constrained linear solves."""
+    """Reduction helper for zero-mean constrained linear solves.
+
+    The basis spans the subspace whose entries sum to zero by expressing the final degree of
+    freedom as the negative sum of the others. This removes the null mode without introducing a
+    separate Lagrange-multiplier block.
+    """
 
     size: int
     basis: sparse.csr_matrix
@@ -134,6 +139,8 @@ def _assemble_pairwise_matrix(
     dtype,
     conjugate_pairs: bool,
 ) -> sparse.csr_matrix:
+    """Assemble a sparse operator from symmetric nearest-neighbor couplings and a diagonal."""
+
     row_parts: list[np.ndarray] = []
     col_parts: list[np.ndarray] = []
     data_parts: list[np.ndarray] = []
@@ -210,7 +217,11 @@ def build_active_covariant_laplacian_matrix(
     links: LinkVariables,
     active_cells: ActiveCellMap,
 ) -> sparse.csr_matrix:
-    """Build the sparse covariant Laplacian directly on active cells."""
+    """Build the sparse covariant Laplacian directly on active cells.
+
+    This form avoids allocating masked full-grid rows and columns, which keeps the phase-1 IMEX
+    solve aligned with the active-domain unknown count.
+    """
 
     hx2 = grid.hx**2
     hy2 = grid.hy**2
@@ -315,7 +326,12 @@ def build_active_scalar_laplacian_matrix(
     mask: GeometryMask,
     active_cells: ActiveCellMap,
 ) -> sparse.csr_matrix:
-    """Build the real Neumann Laplacian directly on active cells."""
+    """Build the real Neumann Laplacian directly on active cells.
+
+    The operator excludes masked neighbors rather than inserting ghost values, so disconnected
+    masks retain the expected per-component null space and must be rejected upstream when a
+    unique gauge-fixed solution is required.
+    """
 
     hx2 = grid.hx**2
     hy2 = grid.hy**2

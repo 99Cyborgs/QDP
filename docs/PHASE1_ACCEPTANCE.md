@@ -14,6 +14,9 @@ This document defines the supported operational surface for the phase-1 TDGL-RF 
 - Small deterministic refinement sanity runs through `tdgl-rf refinement-sanity`
 - Small deterministic campaign execution through `tdgl-rf run-matrix matrices/phase1_experiment_matrix_v1.csv`
 - Compact campaign aggregation through `tdgl-rf summarize-campaign`
+- Thresholded deterministic validation evidence generation through `tdgl-rf validate-phase1`
+- Frozen reference-output regression checks through `tdgl-rf reference-check`
+- Same-stack deterministic reproducibility checks through `tdgl-rf reproducibility-check`
 
 ## Unsupported or explicitly out of scope
 
@@ -40,6 +43,7 @@ This document defines the supported operational surface for the phase-1 TDGL-RF 
 - Charge residual checks are bounded, case-specific sanity thresholds. They are not proofs of asymptotic convergence.
 - The refinement harness compares one mild deterministic RF-driven case across two meshes and two `dt` values. It is intended to detect coarse regressions in observable stability, not to establish an order-of-accuracy result.
 - Short deterministic matrix runs are campaign-mechanism checks. They are not proposal evidence by themselves.
+- The phase-1 validation tranche adds conservative bounded thresholds and frozen references, but it still does not certify asymptotic convergence or broader physical validity.
 - Zero-step runs are accepted for workflow and metadata hardening, not for scientific interpretation.
 
 ## Required baseline tests for solver-touching changes

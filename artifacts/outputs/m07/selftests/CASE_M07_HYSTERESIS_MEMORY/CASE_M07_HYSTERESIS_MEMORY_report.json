@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M07_TRIAGE_REPORT",
   "module_id": "M07",
-  "timestamp_utc": "2026-03-15T20:19:14.331197+00:00",
+  "timestamp_utc": "2026-04-04T03:34:30.987184+00:00",
   "visible_source_only": true,
   "declared_family_class": "VORTEX_MEMORY",
   "declared_likely_bath_class": "PINNED_VORTEX_OCCUPANCY",

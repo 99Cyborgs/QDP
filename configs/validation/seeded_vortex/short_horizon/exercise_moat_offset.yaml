@@ -1,0 +1,15 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_short_moat_offset
+  description: "Invariant-only short-horizon seeded-vortex exercise on moat geometry"
+geometry:
+  family: strip_with_moat
+  moats:
+    - x0: 2.0
+      y0: 1.5
+      radius: 0.4
+physics:
+  vortex_seeds:
+    - x0: 8.0
+      y0: 3.0
+      winding: 1

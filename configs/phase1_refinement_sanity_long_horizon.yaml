@@ -1,0 +1,24 @@
+base_config: phase1_matrix_base.yaml
+metadata:
+  case_id: phase1_refinement_sanity_long_horizon
+  description: "Canonical mild RF case for mesh/dt refinement sanity checks at the committed longer deterministic horizon"
+mesh:
+  nx: 16
+  ny: 8
+  lx: 8.0
+  ly: 4.0
+forcing:
+  a_rf: 0.15
+  omega: 4.0
+  phase: 0.2
+time:
+  dt: 0.01
+  n_steps: 8
+  obs_stride: 1
+  field_stride: 2
+  checkpoint_stride: 2
+output:
+  root_dir: runs
+  write_fields: false
+  write_observables: true
+  compression: none

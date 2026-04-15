@@ -39,7 +39,12 @@ class LinearSolverBackend(Protocol):
 
 
 class SciPyLinearBackend:
-    """Sparse linear solver wrapper with iteration statistics."""
+    """Sparse linear solver wrapper with iteration statistics.
+
+    Iterative methods remain the first choice so solver diagnostics reflect the requested method,
+    but repeated sparse failures are upgraded to cached direct factorizations to fail closed
+    without re-incurring decomposition cost on later steps.
+    """
 
     _ITERATIVE_SOLVERS = {
         "cg": cg,
@@ -150,6 +155,8 @@ class SciPyLinearBackend:
         if method_key == "spsolve":
             return self._solve_direct(matrix, rhs, method_key, rtol=rtol, atol=atol, cache_key=cache_key)
         if cache_key is not None and cache_key in self._prefer_direct_cache_keys:
+            # Once an iterative solve has failed for a reusable operator, subsequent solves stay on
+            # the direct path so the runtime does not oscillate between methods across timesteps.
             return self._solve_direct(
                 matrix,
                 rhs,
@@ -179,6 +186,8 @@ class SciPyLinearBackend:
         converged = info == 0
         if not converged:
             if sparse.issparse(matrix):
+                # Sparse iterative failures degrade to LU instead of surfacing partial solutions;
+                # dense failures are rare enough that fail-fast remains clearer than retry logic.
                 if cache_key is not None:
                     self._prefer_direct_cache_keys.add(cache_key)
                 return self._solve_direct(

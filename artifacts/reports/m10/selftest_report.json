@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M10_SELFTEST_REPORT",
   "module_id": "M10",
-  "timestamp_utc": "2026-03-15T20:19:15.177070+00:00",
+  "timestamp_utc": "2026-04-04T03:34:31.710438+00:00",
   "visible_source_only": true,
   "cases_total": 7,
   "cases_passed": 7,
@@ -15,15 +15,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -69,8 +69,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_EXPLAINS\\CASE_M10_CONTROL_CHAIN_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M10_READOUT_ALIAS_EXPLAINS",
@@ -79,15 +79,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -133,8 +133,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_READOUT_ALIAS_EXPLAINS\\CASE_M10_READOUT_ALIAS_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M10_CALIBRATION_DRIFT_EXPLAINS",
@@ -143,15 +143,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -197,8 +197,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS\\CASE_M10_CALIBRATION_DRIFT_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M10_REFRIGERATOR_SUPPORT_ONLY",
@@ -207,15 +207,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -261,8 +261,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY\\CASE_M10_REFRIGERATOR_SUPPORT_ONLY_candidate.json"
     },
     {
       "case_id": "CASE_M10_POWER_CALIBRATION_EXPLAINS",
@@ -271,15 +271,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -325,8 +325,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_POWER_CALIBRATION_EXPLAINS\\CASE_M10_POWER_CALIBRATION_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M10_CONTROL_CHAIN_POWER_COMBINATION",
@@ -335,15 +335,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -393,8 +393,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION\\CASE_M10_CONTROL_CHAIN_POWER_COMBINATION_candidate.json"
     },
     {
       "case_id": "CASE_M10_NO_ARTIFACT_ROUTE",
@@ -403,15 +403,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "artifact_tests": {
@@ -461,8 +461,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m10\\selftests\\CASE_M10_NO_ARTIFACT_ROUTE\\CASE_M10_NO_ARTIFACT_ROUTE_candidate.json"
     }
   ]
 }

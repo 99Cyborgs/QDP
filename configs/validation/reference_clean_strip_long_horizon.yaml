@@ -1,0 +1,15 @@
+base_config: ../phase1_matrix_base.yaml
+metadata:
+  case_id: reference_clean_strip_long_horizon
+  description: "Canonical clean deterministic strip for frozen longer-horizon reference checks"
+forcing:
+  a_rf: 0.0
+  omega: 0.0
+  phase: 0.0
+time:
+  n_steps: 8
+output:
+  root_dir: runs/reference_cases
+  write_fields: false
+  write_observables: true
+  compression: none

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class StrictModel(BaseModel):
@@ -94,6 +94,27 @@ class PinningConfig(StrictModel):
         return self
 
 
+class VortexSeedConfig(StrictModel):
+    x0: float
+    y0: float
+    winding: int
+    core_radius: float | None = None
+
+    @field_validator("winding")
+    @classmethod
+    def _validate_winding(cls, value: int) -> int:
+        if value == 0:
+            raise ValueError("winding must be nonzero")
+        return value
+
+    @field_validator("core_radius")
+    @classmethod
+    def _validate_core_radius(cls, value: float | None) -> float | None:
+        if value is not None and value <= 0:
+            raise ValueError("core_radius must be positive when provided")
+        return value
+
+
 class PhysicsConfig(StrictModel):
     u: float
     sigma_n: float
@@ -101,6 +122,7 @@ class PhysicsConfig(StrictModel):
     pinning: PinningConfig
     initial_condition: Literal["meissner", "seeded_vortices", "restart"]
     restart_file: str | None = None
+    vortex_seeds: list[VortexSeedConfig] = Field(default_factory=list)
 
     @field_validator("u")
     @classmethod
@@ -135,14 +157,20 @@ class ForcingConfig(StrictModel):
 
 class NoiseConfig(StrictModel):
     enabled: bool
-    gamma_psi: float
-    master_seed: int
+    strength: float = Field(
+        validation_alias=AliasChoices("strength", "gamma_psi"),
+        serialization_alias="strength",
+    )
+    seed: int = Field(
+        validation_alias=AliasChoices("seed", "master_seed"),
+        serialization_alias="seed",
+    )
 
-    @field_validator("gamma_psi")
+    @field_validator("strength")
     @classmethod
     def _validate_gamma(cls, value: float) -> float:
         if value < 0:
-            raise ValueError("gamma_psi must be non-negative")
+            raise ValueError("strength must be non-negative")
         return value
 
 
@@ -252,4 +280,3 @@ class TDGLRFCaseConfig(StrictModel):
     observables: ObservablesConfig = Field(default_factory=ObservablesConfig)
     inference: InferenceConfig = Field(default_factory=InferenceConfig)
     campaign: CampaignConfig = Field(default_factory=CampaignConfig)
-

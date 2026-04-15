@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_M09_SELFTEST_REPORT",
   "module_id": "M09",
-  "timestamp_utc": "2026-03-15T20:19:14.923980+00:00",
+  "timestamp_utc": "2026-04-04T03:34:31.495626+00:00",
   "visible_source_only": true,
   "cases_total": 7,
   "cases_passed": 7,
@@ -15,15 +15,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "TLS",
@@ -75,8 +75,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_TLS_EXPLAINS\\CASE_M09_TLS_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M09_VORTEX_EXPLAINS",
@@ -85,15 +85,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "VORTEX",
@@ -145,8 +145,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_EXPLAINS\\CASE_M09_VORTEX_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M09_QP_EXPLAINS",
@@ -155,15 +155,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "QUASIPARTICLE",
@@ -211,8 +211,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_QP_EXPLAINS\\CASE_M09_QP_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M09_CONTROL_NOISE_EXPLAINS",
@@ -221,15 +221,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "CONTROL_NOISE",
@@ -277,8 +277,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_CONTROL_NOISE_EXPLAINS\\CASE_M09_CONTROL_NOISE_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M09_EM_PURCELL_EXPLAINS",
@@ -287,15 +287,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "EM_PURCELL",
@@ -343,8 +343,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_EM_PURCELL_EXPLAINS\\CASE_M09_EM_PURCELL_EXPLAINS_candidate.json"
     },
     {
       "case_id": "CASE_M09_PHONON_SUPPORT_ONLY",
@@ -353,15 +353,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "PHONON",
@@ -409,8 +409,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_PHONON_SUPPORT_ONLY\\CASE_M09_PHONON_SUPPORT_ONLY_candidate.json"
     },
     {
       "case_id": "CASE_M09_VORTEX_QP_COMBINATION",
@@ -419,15 +419,15 @@
       "comparison_ok": true,
       "comparison_failures": [],
       "validator_result": {
-        "candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json",
+        "candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json",
         "returncode": 0,
-        "stdout": "VALID\n- mode: final\n- candidate: C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\n- schema: C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json\n",
+        "stdout": "VALID\n- mode: final\n- candidate: G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json\n- schema: G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json\n",
         "stderr": "",
         "valid": true,
         "errors": [],
         "mode": "final",
-        "schema_path": "C:\\Users\\Forre\\Documents\\QDP\\config\\schema\\candidate_schema.json",
-        "validator_path": "C:\\Users\\Forre\\Documents\\QDP\\tools\\validators\\candidate_validator.py"
+        "schema_path": "G:\\GitHub\\incubate\\QDP TDGL\\config\\schema\\candidate_schema.json",
+        "validator_path": "G:\\GitHub\\incubate\\QDP TDGL\\tools\\validators\\candidate_validator.py"
       },
       "expected_summary": {
         "strongest_competing_mechanism_initial": "VORTEX",
@@ -479,8 +479,8 @@
           }
         }
       },
-      "report_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_report.json",
-      "output_candidate_path": "C:\\Users\\Forre\\Documents\\QDP\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json"
+      "report_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_report.json",
+      "output_candidate_path": "G:\\GitHub\\incubate\\QDP TDGL\\artifacts\\outputs\\m09\\selftests\\CASE_M09_VORTEX_QP_COMBINATION\\CASE_M09_VORTEX_QP_COMBINATION_candidate.json"
     }
   ]
 }

@@ -8,6 +8,12 @@
 
 `incubation link`
 
+## Current Boundary Note
+
+- the accepted deterministic TDGL surface is still the short-horizon phase-1 tranche,
+- a committed `n_steps=8` longer-horizon deterministic tranche now exists, but it remains flagged under copied refinement drift limits and does not yet widen the accepted boundary,
+- Phase-2.4A stochastic execution remains runtime-capable only, not scientifically validated.
+
 ## Why not core yet
 
 - current audit burden is too high for routine core review,

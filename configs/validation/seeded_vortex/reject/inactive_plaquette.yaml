@@ -1,0 +1,15 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_inactive_plaquette
+  description: "Expected seeded-vortex rejection for a seed whose host plaquette intersects a moat"
+geometry:
+  family: strip_with_moat
+  moats:
+    - x0: 6.0
+      y0: 3.0
+      radius: 0.7
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1

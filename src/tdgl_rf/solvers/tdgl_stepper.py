@@ -35,7 +35,11 @@ class TDGLStepContext:
 
 
 class TDGLStepper:
-    """Deterministic phase-1 IMEX TDGL stepper."""
+    """Deterministic phase-1 IMEX TDGL stepper.
+
+    The stepper treats the nonlinear reaction term and scalar-potential coupling explicitly while
+    the covariant diffusion operator stays implicit on the active-cell subspace.
+    """
 
     def __init__(
         self,
@@ -87,7 +91,11 @@ class TDGLStepper:
         )
 
     def _assemble_rhs(self, state: SimulationState, phi: np.ndarray) -> np.ndarray:
-        """Assemble the explicit IMEX right-hand side for psi."""
+        """Assemble the explicit IMEX right-hand side for psi.
+
+        Inactive cells are forced to zero here so masked-domain invariants do not depend on the
+        downstream linear solve or active-cell scatter path.
+        """
 
         dt = self.config.time.dt
         rhs = (self.config.physics.u / dt) * state.psi
@@ -116,6 +124,20 @@ class TDGLStepper:
             atol=self.config.solver.atol,
             max_it=self.config.solver.max_it,
         )
+
+    def _sample_additive_noise(self, state: SimulationState) -> np.ndarray:
+        """Sample one additive complex Gaussian field from the run-local RNG."""
+
+        if not self.config.noise.enabled:
+            return np.zeros_like(state.psi)
+        if state.rng_state is None:
+            raise SolverDivergenceError("stochastic noise requested without a run-local RNG")
+
+        real = state.rng_state.standard_normal(size=state.psi.shape)
+        imag = state.rng_state.standard_normal(size=state.psi.shape)
+        noise = self.config.noise.strength * (real + 1j * imag) / np.sqrt(2.0)
+        noise[~self.mask.cell_active] = 0.0
+        return noise
 
     @staticmethod
     def _validate_field(name: str, field: np.ndarray) -> None:
@@ -151,13 +173,17 @@ class TDGLStepper:
         )
 
     def advance(self, state: SimulationState) -> SimulationState:
-        """Advance the deterministic TDGL state by one IMEX step."""
+        """Advance the TDGL state by one IMEX step."""
 
         next_t = state.t + self.config.time.dt
+        # The first phi solve uses the old psi and new forcing to form the explicit coupling
+        # terms. The second solve re-aligns diagnostics and normal-current inputs with psi_{n+1}.
         solve_context = self._build_step_context(state.psi, next_t)
         rhs = self._assemble_rhs(state, solve_context.phi)
         result = self._solve_psi(rhs, solve_context.links)
         psi_next = self.active_cells.scatter_active(result.solution, dtype=np.complex128)
+        psi_next = psi_next + self._sample_additive_noise(state)
+        psi_next[~self.mask.cell_active] = 0.0
         self._validate_field("psi", psi_next)
         final_context = self._build_step_context(psi_next, next_t)
         self._validate_field("phi", final_context.phi)

@@ -40,8 +40,8 @@ forcing:
   rf_profile_file: null
 noise:
   enabled: true
-  gamma_psi: 0.001
-  master_seed: 2026101
+  strength: 0.001
+  seed: 2026101
 time:
   dt: 0.001
   n_steps: 12000

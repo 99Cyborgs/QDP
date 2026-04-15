@@ -1,7 +1,7 @@
 {
   "artifact_id": "QDP_V10_6_MODULE_CLOSURE_EVALUATION_REPORT",
-  "contract_source": "C:\\Users\\Forre\\Documents\\QDP\\config\\contracts\\module_closure_contracts.json",
-  "timestamp_utc": "2026-03-15T20:19:15.376118+00:00",
+  "contract_source": "G:\\GitHub\\incubate\\QDP TDGL\\config\\contracts\\module_closure_contracts.json",
+  "timestamp_utc": "2026-04-04T03:34:31.873349+00:00",
   "modules": [
     {
       "module_id": "M01",
@@ -43,7 +43,7 @@
           "predicate_id": "M01_P5",
           "description": "Closure report hash matches assembled runtime prompt hash",
           "passed": true,
-          "detail": "expected=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997 actual=43109ed0db85476a3297be09c25a8b5e34309d667a2b4f1020a9b0bf627e4997"
+          "detail": "expected=fa2e64d297f8a3bef990eedb16966aa557690b9fd59641d2d03a95522c7cd608 actual=fa2e64d297f8a3bef990eedb16966aa557690b9fd59641d2d03a95522c7cd608"
         }
       ],
       "closure_limitations": [
@@ -98,7 +98,7 @@
           "predicate_id": "M03_P6",
           "description": "Governance registry records the current report IDs and mode summaries coherently",
           "passed": true,
-          "detail": "ordinary_report_id=m03-reference-report-20260315T201913Z; subsystem_report_id=m03-reference-report-20260315T201913Z"
+          "detail": "ordinary_report_id=m03-reference-report-20260404T033430Z; subsystem_report_id=m03-reference-report-20260404T033430Z"
         },
         {
           "predicate_id": "M03_P7",

@@ -1,0 +1,9 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_outside_domain
+  description: "Expected seeded-vortex rejection for a seed outside the supported domain interior"
+physics:
+  vortex_seeds:
+    - x0: 0.1
+      y0: 3.0
+      winding: 1

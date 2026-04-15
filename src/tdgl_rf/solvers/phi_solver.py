@@ -23,6 +23,8 @@ class PhiSolveStats:
 
 
 def _count_connected_components(cell_active: np.ndarray) -> int:
+    """Count 4-connected active components in the cell mask."""
+
     active = np.asarray(cell_active, dtype=bool)
     if not np.any(active):
         return 0
@@ -54,7 +56,12 @@ def _count_connected_components(cell_active: np.ndarray) -> int:
 
 
 class ScalarPotentialSolver:
-    """Cached scalar-potential solver with zero-mean gauge fixing."""
+    """Cached scalar-potential solver with zero-mean gauge fixing.
+
+    The discrete Neumann operator is singular up to an additive constant. This solver fixes that
+    gauge by pinning one active degree of freedom in the reduced system and then re-centering the
+    lifted solution to zero mean on the active cells.
+    """
 
     def __init__(
         self,
@@ -76,6 +83,8 @@ class ScalarPotentialSolver:
             return
         component_count = _count_connected_components(mask.cell_active)
         if component_count > 1:
+            # A disconnected active mask would introduce one null mode per component, so the
+            # single-reference gauge fix used below would be mathematically underdetermined.
             raise SolverDivergenceError(
                 f"scalar-potential solve requires a connected active mask; found {component_count} disconnected components"
             )
@@ -83,6 +92,8 @@ class ScalarPotentialSolver:
         self.reduced_matrix = self._build_reference_reduced_matrix() if self.active_cells.count > 1 else None
 
     def _build_reference_reduced_matrix(self):
+        """Drop the reference degree of freedom used to remove the Neumann null mode."""
+
         assert self.laplacian_active is not None
         if self.active_cells.count <= 1:
             return None
@@ -90,6 +101,8 @@ class ScalarPotentialSolver:
         return self.laplacian_active[keep][:, keep].tocsr()
 
     def _build_rhs(self, supercurrent: CurrentField, a_dot: VectorPotential) -> np.ndarray:
+        """Assemble the active-cell charge-balance residual that drives the phi solve."""
+
         rhs = divergence(self.grid, supercurrent) - self.sigma_n * divergence(self.grid, CurrentField(jx=a_dot.ax, jy=a_dot.ay))
         return self.active_cells.flatten_active(rhs)
 
@@ -110,6 +123,8 @@ class ScalarPotentialSolver:
 
         rhs_active = self._build_rhs(supercurrent, a_dot)
         rhs_mean = float(np.mean(rhs_active))
+        # Subtracting the active-cell mean enforces compatibility with the singular Neumann
+        # operator before the reduced solve is attempted.
         rhs_active = rhs_active - rhs_mean
         if np.allclose(rhs_active, 0.0, atol=atol, rtol=rtol):
             return phi, PhiSolveStats(iterations=0, residual_norm=0.0, mean_removed=rhs_mean, method="zero_rhs")

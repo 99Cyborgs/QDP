@@ -1,0 +1,12 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_reject_overlapping_plaquette
+  description: "Expected seeded-vortex rejection for two seeds resolving to the same plaquette"
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1
+    - x0: 6.0
+      y0: 3.0
+      winding: -1
