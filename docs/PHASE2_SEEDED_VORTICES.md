@@ -27,6 +27,8 @@ The committed suite is defined by:
 
 Detailed suite design and reporting rules live in [docs/PHASE2_2_SEEDED_EXPERIMENT_PACK.md](docs/PHASE2_2_SEEDED_EXPERIMENT_PACK.md).
 
+The separate committed Phase-2.4A runtime smoke manifest `validation/seeded_vortex_phase2_4a_runtime_smoke.yaml` may execute seeded short-horizon cases with `noise.enabled: true` for control-plane and provenance checks, but it is not part of this deterministic validation boundary and does not widen the seeded-vortex claim surface.
+
 ## Runtime Artifacts
 
 Successful seeded runs write:

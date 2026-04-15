@@ -1,0 +1,89 @@
+reference_runs:
+  - reference_id: clean_strip_long_horizon
+    kind: config
+    config_path: configs/validation/reference_clean_strip_long_horizon.yaml
+    command: tdgl-rf run-case configs/validation/reference_clean_strip_long_horizon.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.0
+      final_mean_abs2: 1.0
+      final_time: 0.08
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 9
+    expected_final_observables:
+      charge_residual_inf: 0.0
+      mean_abs2: 1.0
+      delta_f_over_f0: -0.0
+      qinv: 0.0
+      vortex_count: 0
+    expected_payload_sha256: c14bbe7b4a3c0a955db042c12dcf2f9ff4b8b031f52c972856295b1c2393c5cb
+  - reference_id: rf_strip_long_horizon
+    kind: config
+    config_path: configs/validation/reference_rf_strip_long_horizon.yaml
+    command: tdgl-rf run-case configs/validation/reference_rf_strip_long_horizon.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.061412929544135804
+      final_mean_abs2: 0.9995265376330775
+      final_time: 0.08
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 9
+    expected_final_observables:
+      charge_residual_inf: 0.061412929544135804
+      mean_abs2: 0.9995265376330775
+      delta_f_over_f0: -0.00047346236692253566
+      qinv: 0.021796410709371536
+      vortex_count: 0
+    expected_payload_sha256: 96242f398932019d262b81a520ba983fd49897ded4b5ed432afafe7c7a13bf57
+  - reference_id: masked_moat_long_horizon
+    kind: config
+    config_path: configs/validation/reference_masked_moat_long_horizon.yaml
+    command: tdgl-rf run-case configs/validation/reference_masked_moat_long_horizon.yaml
+    expected_files:
+      - observables/summary.json
+      - observables/timeseries.csv
+      - diagnostics/run_summary.json
+    expected_summary:
+      final_charge_residual_inf: 0.1870932906355103
+      final_mean_abs2: 0.9997751024251281
+      final_time: 0.08
+      max_vortex_count: 0
+      n_events: 0
+      n_samples: 9
+    expected_final_observables:
+      charge_residual_inf: 0.1870932906355103
+      mean_abs2: 0.9997751024251281
+      delta_f_over_f0: -0.00022489757487179757
+      qinv: 3.8102528735277593e-06
+      vortex_count: 0
+    expected_payload_sha256: 1fb63b1a7c1588847585668a730acca498c7291cb9b7e1783dca7c4dadfaab0c
+  - reference_id: refinement_anchor_long_horizon
+    kind: refinement_sanity
+    config_path: configs/phase1_refinement_sanity_long_horizon.yaml
+    selected_result_case_id: phase1_refinement_sanity_long_horizon_m24x12_dt0p005
+    command: tdgl-rf refinement-sanity configs/phase1_refinement_sanity_long_horizon.yaml
+    expected_files:
+      - comparison_table.csv
+      - comparison_table.json
+    expected_summary:
+      reference_case_id: phase1_refinement_sanity_long_horizon_m24x12_dt0p005
+      selected_case_id: phase1_refinement_sanity_long_horizon_m24x12_dt0p005
+      comparison_count: 4
+      final_mean_abs2: 0.9997372692753377
+      final_charge_residual_inf: 0.19075800623815883
+      final_delta_f_over_f0: -0.000262730724662231
+      final_qinv: 0.0038780895679581084
+      delta_mean_abs2_vs_reference: 0.0
+      delta_charge_residual_inf_vs_reference: 0.0
+      delta_delta_f_over_f0_vs_reference: 0.0
+      delta_qinv_vs_reference: 0.0
+    expected_final_observables: {}
+    expected_payload_sha256: 920ca133e13de635ace9066cd2a3b0605da2112493d4b6e66096eedff5ff652d

@@ -53,6 +53,23 @@ class EvidenceBundleSummary:
     generated_artifact_count: int
 
 
+DEFAULT_PHASE1_SURFACE = {
+    "surface_id": "phase1_short_horizon_legacy",
+    "display_name": "Deterministic Phase-1",
+    "claim_scope": "Short-horizon deterministic strip and simple masked-strip baseline with conservative numerical gates on the committed matrix surface only.",
+    "reproduction_command": "tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml",
+    "accepted_use": "Cite the current runtime as a short-horizon deterministic baseline for strip and simple masked-strip runs inside the validated matrix surface.",
+    "not_established": [
+        "Asymptotic convergence certification.",
+        "PETSc parity or broader cross-stack reproducibility.",
+        "Stochastic robustness or ensemble behavior.",
+        "Seeded-vortex support or broader geometry support beyond the committed phase-1 surface.",
+        "Long-horizon or very-long-time stability beyond the committed short-horizon matrix.",
+        "Broader physics-validation or external-benchmark claims.",
+    ],
+}
+
+
 def _read_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         payload = json.load(handle)
@@ -115,6 +132,15 @@ def _matrix_unique_values(matrix_path: Path, key: str) -> list[Any]:
 def _default_output_dir(validation_dir: Path) -> Path:
     matrix_stem = validation_dir.parent.name if validation_dir.parent != validation_dir else validation_dir.name
     return (repo_root() / "runs" / "evidence" / matrix_stem / validation_dir.name).resolve()
+
+
+def _phase1_surface(validation_payload: dict[str, Any]) -> dict[str, Any]:
+    surface = validation_payload.get("surface")
+    if not isinstance(surface, dict):
+        return dict(DEFAULT_PHASE1_SURFACE)
+    resolved = dict(DEFAULT_PHASE1_SURFACE)
+    resolved.update(surface)
+    return resolved
 
 
 def _extract_markdown_bullets(path: Path, heading: str) -> list[str]:
@@ -228,6 +254,7 @@ def generate_operating_conditions_markdown(
     campaign_records = list(campaign.get("records", []))
     refinement_records = list(validation_payload["refinement"].get("records", []))
     thresholds = load_threshold_spec(thresholds_path)
+    surface = _phase1_surface(validation_payload)
 
     geometry_values = _unique_sorted(campaign_records, "geometry_family")
     mesh_values = sorted({f"{int(record['nx'])}x{int(record['ny'])}" for record in campaign_records if record.get("nx") is not None and record.get("ny") is not None})
@@ -241,8 +268,8 @@ def generate_operating_conditions_markdown(
     rows = [
         [
             "Phase surface",
-            "deterministic phase `D` only",
-            "Committed validation matrix and phase-1 acceptance boundary",
+            f"`{surface['display_name']}`; deterministic phase `D` only",
+            surface["claim_scope"],
         ],
         [
             "Geometry families",
@@ -292,9 +319,9 @@ def generate_operating_conditions_markdown(
     ]
 
     lines = [
-        "# Validated Operating Conditions",
+        "# Recorded Operating Conditions",
         "",
-        "This table records the deterministic operating surface that is explicitly characterized by the committed phase-1 validation tranche.",
+        f"This table records the deterministic operating surface explicitly characterized by `{surface['display_name']}`.",
         "",
         _markdown_table(["Condition", "Validated values", "Evidence"], rows),
     ]
@@ -422,6 +449,7 @@ def generate_technical_summary_markdown(
     reference = validation_payload["reference"]
     reproducibility = validation_payload["reproducibility"]
     thresholds = load_threshold_spec(thresholds_path)
+    surface = _phase1_surface(validation_payload)
 
     campaign_records = list(campaign.get("records", []))
     refinement_records = list(refinement.get("records", []))
@@ -445,9 +473,11 @@ def generate_technical_summary_markdown(
     frequency_values = _unique_sorted(campaign_records, "omega")
 
     lines = [
-        "# Deterministic Phase-1 Technical Summary",
+        f"# {surface['display_name']} Technical Summary",
         "",
-        "This note packages the validated deterministic phase-1 baseline for internal technical review. It is evidence of a bounded local baseline, not authorization for broader solver claims or phase-2 feature work.",
+        f"Claim scope: {surface['claim_scope']}",
+        "",
+        "This note packages the recorded deterministic validation surface for internal technical review. It is bounded local evidence, not authorization for broader solver claims or phase-2 feature work.",
         "",
         "## Evidence Snapshot",
         "",
@@ -458,17 +488,20 @@ def generate_technical_summary_markdown(
         f"- Frozen references: `{reference['pass_count']}/{reference['case_count']}` matched the committed manifest.",
         f"- Reproducibility: `{'pass' if reproducibility['overall_pass'] else 'fail'}` with payload hash match `{'yes' if reproducibility.get('payload_hash_match') else 'no'}`.",
         "",
-        "## Accepted Proposal Use",
+        "## Surface Use",
         "",
-        "- Cite the current runtime as a short-horizon deterministic baseline for strip and simple masked-strip runs inside the validated matrix surface.",
-        "- Cite the conservative numerical gates, frozen reference outputs, and same-stack reproducibility check as regression-quality controls on that baseline.",
+        f"- {surface['accepted_use']}",
+        "- Use the conservative numerical gates, frozen reference outputs, and same-stack reproducibility check as regression-quality controls on the recorded surface.",
         "",
         "## Not Established",
         "",
-        "- No asymptotic convergence certification, PETSc parity, stochastic robustness, seeded-vortex support, or long-horizon validation is established here.",
-        "- No broader physics-validation or external-benchmark claim should be derived from this bundle alone.",
-        "",
     ]
+    lines.extend([f"- {item}" for item in surface["not_established"]])
+    lines.extend(
+        [
+        "",
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -479,10 +512,13 @@ def _bundle_overview_markdown(
     output_dir: Path,
     generated_files: dict[str, str],
 ) -> str:
+    surface = _phase1_surface(validation_payload)
     lines = [
-        "# Deterministic Phase-1 Evidence Bundle",
+        f"# {surface['display_name']} Evidence Bundle",
         "",
-        "This bundle packages the validated deterministic phase-1 baseline for internal review and proposal support. It remains a compact evidence bundle, not a phase-2 authorization by itself.",
+        f"This bundle packages `{surface['display_name']}` for internal review and bounded claim interpretation. It remains a compact evidence bundle, not a phase-2 authorization by itself.",
+        "",
+        f"Claim scope: {surface['claim_scope']}",
         "",
         "## Status",
         "",
@@ -495,7 +531,7 @@ def _bundle_overview_markdown(
         "## Contents",
         "",
         f"- Technical summary: `{Path(generated_files['technical_summary_path']).relative_to(output_dir)}`",
-        f"- Validated operating conditions: `{Path(generated_files['operating_conditions_path']).relative_to(output_dir)}`",
+        f"- Recorded operating conditions: `{Path(generated_files['operating_conditions_path']).relative_to(output_dir)}`",
         f"- Known limitations: `{Path(generated_files['limitations_path']).relative_to(output_dir)}`",
         f"- Validation report: `{Path(generated_files['validation_report_path']).relative_to(output_dir)}`",
         f"- Campaign summary: `{Path(generated_files['campaign_summary_markdown_path']).relative_to(output_dir)}`",
@@ -505,7 +541,7 @@ def _bundle_overview_markdown(
         "## Reproduction",
         "",
         "- Regenerate validation outputs from committed inputs:",
-        "  `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml`",
+        f"  `{surface['reproduction_command']}`",
         "- Package a completed validation run into this bundle form:",
         f"  `tdgl-rf evidence-bundle {validation_dir}`",
         "",

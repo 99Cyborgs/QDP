@@ -1,0 +1,17 @@
+base_config: ../base_short_horizon.yaml
+metadata:
+  case_id: seeded_short_single_positive_stochastic_smoke
+  phase: S
+  description: "Phase-2.4A runtime smoke base for short-horizon seeded-vortex ensembles"
+physics:
+  vortex_seeds:
+    - x0: 6.0
+      y0: 3.0
+      winding: 1
+noise:
+  enabled: true
+  strength: 0.05
+  seed: 2026404
+output:
+  root_dir: runs/seeded_vortex_phase2_4a_runtime_smoke
+  write_fields: false

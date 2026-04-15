@@ -1,0 +1,15 @@
+base_config: ../phase1_matrix_base.yaml
+metadata:
+  case_id: reference_rf_strip_long_horizon
+  description: "Canonical RF-driven strip for frozen longer-horizon reference checks and reproducibility"
+forcing:
+  a_rf: 0.15
+  omega: 4.0
+  phase: 0.2
+time:
+  n_steps: 8
+output:
+  root_dir: runs/reference_cases
+  write_fields: false
+  write_observables: true
+  compression: none

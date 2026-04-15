@@ -2,9 +2,9 @@
 
 ## Decision Context
 
-Deterministic phase-1 validation now establishes a bounded local baseline with explicit thresholds, frozen references, and same-stack reproducibility. The next decision is not whether to add more features immediately, but which phase-2 direction best uses that validated baseline without overstating what the current evidence proves.
+Deterministic phase-1 validation now establishes a bounded local short-horizon baseline with explicit thresholds, frozen references, and same-stack reproducibility. A first committed `n_steps=8` longer-horizon tranche also now exists; it passes campaign, frozen-reference, and reproducibility checks, but still fails the copied refinement drift limits at `2/4`. The next decision is still not whether to add more features immediately, but which phase-2 direction best uses the accepted baseline without overstating what the current evidence proves.
 
-Current branch note: seeded-vortex initialization has now been implemented as the first bounded phase-2 tranche. The ranking below remains useful as planning context for what should follow or what still lacks broader validation.
+Current branch note: seeded-vortex initialization has now been implemented as the first bounded phase-2 tranche. The ranking below remains useful as planning context for what should follow or what still lacks broader validation after the flagged longer-horizon follow-on run.
 
 ## Option Comparison
 

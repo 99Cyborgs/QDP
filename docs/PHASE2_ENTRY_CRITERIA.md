@@ -13,6 +13,7 @@ This document defines what must be true before phase-2 feature work is allowed t
 The deterministic baseline is considered sufficient for phase-2 planning only when all of the following are true on the current branch:
 
 - `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml` completes with overall status `success`.
+- The repo may also carry stronger deterministic follow-on tranches, but they do not widen the accepted baseline unless their own `validate-phase1` command completes with overall status `success`.
 - The generated validation artifacts from that run are internally consistent:
   - `validation_summary.csv`
   - `validation_summary.json`
@@ -33,11 +34,19 @@ The deterministic baseline is considered sufficient for phase-2 planning only wh
 - A reviewer-facing bundle can be regenerated from that same validation run with `tdgl-rf evidence-bundle <validation_dir>`.
 - `docs/PHASE1_ACCEPTANCE.md`, `docs/PHASE1_VALIDATION_MEMO.md`, `VALIDATION.md`, `STATUS.md`, and this document all describe the same accepted baseline without contradiction.
 
+## Committed Longer-Horizon Deterministic Tranche
+
+- The repo now carries a committed `n_steps=8` longer-horizon deterministic tranche:
+  `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v2_long_horizon.csv validation/thresholds_long_horizon.yaml validation/reference_manifest_long_horizon.yaml configs/phase1_refinement_sanity_long_horizon.yaml`
+- On the current `2026-04-13` branch state that command is `failed` because refinement sanity is only `2/4`, even though campaign is `16/16`, frozen references are `4/4`, and reproducibility passes.
+- Until that command passes, the longer-horizon tranche is informative only. It may guide debugging and follow-on planning, but it is not accepted gate-closing evidence for broader deterministic claims.
+
 ## Residual Risks Tolerated At The Gate
 
 The following limitations remain tolerated when entering phase-2. They must remain explicit and must not be reworded as solved problems:
 
-- The current evidence is short-horizon and deterministic only.
+- The accepted deterministic evidence is still short-horizon.
+- The committed longer-horizon `n_steps=8` tranche remains flagged under copied refinement drift limits.
 - Same-stack reproducibility has been checked; cross-stack or cross-backend reproducibility has not.
 - The refinement harness is a bounded drift check, not an asymptotic convergence proof.
 - PETSc parity, larger-scale runs, and stochastic workflows remain unvalidated.
@@ -54,6 +63,7 @@ Before stochastic noise work is allowed to proceed beyond prototype status:
 - The RNG and seeding contract must be documented, including what is required to reproduce one seeded realization.
 - A small stochastic smoke matrix with fixed seeds must exist, with explicit thresholds for acceptance and explicit limits on what can be claimed from it.
 - The reproducibility statement must be widened from exact equality to an explicitly documented bounded stochastic policy before any claim is made.
+- The committed runtime smoke manifest `validation/seeded_vortex_phase2_4a_runtime_smoke.yaml` is only a control-plane and provenance smoke surface. It does not satisfy the thresholded stochastic smoke-matrix requirement above by itself.
 
 ### Ensembles
 
@@ -70,8 +80,9 @@ The first seeded-vortex tranche is now limited to:
 
 - deterministic `physics.initial_condition: seeded_vortices` cases with explicit `physics.vortex_seeds`,
 - seeds that lie strictly inside fully active plaquettes,
-- canonical short-run frozen references in `validation/seeded_vortex_reference_manifest.yaml`,
-- the cheap hook `tdgl-rf validate-seeded-vortices validation/seeded_vortex_reference_manifest.yaml`.
+- the committed Phase-2.2 suite manifest `validation/seeded_vortex_phase2_2_manifest.yaml`,
+- the split `initialization_only`, `short_horizon`, and seeded-input rejection-taxonomy surfaces documented in `docs/PHASE2_SEEDED_VORTICES.md`,
+- the active hook `tdgl-rf validate-seeded-vortices validation/seeded_vortex_phase2_2_manifest.yaml`.
 
 Broader seeded-vortex interpretation still requires:
 
@@ -94,7 +105,9 @@ If any solver-core behavior changes, the following must be rerun and regenerated
 
 - The solver-touching baseline tests listed in `docs/PHASE1_ACCEPTANCE.md`
 - `tdgl-rf refinement-sanity configs/phase1_refinement_sanity.yaml`
+- `tdgl-rf refinement-sanity configs/phase1_refinement_sanity_long_horizon.yaml`
 - `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml`
+- `tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v2_long_horizon.csv validation/thresholds_long_horizon.yaml validation/reference_manifest_long_horizon.yaml configs/phase1_refinement_sanity_long_horizon.yaml`
 - `tdgl-rf evidence-bundle <validation_dir>` for the refreshed validation run
 
 Solver-core changes include, at minimum:
@@ -106,4 +119,4 @@ Solver-core changes include, at minimum:
 
 ## Gate Decision Rule
 
-Phase-2 work may start only when the deterministic baseline evidence above exists on the current branch and the chosen phase-2 direction has an agreed additional-evidence plan from the relevant subsection above. If either condition is false, the work is still pre-gate.
+Phase-2 work may start only when the accepted short-horizon deterministic baseline evidence above exists on the current branch and the chosen phase-2 direction has an agreed additional-evidence plan from the relevant subsection above. Any broader deterministic claim beyond that short-horizon accepted surface also requires the committed longer-horizon tranche to pass. If either condition is false, the work is still pre-gate.

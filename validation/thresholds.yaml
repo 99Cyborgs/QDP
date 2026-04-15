@@ -1,6 +1,20 @@
 # Conservative phase-1 numerical gates for local deterministic validation.
 # These are bounded regression checks, not claims of asymptotic convergence
 # or broader scientific validity.
+surface:
+  surface_id: phase1_short_horizon
+  display_name: Deterministic Phase-1 Short-Horizon
+  claim_scope: Short-horizon deterministic strip and simple masked-strip baseline with conservative numerical gates, frozen references, and same-stack reproducibility on the committed n_steps=4 matrix surface only.
+  reproduction_command: tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml
+  accepted_use: Cite the current runtime as a short-horizon deterministic baseline for strip and simple masked-strip runs inside the committed n_steps=4 validation matrix surface.
+  not_established:
+    - Asymptotic convergence certification.
+    - PETSc parity or broader cross-stack reproducibility.
+    - Stochastic robustness or ensemble behavior.
+    - Seeded-vortex support or broader geometry support beyond the committed phase-1 surface.
+    - Longer-horizon or very-long-time stability beyond the committed n_steps=4 matrix.
+    - Broader physics-validation or external-benchmark claims.
+
 campaign:
   required_campaign_status: success
   required_case_status: success

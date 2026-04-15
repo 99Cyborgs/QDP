@@ -7,12 +7,13 @@ from dataclasses import dataclass
 from tdgl_rf.exceptions import RuntimeCapabilityError
 
 PHASE2_4A_STOCHASTIC_RUNTIME_DENIAL_MESSAGE = (
-    "runtime capability denied: stochastic TDGL noise support is not implemented and "
-    "ensemble execution support is not implemented; Phase-2.4A stochastic runtime support remains gated"
+    "runtime capability denied: Phase-2.4A stochastic runtime support is disabled by the current "
+    "capability policy"
 )
 
 STOCHASTIC_CONFIG_VALIDATION_DENIAL_MESSAGE = (
-    "runtime capability denied: stochastic TDGL noise support is not implemented; "
+    "runtime capability denied: stochastic TDGL noise support is disabled by the current "
+    "capability policy; "
     "set noise.enabled=false"
 )
 

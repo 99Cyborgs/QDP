@@ -15,6 +15,7 @@ from tdgl_rf.workflows.evidence import (
     build_evidence_bundle,
     generate_limitations_markdown,
     generate_operating_conditions_markdown,
+    generate_technical_summary_markdown,
 )
 
 
@@ -84,31 +85,49 @@ def _write_matrix(path: Path) -> None:
     _write_csv(path, rows)
 
 
-def _write_thresholds(path: Path) -> None:
+def _surface_metadata() -> dict[str, object]:
+    return {
+        "surface_id": "phase1_short_horizon",
+        "display_name": "Deterministic Phase-1 Short-Horizon",
+        "claim_scope": "Short-horizon deterministic strip and simple masked-strip baseline with conservative numerical gates on the committed n_steps=4 matrix surface only.",
+        "reproduction_command": "tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml",
+        "accepted_use": "Cite the current runtime as a short-horizon deterministic baseline for strip and simple masked-strip runs inside the committed matrix surface.",
+        "not_established": [
+            "Asymptotic convergence certification.",
+            "PETSc parity or broader cross-stack reproducibility.",
+            "Stochastic robustness or ensemble behavior.",
+            "Seeded-vortex support or broader geometry support beyond the committed phase-1 surface.",
+            "Longer-horizon or very-long-time stability beyond the committed n_steps=4 matrix.",
+            "Broader physics-validation or external-benchmark claims.",
+        ],
+    }
+
+
+def _write_thresholds(path: Path, *, surface: dict[str, object] | None = None) -> None:
+    payload = {
+        "campaign": {
+            "required_campaign_status": "success",
+            "required_case_status": "success",
+            "max_charge_residual_inf": 0.45,
+            "max_vortex_count": 0,
+        },
+        "refinement": {
+            "delta_mean_abs2_max": 5.0e-4,
+            "delta_charge_residual_inf_max": 0.25,
+            "delta_delta_f_over_f0_max": 2.0e-4,
+            "delta_qinv_max": 5.0e-3,
+        },
+        "reproducibility": {
+            "config_path": "reference_rf_strip.yaml",
+            "summary_metric_tolerances": {"final_mean_abs2": 0.0},
+            "final_observable_tolerances": {"mean_abs2": 0.0},
+            "require_payload_hash_match": True,
+        },
+    }
+    if surface is not None:
+        payload["surface"] = surface
     path.write_text(
-        yaml.safe_dump(
-            {
-                "campaign": {
-                    "required_campaign_status": "success",
-                    "required_case_status": "success",
-                    "max_charge_residual_inf": 0.45,
-                    "max_vortex_count": 0,
-                },
-                "refinement": {
-                    "delta_mean_abs2_max": 5.0e-4,
-                    "delta_charge_residual_inf_max": 0.25,
-                    "delta_delta_f_over_f0_max": 2.0e-4,
-                    "delta_qinv_max": 5.0e-3,
-                },
-                "reproducibility": {
-                    "config_path": "reference_rf_strip.yaml",
-                    "summary_metric_tolerances": {"final_mean_abs2": 0.0},
-                    "final_observable_tolerances": {"mean_abs2": 0.0},
-                    "require_payload_hash_match": True,
-                },
-            },
-            sort_keys=False,
-        ),
+        yaml.safe_dump(payload, sort_keys=False),
         encoding="utf-8",
     )
 
@@ -141,7 +160,7 @@ def _write_refinement_config(path: Path) -> None:
     path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
 
 
-def _write_validation_fixture(tmp_path: Path) -> tuple[Path, dict[str, object], Path, Path]:
+def _write_validation_fixture(tmp_path: Path, *, surface: dict[str, object] | None = None) -> tuple[Path, dict[str, object], Path, Path]:
     validation_dir = tmp_path / "validation"
     matrix_path = tmp_path / "phase1_validation_matrix_v1.csv"
     thresholds_path = tmp_path / "thresholds.yaml"
@@ -149,7 +168,7 @@ def _write_validation_fixture(tmp_path: Path) -> tuple[Path, dict[str, object], 
     refinement_config_path = tmp_path / "phase1_refinement_sanity.yaml"
 
     _write_matrix(matrix_path)
-    _write_thresholds(thresholds_path)
+    _write_thresholds(thresholds_path, surface=surface)
     _write_manifest(manifest_path)
     _write_refinement_config(refinement_config_path)
 
@@ -242,6 +261,8 @@ def _write_validation_fixture(tmp_path: Path) -> tuple[Path, dict[str, object], 
             "records": [{"label": "summary", "metric": "final_mean_abs2", "pass": True}],
         },
     }
+    if surface is not None:
+        validation_payload["surface"] = surface
 
     validation_dir.mkdir(parents=True, exist_ok=True)
     (validation_dir / "validation_summary.json").write_text(
@@ -284,7 +305,7 @@ def _write_validation_fixture(tmp_path: Path) -> tuple[Path, dict[str, object], 
 
 
 def test_build_evidence_bundle_writes_compact_bundle(tmp_path: Path) -> None:
-    validation_dir, _, _, _ = _write_validation_fixture(tmp_path)
+    validation_dir, _, _, _ = _write_validation_fixture(tmp_path, surface=_surface_metadata())
 
     summary = build_evidence_bundle(validation_dir, output_dir=tmp_path / "bundle")
 
@@ -298,16 +319,18 @@ def test_build_evidence_bundle_writes_compact_bundle(tmp_path: Path) -> None:
     assert summary.copied_artifact_count == 17
     assert summary.generated_artifact_count == 5
     assert manifest["overall_status"] == "success"
-    assert "Deterministic Phase-1 Evidence Bundle" in overview
-    assert "Deterministic Phase-1 Technical Summary" in technical_summary
-    assert "Validated Operating Conditions" in operating_conditions
+    assert "Deterministic Phase-1 Short-Horizon Evidence Bundle" in overview
+    assert "tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv" in overview
+    assert "Deterministic Phase-1 Short-Horizon Technical Summary" in technical_summary
+    assert "Claim scope: Short-horizon deterministic strip and simple masked-strip baseline" in technical_summary
+    assert "Recorded Operating Conditions" in operating_conditions
     assert "Known Limitations And Unsupported Regimes" in limitations
     assert Path(summary.output_dir, "source_artifacts", "validation_report.md").exists()
     assert Path(summary.output_dir, "source_docs", "PHASE1_VALIDATION_MEMO.md").exists()
 
 
 def test_build_evidence_bundle_requires_validation_report(tmp_path: Path) -> None:
-    validation_dir, _, _, _ = _write_validation_fixture(tmp_path)
+    validation_dir, _, _, _ = _write_validation_fixture(tmp_path, surface=_surface_metadata())
     (validation_dir / "validation_report.md").unlink()
 
     with pytest.raises(FileNotFoundError, match="validation report markdown"):
@@ -315,7 +338,7 @@ def test_build_evidence_bundle_requires_validation_report(tmp_path: Path) -> Non
 
 
 def test_generate_operating_conditions_markdown_includes_thresholds_and_surface(tmp_path: Path) -> None:
-    _, validation_payload, matrix_path, thresholds_path = _write_validation_fixture(tmp_path)
+    _, validation_payload, matrix_path, thresholds_path = _write_validation_fixture(tmp_path, surface=_surface_metadata())
 
     markdown = generate_operating_conditions_markdown(
         validation_payload,
@@ -323,6 +346,7 @@ def test_generate_operating_conditions_markdown_includes_thresholds_and_surface(
         thresholds_path=thresholds_path,
     )
 
+    assert "Deterministic Phase-1 Short-Horizon" in markdown
     assert "deterministic phase `D` only" in markdown
     assert "`final_charge_residual_inf <= 0.45`" in markdown
     assert "strip_with_moat" in markdown
@@ -342,8 +366,35 @@ def test_generate_limitations_markdown_groups_phase1_constraints() -> None:
     assert "Long-horizon deterministic behavior" in markdown
 
 
+def test_generate_technical_summary_markdown_falls_back_without_surface(tmp_path: Path) -> None:
+    _, validation_payload, _, thresholds_path = _write_validation_fixture(tmp_path, surface=None)
+
+    markdown = generate_technical_summary_markdown(validation_payload, thresholds_path=thresholds_path)
+
+    assert "Deterministic Phase-1 Technical Summary" in markdown
+    assert "## Surface Use" in markdown
+    assert "Cite the current runtime as a short-horizon deterministic baseline" in markdown
+
+
+def test_generate_technical_summary_markdown_keeps_long_horizon_use_informative(tmp_path: Path) -> None:
+    surface = _surface_metadata()
+    surface["surface_id"] = "phase1_longer_horizon"
+    surface["display_name"] = "Deterministic Phase-1 Longer-Horizon"
+    surface["claim_scope"] = "Committed longer-horizon deterministic follow-on tranche on the n_steps=8 matrix only."
+    surface["accepted_use"] = (
+        "Use this tranche only as an informative longer-horizon follow-on run through n_steps=8 for debugging and future gate decisions; do not cite it as accepted deterministic baseline evidence."
+    )
+    _, validation_payload, _, thresholds_path = _write_validation_fixture(tmp_path, surface=surface)
+
+    markdown = generate_technical_summary_markdown(validation_payload, thresholds_path=thresholds_path)
+
+    assert "## Surface Use" in markdown
+    assert "informative longer-horizon follow-on run through n_steps=8" in markdown
+    assert "accepted deterministic baseline evidence" in markdown
+
+
 def test_evidence_bundle_cli_writes_bundle(tmp_path: Path) -> None:
-    validation_dir, _, _, _ = _write_validation_fixture(tmp_path)
+    validation_dir, _, _, _ = _write_validation_fixture(tmp_path, surface=_surface_metadata())
     runner = CliRunner()
 
     result = runner.invoke(

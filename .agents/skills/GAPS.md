@@ -2,24 +2,10 @@
 
 ## Intentionally Unencoded
 
-### Phase-2.4A ensemble execution
-- Evidence: `README.md`, `STATUS.md`, `VALIDATION.md`, `src/tdgl_rf/workflows/experiment_sweep.py`, `tests/integration/test_experiment_sweep_workflows.py`
-- Reason left unencoded:
-  The runtime exists, but the repo does not expose one committed Phase-2.4A manifest under `validation/` or another stable operator entrypoint, and `README.md`, `STATUS.md`, and `VALIDATION.md` all keep the scientific boundary explicitly unvalidated.
-- Required before adding a skill:
-  Commit a canonical 4.x manifest surface, define its intended operator entrypoint, and document the allowed claim boundary and validation gate.
-
 ### Reserved `run-inference`, `convergence`, and `verify`
 - Evidence: `src/tdgl_rf/cli.py`
 - Reason left unencoded:
   These commands are reserved or explicitly non-active surfaces, so a skill would only restate unsupported behavior.
-
-### Stale `python qdp_validation.py` guidance
-- Evidence: `VALIDATION.md`, `REPO_MAP.md`, `qdp_validation.py`
-- Reason left unencoded:
-  The current repo-level docs still point to `python qdp_validation.py` as a primary check, but the file no longer exposes a runnable CLI and exits silently in this checkout.
-- Required before adding or restoring any skill:
-  Either add a real CLI entrypoint to `qdp_validation.py` or remove it from the authoritative validation guidance.
 
 ### Legacy repo restructuring / wrapper migration
 - Evidence: `QDP_REPO_REFACTOR_PLAN.md`, `REPO_MAP.md`, `ARCHITECTURE_SUMMARY.md`
@@ -51,4 +37,3 @@
 ## Unverified Until Explicitly Run
 
 - `python -m pip install -e .[dev]` was treated as the documented bootstrap command, but the environment may already have the editable install and dependencies satisfied.
-- Any future 4.x manifest execution remains unverified in this turn because the repo does not expose a committed operator manifest for it.

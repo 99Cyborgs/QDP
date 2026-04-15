@@ -118,42 +118,57 @@ def _reference_manifest_entry(config_path: Path) -> dict[str, object]:
     }
 
 
-def _write_thresholds(path: Path, reproducibility_config_path: Path) -> None:
-    path.write_text(
-        yaml.safe_dump(
-            {
-                "campaign": {
-                    "required_campaign_status": "success",
-                    "required_case_status": "success",
-                    "max_charge_residual_inf": 0.4,
-                    "max_vortex_count": 0,
-                },
-                "refinement": {
-                    "delta_mean_abs2_max": 1.0e-3,
-                    "delta_charge_residual_inf_max": 0.5,
-                    "delta_delta_f_over_f0_max": 1.0e-3,
-                    "delta_qinv_max": 1.0e-2,
-                },
-                "reproducibility": {
-                    "config_path": str(reproducibility_config_path),
-                    "summary_metric_tolerances": {
-                        "final_charge_residual_inf": 0.0,
-                        "final_mean_abs2": 0.0,
-                        "final_time": 0.0,
-                        "max_vortex_count": 0.0,
-                    },
-                    "final_observable_tolerances": {
-                        "charge_residual_inf": 0.0,
-                        "delta_f_over_f0": 0.0,
-                        "mean_abs2": 0.0,
-                        "qinv": 0.0,
-                        "vortex_count": 0.0,
-                    },
-                    "require_payload_hash_match": True,
-                },
+def _surface_metadata() -> dict[str, object]:
+    return {
+        "surface_id": "phase1_short_horizon",
+        "display_name": "Deterministic Phase-1 Short-Horizon",
+        "claim_scope": "Short-horizon deterministic strip and simple masked-strip baseline on the committed n_steps=4 matrix surface only.",
+        "reproduction_command": "tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml",
+        "accepted_use": "Cite the current runtime as a short-horizon deterministic baseline inside the committed matrix surface.",
+        "not_established": [
+            "Asymptotic convergence certification.",
+            "PETSc parity.",
+            "Stochastic robustness or ensemble behavior.",
+        ],
+    }
+
+
+def _write_thresholds(path: Path, reproducibility_config_path: Path, *, surface: dict[str, object] | None = None) -> None:
+    payload = {
+        "campaign": {
+            "required_campaign_status": "success",
+            "required_case_status": "success",
+            "max_charge_residual_inf": 0.4,
+            "max_vortex_count": 0,
+        },
+        "refinement": {
+            "delta_mean_abs2_max": 1.0e-3,
+            "delta_charge_residual_inf_max": 0.5,
+            "delta_delta_f_over_f0_max": 1.0e-3,
+            "delta_qinv_max": 1.0e-2,
+        },
+        "reproducibility": {
+            "config_path": str(reproducibility_config_path),
+            "summary_metric_tolerances": {
+                "final_charge_residual_inf": 0.0,
+                "final_mean_abs2": 0.0,
+                "final_time": 0.0,
+                "max_vortex_count": 0.0,
             },
-            sort_keys=False,
-        ),
+            "final_observable_tolerances": {
+                "charge_residual_inf": 0.0,
+                "delta_f_over_f0": 0.0,
+                "mean_abs2": 0.0,
+                "qinv": 0.0,
+                "vortex_count": 0.0,
+            },
+            "require_payload_hash_match": True,
+        },
+    }
+    if surface is not None:
+        payload["surface"] = surface
+    path.write_text(
+        yaml.safe_dump(payload, sort_keys=False),
         encoding="utf-8",
     )
 
@@ -223,7 +238,8 @@ def test_run_phase1_validation_writes_summary_and_markdown(tmp_path: Path) -> No
         yaml.safe_dump({"reference_runs": [_reference_manifest_entry(reference_config_path)]}, sort_keys=False),
         encoding="utf-8",
     )
-    _write_thresholds(thresholds_path, reference_config_path)
+    surface = _surface_metadata()
+    _write_thresholds(thresholds_path, reference_config_path, surface=surface)
 
     summary = run_phase1_validation(
         matrix_path,
@@ -243,6 +259,9 @@ def test_run_phase1_validation_writes_summary_and_markdown(tmp_path: Path) -> No
     assert summary.reference_pass_count == 1
     assert summary.reproducibility_passed is True
     assert validation_payload["overall_status"] == "success"
+    assert validation_payload["surface"]["surface_id"] == surface["surface_id"]
     assert "## Campaign Cases" in markdown
+    assert "Deterministic Phase-1 Short-Horizon" in markdown
+    assert "Short-horizon deterministic strip and simple masked-strip baseline" in markdown
     assert "VAL_A" in markdown
     assert "rf_reference" in markdown

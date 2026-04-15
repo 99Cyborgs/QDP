@@ -8,7 +8,12 @@ import pytest
 import yaml
 
 from tdgl_rf.exceptions import ConfigError
-from tdgl_rf.workflows.validation import evaluate_campaign_results, evaluate_refinement_results, load_reference_manifest
+from tdgl_rf.workflows.validation import (
+    evaluate_campaign_results,
+    evaluate_refinement_results,
+    load_reference_manifest,
+    load_threshold_spec,
+)
 
 
 def _write_matrix(path: Path, rows: list[dict[str, object]]) -> None:
@@ -130,6 +135,21 @@ def _write_thresholds(path: Path) -> None:
     )
 
 
+def _surface_metadata() -> dict[str, object]:
+    return {
+        "surface_id": "phase1_short_horizon",
+        "display_name": "Deterministic Phase-1 Short-Horizon",
+        "claim_scope": "Short-horizon deterministic strip and simple masked-strip baseline on the committed n_steps=4 matrix surface only.",
+        "reproduction_command": "tdgl-rf validate-phase1 matrices/phase1_validation_matrix_v1.csv validation/thresholds.yaml validation/reference_manifest.yaml configs/phase1_refinement_sanity.yaml",
+        "accepted_use": "Cite the current runtime as a short-horizon deterministic baseline inside the committed matrix surface.",
+        "not_established": [
+            "Asymptotic convergence certification.",
+            "PETSc parity.",
+            "Stochastic robustness or ensemble behavior.",
+        ],
+    }
+
+
 def _write_run_outputs(run_dir: Path, *, charge_residual: float, mean_abs2: float, include_timeseries: bool = True) -> None:
     (run_dir / "observables").mkdir(parents=True, exist_ok=True)
     (run_dir / "diagnostics").mkdir(parents=True, exist_ok=True)
@@ -219,6 +239,46 @@ def test_load_reference_manifest_rejects_duplicate_ids(tmp_path: Path) -> None:
 
     with pytest.raises(ConfigError, match="duplicate reference_id"):
         load_reference_manifest(manifest_path)
+
+
+def test_load_threshold_spec_accepts_optional_surface_metadata(tmp_path: Path) -> None:
+    thresholds_path = tmp_path / "thresholds.yaml"
+    thresholds_path.write_text(
+        yaml.safe_dump(
+            {
+                "surface": _surface_metadata(),
+                "campaign": {"required_campaign_status": "success"},
+                "refinement": {"delta_mean_abs2_max": 5.0e-4},
+                "reproducibility": {"config_path": "repro_case.yaml"},
+            },
+            sort_keys=False,
+        ),
+        encoding="utf-8",
+    )
+
+    thresholds = load_threshold_spec(thresholds_path)
+
+    assert thresholds["surface"]["surface_id"] == "phase1_short_horizon"
+    assert thresholds["surface"]["display_name"] == "Deterministic Phase-1 Short-Horizon"
+    assert thresholds["surface"]["not_established"][2] == "Stochastic robustness or ensemble behavior."
+
+
+def test_load_threshold_spec_still_requires_numeric_sections(tmp_path: Path) -> None:
+    thresholds_path = tmp_path / "thresholds.yaml"
+    thresholds_path.write_text(
+        yaml.safe_dump(
+            {
+                "surface": _surface_metadata(),
+                "campaign": {"required_campaign_status": "success"},
+                "reproducibility": {"config_path": "repro_case.yaml"},
+            },
+            sort_keys=False,
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigError, match="missing 'refinement' section"):
+        load_threshold_spec(thresholds_path)
 
 
 def test_evaluate_campaign_results_handles_missing_rows_failed_cases_and_partial_outputs(tmp_path: Path) -> None:

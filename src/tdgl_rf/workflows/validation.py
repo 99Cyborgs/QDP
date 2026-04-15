@@ -164,6 +164,16 @@ class Phase1ValidationSummary:
     reproducibility_passed: bool
 
 
+PHASE1_SURFACE_KEYS = (
+    "surface_id",
+    "display_name",
+    "claim_scope",
+    "reproduction_command",
+    "accepted_use",
+    "not_established",
+)
+
+
 def _read_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -418,6 +428,30 @@ def load_threshold_spec(thresholds_path: str | Path) -> dict[str, Any]:
     for section in ("campaign", "refinement", "reproducibility"):
         if section not in payload or not isinstance(payload[section], dict):
             raise ConfigError(f"threshold spec is missing '{section}' section: {path}")
+    surface_payload = payload.get("surface")
+    if surface_payload is not None:
+        if not isinstance(surface_payload, dict):
+            raise ConfigError(f"threshold spec surface section must be a mapping: {path}")
+        missing = [key for key in PHASE1_SURFACE_KEYS if key not in surface_payload]
+        if missing:
+            joined = ", ".join(missing)
+            raise ConfigError(f"threshold spec surface section is missing required keys ({joined}): {path}")
+        unexpected = sorted(set(surface_payload) - set(PHASE1_SURFACE_KEYS))
+        if unexpected:
+            joined = ", ".join(unexpected)
+            raise ConfigError(f"threshold spec surface section contains unsupported keys ({joined}): {path}")
+        normalized_surface: dict[str, Any] = {}
+        for key in PHASE1_SURFACE_KEYS:
+            value = surface_payload[key]
+            if key == "not_established":
+                if not isinstance(value, list) or not value or any(not isinstance(item, str) or not item.strip() for item in value):
+                    raise ConfigError(f"threshold spec surface.not_established must be a non-empty list of strings: {path}")
+                normalized_surface[key] = [item.strip() for item in value]
+                continue
+            if not isinstance(value, str) or not value.strip():
+                raise ConfigError(f"threshold spec surface.{key} must be a non-empty string: {path}")
+            normalized_surface[key] = value.strip()
+        payload["surface"] = normalized_surface
     return payload
 
 
@@ -1215,13 +1249,25 @@ def _validation_markdown(
     reproducibility: dict[str, Any],
     thresholds_path: Path,
     manifest_path: Path,
+    surface: dict[str, Any] | None,
 ) -> str:
     status = "PASS" if all((campaign["overall_pass"], refinement["overall_pass"], reference["overall_pass"], reproducibility["overall_pass"])) else "FLAGGED"
     lines = [
         "# Phase-1 Validation Report",
         "",
-        "This report characterizes the deterministic phase-1 TDGL-RF baseline with conservative numerical gates. It is a regression-quality validation surface, not a publication-grade physics certification.",
+        "This report characterizes the deterministic phase-1 TDGL-RF surface under test with conservative numerical gates. It is a regression-quality validation surface, not a publication-grade physics certification.",
         "",
+    ]
+    if surface is not None:
+        lines.extend(
+            [
+                f"- Surface: `{surface['display_name']}`",
+                f"- Claim scope: {surface['claim_scope']}",
+                "",
+            ]
+        )
+    lines.extend(
+        [
         "## Overall Status",
         "",
         f"- Overall: `{status}`",
@@ -1236,7 +1282,8 @@ def _validation_markdown(
         "",
         "| case_id | geometry | mesh | dt | a_rf | omega | charge_residual_inf | max_vortex_count | status | assessment |",
         "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |",
-    ]
+        ]
+    )
     if campaign["records"]:
         for row in campaign["records"]:
             mesh = "n/a" if row["nx"] is None or row["ny"] is None else f"{row['nx']}x{row['ny']}"
@@ -1323,22 +1370,27 @@ def _validation_markdown(
     )
     if status == "PASS":
         lines.append(
-            "The deterministic phase-1 runtime is characterized here as a stable local baseline across the committed validation matrix, the refinement sanity harness, the frozen reference cases, and a same-stack reproducibility check."
+            "The deterministic phase-1 surface under test is characterized here as a stable local deterministic surface across the committed validation matrix, the refinement sanity harness, the frozen reference cases, and a same-stack reproducibility check."
         )
     else:
         lines.append(
-            "One or more conservative quality gates were flagged. The baseline remains useful for controlled debugging, but proposal-facing claims should be limited to the specific passing surfaces recorded above."
+            "One or more conservative quality gates were flagged. The recorded surface remains useful for controlled debugging, but proposal-facing claims should be limited to the specific passing surfaces recorded above."
         )
     lines.extend(
         [
             "",
             "## Scope Limits",
             "",
-            "- These checks do not establish asymptotic convergence, stochastic robustness, PETSc parity, or publication-grade physics validation.",
             "- The reproducibility statement applies to the same local deterministic software stack used for this report.",
             "",
         ]
     )
+    if surface is not None:
+        lines[-1:-1] = [f"- {item}" for item in surface["not_established"]]
+    else:
+        lines[-1:-1] = [
+            "- These checks do not establish asymptotic convergence, stochastic robustness, PETSc parity, or publication-grade physics validation.",
+        ]
     return "\n".join(lines)
 
 
@@ -1375,6 +1427,7 @@ def run_phase1_validation(
     resolved_manifest_path = Path(reference_manifest_path).resolve()
     resolved_refinement_config = Path(refinement_config_path).resolve()
     thresholds = load_threshold_spec(resolved_thresholds_path)
+    surface = thresholds.get("surface")
 
     destination = (
         Path(output_dir).resolve()
@@ -1414,22 +1467,22 @@ def run_phase1_validation(
     validation_summary_json_path = destination / "validation_summary.json"
     validation_report_path = destination / "validation_report.md"
     write_csv(validation_summary_csv_path, campaign["records"])
-    write_json(
-        validation_summary_json_path,
-        {
-            "matrix_path": str(resolved_matrix_path),
-            "thresholds_path": str(resolved_thresholds_path),
-            "reference_manifest_path": str(resolved_manifest_path),
-            "refinement_config_path": str(resolved_refinement_config),
-            "campaign": campaign,
-            "refinement": refinement,
-            "reference": reference,
-            "reproducibility": reproducibility,
-            "overall_status": "success"
-            if all((campaign["overall_pass"], refinement["overall_pass"], reference["overall_pass"], reproducibility["overall_pass"]))
-            else "failed",
-        },
-    )
+    validation_payload = {
+        "matrix_path": str(resolved_matrix_path),
+        "thresholds_path": str(resolved_thresholds_path),
+        "reference_manifest_path": str(resolved_manifest_path),
+        "refinement_config_path": str(resolved_refinement_config),
+        "campaign": campaign,
+        "refinement": refinement,
+        "reference": reference,
+        "reproducibility": reproducibility,
+        "overall_status": "success"
+        if all((campaign["overall_pass"], refinement["overall_pass"], reference["overall_pass"], reproducibility["overall_pass"]))
+        else "failed",
+    }
+    if surface is not None:
+        validation_payload["surface"] = surface
+    write_json(validation_summary_json_path, validation_payload)
     validation_report_path.write_text(
         _validation_markdown(
             campaign=campaign,
@@ -1438,6 +1491,7 @@ def run_phase1_validation(
             reproducibility=reproducibility,
             thresholds_path=resolved_thresholds_path,
             manifest_path=resolved_manifest_path,
+            surface=surface,
         ),
         encoding="utf-8",
     )

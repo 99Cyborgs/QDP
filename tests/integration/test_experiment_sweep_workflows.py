@@ -645,3 +645,26 @@ def test_run_experiment_cli_phase2_4a_executes_successfully(tmp_path: Path) -> N
     assert result.exit_code == 0
     assert '"status": "success"' in result.output
     assert '"run_count": 6' in result.output
+
+
+def test_committed_phase2_4a_runtime_smoke_manifest_executes_successfully(tmp_path: Path) -> None:
+    manifest_path = Path("validation/seeded_vortex_phase2_4a_runtime_smoke.yaml").resolve()
+    base_case_path = Path(
+        "configs/validation/seeded_vortex/short_horizon/stochastic_single_positive.yaml"
+    ).resolve()
+    runner = CliRunner()
+
+    result = runner.invoke(
+        app,
+        ["run-experiment", str(manifest_path), "--output-dir", str(tmp_path / "committed_phase2_4a_smoke_out")],
+    )
+
+    assert result.exit_code == 0
+    payload = read_json(tmp_path / "committed_phase2_4a_smoke_out" / "experiment_results.json")
+    assert payload["mode"] == "stochastic_ensemble"
+    assert payload["overall_status"] == "success"
+    assert payload["manifest_path"] == str(manifest_path)
+    assert payload["base_case_path"] == str(base_case_path)
+    assert payload["expected_member_count"] == 3
+    assert payload["parameter_point_count"] == 2
+    assert payload["run_count"] == 6
